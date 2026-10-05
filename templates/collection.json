@@ -1,0 +1,190 @@
+{
+  "sections": {
+    "section_divider_dVzcmz": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full",
+        "color_scheme": "scheme-6",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "hero": {
+      "type": "collection-image-with-title",
+      "settings": {
+        "show_title": true,
+        "show_description": true,
+        "flex_align": "align--middle-left",
+        "color_scheme": "",
+        "show_text_background": false,
+        "overlay_type": "disabled",
+        "show_image": false,
+        "banner_layout": "overlay",
+        "height": "screen-height-one-third",
+        "mobile_height": "screen-height-one-half--mobile",
+        "padding_top": 20,
+        "padding_bottom": 0
+      }
+    },
+    "section_highlights_6xx8H9": {
+      "type": "section-highlights",
+      "blocks": {
+        "highlight_nhkf7G": {
+          "type": "highlight",
+          "settings": {
+            "heading": "New Arrivals",
+            "color": "#212121",
+            "bg_color": "#f5f2ec",
+            "border_color": "#f5f2ec"
+          }
+        },
+        "highlight_WREypK": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Best Sellers",
+            "color": "#212121",
+            "bg_color": "#f5f2ec",
+            "border_color": "#f5f2ec"
+          }
+        },
+        "highlight_LKpYtB": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Sale",
+            "color": "#212121",
+            "bg_color": "#f5f2ec",
+            "border_color": "#f5f2ec"
+          }
+        },
+        "highlight_Cr3qqN": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Rings",
+            "color": "#212121",
+            "bg_color": "#f5f2ec",
+            "border_color": "#f5f2ec"
+          }
+        },
+        "highlight_BfUMW8": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Earrings",
+            "color": "#212121",
+            "bg_color": "#f5f2ec",
+            "border_color": "#f5f2ec"
+          }
+        },
+        "highlight_J6Ue7q": {
+          "type": "highlight",
+          "settings": {
+            "heading": "Necklaces",
+            "color": "#212121",
+            "bg_color": "#f5f2ec",
+            "border_color": "#f5f2ec"
+          }
+        }
+      },
+      "block_order": [
+        "highlight_nhkf7G",
+        "highlight_WREypK",
+        "highlight_LKpYtB",
+        "highlight_Cr3qqN",
+        "highlight_BfUMW8",
+        "highlight_J6Ue7q"
+      ],
+      "settings": {
+        "style": "button",
+        "grid": 6,
+        "heading": "",
+        "heading_position": "text-center",
+        "heading_font_size": "heading-large",
+        "text_font_size": "body-small",
+        "width": "wrapper--full-padded",
+        "layout_mobile": "2",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 40,
+        "heading_tag": "automatic"
+      }
+    },
+    "subcollections": {
+      "type": "subcollections",
+      "disabled": true,
+      "settings": {
+        "subcollection_layout": "grid",
+        "subcollection_description": false,
+        "select_image": "collection",
+        "color_scheme": "",
+        "color": "#ffffff",
+        "bg_color": "",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "main": {
+      "type": "collection",
+      "blocks": {
+        "featured_image_9z8PEP": {
+          "type": "featured_image",
+          "settings": {
+            "position": 3,
+            "featured_heading": "Gemstone Collection",
+            "heading_font_size": "heading-medium",
+            "featured_text": "<p>Sculpted in Stone. Designed for Now.</p>",
+            "featured_button_text": "Shop now",
+            "button_type": "btn--white",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "featured_color_text": "#ffffff",
+            "overlay_type": "opacity",
+            "heading_tag": "automatic"
+          }
+        },
+        "featured_image_z6adnV": {
+          "type": "featured_image",
+          "settings": {
+            "position": 7,
+            "featured_heading": "",
+            "heading_font_size": "heading-medium",
+            "featured_text": "<p>Our top sellers on hand in the studio, perfect for quick gifts or if you're after something ready to wear. All other pieces are handmade to order, and it'll take about 4-8 weeks to craft.</p>",
+            "featured_button_text": "",
+            "featured_button_link": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "featured_color_text": "#ffffff",
+            "overlay_type": "opacity",
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "featured_image_9z8PEP",
+        "featured_image_z6adnV"
+      ],
+      "settings": {
+        "enable_sort": true,
+        "enable_filters": true,
+        "filter_layout": "slide-out",
+        "default_open": true,
+        "collection_linklist": "",
+        "grid": 3,
+        "grid_mobile": "2",
+        "products_per_page": 24,
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "section_divider_dVzcmz",
+    "hero",
+    "section_highlights_6xx8H9",
+    "subcollections",
+    "main"
+  ]
+}

@@ -1,0 +1,1711 @@
+{
+  "sections": {
+    "section_slideshow_nested_YfkG44": {
+      "type": "section-slideshow-nested",
+      "blocks": {
+        "slide_image_hkYEiy": {
+          "type": "_slide-image",
+          "settings": {
+            "link": "",
+            "flex_align_desktop": "align--bottom-left-desktop",
+            "flex_align_mobile": "align--middle-center-mobile",
+            "show_text_background": false,
+            "bg_color": "",
+            "color": "#ffffff",
+            "overlay_type": "text"
+          },
+          "blocks": {
+            "heading_JxYXBt": {
+              "type": "heading",
+              "settings": {
+                "text": "Everyday Luxury",
+                "heading_font_size": "heading-large",
+                "color": "",
+                "heading_tag": "automatic",
+                "padding_bottom": 8
+              },
+              "blocks": {}
+            },
+            "text_L4brP6": {
+              "type": "text",
+              "settings": {
+                "text": "Beautiful pieces to pass down for generations",
+                "text_font_size": "body-large",
+                "padding_bottom": 8
+              },
+              "blocks": {}
+            },
+            "group_buttons_DzAjwR": {
+              "type": "_group-buttons",
+              "name": "Side by side buttons",
+              "settings": {
+                "button_text": "Shop all products",
+                "button_type": "btn--black",
+                "button_size": "",
+                "button_style": "btn--solid",
+                "show_arrow": false,
+                "button_secondary_text": "Shop sale",
+                "button_secondary_type": "btn--white",
+                "button_secondary_size": "",
+                "button_secondary_style": "btn--solid",
+                "show_secondary_arrow": false,
+                "padding_bottom": 8
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_JxYXBt",
+            "text_L4brP6",
+            "group_buttons_DzAjwR"
+          ]
+        },
+        "slide_video_4tGPP7": {
+          "type": "_slide-video",
+          "name": "Video",
+          "disabled": true,
+          "settings": {
+            "link": "",
+            "flex_align_desktop": "align--middle-center-desktop",
+            "flex_align_mobile": "align--middle-center-mobile",
+            "show_text_background": false,
+            "bg_color": "",
+            "color": "#ffffff",
+            "overlay_type": "opacity"
+          },
+          "blocks": {
+            "heading_cTpExr": {
+              "type": "heading",
+              "settings": {
+                "text": "Light That Lives With You",
+                "heading_font_size": "heading-large",
+                "color": "",
+                "heading_tag": "automatic",
+                "padding_bottom": 8
+              },
+              "blocks": {}
+            },
+            "text_nNX4bV": {
+              "type": "text",
+              "name": "Text",
+              "settings": {
+                "text": "Crafted to glow with meaning, every day",
+                "text_font_size": "body-large",
+                "padding_bottom": 8
+              },
+              "blocks": {}
+            },
+            "button_Wx3e6P": {
+              "type": "button",
+              "settings": {
+                "text": "Shop the Gemstone Collection",
+                "type": "btn--white",
+                "size": "",
+                "style": "btn--solid",
+                "show_arrow": false,
+                "full_width": false,
+                "padding_bottom": 8
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_cTpExr",
+            "text_nNX4bV",
+            "button_Wx3e6P"
+          ]
+        },
+        "slide_image_Y3ntcg": {
+          "type": "_slide-image",
+          "name": "Image",
+          "settings": {
+            "link": "",
+            "flex_align_desktop": "align--middle-center-desktop",
+            "flex_align_mobile": "align--middle-center-mobile",
+            "show_text_background": false,
+            "bg_color": "",
+            "color": "#ffffff",
+            "overlay_type": "disabled"
+          },
+          "blocks": {
+            "heading_CwM98X": {
+              "type": "heading",
+              "settings": {
+                "text": "Sleek. Sculptural. Striking.",
+                "heading_font_size": "heading-large",
+                "color": "",
+                "heading_tag": "automatic",
+                "padding_bottom": 8
+              },
+              "blocks": {}
+            },
+            "text_DGTHFT": {
+              "type": "text",
+              "settings": {
+                "text": "A modern statement in form and finish, designed to stand apart.",
+                "text_font_size": "body-large",
+                "padding_bottom": 8
+              },
+              "blocks": {}
+            },
+            "button_Mf6QGG": {
+              "type": "button",
+              "settings": {
+                "text": "Shop all rings",
+                "type": "btn--white",
+                "size": "",
+                "style": "btn--solid",
+                "show_arrow": false,
+                "full_width": false,
+                "padding_bottom": 8
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_CwM98X",
+            "text_DGTHFT",
+            "button_Mf6QGG"
+          ]
+        }
+      },
+      "block_order": [
+        "slide_image_hkYEiy",
+        "slide_video_4tGPP7",
+        "slide_image_Y3ntcg"
+      ],
+      "name": "Slideshow (Nested)",
+      "settings": {
+        "transition": "slide",
+        "show_arrows": true,
+        "autoplay": true,
+        "autoplay_speed": 4,
+        "width": "wrapper--full",
+        "height": "seven-fifty-height-hero",
+        "mobile_height": "screen-height-full--mobile",
+        "color_scheme": "scheme-5",
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "disabled": true
+    },
+    "section_text_with_products_yW3LJx": {
+      "type": "section-text-with-products",
+      "blocks": {
+        "collection_mhjGma": {
+          "type": "collection",
+          "settings": {
+            "image_position": 1,
+            "aspect_ratio": 0.6,
+            "width": 120,
+            "mobile_aspect_ratio": 0.6,
+            "mobile_width": 80
+          }
+        },
+        "collection_YrjMQw": {
+          "type": "collection",
+          "settings": {
+            "image_position": 2,
+            "aspect_ratio": 0.6,
+            "width": 120,
+            "mobile_aspect_ratio": 0.6,
+            "mobile_width": 80
+          }
+        },
+        "collection_xfkJFf": {
+          "type": "collection",
+          "settings": {
+            "image_position": 7,
+            "aspect_ratio": 0.5,
+            "width": 120,
+            "mobile_aspect_ratio": 0.6,
+            "mobile_width": 60
+          }
+        }
+      },
+      "block_order": [
+        "collection_mhjGma",
+        "collection_YrjMQw",
+        "collection_xfkJFf"
+      ],
+      "settings": {
+        "subheading": "bestselling fine jewelry",
+        "heading": "Modern heirlooms elegant treasures",
+        "image_border_radius": 20,
+        "width": "wrapper--full-padded",
+        "text_font_size_px_desktop": 32,
+        "text_align_desktop": "text-center",
+        "text_font_size_px_mobile": 26,
+        "text_align_mobile": "text-left--mobile",
+        "color_scheme": "",
+        "padding_top": 60,
+        "padding_bottom": 40
+      },
+      "disabled": true
+    },
+    "columns-1": {
+      "type": "section-columns",
+      "blocks": {
+        "image-3": {
+          "type": "image",
+          "settings": {
+            "image_width": 100,
+            "image_shape": "normal",
+            "title": "Made-To-Order Jewelery",
+            "heading_font_size": "heading-small",
+            "text": "<p>Handmade pieces that are carefully crafted to ensure that you'll love for a lifetime.</p>",
+            "text_font_size": "body-medium",
+            "button_text": "Shop now",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--text",
+            "show_arrow": true,
+            "image_aspect_ratio": 1.1,
+            "mobile_image_aspect_ratio": 1.2,
+            "heading_tag": "automatic"
+          }
+        },
+        "image-1": {
+          "type": "image",
+          "settings": {
+            "image_width": 100,
+            "image_shape": "normal",
+            "title": "Sculpted Light",
+            "heading_font_size": "heading-small",
+            "text": "<p>Gemstone forms carved by nature, refined for modern elegance.</p>",
+            "text_font_size": "body-medium",
+            "button_text": "Shop gemstones",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--text",
+            "show_arrow": true,
+            "image_aspect_ratio": 1.1,
+            "mobile_image_aspect_ratio": 1.2,
+            "heading_tag": "automatic"
+          }
+        },
+        "image-2": {
+          "type": "image",
+          "settings": {
+            "image_width": 100,
+            "image_shape": "normal",
+            "title": "The Essentials Collection",
+            "heading_font_size": "heading-small",
+            "text": "<p>Our signature pieces designed to be worn everyday with subtle details in contemporary shapes. </p>",
+            "text_font_size": "body-medium",
+            "button_text": "Shop Classics",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--text",
+            "show_arrow": true,
+            "image_aspect_ratio": 1.1,
+            "mobile_image_aspect_ratio": 1.2,
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "image-3",
+        "image-1",
+        "image-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_font_size": "heading-medium",
+        "align_heading": "text-left",
+        "align_text": "text-left",
+        "width": "wrapper--full-padded",
+        "align_columns": "flex-align-top",
+        "layout": "grid",
+        "grid": 3,
+        "layout_mobile": "1",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 62,
+        "heading_tag": "automatic"
+      },
+      "disabled": true
+    },
+    "double": {
+      "type": "section-double",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "TA VIE",
+            "padding_bottom": 6
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "あなたの毎日に、上質を。",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>家で過ごす時間を、自分のために。TA VIEは、日々の暮らしを大切にするルームウェアを提案します。</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 24
+          }
+        },
+        "image_ycnEVH": {
+          "type": "image",
+          "settings": {
+            "image_width": 80,
+            "padding_bottom": 16
+          },
+          "disabled": true
+        },
+        "buttons_VP8YTU": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "ルームウェアを見る",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--text",
+            "show_arrow": false,
+            "padding_bottom": 16
+          },
+          "disabled": true
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading",
+        "text",
+        "image_ycnEVH",
+        "buttons_VP8YTU"
+      ],
+      "settings": {
+        "image_width": "one-half",
+        "text_alignment": "text-left",
+        "layout": "",
+        "width": "wrapper--full-padded",
+        "height": "image-height",
+        "mobile_height": "image-height--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "show_placeholder": false
+      },
+      "disabled": true
+    },
+    "announcement-2": {
+      "type": "section-announcement",
+      "blocks": {
+        "text-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>•</p>",
+            "text_font_size": "body-x-large",
+            "color": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "heading_ptQ3kt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Timeless pieces to treasure forever",
+            "heading_font_size": "heading-x-small"
+          }
+        },
+        "text-4": {
+          "type": "text",
+          "settings": {
+            "text": "<p>•</p>",
+            "text_font_size": "body-x-large",
+            "color": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "heading_hDqiLH": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ethical sourcing and manufacturing",
+            "heading_font_size": "heading-x-small"
+          }
+        },
+        "text-6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>•</p>",
+            "text_font_size": "body-x-large",
+            "color": "",
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          }
+        },
+        "heading_cNcf9c": {
+          "type": "heading",
+          "settings": {
+            "heading": "Sustainable heirlooms",
+            "heading_font_size": "heading-x-small"
+          }
+        }
+      },
+      "block_order": [
+        "text-2",
+        "heading_ptQ3kt",
+        "text-4",
+        "heading_hDqiLH",
+        "text-6",
+        "heading_cNcf9c"
+      ],
+      "settings": {
+        "slider_speed": 7,
+        "text_alignment": "center",
+        "marquee_speed": 100,
+        "direction": "ticker-rtl",
+        "message_spacing": 10,
+        "show_border": false,
+        "layout": "marquee",
+        "color_scheme": "scheme-2",
+        "padding_top": 20,
+        "padding_bottom": 20
+      },
+      "disabled": true
+    },
+    "section-tab-collections": {
+      "type": "section-tab-collections",
+      "blocks": {
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "featured_collection": "rings",
+            "show_image": true,
+            "align_with_product_images": false,
+            "overlay_type": "disabled",
+            "description": "<p>14k solid gold studs, hoops and pearls</p>",
+            "color": "#ffffff",
+            "link_text": "View products",
+            "link": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false
+          }
+        },
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "featured_collection": "necklaces",
+            "show_image": true,
+            "align_with_product_images": false,
+            "overlay_type": "disabled",
+            "description": "<p>14k solid gold essentials, sterling silver statement pieces and more.</p>",
+            "color": "#ffffff",
+            "link_text": "Shop all",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false
+          }
+        },
+        "collection-3": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "title": "",
+            "featured_collection": "necklaces",
+            "show_image": true,
+            "align_with_product_images": true,
+            "overlay_type": "disabled",
+            "description": "",
+            "color": "#ffffff",
+            "link_text": "View products",
+            "link": "",
+            "button_type": "btn--white",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false
+          }
+        }
+      },
+      "block_order": [
+        "collection-2",
+        "collection-1",
+        "collection-3"
+      ],
+      "settings": {
+        "show_product_count": false,
+        "title": "Exceptional Pieces",
+        "heading_font_size": "heading-medium",
+        "text": "<p>Soon-to-be staples in your rotation</p>",
+        "text_font_size": "body-medium",
+        "layout": "inline",
+        "layout_desktop": "slider",
+        "product_limit": 7,
+        "grid": 4,
+        "rows": 3,
+        "layout_mobile": "2",
+        "color_scheme": "scheme-6",
+        "padding_top": 62,
+        "padding_bottom": 62,
+        "heading_tag": "automatic"
+      },
+      "disabled": true
+    },
+    "section_video_w6YfAE": {
+      "type": "section-video",
+      "name": "Video",
+      "settings": {
+        "show_video_popup": false,
+        "video_popup_social": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "title": "Behind the Brilliance",
+        "heading_font_size": "heading-large",
+        "text": "<p>Watch how our jewelry comes to life, from ethical sourcing to enduring design.</p>",
+        "text_font_size": "body-medium",
+        "flex_align": "align--middle-center",
+        "link_text": "learn more",
+        "button_type": "btn--white",
+        "button_size": "",
+        "button_style": "btn--outline",
+        "show_arrow": false,
+        "desktop_height": "screen-height-three-quarters",
+        "mobile_height": "screen-height-three-quarters--mobile",
+        "width": "wrapper--full",
+        "color_scheme": "scheme-2",
+        "show_text_background": false,
+        "color": "",
+        "overlay_type": "disabled",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "heading_tag": "automatic"
+      },
+      "disabled": true
+    },
+    "press-logos": {
+      "type": "section-press-logos",
+      "blocks": {
+        "logo_item_text_wJAJM6": {
+          "type": "logo-item-text",
+          "settings": {
+            "logo_width": 100,
+            "link": "",
+            "text": "Sustainable luxury at its most refined",
+            "text_font_size": "body-x-large"
+          }
+        },
+        "logo_item_text_JDfBFK": {
+          "type": "logo-item-text",
+          "settings": {
+            "logo_width": 100,
+            "link": "",
+            "text": "Jewelry that’s as ethical as it is exquisite",
+            "text_font_size": "body-x-large"
+          }
+        },
+        "logo_item_text_kFiezL": {
+          "type": "logo-item-text",
+          "settings": {
+            "logo_width": 100,
+            "link": "",
+            "text": "The future of fine jewelry is here—and it’s conscious.",
+            "text_font_size": "body-x-large"
+          }
+        },
+        "logo_item_text_wrqnPU": {
+          "type": "logo-item-text",
+          "settings": {
+            "logo_width": 100,
+            "link": "",
+            "text": "Each piece feels like a modern heirloom",
+            "text_font_size": "body-x-large"
+          }
+        },
+        "logo_item_text_9ggVFW": {
+          "type": "logo-item-text",
+          "settings": {
+            "logo_width": 100,
+            "link": "",
+            "text": "Minimal, meaningful, and made to last",
+            "text_font_size": "body-x-large"
+          }
+        },
+        "logo_item_text_YqRFrG": {
+          "type": "logo-item-text",
+          "settings": {
+            "logo_width": 100,
+            "link": "",
+            "text": "Where craftsmanship meets a conscience",
+            "text_font_size": "body-x-large"
+          }
+        }
+      },
+      "block_order": [
+        "logo_item_text_wJAJM6",
+        "logo_item_text_JDfBFK",
+        "logo_item_text_kFiezL",
+        "logo_item_text_wrqnPU",
+        "logo_item_text_9ggVFW",
+        "logo_item_text_YqRFrG"
+      ],
+      "settings": {
+        "enable_heading_slider": true,
+        "logo_opacity": 60,
+        "title": "As seen in",
+        "color_scheme": "",
+        "padding_top": 100,
+        "padding_bottom": 100
+      },
+      "disabled": true
+    },
+    "custom-content-1": {
+      "type": "section-custom-content",
+      "blocks": {
+        "image-1": {
+          "type": "image",
+          "settings": {
+            "title": "Geometry of Light",
+            "heading_font_size": "heading-medium",
+            "text": "<p>Brilliantly cut and artfully arranged to capture light with effortless elegance.</p>",
+            "text_font_size": "body-medium",
+            "flex_align": "align--bottom-left",
+            "show_text_background": false,
+            "bg_color": "",
+            "color": "#ffffff",
+            "overlay_type": "disabled",
+            "link_text": "Shop now",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "heading_tag": "automatic"
+          }
+        },
+        "image-2": {
+          "type": "image",
+          "settings": {
+            "title": "Modern and Timeless",
+            "heading_font_size": "heading-medium",
+            "text": "<p>Accessorize with 14k recycled gold all day, everyday.</p>",
+            "text_font_size": "body-medium",
+            "flex_align": "align--bottom-left",
+            "show_text_background": false,
+            "bg_color": "",
+            "color": "#ffffff",
+            "overlay_type": "disabled",
+            "link_text": "Shop now",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "image-1",
+        "image-2"
+      ],
+      "settings": {
+        "borders": false,
+        "gutters": true,
+        "width": "wrapper--full-padded",
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "scheme-6",
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "disabled": true
+    },
+    "collections-list-hover": {
+      "type": "section-collections-list-hover",
+      "blocks": {
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "title": ""
+          }
+        },
+        "collection-4": {
+          "type": "collection",
+          "settings": {
+            "title": ""
+          }
+        },
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "title": ""
+          }
+        },
+        "collection-3": {
+          "type": "collection",
+          "settings": {
+            "title": ""
+          }
+        },
+        "collection-5": {
+          "type": "collection",
+          "settings": {
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection-2",
+        "collection-4",
+        "collection-1",
+        "collection-3",
+        "collection-5"
+      ],
+      "settings": {
+        "heading_font_size": "heading-x-large",
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "screen-height-three-quarters--mobile",
+        "color_scheme": "scheme-10",
+        "overlay_type": "disabled",
+        "padding_top": 100,
+        "padding_bottom": 0
+      },
+      "disabled": true
+    },
+    "announcement-3": {
+      "type": "section-announcement",
+      "blocks": {
+        "text-6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>•</p>",
+            "text_font_size": "body-small",
+            "color": "",
+            "target_device_enabled": false,
+            "target_device": "desktop"
+          }
+        },
+        "heading_irnjr9": {
+          "type": "heading",
+          "settings": {
+            "heading": "Express yourself in your own way",
+            "heading_font_size": "heading-x-small"
+          }
+        }
+      },
+      "block_order": [
+        "text-6",
+        "heading_irnjr9"
+      ],
+      "settings": {
+        "slider_speed": 7,
+        "text_alignment": "center",
+        "marquee_speed": 100,
+        "direction": "ticker-ltr",
+        "message_spacing": 10,
+        "show_border": false,
+        "layout": "marquee",
+        "color_scheme": "scheme-2",
+        "padding_top": 20,
+        "padding_bottom": 20
+      },
+      "disabled": true
+    },
+    "look": {
+      "type": "section-look",
+      "blocks": {
+        "product-1": {
+          "type": "product",
+          "settings": {
+            "show_product_card": false,
+            "position_x": 38,
+            "position_y": 55
+          }
+        },
+        "product-3": {
+          "type": "product",
+          "settings": {
+            "show_product_card": false,
+            "position_x": 55,
+            "position_y": 29
+          }
+        }
+      },
+      "block_order": [
+        "product-1",
+        "product-3"
+      ],
+      "settings": {
+        "layout": "",
+        "title": "Shop the look",
+        "heading": "",
+        "heading_font_size": "heading-mini",
+        "show_dots": true,
+        "products_per_row": "2",
+        "enable_slider": false,
+        "button_type": "btn--primary",
+        "button_size": "",
+        "button_style": "btn--solid",
+        "show_arrow": false,
+        "enable_aspect_ratio": true,
+        "image_aspect_ratio": 1.1,
+        "color_scheme": "scheme-6",
+        "dot_color": "#ffffff",
+        "dot_background": "#ffffff",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "heading_tag": "automatic"
+      },
+      "disabled": true
+    },
+    "section_dynamic_content_TkrMUq": {
+      "type": "section-dynamic-content",
+      "blocks": {
+        "grid_item_agN3Kd": {
+          "type": "_grid-item",
+          "settings": {
+            "align_text": "text-center",
+            "row_start": 1,
+            "column_start": 3,
+            "column_end": 5,
+            "row_start_mobile": 2,
+            "column_start_mobile": 5,
+            "column_end_mobile": 9,
+            "target_device_enabled": true,
+            "target_device": "desktop"
+          },
+          "blocks": {
+            "image_MRRKBm": {
+              "type": "image",
+              "settings": {
+                "image_width": 100,
+                "padding_bottom": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "image_MRRKBm"
+          ]
+        },
+        "grid_item_X7RnNT": {
+          "type": "_grid-item",
+          "settings": {
+            "align_text": "text-center",
+            "row_start": 4,
+            "column_start": 14,
+            "column_end": 17,
+            "row_start_mobile": 1,
+            "column_start_mobile": 1,
+            "column_end_mobile": 9,
+            "target_device_enabled": false,
+            "target_device": "mobile"
+          },
+          "blocks": {
+            "image_ae8HLw": {
+              "type": "image",
+              "settings": {
+                "image_width": 100,
+                "padding_bottom": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "image_ae8HLw"
+          ]
+        },
+        "grid_item_Ktiznh": {
+          "type": "_grid-item",
+          "settings": {
+            "align_text": "text-center",
+            "row_start": 3,
+            "column_start": 1,
+            "column_end": 4,
+            "row_start_mobile": 9,
+            "column_start_mobile": 1,
+            "column_end_mobile": 4,
+            "target_device_enabled": true,
+            "target_device": "desktop"
+          },
+          "blocks": {
+            "image_KMQ4ng": {
+              "type": "image",
+              "settings": {
+                "image_width": 100,
+                "padding_bottom": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "image_KMQ4ng"
+          ]
+        },
+        "grid_item_ewMCTH": {
+          "type": "_grid-item",
+          "settings": {
+            "align_text": "text-center",
+            "row_start": 1,
+            "column_start": 12,
+            "column_end": 15,
+            "row_start_mobile": 1,
+            "column_start_mobile": 1,
+            "column_end_mobile": 4,
+            "target_device_enabled": true,
+            "target_device": "desktop"
+          },
+          "blocks": {
+            "image_j7RmKW": {
+              "type": "image",
+              "settings": {
+                "image_width": 100,
+                "padding_bottom": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "image_j7RmKW"
+          ]
+        },
+        "grid_item_4fNayp": {
+          "type": "_grid-item",
+          "settings": {
+            "align_text": "text-center",
+            "row_start": 3,
+            "column_start": 4,
+            "column_end": 14,
+            "row_start_mobile": 2,
+            "column_start_mobile": 1,
+            "column_end_mobile": 9,
+            "target_device_enabled": true,
+            "target_device": "desktop"
+          },
+          "blocks": {
+            "heading_MPnNeD": {
+              "type": "heading",
+              "settings": {
+                "text": "Jewelry That Becomes Part of Your Everyday Story",
+                "heading_font_size": "heading-x-large",
+                "color": "",
+                "heading_tag": "automatic",
+                "padding_bottom": 8
+              },
+              "blocks": {}
+            },
+            "group_buttons_tkPxkc": {
+              "type": "_group-buttons",
+              "name": "Side by side buttons",
+              "settings": {
+                "button_text": "View products",
+                "button_type": "btn--secondary",
+                "button_size": "",
+                "button_style": "btn--solid",
+                "show_arrow": false,
+                "button_secondary_text": "Read more",
+                "button_secondary_type": "btn--black",
+                "button_secondary_size": "",
+                "button_secondary_style": "btn--solid",
+                "show_secondary_arrow": false,
+                "padding_bottom": 8
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_MPnNeD",
+            "group_buttons_tkPxkc"
+          ]
+        },
+        "grid_item_Tg6QC3": {
+          "type": "_grid-item",
+          "settings": {
+            "align_text": "text-center",
+            "row_start": 3,
+            "column_start": 4,
+            "column_end": 14,
+            "row_start_mobile": 2,
+            "column_start_mobile": 1,
+            "column_end_mobile": 9,
+            "target_device_enabled": true,
+            "target_device": "mobile"
+          },
+          "blocks": {
+            "heading_WP7ecN": {
+              "type": "heading",
+              "settings": {
+                "text": "Jewelry That Becomes Part of Your Everyday Story",
+                "heading_font_size": "heading-x-large",
+                "color": "#fcfbf9",
+                "heading_tag": "automatic",
+                "padding_bottom": 8
+              },
+              "blocks": {}
+            },
+            "group_buttons_xY77Ni": {
+              "type": "_group-buttons",
+              "name": "Side by side buttons",
+              "settings": {
+                "button_text": "View products",
+                "button_type": "btn--secondary",
+                "button_size": "",
+                "button_style": "btn--solid",
+                "show_arrow": false,
+                "button_secondary_text": "Read more",
+                "button_secondary_type": "btn--white",
+                "button_secondary_size": "",
+                "button_secondary_style": "btn--solid",
+                "show_secondary_arrow": false,
+                "padding_bottom": 8
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "heading_WP7ecN",
+            "group_buttons_xY77Ni"
+          ]
+        },
+        "grid_item_6Dey7x": {
+          "type": "_grid-item",
+          "name": "Grid item",
+          "settings": {
+            "align_text": "text-center",
+            "row_start": 7,
+            "column_start": 4,
+            "column_end": 14,
+            "row_start_mobile": 1,
+            "column_start_mobile": 1,
+            "column_end_mobile": 9,
+            "target_device_enabled": true,
+            "target_device": "desktop"
+          },
+          "blocks": {
+            "rich_text_rLd8Dw": {
+              "type": "rich-text",
+              "name": "Rich text",
+              "settings": {
+                "text": "<p>Refined, wearable designs made to feel natural on your skin. Pieces you don’t save for special occasions—because they already feel like one.</p>",
+                "text_font_size": "body-x-large",
+                "color": "",
+                "padding_bottom": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "rich_text_rLd8Dw"
+          ]
+        }
+      },
+      "block_order": [
+        "grid_item_agN3Kd",
+        "grid_item_X7RnNT",
+        "grid_item_Ktiznh",
+        "grid_item_ewMCTH",
+        "grid_item_4fNayp",
+        "grid_item_Tg6QC3",
+        "grid_item_6Dey7x"
+      ],
+      "name": "Dynamic content",
+      "settings": {
+        "color_scheme": "scheme-11",
+        "gap_desktop": 16,
+        "gap_mobile": 10,
+        "width": "wrapper--full-padded",
+        "padding_top": 80,
+        "padding_bottom": 80
+      },
+      "disabled": true
+    },
+    "section_custom_content_H4RTrx": {
+      "type": "section-custom-content",
+      "blocks": {
+        "collection_FgXynd": {
+          "type": "collection",
+          "settings": {
+            "title": "Sculpted in Stone",
+            "bg_color": "",
+            "color": ""
+          }
+        },
+        "image_fa7cMC": {
+          "type": "image",
+          "settings": {
+            "title": "The Art of Adornment",
+            "heading_font_size": "heading-large",
+            "text": "<p>A curated collection of gemstone necklaces, where refined design meets effortless luxury.</p>",
+            "text_font_size": "body-large",
+            "flex_align": "align--middle-center",
+            "show_text_background": false,
+            "bg_color": "",
+            "color": "#ffffff",
+            "overlay_type": "disabled",
+            "link_text": "Shop the collection",
+            "button_type": "btn--white",
+            "button_size": "",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "collection_FgXynd",
+        "image_fa7cMC"
+      ],
+      "name": "Custom content",
+      "settings": {
+        "borders": false,
+        "gutters": false,
+        "width": "wrapper--full",
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "screen-height-one-half--mobile",
+        "reverse_blocks": false,
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "disabled": true
+    },
+    "section-product": {
+      "type": "section-product",
+      "disabled": true,
+      "settings": {
+        "show_product_card": true,
+        "layout": "is-reversed",
+        "limit": 5,
+        "scrolling_styles": "vertical",
+        "horizontal_scroll": false,
+        "color_scheme": "scheme-3"
+      }
+    },
+    "rich-text-3": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Follow us",
+            "padding_bottom": 6
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "@broadcastjewelry",
+            "heading_font_size": "heading-small",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "subheading",
+        "heading"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper--full-padded",
+        "color_scheme": "",
+        "overlay_type": "disabled",
+        "padding_top": 82,
+        "padding_bottom": 0
+      },
+      "disabled": true
+    },
+    "columns-2": {
+      "type": "section-columns",
+      "blocks": {
+        "image_KmE4eP": {
+          "type": "image",
+          "settings": {
+            "image_width": 100,
+            "image_shape": "normal",
+            "title": "",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image-2": {
+          "type": "image",
+          "settings": {
+            "image_width": 100,
+            "image_shape": "normal",
+            "title": "",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-large",
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image-3": {
+          "type": "image",
+          "settings": {
+            "image_width": 100,
+            "image_shape": "normal",
+            "title": "",
+            "heading_font_size": "heading-small",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--outline",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        },
+        "image-1": {
+          "type": "image",
+          "settings": {
+            "image_width": 100,
+            "image_shape": "normal",
+            "title": "",
+            "heading_font_size": "heading-x-large",
+            "text": "",
+            "text_font_size": "body-medium",
+            "button_text": "",
+            "button_url": "",
+            "button_type": "btn--primary",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "image_aspect_ratio": 1,
+            "mobile_image_aspect_ratio": 1,
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "image_KmE4eP",
+        "image-2",
+        "image-3",
+        "image-1"
+      ],
+      "settings": {
+        "title": "",
+        "heading_font_size": "heading-medium",
+        "align_heading": "text-left",
+        "align_text": "text-left",
+        "width": "wrapper--full-padded",
+        "align_columns": "flex-align-center",
+        "layout": "grid",
+        "grid": 4,
+        "layout_mobile": "2",
+        "color_scheme": "scheme-1",
+        "padding_top": 15,
+        "padding_bottom": 30,
+        "heading_tag": "automatic"
+      },
+      "disabled": true
+    },
+    "text-row": {
+      "type": "section-text-row",
+      "blocks": {
+        "icon-1": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-flare",
+            "icon_size": 35,
+            "icon_color": "rgba(0,0,0,0)",
+            "title": "Ethical Sourcing",
+            "heading_font_size": "heading-x-small",
+            "text": "<p>Fully traceable supply chain</p>",
+            "text_font_size": "body-small",
+            "heading_tag": "automatic"
+          }
+        },
+        "icon-2": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-donation",
+            "icon_size": 35,
+            "icon_color": "rgba(0,0,0,0)",
+            "title": "Giving Back",
+            "heading_font_size": "heading-x-small",
+            "text": "<p>1% to orgs and communities</p>",
+            "text_font_size": "body-small",
+            "heading_tag": "automatic"
+          }
+        },
+        "icon-3": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-chat",
+            "icon_size": 35,
+            "icon_color": "rgba(0,0,0,0)",
+            "title": "On Demand Stylists",
+            "heading_font_size": "heading-x-small",
+            "text": "<p>Available everyday</p>",
+            "text_font_size": "body-small",
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "icon-1",
+        "icon-2",
+        "icon-3"
+      ],
+      "settings": {
+        "title": "",
+        "heading_font_size": "heading-small",
+        "align_heading": "text-center",
+        "align_text": "text-center",
+        "icon_alignment": "icon--top",
+        "width": "wrapper",
+        "align_columns": "flex-align-center",
+        "layout": "grid",
+        "grid": 3,
+        "layout_mobile": "1",
+        "color_scheme": "scheme-1",
+        "padding_top": 30,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      },
+      "disabled": true
+    },
+    "section_hero_scrolling_mmThBz": {
+      "type": "section-hero-scrolling",
+      "blocks": {
+        "scrolling_text_PJTaE9": {
+          "type": "scrolling_text",
+          "settings": {
+            "text": "<p>Wear Every Moment</p>",
+            "color": "#cb9bbb"
+          }
+        },
+        "scrolling_text_KjQgUD": {
+          "type": "scrolling_text",
+          "settings": {
+            "text": "<p>Wear Every Moment</p>",
+            "color": "#ffd9e4"
+          }
+        },
+        "scrolling_text_qhFG4M": {
+          "type": "scrolling_text",
+          "settings": {
+            "text": "<p>Wear Every Moment</p>",
+            "color": "#cb9bbb"
+          }
+        },
+        "scrolling_text_MGXQrh": {
+          "type": "scrolling_text",
+          "settings": {
+            "text": "<p>Wear Every Moment</p>",
+            "color": "#ffd9e4"
+          }
+        },
+        "text_iGWgta": {
+          "type": "text",
+          "settings": {
+            "description": "Celebrate the everyday and the extraordinary with pieces designed to move with you. Ethically crafted, effortlessly timeless—jewelry for every chapter of your story.",
+            "text_font_size": "body-large",
+            "color": ""
+          }
+        },
+        "button_ncmWfQ": {
+          "type": "button",
+          "settings": {
+            "link_text": "Shop the collection",
+            "button_type": "btn--white",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false
+          }
+        }
+      },
+      "block_order": [
+        "scrolling_text_PJTaE9",
+        "scrolling_text_KjQgUD",
+        "scrolling_text_qhFG4M",
+        "scrolling_text_MGXQrh",
+        "text_iGWgta",
+        "button_ncmWfQ"
+      ],
+      "name": "Image with scrolling text",
+      "settings": {
+        "link": "",
+        "message_spacing": 30,
+        "marquee_speed": 150,
+        "flex_align": "align--bottom-center",
+        "type_font": "bricolage_grotesque_n8",
+        "text_font_size_px": 90,
+        "mobile_text_font_size_px": 16,
+        "type_letter_spacing": 0,
+        "type_font_caps": true,
+        "scrolling_align": "align--middle-center",
+        "direction": "ticker-rtl",
+        "height": "screen-height-three-quarters",
+        "mobile_height": "screen-height-three-quarters--mobile",
+        "color_scheme": "scheme-2",
+        "overlay_type": "disabled",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "show_placeholder": true
+      },
+      "disabled": true
+    },
+    "ta_vie_intro": {
+      "type": "section-rich-text",
+      "name": "TA VIE｜ファーストビュー",
+      "blocks": {
+        "brand": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "TA VIE",
+            "padding_bottom": 12
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "あなたの毎日に、上質を。",
+            "heading_font_size": "heading-medium",
+            "heading_tag": "h1",
+            "padding_bottom": 16
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>家で過ごす時間を、自分のために。TA VIEは、日々の暮らしを大切にするルームウェアを提案します。</p>",
+            "text_font_size": "body-large",
+            "padding_bottom": 0
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "ルームウェアを見る",
+            "button_url": "",
+            "button_type": "btn--black",
+            "button_size": "",
+            "button_style": "btn--solid",
+            "show_arrow": false,
+            "padding_bottom": 0
+          },
+          "disabled": true
+        }
+      },
+      "block_order": [
+        "brand",
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper--narrow",
+        "color_scheme": "scheme-tavie-white",
+        "overlay_type": "disabled",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
+    "ta_vie_products": {
+      "type": "section-collection",
+      "name": "TA VIE｜ルームウェア（要選択）",
+      "disabled": true,
+      "settings": {
+        "featured_collection": "",
+        "heading": "日常に寄り添うルームウェア。",
+        "heading_font_size": "heading-small",
+        "heading_tag": "h2",
+        "description": "",
+        "text_font_size": "body-medium",
+        "layout": "center",
+        "link_text": "",
+        "link_url": "",
+        "button_type": "btn--black",
+        "button_size": "",
+        "button_style": "btn--text",
+        "show_arrow": false,
+        "layout_desktop": "grid",
+        "grid": 2,
+        "rows": 2,
+        "width": "wrapper--full-padded",
+        "layout_mobile": "1",
+        "color_scheme": "scheme-1",
+        "padding_top": 32,
+        "padding_bottom": 40
+      }
+    },
+    "ta_vie_story": {
+      "type": "section-rich-text",
+      "name": "TA VIE｜ブランドの考え",
+      "blocks": {
+        "brand": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "あなたのための時間",
+            "padding_bottom": 12
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "家にいる自分を、大切に。",
+            "heading_font_size": "heading-small",
+            "heading_tag": "h2",
+            "padding_bottom": 16
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>朝の支度、読書をする午後、一日を終えてくつろぐ夜。</p><p>外へ出る日の装いと同じように、家で過ごす自分にも目を向ける。TA VIEは、そんな毎日を大切にするためのルームウェアを提案します。</p>",
+            "text_font_size": "body-large",
+            "padding_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "brand",
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper--narrow",
+        "color_scheme": "scheme-tavie-soft",
+        "overlay_type": "disabled",
+        "padding_top": 40,
+        "padding_bottom": 48
+      }
+    },
+    "ta_vie_reading": {
+      "type": "section-rich-text",
+      "name": "TA VIE｜読みもの紹介（準備中）",
+      "blocks": {
+        "brand": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "TA VIE",
+            "padding_bottom": 12
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "家での時間を整える、ものと過ごし方。",
+            "heading_font_size": "heading-small",
+            "heading_tag": "h2",
+            "padding_bottom": 16
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>衣服から、空間を彩るものまで。家で過ごす毎日を大切にする視点から、気になる品々と暮らしのヒントを紹介します。</p>",
+            "text_font_size": "body-large",
+            "padding_bottom": 0
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_text": "読みものを見る",
+            "button_url": "",
+            "button_type": "btn--black",
+            "button_size": "",
+            "button_style": "btn--text",
+            "show_arrow": false,
+            "padding_bottom": 0
+          },
+          "disabled": true
+        }
+      },
+      "block_order": [
+        "brand",
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "align_text": "text-left",
+        "width": "wrapper--narrow",
+        "color_scheme": "scheme-tavie-white",
+        "overlay_type": "disabled",
+        "padding_top": 40,
+        "padding_bottom": 48
+      },
+      "disabled": true
+    },
+    "ta_vie_blog": {
+      "type": "section-blog",
+      "name": "TA VIE｜記事一覧（要選択）",
+      "disabled": true,
+      "settings": {
+        "blog_name": "",
+        "title": "読みもの",
+        "heading_font_size": "heading-small",
+        "heading_tag": "h2",
+        "title_font_size": "heading-x-small",
+        "title_tag": "h3",
+        "aspect_ratio": 1,
+        "show_tags": false,
+        "show_author": false,
+        "show_date": false,
+        "show_button": true,
+        "show_comments": false,
+        "width": "wrapper--full-padded",
+        "grid": 2,
+        "rows": 1,
+        "color_scheme": "scheme-tavie-soft",
+        "padding_top": 16,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "ta_vie_intro",
+    "ta_vie_products",
+    "ta_vie_story",
+    "ta_vie_reading",
+    "ta_vie_blog",
+    "section_slideshow_nested_YfkG44",
+    "section_text_with_products_yW3LJx",
+    "columns-1",
+    "double",
+    "announcement-2",
+    "section-tab-collections",
+    "section_video_w6YfAE",
+    "press-logos",
+    "custom-content-1",
+    "collections-list-hover",
+    "announcement-3",
+    "look",
+    "section_dynamic_content_TkrMUq",
+    "section_custom_content_H4RTrx",
+    "section-product",
+    "rich-text-3",
+    "columns-2",
+    "text-row",
+    "section_hero_scrolling_mmThBz"
+  ]
+}
