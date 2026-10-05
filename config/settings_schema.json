@@ -1658,9 +1658,18 @@
         "label": "見出しの書体",
         "info": "ホームのブランド文章だけに適用します。システム書体は端末によって表示が異なります。",
         "options": [
-          { "value": "serif", "label": "明朝・セリフ" },
-          { "value": "sans", "label": "ゴシック・サンセリフ" },
-          { "value": "theme", "label": "Broadcastの設定を使う" }
+          {
+            "value": "serif",
+            "label": "明朝・セリフ"
+          },
+          {
+            "value": "sans",
+            "label": "ゴシック・サンセリフ"
+          },
+          {
+            "value": "theme",
+            "label": "Broadcastの設定を使う"
+          }
         ],
         "default": "serif"
       },
@@ -1692,6 +1701,47 @@
         "step": 1,
         "unit": "px",
         "default": 12
+      }
+    ]
+  },
+  {
+    "name": "TA VIE｜ページへのリンク",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "ta_vie_navigation_links",
+        "label": "メニューにブログ・FAQを表示",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "ta_vie_home_links",
+        "label": "ホームにブログ・FAQのボタンを表示",
+        "default": true
+      },
+      {
+        "type": "blog",
+        "id": "ta_vie_blog",
+        "label": "読みもののブログ",
+        "info": "既存のブログを選択します。未選択時は、記事のあるnewsブログがあれば使用します。"
+      },
+      {
+        "type": "page",
+        "id": "ta_vie_faq_page",
+        "label": "FAQページ",
+        "info": "既存のFAQページを選択します。未選択時はfaqページ、またはfaqテンプレートを使うページを探します。"
+      },
+      {
+        "type": "text",
+        "id": "ta_vie_blog_label",
+        "label": "ブログへのリンク名",
+        "default": "読みもの"
+      },
+      {
+        "type": "text",
+        "id": "ta_vie_faq_label",
+        "label": "FAQへのリンク名",
+        "default": "よくあるご質問"
       }
     ]
   }

@@ -313,7 +313,11 @@
     "ta_vie_home_heading_style": "serif",
     "ta_vie_home_heading_spacing": 5,
     "ta_vie_home_body_line_height": 1.9,
-    "ta_vie_home_subheading_size": 12
+    "ta_vie_home_subheading_size": 12,
+    "ta_vie_navigation_links": true,
+    "ta_vie_home_links": true,
+    "ta_vie_blog_label": "読みもの",
+    "ta_vie_faq_label": "よくあるご質問"
   },
   "presets": {
     "Broadcast": {

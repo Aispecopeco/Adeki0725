@@ -469,6 +469,8 @@
       {%- render 'nav-item', link: link, index: forloop.index, highlight_item: highlight_item -%}
     {%- endfor -%}
 
+    {%- render 'ta-vie-page-links', location: 'desktop', menu_links: linklists[main_menu_linklist].links -%}
+
     <div class="hover__bar"></div>
 
     <div class="hover__bg"></div>

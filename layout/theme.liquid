@@ -38,6 +38,9 @@
       <!-- CONTENT -->
       <main role="main" id="MainContent" class="main-content">
         {{ content_for_layout }}
+        {%- if request.page_type == 'index' -%}
+          {%- render 'ta-vie-page-links', location: 'home' -%}
+        {%- endif -%}
       </main>
     </div>
 
