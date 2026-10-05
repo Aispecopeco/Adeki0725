@@ -2,13 +2,13 @@
   "theme": "Broadcast",
   "version": "8.1.1",
   "brand": "TA VIE",
-  "revision": "Match color scheme IDs across all five presets; preserve current homepage typography",
+  "revision": "Restore existing blog and FAQ links on home and native desktop/mobile navigation",
   "comparison": "Re-uploaded original ZIP; identical to the earlier original",
-  "changed_theme_files": 77,
+  "changed_theme_files": 79,
   "files": [
     {
       "path": "config/settings_data.json",
-      "scope": "Preserve existing values while normalizing their storage; add homepage controls and palettes",
+      "scope": "Preserve existing values while normalizing their storage; add homepage and navigation controls and matching preset palettes",
       "changes": [
         {
           "path": "/current",
@@ -397,6 +397,16 @@
           "new": "empty-cart-navigation"
         },
         {
+          "path": "/current/ta_vie_blog_label",
+          "operation": "add",
+          "new": "読みもの"
+        },
+        {
+          "path": "/current/ta_vie_faq_label",
+          "operation": "add",
+          "new": "よくあるご質問"
+        },
+        {
           "path": "/current/ta_vie_home_body_line_height",
           "operation": "add",
           "new": 1.9
@@ -412,9 +422,19 @@
           "new": "serif"
         },
         {
+          "path": "/current/ta_vie_home_links",
+          "operation": "add",
+          "new": true
+        },
+        {
           "path": "/current/ta_vie_home_subheading_size",
           "operation": "add",
           "new": 12
+        },
+        {
+          "path": "/current/ta_vie_navigation_links",
+          "operation": "add",
+          "new": true
         },
         {
           "path": "/presets/Airwave/color_schemes/scheme-tavie-soft",
@@ -705,12 +725,57 @@
               }
             ]
           }
+        },
+        {
+          "path": "/17",
+          "operation": "add",
+          "new": {
+            "name": "TA VIE｜ページへのリンク",
+            "settings": [
+              {
+                "type": "checkbox",
+                "id": "ta_vie_navigation_links",
+                "label": "メニューにブログ・FAQを表示",
+                "default": true
+              },
+              {
+                "type": "checkbox",
+                "id": "ta_vie_home_links",
+                "label": "ホームにブログ・FAQのボタンを表示",
+                "default": true
+              },
+              {
+                "type": "blog",
+                "id": "ta_vie_blog",
+                "label": "読みもののブログ",
+                "info": "既存のブログを選択します。未選択時は、記事のあるnewsブログがあれば使用します。"
+              },
+              {
+                "type": "page",
+                "id": "ta_vie_faq_page",
+                "label": "FAQページ",
+                "info": "既存のFAQページを選択します。未選択時はfaqページ、またはfaqテンプレートを使うページを探します。"
+              },
+              {
+                "type": "text",
+                "id": "ta_vie_blog_label",
+                "label": "ブログへのリンク名",
+                "default": "読みもの"
+              },
+              {
+                "type": "text",
+                "id": "ta_vie_faq_label",
+                "label": "FAQへのリンク名",
+                "default": "よくあるご質問"
+              }
+            ]
+          }
         }
       ]
     },
     {
       "path": "layout/theme.liquid",
-      "diff": "--- original/layout/theme.liquid\n+++ edited/layout/theme.liquid\n@@ -2,6 +2,17 @@\n <html class=\"no-touch supports-no-cookies\" lang=\"{{ request.locale.iso_code }}\">\n   <head>\n     {%- render 'head' -%}\n+    {%- if request.page_type == 'index' -%}\n+      {%- render 'ta-vie-home-typography' -%}\n+      <noscript>\n+        <style>\n+          body.template-index #MainContent [data-aos] {\n+            opacity: 1;\n+            transform: none;\n+          }\n+        </style>\n+      </noscript>\n+    {%- endif -%}\n \n     {{ content_for_header }}\n   </head>\n"
+      "diff": "--- original/layout/theme.liquid\n+++ edited/layout/theme.liquid\n@@ -2,6 +2,17 @@\n <html class=\"no-touch supports-no-cookies\" lang=\"{{ request.locale.iso_code }}\">\n   <head>\n     {%- render 'head' -%}\n+    {%- if request.page_type == 'index' -%}\n+      {%- render 'ta-vie-home-typography' -%}\n+      <noscript>\n+        <style>\n+          body.template-index #MainContent [data-aos] {\n+            opacity: 1;\n+            transform: none;\n+          }\n+        </style>\n+      </noscript>\n+    {%- endif -%}\n \n     {{ content_for_header }}\n   </head>\n@@ -27,6 +38,9 @@\n       <!-- CONTENT -->\n       <main role=\"main\" id=\"MainContent\" class=\"main-content\">\n         {{ content_for_layout }}\n+        {%- if request.page_type == 'index' -%}\n+          {%- render 'ta-vie-page-links', location: 'home' -%}\n+        {%- endif -%}\n       </main>\n     </div>\n \n"
     },
     {
       "path": "sections/announcement.liquid",
@@ -908,7 +973,7 @@
     },
     {
       "path": "sections/header.liquid",
-      "scope": "schema only",
+      "scope": "native navigation rendering and prior palette default correction",
       "changes": [
         {
           "path": "/blocks/1/settings/18/default",
@@ -916,7 +981,8 @@
           "old": "scheme_1",
           "new": "scheme-1"
         }
-      ]
+      ],
+      "diff": "--- original/sections/header.liquid\n+++ edited/sections/header.liquid\n@@ -469,6 +469,8 @@\n       {%- render 'nav-item', link: link, index: forloop.index, highlight_item: highlight_item -%}\n     {%- endfor -%}\n \n+    {%- render 'ta-vie-page-links', location: 'desktop', menu_links: linklists[main_menu_linklist].links -%}\n+\n     <div class=\"hover__bar\"></div>\n \n     <div class=\"hover__bg\"></div>\n@@ -1140,7 +1142,7 @@\n         {\n           \"type\": \"color_scheme\",\n           \"id\": \"color_scheme\",\n-          \"default\": \"scheme_1\",\n+          \"default\": \"scheme-1\",\n           \"label\": \"Color scheme\"\n         },\n         {\n"
     },
     {
       "path": "sections/list-collections.liquid",
@@ -944,7 +1010,7 @@
     },
     {
       "path": "sections/mobile-menu.liquid",
-      "scope": "schema only",
+      "scope": "native navigation rendering and prior palette default correction",
       "changes": [
         {
           "path": "/settings/3/default",
@@ -952,7 +1018,8 @@
           "old": "scheme_1",
           "new": "scheme-1"
         }
-      ]
+      ],
+      "diff": "--- original/sections/mobile-menu.liquid\n+++ edited/sections/mobile-menu.liquid\n@@ -387,6 +387,16 @@\n         <div class=\"drawer__content\" data-drawer-content>\n           <div class=\"drawer__content__scroll\" data-scroll-lock-scrollable>\n             {{ dynamic_blocks }}\n+            {%- capture page_links -%}\n+              {%- render 'ta-vie-page-links', location: 'mobile', menu_blocks: section.blocks -%}\n+            {%- endcapture -%}\n+            {%- if page_links != blank -%}\n+              <div class=\"mobile-menu__block mobile-menu__block--menu block-padding\" data-mobile-menu-block style=\"--block-padding-bottom: 14px;\">\n+                <nav class=\"drawer__menu\" data-sliderule-pane=\"0\" aria-label=\"読みものとご案内\">\n+                  <div class=\"drawer__main-menu body-x-large\" data-links>{{ page_links }}</div>\n+                </nav>\n+              </div>\n+            {%- endif -%}\n           </div>\n         </div>\n       </div>\n@@ -434,7 +444,7 @@\n     {\n       \"type\": \"color_scheme\",\n       \"id\": \"color_scheme\",\n-      \"default\": \"scheme_1\",\n+      \"default\": \"scheme-1\",\n       \"label\": \"Color scheme\"\n     }\n   ],\n"
     },
     {
       "path": "sections/overlay-newsletter.liquid",
@@ -1620,6 +1687,16 @@
       "content": "{%- comment -%}\n  Editorial text in TA VIE's existing home sections only. Native section sizes,\n  buttons, product cards, navigation and animation settings stay in control.\n{%- endcomment -%}\n{%- liquid\n  assign ta_vie_heading_style = settings.ta_vie_home_heading_style | default: 'serif'\n  assign ta_vie_heading_spacing = settings.ta_vie_home_heading_spacing | default: 5 | divided_by: 100.0\n  assign ta_vie_body_line_height = settings.ta_vie_home_body_line_height | default: 1.9\n  assign ta_vie_subheading_size = settings.ta_vie_home_subheading_size | default: 12\n  assign ta_vie_body_family = settings.type_base_font.family | default: 'DM Sans'\n  assign ta_vie_section_ids = 'section_slideshow_nested_YfkG44,section_text_with_products_yW3LJx,columns-1,double,custom-content-1,announcement-3,section_dynamic_content_TkrMUq,columns-2,section_hero_scrolling_mmThBz' | split: ','\n-%}\n\n{%- capture ta_vie_sections -%}\n  {%- for ta_vie_section_id in ta_vie_section_ids -%}\n    {%- unless forloop.first -%},{%- endunless -%}\n    [data-section-id=\"{{ ta_vie_section_id }}\"],[data-section-id$=\"__{{ ta_vie_section_id }}\"]\n  {%- endfor -%}\n{%- endcapture -%}\n{%- capture ta_vie_scope -%}body.template-index #MainContent :is({{ ta_vie_sections }}){%- endcapture -%}\n\n{%- style -%}\n  {{ ta_vie_scope }} :is(\n    .hero__title,\n    .column__heading,\n    .text-products__heading,\n    .grid__heading,\n    .announcement__slide .font-heading,\n    .announcement__content\n  ):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    {%- unless ta_vie_heading_style == 'theme' %}\n      {%- if ta_vie_heading_style == 'sans' %}\n        font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n      {%- else %}\n        font-family: Georgia, \"Times New Roman\", \"Yu Mincho\", YuMincho, \"Hiragino Mincho ProN\", \"Noto Serif CJK JP\", serif;\n      {%- endif %}\n      font-weight: 400;\n      font-style: normal;\n      text-transform: none;\n    {%- endunless %}\n    letter-spacing: {{ ta_vie_heading_spacing }}em;\n    line-height: 1.55;\n    text-wrap: balance;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n    font-weight: 400;\n    font-style: normal;\n    line-height: {{ ta_vie_body_line_height }};\n    text-wrap: pretty;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) > p {\n    line-height: inherit;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__subheading, .subheading):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n    font-size: {{ ta_vie_subheading_size }}px;\n    font-weight: 400;\n    font-style: normal;\n    letter-spacing: 0.12em;\n    line-height: 1.6;\n    text-transform: none;\n  }\n{%- endstyle -%}\n"
     },
     {
+      "path": "snippets/ta-vie-menu-destinations.liquid",
+      "operation": "add",
+      "content": "{%- doc -%}\n  Collect menu destinations, including nested links, to avoid duplicate navigation.\n  @param {link[]} [links] - Existing menu links.\n{%- enddoc -%}\n{%- for menu_link in links -%}\n  |{{- menu_link.url -}}|\n  {%- if menu_link.type == 'page_link' or menu_link.type == 'blog_link' -%}\n    |{{- menu_link.type -}}:{{- menu_link.object.id -}}|\n  {%- endif -%}\n  {%- if menu_link.links.size > 0 -%}\n    {%- render 'ta-vie-menu-destinations', links: menu_link.links -%}\n  {%- endif -%}\n{%- endfor -%}\n"
+    },
+    {
+      "path": "snippets/ta-vie-page-links.liquid",
+      "operation": "add",
+      "content": "{%- doc -%}\n  Existing blog and FAQ destinations shared by desktop, mobile and home.\n  @param {string} location - desktop, mobile or home.\n  @param {link[]} [menu_links] - Existing desktop menu links.\n  @param {block[]} [menu_blocks] - Existing mobile menu blocks.\n{%- enddoc -%}\n{%- liquid\n  assign navigation_enabled = settings.ta_vie_navigation_links | default: true, allow_false: true\n  assign home_enabled = settings.ta_vie_home_links | default: true, allow_false: true\n  assign show_links = navigation_enabled\n  if location == 'home'\n    assign show_links = home_enabled\n  endif\n\n  assign reading_blog = settings.ta_vie_blog\n  if reading_blog != blank and reading_blog.url == blank\n    assign reading_blog = blogs[settings.ta_vie_blog]\n  endif\n  if settings.ta_vie_blog == blank and blogs.news.articles_count > 0\n    assign reading_blog = blogs.news\n  endif\n\n  assign faq_page = settings.ta_vie_faq_page\n  if faq_page != blank and faq_page.url == blank\n    assign faq_page = pages[settings.ta_vie_faq_page]\n  endif\n  if settings.ta_vie_faq_page == blank\n    assign faq_page = pages.faq\n    if faq_page.url == blank\n      for candidate in pages limit: 50\n        if candidate.template_suffix == 'faq' and candidate.url != blank\n          assign faq_page = candidate\n          break\n        endif\n      endfor\n    endif\n  endif\n\n  capture existing_destinations\n    render 'ta-vie-menu-destinations', links: menu_links\n    for menu_block in menu_blocks\n      if menu_block.type == 'menu' or menu_block.type == 'menu-columns'\n        assign menu_handle = menu_block.settings.mobile_menu_linklist | default: 'main-menu'\n        render 'ta-vie-menu-destinations', links: linklists[menu_handle].links\n      endif\n    endfor\n  endcapture\n\n  assign destinations = 'blog,faq' | split: ','\n-%}\n{%- capture links_markup -%}\n  {%- if show_links -%}\n    {%- for destination in destinations -%}\n      {%- liquid\n        if destination == 'blog'\n          assign resource = reading_blog\n          assign link_label = settings.ta_vie_blog_label | default: '読みもの'\n          assign resource_type = 'blog_link'\n        else\n          assign resource = faq_page\n          assign link_label = settings.ta_vie_faq_label | default: 'よくあるご質問'\n          assign resource_type = 'page_link'\n        endif\n\n        assign already_linked = false\n        capture url_token\n          echo '|' | append: resource.url | append: '|'\n        endcapture\n        capture id_token\n          echo '|' | append: resource_type | append: ':' | append: resource.id | append: '|'\n        endcapture\n        if location != 'home'\n          if existing_destinations contains url_token\n            assign already_linked = true\n          elsif resource.id != blank and existing_destinations contains id_token\n            assign already_linked = true\n          endif\n        endif\n      -%}\n      {%- if resource.url != blank and already_linked == false -%}\n        {%- case location -%}\n          {%- when 'desktop' -%}\n            <div class=\"menu__item child\">\n              <a href=\"{{ resource.url | escape }}\" data-top-link class=\"navlink navlink--toplevel\"{% if request.path == resource.url %} aria-current=\"page\"{% endif %}>\n                <span class=\"navtext\">{{ link_label | escape }}</span>\n              </a>\n            </div>\n          {%- when 'mobile' -%}\n            <div class=\"sliderule__wrapper\">\n              <div class=\"sliderow\" data-animates=\"0\" data-animation=\"drawer-items-fade\" data-animation-duration=\"500\" data-animation-delay=\"{{ forloop.index | times: 50 | plus: 250 }}\">\n                <a class=\"sliderow__title\" href=\"{{ resource.url | escape }}\"{% if request.path == resource.url %} aria-current=\"page\"{% endif %}><span>{{ link_label | escape }}</span></a>\n              </div>\n            </div>\n          {%- when 'home' -%}\n            <div class=\"hero__button\">\n              <a href=\"{{ resource.url | escape }}\" class=\"btn btn--small btn--outline btn--primary\"><span>{{ link_label | escape }}</span></a>\n            </div>\n        {%- endcase -%}\n      {%- endif -%}\n    {%- endfor -%}\n  {%- endif -%}\n{%- endcapture -%}\n{%- if links_markup != blank -%}\n  {%- if location == 'home' -%}\n    <nav class=\"wrapper--narrow section-padding text-center color-scheme-tavie-white\" style=\"--PT: 24px; --PB: 24px;\" aria-label=\"読みものとご案内\">\n      <div class=\"hero__button-group\">{{ links_markup }}</div>\n    </nav>\n  {%- else -%}\n    {{- links_markup -}}\n  {%- endif -%}\n{%- endif -%}\n"
+    },
+    {
       "path": "templates/index.json",
       "changes": [
         {
@@ -2085,5 +2162,19 @@
     "added_palette_entries": 8,
     "existing_values_changed": 0
   },
+  "navigation_links": {
+    "locations": [
+      "desktop",
+      "mobile",
+      "home"
+    ],
+    "resource_selection": "Existing blog/page pickers; only resolved resource URLs render",
+    "settings_controls": 6,
+    "new_current_display_label_values": 4,
+    "existing_menu_duplicate_check": "URL and typed page/blog ID across nested links and multiple mobile menus",
+    "native_assets_unchanged": true,
+    "shopify_resource_selection": "Required unless verified existing fallback resolves; live selection unverified"
+  },
+  "shopify_settings_file_saved_commit": "3f7e253d4fd7971f97307427dbf77106c6ca7e71",
   "shopify_editor_warning_cleared": "unverified"
 }
