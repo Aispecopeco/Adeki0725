@@ -873,6 +873,42 @@
             "overlay": "#00000033",
             "links": "#ffffff"
           }
+        },
+        "scheme-tavie-white": {
+          "settings": {
+            "section_text": "#333333",
+            "section_bg": "#ffffff",
+            "section_bg_light": "#faf8f5",
+            "section_bg_gradient": "",
+            "btn_primary_bg": "#333333",
+            "btn_primary_text": "#ffffff",
+            "btn_primary_border": "#333333",
+            "btn_secondary_bg": "#333333",
+            "btn_secondary_text": "#ffffff",
+            "btn_secondary_border": "#333333",
+            "accent": "#333333",
+            "lines_and_border": "#d8d5d0",
+            "overlay": "#00000021",
+            "links": "#333333"
+          }
+        },
+        "scheme-tavie-soft": {
+          "settings": {
+            "section_text": "#333333",
+            "section_bg": "#faf8f5",
+            "section_bg_light": "#ffffff",
+            "section_bg_gradient": "",
+            "btn_primary_bg": "#333333",
+            "btn_primary_text": "#ffffff",
+            "btn_primary_border": "#333333",
+            "btn_secondary_bg": "#333333",
+            "btn_secondary_text": "#ffffff",
+            "btn_secondary_border": "#333333",
+            "accent": "#333333",
+            "lines_and_border": "#d8d5d0",
+            "overlay": "#00000021",
+            "links": "#333333"
+          }
         }
       }
     },
@@ -1136,6 +1172,42 @@
             "lines_and_border": "#343d66",
             "overlay": "#00000033",
             "links": "#282c2e"
+          }
+        },
+        "scheme-tavie-white": {
+          "settings": {
+            "section_text": "#333333",
+            "section_bg": "#ffffff",
+            "section_bg_light": "#faf8f5",
+            "section_bg_gradient": "",
+            "btn_primary_bg": "#333333",
+            "btn_primary_text": "#ffffff",
+            "btn_primary_border": "#333333",
+            "btn_secondary_bg": "#333333",
+            "btn_secondary_text": "#ffffff",
+            "btn_secondary_border": "#333333",
+            "accent": "#333333",
+            "lines_and_border": "#d8d5d0",
+            "overlay": "#00000021",
+            "links": "#333333"
+          }
+        },
+        "scheme-tavie-soft": {
+          "settings": {
+            "section_text": "#333333",
+            "section_bg": "#faf8f5",
+            "section_bg_light": "#ffffff",
+            "section_bg_gradient": "",
+            "btn_primary_bg": "#333333",
+            "btn_primary_text": "#ffffff",
+            "btn_primary_border": "#333333",
+            "btn_secondary_bg": "#333333",
+            "btn_secondary_text": "#ffffff",
+            "btn_secondary_border": "#333333",
+            "accent": "#333333",
+            "lines_and_border": "#d8d5d0",
+            "overlay": "#00000021",
+            "links": "#333333"
           }
         }
       }
@@ -1424,6 +1496,42 @@
             "overlay": "#00000033",
             "links": "#1d2226"
           }
+        },
+        "scheme-tavie-white": {
+          "settings": {
+            "section_text": "#333333",
+            "section_bg": "#ffffff",
+            "section_bg_light": "#faf8f5",
+            "section_bg_gradient": "",
+            "btn_primary_bg": "#333333",
+            "btn_primary_text": "#ffffff",
+            "btn_primary_border": "#333333",
+            "btn_secondary_bg": "#333333",
+            "btn_secondary_text": "#ffffff",
+            "btn_secondary_border": "#333333",
+            "accent": "#333333",
+            "lines_and_border": "#d8d5d0",
+            "overlay": "#00000021",
+            "links": "#333333"
+          }
+        },
+        "scheme-tavie-soft": {
+          "settings": {
+            "section_text": "#333333",
+            "section_bg": "#faf8f5",
+            "section_bg_light": "#ffffff",
+            "section_bg_gradient": "",
+            "btn_primary_bg": "#333333",
+            "btn_primary_text": "#ffffff",
+            "btn_primary_border": "#333333",
+            "btn_secondary_bg": "#333333",
+            "btn_secondary_text": "#ffffff",
+            "btn_secondary_border": "#333333",
+            "accent": "#333333",
+            "lines_and_border": "#d8d5d0",
+            "overlay": "#00000021",
+            "links": "#333333"
+          }
         }
       }
     },
@@ -1697,6 +1805,42 @@
             "lines_and_border": "#020e51",
             "overlay": "#00000036",
             "links": "#020e51"
+          }
+        },
+        "scheme-tavie-white": {
+          "settings": {
+            "section_text": "#333333",
+            "section_bg": "#ffffff",
+            "section_bg_light": "#faf8f5",
+            "section_bg_gradient": "",
+            "btn_primary_bg": "#333333",
+            "btn_primary_text": "#ffffff",
+            "btn_primary_border": "#333333",
+            "btn_secondary_bg": "#333333",
+            "btn_secondary_text": "#ffffff",
+            "btn_secondary_border": "#333333",
+            "accent": "#333333",
+            "lines_and_border": "#d8d5d0",
+            "overlay": "#00000021",
+            "links": "#333333"
+          }
+        },
+        "scheme-tavie-soft": {
+          "settings": {
+            "section_text": "#333333",
+            "section_bg": "#faf8f5",
+            "section_bg_light": "#ffffff",
+            "section_bg_gradient": "",
+            "btn_primary_bg": "#333333",
+            "btn_primary_text": "#ffffff",
+            "btn_primary_border": "#333333",
+            "btn_secondary_bg": "#333333",
+            "btn_secondary_text": "#ffffff",
+            "btn_secondary_border": "#333333",
+            "accent": "#333333",
+            "lines_and_border": "#d8d5d0",
+            "overlay": "#00000021",
+            "links": "#333333"
           }
         }
       }
