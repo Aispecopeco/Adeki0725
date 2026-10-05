@@ -9,6 +9,8 @@ Broadcast 8.1.1 のトップページ文言・配色・余白を修正した納�
 
 テーマ ZIP のリンクを開き、ファイル画面の **Download raw file（ダウンロード）** を選んでください。リポジトリの **Code → Download ZIP** は説明書を含む別の ZIP なので、Shopify 用には上記のテーマ ZIP を使います。
 
+GitHub連携でShopifyに取り込む場合は、テーマの全ソースを直下に配置した [ta-vie-shopify-20261005 ブランチ](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-shopify-20261005) を選んでください。そこに `config/settings_data.json` と `config/settings_schema.json` の両方があります。未公開テーマでの確認手順は説明書に記載しています。
+
 正式商品・商品写真・ブログが未確認のため、その欄は非表示で準備しています。既存ロゴと購入処理は保持しました。本番への反映・公開は実施していません。アップロード前に、反映手順に沿って最新テーマとの設定差分を確認してください。
 
 ## 本文のローカル表示

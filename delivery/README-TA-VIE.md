@@ -1,6 +1,6 @@
 # TA VIE｜Broadcast 修正テーマの引き継ぎ
 
-納品物は `TA-VIE-Broadcast-8.1.1-edited.zip`、この変更・反映手順、検証結果 `validation.md` です。対象7ファイルの変更キー・変更前後・差分は `changes.json`、ZIPの確認用ハッシュは `SHA256SUMS.txt` に記録しています。ZIPは通常のShopifyテーマ構成で、元ZIP・バックアップ・この説明書を含めません。
+納品物は `TA-VIE-Broadcast-8.1.1-edited.zip`、この変更・反映手順、検証結果 `validation.md` です。対象8ファイルの変更キー・変更前後・差分は `changes.json`、ZIPの確認用ハッシュは `SHA256SUMS.txt` に記録しています。ZIPは通常のShopifyテーマ構成で、元ZIP・バックアップ・この説明書を含めません。
 
 対象は提供された **Broadcast 8.1.1** のエクスポート（ファイル名の日付：2026年10月4日）です。ストアの最終編集後の最新版であることは確認できていません。下記の整合性確認を行ってから、同じストアの未公開テーマで確認してください。本番テーマへの上書き、テーマ公開、商品・ブログ・ストア設定の更新は実施していません。
 
@@ -14,11 +14,24 @@
 | `assets/ta-vie-home.css` | 追加したホームセクションに限定して日本語の行間・折り返しとスマホの余白を調整。本文をアニメーションの終了前から読める表示に補正。商品欄は見出し・説明文とスマホの列数だけを補正し、文字色・商品カード・購入ボタンは変更しない。 |
 | `layout/theme.liquid` | 追加CSSをホームページでのみ読み込む。 |
 | `config/settings_data.json` | ホーム用の白／淡いオフホワイトのカラースキームを2つ追加。元からある設定・配色は保持。 |
+| `config/settings_schema.json` | 配色グループの既存定義・役割を維持し、既定の配色IDを実在する `scheme-1` へ合わせる。 |
 | `sections/group-header.json` | ジュエリー用のメニュー画像文言とモバイルメニュー内の英語文言を変更。既存メニュー・ロゴ・リンク参照・機能は保持。 |
 | `sections/group-footer.json` | 既存メール登録欄の見出し・説明・ボタンの3文言を日本語に変更。登録フォームの仕組みは保持。 |
 | `sections/group-pre-footer.json` | 既存の非表示ブロックしかないメール欄をセクションごと非表示にし、原稿から割引の約束を除去。 |
 
-`config/settings_data.json` の既存設定値と配色を維持し、ルートと `presets.Broadcast` の配色設定にホーム用2スキームを追加しています。`current` がプリセット名 `Broadcast` を参照する構造は維持しました。既存IDと対象外の設定、Shopify画像参照は保持しています。ヘッダーとフッターのTA VIEロゴ参照2点もそのままです。購入フォーム・購入用JS・決済・在庫・価格・バリエーション処理、SEOメタ情報・canonical・商品構造化データは変更していません。
+`config/settings_data.json` の既存設定値と配色を維持し、ルートと `presets.Broadcast` の配色設定にホーム用2スキームを追加しています。`current` がプリセット名 `Broadcast` を参照する構造は維持しました。`settings_schema.json` の `color_scheme_group` は既存の定義・役割を使用し、既定値だけ `scheme_1` から保存済みIDの `scheme-1` に修正しました。既存IDと対象外の設定、Shopify画像参照は保持しています。ヘッダーとフッターのTA VIEロゴ参照2点もそのままです。購入フォーム・購入用JS・決済・在庫・価格・バリエーション処理、SEOメタ情報・canonical・商品構造化データは変更していません。
+
+## GitHub連携で使う場合
+
+ZIPと説明書を置いた納品用ブランチには、テーマの `config/` や `layout/` が直下にありません。ShopifyにGitHub連携する場合は、テーマの全ソースを通常の階層で配置した **`ta-vie-shopify-20261005`** ブランチを選びます。
+
+- `config/settings_schema.json`：配色項目と役割の定義。
+- `config/settings_data.json`：各配色の値と現在のプリセット。
+- `templates/index.json`：ホームの配色選択。
+
+「オンラインストア → テーマ → テーマを追加 → GitHubから接続」で、`Aispecopeco/Adeki0725` と上記のブランチを選び、作成される未公開テーマで確認します。提供ZIPが最新かどうかの照合は、GitHub連携の場合も必要です。既存の公開テーマへ接続し直す操作やテーマ公開は今回実施していません。
+
+ZIPのアップロードでは、GitHubのリポジトリ全体のZIPではなく、納品の `TA-VIE-Broadcast-8.1.1-edited.zip` を使ってください。両設定ファイルはテーマZIP内の `config/` に含まれています。Shopify上の配色プレビューはまだ未確認です。
 
 ## Shopifyの編集画面で調整する場所
 
