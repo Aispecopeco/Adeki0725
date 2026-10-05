@@ -1648,5 +1648,51 @@
         "info": "Use comma to separate the collections"
       }
     ]
+  },
+  {
+    "name": "TA VIE｜ホームの文字",
+    "settings": [
+      {
+        "type": "select",
+        "id": "ta_vie_home_heading_style",
+        "label": "見出しの書体",
+        "info": "ホームのブランド文章だけに適用します。システム書体は端末によって表示が異なります。",
+        "options": [
+          { "value": "serif", "label": "明朝・セリフ" },
+          { "value": "sans", "label": "ゴシック・サンセリフ" },
+          { "value": "theme", "label": "Broadcastの設定を使う" }
+        ],
+        "default": "serif"
+      },
+      {
+        "type": "range",
+        "id": "ta_vie_home_heading_spacing",
+        "label": "見出しの字間",
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "unit": "%",
+        "default": 5
+      },
+      {
+        "type": "range",
+        "id": "ta_vie_home_body_line_height",
+        "label": "本文の行間",
+        "min": 1.5,
+        "max": 2.2,
+        "step": 0.1,
+        "default": 1.9
+      },
+      {
+        "type": "range",
+        "id": "ta_vie_home_subheading_size",
+        "label": "小見出しの文字サイズ",
+        "min": 10,
+        "max": 16,
+        "step": 1,
+        "unit": "px",
+        "default": 12
+      }
+    ]
   }
 ]

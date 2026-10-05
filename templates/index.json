@@ -234,9 +234,9 @@
         "heading": "家で過ごす時間を、 自分のために。",
         "image_border_radius": 20,
         "width": "wrapper--full-padded",
-        "text_font_size_px_desktop": 32,
+        "text_font_size_px_desktop": 28,
         "text_align_desktop": "text-center",
-        "text_font_size_px_mobile": 26,
+        "text_font_size_px_mobile": 24,
         "text_align_mobile": "text-left--mobile",
         "color_scheme": "",
         "padding_top": 60,
@@ -983,7 +983,7 @@
               "type": "heading",
               "settings": {
                 "text": "家での時間を、大切に。",
-                "heading_font_size": "heading-x-large",
+                "heading_font_size": "heading-medium",
                 "color": "",
                 "heading_tag": "automatic",
                 "padding_bottom": 8
@@ -1033,7 +1033,7 @@
               "type": "heading",
               "settings": {
                 "text": "家での時間を、大切に。",
-                "heading_font_size": "heading-x-large",
+                "heading_font_size": "heading-medium",
                 "color": "",
                 "heading_tag": "automatic",
                 "padding_bottom": 8
@@ -1450,10 +1450,10 @@
         "marquee_speed": 150,
         "flex_align": "align--bottom-center",
         "type_font": "bricolage_grotesque_n8",
-        "text_font_size_px": 90,
-        "mobile_text_font_size_px": 16,
+        "text_font_size_px": 44,
+        "mobile_text_font_size_px": 28,
         "type_letter_spacing": 0,
-        "type_font_caps": true,
+        "type_font_caps": false,
         "scrolling_align": "align--middle-center",
         "direction": "ticker-rtl",
         "height": "screen-height-three-quarters",
