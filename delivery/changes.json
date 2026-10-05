@@ -2,7 +2,7 @@
   "theme": "Broadcast",
   "version": "8.1.1",
   "brand": "TA VIE",
-  "revision": "Explicit current color schemes and homepage editorial typography",
+  "revision": "Match color scheme IDs across all five presets; preserve current homepage typography",
   "comparison": "Re-uploaded original ZIP; identical to the earlier original",
   "changed_theme_files": 77,
   "files": [
@@ -417,6 +417,50 @@
           "new": 12
         },
         {
+          "path": "/presets/Airwave/color_schemes/scheme-tavie-soft",
+          "operation": "add",
+          "new": {
+            "settings": {
+              "section_text": "#333333",
+              "section_bg": "#faf8f5",
+              "section_bg_light": "#ffffff",
+              "section_bg_gradient": "",
+              "btn_primary_bg": "#333333",
+              "btn_primary_text": "#ffffff",
+              "btn_primary_border": "#333333",
+              "btn_secondary_bg": "#333333",
+              "btn_secondary_text": "#ffffff",
+              "btn_secondary_border": "#333333",
+              "accent": "#333333",
+              "lines_and_border": "#d8d5d0",
+              "overlay": "#00000021",
+              "links": "#333333"
+            }
+          }
+        },
+        {
+          "path": "/presets/Airwave/color_schemes/scheme-tavie-white",
+          "operation": "add",
+          "new": {
+            "settings": {
+              "section_text": "#333333",
+              "section_bg": "#ffffff",
+              "section_bg_light": "#faf8f5",
+              "section_bg_gradient": "",
+              "btn_primary_bg": "#333333",
+              "btn_primary_text": "#ffffff",
+              "btn_primary_border": "#333333",
+              "btn_secondary_bg": "#333333",
+              "btn_secondary_text": "#ffffff",
+              "btn_secondary_border": "#333333",
+              "accent": "#333333",
+              "lines_and_border": "#d8d5d0",
+              "overlay": "#00000021",
+              "links": "#333333"
+            }
+          }
+        },
+        {
           "path": "/presets/Broadcast/color_schemes/scheme-tavie-soft",
           "operation": "add",
           "new": {
@@ -440,6 +484,138 @@
         },
         {
           "path": "/presets/Broadcast/color_schemes/scheme-tavie-white",
+          "operation": "add",
+          "new": {
+            "settings": {
+              "section_text": "#333333",
+              "section_bg": "#ffffff",
+              "section_bg_light": "#faf8f5",
+              "section_bg_gradient": "",
+              "btn_primary_bg": "#333333",
+              "btn_primary_text": "#ffffff",
+              "btn_primary_border": "#333333",
+              "btn_secondary_bg": "#333333",
+              "btn_secondary_text": "#ffffff",
+              "btn_secondary_border": "#333333",
+              "accent": "#333333",
+              "lines_and_border": "#d8d5d0",
+              "overlay": "#00000021",
+              "links": "#333333"
+            }
+          }
+        },
+        {
+          "path": "/presets/Motif/color_schemes/scheme-tavie-soft",
+          "operation": "add",
+          "new": {
+            "settings": {
+              "section_text": "#333333",
+              "section_bg": "#faf8f5",
+              "section_bg_light": "#ffffff",
+              "section_bg_gradient": "",
+              "btn_primary_bg": "#333333",
+              "btn_primary_text": "#ffffff",
+              "btn_primary_border": "#333333",
+              "btn_secondary_bg": "#333333",
+              "btn_secondary_text": "#ffffff",
+              "btn_secondary_border": "#333333",
+              "accent": "#333333",
+              "lines_and_border": "#d8d5d0",
+              "overlay": "#00000021",
+              "links": "#333333"
+            }
+          }
+        },
+        {
+          "path": "/presets/Motif/color_schemes/scheme-tavie-white",
+          "operation": "add",
+          "new": {
+            "settings": {
+              "section_text": "#333333",
+              "section_bg": "#ffffff",
+              "section_bg_light": "#faf8f5",
+              "section_bg_gradient": "",
+              "btn_primary_bg": "#333333",
+              "btn_primary_text": "#ffffff",
+              "btn_primary_border": "#333333",
+              "btn_secondary_bg": "#333333",
+              "btn_secondary_text": "#ffffff",
+              "btn_secondary_border": "#333333",
+              "accent": "#333333",
+              "lines_and_border": "#d8d5d0",
+              "overlay": "#00000021",
+              "links": "#333333"
+            }
+          }
+        },
+        {
+          "path": "/presets/Relay/color_schemes/scheme-tavie-soft",
+          "operation": "add",
+          "new": {
+            "settings": {
+              "section_text": "#333333",
+              "section_bg": "#faf8f5",
+              "section_bg_light": "#ffffff",
+              "section_bg_gradient": "",
+              "btn_primary_bg": "#333333",
+              "btn_primary_text": "#ffffff",
+              "btn_primary_border": "#333333",
+              "btn_secondary_bg": "#333333",
+              "btn_secondary_text": "#ffffff",
+              "btn_secondary_border": "#333333",
+              "accent": "#333333",
+              "lines_and_border": "#d8d5d0",
+              "overlay": "#00000021",
+              "links": "#333333"
+            }
+          }
+        },
+        {
+          "path": "/presets/Relay/color_schemes/scheme-tavie-white",
+          "operation": "add",
+          "new": {
+            "settings": {
+              "section_text": "#333333",
+              "section_bg": "#ffffff",
+              "section_bg_light": "#faf8f5",
+              "section_bg_gradient": "",
+              "btn_primary_bg": "#333333",
+              "btn_primary_text": "#ffffff",
+              "btn_primary_border": "#333333",
+              "btn_secondary_bg": "#333333",
+              "btn_secondary_text": "#ffffff",
+              "btn_secondary_border": "#333333",
+              "accent": "#333333",
+              "lines_and_border": "#d8d5d0",
+              "overlay": "#00000021",
+              "links": "#333333"
+            }
+          }
+        },
+        {
+          "path": "/presets/Stellar/color_schemes/scheme-tavie-soft",
+          "operation": "add",
+          "new": {
+            "settings": {
+              "section_text": "#333333",
+              "section_bg": "#faf8f5",
+              "section_bg_light": "#ffffff",
+              "section_bg_gradient": "",
+              "btn_primary_bg": "#333333",
+              "btn_primary_text": "#ffffff",
+              "btn_primary_border": "#333333",
+              "btn_secondary_bg": "#333333",
+              "btn_secondary_text": "#ffffff",
+              "btn_secondary_border": "#333333",
+              "accent": "#333333",
+              "lines_and_border": "#d8d5d0",
+              "overlay": "#00000021",
+              "links": "#333333"
+            }
+          }
+        },
+        {
+          "path": "/presets/Stellar/color_schemes/scheme-tavie-white",
           "operation": "add",
           "new": {
             "settings": {
@@ -1892,9 +2068,22 @@
   ],
   "current_settings_migration": {
     "old_root_values_preserved": 66,
-    "presets_unchanged_vs_previous_delivery": 5,
+    "existing_preset_values_preserved": 5,
     "explicit_current_color_schemes": 13,
     "metadata_preserved": true
+  },
+  "preset_color_scheme_fix": {
+    "trigger": "FileSaveError: preset Relay requires the same color scheme IDs in every preset",
+    "matching_preset_id_sets": 5,
+    "color_scheme_ids_per_preset": 13,
+    "extended_presets": [
+      "Relay",
+      "Airwave",
+      "Motif",
+      "Stellar"
+    ],
+    "added_palette_entries": 8,
+    "existing_values_changed": 0
   },
   "shopify_editor_warning_cleared": "unverified"
 }
