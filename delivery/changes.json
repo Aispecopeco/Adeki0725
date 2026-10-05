@@ -1,0 +1,642 @@
+{
+  "theme": "Broadcast",
+  "version": "8.1.1",
+  "files": [
+    {
+      "file": "config/settings_data.json",
+      "status": "modified",
+      "sha256": "5182c877a0b29c1334fd4212c2b91afbd5cb05b65abd4aded0fbb327d73afe77",
+      "original_sha256": "0770f6f12cdb14a14e5fe3c1c2ebeaddff7a5f660040f7a4bfa964471407c004",
+      "changes": [
+        {
+          "path": "/color_schemes/scheme-tavie-soft",
+          "operation": "add",
+          "new": {
+            "settings": {
+              "section_text": "#333333",
+              "section_bg": "#faf8f5",
+              "section_bg_light": "#ffffff",
+              "section_bg_gradient": "",
+              "btn_primary_bg": "#333333",
+              "btn_primary_text": "#ffffff",
+              "btn_primary_border": "#333333",
+              "btn_secondary_bg": "#333333",
+              "btn_secondary_text": "#ffffff",
+              "btn_secondary_border": "#333333",
+              "accent": "#333333",
+              "lines_and_border": "#d8d5d0",
+              "overlay": "#00000021",
+              "links": "#333333"
+            }
+          }
+        },
+        {
+          "path": "/color_schemes/scheme-tavie-white",
+          "operation": "add",
+          "new": {
+            "settings": {
+              "section_text": "#333333",
+              "section_bg": "#ffffff",
+              "section_bg_light": "#faf8f5",
+              "section_bg_gradient": "",
+              "btn_primary_bg": "#333333",
+              "btn_primary_text": "#ffffff",
+              "btn_primary_border": "#333333",
+              "btn_secondary_bg": "#333333",
+              "btn_secondary_text": "#ffffff",
+              "btn_secondary_border": "#333333",
+              "accent": "#333333",
+              "lines_and_border": "#d8d5d0",
+              "overlay": "#00000021",
+              "links": "#333333"
+            }
+          }
+        },
+        {
+          "path": "/presets/Broadcast/color_schemes/scheme-tavie-soft",
+          "operation": "add",
+          "new": {
+            "settings": {
+              "section_text": "#333333",
+              "section_bg": "#faf8f5",
+              "section_bg_light": "#ffffff",
+              "section_bg_gradient": "",
+              "btn_primary_bg": "#333333",
+              "btn_primary_text": "#ffffff",
+              "btn_primary_border": "#333333",
+              "btn_secondary_bg": "#333333",
+              "btn_secondary_text": "#ffffff",
+              "btn_secondary_border": "#333333",
+              "accent": "#333333",
+              "lines_and_border": "#d8d5d0",
+              "overlay": "#00000021",
+              "links": "#333333"
+            }
+          }
+        },
+        {
+          "path": "/presets/Broadcast/color_schemes/scheme-tavie-white",
+          "operation": "add",
+          "new": {
+            "settings": {
+              "section_text": "#333333",
+              "section_bg": "#ffffff",
+              "section_bg_light": "#faf8f5",
+              "section_bg_gradient": "",
+              "btn_primary_bg": "#333333",
+              "btn_primary_text": "#ffffff",
+              "btn_primary_border": "#333333",
+              "btn_secondary_bg": "#333333",
+              "btn_secondary_text": "#ffffff",
+              "btn_secondary_border": "#333333",
+              "accent": "#333333",
+              "lines_and_border": "#d8d5d0",
+              "overlay": "#00000021",
+              "links": "#333333"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "file": "layout/theme.liquid",
+      "status": "modified",
+      "sha256": "c5c59a477a09acf48dc93617bb3285bc591d6e842e418bfb025d22784934ec8a",
+      "original_sha256": "de790b518dfffc79b6ce0fdcd3e0ad7304374fc100265136c093c4b9215fd5fa",
+      "patch": "--- original/layout/theme.liquid\n+++ edited/layout/theme.liquid\n@@ -2,6 +2,10 @@\n <html class=\"no-touch supports-no-cookies\" lang=\"{{ request.locale.iso_code }}\">\n   <head>\n     {%- render 'head' -%}\n+\n+    {%- if template.name == 'index' -%}\n+      {{ 'ta-vie-home.css' | asset_url | stylesheet_tag }}\n+    {%- endif -%}\n \n     {{ content_for_header }}\n   </head>\n"
+    },
+    {
+      "file": "sections/group-footer.json",
+      "status": "modified",
+      "sha256": "1465ea74aee1756c4e028fcf229b73b833ea880103bfeaaf4d45dff4d9c9e8b1",
+      "original_sha256": "339f6fb63ed9e9538f44a4a1c5ef057f4d84d85ebbdb80e553c4b05dff88f36d",
+      "changes": [
+        {
+          "path": "/sections/footer/blocks/footer-0/settings/button_text",
+          "operation": "replace",
+          "old": "Join",
+          "new": "登録する"
+        },
+        {
+          "path": "/sections/footer/blocks/footer-0/settings/text",
+          "operation": "replace",
+          "old": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>",
+          "new": "<p>新作と、暮らしの読みものをお届けします。</p>"
+        },
+        {
+          "path": "/sections/footer/blocks/footer-0/settings/title",
+          "operation": "replace",
+          "old": "Stay in Touch",
+          "new": "お知らせを受け取る"
+        }
+      ]
+    },
+    {
+      "file": "sections/group-header.json",
+      "status": "modified",
+      "sha256": "3c34141b3fc1f32ff976ecb2d227092964f638ed00bd413b6bde039f1f301477",
+      "original_sha256": "666499a4492d77ac52fc3a452301737a607b4bbf6b7616000feaa41073867fa1",
+      "changes": [
+        {
+          "path": "/sections/header/blocks/image_h9afhK/settings/title",
+          "operation": "replace",
+          "old": "Shop Gemstone Collection",
+          "new": "ルームウェア"
+        },
+        {
+          "path": "/sections/mobile_menu_kMYLiQ/blocks/text_wqL6bX/settings/text",
+          "operation": "replace",
+          "old": "Shop our new arrivals:",
+          "new": "ルームウェアを見る"
+        }
+      ]
+    },
+    {
+      "file": "sections/group-pre-footer.json",
+      "status": "modified",
+      "sha256": "a4ec11c8186063041f19c17242e95963427c0b15c75ef70706f9f422cb80bd42",
+      "original_sha256": "d3f1146f23bbb2c936e328494cddc409c8fa2f4fc1e841c29628e99fabf31a0a",
+      "changes": [
+        {
+          "path": "/sections/section-newsletter/blocks/newsletter-0/settings/title",
+          "operation": "replace",
+          "old": "Join Our Newsletter",
+          "new": "TA VIEからのお知らせ"
+        },
+        {
+          "path": "/sections/section-newsletter/blocks/newsletter-1/settings/text",
+          "operation": "replace",
+          "old": "<p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>",
+          "new": "<p>新作と、暮らしの読みものをお届けします。</p>"
+        },
+        {
+          "path": "/sections/section-newsletter/disabled",
+          "operation": "add",
+          "new": true
+        }
+      ]
+    },
+    {
+      "file": "templates/index.json",
+      "status": "modified",
+      "sha256": "68efbaa3c20a04b8ad43482a71d8e30b2e010c229e363f48036d456ed8ec4bef",
+      "original_sha256": "c533dddc5f7534aa9340ca61a5c47d8ad9b6df9bec2e1b727a0b2fe4cc759afe",
+      "changes": [
+        {
+          "path": "/order",
+          "operation": "replace",
+          "old": [
+            "section_slideshow_nested_YfkG44",
+            "section_text_with_products_yW3LJx",
+            "columns-1",
+            "double",
+            "announcement-2",
+            "section-tab-collections",
+            "section_video_w6YfAE",
+            "press-logos",
+            "custom-content-1",
+            "collections-list-hover",
+            "announcement-3",
+            "look",
+            "section_dynamic_content_TkrMUq",
+            "section_custom_content_H4RTrx",
+            "section-product",
+            "rich-text-3",
+            "columns-2",
+            "text-row",
+            "section_hero_scrolling_mmThBz"
+          ],
+          "new": [
+            "ta_vie_intro",
+            "ta_vie_products",
+            "ta_vie_story",
+            "ta_vie_reading",
+            "ta_vie_blog",
+            "section_slideshow_nested_YfkG44",
+            "section_text_with_products_yW3LJx",
+            "columns-1",
+            "double",
+            "announcement-2",
+            "section-tab-collections",
+            "section_video_w6YfAE",
+            "press-logos",
+            "custom-content-1",
+            "collections-list-hover",
+            "announcement-3",
+            "look",
+            "section_dynamic_content_TkrMUq",
+            "section_custom_content_H4RTrx",
+            "section-product",
+            "rich-text-3",
+            "columns-2",
+            "text-row",
+            "section_hero_scrolling_mmThBz"
+          ]
+        },
+        {
+          "path": "/sections/announcement-2/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/announcement-3/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/collections-list-hover/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/columns-1/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/columns-2/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/custom-content-1/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/double/blocks/buttons_VP8YTU/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/double/blocks/buttons_VP8YTU/settings/button_text",
+          "operation": "replace",
+          "old": "Shop all products",
+          "new": "ルームウェアを見る"
+        },
+        {
+          "path": "/sections/double/blocks/heading/settings/title",
+          "operation": "replace",
+          "old": "For Everyday Wear",
+          "new": "あなたの毎日に、上質を。"
+        },
+        {
+          "path": "/sections/double/blocks/image_ycnEVH/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/double/blocks/subheading/settings/subheading",
+          "operation": "replace",
+          "old": "Trends & Tradition",
+          "new": "TA VIE"
+        },
+        {
+          "path": "/sections/double/blocks/text/settings/text",
+          "operation": "replace",
+          "old": "<p>From dainty classics that are perfect for daily adornment to chic, to trendsetting pieces designed to complement any occasion – our selection blends exquisite craftsmanship with modern sensibility.</p>",
+          "new": "<p>家で過ごす時間を、自分のために。TA VIEは、日々の暮らしを大切にするルームウェアを提案します。</p>"
+        },
+        {
+          "path": "/sections/double/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/double/settings/height",
+          "operation": "replace",
+          "old": "sixty-fifty-height-hero",
+          "new": "image-height"
+        },
+        {
+          "path": "/sections/double/settings/mobile_height",
+          "operation": "replace",
+          "old": "four-fifty-height-hero--mobile",
+          "new": "image-height--mobile"
+        },
+        {
+          "path": "/sections/double/settings/padding_bottom",
+          "operation": "replace",
+          "old": 82,
+          "new": 32
+        },
+        {
+          "path": "/sections/double/settings/padding_top",
+          "operation": "replace",
+          "old": 42,
+          "new": 32
+        },
+        {
+          "path": "/sections/double/settings/reverse_blocks",
+          "operation": "replace",
+          "old": true,
+          "new": false
+        },
+        {
+          "path": "/sections/double/settings/show_placeholder",
+          "operation": "replace",
+          "old": true,
+          "new": false
+        },
+        {
+          "path": "/sections/double/settings/text_alignment",
+          "operation": "replace",
+          "old": "text-center",
+          "new": "text-left"
+        },
+        {
+          "path": "/sections/look/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/press-logos/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/rich-text-3/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/section-tab-collections/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/section_custom_content_H4RTrx/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/section_dynamic_content_TkrMUq/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/section_hero_scrolling_mmThBz/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/section_slideshow_nested_YfkG44/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/section_text_with_products_yW3LJx/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/section_video_w6YfAE/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/ta_vie_blog",
+          "operation": "add",
+          "new": {
+            "type": "section-blog",
+            "name": "TA VIE｜記事一覧（要選択）",
+            "disabled": true,
+            "settings": {
+              "blog_name": "",
+              "title": "読みもの",
+              "heading_font_size": "heading-small",
+              "heading_tag": "h2",
+              "title_font_size": "heading-x-small",
+              "title_tag": "h3",
+              "aspect_ratio": 1,
+              "show_tags": false,
+              "show_author": false,
+              "show_date": false,
+              "show_button": true,
+              "show_comments": false,
+              "width": "wrapper--full-padded",
+              "grid": 2,
+              "rows": 1,
+              "color_scheme": "scheme-tavie-soft",
+              "padding_top": 16,
+              "padding_bottom": 40
+            }
+          }
+        },
+        {
+          "path": "/sections/ta_vie_intro",
+          "operation": "add",
+          "new": {
+            "type": "section-rich-text",
+            "name": "TA VIE｜ファーストビュー",
+            "blocks": {
+              "brand": {
+                "type": "subheading",
+                "settings": {
+                  "subheading": "TA VIE",
+                  "padding_bottom": 12
+                }
+              },
+              "heading": {
+                "type": "heading",
+                "settings": {
+                  "title": "あなたの毎日に、上質を。",
+                  "heading_font_size": "heading-medium",
+                  "heading_tag": "h1",
+                  "padding_bottom": 16
+                }
+              },
+              "text": {
+                "type": "text",
+                "settings": {
+                  "text": "<p>家で過ごす時間を、自分のために。TA VIEは、日々の暮らしを大切にするルームウェアを提案します。</p>",
+                  "text_font_size": "body-large",
+                  "padding_bottom": 0
+                }
+              },
+              "button": {
+                "type": "buttons",
+                "settings": {
+                  "button_text": "ルームウェアを見る",
+                  "button_url": "",
+                  "button_type": "btn--black",
+                  "button_size": "",
+                  "button_style": "btn--solid",
+                  "show_arrow": false,
+                  "padding_bottom": 0
+                },
+                "disabled": true
+              }
+            },
+            "block_order": [
+              "brand",
+              "heading",
+              "text",
+              "button"
+            ],
+            "settings": {
+              "align_text": "text-left",
+              "width": "wrapper--narrow",
+              "color_scheme": "scheme-tavie-white",
+              "overlay_type": "disabled",
+              "padding_top": 48,
+              "padding_bottom": 48
+            }
+          }
+        },
+        {
+          "path": "/sections/ta_vie_products",
+          "operation": "add",
+          "new": {
+            "type": "section-collection",
+            "name": "TA VIE｜ルームウェア（要選択）",
+            "disabled": true,
+            "settings": {
+              "featured_collection": "",
+              "heading": "日常に寄り添うルームウェア。",
+              "heading_font_size": "heading-small",
+              "heading_tag": "h2",
+              "description": "",
+              "text_font_size": "body-medium",
+              "layout": "center",
+              "link_text": "",
+              "link_url": "",
+              "button_type": "btn--black",
+              "button_size": "",
+              "button_style": "btn--text",
+              "show_arrow": false,
+              "layout_desktop": "grid",
+              "grid": 2,
+              "rows": 2,
+              "width": "wrapper--full-padded",
+              "layout_mobile": "1",
+              "color_scheme": "scheme-1",
+              "padding_top": 32,
+              "padding_bottom": 40
+            }
+          }
+        },
+        {
+          "path": "/sections/ta_vie_reading",
+          "operation": "add",
+          "new": {
+            "type": "section-rich-text",
+            "name": "TA VIE｜読みもの紹介（準備中）",
+            "blocks": {
+              "brand": {
+                "type": "subheading",
+                "settings": {
+                  "subheading": "TA VIE",
+                  "padding_bottom": 12
+                }
+              },
+              "heading": {
+                "type": "heading",
+                "settings": {
+                  "title": "家での時間を整える、ものと過ごし方。",
+                  "heading_font_size": "heading-small",
+                  "heading_tag": "h2",
+                  "padding_bottom": 16
+                }
+              },
+              "text": {
+                "type": "text",
+                "settings": {
+                  "text": "<p>衣服から、空間を彩るものまで。家で過ごす毎日を大切にする視点から、気になる品々と暮らしのヒントを紹介します。</p>",
+                  "text_font_size": "body-large",
+                  "padding_bottom": 0
+                }
+              },
+              "button": {
+                "type": "buttons",
+                "settings": {
+                  "button_text": "読みものを見る",
+                  "button_url": "",
+                  "button_type": "btn--black",
+                  "button_size": "",
+                  "button_style": "btn--text",
+                  "show_arrow": false,
+                  "padding_bottom": 0
+                },
+                "disabled": true
+              }
+            },
+            "block_order": [
+              "brand",
+              "heading",
+              "text",
+              "button"
+            ],
+            "settings": {
+              "align_text": "text-left",
+              "width": "wrapper--narrow",
+              "color_scheme": "scheme-tavie-white",
+              "overlay_type": "disabled",
+              "padding_top": 40,
+              "padding_bottom": 48
+            },
+            "disabled": true
+          }
+        },
+        {
+          "path": "/sections/ta_vie_story",
+          "operation": "add",
+          "new": {
+            "type": "section-rich-text",
+            "name": "TA VIE｜ブランドの考え",
+            "blocks": {
+              "brand": {
+                "type": "subheading",
+                "settings": {
+                  "subheading": "あなたのための時間",
+                  "padding_bottom": 12
+                }
+              },
+              "heading": {
+                "type": "heading",
+                "settings": {
+                  "title": "家にいる自分を、大切に。",
+                  "heading_font_size": "heading-small",
+                  "heading_tag": "h2",
+                  "padding_bottom": 16
+                }
+              },
+              "text": {
+                "type": "text",
+                "settings": {
+                  "text": "<p>朝の支度、読書をする午後、一日を終えてくつろぐ夜。</p><p>外へ出る日の装いと同じように、家で過ごす自分にも目を向ける。TA VIEは、そんな毎日を大切にするためのルームウェアを提案します。</p>",
+                  "text_font_size": "body-large",
+                  "padding_bottom": 0
+                }
+              }
+            },
+            "block_order": [
+              "brand",
+              "heading",
+              "text"
+            ],
+            "settings": {
+              "align_text": "text-left",
+              "width": "wrapper--narrow",
+              "color_scheme": "scheme-tavie-soft",
+              "overlay_type": "disabled",
+              "padding_top": 40,
+              "padding_bottom": 48
+            }
+          }
+        },
+        {
+          "path": "/sections/text-row/disabled",
+          "operation": "add",
+          "new": true
+        }
+      ]
+    },
+    {
+      "file": "assets/ta-vie-home.css",
+      "status": "added",
+      "sha256": "2ecc4ed4d5ddc66fc200c29100e5c6e446ecd44dee5804d05069520be7f2bd91",
+      "patch": "--- original/assets/ta-vie-home.css\n+++ edited/assets/ta-vie-home.css\n@@ -0,0 +1,83 @@\n+/*\n+ * TA VIE home-page additions only.\n+ * Keep Broadcast's fonts, editor-selected sizes and color schemes intact.\n+ * Product cards and purchase controls retain their native styles.\n+ * ID suffixes match the native sections created in templates/index.json.\n+ */\n+\n+body.template-index #MainContent :is(\n+  section[id$=\"ta_vie_intro\"],\n+  section[id$=\"ta_vie_story\"],\n+  section[id$=\"ta_vie_reading\"]\n+) .hero__title,\n+body.template-index #MainContent section[id$=\"ta_vie_products\"] .grid__heading,\n+body.template-index #MainContent section[id$=\"ta_vie_blog\"] .blog__title {\n+  line-height: 1.65;\n+  letter-spacing: 0.04em;\n+  overflow-wrap: anywhere;\n+}\n+\n+body.template-index #MainContent :is(\n+  section[id$=\"ta_vie_intro\"],\n+  section[id$=\"ta_vie_story\"],\n+  section[id$=\"ta_vie_reading\"]\n+) .hero__rte,\n+body.template-index #MainContent section[id$=\"ta_vie_products\"] .grid__description {\n+  line-height: 1.9;\n+  letter-spacing: 0.015em;\n+  overflow-wrap: anywhere;\n+}\n+\n+body.template-index #MainContent :is(\n+  section[id$=\"ta_vie_intro\"],\n+  section[id$=\"ta_vie_story\"],\n+  section[id$=\"ta_vie_reading\"]\n+) .hero__rte p,\n+body.template-index #MainContent section[id$=\"ta_vie_products\"] .grid__description p {\n+  line-height: inherit;\n+}\n+\n+/*\n+ * These editorial sections should remain readable if the theme's animation\n+ * script has not run. The product-grid override covers its heading only.\n+ */\n+body.template-index #MainContent :is(\n+  section[id$=\"ta_vie_intro\"],\n+  section[id$=\"ta_vie_story\"],\n+  section[id$=\"ta_vie_reading\"],\n+  section[id$=\"ta_vie_blog\"]\n+) [data-aos],\n+body.template-index #MainContent section[id$=\"ta_vie_products\"] .grid__heading-holder [data-aos] {\n+  opacity: 1;\n+  visibility: visible;\n+  transform: none;\n+  animation: none;\n+  transition: none;\n+}\n+\n+@media only screen and (max-width: 749px) {\n+  /* Honor the native 1/2-column mobile selection on wide phones as well. */\n+  body.template-index #MainContent section[id$=\"ta_vie_products\"] .grid--mobile-vertical {\n+    --columns: var(--COLUMNS-MOBILE);\n+  }\n+\n+  body.template-index #MainContent :is(\n+    section[id$=\"ta_vie_intro\"],\n+    section[id$=\"ta_vie_story\"],\n+    section[id$=\"ta_vie_products\"],\n+    section[id$=\"ta_vie_reading\"],\n+    section[id$=\"ta_vie_blog\"]\n+  ) {\n+    --padding-top: min(32px, calc(var(--PT, 48px) * 0.6));\n+    --padding-bottom: min(36px, calc(var(--PB, 48px) * 0.6));\n+    --PT-MOBILE: var(--padding-top);\n+  }\n+\n+  body.template-index #MainContent :is(\n+    section[id$=\"ta_vie_intro\"],\n+    section[id$=\"ta_vie_story\"],\n+    section[id$=\"ta_vie_reading\"]\n+  ) .hero__content__wrapper {\n+    padding-inline: 20px;\n+  }\n+}\n"
+    }
+  ]
+}
