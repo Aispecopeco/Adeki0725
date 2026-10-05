@@ -2,15 +2,353 @@
   "theme": "Broadcast",
   "version": "8.1.1",
   "brand": "TA VIE",
-  "revision": "Restore native homepage layout and animation; align color scheme defaults",
-  "comparison": "Re-uploaded original ZIP; all 428 files identical to the earlier original",
-  "changed_theme_files": 76,
+  "revision": "Explicit current color schemes and homepage editorial typography",
+  "comparison": "Re-uploaded original ZIP; identical to the earlier original",
+  "changed_theme_files": 77,
   "files": [
     {
       "path": "config/settings_data.json",
+      "scope": "Preserve existing values while normalizing their storage; add homepage controls and palettes",
       "changes": [
         {
-          "path": "/color_schemes/scheme-tavie-soft",
+          "path": "/current",
+          "operation": "replace",
+          "old": "Broadcast",
+          "new": {},
+          "reason": "Make installed current settings explicit; then move existing values unchanged"
+        },
+        {
+          "operation": "move",
+          "from": "/color_scheme",
+          "path": "/current/color_scheme"
+        },
+        {
+          "operation": "move",
+          "from": "/menu_bg_color",
+          "path": "/current/menu_bg_color"
+        },
+        {
+          "operation": "move",
+          "from": "/header_link",
+          "path": "/current/header_link"
+        },
+        {
+          "operation": "move",
+          "from": "/submenu_bg_color",
+          "path": "/current/submenu_bg_color"
+        },
+        {
+          "operation": "move",
+          "from": "/submenu_link_color",
+          "path": "/current/submenu_link_color"
+        },
+        {
+          "operation": "move",
+          "from": "/menu_transparent_color",
+          "path": "/current/menu_transparent_color"
+        },
+        {
+          "operation": "move",
+          "from": "/sale_color",
+          "path": "/current/sale_color"
+        },
+        {
+          "operation": "move",
+          "from": "/type_nav_font",
+          "path": "/current/type_nav_font"
+        },
+        {
+          "operation": "move",
+          "from": "/type_base_font",
+          "path": "/current/type_base_font"
+        },
+        {
+          "operation": "move",
+          "from": "/type_subheading_font",
+          "path": "/current/type_subheading_font"
+        },
+        {
+          "operation": "move",
+          "from": "/sub_letter_spacing",
+          "path": "/current/sub_letter_spacing"
+        },
+        {
+          "operation": "move",
+          "from": "/subheading_size_desktop",
+          "path": "/current/subheading_size_desktop"
+        },
+        {
+          "operation": "move",
+          "from": "/type_header_font",
+          "path": "/current/type_header_font"
+        },
+        {
+          "operation": "move",
+          "from": "/type_header_uppercase",
+          "path": "/current/type_header_uppercase"
+        },
+        {
+          "operation": "move",
+          "from": "/heading_mini",
+          "path": "/current/heading_mini"
+        },
+        {
+          "operation": "move",
+          "from": "/heading_medium",
+          "path": "/current/heading_medium"
+        },
+        {
+          "operation": "move",
+          "from": "/heading_large",
+          "path": "/current/heading_large"
+        },
+        {
+          "operation": "move",
+          "from": "/heading_x_large",
+          "path": "/current/heading_x_large"
+        },
+        {
+          "operation": "move",
+          "from": "/heading_mini_mobile",
+          "path": "/current/heading_mini_mobile"
+        },
+        {
+          "operation": "move",
+          "from": "/heading_x_small_mobile",
+          "path": "/current/heading_x_small_mobile"
+        },
+        {
+          "operation": "move",
+          "from": "/heading_small_mobile",
+          "path": "/current/heading_small_mobile"
+        },
+        {
+          "operation": "move",
+          "from": "/type_btn_font",
+          "path": "/current/type_btn_font"
+        },
+        {
+          "operation": "move",
+          "from": "/btn_border_style",
+          "path": "/current/btn_border_style"
+        },
+        {
+          "operation": "move",
+          "from": "/btn_size",
+          "path": "/current/btn_size"
+        },
+        {
+          "operation": "move",
+          "from": "/btn_letter_spacing",
+          "path": "/current/btn_letter_spacing"
+        },
+        {
+          "operation": "move",
+          "from": "/button_medium",
+          "path": "/current/button_medium"
+        },
+        {
+          "operation": "move",
+          "from": "/dots_style",
+          "path": "/current/dots_style"
+        },
+        {
+          "operation": "move",
+          "from": "/parallax_enable",
+          "path": "/current/parallax_enable"
+        },
+        {
+          "operation": "move",
+          "from": "/product_grid_outline",
+          "path": "/current/product_grid_outline"
+        },
+        {
+          "operation": "move",
+          "from": "/enable_superscript",
+          "path": "/current/enable_superscript"
+        },
+        {
+          "operation": "move",
+          "from": "/instagram_link",
+          "path": "/current/instagram_link"
+        },
+        {
+          "operation": "move",
+          "from": "/tiktok_link",
+          "path": "/current/tiktok_link"
+        },
+        {
+          "operation": "move",
+          "from": "/product_grid_aspect_ratio",
+          "path": "/current/product_grid_aspect_ratio"
+        },
+        {
+          "operation": "move",
+          "from": "/form_style",
+          "path": "/current/form_style"
+        },
+        {
+          "operation": "move",
+          "from": "/final_sale",
+          "path": "/current/final_sale"
+        },
+        {
+          "operation": "move",
+          "from": "/quantity_style",
+          "path": "/current/quantity_style"
+        },
+        {
+          "operation": "move",
+          "from": "/atc_show_product_price",
+          "path": "/current/atc_show_product_price"
+        },
+        {
+          "operation": "move",
+          "from": "/swatch_style",
+          "path": "/current/swatch_style"
+        },
+        {
+          "operation": "move",
+          "from": "/sibling_style",
+          "path": "/current/sibling_style"
+        },
+        {
+          "operation": "move",
+          "from": "/collection_swatch_style",
+          "path": "/current/collection_swatch_style"
+        },
+        {
+          "operation": "move",
+          "from": "/swatch_color_list",
+          "path": "/current/swatch_color_list"
+        },
+        {
+          "operation": "move",
+          "from": "/sale_bg_color",
+          "path": "/current/sale_bg_color"
+        },
+        {
+          "operation": "move",
+          "from": "/sale_text_color",
+          "path": "/current/sale_text_color"
+        },
+        {
+          "operation": "move",
+          "from": "/badge_bg_color",
+          "path": "/current/badge_bg_color"
+        },
+        {
+          "operation": "move",
+          "from": "/badge_text_color",
+          "path": "/current/badge_text_color"
+        },
+        {
+          "operation": "move",
+          "from": "/show_automatic_new_badge",
+          "path": "/current/show_automatic_new_badge"
+        },
+        {
+          "operation": "move",
+          "from": "/new_badge_bg_color",
+          "path": "/current/new_badge_bg_color"
+        },
+        {
+          "operation": "move",
+          "from": "/new_badge_text_color",
+          "path": "/current/new_badge_text_color"
+        },
+        {
+          "operation": "move",
+          "from": "/badge_new_date_limit",
+          "path": "/current/badge_new_date_limit"
+        },
+        {
+          "operation": "move",
+          "from": "/show_preorder_badge",
+          "path": "/current/show_preorder_badge"
+        },
+        {
+          "operation": "move",
+          "from": "/preorder_bg_color",
+          "path": "/current/preorder_bg_color"
+        },
+        {
+          "operation": "move",
+          "from": "/free_shipping_limit",
+          "path": "/current/free_shipping_limit"
+        },
+        {
+          "operation": "move",
+          "from": "/show_lock_icon",
+          "path": "/current/show_lock_icon"
+        },
+        {
+          "operation": "move",
+          "from": "/show_recently_viewed_products",
+          "path": "/current/show_recently_viewed_products"
+        },
+        {
+          "operation": "move",
+          "from": "/checkout_logo_position",
+          "path": "/current/checkout_logo_position"
+        },
+        {
+          "operation": "move",
+          "from": "/checkout_logo_size",
+          "path": "/current/checkout_logo_size"
+        },
+        {
+          "operation": "move",
+          "from": "/checkout_body_background_color",
+          "path": "/current/checkout_body_background_color"
+        },
+        {
+          "operation": "move",
+          "from": "/checkout_input_background_color_mode",
+          "path": "/current/checkout_input_background_color_mode"
+        },
+        {
+          "operation": "move",
+          "from": "/checkout_sidebar_background_color",
+          "path": "/current/checkout_sidebar_background_color"
+        },
+        {
+          "operation": "move",
+          "from": "/checkout_heading_font",
+          "path": "/current/checkout_heading_font"
+        },
+        {
+          "operation": "move",
+          "from": "/checkout_body_font",
+          "path": "/current/checkout_body_font"
+        },
+        {
+          "operation": "move",
+          "from": "/checkout_accent_color",
+          "path": "/current/checkout_accent_color"
+        },
+        {
+          "operation": "move",
+          "from": "/checkout_button_color",
+          "path": "/current/checkout_button_color"
+        },
+        {
+          "operation": "move",
+          "from": "/checkout_error_color",
+          "path": "/current/checkout_error_color"
+        },
+        {
+          "operation": "move",
+          "from": "/content_for_index",
+          "path": "/current/content_for_index"
+        },
+        {
+          "operation": "move",
+          "from": "/color_schemes",
+          "path": "/current/color_schemes"
+        },
+        {
+          "path": "/current/color_schemes/scheme-tavie-soft",
           "operation": "add",
           "new": {
             "settings": {
@@ -32,7 +370,7 @@
           }
         },
         {
-          "path": "/color_schemes/scheme-tavie-white",
+          "path": "/current/color_schemes/scheme-tavie-white",
           "operation": "add",
           "new": {
             "settings": {
@@ -52,6 +390,31 @@
               "links": "#333333"
             }
           }
+        },
+        {
+          "path": "/current/empty_cart_menu",
+          "operation": "add",
+          "new": "empty-cart-navigation"
+        },
+        {
+          "path": "/current/ta_vie_home_body_line_height",
+          "operation": "add",
+          "new": 1.9
+        },
+        {
+          "path": "/current/ta_vie_home_heading_spacing",
+          "operation": "add",
+          "new": 5
+        },
+        {
+          "path": "/current/ta_vie_home_heading_style",
+          "operation": "add",
+          "new": "serif"
+        },
+        {
+          "path": "/current/ta_vie_home_subheading_size",
+          "operation": "add",
+          "new": 12
         },
         {
           "path": "/presets/Broadcast/color_schemes/scheme-tavie-soft",
@@ -107,12 +470,71 @@
           "operation": "replace",
           "old": "scheme_1",
           "new": "scheme-1"
+        },
+        {
+          "path": "/16",
+          "operation": "add",
+          "new": {
+            "name": "TA VIE｜ホームの文字",
+            "settings": [
+              {
+                "type": "select",
+                "id": "ta_vie_home_heading_style",
+                "label": "見出しの書体",
+                "info": "ホームのブランド文章だけに適用します。システム書体は端末によって表示が異なります。",
+                "options": [
+                  {
+                    "value": "serif",
+                    "label": "明朝・セリフ"
+                  },
+                  {
+                    "value": "sans",
+                    "label": "ゴシック・サンセリフ"
+                  },
+                  {
+                    "value": "theme",
+                    "label": "Broadcastの設定を使う"
+                  }
+                ],
+                "default": "serif"
+              },
+              {
+                "type": "range",
+                "id": "ta_vie_home_heading_spacing",
+                "label": "見出しの字間",
+                "min": 0,
+                "max": 12,
+                "step": 1,
+                "unit": "%",
+                "default": 5
+              },
+              {
+                "type": "range",
+                "id": "ta_vie_home_body_line_height",
+                "label": "本文の行間",
+                "min": 1.5,
+                "max": 2.2,
+                "step": 0.1,
+                "default": 1.9
+              },
+              {
+                "type": "range",
+                "id": "ta_vie_home_subheading_size",
+                "label": "小見出しの文字サイズ",
+                "min": 10,
+                "max": 16,
+                "step": 1,
+                "unit": "px",
+                "default": 12
+              }
+            ]
+          }
         }
       ]
     },
     {
       "path": "layout/theme.liquid",
-      "diff": "--- original/layout/theme.liquid\n+++ edited/layout/theme.liquid\n@@ -2,6 +2,16 @@\n <html class=\"no-touch supports-no-cookies\" lang=\"{{ request.locale.iso_code }}\">\n   <head>\n     {%- render 'head' -%}\n+    {%- if request.page_type == 'index' -%}\n+      <noscript>\n+        <style>\n+          body.template-index #MainContent [data-aos] {\n+            opacity: 1;\n+            transform: none;\n+          }\n+        </style>\n+      </noscript>\n+    {%- endif -%}\n \n     {{ content_for_header }}\n   </head>\n"
+      "diff": "--- original/layout/theme.liquid\n+++ edited/layout/theme.liquid\n@@ -2,6 +2,17 @@\n <html class=\"no-touch supports-no-cookies\" lang=\"{{ request.locale.iso_code }}\">\n   <head>\n     {%- render 'head' -%}\n+    {%- if request.page_type == 'index' -%}\n+      {%- render 'ta-vie-home-typography' -%}\n+      <noscript>\n+        <style>\n+          body.template-index #MainContent [data-aos] {\n+            opacity: 1;\n+            transform: none;\n+          }\n+        </style>\n+      </noscript>\n+    {%- endif -%}\n \n     {{ content_for_header }}\n   </head>\n"
     },
     {
       "path": "sections/announcement.liquid",
@@ -1017,6 +1439,11 @@
       ]
     },
     {
+      "path": "snippets/ta-vie-home-typography.liquid",
+      "operation": "add",
+      "content": "{%- comment -%}\n  Editorial text in TA VIE's existing home sections only. Native section sizes,\n  buttons, product cards, navigation and animation settings stay in control.\n{%- endcomment -%}\n{%- liquid\n  assign ta_vie_heading_style = settings.ta_vie_home_heading_style | default: 'serif'\n  assign ta_vie_heading_spacing = settings.ta_vie_home_heading_spacing | default: 5 | divided_by: 100.0\n  assign ta_vie_body_line_height = settings.ta_vie_home_body_line_height | default: 1.9\n  assign ta_vie_subheading_size = settings.ta_vie_home_subheading_size | default: 12\n  assign ta_vie_body_family = settings.type_base_font.family | default: 'DM Sans'\n  assign ta_vie_section_ids = 'section_slideshow_nested_YfkG44,section_text_with_products_yW3LJx,columns-1,double,custom-content-1,announcement-3,section_dynamic_content_TkrMUq,columns-2,section_hero_scrolling_mmThBz' | split: ','\n-%}\n\n{%- capture ta_vie_sections -%}\n  {%- for ta_vie_section_id in ta_vie_section_ids -%}\n    {%- unless forloop.first -%},{%- endunless -%}\n    [data-section-id=\"{{ ta_vie_section_id }}\"],[data-section-id$=\"__{{ ta_vie_section_id }}\"]\n  {%- endfor -%}\n{%- endcapture -%}\n{%- capture ta_vie_scope -%}body.template-index #MainContent :is({{ ta_vie_sections }}){%- endcapture -%}\n\n{%- style -%}\n  {{ ta_vie_scope }} :is(\n    .hero__title,\n    .column__heading,\n    .text-products__heading,\n    .grid__heading,\n    .announcement__slide .font-heading,\n    .announcement__content\n  ):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    {%- unless ta_vie_heading_style == 'theme' %}\n      {%- if ta_vie_heading_style == 'sans' %}\n        font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n      {%- else %}\n        font-family: Georgia, \"Times New Roman\", \"Yu Mincho\", YuMincho, \"Hiragino Mincho ProN\", \"Noto Serif CJK JP\", serif;\n      {%- endif %}\n      font-weight: 400;\n      font-style: normal;\n      text-transform: none;\n    {%- endunless %}\n    letter-spacing: {{ ta_vie_heading_spacing }}em;\n    line-height: 1.55;\n    text-wrap: balance;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n    font-weight: 400;\n    font-style: normal;\n    line-height: {{ ta_vie_body_line_height }};\n    text-wrap: pretty;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) > p {\n    line-height: inherit;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__subheading, .subheading):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n    font-size: {{ ta_vie_subheading_size }}px;\n    font-weight: 400;\n    font-style: normal;\n    letter-spacing: 0.12em;\n    line-height: 1.6;\n    text-transform: none;\n  }\n{%- endstyle -%}\n"
+    },
+    {
       "path": "templates/index.json",
       "changes": [
         {
@@ -1221,6 +1648,12 @@
           "new": "ルームウェアを見る"
         },
         {
+          "path": "/sections/section_dynamic_content_TkrMUq/blocks/grid_item_4fNayp/blocks/heading_MPnNeD/settings/heading_font_size",
+          "operation": "replace",
+          "old": "heading-x-large",
+          "new": "heading-medium"
+        },
+        {
           "path": "/sections/section_dynamic_content_TkrMUq/blocks/grid_item_4fNayp/blocks/heading_MPnNeD/settings/text",
           "operation": "replace",
           "old": "Jewelry That Becomes Part of Your Everyday Story",
@@ -1254,6 +1687,12 @@
           "operation": "replace",
           "old": "#fcfbf9",
           "new": ""
+        },
+        {
+          "path": "/sections/section_dynamic_content_TkrMUq/blocks/grid_item_Tg6QC3/blocks/heading_WP7ecN/settings/heading_font_size",
+          "operation": "replace",
+          "old": "heading-x-large",
+          "new": "heading-medium"
         },
         {
           "path": "/sections/section_dynamic_content_TkrMUq/blocks/grid_item_Tg6QC3/blocks/heading_WP7ecN/settings/text",
@@ -1333,6 +1772,24 @@
           "new": "家で過ごす時間を、自分のために。TA VIEは、日々の暮らしを大切にするルームウェアを提案します。"
         },
         {
+          "path": "/sections/section_hero_scrolling_mmThBz/settings/mobile_text_font_size_px",
+          "operation": "replace",
+          "old": 16,
+          "new": 28
+        },
+        {
+          "path": "/sections/section_hero_scrolling_mmThBz/settings/text_font_size_px",
+          "operation": "replace",
+          "old": 90,
+          "new": 44
+        },
+        {
+          "path": "/sections/section_hero_scrolling_mmThBz/settings/type_font_caps",
+          "operation": "replace",
+          "old": true,
+          "new": false
+        },
+        {
           "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_Y3ntcg/blocks/button_Mf6QGG/disabled",
           "operation": "add",
           "new": true
@@ -1409,6 +1866,18 @@
           "new": "TA VIE"
         },
         {
+          "path": "/sections/section_text_with_products_yW3LJx/settings/text_font_size_px_desktop",
+          "operation": "replace",
+          "old": 32,
+          "new": 28
+        },
+        {
+          "path": "/sections/section_text_with_products_yW3LJx/settings/text_font_size_px_mobile",
+          "operation": "replace",
+          "old": 26,
+          "new": 24
+        },
+        {
           "path": "/sections/section_video_w6YfAE/disabled",
           "operation": "add",
           "new": true
@@ -1421,10 +1890,11 @@
       ]
     }
   ],
-  "previous_revision_cleanup": [
-    "Remove five ta_vie_* homepage sections",
-    "Remove assets/ta-vie-home.css and its include",
-    "Remove superseded isolated Rich text preview screenshots"
-  ],
+  "current_settings_migration": {
+    "old_root_values_preserved": 66,
+    "presets_unchanged_vs_previous_delivery": 5,
+    "explicit_current_color_schemes": 13,
+    "metadata_preserved": true
+  },
   "shopify_editor_warning_cleared": "unverified"
 }
