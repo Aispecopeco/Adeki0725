@@ -2,9 +2,15 @@
 <html class="no-touch supports-no-cookies" lang="{{ request.locale.iso_code }}">
   <head>
     {%- render 'head' -%}
-
-    {%- if template.name == 'index' -%}
-      {{ 'ta-vie-home.css' | asset_url | stylesheet_tag }}
+    {%- if request.page_type == 'index' -%}
+      <noscript>
+        <style>
+          body.template-index #MainContent [data-aos] {
+            opacity: 1;
+            transform: none;
+          }
+        </style>
+      </noscript>
     {%- endif -%}
 
     {{ content_for_header }}

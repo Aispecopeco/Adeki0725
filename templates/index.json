@@ -18,10 +18,10 @@
             "heading_JxYXBt": {
               "type": "heading",
               "settings": {
-                "text": "Everyday Luxury",
+                "text": "あなたの毎日に、上質を。",
                 "heading_font_size": "heading-large",
                 "color": "",
-                "heading_tag": "automatic",
+                "heading_tag": "h1",
                 "padding_bottom": 8
               },
               "blocks": {}
@@ -29,7 +29,7 @@
             "text_L4brP6": {
               "type": "text",
               "settings": {
-                "text": "Beautiful pieces to pass down for generations",
+                "text": "家で過ごす時間を、自分のために。TA VIEは、日々の暮らしを大切にするルームウェアを提案します。",
                 "text_font_size": "body-large",
                 "padding_bottom": 8
               },
@@ -39,19 +39,20 @@
               "type": "_group-buttons",
               "name": "Side by side buttons",
               "settings": {
-                "button_text": "Shop all products",
+                "button_text": "ルームウェアを見る",
                 "button_type": "btn--black",
                 "button_size": "",
                 "button_style": "btn--solid",
                 "show_arrow": false,
-                "button_secondary_text": "Shop sale",
+                "button_secondary_text": "",
                 "button_secondary_type": "btn--white",
                 "button_secondary_size": "",
                 "button_secondary_style": "btn--solid",
                 "show_secondary_arrow": false,
                 "padding_bottom": 8
               },
-              "blocks": {}
+              "blocks": {},
+              "disabled": true
             }
           },
           "block_order": [
@@ -131,10 +132,10 @@
             "heading_CwM98X": {
               "type": "heading",
               "settings": {
-                "text": "Sleek. Sculptural. Striking.",
+                "text": "家にいる自分を、大切に。",
                 "heading_font_size": "heading-large",
                 "color": "",
-                "heading_tag": "automatic",
+                "heading_tag": "h2",
                 "padding_bottom": 8
               },
               "blocks": {}
@@ -142,7 +143,7 @@
             "text_DGTHFT": {
               "type": "text",
               "settings": {
-                "text": "A modern statement in form and finish, designed to stand apart.",
+                "text": "外へ出る日の装いと同じように、家で過ごす自分にも目を向ける。",
                 "text_font_size": "body-large",
                 "padding_bottom": 8
               },
@@ -151,7 +152,7 @@
             "button_Mf6QGG": {
               "type": "button",
               "settings": {
-                "text": "Shop all rings",
+                "text": "ルームウェアを見る",
                 "type": "btn--white",
                 "size": "",
                 "style": "btn--solid",
@@ -159,7 +160,8 @@
                 "full_width": false,
                 "padding_bottom": 8
               },
-              "blocks": {}
+              "blocks": {},
+              "disabled": true
             }
           },
           "block_order": [
@@ -186,8 +188,7 @@
         "color_scheme": "scheme-5",
         "padding_top": 0,
         "padding_bottom": 0
-      },
-      "disabled": true
+      }
     },
     "section_text_with_products_yW3LJx": {
       "type": "section-text-with-products",
@@ -229,8 +230,8 @@
         "collection_xfkJFf"
       ],
       "settings": {
-        "subheading": "bestselling fine jewelry",
-        "heading": "Modern heirlooms elegant treasures",
+        "subheading": "TA VIE",
+        "heading": "家で過ごす時間を、 自分のために。",
         "image_border_radius": 20,
         "width": "wrapper--full-padded",
         "text_font_size_px_desktop": 32,
@@ -240,8 +241,7 @@
         "color_scheme": "",
         "padding_top": 60,
         "padding_bottom": 40
-      },
-      "disabled": true
+      }
     },
     "columns-1": {
       "type": "section-columns",
@@ -251,11 +251,11 @@
           "settings": {
             "image_width": 100,
             "image_shape": "normal",
-            "title": "Made-To-Order Jewelery",
+            "title": "朝の支度に。",
             "heading_font_size": "heading-small",
-            "text": "<p>Handmade pieces that are carefully crafted to ensure that you'll love for a lifetime.</p>",
+            "text": "<p>外へ出る日の装いと同じように、家で過ごす自分にも目を向ける。</p>",
             "text_font_size": "body-medium",
-            "button_text": "Shop now",
+            "button_text": "",
             "button_type": "btn--primary",
             "button_size": "",
             "button_style": "btn--text",
@@ -270,11 +270,11 @@
           "settings": {
             "image_width": 100,
             "image_shape": "normal",
-            "title": "Sculpted Light",
+            "title": "読書をする午後に。",
             "heading_font_size": "heading-small",
-            "text": "<p>Gemstone forms carved by nature, refined for modern elegance.</p>",
+            "text": "<p>家で過ごす時間を、自分のために。</p>",
             "text_font_size": "body-medium",
-            "button_text": "Shop gemstones",
+            "button_text": "",
             "button_type": "btn--primary",
             "button_size": "",
             "button_style": "btn--text",
@@ -289,11 +289,11 @@
           "settings": {
             "image_width": 100,
             "image_shape": "normal",
-            "title": "The Essentials Collection",
+            "title": "一日を終える夜に。",
             "heading_font_size": "heading-small",
-            "text": "<p>Our signature pieces designed to be worn everyday with subtle details in contemporary shapes. </p>",
+            "text": "<p>くつろぐ時間も、日々の暮らしも、大切に。</p>",
             "text_font_size": "body-medium",
-            "button_text": "Shop Classics",
+            "button_text": "",
             "button_type": "btn--primary",
             "button_size": "",
             "button_style": "btn--text",
@@ -323,8 +323,7 @@
         "padding_top": 0,
         "padding_bottom": 62,
         "heading_tag": "automatic"
-      },
-      "disabled": true
+      }
     },
     "double": {
       "type": "section-double",
@@ -332,23 +331,23 @@
         "subheading": {
           "type": "subheading",
           "settings": {
-            "subheading": "TA VIE",
+            "subheading": "あなたのための時間",
             "padding_bottom": 6
           }
         },
         "heading": {
           "type": "heading",
           "settings": {
-            "title": "あなたの毎日に、上質を。",
+            "title": "家にいる自分を、大切に。",
             "heading_font_size": "heading-medium",
             "padding_bottom": 16,
-            "heading_tag": "automatic"
+            "heading_tag": "h2"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>家で過ごす時間を、自分のために。TA VIEは、日々の暮らしを大切にするルームウェアを提案します。</p>",
+            "text": "<p>朝の支度、読書をする午後、一日を終えてくつろぐ夜。外へ出る日の装いと同じように、家で過ごす自分にも目を向ける。TA VIEは、そんな毎日を大切にするためのルームウェアを提案します。</p>",
             "text_font_size": "body-medium",
             "padding_bottom": 24
           }
@@ -358,8 +357,7 @@
           "settings": {
             "image_width": 80,
             "padding_bottom": 16
-          },
-          "disabled": true
+          }
         },
         "buttons_VP8YTU": {
           "type": "buttons",
@@ -383,18 +381,17 @@
       ],
       "settings": {
         "image_width": "one-half",
-        "text_alignment": "text-left",
+        "text_alignment": "text-center",
         "layout": "",
         "width": "wrapper--full-padded",
-        "height": "image-height",
-        "mobile_height": "image-height--mobile",
-        "reverse_blocks": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 32,
-        "padding_bottom": 32,
-        "show_placeholder": false
-      },
-      "disabled": true
+        "height": "sixty-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "reverse_blocks": true,
+        "color_scheme": "scheme-tavie-white",
+        "padding_top": 42,
+        "padding_bottom": 82,
+        "show_placeholder": true
+      }
     },
     "announcement-2": {
       "type": "section-announcement",
@@ -538,9 +535,9 @@
       ],
       "settings": {
         "show_product_count": false,
-        "title": "Exceptional Pieces",
+        "title": "日常に寄り添うルームウェア。",
         "heading_font_size": "heading-medium",
-        "text": "<p>Soon-to-be staples in your rotation</p>",
+        "text": "",
         "text_font_size": "body-medium",
         "layout": "inline",
         "layout_desktop": "slider",
@@ -666,16 +663,16 @@
         "image-1": {
           "type": "image",
           "settings": {
-            "title": "Geometry of Light",
+            "title": "あなたのための時間。",
             "heading_font_size": "heading-medium",
-            "text": "<p>Brilliantly cut and artfully arranged to capture light with effortless elegance.</p>",
+            "text": "<p>衣服から、家で過ごす時間へ。自分と暮らしに目を向ける。</p>",
             "text_font_size": "body-medium",
             "flex_align": "align--bottom-left",
             "show_text_background": false,
             "bg_color": "",
             "color": "#ffffff",
             "overlay_type": "disabled",
-            "link_text": "Shop now",
+            "link_text": "",
             "button_type": "btn--primary",
             "button_size": "",
             "button_style": "btn--solid",
@@ -686,16 +683,16 @@
         "image-2": {
           "type": "image",
           "settings": {
-            "title": "Modern and Timeless",
+            "title": "毎日の暮らしを、大切に。",
             "heading_font_size": "heading-medium",
-            "text": "<p>Accessorize with 14k recycled gold all day, everyday.</p>",
+            "text": "<p>TA VIEは、日々の暮らしを大切にするルームウェアを提案します。</p>",
             "text_font_size": "body-medium",
             "flex_align": "align--bottom-left",
             "show_text_background": false,
             "bg_color": "",
             "color": "#ffffff",
             "overlay_type": "disabled",
-            "link_text": "Shop now",
+            "link_text": "",
             "button_type": "btn--primary",
             "button_size": "",
             "button_style": "btn--solid",
@@ -718,8 +715,7 @@
         "color_scheme": "scheme-6",
         "padding_top": 0,
         "padding_bottom": 0
-      },
-      "disabled": true
+      }
     },
     "collections-list-hover": {
       "type": "section-collections-list-hover",
@@ -789,7 +785,7 @@
         "heading_irnjr9": {
           "type": "heading",
           "settings": {
-            "heading": "Express yourself in your own way",
+            "heading": "家で過ごす時間を、自分のために。",
             "heading_font_size": "heading-x-small"
           }
         }
@@ -809,8 +805,7 @@
         "color_scheme": "scheme-2",
         "padding_top": 20,
         "padding_bottom": 20
-      },
-      "disabled": true
+      }
     },
     "look": {
       "type": "section-look",
@@ -987,7 +982,7 @@
             "heading_MPnNeD": {
               "type": "heading",
               "settings": {
-                "text": "Jewelry That Becomes Part of Your Everyday Story",
+                "text": "家での時間を、大切に。",
                 "heading_font_size": "heading-x-large",
                 "color": "",
                 "heading_tag": "automatic",
@@ -999,19 +994,20 @@
               "type": "_group-buttons",
               "name": "Side by side buttons",
               "settings": {
-                "button_text": "View products",
+                "button_text": "ルームウェアを見る",
                 "button_type": "btn--secondary",
                 "button_size": "",
                 "button_style": "btn--solid",
                 "show_arrow": false,
-                "button_secondary_text": "Read more",
+                "button_secondary_text": "読みものを見る",
                 "button_secondary_type": "btn--black",
                 "button_secondary_size": "",
                 "button_secondary_style": "btn--solid",
                 "show_secondary_arrow": false,
                 "padding_bottom": 8
               },
-              "blocks": {}
+              "blocks": {},
+              "disabled": true
             }
           },
           "block_order": [
@@ -1036,9 +1032,9 @@
             "heading_WP7ecN": {
               "type": "heading",
               "settings": {
-                "text": "Jewelry That Becomes Part of Your Everyday Story",
+                "text": "家での時間を、大切に。",
                 "heading_font_size": "heading-x-large",
-                "color": "#fcfbf9",
+                "color": "",
                 "heading_tag": "automatic",
                 "padding_bottom": 8
               },
@@ -1048,19 +1044,20 @@
               "type": "_group-buttons",
               "name": "Side by side buttons",
               "settings": {
-                "button_text": "View products",
+                "button_text": "ルームウェアを見る",
                 "button_type": "btn--secondary",
                 "button_size": "",
                 "button_style": "btn--solid",
                 "show_arrow": false,
-                "button_secondary_text": "Read more",
+                "button_secondary_text": "読みものを見る",
                 "button_secondary_type": "btn--white",
                 "button_secondary_size": "",
                 "button_secondary_style": "btn--solid",
                 "show_secondary_arrow": false,
                 "padding_bottom": 8
               },
-              "blocks": {}
+              "blocks": {},
+              "disabled": true
             }
           },
           "block_order": [
@@ -1087,7 +1084,7 @@
               "type": "rich-text",
               "name": "Rich text",
               "settings": {
-                "text": "<p>Refined, wearable designs made to feel natural on your skin. Pieces you don’t save for special occasions—because they already feel like one.</p>",
+                "text": "<p>朝の支度、読書をする午後、一日を終えてくつろぐ夜。家にいる自分を、大切に。</p>",
                 "text_font_size": "body-x-large",
                 "color": "",
                 "padding_bottom": 0
@@ -1111,14 +1108,13 @@
       ],
       "name": "Dynamic content",
       "settings": {
-        "color_scheme": "scheme-11",
+        "color_scheme": "scheme-tavie-soft",
         "gap_desktop": 16,
         "gap_mobile": 10,
         "width": "wrapper--full-padded",
         "padding_top": 80,
         "padding_bottom": 80
-      },
-      "disabled": true
+      }
     },
     "section_custom_content_H4RTrx": {
       "type": "section-custom-content",
@@ -1320,8 +1316,7 @@
         "padding_top": 15,
         "padding_bottom": 30,
         "heading_tag": "automatic"
-      },
-      "disabled": true
+      }
     },
     "text-row": {
       "type": "section-text-row",
@@ -1395,35 +1390,35 @@
         "scrolling_text_PJTaE9": {
           "type": "scrolling_text",
           "settings": {
-            "text": "<p>Wear Every Moment</p>",
-            "color": "#cb9bbb"
+            "text": "<p>あなたの毎日に、上質を。</p>",
+            "color": "#ffffff"
           }
         },
         "scrolling_text_KjQgUD": {
           "type": "scrolling_text",
           "settings": {
-            "text": "<p>Wear Every Moment</p>",
-            "color": "#ffd9e4"
+            "text": "<p>あなたの毎日に、上質を。</p>",
+            "color": "#ffffff"
           }
         },
         "scrolling_text_qhFG4M": {
           "type": "scrolling_text",
           "settings": {
-            "text": "<p>Wear Every Moment</p>",
-            "color": "#cb9bbb"
+            "text": "<p>あなたの毎日に、上質を。</p>",
+            "color": "#ffffff"
           }
         },
         "scrolling_text_MGXQrh": {
           "type": "scrolling_text",
           "settings": {
-            "text": "<p>Wear Every Moment</p>",
-            "color": "#ffd9e4"
+            "text": "<p>あなたの毎日に、上質を。</p>",
+            "color": "#ffffff"
           }
         },
         "text_iGWgta": {
           "type": "text",
           "settings": {
-            "description": "Celebrate the everyday and the extraordinary with pieces designed to move with you. Ethically crafted, effortlessly timeless—jewelry for every chapter of your story.",
+            "description": "家で過ごす時間を、自分のために。TA VIEは、日々の暮らしを大切にするルームウェアを提案します。",
             "text_font_size": "body-large",
             "color": ""
           }
@@ -1431,12 +1426,13 @@
         "button_ncmWfQ": {
           "type": "button",
           "settings": {
-            "link_text": "Shop the collection",
+            "link_text": "ルームウェアを見る",
             "button_type": "btn--white",
             "button_size": "",
             "button_style": "btn--solid",
             "show_arrow": false
-          }
+          },
+          "disabled": true
         }
       },
       "block_order": [
@@ -1467,227 +1463,10 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "show_placeholder": true
-      },
-      "disabled": true
-    },
-    "ta_vie_intro": {
-      "type": "section-rich-text",
-      "name": "TA VIE｜ファーストビュー",
-      "blocks": {
-        "brand": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "TA VIE",
-            "padding_bottom": 12
-          }
-        },
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "title": "あなたの毎日に、上質を。",
-            "heading_font_size": "heading-medium",
-            "heading_tag": "h1",
-            "padding_bottom": 16
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>家で過ごす時間を、自分のために。TA VIEは、日々の暮らしを大切にするルームウェアを提案します。</p>",
-            "text_font_size": "body-large",
-            "padding_bottom": 0
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_text": "ルームウェアを見る",
-            "button_url": "",
-            "button_type": "btn--black",
-            "button_size": "",
-            "button_style": "btn--solid",
-            "show_arrow": false,
-            "padding_bottom": 0
-          },
-          "disabled": true
-        }
-      },
-      "block_order": [
-        "brand",
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "align_text": "text-left",
-        "width": "wrapper--narrow",
-        "color_scheme": "scheme-tavie-white",
-        "overlay_type": "disabled",
-        "padding_top": 48,
-        "padding_bottom": 48
-      }
-    },
-    "ta_vie_products": {
-      "type": "section-collection",
-      "name": "TA VIE｜ルームウェア（要選択）",
-      "disabled": true,
-      "settings": {
-        "featured_collection": "",
-        "heading": "日常に寄り添うルームウェア。",
-        "heading_font_size": "heading-small",
-        "heading_tag": "h2",
-        "description": "",
-        "text_font_size": "body-medium",
-        "layout": "center",
-        "link_text": "",
-        "link_url": "",
-        "button_type": "btn--black",
-        "button_size": "",
-        "button_style": "btn--text",
-        "show_arrow": false,
-        "layout_desktop": "grid",
-        "grid": 2,
-        "rows": 2,
-        "width": "wrapper--full-padded",
-        "layout_mobile": "1",
-        "color_scheme": "scheme-1",
-        "padding_top": 32,
-        "padding_bottom": 40
-      }
-    },
-    "ta_vie_story": {
-      "type": "section-rich-text",
-      "name": "TA VIE｜ブランドの考え",
-      "blocks": {
-        "brand": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "あなたのための時間",
-            "padding_bottom": 12
-          }
-        },
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "title": "家にいる自分を、大切に。",
-            "heading_font_size": "heading-small",
-            "heading_tag": "h2",
-            "padding_bottom": 16
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>朝の支度、読書をする午後、一日を終えてくつろぐ夜。</p><p>外へ出る日の装いと同じように、家で過ごす自分にも目を向ける。TA VIEは、そんな毎日を大切にするためのルームウェアを提案します。</p>",
-            "text_font_size": "body-large",
-            "padding_bottom": 0
-          }
-        }
-      },
-      "block_order": [
-        "brand",
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "align_text": "text-left",
-        "width": "wrapper--narrow",
-        "color_scheme": "scheme-tavie-soft",
-        "overlay_type": "disabled",
-        "padding_top": 40,
-        "padding_bottom": 48
-      }
-    },
-    "ta_vie_reading": {
-      "type": "section-rich-text",
-      "name": "TA VIE｜読みもの紹介（準備中）",
-      "blocks": {
-        "brand": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "TA VIE",
-            "padding_bottom": 12
-          }
-        },
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "title": "家での時間を整える、ものと過ごし方。",
-            "heading_font_size": "heading-small",
-            "heading_tag": "h2",
-            "padding_bottom": 16
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>衣服から、空間を彩るものまで。家で過ごす毎日を大切にする視点から、気になる品々と暮らしのヒントを紹介します。</p>",
-            "text_font_size": "body-large",
-            "padding_bottom": 0
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_text": "読みものを見る",
-            "button_url": "",
-            "button_type": "btn--black",
-            "button_size": "",
-            "button_style": "btn--text",
-            "show_arrow": false,
-            "padding_bottom": 0
-          },
-          "disabled": true
-        }
-      },
-      "block_order": [
-        "brand",
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "align_text": "text-left",
-        "width": "wrapper--narrow",
-        "color_scheme": "scheme-tavie-white",
-        "overlay_type": "disabled",
-        "padding_top": 40,
-        "padding_bottom": 48
-      },
-      "disabled": true
-    },
-    "ta_vie_blog": {
-      "type": "section-blog",
-      "name": "TA VIE｜記事一覧（要選択）",
-      "disabled": true,
-      "settings": {
-        "blog_name": "",
-        "title": "読みもの",
-        "heading_font_size": "heading-small",
-        "heading_tag": "h2",
-        "title_font_size": "heading-x-small",
-        "title_tag": "h3",
-        "aspect_ratio": 1,
-        "show_tags": false,
-        "show_author": false,
-        "show_date": false,
-        "show_button": true,
-        "show_comments": false,
-        "width": "wrapper--full-padded",
-        "grid": 2,
-        "rows": 1,
-        "color_scheme": "scheme-tavie-soft",
-        "padding_top": 16,
-        "padding_bottom": 40
       }
     }
   },
   "order": [
-    "ta_vie_intro",
-    "ta_vie_products",
-    "ta_vie_story",
-    "ta_vie_reading",
-    "ta_vie_blog",
     "section_slideshow_nested_YfkG44",
     "section_text_with_products_yW3LJx",
     "columns-1",

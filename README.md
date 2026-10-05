@@ -1,6 +1,6 @@
 # TA VIE｜修正テーマの受け取り
 
-Broadcast 8.1.1 のトップページ文言・配色・余白を修正した納品ファイルです。
+Broadcast 8.1.1 の元の画像設定・レイアウト・セクション構成を復元し、既存セクションへTA VIEの日本語文言を反映した修正版です。
 
 - [修正済みテーマ ZIP](delivery/TA-VIE-Broadcast-8.1.1-edited.zip)
 - [変更一覧・Shopify 編集画面の操作・手動反映用原稿](delivery/README-TA-VIE.md)
@@ -9,18 +9,12 @@ Broadcast 8.1.1 のトップページ文言・配色・余白を修正した納�
 
 テーマ ZIP のリンクを開き、ファイル画面の **Download raw file（ダウンロード）** を選んでください。リポジトリの **Code → Download ZIP** は説明書を含む別の ZIP なので、Shopify 用には上記のテーマ ZIP を使います。
 
-GitHub連携でShopifyに取り込む場合は、テーマの全ソースを直下に配置した [ta-vie-shopify-20261005 ブランチ](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-shopify-20261005) を選んでください。そこに `config/settings_data.json` と `config/settings_schema.json` の両方があります。未公開テーマでの確認手順は説明書に記載しています。
+修正版は、すでにShopifyへ連携している [ta-vie-shopify-20261005 ブランチ](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-shopify-20261005) に保存しています。同じ連携テーマで更新状況を確認してください。テーマの全ソースと `config/settings_data.json`、`config/settings_schema.json` はリポジトリ直下の通常のテーマ階層に配置しています。
 
-正式商品・商品写真・ブログが未確認のため、その欄は非表示で準備しています。既存ロゴと購入処理は保持しました。本番への反映・公開は実施していません。アップロード前に、反映手順に沿って最新テーマとの設定差分を確認してください。
+元の19セクションのID・順序、画像・コレクション参照を保持し、9セクションを表示、掲載実績・品質・SNS等のデモや未確認商品の10セクションを非表示にしています。追加した5つの文章中心セクションとホーム専用CSSは撤去しました。既存ロゴ参照2件、購入処理、SEOは維持しています。
 
-## 本文のローカル表示
+ホームの写真は原ZIPでも未選択のため、現在の画像欄はBroadcast標準のSVGプレースホルダーで表示されます。`layout/theme.liquid` にはホーム限定の `noscript` 補正（`opacity: 1`・`transform: none`）を追加しました。JS有効時は元の演出を維持し、JS無効時は先頭スライドの本文を読めるようにしています。2枚目以降の非表示制御は維持しています。
 
-以下は実際の Rich text Liquid とテーマ CSS を使った本文の表示確認です。Shopify の画像・CDN フォント・ヘッダー・フッター・ストアデータには接続していません。
+配色の既定IDを保存済みIDに合わせましたが、実際のShopify編集画面で警告が解消したかは未確認です。前回のローカル本文画像はこの修正版のプレビューではありません。実画面は同じ未公開テーマで確認してください。
 
-PC：
-
-![PC 幅での本文表示](delivery/previews/local-native-desktop.png)
-
-スマートフォン：
-
-![スマートフォン幅での本文表示](delivery/previews/local-native-mobile.png)
+今回再提供されたZIPのテーマファイルは以前の原本と一致しました。最新テーマであることは未確認です。商品・正式写真・ブログの対応、最新設定との差分を確認してから使用してください。テーマ公開・商品やストア設定の変更は実施していません。
