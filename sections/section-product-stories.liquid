@@ -1,0 +1,482 @@
+{%- liquid
+  assign section_heading_tag = section.settings.heading_tag | default: 'h2'
+  unless section_heading_tag == 'h1' or section_heading_tag == 'h2'
+    assign section_heading_tag = 'h2'
+  endunless
+
+  assign product_heading_tag = 'h3'
+  assign detail_heading_tag = 'h4'
+  if section_heading_tag == 'h1'
+    assign product_heading_tag = 'h2'
+    assign detail_heading_tag = 'h3'
+  endif
+
+  assign product_story_count = 0
+  assign all_products_link = section.settings.all_link | default: routes.all_products_collection_url
+-%}
+
+{%- render 'stylesheet', name: 'ta-vie-product-stories.css', async: false, inline: false, blocking: false -%}
+
+{%- style -%}
+  #ProductStories--{{ section.id }} {
+    --PT: {{ section.settings.padding_top }}px;
+    --PB: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
+
+{%- capture product_stories -%}
+  {%- for block in section.blocks -%}
+    {%- liquid
+      assign story_product = block.settings.product
+      if story_product != blank and story_product.id == blank
+        assign story_product = all_products[block.settings.product]
+      endif
+
+      assign has_product = false
+      if story_product.id != blank and story_product.url != blank
+        assign has_product = true
+      endif
+
+      assign story_id = 'ProductStory--' | append: section.id | append: '--' | append: block.id
+      assign animation_anchor = '#' | append: story_id
+    -%}
+
+    {%- if has_product -%}
+      {%- liquid
+        assign product_story_count = product_story_count | plus: 1
+        assign main_image = block.settings.main_image | default: story_product.featured_image
+        assign mobile_main_image = block.settings.mobile_main_image
+        if main_image == blank and mobile_main_image != blank
+          assign main_image = mobile_main_image
+          assign mobile_main_image = ''
+        endif
+
+        assign scene_image = block.settings.scene_image
+        assign mobile_scene_image = block.settings.mobile_scene_image
+        if scene_image == blank and mobile_scene_image != blank
+          assign scene_image = mobile_scene_image
+          assign mobile_scene_image = ''
+        endif
+
+        assign detail_image = block.settings.detail_image
+        assign story_intro = block.settings.intro
+        if story_intro == blank and block.settings.use_product_description
+          assign story_intro = story_product.description
+        endif
+        assign image_fit = block.settings.image_fit | default: 'contain'
+        unless image_fit == 'cover'
+          assign image_fit = 'contain'
+        endunless
+
+        assign main_loading = 'lazy'
+        if product_story_count == 1
+          assign main_loading = 'eager'
+        endif
+
+        assign main_image_sizes = '(min-width: 1600px) 975px, (min-width: 990px) calc((100vw - 100px) * 0.65), (min-width: 750px) calc(100vw - 60px), calc(100vw - 32px)'
+        assign full_image_sizes = '(min-width: 1600px) 1500px, (min-width: 990px) calc(100vw - 100px), (min-width: 750px) calc(100vw - 60px), calc(100vw - 32px)'
+        assign detail_image_sizes = '(min-width: 1340px) 682px, (min-width: 990px) calc((100vw - 100px) * 0.55), (min-width: 750px) calc(100vw - 60px), calc(100vw - 32px)'
+        if block.settings.detail_heading == blank and block.settings.detail_text == blank
+          assign detail_image_sizes = '(min-width: 820px) 720px, (min-width: 750px) calc(100vw - 60px), calc(100vw - 32px)'
+        endif
+        assign story_button_label = block.settings.button_label | default: '商品の詳細を見る'
+      -%}
+
+      <article
+        id="{{ story_id }}"
+        class="ta-vie-product-story{% if block.settings.image_position == 'right' %} ta-vie-product-story--image-right{% endif %}{% if main_image == blank %} ta-vie-product-story--text-only{% endif %}"
+        aria-labelledby="{{ story_id }}--title"
+        {{ block.shopify_attributes }}
+      >
+        <div class="ta-vie-product-story__stage">
+          {%- if main_image != blank -%}
+            <div class="ta-vie-product-story__media ta-vie-product-story__media--{{ image_fit }}">
+              {%- if mobile_main_image != blank and mobile_main_image != main_image -%}
+                <div class="desktop">
+                  {%- render 'image',
+                    image: main_image,
+                    sizes: main_image_sizes,
+                    widths: '360, 540, 720, 900, 1080, 1296, 1512, 1728, 1950, 2260, 2700',
+                    loading: main_loading,
+                    modifier: 'ta-vie-product-story__image'
+                  -%}
+                </div>
+                <div class="mobile">
+                  {%- render 'image',
+                    image: mobile_main_image,
+                    sizes: 'calc(100vw - 32px)',
+                    widths: '360, 540, 720, 900, 1080, 1296',
+                    loading: main_loading,
+                    modifier: 'ta-vie-product-story__image'
+                  -%}
+                </div>
+              {%- else -%}
+                {%- render 'image',
+                  image: main_image,
+                  sizes: main_image_sizes,
+                  widths: '360, 540, 720, 900, 1080, 1296, 1512, 1728, 1950, 2260, 2700',
+                  loading: main_loading,
+                  modifier: 'ta-vie-product-story__image'
+                -%}
+              {%- endif -%}
+            </div>
+          {%- endif -%}
+
+          <div
+            class="ta-vie-product-story__copy"
+            data-aos="hero"
+            data-aos-anchor="{{ animation_anchor }}"
+            data-aos-order="1"
+          >
+            {%- if block.settings.eyebrow != blank -%}
+              <p class="ta-vie-product-story__eyebrow subheading">{{ block.settings.eyebrow | escape }}</p>
+            {%- endif -%}
+
+            <{{ product_heading_tag }} id="{{ story_id }}--title" class="ta-vie-product-story__title heading-large">
+              {{- story_product.title | strip_html | escape -}}
+            </{{ product_heading_tag }}>
+
+            {%- if story_intro != blank -%}
+              <div class="ta-vie-product-story__intro rte body-large">{{ story_intro }}</div>
+            {%- endif -%}
+
+            {%- if section.settings.show_price and story_product.price != blank -%}
+              <div class="ta-vie-product-story__price">
+                {%- render 'price',
+                  product: story_product,
+                  use_variant: false,
+                  show_badges: false,
+                  price_font_size: 'body-medium'
+                -%}
+              </div>
+            {%- endif -%}
+
+            <a class="ta-vie-product-story__button btn btn--primary btn--text" href="{{ story_product.url | escape }}">
+              <span>{{ story_button_label | escape }}</span>
+              {%- render 'icon-nav-arrow-right' -%}
+            </a>
+
+            {%- if request.design_mode and main_image == blank -%}
+              <p class="ta-vie-product-stories__editor-note body-small">商品の写真が未設定です。このブロックの「メイン写真」を選ぶか、商品に写真を登録してください。</p>
+            {%- endif -%}
+          </div>
+        </div>
+
+        {%- if scene_image != blank -%}
+          <div class="ta-vie-product-story__scene">
+            {%- if mobile_scene_image != blank and mobile_scene_image != scene_image -%}
+              <div class="desktop">
+                {%- render 'image',
+                  image: scene_image,
+                  sizes: full_image_sizes,
+                  widths: '540, 720, 900, 1080, 1296, 1512, 1728, 1950, 2260, 2700, 3000',
+                  loading: 'lazy',
+                  modifier: 'ta-vie-product-story__scene-image'
+                -%}
+              </div>
+              <div class="mobile">
+                {%- render 'image',
+                  image: mobile_scene_image,
+                  sizes: 'calc(100vw - 32px)',
+                  widths: '360, 540, 720, 900, 1080, 1296',
+                  loading: 'lazy',
+                  modifier: 'ta-vie-product-story__scene-image'
+                -%}
+              </div>
+            {%- else -%}
+              {%- render 'image',
+                image: scene_image,
+                sizes: full_image_sizes,
+                widths: '540, 720, 900, 1080, 1296, 1512, 1728, 1950, 2260, 2700, 3000',
+                loading: 'lazy',
+                modifier: 'ta-vie-product-story__scene-image'
+              -%}
+            {%- endif -%}
+
+            {%- if block.settings.scene_caption != blank -%}
+              <div class="ta-vie-product-story__caption rte body-medium">{{ block.settings.scene_caption }}</div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- if detail_image != blank -%}
+          <div class="ta-vie-product-story__detail{% if block.settings.image_position != 'right' %} ta-vie-product-story__detail--image-right{% endif %}{% if block.settings.detail_heading == blank and block.settings.detail_text == blank %} ta-vie-product-story__detail--image-only{% endif %}">
+            <div class="ta-vie-product-story__detail-media">
+              {%- render 'image',
+                image: detail_image,
+                sizes: detail_image_sizes,
+                widths: '360, 540, 720, 900, 1080, 1296, 1512, 1728, 1950',
+                loading: 'lazy',
+                modifier: 'ta-vie-product-story__image'
+              -%}
+            </div>
+
+            {%- if block.settings.detail_heading != blank or block.settings.detail_text != blank -%}
+              <div
+                class="ta-vie-product-story__detail-copy"
+                data-aos="hero"
+                data-aos-anchor="{{ animation_anchor }}"
+                data-aos-order="2"
+              >
+                {%- if block.settings.detail_heading != blank -%}
+                  <{{ detail_heading_tag }} class="ta-vie-product-story__detail-heading heading-medium">{{ block.settings.detail_heading | escape }}</{{ detail_heading_tag }}>
+                {%- endif -%}
+
+                {%- if block.settings.detail_text != blank -%}
+                  <div class="ta-vie-product-story__detail-text rte body-large">{{ block.settings.detail_text }}</div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </article>
+    {%- elsif request.design_mode -%}
+      <aside class="ta-vie-product-stories__editor-note body-medium" {{ block.shopify_attributes }}>
+        このブロックの「紹介する商品」を選択してください。商品を選ぶと、商品名・写真・価格・商品ページへのリンクが表示されます。紹介文・着用写真・細部の写真を追加すると、一つの商品を写真と文章で紹介できます。未設定のブロックは公開ページには表示されません。
+      </aside>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+<section
+  id="ProductStories--{{ section.id }}"
+  class="ta-vie-product-stories section-padding color-{{ section.settings.color_scheme }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="product-stories"
+  {% if section.settings.heading != blank %}aria-labelledby="ProductStories--{{ section.id }}--heading"{% endif %}
+>
+  <div class="wrapper--full-padded">
+    {%- if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.intro != blank -%}
+      <div class="ta-vie-product-stories__intro">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="ta-vie-product-stories__eyebrow subheading">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <{{ section_heading_tag }} id="ProductStories--{{ section.id }}--heading" class="ta-vie-product-stories__heading heading-x-large">{{ section.settings.heading | escape }}</{{ section_heading_tag }}>
+        {%- endif -%}
+
+        {%- if section.settings.intro != blank -%}
+          <div class="ta-vie-product-stories__intro-copy rte body-large">{{ section.settings.intro }}</div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="ta-vie-product-stories__chapters">{{ product_stories }}</div>
+
+    {%- if request.design_mode and section.blocks.size == 0 -%}
+      <aside class="ta-vie-product-stories__editor-note body-medium">「商品を紹介」ブロックを追加し、紹介する商品を選択してください。</aside>
+    {%- endif -%}
+
+    {%- if section.settings.show_all_link and product_story_count > 0 and all_products_link != blank -%}
+      <div class="ta-vie-product-stories__all-link">
+        <a class="btn btn--primary btn--text" href="{{ all_products_link | escape }}">
+          <span>{{ section.settings.all_label | default: '全商品を見る' | escape }}</span>
+          {%- render 'icon-nav-arrow-right' -%}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "TA VIE｜商品を紹介",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "小見出し",
+      "default": "TA VIE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "見出し",
+      "default": "家での時間を、あなたらしく。"
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "導入文",
+      "default": "<p>一着の装いから、日々の暮らしを大切に。</p>"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "見出しのHTMLタグ",
+      "info": "ページの主見出しにはH1を、それ以外にはH2を選びます。",
+      "default": "h2",
+      "options": [
+        {"value": "h1", "label": "H1"},
+        {"value": "h2", "label": "H2"}
+      ]
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "配色",
+      "default": "scheme-tavie-white"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "商品の価格を表示",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_all_link",
+      "label": "最後に全商品へのリンクを表示",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "all_link",
+      "label": "全商品リンクのリンク先",
+      "info": "空欄の場合は、ストアの全商品ページを使います。"
+    },
+    {
+      "type": "text",
+      "id": "all_label",
+      "label": "全商品リンクのテキスト",
+      "default": "全商品を見る"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "上の余白",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "下の余白",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "type": "product_story",
+      "name": "商品を紹介",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "紹介する商品"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "小見出し"
+        },
+        {
+          "type": "richtext",
+          "id": "intro",
+          "label": "商品の紹介文",
+          "info": "素材や仕様の説明は、確認できる内容を記入してください。"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_product_description",
+          "label": "紹介文が空なら商品説明を使用",
+          "info": "オンの場合のみ、空欄の紹介文に登録済みの商品説明を表示します。",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "main_image",
+          "label": "メイン写真",
+          "info": "空欄の場合は、その商品のメイン写真を使います。"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_main_image",
+          "label": "メイン写真（スマートフォン）",
+          "info": "空欄の場合は、メイン写真と同じ写真を使います。"
+        },
+        {
+          "type": "select",
+          "id": "image_fit",
+          "label": "メイン写真の見せ方",
+          "default": "contain",
+          "options": [
+            {"value": "contain", "label": "写真全体を見せる"},
+            {"value": "cover", "label": "枠いっぱいに見せる"}
+          ]
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "メイン写真の位置（PC）",
+          "default": "left",
+          "options": [
+            {"value": "left", "label": "左"},
+            {"value": "right", "label": "右"}
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "scene_image",
+          "label": "着用・暮らしの写真",
+          "info": "この商品を着て過ごす様子など、ブランドの世界観を伝える写真を選びます。未設定の場合、この部分は表示されません。"
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_scene_image",
+          "label": "着用・暮らしの写真（スマートフォン）"
+        },
+        {
+          "type": "richtext",
+          "id": "scene_caption",
+          "label": "着用・暮らしの写真の説明"
+        },
+        {
+          "type": "image_picker",
+          "id": "detail_image",
+          "label": "細部の写真",
+          "info": "生地、縫い目、シルエットなどを紹介する写真を選びます。未設定の場合、この部分は表示されません。"
+        },
+        {
+          "type": "text",
+          "id": "detail_heading",
+          "label": "細部の見出し"
+        },
+        {
+          "type": "richtext",
+          "id": "detail_text",
+          "label": "細部の説明"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "商品ページへのリンクのテキスト",
+          "default": "商品の詳細を見る"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "TA VIE｜商品を紹介",
+      "category": "Products",
+      "blocks": [
+        {"type": "product_story"},
+        {"type": "product_story", "settings": {"image_position": "right"}}
+      ]
+    }
+  ],
+  "disabled_on": {
+    "groups": ["header", "aside", "custom.pre_footer", "footer"]
+  }
+}
+{% endschema %}

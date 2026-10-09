@@ -197,7 +197,8 @@
         "color_scheme": "scheme-5",
         "padding_top": 0,
         "padding_bottom": 0
-      }
+      },
+      "disabled": true
     },
     "section_text_with_products_yW3LJx": {
       "type": "section-text-with-products",
@@ -250,7 +251,8 @@
         "color_scheme": "scheme-tavie-white",
         "padding_top": 60,
         "padding_bottom": 40
-      }
+      },
+      "disabled": true
     },
     "columns-1": {
       "type": "section-columns",
@@ -332,7 +334,8 @@
         "padding_top": 0,
         "padding_bottom": 62,
         "heading_tag": "automatic"
-      }
+      },
+      "disabled": true
     },
     "double": {
       "type": "section-double",
@@ -401,7 +404,8 @@
         "padding_top": 42,
         "padding_bottom": 62,
         "show_placeholder": true
-      }
+      },
+      "disabled": true
     },
     "announcement-2": {
       "type": "section-announcement",
@@ -816,7 +820,8 @@
         "color_scheme": "scheme-tavie-white",
         "padding_top": 20,
         "padding_bottom": 20
-      }
+      },
+      "disabled": true
     },
     "look": {
       "type": "section-look",
@@ -1505,7 +1510,8 @@
         "padding_top": 62,
         "padding_bottom": 62,
         "heading_tag": "h2"
-      }
+      },
+      "disabled": true
     },
     "ta_vie_reading": {
       "type": "section-blog",
@@ -1532,10 +1538,51 @@
         "padding_bottom": 62,
         "heading_tag": "h2",
         "title_tag": "h3"
-      }
+      },
+      "disabled": false
+    },
+    "ta_vie_product_stories": {
+      "type": "section-product-stories",
+      "settings": {
+        "eyebrow": "TA VIE",
+        "heading": "家での時間を、あなたらしく。",
+        "intro": "<p>一着の装いから、日々の暮らしを大切に。</p>",
+        "heading_tag": "h1",
+        "color_scheme": "scheme-tavie-white",
+        "show_price": true,
+        "show_all_link": true,
+        "all_label": "全商品を見る",
+        "padding_top": 56,
+        "padding_bottom": 72
+      },
+      "blocks": {
+        "product_story_1": {
+          "type": "product_story",
+          "settings": {
+            "image_fit": "contain",
+            "image_position": "left",
+            "use_product_description": false,
+            "button_label": "商品の詳細を見る"
+          }
+        },
+        "product_story_2": {
+          "type": "product_story",
+          "settings": {
+            "image_fit": "contain",
+            "image_position": "right",
+            "use_product_description": false,
+            "button_label": "商品の詳細を見る"
+          }
+        }
+      },
+      "block_order": [
+        "product_story_1",
+        "product_story_2"
+      ]
     }
   },
   "order": [
+    "ta_vie_product_stories",
     "section_slideshow_nested_YfkG44",
     "ta_vie_products",
     "section_text_with_products_yW3LJx",

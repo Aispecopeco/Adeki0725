@@ -2,10 +2,15 @@
   "theme": "Broadcast",
   "version": "8.1.1",
   "brand": "TA VIE",
-  "revision": "Restore toolbar, mobile social and homepage page links; add site-wide Japanese typography selection",
+  "revision": "Present each selected product in a large visual chapter with use-scene and detail photography; replace the homepage product grid",
   "comparison": "Re-uploaded original ZIP; identical to the earlier original",
-  "changed_theme_files": 83,
+  "changed_theme_files": 85,
   "files": [
+    {
+      "path": "assets/ta-vie-product-stories.css",
+      "operation": "add",
+      "content": ".ta-vie-product-stories {\n  background: var(--COLOR-BG);\n  color: var(--COLOR-TEXT);\n}\n\n.ta-vie-product-stories > .wrapper--full-padded {\n  max-width: 1600px;\n  margin-inline: auto;\n}\n\n.ta-vie-product-stories__intro {\n  max-width: 760px;\n  margin: 0 0 clamp(40px, 6vw, 88px);\n}\n\n.ta-vie-product-stories__eyebrow,\n.ta-vie-product-story__eyebrow {\n  margin: 0 0 16px;\n  font-size: 12px;\n  line-height: 1.6;\n  letter-spacing: 0.08em;\n}\n\n.ta-vie-product-stories__heading,\n.ta-vie-product-story__title,\n.ta-vie-product-story__detail-heading {\n  margin: 0;\n  font-family: var(--FONT-STACK-HEADING);\n  font-weight: var(--FONT-WEIGHT-HEADING);\n  line-break: strict;\n  overflow-wrap: anywhere;\n  word-break: normal;\n  text-wrap: balance;\n}\n\n.ta-vie-product-stories__heading {\n  font-size: clamp(32px, 3.4vw, 54px);\n  line-height: 1.4;\n}\n\n.ta-vie-product-stories__intro-copy {\n  max-width: 36em;\n  margin-top: 20px;\n}\n\n.ta-vie-product-story + .ta-vie-product-story {\n  margin-top: clamp(88px, 12vw, 176px);\n}\n\n.ta-vie-product-story__stage,\n.ta-vie-product-story__detail {\n  display: grid;\n  grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);\n  gap: clamp(36px, 6vw, 88px);\n  align-items: center;\n}\n\n.ta-vie-product-story__media,\n.ta-vie-product-story__scene-image,\n.ta-vie-product-story__detail-media {\n  position: relative;\n  min-width: 0;\n  overflow: hidden;\n  background: var(--COLOR-BG-ACCENT);\n}\n\n.ta-vie-product-story__media {\n  width: 100%;\n  aspect-ratio: 4 / 5;\n  max-height: 980px;\n}\n\n.ta-vie-product-story__image {\n  height: 100%;\n  margin: 0;\n  padding-top: 0;\n}\n\n.ta-vie-product-story__media > .desktop,\n.ta-vie-product-story__media > .mobile {\n  height: 100%;\n}\n\n.ta-vie-product-story__media--contain img {\n  object-fit: contain;\n}\n\n.ta-vie-product-story__media--cover img,\n.ta-vie-product-story__scene-image img,\n.ta-vie-product-story__detail-media img {\n  object-fit: cover;\n}\n\n.ta-vie-product-story__copy {\n  min-width: 0;\n  max-width: 420px;\n  padding-block: 24px;\n}\n\n.ta-vie-product-story__title {\n  font-size: clamp(28px, 3vw, 44px);\n  line-height: 1.45;\n}\n\n.ta-vie-product-stories__intro-copy,\n.ta-vie-product-story__intro,\n.ta-vie-product-story__detail-text,\n.ta-vie-product-story__caption {\n  font-size: 16px;\n  line-height: 1.85;\n  overflow-wrap: anywhere;\n}\n\n.ta-vie-product-story__intro {\n  margin-top: 24px;\n}\n\n.ta-vie-product-story__intro > :first-child,\n.ta-vie-product-story__detail-text > :first-child,\n.ta-vie-product-story__caption > :first-child,\n.ta-vie-product-stories__intro-copy > :first-child {\n  margin-top: 0;\n}\n\n.ta-vie-product-story__intro > :last-child,\n.ta-vie-product-story__detail-text > :last-child,\n.ta-vie-product-story__caption > :last-child,\n.ta-vie-product-stories__intro-copy > :last-child {\n  margin-bottom: 0;\n}\n\n.ta-vie-product-story__intro img,\n.ta-vie-product-story__detail-text img {\n  max-width: 100%;\n  height: auto;\n}\n\n.ta-vie-product-story__price {\n  margin-top: 28px;\n  font-size: 16px;\n}\n\n.ta-vie-product-story__button {\n  margin-top: 24px;\n}\n\n.ta-vie-product-story__scene {\n  margin: clamp(40px, 7vw, 104px) 0 0;\n}\n\n.ta-vie-product-story__scene-image {\n  aspect-ratio: 16 / 10;\n  height: auto;\n  margin: 0;\n  padding-top: 0;\n}\n\n.ta-vie-product-story__caption {\n  max-width: 40em;\n  margin: 16px 0 0;\n}\n\n.ta-vie-product-story__detail {\n  max-width: 1240px;\n  margin: clamp(40px, 7vw, 104px) auto 0;\n  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);\n}\n\n.ta-vie-product-story__detail-media {\n  aspect-ratio: 1;\n}\n\n.ta-vie-product-story__detail--image-only {\n  display: block;\n  max-width: 720px;\n}\n\n.ta-vie-product-story__detail-copy {\n  min-width: 0;\n  max-width: 400px;\n}\n\n.ta-vie-product-story__detail-heading {\n  font-size: clamp(24px, 2vw, 32px);\n  line-height: 1.5;\n}\n\n.ta-vie-product-story__detail-text {\n  margin-top: 20px;\n}\n\n.ta-vie-product-story--text-only .ta-vie-product-story__stage {\n  grid-template-columns: minmax(0, 1fr);\n}\n\n.ta-vie-product-stories__editor-note {\n  margin-block: 32px;\n  padding: 24px;\n  border: 1px solid var(--COLOR-BORDER);\n  background: var(--COLOR-BG-ACCENT);\n  font-size: 16px;\n  line-height: 1.8;\n}\n\n.ta-vie-product-stories__all-link {\n  margin-top: clamp(56px, 8vw, 112px);\n  text-align: center;\n}\n\n@media only screen and (min-width: 990px) {\n  .ta-vie-product-story--image-right .ta-vie-product-story__stage {\n    grid-template-columns: minmax(0, 1fr) minmax(0, 1.75fr);\n  }\n\n  .ta-vie-product-story--image-right .ta-vie-product-story__media {\n    grid-column: 2;\n    grid-row: 1;\n  }\n\n  .ta-vie-product-story--image-right .ta-vie-product-story__copy {\n    grid-column: 1;\n    grid-row: 1;\n  }\n\n  .ta-vie-product-story--text-only .ta-vie-product-story__stage {\n    grid-template-columns: minmax(0, 1fr);\n  }\n\n  .ta-vie-product-story--text-only .ta-vie-product-story__copy {\n    grid-column: 1;\n  }\n\n  .ta-vie-product-story__detail--image-right {\n    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);\n  }\n\n  .ta-vie-product-story__detail--image-right .ta-vie-product-story__detail-media {\n    grid-column: 2;\n    grid-row: 1;\n  }\n\n  .ta-vie-product-story__detail--image-right .ta-vie-product-story__detail-copy {\n    grid-column: 1;\n    grid-row: 1;\n  }\n}\n\n@media only screen and (max-width: 989px) {\n  .ta-vie-product-story__stage,\n  .ta-vie-product-story__detail {\n    grid-template-columns: minmax(0, 1fr);\n    gap: 24px;\n  }\n\n  .ta-vie-product-story__copy {\n    padding-block: 8px;\n  }\n\n  .ta-vie-product-story__scene-image {\n    aspect-ratio: 4 / 5;\n  }\n}\n"
+    },
     {
       "path": "blocks/_group-buttons.liquid",
       "diff": "--- original/blocks/_group-buttons.liquid\n+++ edited/blocks/_group-buttons.liquid\n@@ -6,23 +6,27 @@\n   {{ block.shopify_attributes }}\n   style=\"--block-padding-bottom: {{ block.settings.padding_bottom }}px;\"\n >\n-  {%- render 'button',\n+  {%- if request.page_type != 'index' or block.settings.button_text != blank and block.settings.button_url != blank -%}\n+    {%- render 'button',\n     text: block.settings.button_text,\n     link: block.settings.button_url,\n     type: block.settings.button_type,\n     size: block.settings.button_size,\n     style: block.settings.button_style,\n     show_arrow: block.settings.show_arrow\n-  -%}\n+    -%}\n+  {%- endif -%}\n \n-  {%- render 'button',\n+  {%- if request.page_type != 'index' or block.settings.button_secondary_text != blank and block.settings.button_secondary_url != blank -%}\n+    {%- render 'button',\n     text: block.settings.button_secondary_text,\n     link: block.settings.button_secondary_url,\n     type: block.settings.button_secondary_type,\n     size: block.settings.button_secondary_size,\n     style: block.settings.button_secondary_style,\n     show_arrow: block.settings.show_secondary_arrow\n-  -%}\n+    -%}\n+  {%- endif -%}\n </div>\n \n {% schema %}\n"
@@ -4879,6 +4884,11 @@
       ]
     },
     {
+      "path": "sections/section-product-stories.liquid",
+      "operation": "add",
+      "content": "{%- liquid\n  assign section_heading_tag = section.settings.heading_tag | default: 'h2'\n  unless section_heading_tag == 'h1' or section_heading_tag == 'h2'\n    assign section_heading_tag = 'h2'\n  endunless\n\n  assign product_heading_tag = 'h3'\n  assign detail_heading_tag = 'h4'\n  if section_heading_tag == 'h1'\n    assign product_heading_tag = 'h2'\n    assign detail_heading_tag = 'h3'\n  endif\n\n  assign product_story_count = 0\n  assign all_products_link = section.settings.all_link | default: routes.all_products_collection_url\n-%}\n\n{%- render 'stylesheet', name: 'ta-vie-product-stories.css', async: false, inline: false, blocking: false -%}\n\n{%- style -%}\n  #ProductStories--{{ section.id }} {\n    --PT: {{ section.settings.padding_top }}px;\n    --PB: {{ section.settings.padding_bottom }}px;\n  }\n{%- endstyle -%}\n\n{%- capture product_stories -%}\n  {%- for block in section.blocks -%}\n    {%- liquid\n      assign story_product = block.settings.product\n      if story_product != blank and story_product.id == blank\n        assign story_product = all_products[block.settings.product]\n      endif\n\n      assign has_product = false\n      if story_product.id != blank and story_product.url != blank\n        assign has_product = true\n      endif\n\n      assign story_id = 'ProductStory--' | append: section.id | append: '--' | append: block.id\n      assign animation_anchor = '#' | append: story_id\n    -%}\n\n    {%- if has_product -%}\n      {%- liquid\n        assign product_story_count = product_story_count | plus: 1\n        assign main_image = block.settings.main_image | default: story_product.featured_image\n        assign mobile_main_image = block.settings.mobile_main_image\n        if main_image == blank and mobile_main_image != blank\n          assign main_image = mobile_main_image\n          assign mobile_main_image = ''\n        endif\n\n        assign scene_image = block.settings.scene_image\n        assign mobile_scene_image = block.settings.mobile_scene_image\n        if scene_image == blank and mobile_scene_image != blank\n          assign scene_image = mobile_scene_image\n          assign mobile_scene_image = ''\n        endif\n\n        assign detail_image = block.settings.detail_image\n        assign story_intro = block.settings.intro\n        if story_intro == blank and block.settings.use_product_description\n          assign story_intro = story_product.description\n        endif\n        assign image_fit = block.settings.image_fit | default: 'contain'\n        unless image_fit == 'cover'\n          assign image_fit = 'contain'\n        endunless\n\n        assign main_loading = 'lazy'\n        if product_story_count == 1\n          assign main_loading = 'eager'\n        endif\n\n        assign main_image_sizes = '(min-width: 1600px) 975px, (min-width: 990px) calc((100vw - 100px) * 0.65), (min-width: 750px) calc(100vw - 60px), calc(100vw - 32px)'\n        assign full_image_sizes = '(min-width: 1600px) 1500px, (min-width: 990px) calc(100vw - 100px), (min-width: 750px) calc(100vw - 60px), calc(100vw - 32px)'\n        assign detail_image_sizes = '(min-width: 1340px) 682px, (min-width: 990px) calc((100vw - 100px) * 0.55), (min-width: 750px) calc(100vw - 60px), calc(100vw - 32px)'\n        if block.settings.detail_heading == blank and block.settings.detail_text == blank\n          assign detail_image_sizes = '(min-width: 820px) 720px, (min-width: 750px) calc(100vw - 60px), calc(100vw - 32px)'\n        endif\n        assign story_button_label = block.settings.button_label | default: '商品の詳細を見る'\n      -%}\n\n      <article\n        id=\"{{ story_id }}\"\n        class=\"ta-vie-product-story{% if block.settings.image_position == 'right' %} ta-vie-product-story--image-right{% endif %}{% if main_image == blank %} ta-vie-product-story--text-only{% endif %}\"\n        aria-labelledby=\"{{ story_id }}--title\"\n        {{ block.shopify_attributes }}\n      >\n        <div class=\"ta-vie-product-story__stage\">\n          {%- if main_image != blank -%}\n            <div class=\"ta-vie-product-story__media ta-vie-product-story__media--{{ image_fit }}\">\n              {%- if mobile_main_image != blank and mobile_main_image != main_image -%}\n                <div class=\"desktop\">\n                  {%- render 'image',\n                    image: main_image,\n                    sizes: main_image_sizes,\n                    widths: '360, 540, 720, 900, 1080, 1296, 1512, 1728, 1950, 2260, 2700',\n                    loading: main_loading,\n                    modifier: 'ta-vie-product-story__image'\n                  -%}\n                </div>\n                <div class=\"mobile\">\n                  {%- render 'image',\n                    image: mobile_main_image,\n                    sizes: 'calc(100vw - 32px)',\n                    widths: '360, 540, 720, 900, 1080, 1296',\n                    loading: main_loading,\n                    modifier: 'ta-vie-product-story__image'\n                  -%}\n                </div>\n              {%- else -%}\n                {%- render 'image',\n                  image: main_image,\n                  sizes: main_image_sizes,\n                  widths: '360, 540, 720, 900, 1080, 1296, 1512, 1728, 1950, 2260, 2700',\n                  loading: main_loading,\n                  modifier: 'ta-vie-product-story__image'\n                -%}\n              {%- endif -%}\n            </div>\n          {%- endif -%}\n\n          <div\n            class=\"ta-vie-product-story__copy\"\n            data-aos=\"hero\"\n            data-aos-anchor=\"{{ animation_anchor }}\"\n            data-aos-order=\"1\"\n          >\n            {%- if block.settings.eyebrow != blank -%}\n              <p class=\"ta-vie-product-story__eyebrow subheading\">{{ block.settings.eyebrow | escape }}</p>\n            {%- endif -%}\n\n            <{{ product_heading_tag }} id=\"{{ story_id }}--title\" class=\"ta-vie-product-story__title heading-large\">\n              {{- story_product.title | strip_html | escape -}}\n            </{{ product_heading_tag }}>\n\n            {%- if story_intro != blank -%}\n              <div class=\"ta-vie-product-story__intro rte body-large\">{{ story_intro }}</div>\n            {%- endif -%}\n\n            {%- if section.settings.show_price and story_product.price != blank -%}\n              <div class=\"ta-vie-product-story__price\">\n                {%- render 'price',\n                  product: story_product,\n                  use_variant: false,\n                  show_badges: false,\n                  price_font_size: 'body-medium'\n                -%}\n              </div>\n            {%- endif -%}\n\n            <a class=\"ta-vie-product-story__button btn btn--primary btn--text\" href=\"{{ story_product.url | escape }}\">\n              <span>{{ story_button_label | escape }}</span>\n              {%- render 'icon-nav-arrow-right' -%}\n            </a>\n\n            {%- if request.design_mode and main_image == blank -%}\n              <p class=\"ta-vie-product-stories__editor-note body-small\">商品の写真が未設定です。このブロックの「メイン写真」を選ぶか、商品に写真を登録してください。</p>\n            {%- endif -%}\n          </div>\n        </div>\n\n        {%- if scene_image != blank -%}\n          <div class=\"ta-vie-product-story__scene\">\n            {%- if mobile_scene_image != blank and mobile_scene_image != scene_image -%}\n              <div class=\"desktop\">\n                {%- render 'image',\n                  image: scene_image,\n                  sizes: full_image_sizes,\n                  widths: '540, 720, 900, 1080, 1296, 1512, 1728, 1950, 2260, 2700, 3000',\n                  loading: 'lazy',\n                  modifier: 'ta-vie-product-story__scene-image'\n                -%}\n              </div>\n              <div class=\"mobile\">\n                {%- render 'image',\n                  image: mobile_scene_image,\n                  sizes: 'calc(100vw - 32px)',\n                  widths: '360, 540, 720, 900, 1080, 1296',\n                  loading: 'lazy',\n                  modifier: 'ta-vie-product-story__scene-image'\n                -%}\n              </div>\n            {%- else -%}\n              {%- render 'image',\n                image: scene_image,\n                sizes: full_image_sizes,\n                widths: '540, 720, 900, 1080, 1296, 1512, 1728, 1950, 2260, 2700, 3000',\n                loading: 'lazy',\n                modifier: 'ta-vie-product-story__scene-image'\n              -%}\n            {%- endif -%}\n\n            {%- if block.settings.scene_caption != blank -%}\n              <div class=\"ta-vie-product-story__caption rte body-medium\">{{ block.settings.scene_caption }}</div>\n            {%- endif -%}\n          </div>\n        {%- endif -%}\n\n        {%- if detail_image != blank -%}\n          <div class=\"ta-vie-product-story__detail{% if block.settings.image_position != 'right' %} ta-vie-product-story__detail--image-right{% endif %}{% if block.settings.detail_heading == blank and block.settings.detail_text == blank %} ta-vie-product-story__detail--image-only{% endif %}\">\n            <div class=\"ta-vie-product-story__detail-media\">\n              {%- render 'image',\n                image: detail_image,\n                sizes: detail_image_sizes,\n                widths: '360, 540, 720, 900, 1080, 1296, 1512, 1728, 1950',\n                loading: 'lazy',\n                modifier: 'ta-vie-product-story__image'\n              -%}\n            </div>\n\n            {%- if block.settings.detail_heading != blank or block.settings.detail_text != blank -%}\n              <div\n                class=\"ta-vie-product-story__detail-copy\"\n                data-aos=\"hero\"\n                data-aos-anchor=\"{{ animation_anchor }}\"\n                data-aos-order=\"2\"\n              >\n                {%- if block.settings.detail_heading != blank -%}\n                  <{{ detail_heading_tag }} class=\"ta-vie-product-story__detail-heading heading-medium\">{{ block.settings.detail_heading | escape }}</{{ detail_heading_tag }}>\n                {%- endif -%}\n\n                {%- if block.settings.detail_text != blank -%}\n                  <div class=\"ta-vie-product-story__detail-text rte body-large\">{{ block.settings.detail_text }}</div>\n                {%- endif -%}\n              </div>\n            {%- endif -%}\n          </div>\n        {%- endif -%}\n      </article>\n    {%- elsif request.design_mode -%}\n      <aside class=\"ta-vie-product-stories__editor-note body-medium\" {{ block.shopify_attributes }}>\n        このブロックの「紹介する商品」を選択してください。商品を選ぶと、商品名・写真・価格・商品ページへのリンクが表示されます。紹介文・着用写真・細部の写真を追加すると、一つの商品を写真と文章で紹介できます。未設定のブロックは公開ページには表示されません。\n      </aside>\n    {%- endif -%}\n  {%- endfor -%}\n{%- endcapture -%}\n\n<section\n  id=\"ProductStories--{{ section.id }}\"\n  class=\"ta-vie-product-stories section-padding color-{{ section.settings.color_scheme }}\"\n  data-section-id=\"{{ section.id }}\"\n  data-section-type=\"product-stories\"\n  {% if section.settings.heading != blank %}aria-labelledby=\"ProductStories--{{ section.id }}--heading\"{% endif %}\n>\n  <div class=\"wrapper--full-padded\">\n    {%- if section.settings.eyebrow != blank or section.settings.heading != blank or section.settings.intro != blank -%}\n      <div class=\"ta-vie-product-stories__intro\">\n        {%- if section.settings.eyebrow != blank -%}\n          <p class=\"ta-vie-product-stories__eyebrow subheading\">{{ section.settings.eyebrow | escape }}</p>\n        {%- endif -%}\n\n        {%- if section.settings.heading != blank -%}\n          <{{ section_heading_tag }} id=\"ProductStories--{{ section.id }}--heading\" class=\"ta-vie-product-stories__heading heading-x-large\">{{ section.settings.heading | escape }}</{{ section_heading_tag }}>\n        {%- endif -%}\n\n        {%- if section.settings.intro != blank -%}\n          <div class=\"ta-vie-product-stories__intro-copy rte body-large\">{{ section.settings.intro }}</div>\n        {%- endif -%}\n      </div>\n    {%- endif -%}\n\n    <div class=\"ta-vie-product-stories__chapters\">{{ product_stories }}</div>\n\n    {%- if request.design_mode and section.blocks.size == 0 -%}\n      <aside class=\"ta-vie-product-stories__editor-note body-medium\">「商品を紹介」ブロックを追加し、紹介する商品を選択してください。</aside>\n    {%- endif -%}\n\n    {%- if section.settings.show_all_link and product_story_count > 0 and all_products_link != blank -%}\n      <div class=\"ta-vie-product-stories__all-link\">\n        <a class=\"btn btn--primary btn--text\" href=\"{{ all_products_link | escape }}\">\n          <span>{{ section.settings.all_label | default: '全商品を見る' | escape }}</span>\n          {%- render 'icon-nav-arrow-right' -%}\n        </a>\n      </div>\n    {%- endif -%}\n  </div>\n</section>\n\n{% schema %}\n{\n  \"name\": \"TA VIE｜商品を紹介\",\n  \"settings\": [\n    {\n      \"type\": \"text\",\n      \"id\": \"eyebrow\",\n      \"label\": \"小見出し\",\n      \"default\": \"TA VIE\"\n    },\n    {\n      \"type\": \"text\",\n      \"id\": \"heading\",\n      \"label\": \"見出し\",\n      \"default\": \"家での時間を、あなたらしく。\"\n    },\n    {\n      \"type\": \"richtext\",\n      \"id\": \"intro\",\n      \"label\": \"導入文\",\n      \"default\": \"<p>一着の装いから、日々の暮らしを大切に。</p>\"\n    },\n    {\n      \"type\": \"select\",\n      \"id\": \"heading_tag\",\n      \"label\": \"見出しのHTMLタグ\",\n      \"info\": \"ページの主見出しにはH1を、それ以外にはH2を選びます。\",\n      \"default\": \"h2\",\n      \"options\": [\n        {\"value\": \"h1\", \"label\": \"H1\"},\n        {\"value\": \"h2\", \"label\": \"H2\"}\n      ]\n    },\n    {\n      \"type\": \"color_scheme\",\n      \"id\": \"color_scheme\",\n      \"label\": \"配色\",\n      \"default\": \"scheme-tavie-white\"\n    },\n    {\n      \"type\": \"checkbox\",\n      \"id\": \"show_price\",\n      \"label\": \"商品の価格を表示\",\n      \"default\": true\n    },\n    {\n      \"type\": \"checkbox\",\n      \"id\": \"show_all_link\",\n      \"label\": \"最後に全商品へのリンクを表示\",\n      \"default\": true\n    },\n    {\n      \"type\": \"url\",\n      \"id\": \"all_link\",\n      \"label\": \"全商品リンクのリンク先\",\n      \"info\": \"空欄の場合は、ストアの全商品ページを使います。\"\n    },\n    {\n      \"type\": \"text\",\n      \"id\": \"all_label\",\n      \"label\": \"全商品リンクのテキスト\",\n      \"default\": \"全商品を見る\"\n    },\n    {\n      \"type\": \"range\",\n      \"id\": \"padding_top\",\n      \"label\": \"上の余白\",\n      \"min\": 0,\n      \"max\": 200,\n      \"step\": 2,\n      \"unit\": \"px\",\n      \"default\": 80\n    },\n    {\n      \"type\": \"range\",\n      \"id\": \"padding_bottom\",\n      \"label\": \"下の余白\",\n      \"min\": 0,\n      \"max\": 200,\n      \"step\": 2,\n      \"unit\": \"px\",\n      \"default\": 80\n    }\n  ],\n  \"max_blocks\": 6,\n  \"blocks\": [\n    {\n      \"type\": \"product_story\",\n      \"name\": \"商品を紹介\",\n      \"settings\": [\n        {\n          \"type\": \"product\",\n          \"id\": \"product\",\n          \"label\": \"紹介する商品\"\n        },\n        {\n          \"type\": \"text\",\n          \"id\": \"eyebrow\",\n          \"label\": \"小見出し\"\n        },\n        {\n          \"type\": \"richtext\",\n          \"id\": \"intro\",\n          \"label\": \"商品の紹介文\",\n          \"info\": \"素材や仕様の説明は、確認できる内容を記入してください。\"\n        },\n        {\n          \"type\": \"checkbox\",\n          \"id\": \"use_product_description\",\n          \"label\": \"紹介文が空なら商品説明を使用\",\n          \"info\": \"オンの場合のみ、空欄の紹介文に登録済みの商品説明を表示します。\",\n          \"default\": false\n        },\n        {\n          \"type\": \"image_picker\",\n          \"id\": \"main_image\",\n          \"label\": \"メイン写真\",\n          \"info\": \"空欄の場合は、その商品のメイン写真を使います。\"\n        },\n        {\n          \"type\": \"image_picker\",\n          \"id\": \"mobile_main_image\",\n          \"label\": \"メイン写真（スマートフォン）\",\n          \"info\": \"空欄の場合は、メイン写真と同じ写真を使います。\"\n        },\n        {\n          \"type\": \"select\",\n          \"id\": \"image_fit\",\n          \"label\": \"メイン写真の見せ方\",\n          \"default\": \"contain\",\n          \"options\": [\n            {\"value\": \"contain\", \"label\": \"写真全体を見せる\"},\n            {\"value\": \"cover\", \"label\": \"枠いっぱいに見せる\"}\n          ]\n        },\n        {\n          \"type\": \"select\",\n          \"id\": \"image_position\",\n          \"label\": \"メイン写真の位置（PC）\",\n          \"default\": \"left\",\n          \"options\": [\n            {\"value\": \"left\", \"label\": \"左\"},\n            {\"value\": \"right\", \"label\": \"右\"}\n          ]\n        },\n        {\n          \"type\": \"image_picker\",\n          \"id\": \"scene_image\",\n          \"label\": \"着用・暮らしの写真\",\n          \"info\": \"この商品を着て過ごす様子など、ブランドの世界観を伝える写真を選びます。未設定の場合、この部分は表示されません。\"\n        },\n        {\n          \"type\": \"image_picker\",\n          \"id\": \"mobile_scene_image\",\n          \"label\": \"着用・暮らしの写真（スマートフォン）\"\n        },\n        {\n          \"type\": \"richtext\",\n          \"id\": \"scene_caption\",\n          \"label\": \"着用・暮らしの写真の説明\"\n        },\n        {\n          \"type\": \"image_picker\",\n          \"id\": \"detail_image\",\n          \"label\": \"細部の写真\",\n          \"info\": \"生地、縫い目、シルエットなどを紹介する写真を選びます。未設定の場合、この部分は表示されません。\"\n        },\n        {\n          \"type\": \"text\",\n          \"id\": \"detail_heading\",\n          \"label\": \"細部の見出し\"\n        },\n        {\n          \"type\": \"richtext\",\n          \"id\": \"detail_text\",\n          \"label\": \"細部の説明\"\n        },\n        {\n          \"type\": \"text\",\n          \"id\": \"button_label\",\n          \"label\": \"商品ページへのリンクのテキスト\",\n          \"default\": \"商品の詳細を見る\"\n        }\n      ]\n    }\n  ],\n  \"presets\": [\n    {\n      \"name\": \"TA VIE｜商品を紹介\",\n      \"category\": \"Products\",\n      \"blocks\": [\n        {\"type\": \"product_story\"},\n        {\"type\": \"product_story\", \"settings\": {\"image_position\": \"right\"}}\n      ]\n    }\n  ],\n  \"disabled_on\": {\n    \"groups\": [\"header\", \"aside\", \"custom.pre_footer\", \"footer\"]\n  }\n}\n{% endschema %}\n"
+    },
+    {
       "path": "sections/section-product.liquid",
       "scope": "schema only",
       "changes": [
@@ -5126,120 +5136,131 @@
       "path": "templates/index.json",
       "changes": [
         {
+          "path": "/order/0",
+          "operation": "replace",
+          "old": "section_slideshow_nested_YfkG44",
+          "new": "ta_vie_product_stories"
+        },
+        {
           "path": "/order/1",
           "operation": "replace",
           "old": "section_text_with_products_yW3LJx",
-          "new": "ta_vie_products"
+          "new": "section_slideshow_nested_YfkG44"
         },
         {
           "path": "/order/2",
           "operation": "replace",
           "old": "columns-1",
-          "new": "section_text_with_products_yW3LJx"
+          "new": "ta_vie_products"
         },
         {
           "path": "/order/3",
           "operation": "replace",
           "old": "double",
-          "new": "columns-1"
+          "new": "section_text_with_products_yW3LJx"
         },
         {
           "path": "/order/4",
           "operation": "replace",
           "old": "announcement-2",
-          "new": "double"
+          "new": "columns-1"
         },
         {
           "path": "/order/5",
           "operation": "replace",
           "old": "section-tab-collections",
-          "new": "announcement-2"
+          "new": "double"
         },
         {
           "path": "/order/6",
           "operation": "replace",
           "old": "section_video_w6YfAE",
-          "new": "section-tab-collections"
+          "new": "announcement-2"
         },
         {
           "path": "/order/7",
           "operation": "replace",
           "old": "press-logos",
-          "new": "section_video_w6YfAE"
+          "new": "section-tab-collections"
         },
         {
           "path": "/order/8",
           "operation": "replace",
           "old": "custom-content-1",
-          "new": "press-logos"
+          "new": "section_video_w6YfAE"
         },
         {
           "path": "/order/9",
           "operation": "replace",
           "old": "collections-list-hover",
-          "new": "custom-content-1"
+          "new": "press-logos"
         },
         {
           "path": "/order/10",
           "operation": "replace",
           "old": "announcement-3",
-          "new": "collections-list-hover"
+          "new": "custom-content-1"
         },
         {
           "path": "/order/11",
           "operation": "replace",
           "old": "look",
-          "new": "announcement-3"
+          "new": "collections-list-hover"
         },
         {
           "path": "/order/12",
           "operation": "replace",
           "old": "section_dynamic_content_TkrMUq",
-          "new": "ta_vie_reading"
+          "new": "announcement-3"
         },
         {
           "path": "/order/13",
           "operation": "replace",
           "old": "section_custom_content_H4RTrx",
-          "new": "look"
+          "new": "ta_vie_reading"
         },
         {
           "path": "/order/14",
           "operation": "replace",
           "old": "section-product",
-          "new": "section_dynamic_content_TkrMUq"
+          "new": "look"
         },
         {
           "path": "/order/15",
           "operation": "replace",
           "old": "rich-text-3",
-          "new": "section_custom_content_H4RTrx"
+          "new": "section_dynamic_content_TkrMUq"
         },
         {
           "path": "/order/16",
           "operation": "replace",
           "old": "columns-2",
-          "new": "section-product"
+          "new": "section_custom_content_H4RTrx"
         },
         {
           "path": "/order/17",
           "operation": "replace",
           "old": "text-row",
-          "new": "rich-text-3"
+          "new": "section-product"
         },
         {
           "path": "/order/18",
           "operation": "replace",
           "old": "section_hero_scrolling_mmThBz",
-          "new": "columns-2"
+          "new": "rich-text-3"
         },
         {
           "path": "/order/19",
           "operation": "add",
-          "new": "text-row"
+          "new": "columns-2"
         },
         {
           "path": "/order/20",
+          "operation": "add",
+          "new": "text-row"
+        },
+        {
+          "path": "/order/21",
           "operation": "add",
           "new": "section_hero_scrolling_mmThBz"
         },
@@ -5253,6 +5274,11 @@
           "operation": "replace",
           "old": "Express yourself in your own way",
           "new": "家で過ごす時間を、自分のために。"
+        },
+        {
+          "path": "/sections/announcement-3/disabled",
+          "operation": "add",
+          "new": true
         },
         {
           "path": "/sections/announcement-3/settings/color_scheme",
@@ -5324,6 +5350,11 @@
           "operation": "replace",
           "old": "Made-To-Order Jewelery",
           "new": "朝の支度に。"
+        },
+        {
+          "path": "/sections/columns-1/disabled",
+          "operation": "add",
+          "new": true
         },
         {
           "path": "/sections/columns-1/settings/color_scheme",
@@ -5422,6 +5453,11 @@
           "operation": "replace",
           "old": "<p>From dainty classics that are perfect for daily adornment to chic, to trendsetting pieces designed to complement any occasion – our selection blends exquisite craftsmanship with modern sensibility.</p>",
           "new": "<p>朝の支度、読書をする午後、一日を終えてくつろぐ夜。外へ出る日の装いと同じように、家で過ごす自分にも目を向ける。</p><p>TA VIEは、そんな毎日を大切にするためのルームウェアを提案します。</p>"
+        },
+        {
+          "path": "/sections/double/disabled",
+          "operation": "add",
+          "new": true
         },
         {
           "path": "/sections/double/settings/color_scheme",
@@ -5718,6 +5754,16 @@
           "new": "align--bottom-left-mobile"
         },
         {
+          "path": "/sections/section_slideshow_nested_YfkG44/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/section_text_with_products_yW3LJx/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
           "path": "/sections/section_text_with_products_yW3LJx/settings/color_scheme",
           "operation": "replace",
           "old": "",
@@ -5745,6 +5791,49 @@
           "path": "/sections/section_video_w6YfAE/disabled",
           "operation": "add",
           "new": true
+        },
+        {
+          "path": "/sections/ta_vie_product_stories",
+          "operation": "add",
+          "new": {
+            "type": "section-product-stories",
+            "settings": {
+              "eyebrow": "TA VIE",
+              "heading": "家での時間を、あなたらしく。",
+              "intro": "<p>一着の装いから、日々の暮らしを大切に。</p>",
+              "heading_tag": "h1",
+              "color_scheme": "scheme-tavie-white",
+              "show_price": true,
+              "show_all_link": true,
+              "all_label": "全商品を見る",
+              "padding_top": 56,
+              "padding_bottom": 72
+            },
+            "blocks": {
+              "product_story_1": {
+                "type": "product_story",
+                "settings": {
+                  "image_fit": "contain",
+                  "image_position": "left",
+                  "use_product_description": false,
+                  "button_label": "商品の詳細を見る"
+                }
+              },
+              "product_story_2": {
+                "type": "product_story",
+                "settings": {
+                  "image_fit": "contain",
+                  "image_position": "right",
+                  "use_product_description": false,
+                  "button_label": "商品の詳細を見る"
+                }
+              }
+            },
+            "block_order": [
+              "product_story_1",
+              "product_story_2"
+            ]
+          }
         },
         {
           "path": "/sections/ta_vie_products",
@@ -5775,7 +5864,8 @@
               "padding_top": 62,
               "padding_bottom": 62,
               "heading_tag": "h2"
-            }
+            },
+            "disabled": true
           }
         },
         {
@@ -5806,7 +5896,8 @@
               "padding_bottom": 62,
               "heading_tag": "h2",
               "title_tag": "h3"
-            }
+            },
+            "disabled": false
           }
         },
         {
@@ -5857,30 +5948,50 @@
     "original_section_ids_retained": 19,
     "original_section_relative_order_retained": true,
     "original_block_trees_retained": true,
-    "new_native_sections": [
+    "all_previous_21_sections_content_preserved": true,
+    "new_section": "ta_vie_product_stories:section-product-stories",
+    "retained_native_sections": [
       "ta_vie_products:section-collection",
       "ta_vie_reading:section-blog"
     ],
     "active_order": [
-      "section_slideshow_nested_YfkG44",
-      "ta_vie_products",
-      "section_text_with_products_yW3LJx",
-      "columns-1",
-      "double",
-      "announcement-3",
+      "ta_vie_product_stories",
       "ta_vie_reading"
     ],
-    "disabled_original_sections": 14,
-    "products": "Native picker or actual collections.all when unselected; hide publicly without products; editor-only setup message; grid 2x2 desktop and 1 column mobile",
+    "disabled_original_sections": 19,
+    "legacy_product_grid": "Saved unchanged but disabled; no active horizontal product catalog",
+    "products": "Explicit curated product blocks only, initially two unselected blocks; real product title, price and URL; public empty blocks hidden with editor guidance",
     "reading": "Native section Blog picker takes priority, then opted-in global blog picker, then existing news; hide publicly without published articles; editor-only setup message; 3 cards; section picker does not automatically populate global navigation",
-    "hero_height": "750px desktop / full screen mobile",
-    "hero_native_animation": "Original slide, arrows and 4-second autoplay retained",
-    "columns": "Original 3 native image columns; native mobile slider",
-    "marquee": "One original native marquee at schema-valid 50 percent speed",
-    "typography": "Site-wide Japanese sans mode is current and default; legacy home heading override remains theme; Japanese wrapping retained in hero/intro/story/blog headings",
-    "purchase_and_asset_code_unchanged": true,
+    "entrance": "One static brand introduction with a single h1, followed by the first selected product; previous autoplay hero, abstract photo columns and marquee disabled with settings retained",
+    "typography": "Site-wide Japanese sans mode remains current; scoped new section styles provide large product titles and 16px explanatory text",
+    "native_purchase_and_original_asset_code_unchanged": true,
     "actual_demo_browsing": "Official Theme Store and demo HTML fetched with TLS verification; official desktop/mobile preview images inspected; interactive remote browser blocked by certificate trust approval",
     "reference_demo_version": "8.1.0; supplied user theme is 8.1.1"
+  },
+  "product_chapters": {
+    "current_blocks": 2,
+    "maximum_blocks": 6,
+    "sequence": [
+      "large main photograph and product introduction",
+      "optional large use-scene photograph",
+      "optional detail photograph and explanation",
+      "next selected product"
+    ],
+    "desktop": "Main photograph approximately 64 percent of available grid columns; next product photo placement can be reversed; media fills its column and height caps at 980px",
+    "mobile_and_tablet_below_990px": "One column, photograph then title, introduction, price and product detail link; no reversal of reading order",
+    "main_photo": "Explicit image preferred, otherwise real product featured_image; separate mobile image supported; contain or cover selectable",
+    "optional_photographs": "Use-scene and detail images require explicit selection; absent photographs do not produce placeholders or repeated product images",
+    "copy": "Manual introduction preferred; existing product description used only with an opt-in checkbox, off by default; material names and features entered per product",
+    "product_selection": "No automatic collections.all fallback or arbitrary catalog product",
+    "price": "Native price snippet with actual product data; no new purchase form",
+    "resources_current": "No merchant product or photographs selected; no material composition, certification or product facts invented",
+    "reused_native_behavior": [
+      "responsive image renderer",
+      "price renderer",
+      "AOS text reveal",
+      "theme color schemes",
+      "existing product-page purchase flow"
+    ]
   },
   "site_typography": {
     "setting": "ta_vie_japanese_font_style",
@@ -5900,8 +6011,8 @@
   },
   "home_story_readability": {
     "body_max_width": "40em; native typography unchanged",
-    "scope": "Home original double section only, including Shopify generated section ID prefix",
-    "trigger": "At the supplied screenshot width of 2718px, native body was 894.8px wide with 55 Japanese characters on one line"
+    "scope": "Retained but now disabled original double section only, including Shopify generated section ID prefix",
+    "trigger": "Earlier readability adjustment at screenshot width 2718px; not the new product chapter layout"
   },
   "footer_refinement": {
     "empty_menu_columns": "Hide heading and column; preserve configured native menus",
