@@ -1,5 +1,14 @@
 <!-- /sections/section-double.liquid -->
 
+{%- assign ta_vie_section_key = section.id | split: '__' | last -%}
+{%- if request.page_type == 'index' and ta_vie_section_key == 'double' -%}
+  {%- style -%}
+    #BrickSection--{{ section.id }} .hero__rte {
+      max-width: 40em;
+    }
+  {%- endstyle -%}
+{%- endif -%}
+
 {%- render 'section-double' -%}
 
 {% schema %}

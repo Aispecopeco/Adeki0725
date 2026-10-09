@@ -17,7 +17,7 @@
           "settings": {
             "link": "",
             "flex_align_desktop": "align--bottom-left-desktop",
-            "flex_align_mobile": "align--middle-center-mobile",
+            "flex_align_mobile": "align--bottom-left-mobile",
             "show_text_background": false,
             "bg_color": "",
             "color": "#ffffff",
@@ -49,9 +49,9 @@
               "name": "Side by side buttons",
               "settings": {
                 "button_text": "ルームウェアを見る",
-                "button_type": "btn--white",
+                "button_type": "btn--black",
                 "button_size": "",
-                "button_style": "btn--outline",
+                "button_style": "btn--solid",
                 "show_arrow": false,
                 "button_secondary_text": "",
                 "button_secondary_type": "btn--white",
@@ -164,7 +164,7 @@
                 "text": "ルームウェアを見る",
                 "type": "btn--white",
                 "size": "",
-                "style": "btn--outline",
+                "style": "btn--solid",
                 "show_arrow": false,
                 "full_width": false,
                 "padding_bottom": 8,
@@ -192,8 +192,8 @@
         "autoplay": true,
         "autoplay_speed": 4,
         "width": "wrapper--full",
-        "height": "sixty-fifty-height-hero",
-        "mobile_height": "four-fifty-height-hero--mobile",
+        "height": "seven-fifty-height-hero",
+        "mobile_height": "screen-height-full--mobile",
         "color_scheme": "scheme-5",
         "padding_top": 0,
         "padding_bottom": 0
@@ -241,17 +241,16 @@
       "settings": {
         "subheading": "TA VIE",
         "heading": "家で過ごす時間を、 自分のために。",
-        "image_border_radius": 20,
+        "image_border_radius": 0,
         "width": "wrapper--full-padded",
-        "text_font_size_px_desktop": 28,
+        "text_font_size_px_desktop": 32,
         "text_align_desktop": "text-center",
-        "text_font_size_px_mobile": 24,
+        "text_font_size_px_mobile": 26,
         "text_align_mobile": "text-left--mobile",
-        "color_scheme": "",
+        "color_scheme": "scheme-tavie-white",
         "padding_top": 60,
         "padding_bottom": 40
-      },
-      "disabled": true
+      }
     },
     "columns-1": {
       "type": "section-columns",
@@ -328,13 +327,12 @@
         "align_columns": "flex-align-top",
         "layout": "grid",
         "grid": 3,
-        "layout_mobile": "1",
-        "color_scheme": "",
+        "layout_mobile": "slider",
+        "color_scheme": "scheme-tavie-white",
         "padding_top": 0,
         "padding_bottom": 62,
         "heading_tag": "automatic"
-      },
-      "disabled": true
+      }
     },
     "double": {
       "type": "section-double",
@@ -358,7 +356,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>朝の支度、読書をする午後、一日を終えてくつろぐ夜。外へ出る日の装いと同じように、家で過ごす自分にも目を向ける。TA VIEは、そんな毎日を大切にするためのルームウェアを提案します。</p>",
+            "text": "<p>朝の支度、読書をする午後、一日を終えてくつろぐ夜。外へ出る日の装いと同じように、家で過ごす自分にも目を向ける。</p><p>TA VIEは、そんな毎日を大切にするためのルームウェアを提案します。</p>",
             "text_font_size": "body-medium",
             "padding_bottom": 24
           }
@@ -395,13 +393,13 @@
         "image_width": "one-half",
         "text_alignment": "text-left",
         "layout": "",
-        "width": "wrapper",
+        "width": "wrapper--full-padded",
         "height": "sixty-fifty-height-hero",
         "mobile_height": "four-fifty-height-hero--mobile",
         "reverse_blocks": true,
         "color_scheme": "scheme-tavie-soft",
-        "padding_top": 64,
-        "padding_bottom": 64,
+        "padding_top": 42,
+        "padding_bottom": 62,
         "show_placeholder": true
       }
     },
@@ -810,16 +808,15 @@
       "settings": {
         "slider_speed": 7,
         "text_alignment": "center",
-        "marquee_speed": 100,
+        "marquee_speed": 50,
         "direction": "ticker-ltr",
         "message_spacing": 10,
         "show_border": false,
         "layout": "marquee",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-tavie-white",
         "padding_top": 20,
         "padding_bottom": 20
-      },
-      "disabled": true
+      }
     },
     "look": {
       "type": "section-look",
@@ -1502,11 +1499,11 @@
         "layout_desktop": "grid",
         "grid": 2,
         "rows": 2,
-        "width": "wrapper",
+        "width": "wrapper--full-padded",
         "layout_mobile": "1",
         "color_scheme": "scheme-tavie-white",
-        "padding_top": 64,
-        "padding_bottom": 64,
+        "padding_top": 62,
+        "padding_bottom": 62,
         "heading_tag": "h2"
       }
     },
@@ -1517,7 +1514,7 @@
         "blog_name": "",
         "use_ta_vie_blog": true,
         "aspect_ratio": 1,
-        "title": "家での時間を整える、ものと過ごし方。",
+        "title": "暮らしの読みもの",
         "description": "<p>衣服から、空間を彩るものまで。家で過ごす毎日を大切にする視点から、気になる品々と暮らしのヒントを紹介します。</p>",
         "link_text": "読みものを見る",
         "heading_font_size": "heading-medium",
@@ -1527,12 +1524,12 @@
         "show_date": false,
         "show_button": false,
         "show_comments": false,
-        "width": "wrapper",
+        "width": "wrapper--full-padded",
         "grid": 3,
         "rows": 1,
         "color_scheme": "scheme-tavie-white",
-        "padding_top": 64,
-        "padding_bottom": 40,
+        "padding_top": 62,
+        "padding_bottom": 62,
         "heading_tag": "h2",
         "title_tag": "h3"
       }
@@ -1544,7 +1541,6 @@
     "section_text_with_products_yW3LJx",
     "columns-1",
     "double",
-    "ta_vie_reading",
     "announcement-2",
     "section-tab-collections",
     "section_video_w6YfAE",
@@ -1552,6 +1548,7 @@
     "custom-content-1",
     "collections-list-hover",
     "announcement-3",
+    "ta_vie_reading",
     "look",
     "section_dynamic_content_TkrMUq",
     "section_custom_content_H4RTrx",

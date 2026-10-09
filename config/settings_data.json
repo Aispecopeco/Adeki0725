@@ -39,8 +39,8 @@
     "parallax_enable": true,
     "product_grid_outline": false,
     "enable_superscript": true,
-    "instagram_link": "https://instagram.com/shopify",
-    "tiktok_link": "https://tiktok.com/@shopify",
+    "instagram_link": "",
+    "tiktok_link": "",
     "product_grid_aspect_ratio": 1.2,
     "form_style": "modern",
     "final_sale": true,
@@ -310,12 +310,12 @@
         }
       }
     },
-    "ta_vie_home_heading_style": "serif",
+    "ta_vie_home_heading_style": "theme",
     "ta_vie_home_heading_spacing": 5,
     "ta_vie_home_body_line_height": 1.9,
     "ta_vie_home_subheading_size": 12,
     "ta_vie_navigation_links": true,
-    "ta_vie_home_links": true,
+    "ta_vie_home_links": false,
     "ta_vie_blog_label": "読みもの",
     "ta_vie_faq_label": "よくあるご質問"
   },

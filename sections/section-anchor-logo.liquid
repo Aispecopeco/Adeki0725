@@ -1,10 +1,29 @@
 <!-- /sections/section-anchor-logo.liquid -->
-{%- assign color_scheme = 'color-' | append: section.settings.color_scheme -%}
+{%- liquid
+  assign color_scheme = 'color-' | append: section.settings.color_scheme
+  assign logo_width = section.settings.logo_width | default: 600
+  assign mobile_logo_width = section.settings.mobile_logo_width | default: 280
+  capture logo_sizes
+    echo '(max-width: 749px) min(' | append: mobile_logo_width | append: 'px, 100vw), min(' | append: logo_width | append: 'px, 100vw)'
+  endcapture
+-%}
 
 {%- style -%}
   #AnchorLogo--{{ section.id }} {
     --PT: {{ section.settings.padding_top }}px;
     --PB: {{ section.settings.padding_bottom }}px;
+  }
+
+  #AnchorLogo--{{ section.id }} .anchor-logo__link {
+    width: 100%;
+    max-width: {{ logo_width }}px;
+    margin-inline: auto;
+  }
+
+  @media (max-width: 749px) {
+    #AnchorLogo--{{ section.id }} .anchor-logo__link {
+      max-width: {{ mobile_logo_width }}px;
+    }
   }
 
   .anchor-logo__link { display: block; }
@@ -32,7 +51,7 @@
       {%- if section.settings.logo -%}
         {%- render 'image',
           image: section.settings.logo,
-          sizes: '(min-width: 1400px) calc(100vw - 100px), (min-width: 750px) calc(100vw - 50px), calc(100vw - 32px)',
+          sizes: logo_sizes,
           desktop_height: 'image-height',
           mobile_height: 'image-height--mobile',
           show_backfill: false
@@ -53,6 +72,26 @@
       "id": "logo",
       "label": "Image",
       "info": "3200 x 1200px .jpg recommended. [Learn more](http://presidiodev.com/link/broadcast/images)"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "label": "ロゴの最大幅（PC）",
+      "min": 160,
+      "max": 1200,
+      "step": 20,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "mobile_logo_width",
+      "label": "ロゴの最大幅（スマホ）",
+      "min": 120,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "default": 280
     },
     {
       "type": "header",

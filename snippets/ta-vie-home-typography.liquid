@@ -1,14 +1,19 @@
 {%- comment -%}
-  Editorial text in TA VIE's existing home sections only. Native section sizes,
-  buttons, product cards, navigation and animation settings stay in control.
+  Optional editorial typography in TA VIE's existing home sections only.
+  Theme mode preserves native typography and only adjusts Japanese wrapping
+  in the hero, text-with-products, image-with-text story and blog headings.
 {%- endcomment -%}
 {%- liquid
-  assign ta_vie_heading_style = settings.ta_vie_home_heading_style | default: 'serif'
+  assign ta_vie_heading_style = settings.ta_vie_home_heading_style | default: 'theme'
+  unless ta_vie_heading_style == 'serif' or ta_vie_heading_style == 'sans'
+    assign ta_vie_heading_style = 'theme'
+  endunless
   assign ta_vie_heading_spacing = settings.ta_vie_home_heading_spacing | default: 5 | divided_by: 100.0
   assign ta_vie_body_line_height = settings.ta_vie_home_body_line_height | default: 1.9
   assign ta_vie_subheading_size = settings.ta_vie_home_subheading_size | default: 12
   assign ta_vie_body_family = settings.type_base_font.family | default: 'DM Sans'
   assign ta_vie_section_ids = 'section_slideshow_nested_YfkG44,section_text_with_products_yW3LJx,columns-1,double,custom-content-1,announcement-3,section_dynamic_content_TkrMUq,columns-2,section_hero_scrolling_mmThBz,ta_vie_products,ta_vie_reading' | split: ','
+  assign ta_vie_wrap_section_ids = 'section_slideshow_nested_YfkG44,section_text_with_products_yW3LJx,double,ta_vie_reading' | split: ','
 -%}
 
 {%- capture ta_vie_sections -%}
@@ -18,8 +23,16 @@
   {%- endfor -%}
 {%- endcapture -%}
 {%- capture ta_vie_scope -%}body.template-index #MainContent :is({{ ta_vie_sections }}){%- endcapture -%}
+{%- capture ta_vie_wrap_sections -%}
+  {%- for ta_vie_section_id in ta_vie_wrap_section_ids -%}
+    {%- unless forloop.first -%},{%- endunless -%}
+    [data-section-id="{{ ta_vie_section_id }}"],[data-section-id$="__{{ ta_vie_section_id }}"]
+  {%- endfor -%}
+{%- endcapture -%}
+{%- capture ta_vie_wrap_scope -%}body.template-index #MainContent :is({{ ta_vie_wrap_sections }}){%- endcapture -%}
 
 {%- style -%}
+  {%- if ta_vie_heading_style == 'serif' or ta_vie_heading_style == 'sans' %}
   {{ ta_vie_scope }} :is(
     .hero__title,
     .column__heading,
@@ -30,16 +43,14 @@
     .announcement__slide .font-heading,
     .announcement__content
   ):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {
-    {%- unless ta_vie_heading_style == 'theme' %}
-      {%- if ta_vie_heading_style == 'sans' %}
-        font-family: {{ ta_vie_body_family | json }}, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, "Noto Sans CJK JP", sans-serif;
-      {%- else %}
-        font-family: Georgia, "Times New Roman", "Yu Mincho", YuMincho, "Hiragino Mincho ProN", "Noto Serif CJK JP", serif;
-      {%- endif %}
-      font-weight: 400;
-      font-style: normal;
-      text-transform: none;
-    {%- endunless %}
+    {%- if ta_vie_heading_style == 'sans' %}
+      font-family: {{ ta_vie_body_family | json }}, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, "Noto Sans CJK JP", sans-serif;
+    {%- else %}
+      font-family: Georgia, "Times New Roman", "Yu Mincho", YuMincho, "Hiragino Mincho ProN", "Noto Serif CJK JP", serif;
+    {%- endif %}
+    font-weight: 400;
+    font-style: normal;
+    text-transform: none;
     letter-spacing: {{ ta_vie_heading_spacing }}em;
     line-height: 1.55;
     text-wrap: balance;
@@ -65,5 +76,12 @@
     letter-spacing: 0.12em;
     line-height: 1.6;
     text-transform: none;
+  }
+  {%- endif %}
+
+  {{ ta_vie_wrap_scope }} :is(.hero__title, .text-products__heading, .blog__title):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    line-break: strict;
   }
 {%- endstyle -%}

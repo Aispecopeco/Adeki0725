@@ -1656,7 +1656,7 @@
         "type": "select",
         "id": "ta_vie_home_heading_style",
         "label": "見出しの書体",
-        "info": "ホームのブランド文章だけに適用します。システム書体は端末によって表示が異なります。",
+        "info": "Broadcastの設定では、テーマ本来の書体・行間・字間を使います。以下の調整は明朝・ゴシックを選択したときだけ適用します。システム書体は端末によって異なります。",
         "options": [
           {
             "value": "serif",
@@ -1671,12 +1671,13 @@
             "label": "Broadcastの設定を使う"
           }
         ],
-        "default": "serif"
+        "default": "theme"
       },
       {
         "type": "range",
         "id": "ta_vie_home_heading_spacing",
         "label": "見出しの字間",
+        "info": "明朝・ゴシックを選択したときだけ適用します。",
         "min": 0,
         "max": 12,
         "step": 1,
@@ -1687,6 +1688,7 @@
         "type": "range",
         "id": "ta_vie_home_body_line_height",
         "label": "本文の行間",
+        "info": "明朝・ゴシックを選択したときだけ適用します。",
         "min": 1.5,
         "max": 2.2,
         "step": 0.1,
@@ -1696,6 +1698,7 @@
         "type": "range",
         "id": "ta_vie_home_subheading_size",
         "label": "小見出しの文字サイズ",
+        "info": "明朝・ゴシックを選択したときだけ適用します。",
         "min": 10,
         "max": 16,
         "step": 1,
@@ -1723,7 +1726,7 @@
         "type": "blog",
         "id": "ta_vie_blog",
         "label": "読みもののブログ",
-        "info": "既存のブログを選択します。未選択時は、記事のあるnewsブログがあれば使用します。"
+        "info": "既存のブログを選択します。未選択時は既存のnewsブログを使います。リンクは記事0件でも表示し、ホームの記事欄は公開記事があるときだけ表示します。"
       },
       {
         "type": "page",

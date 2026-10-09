@@ -1,7 +1,7 @@
 {%- doc -%}
-  Existing blog and FAQ destinations shared by desktop, mobile and home.
-  @param {string} location - desktop, mobile or home.
-  @param {link[]} [menu_links] - Existing desktop menu links.
+  Existing blog and FAQ destinations shared by desktop, mobile, home and footer.
+  @param {string} location - desktop, mobile, home or footer.
+  @param {link[]} [menu_links] - Existing links used to avoid duplicate destinations.
   @param {block[]} [menu_blocks] - Existing mobile menu blocks.
 {%- enddoc -%}
 {%- liquid
@@ -10,13 +10,15 @@
   assign show_links = navigation_enabled
   if location == 'home'
     assign show_links = home_enabled
+  elsif location == 'footer'
+    assign show_links = true
   endif
 
   assign reading_blog = settings.ta_vie_blog
   if reading_blog != blank and reading_blog.url == blank
     assign reading_blog = blogs[settings.ta_vie_blog]
   endif
-  if settings.ta_vie_blog == blank and blogs.news.articles_count > 0
+  if settings.ta_vie_blog == blank and blogs.news.url != blank
     assign reading_blog = blogs.news
   endif
 
@@ -38,12 +40,14 @@
 
   capture existing_destinations
     render 'ta-vie-menu-destinations', links: menu_links
-    for menu_block in menu_blocks
-      if menu_block.type == 'menu' or menu_block.type == 'menu-columns'
-        assign menu_handle = menu_block.settings.mobile_menu_linklist | default: 'main-menu'
-        render 'ta-vie-menu-destinations', links: linklists[menu_handle].links
-      endif
-    endfor
+    if location == 'mobile'
+      for menu_block in menu_blocks
+        if menu_block.type == 'menu' or menu_block.type == 'menu-columns'
+          assign menu_handle = menu_block.settings.mobile_menu_linklist | default: 'main-menu'
+          render 'ta-vie-menu-destinations', links: linklists[menu_handle].links
+        endif
+      endfor
+    endif
   endcapture
 
   assign destinations = 'blog,faq' | split: ','
@@ -91,6 +95,8 @@
                 <a class="sliderow__title" href="{{ resource.url | escape }}"{% if request.path == resource.url %} aria-current="page"{% endif %}><span>{{ link_label | escape }}</span></a>
               </div>
             </div>
+          {%- when 'footer' -%}
+            <li><a href="{{ resource.url | escape }}"{% if request.path == resource.url %} aria-current="page"{% endif %}>{{ link_label | escape }}</a></li>
           {%- when 'home' -%}
             <div class="hero__button">
               <a href="{{ resource.url | escape }}" class="btn btn--small btn--outline btn--primary"><span>{{ link_label | escape }}</span></a>
@@ -105,6 +111,8 @@
     <nav class="wrapper--narrow section-padding text-center color-scheme-tavie-white" style="--PT: 24px; --PB: 24px;" aria-label="読みものとご案内">
       <div class="hero__button-group">{{ links_markup }}</div>
     </nav>
+  {%- elsif location == 'footer' -%}
+    <ul class="footer__quicklinks unstyled">{{ links_markup }}</ul>
   {%- else -%}
     {{- links_markup -}}
   {%- endif -%}

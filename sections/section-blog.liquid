@@ -1,19 +1,21 @@
 {%- liquid
-  assign blog = blogs[section.settings.blog_name]
-  assign render_blog = true
+  assign blog = section.settings.blog_name
   assign use_ta_vie_blog = section.settings.use_ta_vie_blog | default: false, allow_false: true
-  if use_ta_vie_blog
+  if blog != blank
+    if blog.url == blank
+      assign blog = blogs[section.settings.blog_name]
+    endif
+  elsif use_ta_vie_blog and settings.ta_vie_blog != blank
     assign blog = settings.ta_vie_blog
-    if blog != blank and blog.url == blank
+    if blog.url == blank
       assign blog = blogs[settings.ta_vie_blog]
     endif
-    if settings.ta_vie_blog == blank and blogs.news.articles_count > 0
-      assign blog = blogs.news
-    endif
-    assign render_blog = false
-    if blog.url != blank and blog.articles_count > 0 and blog.articles.size > 0
-      assign render_blog = true
-    endif
+  else
+    assign blog = blogs.news
+  endif
+  assign render_blog = false
+  if blog.url != blank and blog.articles_count > 0 and blog.articles.size > 0
+    assign render_blog = true
   endif
 
   assign blog_title = section.settings.title
@@ -61,11 +63,7 @@
     <div class="hero__rte text-center">{{ section.settings.description }}</div>
   {%- endif -%}
 
-  {%- if use_ta_vie_blog -%}
-    {%- render 'blog-posts', blog_articles: blog.articles, blog: blog, is_blog_page: false, real_articles: true -%}
-  {%- else -%}
-    {%- render 'blog-posts', blog_articles: blog.articles, is_blog_page: false -%}
-  {%- endif -%}
+  {%- render 'blog-posts', blog_articles: blog.articles, blog: blog, is_blog_page: false, real_articles: true -%}
 
   {%- if section.settings.link_text != blank and blog.url != blank -%}
     <div class="hero__button-group">
@@ -74,6 +72,21 @@
       </div>
     </div>
   {%- endif -%}
+</section>
+{%- elsif request.design_mode -%}
+<section
+  id="Blog--{{ section.id }}"
+  class="{{ section.settings.width }} blog-section section-padding {{ color_scheme }}"
+  style="--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;"
+  data-section-id="{{ section.id }}"
+  data-section-type="blog"
+>
+  {%- if blog_title != blank -%}
+    <{{ heading_tag }} class="page__heading {{ section.settings.heading_font_size }} text-center">{{ blog_title | escape }}</{{ heading_tag }}>
+  {%- endif -%}
+  <div class="hero__rte text-center">
+    <p>{% if blog.url != blank and blog.articles_count == 0 %}選択したブログには公開記事がありません。{% else %}このセクションの『ブログ』を選択すると、公開記事を表示します。{% endif %}</p>
+  </div>
 </section>
 {%- endif -%}
 
@@ -93,8 +106,8 @@
     {
       "type": "checkbox",
       "id": "use_ta_vie_blog",
-      "label": "TA VIEのブログ設定を使う",
-      "info": "テーマ設定「TA VIE｜ページへのリンク」で選択したブログを使います。未選択時は記事のあるnewsブログを使い、公開記事がなければ表示しません。",
+      "label": "未選択時に共通ブログ設定を使う",
+      "info": "このセクションのブログを優先します。未選択時にテーマの共通設定を使います。どちらも未選択なら既存のnewsブログを使い、公開記事がなければ表示しません。",
       "default": false
     },
     {

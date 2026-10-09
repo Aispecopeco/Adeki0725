@@ -2,7 +2,7 @@
   "theme": "Broadcast",
   "version": "8.1.1",
   "brand": "TA VIE",
-  "revision": "Refine the native Broadcast homepage around actual products, one brand story and published reading",
+  "revision": "Restore native Broadcast typography and layout rhythm; correct empty footer, oversized logo and resource selection",
   "comparison": "Re-uploaded original ZIP; identical to the earlier original",
   "changed_theme_files": 81,
   "files": [
@@ -401,6 +401,12 @@
           "new": "empty-cart-navigation"
         },
         {
+          "path": "/current/instagram_link",
+          "operation": "replace",
+          "old": "https://instagram.com/shopify",
+          "new": ""
+        },
+        {
           "path": "/current/ta_vie_blog_label",
           "operation": "add",
           "new": "読みもの"
@@ -423,12 +429,12 @@
         {
           "path": "/current/ta_vie_home_heading_style",
           "operation": "add",
-          "new": "serif"
+          "new": "theme"
         },
         {
           "path": "/current/ta_vie_home_links",
           "operation": "add",
-          "new": true
+          "new": false
         },
         {
           "path": "/current/ta_vie_home_subheading_size",
@@ -439,6 +445,12 @@
           "path": "/current/ta_vie_navigation_links",
           "operation": "add",
           "new": true
+        },
+        {
+          "path": "/current/tiktok_link",
+          "operation": "replace",
+          "old": "https://tiktok.com/@shopify",
+          "new": ""
         },
         {
           "path": "/presets/Airwave/color_schemes/scheme-tavie-soft",
@@ -681,7 +693,7 @@
                 "type": "select",
                 "id": "ta_vie_home_heading_style",
                 "label": "見出しの書体",
-                "info": "ホームのブランド文章だけに適用します。システム書体は端末によって表示が異なります。",
+                "info": "Broadcastの設定では、テーマ本来の書体・行間・字間を使います。以下の調整は明朝・ゴシックを選択したときだけ適用します。システム書体は端末によって異なります。",
                 "options": [
                   {
                     "value": "serif",
@@ -696,12 +708,13 @@
                     "label": "Broadcastの設定を使う"
                   }
                 ],
-                "default": "serif"
+                "default": "theme"
               },
               {
                 "type": "range",
                 "id": "ta_vie_home_heading_spacing",
                 "label": "見出しの字間",
+                "info": "明朝・ゴシックを選択したときだけ適用します。",
                 "min": 0,
                 "max": 12,
                 "step": 1,
@@ -712,6 +725,7 @@
                 "type": "range",
                 "id": "ta_vie_home_body_line_height",
                 "label": "本文の行間",
+                "info": "明朝・ゴシックを選択したときだけ適用します。",
                 "min": 1.5,
                 "max": 2.2,
                 "step": 0.1,
@@ -721,6 +735,7 @@
                 "type": "range",
                 "id": "ta_vie_home_subheading_size",
                 "label": "小見出しの文字サイズ",
+                "info": "明朝・ゴシックを選択したときだけ適用します。",
                 "min": 10,
                 "max": 16,
                 "step": 1,
@@ -752,7 +767,7 @@
                 "type": "blog",
                 "id": "ta_vie_blog",
                 "label": "読みもののブログ",
-                "info": "既存のブログを選択します。未選択時は、記事のあるnewsブログがあれば使用します。"
+                "info": "既存のブログを選択します。未選択時は既存のnewsブログを使います。リンクは記事0件でも表示し、ホームの記事欄は公開記事があるときだけ表示します。"
               },
               {
                 "type": "page",
@@ -903,15 +918,269 @@
     },
     {
       "path": "sections/footer.liquid",
-      "scope": "schema only",
+      "scope": "native section rendering and prior palette default correction",
       "changes": [
+        {
+          "path": "/blocks/0/settings/1/default",
+          "operation": "add",
+          "new": false
+        },
+        {
+          "path": "/blocks/0/settings/1/id",
+          "operation": "replace",
+          "old": "title",
+          "new": "use_ta_vie_links"
+        },
+        {
+          "path": "/blocks/0/settings/1/info",
+          "operation": "add",
+          "new": "テーマ設定「TA VIE｜ページへのリンク」の実在するリンクを使います。リンクがなければ空の列を表示しません。"
+        },
+        {
+          "path": "/blocks/0/settings/1/label",
+          "operation": "replace",
+          "old": "Heading",
+          "new": "メニュー未選択時にブログ・FAQを表示"
+        },
+        {
+          "path": "/blocks/0/settings/1/type",
+          "operation": "replace",
+          "old": "text",
+          "new": "checkbox"
+        },
+        {
+          "path": "/blocks/0/settings/2/default",
+          "operation": "remove",
+          "old": "heading-medium"
+        },
+        {
+          "path": "/blocks/0/settings/2/id",
+          "operation": "replace",
+          "old": "heading_font_size",
+          "new": "title"
+        },
+        {
+          "path": "/blocks/0/settings/2/label",
+          "operation": "replace",
+          "old": "Heading size",
+          "new": "Heading"
+        },
+        {
+          "path": "/blocks/0/settings/2/options",
+          "operation": "remove",
+          "old": [
+            {
+              "value": "heading-mini",
+              "label": "Mini"
+            },
+            {
+              "value": "heading-x-small",
+              "label": "Extra small"
+            },
+            {
+              "value": "heading-small",
+              "label": "Small"
+            },
+            {
+              "value": "heading-medium",
+              "label": "Medium"
+            },
+            {
+              "value": "heading-large",
+              "label": "Large"
+            },
+            {
+              "value": "heading-x-large",
+              "label": "Extra large"
+            }
+          ]
+        },
+        {
+          "path": "/blocks/0/settings/2/type",
+          "operation": "replace",
+          "old": "select",
+          "new": "text"
+        },
+        {
+          "path": "/blocks/0/settings/3/default",
+          "operation": "replace",
+          "old": 33,
+          "new": "heading-medium"
+        },
+        {
+          "path": "/blocks/0/settings/3/id",
+          "operation": "replace",
+          "old": "column_width",
+          "new": "heading_font_size"
+        },
+        {
+          "path": "/blocks/0/settings/3/info",
+          "operation": "remove",
+          "old": "Desktop only"
+        },
+        {
+          "path": "/blocks/0/settings/3/label",
+          "operation": "replace",
+          "old": "Column width",
+          "new": "Heading size"
+        },
+        {
+          "path": "/blocks/0/settings/3/max",
+          "operation": "remove",
+          "old": 100
+        },
+        {
+          "path": "/blocks/0/settings/3/min",
+          "operation": "remove",
+          "old": 1
+        },
+        {
+          "path": "/blocks/0/settings/3/options",
+          "operation": "add",
+          "new": [
+            {
+              "value": "heading-mini",
+              "label": "Mini"
+            },
+            {
+              "value": "heading-x-small",
+              "label": "Extra small"
+            },
+            {
+              "value": "heading-small",
+              "label": "Small"
+            },
+            {
+              "value": "heading-medium",
+              "label": "Medium"
+            },
+            {
+              "value": "heading-large",
+              "label": "Large"
+            },
+            {
+              "value": "heading-x-large",
+              "label": "Extra large"
+            }
+          ]
+        },
+        {
+          "path": "/blocks/0/settings/3/step",
+          "operation": "remove",
+          "old": 1
+        },
+        {
+          "path": "/blocks/0/settings/3/type",
+          "operation": "replace",
+          "old": "range",
+          "new": "select"
+        },
+        {
+          "path": "/blocks/0/settings/3/unit",
+          "operation": "remove",
+          "old": "%"
+        },
+        {
+          "path": "/blocks/0/settings/4/content",
+          "operation": "remove",
+          "old": "Mobile"
+        },
+        {
+          "path": "/blocks/0/settings/4/default",
+          "operation": "add",
+          "new": 33
+        },
+        {
+          "path": "/blocks/0/settings/4/id",
+          "operation": "add",
+          "new": "column_width"
+        },
+        {
+          "path": "/blocks/0/settings/4/info",
+          "operation": "add",
+          "new": "Desktop only"
+        },
+        {
+          "path": "/blocks/0/settings/4/label",
+          "operation": "add",
+          "new": "Column width"
+        },
+        {
+          "path": "/blocks/0/settings/4/max",
+          "operation": "add",
+          "new": 100
+        },
+        {
+          "path": "/blocks/0/settings/4/min",
+          "operation": "add",
+          "new": 1
+        },
+        {
+          "path": "/blocks/0/settings/4/step",
+          "operation": "add",
+          "new": 1
+        },
+        {
+          "path": "/blocks/0/settings/4/type",
+          "operation": "replace",
+          "old": "header",
+          "new": "range"
+        },
+        {
+          "path": "/blocks/0/settings/4/unit",
+          "operation": "add",
+          "new": "%"
+        },
+        {
+          "path": "/blocks/0/settings/5/content",
+          "operation": "add",
+          "new": "Mobile"
+        },
+        {
+          "path": "/blocks/0/settings/5/default",
+          "operation": "remove",
+          "old": false
+        },
+        {
+          "path": "/blocks/0/settings/5/id",
+          "operation": "remove",
+          "old": "enable_accordion"
+        },
+        {
+          "path": "/blocks/0/settings/5/info",
+          "operation": "remove",
+          "old": "Transform block into accordion element"
+        },
+        {
+          "path": "/blocks/0/settings/5/label",
+          "operation": "remove",
+          "old": "Enable accordion"
+        },
+        {
+          "path": "/blocks/0/settings/5/type",
+          "operation": "replace",
+          "old": "checkbox",
+          "new": "header"
+        },
+        {
+          "path": "/blocks/0/settings/6",
+          "operation": "add",
+          "new": {
+            "type": "checkbox",
+            "id": "enable_accordion",
+            "label": "Enable accordion",
+            "info": "Transform block into accordion element",
+            "default": false
+          }
+        },
         {
           "path": "/settings/3/default",
           "operation": "replace",
           "old": "scheme_1",
           "new": "scheme-1"
         }
-      ]
+      ],
+      "diff": "--- original/sections/footer.liquid\n+++ edited/sections/footer.liquid\n@@ -1,7 +1,26 @@\n <!-- /sections/footer.liquid -->\n \n {%- liquid\n-  assign blocks_size = section.blocks.size\n+  assign blocks_size = 0\n+  assign visible_block_ids = ''\n+  capture ta_vie_footer_links\n+    render 'ta-vie-page-links', location: 'footer'\n+  endcapture\n+  for footer_block in section.blocks\n+    assign show_footer_block = true\n+    if footer_block.type == 'linklist'\n+      assign footer_menu = linklists[footer_block.settings.linklist]\n+      if footer_menu.links.size == 0 or footer_menu == blank\n+        unless footer_block.settings.use_ta_vie_links and ta_vie_footer_links != blank\n+          assign show_footer_block = false\n+        endunless\n+      endif\n+    endif\n+    if show_footer_block\n+      assign blocks_size = blocks_size | plus: 1\n+      assign visible_block_ids = visible_block_ids | append: '|' | append: footer_block.id | append: '|'\n+    endif\n+  endfor\n   assign logo = section.settings.logo\n   assign inline_blocks = ''\n   assign inline_blocks_placeholder = '####inline-blocks@@@@'\n@@ -65,10 +84,16 @@\n       </div>\n     {%- endif -%}\n \n-    {%- if section.blocks.size > 0 -%}\n+    {%- if blocks_size > 0 -%}\n       <collapsible-elements>\n         <div class=\"footer__blocks\">\n           {%- for block in section.blocks -%}\n+            {%- liquid\n+              assign block_id_token = '|' | append: block.id | append: '|'\n+              unless visible_block_ids contains block_id_token\n+                continue\n+              endunless\n+            -%}\n             {%- capture blocks_code -%}\n               {{ blocks_code }}\n \n@@ -79,8 +104,11 @@\n                 assign show_social_links = block.settings.show_social_links\n                 assign enable_accordion = block.settings.enable_accordion\n                 assign column_width = block.settings.column_width\n-                assign blocks_width = blocks_width | plus: block.settings.column_width\n-                if block.settings.column_width == 33\n+                if blocks_size != section.blocks.size\n+                  assign column_width = 100.0 | divided_by: blocks_size\n+                endif\n+                assign blocks_width = blocks_width | plus: column_width\n+                if column_width == 33\n                   assign one_third_block_count = one_third_block_count | plus: 1\n                 endif\n \n@@ -115,13 +143,17 @@\n                       {%- render 'icon-nav-arrow-down' -%}\n                     </summary>\n \n-                    {%- if linklist != blank -%}\n+                    {%- if linklist.links.size > 0 -%}\n                       <div data-collapsible-body>\n                         <ul class=\"footer__quicklinks unstyled{% if enable_accordion %} accordion__content{% endif %}\" data-collapsible-content>\n                           {%- for link in linklist.links -%}\n                             <li><a href=\"{{ link.url }}\">{{ link.title }}</a></li>\n                           {%- endfor -%}\n                         </ul>\n+                      </div>\n+                    {%- elsif block.settings.use_ta_vie_links and ta_vie_footer_links != blank -%}\n+                      <div data-collapsible-body>\n+                        <div{% if enable_accordion %} class=\"accordion__content\"{% endif %} data-collapsible-content>{{ ta_vie_footer_links }}</div>\n                       </div>\n                     {%- endif -%}\n                   </details>\n@@ -292,7 +324,7 @@\n     {\n       \"type\": \"color_scheme\",\n       \"id\": \"color_scheme\",\n-      \"default\": \"scheme_1\",\n+      \"default\": \"scheme-1\",\n       \"label\": \"Color scheme\"\n     },\n     {\n@@ -339,6 +371,13 @@\n           \"label\": \"Link list\",\n           \"default\": \"footer\",\n           \"info\": \"This menu won't show dropdown items.\"\n+        },\n+        {\n+          \"type\": \"checkbox\",\n+          \"id\": \"use_ta_vie_links\",\n+          \"label\": \"メニュー未選択時にブログ・FAQを表示\",\n+          \"info\": \"テーマ設定「TA VIE｜ページへのリンク」の実在するリンクを使います。リンクがなければ空の列を表示しません。\",\n+          \"default\": false\n         },\n         {\n           \"type\": \"text\",\n"
     },
     {
       "path": "sections/group-footer.json",
@@ -921,6 +1190,12 @@
           "operation": "replace",
           "old": "Join",
           "new": "登録する"
+        },
+        {
+          "path": "/sections/footer/blocks/footer-0/settings/show_name",
+          "operation": "replace",
+          "old": true,
+          "new": false
         },
         {
           "path": "/sections/footer/blocks/footer-0/settings/text",
@@ -933,6 +1208,99 @@
           "operation": "replace",
           "old": "Stay in Touch",
           "new": "お知らせを受け取る"
+        },
+        {
+          "path": "/sections/footer/blocks/footer-1/settings/title",
+          "operation": "replace",
+          "old": "Customer Care",
+          "new": "ご利用ガイド"
+        },
+        {
+          "path": "/sections/footer/blocks/linklist_VXREMP/settings/title",
+          "operation": "replace",
+          "old": "Resources",
+          "new": "ご案内"
+        },
+        {
+          "path": "/sections/footer/blocks/linklist_VXREMP/settings/use_ta_vie_links",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/footer/blocks/social_M9CGRC/settings/text",
+          "operation": "replace",
+          "old": "",
+          "new": "<p>家で過ごす時間を、自分のために。</p>"
+        },
+        {
+          "path": "/sections/footer/blocks/social_M9CGRC/settings/title",
+          "operation": "replace",
+          "old": "About the Brand",
+          "new": "TA VIE"
+        },
+        {
+          "path": "/sections/footer/settings/color_scheme",
+          "operation": "replace",
+          "old": "scheme-8",
+          "new": "scheme-tavie-soft"
+        },
+        {
+          "path": "/sections/footer/settings/padding_bottom",
+          "operation": "replace",
+          "old": 30,
+          "new": 24
+        },
+        {
+          "path": "/sections/footer/settings/padding_top",
+          "operation": "replace",
+          "old": 75,
+          "new": 48
+        },
+        {
+          "path": "/sections/section_anchor_logo_pELPhx/settings/color_scheme",
+          "operation": "replace",
+          "old": "scheme-8",
+          "new": "scheme-tavie-soft"
+        },
+        {
+          "path": "/sections/section_anchor_logo_pELPhx/settings/logo_width",
+          "operation": "add",
+          "new": 480
+        },
+        {
+          "path": "/sections/section_anchor_logo_pELPhx/settings/mobile_logo_width",
+          "operation": "add",
+          "new": 240
+        },
+        {
+          "path": "/sections/section_anchor_logo_pELPhx/settings/padding_bottom",
+          "operation": "replace",
+          "old": 30,
+          "new": 20
+        },
+        {
+          "path": "/sections/section_anchor_logo_pELPhx/settings/padding_top",
+          "operation": "replace",
+          "old": 30,
+          "new": 20
+        },
+        {
+          "path": "/sections/supporting-menu/settings/color_scheme",
+          "operation": "replace",
+          "old": "scheme-8",
+          "new": "scheme-tavie-soft"
+        },
+        {
+          "path": "/sections/supporting-menu/settings/padding_bottom",
+          "operation": "replace",
+          "old": 30,
+          "new": 24
+        },
+        {
+          "path": "/sections/supporting-menu/settings/padding_top",
+          "operation": "replace",
+          "old": 30,
+          "new": 16
         }
       ]
     },
@@ -946,10 +1314,76 @@
           "new": "ルームウェア"
         },
         {
+          "path": "/sections/header/blocks/toolbar/settings/show_gift_card",
+          "operation": "replace",
+          "old": true,
+          "new": false
+        },
+        {
+          "path": "/sections/header/blocks/toolbar/settings/show_social_links",
+          "operation": "replace",
+          "old": true,
+          "new": false
+        },
+        {
+          "path": "/sections/header/settings/logo_max_limit",
+          "operation": "replace",
+          "old": 120,
+          "new": 180
+        },
+        {
+          "path": "/sections/header/settings/logo_max_limit_mobile",
+          "operation": "replace",
+          "old": 120,
+          "new": 140
+        },
+        {
+          "path": "/sections/header/settings/transparent_home",
+          "operation": "replace",
+          "old": true,
+          "new": false
+        },
+        {
+          "path": "/sections/mobile_menu_kMYLiQ/blocks/divider_JMEtzt/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/mobile_menu_kMYLiQ/blocks/divider_L6qfFd/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/mobile_menu_kMYLiQ/blocks/product_VYC4CC/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/mobile_menu_kMYLiQ/blocks/product_tKhymJ/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/mobile_menu_kMYLiQ/blocks/socials_93L7NN/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/mobile_menu_kMYLiQ/blocks/text_wqL6bX/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
           "path": "/sections/mobile_menu_kMYLiQ/blocks/text_wqL6bX/settings/text",
           "operation": "replace",
           "old": "Shop our new arrivals:",
           "new": "ルームウェアを見る"
+        },
+        {
+          "path": "/sections/mobile_menu_kMYLiQ/settings/logo_max_limit",
+          "operation": "replace",
+          "old": 120,
+          "new": 140
         }
       ]
     },
@@ -1135,15 +1569,224 @@
     },
     {
       "path": "sections/section-anchor-logo.liquid",
-      "scope": "schema only",
+      "scope": "native section rendering and prior palette default correction",
       "changes": [
+        {
+          "path": "/settings/1/content",
+          "operation": "remove",
+          "old": "Colors"
+        },
+        {
+          "path": "/settings/1/default",
+          "operation": "add",
+          "new": 600
+        },
+        {
+          "path": "/settings/1/id",
+          "operation": "add",
+          "new": "logo_width"
+        },
+        {
+          "path": "/settings/1/label",
+          "operation": "add",
+          "new": "ロゴの最大幅（PC）"
+        },
+        {
+          "path": "/settings/1/max",
+          "operation": "add",
+          "new": 1200
+        },
+        {
+          "path": "/settings/1/min",
+          "operation": "add",
+          "new": 160
+        },
+        {
+          "path": "/settings/1/step",
+          "operation": "add",
+          "new": 20
+        },
+        {
+          "path": "/settings/1/type",
+          "operation": "replace",
+          "old": "header",
+          "new": "range"
+        },
+        {
+          "path": "/settings/1/unit",
+          "operation": "add",
+          "new": "px"
+        },
         {
           "path": "/settings/2/default",
           "operation": "replace",
           "old": "scheme_1",
+          "new": 280
+        },
+        {
+          "path": "/settings/2/id",
+          "operation": "replace",
+          "old": "color_scheme",
+          "new": "mobile_logo_width"
+        },
+        {
+          "path": "/settings/2/label",
+          "operation": "replace",
+          "old": "Color scheme",
+          "new": "ロゴの最大幅（スマホ）"
+        },
+        {
+          "path": "/settings/2/max",
+          "operation": "add",
+          "new": 600
+        },
+        {
+          "path": "/settings/2/min",
+          "operation": "add",
+          "new": 120
+        },
+        {
+          "path": "/settings/2/step",
+          "operation": "add",
+          "new": 20
+        },
+        {
+          "path": "/settings/2/type",
+          "operation": "replace",
+          "old": "color_scheme",
+          "new": "range"
+        },
+        {
+          "path": "/settings/2/unit",
+          "operation": "add",
+          "new": "px"
+        },
+        {
+          "path": "/settings/3/content",
+          "operation": "replace",
+          "old": "Padding",
+          "new": "Colors"
+        },
+        {
+          "path": "/settings/4/default",
+          "operation": "replace",
+          "old": 30,
           "new": "scheme-1"
+        },
+        {
+          "path": "/settings/4/id",
+          "operation": "replace",
+          "old": "padding_top",
+          "new": "color_scheme"
+        },
+        {
+          "path": "/settings/4/label",
+          "operation": "replace",
+          "old": "Top",
+          "new": "Color scheme"
+        },
+        {
+          "path": "/settings/4/max",
+          "operation": "remove",
+          "old": 100
+        },
+        {
+          "path": "/settings/4/min",
+          "operation": "remove",
+          "old": 0
+        },
+        {
+          "path": "/settings/4/step",
+          "operation": "remove",
+          "old": 1
+        },
+        {
+          "path": "/settings/4/type",
+          "operation": "replace",
+          "old": "range",
+          "new": "color_scheme"
+        },
+        {
+          "path": "/settings/4/unit",
+          "operation": "remove",
+          "old": "px"
+        },
+        {
+          "path": "/settings/5/content",
+          "operation": "add",
+          "new": "Padding"
+        },
+        {
+          "path": "/settings/5/default",
+          "operation": "remove",
+          "old": 30
+        },
+        {
+          "path": "/settings/5/id",
+          "operation": "remove",
+          "old": "padding_bottom"
+        },
+        {
+          "path": "/settings/5/label",
+          "operation": "remove",
+          "old": "Bottom"
+        },
+        {
+          "path": "/settings/5/max",
+          "operation": "remove",
+          "old": 100
+        },
+        {
+          "path": "/settings/5/min",
+          "operation": "remove",
+          "old": 0
+        },
+        {
+          "path": "/settings/5/step",
+          "operation": "remove",
+          "old": 1
+        },
+        {
+          "path": "/settings/5/type",
+          "operation": "replace",
+          "old": "range",
+          "new": "header"
+        },
+        {
+          "path": "/settings/5/unit",
+          "operation": "remove",
+          "old": "px"
+        },
+        {
+          "path": "/settings/6",
+          "operation": "add",
+          "new": {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Top",
+            "default": 30
+          }
+        },
+        {
+          "path": "/settings/7",
+          "operation": "add",
+          "new": {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Bottom",
+            "default": 30
+          }
         }
-      ]
+      ],
+      "diff": "--- original/sections/section-anchor-logo.liquid\n+++ edited/sections/section-anchor-logo.liquid\n@@ -1,10 +1,29 @@\n <!-- /sections/section-anchor-logo.liquid -->\n-{%- assign color_scheme = 'color-' | append: section.settings.color_scheme -%}\n+{%- liquid\n+  assign color_scheme = 'color-' | append: section.settings.color_scheme\n+  assign logo_width = section.settings.logo_width | default: 600\n+  assign mobile_logo_width = section.settings.mobile_logo_width | default: 280\n+  capture logo_sizes\n+    echo '(max-width: 749px) min(' | append: mobile_logo_width | append: 'px, 100vw), min(' | append: logo_width | append: 'px, 100vw)'\n+  endcapture\n+-%}\n \n {%- style -%}\n   #AnchorLogo--{{ section.id }} {\n     --PT: {{ section.settings.padding_top }}px;\n     --PB: {{ section.settings.padding_bottom }}px;\n+  }\n+\n+  #AnchorLogo--{{ section.id }} .anchor-logo__link {\n+    width: 100%;\n+    max-width: {{ logo_width }}px;\n+    margin-inline: auto;\n+  }\n+\n+  @media (max-width: 749px) {\n+    #AnchorLogo--{{ section.id }} .anchor-logo__link {\n+      max-width: {{ mobile_logo_width }}px;\n+    }\n   }\n \n   .anchor-logo__link { display: block; }\n@@ -32,7 +51,7 @@\n       {%- if section.settings.logo -%}\n         {%- render 'image',\n           image: section.settings.logo,\n-          sizes: '(min-width: 1400px) calc(100vw - 100px), (min-width: 750px) calc(100vw - 50px), calc(100vw - 32px)',\n+          sizes: logo_sizes,\n           desktop_height: 'image-height',\n           mobile_height: 'image-height--mobile',\n           show_backfill: false\n@@ -55,13 +74,33 @@\n       \"info\": \"3200 x 1200px .jpg recommended. [Learn more](http://presidiodev.com/link/broadcast/images)\"\n     },\n     {\n+      \"type\": \"range\",\n+      \"id\": \"logo_width\",\n+      \"label\": \"ロゴの最大幅（PC）\",\n+      \"min\": 160,\n+      \"max\": 1200,\n+      \"step\": 20,\n+      \"unit\": \"px\",\n+      \"default\": 600\n+    },\n+    {\n+      \"type\": \"range\",\n+      \"id\": \"mobile_logo_width\",\n+      \"label\": \"ロゴの最大幅（スマホ）\",\n+      \"min\": 120,\n+      \"max\": 600,\n+      \"step\": 20,\n+      \"unit\": \"px\",\n+      \"default\": 280\n+    },\n+    {\n       \"type\": \"header\",\n       \"content\": \"Colors\"\n     },\n     {\n       \"type\": \"color_scheme\",\n       \"id\": \"color_scheme\",\n-      \"default\": \"scheme_1\",\n+      \"default\": \"scheme-1\",\n       \"label\": \"Color scheme\"\n     },\n     {\n"
     },
     {
       "path": "sections/section-announcement.liquid",
@@ -1189,13 +1832,13 @@
           "path": "/settings/2/info",
           "operation": "replace",
           "old": "Wide to tall",
-          "new": "テーマ設定「TA VIE｜ページへのリンク」で選択したブログを使います。未選択時は記事のあるnewsブログを使い、公開記事がなければ表示しません。"
+          "new": "このセクションのブログを優先します。未選択時にテーマの共通設定を使います。どちらも未選択なら既存のnewsブログを使い、公開記事がなければ表示しません。"
         },
         {
           "path": "/settings/2/label",
           "operation": "replace",
           "old": "Article image aspect ratio",
-          "new": "TA VIEのブログ設定を使う"
+          "new": "未選択時に共通ブログ設定を使う"
         },
         {
           "path": "/settings/2/max",
@@ -2199,7 +2842,7 @@
           }
         }
       ],
-      "diff": "--- original/sections/section-blog.liquid\n+++ edited/sections/section-blog.liquid\n@@ -1,6 +1,21 @@\n-<!-- /sections/section-blog.liquid -->\n {%- liquid\n   assign blog = blogs[section.settings.blog_name]\n+  assign render_blog = true\n+  assign use_ta_vie_blog = section.settings.use_ta_vie_blog | default: false, allow_false: true\n+  if use_ta_vie_blog\n+    assign blog = settings.ta_vie_blog\n+    if blog != blank and blog.url == blank\n+      assign blog = blogs[settings.ta_vie_blog]\n+    endif\n+    if settings.ta_vie_blog == blank and blogs.news.articles_count > 0\n+      assign blog = blogs.news\n+    endif\n+    assign render_blog = false\n+    if blog.url != blank and blog.articles_count > 0 and blog.articles.size > 0\n+      assign render_blog = true\n+    endif\n+  endif\n+\n   assign blog_title = section.settings.title\n   assign color_scheme = 'color-' | append: section.settings.color_scheme\n   assign heading_tag = 'h2'\n@@ -15,6 +30,8 @@\n   endunless\n -%}\n \n+{%- if render_blog -%}\n+<!-- /sections/section-blog.liquid -->\n {%- style -%}\n   #Blog--{{ section.id }} {\n     --PT: {{ section.settings.padding_top }}px;\n@@ -40,8 +57,25 @@\n     >\n   {% endif %}\n \n-  {%- render 'blog-posts', blog_articles: blog.articles, is_blog_page: false -%}\n+  {%- if section.settings.description != blank -%}\n+    <div class=\"hero__rte text-center\">{{ section.settings.description }}</div>\n+  {%- endif -%}\n+\n+  {%- if use_ta_vie_blog -%}\n+    {%- render 'blog-posts', blog_articles: blog.articles, blog: blog, is_blog_page: false, real_articles: true -%}\n+  {%- else -%}\n+    {%- render 'blog-posts', blog_articles: blog.articles, is_blog_page: false -%}\n+  {%- endif -%}\n+\n+  {%- if section.settings.link_text != blank and blog.url != blank -%}\n+    <div class=\"hero__button-group\">\n+      <div class=\"hero__button\">\n+        <a class=\"btn btn--small btn--outline btn--primary\" href=\"{{ blog.url | escape }}\"><span>{{ section.settings.link_text | escape }}</span></a>\n+      </div>\n+    </div>\n+  {%- endif -%}\n </section>\n+{%- endif -%}\n \n {% schema %}\n {\n@@ -55,6 +89,13 @@\n       \"type\": \"blog\",\n       \"id\": \"blog_name\",\n       \"label\": \"Blog\"\n+    },\n+    {\n+      \"type\": \"checkbox\",\n+      \"id\": \"use_ta_vie_blog\",\n+      \"label\": \"TA VIEのブログ設定を使う\",\n+      \"info\": \"テーマ設定「TA VIE｜ページへのリンク」で選択したブログを使います。未選択時は記事のあるnewsブログを使い、公開記事がなければ表示しません。\",\n+      \"default\": false\n     },\n     {\n       \"type\": \"range\",\n@@ -78,6 +119,16 @@\n       \"default\": \"Blog posts\"\n     },\n     {\n+      \"type\": \"richtext\",\n+      \"id\": \"description\",\n+      \"label\": \"Description\"\n+    },\n+    {\n+      \"type\": \"text\",\n+      \"id\": \"link_text\",\n+      \"label\": \"Blog link label\"\n+    },\n+    {\n       \"type\": \"select\",\n       \"id\": \"heading_font_size\",\n       \"label\": \"Heading size\",\n@@ -179,7 +230,7 @@\n     {\n       \"type\": \"color_scheme\",\n       \"id\": \"color_scheme\",\n-      \"default\": \"scheme_1\",\n+      \"default\": \"scheme-1\",\n       \"label\": \"Color scheme\"\n     },\n     {\n"
+      "diff": "--- original/sections/section-blog.liquid\n+++ edited/sections/section-blog.liquid\n@@ -1,6 +1,23 @@\n-<!-- /sections/section-blog.liquid -->\n {%- liquid\n-  assign blog = blogs[section.settings.blog_name]\n+  assign blog = section.settings.blog_name\n+  assign use_ta_vie_blog = section.settings.use_ta_vie_blog | default: false, allow_false: true\n+  if blog != blank\n+    if blog.url == blank\n+      assign blog = blogs[section.settings.blog_name]\n+    endif\n+  elsif use_ta_vie_blog and settings.ta_vie_blog != blank\n+    assign blog = settings.ta_vie_blog\n+    if blog.url == blank\n+      assign blog = blogs[settings.ta_vie_blog]\n+    endif\n+  else\n+    assign blog = blogs.news\n+  endif\n+  assign render_blog = false\n+  if blog.url != blank and blog.articles_count > 0 and blog.articles.size > 0\n+    assign render_blog = true\n+  endif\n+\n   assign blog_title = section.settings.title\n   assign color_scheme = 'color-' | append: section.settings.color_scheme\n   assign heading_tag = 'h2'\n@@ -15,6 +32,8 @@\n   endunless\n -%}\n \n+{%- if render_blog -%}\n+<!-- /sections/section-blog.liquid -->\n {%- style -%}\n   #Blog--{{ section.id }} {\n     --PT: {{ section.settings.padding_top }}px;\n@@ -40,8 +59,36 @@\n     >\n   {% endif %}\n \n-  {%- render 'blog-posts', blog_articles: blog.articles, is_blog_page: false -%}\n+  {%- if section.settings.description != blank -%}\n+    <div class=\"hero__rte text-center\">{{ section.settings.description }}</div>\n+  {%- endif -%}\n+\n+  {%- render 'blog-posts', blog_articles: blog.articles, blog: blog, is_blog_page: false, real_articles: true -%}\n+\n+  {%- if section.settings.link_text != blank and blog.url != blank -%}\n+    <div class=\"hero__button-group\">\n+      <div class=\"hero__button\">\n+        <a class=\"btn btn--small btn--outline btn--primary\" href=\"{{ blog.url | escape }}\"><span>{{ section.settings.link_text | escape }}</span></a>\n+      </div>\n+    </div>\n+  {%- endif -%}\n </section>\n+{%- elsif request.design_mode -%}\n+<section\n+  id=\"Blog--{{ section.id }}\"\n+  class=\"{{ section.settings.width }} blog-section section-padding {{ color_scheme }}\"\n+  style=\"--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;\"\n+  data-section-id=\"{{ section.id }}\"\n+  data-section-type=\"blog\"\n+>\n+  {%- if blog_title != blank -%}\n+    <{{ heading_tag }} class=\"page__heading {{ section.settings.heading_font_size }} text-center\">{{ blog_title | escape }}</{{ heading_tag }}>\n+  {%- endif -%}\n+  <div class=\"hero__rte text-center\">\n+    <p>{% if blog.url != blank and blog.articles_count == 0 %}選択したブログには公開記事がありません。{% else %}このセクションの『ブログ』を選択すると、公開記事を表示します。{% endif %}</p>\n+  </div>\n+</section>\n+{%- endif -%}\n \n {% schema %}\n {\n@@ -55,6 +102,13 @@\n       \"type\": \"blog\",\n       \"id\": \"blog_name\",\n       \"label\": \"Blog\"\n+    },\n+    {\n+      \"type\": \"checkbox\",\n+      \"id\": \"use_ta_vie_blog\",\n+      \"label\": \"未選択時に共通ブログ設定を使う\",\n+      \"info\": \"このセクションのブログを優先します。未選択時にテーマの共通設定を使います。どちらも未選択なら既存のnewsブログを使い、公開記事がなければ表示しません。\",\n+      \"default\": false\n     },\n     {\n       \"type\": \"range\",\n@@ -78,6 +132,16 @@\n       \"default\": \"Blog posts\"\n     },\n     {\n+      \"type\": \"richtext\",\n+      \"id\": \"description\",\n+      \"label\": \"Description\"\n+    },\n+    {\n+      \"type\": \"text\",\n+      \"id\": \"link_text\",\n+      \"label\": \"Blog link label\"\n+    },\n+    {\n       \"type\": \"select\",\n       \"id\": \"heading_font_size\",\n       \"label\": \"Heading size\",\n@@ -179,7 +243,7 @@\n     {\n       \"type\": \"color_scheme\",\n       \"id\": \"color_scheme\",\n-      \"default\": \"scheme_1\",\n+      \"default\": \"scheme-1\",\n       \"label\": \"Color scheme\"\n     },\n     {\n"
     },
     {
       "path": "sections/section-collection-links-spotlight.liquid",
@@ -3398,7 +4041,7 @@
           }
         }
       ],
-      "diff": "--- original/sections/section-collection.liquid\n+++ edited/sections/section-collection.liquid\n@@ -18,6 +18,20 @@\n   assign layout = section.settings.layout\n \n   assign featured_collection = collections[section.settings.featured_collection]\n+  assign render_collection = true\n+  if section.settings.use_ta_vie_catalog\n+    assign featured_collection = section.settings.featured_collection\n+    if section.settings.featured_collection == blank\n+      assign featured_collection = collections.all\n+    elsif featured_collection.url == blank\n+      assign featured_collection = collections[section.settings.featured_collection]\n+    endif\n+\n+    assign render_collection = false\n+    if featured_collection.url != blank and featured_collection.products_count > 0 and featured_collection.products.size > 0\n+      assign render_collection = true\n+    endif\n+  endif\n   assign limit_products = 20\n   assign limit_onboarding = 8\n \n@@ -59,6 +73,7 @@\n   endif\n -%}\n \n+{%- if render_collection -%}\n {%- style -%}\n   #Collection--{{ section.id }} {\n      --PT: {{ section.settings.padding_top }}px;\n@@ -196,6 +211,7 @@\n {%- if show_recently_viewed_indicator -%}\n   <script src=\"{{ 'grid-item.js' | asset_url }}\" defer></script>\n {%- endif -%}\n+{%- endif -%}\n \n {% schema %}\n {\n@@ -209,6 +225,12 @@\n       \"type\": \"collection\",\n       \"id\": \"featured_collection\",\n       \"label\": \"Collection\"\n+    },\n+    {\n+      \"type\": \"checkbox\",\n+      \"id\": \"use_ta_vie_catalog\",\n+      \"label\": \"未選択時に全商品を使用、商品がなければ非表示\",\n+      \"default\": false\n     },\n     {\n       \"type\": \"header\",\n@@ -410,7 +432,7 @@\n     {\n       \"type\": \"color_scheme\",\n       \"id\": \"color_scheme\",\n-      \"default\": \"scheme_1\",\n+      \"default\": \"scheme-1\",\n       \"label\": \"Color scheme\"\n     },\n     {\n"
+      "diff": "--- original/sections/section-collection.liquid\n+++ edited/sections/section-collection.liquid\n@@ -18,6 +18,20 @@\n   assign layout = section.settings.layout\n \n   assign featured_collection = collections[section.settings.featured_collection]\n+  assign render_collection = true\n+  if section.settings.use_ta_vie_catalog\n+    assign featured_collection = section.settings.featured_collection\n+    if section.settings.featured_collection == blank\n+      assign featured_collection = collections.all\n+    elsif featured_collection.url == blank\n+      assign featured_collection = collections[section.settings.featured_collection]\n+    endif\n+\n+    assign render_collection = false\n+    if featured_collection.url != blank and featured_collection.products_count > 0 and featured_collection.products.size > 0\n+      assign render_collection = true\n+    endif\n+  endif\n   assign limit_products = 20\n   assign limit_onboarding = 8\n \n@@ -59,6 +73,7 @@\n   endif\n -%}\n \n+{%- if render_collection -%}\n {%- style -%}\n   #Collection--{{ section.id }} {\n      --PT: {{ section.settings.padding_top }}px;\n@@ -196,6 +211,30 @@\n {%- if show_recently_viewed_indicator -%}\n   <script src=\"{{ 'grid-item.js' | asset_url }}\" defer></script>\n {%- endif -%}\n+{%- elsif section.settings.use_ta_vie_catalog and request.design_mode -%}\n+  {%- liquid\n+    assign heading_tag = 'h2'\n+    unless section.settings.heading_tag == 'automatic' or section.settings.heading_tag == blank\n+      assign heading_tag = section.settings.heading_tag\n+    endunless\n+  -%}\n+  <section\n+    id=\"Collection--{{ section.id }}\"\n+    class=\"index-products section-padding {{ color_scheme }}\"\n+    style=\"--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;\"\n+    data-section-id=\"{{ section.id }}\"\n+    data-section-type=\"product-grid\"\n+  >\n+    <div class=\"{{ section.settings.width }} text-center\">\n+      {%- if heading != blank -%}\n+        <{{ heading_tag }} class=\"grid__heading {{ section.settings.heading_font_size }}\">{{ heading | escape }}</{{ heading_tag }}>\n+      {%- endif -%}\n+      <div class=\"grid__description {{ section.settings.text_font_size }}\">\n+        <p>表示するコレクションを選択してください。公開中の商品がある場合に表示します。</p>\n+      </div>\n+    </div>\n+  </section>\n+{%- endif -%}\n \n {% schema %}\n {\n@@ -209,6 +248,12 @@\n       \"type\": \"collection\",\n       \"id\": \"featured_collection\",\n       \"label\": \"Collection\"\n+    },\n+    {\n+      \"type\": \"checkbox\",\n+      \"id\": \"use_ta_vie_catalog\",\n+      \"label\": \"未選択時に全商品を使用、商品がなければ非表示\",\n+      \"default\": false\n     },\n     {\n       \"type\": \"header\",\n@@ -410,7 +455,7 @@\n     {\n       \"type\": \"color_scheme\",\n       \"id\": \"color_scheme\",\n-      \"default\": \"scheme_1\",\n+      \"default\": \"scheme-1\",\n       \"label\": \"Color scheme\"\n     },\n     {\n"
     },
     {
       "path": "sections/section-collections-list-hover.liquid",
@@ -3498,7 +4141,7 @@
     },
     {
       "path": "sections/section-double.liquid",
-      "scope": "schema only",
+      "scope": "native section rendering and prior palette default correction",
       "changes": [
         {
           "path": "/settings/15/default",
@@ -3506,7 +4149,8 @@
           "old": "scheme_1",
           "new": "scheme-1"
         }
-      ]
+      ],
+      "diff": "--- original/sections/section-double.liquid\n+++ edited/sections/section-double.liquid\n@@ -1,4 +1,13 @@\n <!-- /sections/section-double.liquid -->\n+\n+{%- assign ta_vie_section_key = section.id | split: '__' | last -%}\n+{%- if request.page_type == 'index' and ta_vie_section_key == 'double' -%}\n+  {%- style -%}\n+    #BrickSection--{{ section.id }} .hero__rte {\n+      max-width: 40em;\n+    }\n+  {%- endstyle -%}\n+{%- endif -%}\n \n {%- render 'section-double' -%}\n \n@@ -129,7 +138,7 @@\n     {\n       \"type\": \"color_scheme\",\n       \"id\": \"color_scheme\",\n-      \"default\": \"scheme_1\",\n+      \"default\": \"scheme-1\",\n       \"label\": \"Color scheme\"\n     },\n     {\n"
     },
     {
       "path": "sections/section-dynamic-content.liquid",
@@ -3887,7 +4531,7 @@
     {
       "path": "snippets/ta-vie-home-typography.liquid",
       "operation": "add",
-      "content": "{%- comment -%}\n  Editorial text in TA VIE's existing home sections only. Native section sizes,\n  buttons, product cards, navigation and animation settings stay in control.\n{%- endcomment -%}\n{%- liquid\n  assign ta_vie_heading_style = settings.ta_vie_home_heading_style | default: 'serif'\n  assign ta_vie_heading_spacing = settings.ta_vie_home_heading_spacing | default: 5 | divided_by: 100.0\n  assign ta_vie_body_line_height = settings.ta_vie_home_body_line_height | default: 1.9\n  assign ta_vie_subheading_size = settings.ta_vie_home_subheading_size | default: 12\n  assign ta_vie_body_family = settings.type_base_font.family | default: 'DM Sans'\n  assign ta_vie_section_ids = 'section_slideshow_nested_YfkG44,section_text_with_products_yW3LJx,columns-1,double,custom-content-1,announcement-3,section_dynamic_content_TkrMUq,columns-2,section_hero_scrolling_mmThBz,ta_vie_products,ta_vie_reading' | split: ','\n-%}\n\n{%- capture ta_vie_sections -%}\n  {%- for ta_vie_section_id in ta_vie_section_ids -%}\n    {%- unless forloop.first -%},{%- endunless -%}\n    [data-section-id=\"{{ ta_vie_section_id }}\"],[data-section-id$=\"__{{ ta_vie_section_id }}\"]\n  {%- endfor -%}\n{%- endcapture -%}\n{%- capture ta_vie_scope -%}body.template-index #MainContent :is({{ ta_vie_sections }}){%- endcapture -%}\n\n{%- style -%}\n  {{ ta_vie_scope }} :is(\n    .hero__title,\n    .column__heading,\n    .text-products__heading,\n    .grid__heading,\n    .page__heading,\n    .article__title,\n    .announcement__slide .font-heading,\n    .announcement__content\n  ):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    {%- unless ta_vie_heading_style == 'theme' %}\n      {%- if ta_vie_heading_style == 'sans' %}\n        font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n      {%- else %}\n        font-family: Georgia, \"Times New Roman\", \"Yu Mincho\", YuMincho, \"Hiragino Mincho ProN\", \"Noto Serif CJK JP\", serif;\n      {%- endif %}\n      font-weight: 400;\n      font-style: normal;\n      text-transform: none;\n    {%- endunless %}\n    letter-spacing: {{ ta_vie_heading_spacing }}em;\n    line-height: 1.55;\n    text-wrap: balance;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text, .article__excerpt):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n    font-weight: 400;\n    font-style: normal;\n    line-height: {{ ta_vie_body_line_height }};\n    text-wrap: pretty;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text, .article__excerpt):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) > p {\n    line-height: inherit;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__subheading, .subheading):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n    font-size: {{ ta_vie_subheading_size }}px;\n    font-weight: 400;\n    font-style: normal;\n    letter-spacing: 0.12em;\n    line-height: 1.6;\n    text-transform: none;\n  }\n{%- endstyle -%}\n"
+      "content": "{%- comment -%}\n  Optional editorial typography in TA VIE's existing home sections only.\n  Theme mode preserves native typography and only adjusts Japanese wrapping\n  in the hero, text-with-products, image-with-text story and blog headings.\n{%- endcomment -%}\n{%- liquid\n  assign ta_vie_heading_style = settings.ta_vie_home_heading_style | default: 'theme'\n  unless ta_vie_heading_style == 'serif' or ta_vie_heading_style == 'sans'\n    assign ta_vie_heading_style = 'theme'\n  endunless\n  assign ta_vie_heading_spacing = settings.ta_vie_home_heading_spacing | default: 5 | divided_by: 100.0\n  assign ta_vie_body_line_height = settings.ta_vie_home_body_line_height | default: 1.9\n  assign ta_vie_subheading_size = settings.ta_vie_home_subheading_size | default: 12\n  assign ta_vie_body_family = settings.type_base_font.family | default: 'DM Sans'\n  assign ta_vie_section_ids = 'section_slideshow_nested_YfkG44,section_text_with_products_yW3LJx,columns-1,double,custom-content-1,announcement-3,section_dynamic_content_TkrMUq,columns-2,section_hero_scrolling_mmThBz,ta_vie_products,ta_vie_reading' | split: ','\n  assign ta_vie_wrap_section_ids = 'section_slideshow_nested_YfkG44,section_text_with_products_yW3LJx,double,ta_vie_reading' | split: ','\n-%}\n\n{%- capture ta_vie_sections -%}\n  {%- for ta_vie_section_id in ta_vie_section_ids -%}\n    {%- unless forloop.first -%},{%- endunless -%}\n    [data-section-id=\"{{ ta_vie_section_id }}\"],[data-section-id$=\"__{{ ta_vie_section_id }}\"]\n  {%- endfor -%}\n{%- endcapture -%}\n{%- capture ta_vie_scope -%}body.template-index #MainContent :is({{ ta_vie_sections }}){%- endcapture -%}\n{%- capture ta_vie_wrap_sections -%}\n  {%- for ta_vie_section_id in ta_vie_wrap_section_ids -%}\n    {%- unless forloop.first -%},{%- endunless -%}\n    [data-section-id=\"{{ ta_vie_section_id }}\"],[data-section-id$=\"__{{ ta_vie_section_id }}\"]\n  {%- endfor -%}\n{%- endcapture -%}\n{%- capture ta_vie_wrap_scope -%}body.template-index #MainContent :is({{ ta_vie_wrap_sections }}){%- endcapture -%}\n\n{%- style -%}\n  {%- if ta_vie_heading_style == 'serif' or ta_vie_heading_style == 'sans' %}\n  {{ ta_vie_scope }} :is(\n    .hero__title,\n    .column__heading,\n    .text-products__heading,\n    .grid__heading,\n    .page__heading,\n    .article__title,\n    .announcement__slide .font-heading,\n    .announcement__content\n  ):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    {%- if ta_vie_heading_style == 'sans' %}\n      font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n    {%- else %}\n      font-family: Georgia, \"Times New Roman\", \"Yu Mincho\", YuMincho, \"Hiragino Mincho ProN\", \"Noto Serif CJK JP\", serif;\n    {%- endif %}\n    font-weight: 400;\n    font-style: normal;\n    text-transform: none;\n    letter-spacing: {{ ta_vie_heading_spacing }}em;\n    line-height: 1.55;\n    text-wrap: balance;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text, .article__excerpt):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n    font-weight: 400;\n    font-style: normal;\n    line-height: {{ ta_vie_body_line_height }};\n    text-wrap: pretty;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text, .article__excerpt):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) > p {\n    line-height: inherit;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__subheading, .subheading):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n    font-size: {{ ta_vie_subheading_size }}px;\n    font-weight: 400;\n    font-style: normal;\n    letter-spacing: 0.12em;\n    line-height: 1.6;\n    text-transform: none;\n  }\n  {%- endif %}\n\n  {{ ta_vie_wrap_scope }} :is(.hero__title, .text-products__heading, .blog__title):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    word-break: keep-all;\n    overflow-wrap: break-word;\n    line-break: strict;\n  }\n{%- endstyle -%}\n"
     },
     {
       "path": "snippets/ta-vie-menu-destinations.liquid",
@@ -3897,7 +4541,7 @@
     {
       "path": "snippets/ta-vie-page-links.liquid",
       "operation": "add",
-      "content": "{%- doc -%}\n  Existing blog and FAQ destinations shared by desktop, mobile and home.\n  @param {string} location - desktop, mobile or home.\n  @param {link[]} [menu_links] - Existing desktop menu links.\n  @param {block[]} [menu_blocks] - Existing mobile menu blocks.\n{%- enddoc -%}\n{%- liquid\n  assign navigation_enabled = settings.ta_vie_navigation_links | default: true, allow_false: true\n  assign home_enabled = settings.ta_vie_home_links | default: true, allow_false: true\n  assign show_links = navigation_enabled\n  if location == 'home'\n    assign show_links = home_enabled\n  endif\n\n  assign reading_blog = settings.ta_vie_blog\n  if reading_blog != blank and reading_blog.url == blank\n    assign reading_blog = blogs[settings.ta_vie_blog]\n  endif\n  if settings.ta_vie_blog == blank and blogs.news.articles_count > 0\n    assign reading_blog = blogs.news\n  endif\n\n  assign faq_page = settings.ta_vie_faq_page\n  if faq_page != blank and faq_page.url == blank\n    assign faq_page = pages[settings.ta_vie_faq_page]\n  endif\n  if settings.ta_vie_faq_page == blank\n    assign faq_page = pages.faq\n    if faq_page.url == blank\n      for candidate in pages limit: 50\n        if candidate.template_suffix == 'faq' and candidate.url != blank\n          assign faq_page = candidate\n          break\n        endif\n      endfor\n    endif\n  endif\n\n  capture existing_destinations\n    render 'ta-vie-menu-destinations', links: menu_links\n    for menu_block in menu_blocks\n      if menu_block.type == 'menu' or menu_block.type == 'menu-columns'\n        assign menu_handle = menu_block.settings.mobile_menu_linklist | default: 'main-menu'\n        render 'ta-vie-menu-destinations', links: linklists[menu_handle].links\n      endif\n    endfor\n  endcapture\n\n  assign destinations = 'blog,faq' | split: ','\n-%}\n{%- capture links_markup -%}\n  {%- if show_links -%}\n    {%- for destination in destinations -%}\n      {%- liquid\n        if destination == 'blog'\n          assign resource = reading_blog\n          assign link_label = settings.ta_vie_blog_label | default: '読みもの'\n          assign resource_type = 'blog_link'\n        else\n          assign resource = faq_page\n          assign link_label = settings.ta_vie_faq_label | default: 'よくあるご質問'\n          assign resource_type = 'page_link'\n        endif\n\n        assign already_linked = false\n        capture url_token\n          echo '|' | append: resource.url | append: '|'\n        endcapture\n        capture id_token\n          echo '|' | append: resource_type | append: ':' | append: resource.id | append: '|'\n        endcapture\n        if location != 'home'\n          if existing_destinations contains url_token\n            assign already_linked = true\n          elsif resource.id != blank and existing_destinations contains id_token\n            assign already_linked = true\n          endif\n        endif\n      -%}\n      {%- if resource.url != blank and already_linked == false -%}\n        {%- case location -%}\n          {%- when 'desktop' -%}\n            <div class=\"menu__item child\">\n              <a href=\"{{ resource.url | escape }}\" data-top-link class=\"navlink navlink--toplevel\"{% if request.path == resource.url %} aria-current=\"page\"{% endif %}>\n                <span class=\"navtext\">{{ link_label | escape }}</span>\n              </a>\n            </div>\n          {%- when 'mobile' -%}\n            <div class=\"sliderule__wrapper\">\n              <div class=\"sliderow\" data-animates=\"0\" data-animation=\"drawer-items-fade\" data-animation-duration=\"500\" data-animation-delay=\"{{ forloop.index | times: 50 | plus: 250 }}\">\n                <a class=\"sliderow__title\" href=\"{{ resource.url | escape }}\"{% if request.path == resource.url %} aria-current=\"page\"{% endif %}><span>{{ link_label | escape }}</span></a>\n              </div>\n            </div>\n          {%- when 'home' -%}\n            <div class=\"hero__button\">\n              <a href=\"{{ resource.url | escape }}\" class=\"btn btn--small btn--outline btn--primary\"><span>{{ link_label | escape }}</span></a>\n            </div>\n        {%- endcase -%}\n      {%- endif -%}\n    {%- endfor -%}\n  {%- endif -%}\n{%- endcapture -%}\n{%- if links_markup != blank -%}\n  {%- if location == 'home' -%}\n    <nav class=\"wrapper--narrow section-padding text-center color-scheme-tavie-white\" style=\"--PT: 24px; --PB: 24px;\" aria-label=\"読みものとご案内\">\n      <div class=\"hero__button-group\">{{ links_markup }}</div>\n    </nav>\n  {%- else -%}\n    {{- links_markup -}}\n  {%- endif -%}\n{%- endif -%}\n"
+      "content": "{%- doc -%}\n  Existing blog and FAQ destinations shared by desktop, mobile, home and footer.\n  @param {string} location - desktop, mobile, home or footer.\n  @param {link[]} [menu_links] - Existing links used to avoid duplicate destinations.\n  @param {block[]} [menu_blocks] - Existing mobile menu blocks.\n{%- enddoc -%}\n{%- liquid\n  assign navigation_enabled = settings.ta_vie_navigation_links | default: true, allow_false: true\n  assign home_enabled = settings.ta_vie_home_links | default: true, allow_false: true\n  assign show_links = navigation_enabled\n  if location == 'home'\n    assign show_links = home_enabled\n  elsif location == 'footer'\n    assign show_links = true\n  endif\n\n  assign reading_blog = settings.ta_vie_blog\n  if reading_blog != blank and reading_blog.url == blank\n    assign reading_blog = blogs[settings.ta_vie_blog]\n  endif\n  if settings.ta_vie_blog == blank and blogs.news.url != blank\n    assign reading_blog = blogs.news\n  endif\n\n  assign faq_page = settings.ta_vie_faq_page\n  if faq_page != blank and faq_page.url == blank\n    assign faq_page = pages[settings.ta_vie_faq_page]\n  endif\n  if settings.ta_vie_faq_page == blank\n    assign faq_page = pages.faq\n    if faq_page.url == blank\n      for candidate in pages limit: 50\n        if candidate.template_suffix == 'faq' and candidate.url != blank\n          assign faq_page = candidate\n          break\n        endif\n      endfor\n    endif\n  endif\n\n  capture existing_destinations\n    render 'ta-vie-menu-destinations', links: menu_links\n    if location == 'mobile'\n      for menu_block in menu_blocks\n        if menu_block.type == 'menu' or menu_block.type == 'menu-columns'\n          assign menu_handle = menu_block.settings.mobile_menu_linklist | default: 'main-menu'\n          render 'ta-vie-menu-destinations', links: linklists[menu_handle].links\n        endif\n      endfor\n    endif\n  endcapture\n\n  assign destinations = 'blog,faq' | split: ','\n-%}\n{%- capture links_markup -%}\n  {%- if show_links -%}\n    {%- for destination in destinations -%}\n      {%- liquid\n        if destination == 'blog'\n          assign resource = reading_blog\n          assign link_label = settings.ta_vie_blog_label | default: '読みもの'\n          assign resource_type = 'blog_link'\n        else\n          assign resource = faq_page\n          assign link_label = settings.ta_vie_faq_label | default: 'よくあるご質問'\n          assign resource_type = 'page_link'\n        endif\n\n        assign already_linked = false\n        capture url_token\n          echo '|' | append: resource.url | append: '|'\n        endcapture\n        capture id_token\n          echo '|' | append: resource_type | append: ':' | append: resource.id | append: '|'\n        endcapture\n        if location != 'home'\n          if existing_destinations contains url_token\n            assign already_linked = true\n          elsif resource.id != blank and existing_destinations contains id_token\n            assign already_linked = true\n          endif\n        endif\n      -%}\n      {%- if resource.url != blank and already_linked == false -%}\n        {%- case location -%}\n          {%- when 'desktop' -%}\n            <div class=\"menu__item child\">\n              <a href=\"{{ resource.url | escape }}\" data-top-link class=\"navlink navlink--toplevel\"{% if request.path == resource.url %} aria-current=\"page\"{% endif %}>\n                <span class=\"navtext\">{{ link_label | escape }}</span>\n              </a>\n            </div>\n          {%- when 'mobile' -%}\n            <div class=\"sliderule__wrapper\">\n              <div class=\"sliderow\" data-animates=\"0\" data-animation=\"drawer-items-fade\" data-animation-duration=\"500\" data-animation-delay=\"{{ forloop.index | times: 50 | plus: 250 }}\">\n                <a class=\"sliderow__title\" href=\"{{ resource.url | escape }}\"{% if request.path == resource.url %} aria-current=\"page\"{% endif %}><span>{{ link_label | escape }}</span></a>\n              </div>\n            </div>\n          {%- when 'footer' -%}\n            <li><a href=\"{{ resource.url | escape }}\"{% if request.path == resource.url %} aria-current=\"page\"{% endif %}>{{ link_label | escape }}</a></li>\n          {%- when 'home' -%}\n            <div class=\"hero__button\">\n              <a href=\"{{ resource.url | escape }}\" class=\"btn btn--small btn--outline btn--primary\"><span>{{ link_label | escape }}</span></a>\n            </div>\n        {%- endcase -%}\n      {%- endif -%}\n    {%- endfor -%}\n  {%- endif -%}\n{%- endcapture -%}\n{%- if links_markup != blank -%}\n  {%- if location == 'home' -%}\n    <nav class=\"wrapper--narrow section-padding text-center color-scheme-tavie-white\" style=\"--PT: 24px; --PB: 24px;\" aria-label=\"読みものとご案内\">\n      <div class=\"hero__button-group\">{{ links_markup }}</div>\n    </nav>\n  {%- elsif location == 'footer' -%}\n    <ul class=\"footer__quicklinks unstyled\">{{ links_markup }}</ul>\n  {%- else -%}\n    {{- links_markup -}}\n  {%- endif -%}\n{%- endif -%}\n"
     },
     {
       "path": "templates/index.json",
@@ -3930,49 +4574,49 @@
           "path": "/order/5",
           "operation": "replace",
           "old": "section-tab-collections",
-          "new": "ta_vie_reading"
+          "new": "announcement-2"
         },
         {
           "path": "/order/6",
           "operation": "replace",
           "old": "section_video_w6YfAE",
-          "new": "announcement-2"
+          "new": "section-tab-collections"
         },
         {
           "path": "/order/7",
           "operation": "replace",
           "old": "press-logos",
-          "new": "section-tab-collections"
+          "new": "section_video_w6YfAE"
         },
         {
           "path": "/order/8",
           "operation": "replace",
           "old": "custom-content-1",
-          "new": "section_video_w6YfAE"
+          "new": "press-logos"
         },
         {
           "path": "/order/9",
           "operation": "replace",
           "old": "collections-list-hover",
-          "new": "press-logos"
+          "new": "custom-content-1"
         },
         {
           "path": "/order/10",
           "operation": "replace",
           "old": "announcement-3",
-          "new": "custom-content-1"
+          "new": "collections-list-hover"
         },
         {
           "path": "/order/11",
           "operation": "replace",
           "old": "look",
-          "new": "collections-list-hover"
+          "new": "announcement-3"
         },
         {
           "path": "/order/12",
           "operation": "replace",
           "old": "section_dynamic_content_TkrMUq",
-          "new": "announcement-3"
+          "new": "ta_vie_reading"
         },
         {
           "path": "/order/13",
@@ -4032,9 +4676,16 @@
           "new": "家で過ごす時間を、自分のために。"
         },
         {
-          "path": "/sections/announcement-3/disabled",
-          "operation": "add",
-          "new": true
+          "path": "/sections/announcement-3/settings/color_scheme",
+          "operation": "replace",
+          "old": "scheme-2",
+          "new": "scheme-tavie-white"
+        },
+        {
+          "path": "/sections/announcement-3/settings/marquee_speed",
+          "operation": "replace",
+          "old": 100,
+          "new": 50
         },
         {
           "path": "/sections/collections-list-hover/disabled",
@@ -4096,9 +4747,16 @@
           "new": "朝の支度に。"
         },
         {
-          "path": "/sections/columns-1/disabled",
-          "operation": "add",
-          "new": true
+          "path": "/sections/columns-1/settings/color_scheme",
+          "operation": "replace",
+          "old": "",
+          "new": "scheme-tavie-white"
+        },
+        {
+          "path": "/sections/columns-1/settings/layout_mobile",
+          "operation": "replace",
+          "old": "1",
+          "new": "slider"
         },
         {
           "path": "/sections/columns-2/disabled",
@@ -4184,7 +4842,7 @@
           "path": "/sections/double/blocks/text/settings/text",
           "operation": "replace",
           "old": "<p>From dainty classics that are perfect for daily adornment to chic, to trendsetting pieces designed to complement any occasion – our selection blends exquisite craftsmanship with modern sensibility.</p>",
-          "new": "<p>朝の支度、読書をする午後、一日を終えてくつろぐ夜。外へ出る日の装いと同じように、家で過ごす自分にも目を向ける。TA VIEは、そんな毎日を大切にするためのルームウェアを提案します。</p>"
+          "new": "<p>朝の支度、読書をする午後、一日を終えてくつろぐ夜。外へ出る日の装いと同じように、家で過ごす自分にも目を向ける。</p><p>TA VIEは、そんな毎日を大切にするためのルームウェアを提案します。</p>"
         },
         {
           "path": "/sections/double/settings/color_scheme",
@@ -4196,25 +4854,13 @@
           "path": "/sections/double/settings/padding_bottom",
           "operation": "replace",
           "old": 82,
-          "new": 64
-        },
-        {
-          "path": "/sections/double/settings/padding_top",
-          "operation": "replace",
-          "old": 42,
-          "new": 64
+          "new": 62
         },
         {
           "path": "/sections/double/settings/text_alignment",
           "operation": "replace",
           "old": "text-center",
           "new": "text-left"
-        },
-        {
-          "path": "/sections/double/settings/width",
-          "operation": "replace",
-          "old": "wrapper--full-padded",
-          "new": "wrapper"
         },
         {
           "path": "/sections/look/disabled",
@@ -4428,12 +5074,6 @@
           "new": "/collections/all"
         },
         {
-          "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_Y3ntcg/blocks/button_Mf6QGG/settings/style",
-          "operation": "replace",
-          "old": "btn--solid",
-          "new": "btn--outline"
-        },
-        {
           "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_Y3ntcg/blocks/button_Mf6QGG/settings/text",
           "operation": "replace",
           "old": "Shop all rings",
@@ -4464,22 +5104,10 @@
           "new": ""
         },
         {
-          "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_hkYEiy/blocks/group_buttons_DzAjwR/settings/button_style",
-          "operation": "replace",
-          "old": "btn--solid",
-          "new": "btn--outline"
-        },
-        {
           "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_hkYEiy/blocks/group_buttons_DzAjwR/settings/button_text",
           "operation": "replace",
           "old": "Shop all products",
           "new": "ルームウェアを見る"
-        },
-        {
-          "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_hkYEiy/blocks/group_buttons_DzAjwR/settings/button_type",
-          "operation": "replace",
-          "old": "btn--black",
-          "new": "btn--white"
         },
         {
           "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_hkYEiy/blocks/group_buttons_DzAjwR/settings/button_url",
@@ -4505,21 +5133,16 @@
           "new": "家で過ごす時間を、自分のために。"
         },
         {
-          "path": "/sections/section_slideshow_nested_YfkG44/settings/height",
+          "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_hkYEiy/settings/flex_align_mobile",
           "operation": "replace",
-          "old": "seven-fifty-height-hero",
-          "new": "sixty-fifty-height-hero"
+          "old": "align--middle-center-mobile",
+          "new": "align--bottom-left-mobile"
         },
         {
-          "path": "/sections/section_slideshow_nested_YfkG44/settings/mobile_height",
+          "path": "/sections/section_text_with_products_yW3LJx/settings/color_scheme",
           "operation": "replace",
-          "old": "screen-height-full--mobile",
-          "new": "four-fifty-height-hero--mobile"
-        },
-        {
-          "path": "/sections/section_text_with_products_yW3LJx/disabled",
-          "operation": "add",
-          "new": true
+          "old": "",
+          "new": "scheme-tavie-white"
         },
         {
           "path": "/sections/section_text_with_products_yW3LJx/settings/heading",
@@ -4528,22 +5151,16 @@
           "new": "家で過ごす時間を、 自分のために。"
         },
         {
+          "path": "/sections/section_text_with_products_yW3LJx/settings/image_border_radius",
+          "operation": "replace",
+          "old": 20,
+          "new": 0
+        },
+        {
           "path": "/sections/section_text_with_products_yW3LJx/settings/subheading",
           "operation": "replace",
           "old": "bestselling fine jewelry",
           "new": "TA VIE"
-        },
-        {
-          "path": "/sections/section_text_with_products_yW3LJx/settings/text_font_size_px_desktop",
-          "operation": "replace",
-          "old": 32,
-          "new": 28
-        },
-        {
-          "path": "/sections/section_text_with_products_yW3LJx/settings/text_font_size_px_mobile",
-          "operation": "replace",
-          "old": 26,
-          "new": 24
         },
         {
           "path": "/sections/section_video_w6YfAE/disabled",
@@ -4573,11 +5190,11 @@
               "layout_desktop": "grid",
               "grid": 2,
               "rows": 2,
-              "width": "wrapper",
+              "width": "wrapper--full-padded",
               "layout_mobile": "1",
               "color_scheme": "scheme-tavie-white",
-              "padding_top": 64,
-              "padding_bottom": 64,
+              "padding_top": 62,
+              "padding_bottom": 62,
               "heading_tag": "h2"
             }
           }
@@ -4592,7 +5209,7 @@
               "blog_name": "",
               "use_ta_vie_blog": true,
               "aspect_ratio": 1,
-              "title": "家での時間を整える、ものと過ごし方。",
+              "title": "暮らしの読みもの",
               "description": "<p>衣服から、空間を彩るものまで。家で過ごす毎日を大切にする視点から、気になる品々と暮らしのヒントを紹介します。</p>",
               "link_text": "読みものを見る",
               "heading_font_size": "heading-medium",
@@ -4602,12 +5219,12 @@
               "show_date": false,
               "show_button": false,
               "show_comments": false,
-              "width": "wrapper",
+              "width": "wrapper--full-padded",
               "grid": 3,
               "rows": 1,
               "color_scheme": "scheme-tavie-white",
-              "padding_top": 64,
-              "padding_bottom": 40,
+              "padding_top": 62,
+              "padding_bottom": 62,
               "heading_tag": "h2",
               "title_tag": "h3"
             }
@@ -4644,13 +5261,14 @@
     "locations": [
       "desktop",
       "mobile",
-      "home"
+      "footer",
+      "optional home"
     ],
-    "resource_selection": "Existing blog/page pickers; only resolved resource URLs render",
+    "resource_selection": "Existing global blog/page pickers or actual existing news/FAQ resources; only resolved resource URLs render, including blogs with zero articles",
     "settings_controls": 6,
-    "new_current_display_label_values": 4,
     "existing_menu_duplicate_check": "URL and typed page/blog ID across nested links and multiple mobile menus",
     "native_assets_unchanged": true,
+    "home_link_band_current": false,
     "shopify_resource_selection": "Required unless verified existing fallback resolves; live selection unverified"
   },
   "homepage_structure": {
@@ -4664,16 +5282,52 @@
     "active_order": [
       "section_slideshow_nested_YfkG44",
       "ta_vie_products",
+      "section_text_with_products_yW3LJx",
+      "columns-1",
       "double",
+      "announcement-3",
       "ta_vie_reading"
     ],
-    "disabled_original_sections": 17,
-    "products": "Native picker or actual collections.all when unselected; hide without products; grid 2x2 desktop and 1 column mobile",
-    "reading": "Existing global blog picker or article-bearing news fallback; hide without published articles; 3 cards",
-    "hero_height": "650px desktop / 450px mobile",
+    "disabled_original_sections": 14,
+    "products": "Native picker or actual collections.all when unselected; hide publicly without products; editor-only setup message; grid 2x2 desktop and 1 column mobile",
+    "reading": "Native section Blog picker takes priority, then opted-in global blog picker, then existing news; hide publicly without published articles; editor-only setup message; 3 cards",
+    "hero_height": "750px desktop / full screen mobile",
     "hero_native_animation": "Original slide, arrows and 4-second autoplay retained",
+    "columns": "Original 3 native image columns; native mobile slider",
+    "marquee": "One original native marquee at schema-valid 50 percent speed",
+    "typography": "Native theme mode is current and default; only Japanese wrapping adjusted in hero/intro/story/blog headings; optional serif/sans retained",
     "purchase_and_asset_code_unchanged": true,
-    "actual_demo_browsing": "Blocked by environment proxy CONNECT 403; structural changes based on supplied Broadcast source and user request"
+    "actual_demo_browsing": "Official Theme Store and demo HTML fetched with TLS verification; official desktop/mobile preview images inspected; interactive remote browser blocked by certificate trust approval",
+    "reference_demo_version": "8.1.0; supplied user theme is 8.1.1"
+  },
+  "home_story_readability": {
+    "body_max_width": "40em; native typography unchanged",
+    "scope": "Home original double section only, including Shopify generated section ID prefix",
+    "trigger": "At the supplied screenshot width of 2718px, native body was 894.8px wide with 55 Japanese characters on one line"
+  },
+  "footer_refinement": {
+    "empty_menu_columns": "Hide heading and column; preserve configured native menus",
+    "resource_fallback": "Opt-in actual blog/FAQ links only when native menu has no links",
+    "visible_columns": "Redistribute widths only when empty menu columns are hidden",
+    "anchor_logo_max_width_px": {
+      "desktop": 480,
+      "mobile": 240
+    },
+    "logo_image_references_and_aspect_ratio": "Preserved",
+    "newsletter": "Native email-only option; submission code unchanged"
+  },
+  "header_refinement": {
+    "transparent_home": false,
+    "saved_logo_width_px": {
+      "desktop": 180,
+      "mobile": 140
+    },
+    "saved_logo_references": "Preserved",
+    "unconfigured_mobile_demo_blocks": "Disabled with IDs retained",
+    "demo_social_urls_removed": [
+      "https://instagram.com/shopify",
+      "https://tiktok.com/@shopify"
+    ]
   },
   "shopify_settings_file_saved_commit": "3f7e253d4fd7971f97307427dbf77106c6ca7e71",
   "shopify_editor_warning_cleared": "unverified"
