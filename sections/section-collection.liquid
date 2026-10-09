@@ -18,6 +18,20 @@
   assign layout = section.settings.layout
 
   assign featured_collection = collections[section.settings.featured_collection]
+  assign render_collection = true
+  if section.settings.use_ta_vie_catalog
+    assign featured_collection = section.settings.featured_collection
+    if section.settings.featured_collection == blank
+      assign featured_collection = collections.all
+    elsif featured_collection.url == blank
+      assign featured_collection = collections[section.settings.featured_collection]
+    endif
+
+    assign render_collection = false
+    if featured_collection.url != blank and featured_collection.products_count > 0 and featured_collection.products.size > 0
+      assign render_collection = true
+    endif
+  endif
   assign limit_products = 20
   assign limit_onboarding = 8
 
@@ -59,6 +73,7 @@
   endif
 -%}
 
+{%- if render_collection -%}
 {%- style -%}
   #Collection--{{ section.id }} {
      --PT: {{ section.settings.padding_top }}px;
@@ -196,6 +211,7 @@
 {%- if show_recently_viewed_indicator -%}
   <script src="{{ 'grid-item.js' | asset_url }}" defer></script>
 {%- endif -%}
+{%- endif -%}
 
 {% schema %}
 {
@@ -209,6 +225,12 @@
       "type": "collection",
       "id": "featured_collection",
       "label": "Collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_ta_vie_catalog",
+      "label": "未選択時に全商品を使用、商品がなければ非表示",
+      "default": false
     },
     {
       "type": "header",

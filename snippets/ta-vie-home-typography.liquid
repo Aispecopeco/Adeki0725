@@ -8,7 +8,7 @@
   assign ta_vie_body_line_height = settings.ta_vie_home_body_line_height | default: 1.9
   assign ta_vie_subheading_size = settings.ta_vie_home_subheading_size | default: 12
   assign ta_vie_body_family = settings.type_base_font.family | default: 'DM Sans'
-  assign ta_vie_section_ids = 'section_slideshow_nested_YfkG44,section_text_with_products_yW3LJx,columns-1,double,custom-content-1,announcement-3,section_dynamic_content_TkrMUq,columns-2,section_hero_scrolling_mmThBz' | split: ','
+  assign ta_vie_section_ids = 'section_slideshow_nested_YfkG44,section_text_with_products_yW3LJx,columns-1,double,custom-content-1,announcement-3,section_dynamic_content_TkrMUq,columns-2,section_hero_scrolling_mmThBz,ta_vie_products,ta_vie_reading' | split: ','
 -%}
 
 {%- capture ta_vie_sections -%}
@@ -25,6 +25,8 @@
     .column__heading,
     .text-products__heading,
     .grid__heading,
+    .page__heading,
+    .article__title,
     .announcement__slide .font-heading,
     .announcement__content
   ):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {
@@ -43,7 +45,7 @@
     text-wrap: balance;
   }
 
-  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {
+  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text, .article__excerpt):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {
     font-family: {{ ta_vie_body_family | json }}, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, "Noto Sans CJK JP", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -51,7 +53,7 @@
     text-wrap: pretty;
   }
 
-  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) > p {
+  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text, .article__excerpt):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) > p {
     line-height: inherit;
   }
 

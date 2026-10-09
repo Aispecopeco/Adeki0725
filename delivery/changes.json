@@ -2,10 +2,14 @@
   "theme": "Broadcast",
   "version": "8.1.1",
   "brand": "TA VIE",
-  "revision": "Restore existing blog and FAQ links on home and native desktop/mobile navigation",
+  "revision": "Refine the native Broadcast homepage around actual products, one brand story and published reading",
   "comparison": "Re-uploaded original ZIP; identical to the earlier original",
-  "changed_theme_files": 79,
+  "changed_theme_files": 81,
   "files": [
+    {
+      "path": "blocks/_group-buttons.liquid",
+      "diff": "--- original/blocks/_group-buttons.liquid\n+++ edited/blocks/_group-buttons.liquid\n@@ -6,23 +6,27 @@\n   {{ block.shopify_attributes }}\n   style=\"--block-padding-bottom: {{ block.settings.padding_bottom }}px;\"\n >\n-  {%- render 'button',\n+  {%- if request.page_type != 'index' or block.settings.button_text != blank and block.settings.button_url != blank -%}\n+    {%- render 'button',\n     text: block.settings.button_text,\n     link: block.settings.button_url,\n     type: block.settings.button_type,\n     size: block.settings.button_size,\n     style: block.settings.button_style,\n     show_arrow: block.settings.show_arrow\n-  -%}\n+    -%}\n+  {%- endif -%}\n \n-  {%- render 'button',\n+  {%- if request.page_type != 'index' or block.settings.button_secondary_text != blank and block.settings.button_secondary_url != blank -%}\n+    {%- render 'button',\n     text: block.settings.button_secondary_text,\n     link: block.settings.button_secondary_url,\n     type: block.settings.button_secondary_type,\n     size: block.settings.button_secondary_size,\n     style: block.settings.button_secondary_style,\n     show_arrow: block.settings.show_secondary_arrow\n-  -%}\n+    -%}\n+  {%- endif -%}\n </div>\n \n {% schema %}\n"
+    },
     {
       "path": "config/settings_data.json",
       "scope": "Preserve existing values while normalizing their storage; add homepage and navigation controls and matching preset palettes",
@@ -973,7 +977,7 @@
     },
     {
       "path": "sections/header.liquid",
-      "scope": "native navigation rendering and prior palette default correction",
+      "scope": "native section rendering and prior palette default correction",
       "changes": [
         {
           "path": "/blocks/1/settings/18/default",
@@ -1010,7 +1014,7 @@
     },
     {
       "path": "sections/mobile-menu.liquid",
-      "scope": "native navigation rendering and prior palette default correction",
+      "scope": "native section rendering and prior palette default correction",
       "changes": [
         {
           "path": "/settings/3/default",
@@ -1167,15 +1171,1035 @@
     },
     {
       "path": "sections/section-blog.liquid",
-      "scope": "schema only",
+      "scope": "native section rendering and prior palette default correction",
       "changes": [
+        {
+          "path": "/settings/2/default",
+          "operation": "replace",
+          "old": 1,
+          "new": false
+        },
+        {
+          "path": "/settings/2/id",
+          "operation": "replace",
+          "old": "aspect_ratio",
+          "new": "use_ta_vie_blog"
+        },
+        {
+          "path": "/settings/2/info",
+          "operation": "replace",
+          "old": "Wide to tall",
+          "new": "テーマ設定「TA VIE｜ページへのリンク」で選択したブログを使います。未選択時は記事のあるnewsブログを使い、公開記事がなければ表示しません。"
+        },
+        {
+          "path": "/settings/2/label",
+          "operation": "replace",
+          "old": "Article image aspect ratio",
+          "new": "TA VIEのブログ設定を使う"
+        },
+        {
+          "path": "/settings/2/max",
+          "operation": "remove",
+          "old": 1.5
+        },
+        {
+          "path": "/settings/2/min",
+          "operation": "remove",
+          "old": 0.5
+        },
+        {
+          "path": "/settings/2/step",
+          "operation": "remove",
+          "old": 0.1
+        },
+        {
+          "path": "/settings/2/type",
+          "operation": "replace",
+          "old": "range",
+          "new": "checkbox"
+        },
+        {
+          "path": "/settings/2/unit",
+          "operation": "remove",
+          "old": ":1"
+        },
+        {
+          "path": "/settings/3/content",
+          "operation": "remove",
+          "old": "Typography"
+        },
+        {
+          "path": "/settings/3/default",
+          "operation": "add",
+          "new": 1
+        },
+        {
+          "path": "/settings/3/id",
+          "operation": "add",
+          "new": "aspect_ratio"
+        },
+        {
+          "path": "/settings/3/info",
+          "operation": "add",
+          "new": "Wide to tall"
+        },
+        {
+          "path": "/settings/3/label",
+          "operation": "add",
+          "new": "Article image aspect ratio"
+        },
+        {
+          "path": "/settings/3/max",
+          "operation": "add",
+          "new": 1.5
+        },
+        {
+          "path": "/settings/3/min",
+          "operation": "add",
+          "new": 0.5
+        },
+        {
+          "path": "/settings/3/step",
+          "operation": "add",
+          "new": 0.1
+        },
+        {
+          "path": "/settings/3/type",
+          "operation": "replace",
+          "old": "header",
+          "new": "range"
+        },
+        {
+          "path": "/settings/3/unit",
+          "operation": "add",
+          "new": ":1"
+        },
+        {
+          "path": "/settings/4/content",
+          "operation": "add",
+          "new": "Typography"
+        },
+        {
+          "path": "/settings/4/default",
+          "operation": "remove",
+          "old": "Blog posts"
+        },
+        {
+          "path": "/settings/4/id",
+          "operation": "remove",
+          "old": "title"
+        },
+        {
+          "path": "/settings/4/label",
+          "operation": "remove",
+          "old": "Heading"
+        },
+        {
+          "path": "/settings/4/type",
+          "operation": "replace",
+          "old": "text",
+          "new": "header"
+        },
+        {
+          "path": "/settings/5/default",
+          "operation": "replace",
+          "old": "heading-medium",
+          "new": "Blog posts"
+        },
+        {
+          "path": "/settings/5/id",
+          "operation": "replace",
+          "old": "heading_font_size",
+          "new": "title"
+        },
+        {
+          "path": "/settings/5/label",
+          "operation": "replace",
+          "old": "Heading size",
+          "new": "Heading"
+        },
+        {
+          "path": "/settings/5/options",
+          "operation": "remove",
+          "old": [
+            {
+              "value": "heading-mini",
+              "label": "Mini"
+            },
+            {
+              "value": "heading-x-small",
+              "label": "Extra small"
+            },
+            {
+              "value": "heading-small",
+              "label": "Small"
+            },
+            {
+              "value": "heading-medium",
+              "label": "Medium"
+            },
+            {
+              "value": "heading-large",
+              "label": "Large"
+            },
+            {
+              "value": "heading-x-large",
+              "label": "Extra large"
+            }
+          ]
+        },
+        {
+          "path": "/settings/5/type",
+          "operation": "replace",
+          "old": "select",
+          "new": "text"
+        },
+        {
+          "path": "/settings/6/default",
+          "operation": "remove",
+          "old": "heading-small"
+        },
+        {
+          "path": "/settings/6/id",
+          "operation": "replace",
+          "old": "title_font_size",
+          "new": "description"
+        },
+        {
+          "path": "/settings/6/label",
+          "operation": "replace",
+          "old": "Title size",
+          "new": "Description"
+        },
+        {
+          "path": "/settings/6/options",
+          "operation": "remove",
+          "old": [
+            {
+              "value": "heading-mini",
+              "label": "Mini"
+            },
+            {
+              "value": "heading-x-small",
+              "label": "Extra small"
+            },
+            {
+              "value": "heading-small",
+              "label": "Small"
+            },
+            {
+              "value": "heading-medium",
+              "label": "Medium"
+            },
+            {
+              "value": "heading-large",
+              "label": "Large"
+            },
+            {
+              "value": "heading-x-large",
+              "label": "Extra large"
+            }
+          ]
+        },
+        {
+          "path": "/settings/6/type",
+          "operation": "replace",
+          "old": "select",
+          "new": "richtext"
+        },
+        {
+          "path": "/settings/7/content",
+          "operation": "remove",
+          "old": "Articles"
+        },
+        {
+          "path": "/settings/7/id",
+          "operation": "add",
+          "new": "link_text"
+        },
+        {
+          "path": "/settings/7/label",
+          "operation": "add",
+          "new": "Blog link label"
+        },
+        {
+          "path": "/settings/7/type",
+          "operation": "replace",
+          "old": "header",
+          "new": "text"
+        },
+        {
+          "path": "/settings/8/default",
+          "operation": "replace",
+          "old": false,
+          "new": "heading-medium"
+        },
+        {
+          "path": "/settings/8/id",
+          "operation": "replace",
+          "old": "show_tags",
+          "new": "heading_font_size"
+        },
+        {
+          "path": "/settings/8/label",
+          "operation": "replace",
+          "old": "Show tags",
+          "new": "Heading size"
+        },
+        {
+          "path": "/settings/8/options",
+          "operation": "add",
+          "new": [
+            {
+              "value": "heading-mini",
+              "label": "Mini"
+            },
+            {
+              "value": "heading-x-small",
+              "label": "Extra small"
+            },
+            {
+              "value": "heading-small",
+              "label": "Small"
+            },
+            {
+              "value": "heading-medium",
+              "label": "Medium"
+            },
+            {
+              "value": "heading-large",
+              "label": "Large"
+            },
+            {
+              "value": "heading-x-large",
+              "label": "Extra large"
+            }
+          ]
+        },
+        {
+          "path": "/settings/8/type",
+          "operation": "replace",
+          "old": "checkbox",
+          "new": "select"
+        },
+        {
+          "path": "/settings/9/default",
+          "operation": "replace",
+          "old": false,
+          "new": "heading-small"
+        },
+        {
+          "path": "/settings/9/id",
+          "operation": "replace",
+          "old": "show_author",
+          "new": "title_font_size"
+        },
+        {
+          "path": "/settings/9/label",
+          "operation": "replace",
+          "old": "Show author",
+          "new": "Title size"
+        },
+        {
+          "path": "/settings/9/options",
+          "operation": "add",
+          "new": [
+            {
+              "value": "heading-mini",
+              "label": "Mini"
+            },
+            {
+              "value": "heading-x-small",
+              "label": "Extra small"
+            },
+            {
+              "value": "heading-small",
+              "label": "Small"
+            },
+            {
+              "value": "heading-medium",
+              "label": "Medium"
+            },
+            {
+              "value": "heading-large",
+              "label": "Large"
+            },
+            {
+              "value": "heading-x-large",
+              "label": "Extra large"
+            }
+          ]
+        },
+        {
+          "path": "/settings/9/type",
+          "operation": "replace",
+          "old": "checkbox",
+          "new": "select"
+        },
+        {
+          "path": "/settings/10/content",
+          "operation": "add",
+          "new": "Articles"
+        },
+        {
+          "path": "/settings/10/default",
+          "operation": "remove",
+          "old": false
+        },
+        {
+          "path": "/settings/10/id",
+          "operation": "remove",
+          "old": "show_date"
+        },
+        {
+          "path": "/settings/10/label",
+          "operation": "remove",
+          "old": "Show date"
+        },
+        {
+          "path": "/settings/10/type",
+          "operation": "replace",
+          "old": "checkbox",
+          "new": "header"
+        },
+        {
+          "path": "/settings/11/id",
+          "operation": "replace",
+          "old": "show_button",
+          "new": "show_tags"
+        },
+        {
+          "path": "/settings/11/label",
+          "operation": "replace",
+          "old": "Show 'Read more' button",
+          "new": "Show tags"
+        },
+        {
+          "path": "/settings/12/id",
+          "operation": "replace",
+          "old": "show_comments",
+          "new": "show_author"
+        },
+        {
+          "path": "/settings/12/label",
+          "operation": "replace",
+          "old": "Show comment count",
+          "new": "Show author"
+        },
+        {
+          "path": "/settings/13/content",
+          "operation": "remove",
+          "old": "Layout"
+        },
+        {
+          "path": "/settings/13/default",
+          "operation": "add",
+          "new": false
+        },
+        {
+          "path": "/settings/13/id",
+          "operation": "add",
+          "new": "show_date"
+        },
+        {
+          "path": "/settings/13/label",
+          "operation": "add",
+          "new": "Show date"
+        },
+        {
+          "path": "/settings/13/type",
+          "operation": "replace",
+          "old": "header",
+          "new": "checkbox"
+        },
+        {
+          "path": "/settings/14/default",
+          "operation": "replace",
+          "old": "wrapper--full-padded",
+          "new": false
+        },
+        {
+          "path": "/settings/14/id",
+          "operation": "replace",
+          "old": "width",
+          "new": "show_button"
+        },
+        {
+          "path": "/settings/14/label",
+          "operation": "replace",
+          "old": "Width",
+          "new": "Show 'Read more' button"
+        },
+        {
+          "path": "/settings/14/options",
+          "operation": "remove",
+          "old": [
+            {
+              "value": "wrapper--full",
+              "label": "Full width"
+            },
+            {
+              "value": "wrapper--full-padded",
+              "label": "Full width padded"
+            },
+            {
+              "value": "wrapper",
+              "label": "Normal"
+            }
+          ]
+        },
+        {
+          "path": "/settings/14/type",
+          "operation": "replace",
+          "old": "select",
+          "new": "checkbox"
+        },
+        {
+          "path": "/settings/15/default",
+          "operation": "replace",
+          "old": 4,
+          "new": false
+        },
+        {
+          "path": "/settings/15/id",
+          "operation": "replace",
+          "old": "grid",
+          "new": "show_comments"
+        },
+        {
+          "path": "/settings/15/label",
+          "operation": "replace",
+          "old": "Articles per row",
+          "new": "Show comment count"
+        },
+        {
+          "path": "/settings/15/max",
+          "operation": "remove",
+          "old": 4
+        },
+        {
+          "path": "/settings/15/min",
+          "operation": "remove",
+          "old": 1
+        },
+        {
+          "path": "/settings/15/step",
+          "operation": "remove",
+          "old": 1
+        },
+        {
+          "path": "/settings/15/type",
+          "operation": "replace",
+          "old": "range",
+          "new": "checkbox"
+        },
+        {
+          "path": "/settings/16/content",
+          "operation": "add",
+          "new": "Layout"
+        },
+        {
+          "path": "/settings/16/default",
+          "operation": "remove",
+          "old": 1
+        },
+        {
+          "path": "/settings/16/id",
+          "operation": "remove",
+          "old": "rows"
+        },
+        {
+          "path": "/settings/16/label",
+          "operation": "remove",
+          "old": "Number of rows"
+        },
+        {
+          "path": "/settings/16/max",
+          "operation": "remove",
+          "old": 5
+        },
+        {
+          "path": "/settings/16/min",
+          "operation": "remove",
+          "old": 1
+        },
+        {
+          "path": "/settings/16/step",
+          "operation": "remove",
+          "old": 1
+        },
+        {
+          "path": "/settings/16/type",
+          "operation": "replace",
+          "old": "range",
+          "new": "header"
+        },
+        {
+          "path": "/settings/17/content",
+          "operation": "remove",
+          "old": "Colors"
+        },
+        {
+          "path": "/settings/17/default",
+          "operation": "add",
+          "new": "wrapper--full-padded"
+        },
+        {
+          "path": "/settings/17/id",
+          "operation": "add",
+          "new": "width"
+        },
+        {
+          "path": "/settings/17/label",
+          "operation": "add",
+          "new": "Width"
+        },
+        {
+          "path": "/settings/17/options",
+          "operation": "add",
+          "new": [
+            {
+              "value": "wrapper--full",
+              "label": "Full width"
+            },
+            {
+              "value": "wrapper--full-padded",
+              "label": "Full width padded"
+            },
+            {
+              "value": "wrapper",
+              "label": "Normal"
+            }
+          ]
+        },
+        {
+          "path": "/settings/17/type",
+          "operation": "replace",
+          "old": "header",
+          "new": "select"
+        },
         {
           "path": "/settings/18/default",
           "operation": "replace",
           "old": "scheme_1",
+          "new": 4
+        },
+        {
+          "path": "/settings/18/id",
+          "operation": "replace",
+          "old": "color_scheme",
+          "new": "grid"
+        },
+        {
+          "path": "/settings/18/label",
+          "operation": "replace",
+          "old": "Color scheme",
+          "new": "Articles per row"
+        },
+        {
+          "path": "/settings/18/max",
+          "operation": "add",
+          "new": 4
+        },
+        {
+          "path": "/settings/18/min",
+          "operation": "add",
+          "new": 1
+        },
+        {
+          "path": "/settings/18/step",
+          "operation": "add",
+          "new": 1
+        },
+        {
+          "path": "/settings/18/type",
+          "operation": "replace",
+          "old": "color_scheme",
+          "new": "range"
+        },
+        {
+          "path": "/settings/19/content",
+          "operation": "remove",
+          "old": "Padding"
+        },
+        {
+          "path": "/settings/19/default",
+          "operation": "add",
+          "new": 1
+        },
+        {
+          "path": "/settings/19/id",
+          "operation": "add",
+          "new": "rows"
+        },
+        {
+          "path": "/settings/19/label",
+          "operation": "add",
+          "new": "Number of rows"
+        },
+        {
+          "path": "/settings/19/max",
+          "operation": "add",
+          "new": 5
+        },
+        {
+          "path": "/settings/19/min",
+          "operation": "add",
+          "new": 1
+        },
+        {
+          "path": "/settings/19/step",
+          "operation": "add",
+          "new": 1
+        },
+        {
+          "path": "/settings/19/type",
+          "operation": "replace",
+          "old": "header",
+          "new": "range"
+        },
+        {
+          "path": "/settings/20/content",
+          "operation": "add",
+          "new": "Colors"
+        },
+        {
+          "path": "/settings/20/default",
+          "operation": "remove",
+          "old": 32
+        },
+        {
+          "path": "/settings/20/id",
+          "operation": "remove",
+          "old": "padding_top"
+        },
+        {
+          "path": "/settings/20/label",
+          "operation": "remove",
+          "old": "Top"
+        },
+        {
+          "path": "/settings/20/max",
+          "operation": "remove",
+          "old": 100
+        },
+        {
+          "path": "/settings/20/min",
+          "operation": "remove",
+          "old": 0
+        },
+        {
+          "path": "/settings/20/step",
+          "operation": "remove",
+          "old": 1
+        },
+        {
+          "path": "/settings/20/type",
+          "operation": "replace",
+          "old": "range",
+          "new": "header"
+        },
+        {
+          "path": "/settings/20/unit",
+          "operation": "remove",
+          "old": "px"
+        },
+        {
+          "path": "/settings/21/default",
+          "operation": "replace",
+          "old": 0,
           "new": "scheme-1"
+        },
+        {
+          "path": "/settings/21/id",
+          "operation": "replace",
+          "old": "padding_bottom",
+          "new": "color_scheme"
+        },
+        {
+          "path": "/settings/21/label",
+          "operation": "replace",
+          "old": "Bottom",
+          "new": "Color scheme"
+        },
+        {
+          "path": "/settings/21/max",
+          "operation": "remove",
+          "old": 100
+        },
+        {
+          "path": "/settings/21/min",
+          "operation": "remove",
+          "old": 0
+        },
+        {
+          "path": "/settings/21/step",
+          "operation": "remove",
+          "old": 1
+        },
+        {
+          "path": "/settings/21/type",
+          "operation": "replace",
+          "old": "range",
+          "new": "color_scheme"
+        },
+        {
+          "path": "/settings/21/unit",
+          "operation": "remove",
+          "old": "px"
+        },
+        {
+          "path": "/settings/22/content",
+          "operation": "replace",
+          "old": "Advanced",
+          "new": "Padding"
+        },
+        {
+          "path": "/settings/23/default",
+          "operation": "replace",
+          "old": "automatic",
+          "new": 32
+        },
+        {
+          "path": "/settings/23/id",
+          "operation": "replace",
+          "old": "heading_tag",
+          "new": "padding_top"
+        },
+        {
+          "path": "/settings/23/label",
+          "operation": "replace",
+          "old": "Heading SEO tag",
+          "new": "Top"
+        },
+        {
+          "path": "/settings/23/max",
+          "operation": "add",
+          "new": 100
+        },
+        {
+          "path": "/settings/23/min",
+          "operation": "add",
+          "new": 0
+        },
+        {
+          "path": "/settings/23/options",
+          "operation": "remove",
+          "old": [
+            {
+              "value": "automatic",
+              "label": "Automatic"
+            },
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            }
+          ]
+        },
+        {
+          "path": "/settings/23/step",
+          "operation": "add",
+          "new": 1
+        },
+        {
+          "path": "/settings/23/type",
+          "operation": "replace",
+          "old": "select",
+          "new": "range"
+        },
+        {
+          "path": "/settings/23/unit",
+          "operation": "add",
+          "new": "px"
+        },
+        {
+          "path": "/settings/24/default",
+          "operation": "replace",
+          "old": "automatic",
+          "new": 0
+        },
+        {
+          "path": "/settings/24/id",
+          "operation": "replace",
+          "old": "title_tag",
+          "new": "padding_bottom"
+        },
+        {
+          "path": "/settings/24/label",
+          "operation": "replace",
+          "old": "Title SEO tag",
+          "new": "Bottom"
+        },
+        {
+          "path": "/settings/24/max",
+          "operation": "add",
+          "new": 100
+        },
+        {
+          "path": "/settings/24/min",
+          "operation": "add",
+          "new": 0
+        },
+        {
+          "path": "/settings/24/options",
+          "operation": "remove",
+          "old": [
+            {
+              "value": "automatic",
+              "label": "Automatic"
+            },
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            }
+          ]
+        },
+        {
+          "path": "/settings/24/step",
+          "operation": "add",
+          "new": 1
+        },
+        {
+          "path": "/settings/24/type",
+          "operation": "replace",
+          "old": "select",
+          "new": "range"
+        },
+        {
+          "path": "/settings/24/unit",
+          "operation": "add",
+          "new": "px"
+        },
+        {
+          "path": "/settings/25",
+          "operation": "add",
+          "new": {
+            "type": "header",
+            "content": "Advanced"
+          }
+        },
+        {
+          "path": "/settings/26",
+          "operation": "add",
+          "new": {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "Heading SEO tag",
+            "default": "automatic",
+            "options": [
+              {
+                "value": "automatic",
+                "label": "Automatic"
+              },
+              {
+                "value": "h1",
+                "label": "H1"
+              },
+              {
+                "value": "h2",
+                "label": "H2"
+              },
+              {
+                "value": "h3",
+                "label": "H3"
+              },
+              {
+                "value": "h4",
+                "label": "H4"
+              },
+              {
+                "value": "h5",
+                "label": "H5"
+              },
+              {
+                "value": "h6",
+                "label": "H6"
+              }
+            ]
+          }
+        },
+        {
+          "path": "/settings/27",
+          "operation": "add",
+          "new": {
+            "type": "select",
+            "id": "title_tag",
+            "label": "Title SEO tag",
+            "default": "automatic",
+            "options": [
+              {
+                "value": "automatic",
+                "label": "Automatic"
+              },
+              {
+                "value": "h1",
+                "label": "H1"
+              },
+              {
+                "value": "h2",
+                "label": "H2"
+              },
+              {
+                "value": "h3",
+                "label": "H3"
+              },
+              {
+                "value": "h4",
+                "label": "H4"
+              },
+              {
+                "value": "h5",
+                "label": "H5"
+              },
+              {
+                "value": "h6",
+                "label": "H6"
+              }
+            ]
+          }
         }
-      ]
+      ],
+      "diff": "--- original/sections/section-blog.liquid\n+++ edited/sections/section-blog.liquid\n@@ -1,6 +1,21 @@\n-<!-- /sections/section-blog.liquid -->\n {%- liquid\n   assign blog = blogs[section.settings.blog_name]\n+  assign render_blog = true\n+  assign use_ta_vie_blog = section.settings.use_ta_vie_blog | default: false, allow_false: true\n+  if use_ta_vie_blog\n+    assign blog = settings.ta_vie_blog\n+    if blog != blank and blog.url == blank\n+      assign blog = blogs[settings.ta_vie_blog]\n+    endif\n+    if settings.ta_vie_blog == blank and blogs.news.articles_count > 0\n+      assign blog = blogs.news\n+    endif\n+    assign render_blog = false\n+    if blog.url != blank and blog.articles_count > 0 and blog.articles.size > 0\n+      assign render_blog = true\n+    endif\n+  endif\n+\n   assign blog_title = section.settings.title\n   assign color_scheme = 'color-' | append: section.settings.color_scheme\n   assign heading_tag = 'h2'\n@@ -15,6 +30,8 @@\n   endunless\n -%}\n \n+{%- if render_blog -%}\n+<!-- /sections/section-blog.liquid -->\n {%- style -%}\n   #Blog--{{ section.id }} {\n     --PT: {{ section.settings.padding_top }}px;\n@@ -40,8 +57,25 @@\n     >\n   {% endif %}\n \n-  {%- render 'blog-posts', blog_articles: blog.articles, is_blog_page: false -%}\n+  {%- if section.settings.description != blank -%}\n+    <div class=\"hero__rte text-center\">{{ section.settings.description }}</div>\n+  {%- endif -%}\n+\n+  {%- if use_ta_vie_blog -%}\n+    {%- render 'blog-posts', blog_articles: blog.articles, blog: blog, is_blog_page: false, real_articles: true -%}\n+  {%- else -%}\n+    {%- render 'blog-posts', blog_articles: blog.articles, is_blog_page: false -%}\n+  {%- endif -%}\n+\n+  {%- if section.settings.link_text != blank and blog.url != blank -%}\n+    <div class=\"hero__button-group\">\n+      <div class=\"hero__button\">\n+        <a class=\"btn btn--small btn--outline btn--primary\" href=\"{{ blog.url | escape }}\"><span>{{ section.settings.link_text | escape }}</span></a>\n+      </div>\n+    </div>\n+  {%- endif -%}\n </section>\n+{%- endif -%}\n \n {% schema %}\n {\n@@ -55,6 +89,13 @@\n       \"type\": \"blog\",\n       \"id\": \"blog_name\",\n       \"label\": \"Blog\"\n+    },\n+    {\n+      \"type\": \"checkbox\",\n+      \"id\": \"use_ta_vie_blog\",\n+      \"label\": \"TA VIEのブログ設定を使う\",\n+      \"info\": \"テーマ設定「TA VIE｜ページへのリンク」で選択したブログを使います。未選択時は記事のあるnewsブログを使い、公開記事がなければ表示しません。\",\n+      \"default\": false\n     },\n     {\n       \"type\": \"range\",\n@@ -78,6 +119,16 @@\n       \"default\": \"Blog posts\"\n     },\n     {\n+      \"type\": \"richtext\",\n+      \"id\": \"description\",\n+      \"label\": \"Description\"\n+    },\n+    {\n+      \"type\": \"text\",\n+      \"id\": \"link_text\",\n+      \"label\": \"Blog link label\"\n+    },\n+    {\n       \"type\": \"select\",\n       \"id\": \"heading_font_size\",\n       \"label\": \"Heading size\",\n@@ -179,7 +230,7 @@\n     {\n       \"type\": \"color_scheme\",\n       \"id\": \"color_scheme\",\n-      \"default\": \"scheme_1\",\n+      \"default\": \"scheme-1\",\n       \"label\": \"Color scheme\"\n     },\n     {\n"
     },
     {
       "path": "sections/section-collection-links-spotlight.liquid",
@@ -1191,15 +2215,1190 @@
     },
     {
       "path": "sections/section-collection.liquid",
-      "scope": "schema only",
+      "scope": "native section rendering and prior palette default correction",
       "changes": [
         {
-          "path": "/settings/23/default",
+          "path": "/settings/2/content",
+          "operation": "remove",
+          "old": "Typography"
+        },
+        {
+          "path": "/settings/2/default",
+          "operation": "add",
+          "new": false
+        },
+        {
+          "path": "/settings/2/id",
+          "operation": "add",
+          "new": "use_ta_vie_catalog"
+        },
+        {
+          "path": "/settings/2/label",
+          "operation": "add",
+          "new": "未選択時に全商品を使用、商品がなければ非表示"
+        },
+        {
+          "path": "/settings/2/type",
           "operation": "replace",
-          "old": "scheme_1",
+          "old": "header",
+          "new": "checkbox"
+        },
+        {
+          "path": "/settings/3/content",
+          "operation": "add",
+          "new": "Typography"
+        },
+        {
+          "path": "/settings/3/default",
+          "operation": "remove",
+          "old": "Best Sellers"
+        },
+        {
+          "path": "/settings/3/id",
+          "operation": "remove",
+          "old": "heading"
+        },
+        {
+          "path": "/settings/3/label",
+          "operation": "remove",
+          "old": "Heading"
+        },
+        {
+          "path": "/settings/3/type",
+          "operation": "replace",
+          "old": "text",
+          "new": "header"
+        },
+        {
+          "path": "/settings/4/default",
+          "operation": "replace",
+          "old": "heading-medium",
+          "new": "Best Sellers"
+        },
+        {
+          "path": "/settings/4/id",
+          "operation": "replace",
+          "old": "heading_font_size",
+          "new": "heading"
+        },
+        {
+          "path": "/settings/4/label",
+          "operation": "replace",
+          "old": "Heading size",
+          "new": "Heading"
+        },
+        {
+          "path": "/settings/4/options",
+          "operation": "remove",
+          "old": [
+            {
+              "value": "heading-mini",
+              "label": "Mini"
+            },
+            {
+              "value": "heading-x-small",
+              "label": "Extra small"
+            },
+            {
+              "value": "heading-small",
+              "label": "Small"
+            },
+            {
+              "value": "heading-medium",
+              "label": "Medium"
+            },
+            {
+              "value": "heading-large",
+              "label": "Large"
+            },
+            {
+              "value": "heading-x-large",
+              "label": "Extra large"
+            }
+          ]
+        },
+        {
+          "path": "/settings/4/type",
+          "operation": "replace",
+          "old": "select",
+          "new": "text"
+        },
+        {
+          "path": "/settings/5/default",
+          "operation": "add",
+          "new": "heading-medium"
+        },
+        {
+          "path": "/settings/5/id",
+          "operation": "replace",
+          "old": "description",
+          "new": "heading_font_size"
+        },
+        {
+          "path": "/settings/5/label",
+          "operation": "replace",
+          "old": "Text",
+          "new": "Heading size"
+        },
+        {
+          "path": "/settings/5/options",
+          "operation": "add",
+          "new": [
+            {
+              "value": "heading-mini",
+              "label": "Mini"
+            },
+            {
+              "value": "heading-x-small",
+              "label": "Extra small"
+            },
+            {
+              "value": "heading-small",
+              "label": "Small"
+            },
+            {
+              "value": "heading-medium",
+              "label": "Medium"
+            },
+            {
+              "value": "heading-large",
+              "label": "Large"
+            },
+            {
+              "value": "heading-x-large",
+              "label": "Extra large"
+            }
+          ]
+        },
+        {
+          "path": "/settings/5/type",
+          "operation": "replace",
+          "old": "richtext",
+          "new": "select"
+        },
+        {
+          "path": "/settings/6/default",
+          "operation": "remove",
+          "old": "body-medium"
+        },
+        {
+          "path": "/settings/6/id",
+          "operation": "replace",
+          "old": "text_font_size",
+          "new": "description"
+        },
+        {
+          "path": "/settings/6/info",
+          "operation": "remove",
+          "old": "Automatically generated by the base size. Applies only when content in Text field is set to Paragraph."
+        },
+        {
+          "path": "/settings/6/label",
+          "operation": "replace",
+          "old": "Text size",
+          "new": "Text"
+        },
+        {
+          "path": "/settings/6/options",
+          "operation": "remove",
+          "old": [
+            {
+              "value": "body-x-small",
+              "label": "Extra small"
+            },
+            {
+              "value": "body-small",
+              "label": "Small"
+            },
+            {
+              "value": "body-medium",
+              "label": "Medium"
+            },
+            {
+              "value": "body-large",
+              "label": "Large"
+            },
+            {
+              "value": "body-x-large",
+              "label": "Extra large"
+            }
+          ]
+        },
+        {
+          "path": "/settings/6/type",
+          "operation": "replace",
+          "old": "select",
+          "new": "richtext"
+        },
+        {
+          "path": "/settings/7/default",
+          "operation": "replace",
+          "old": "inline",
+          "new": "body-medium"
+        },
+        {
+          "path": "/settings/7/id",
+          "operation": "replace",
+          "old": "layout",
+          "new": "text_font_size"
+        },
+        {
+          "path": "/settings/7/info",
+          "operation": "add",
+          "new": "Automatically generated by the base size. Applies only when content in Text field is set to Paragraph."
+        },
+        {
+          "path": "/settings/7/label",
+          "operation": "replace",
+          "old": "Text alignment",
+          "new": "Text size"
+        },
+        {
+          "path": "/settings/7/options/0/label",
+          "operation": "replace",
+          "old": "In-line",
+          "new": "Extra small"
+        },
+        {
+          "path": "/settings/7/options/0/value",
+          "operation": "replace",
+          "old": "inline",
+          "new": "body-x-small"
+        },
+        {
+          "path": "/settings/7/options/1/label",
+          "operation": "replace",
+          "old": "Center",
+          "new": "Small"
+        },
+        {
+          "path": "/settings/7/options/1/value",
+          "operation": "replace",
+          "old": "center",
+          "new": "body-small"
+        },
+        {
+          "path": "/settings/7/options/2/label",
+          "operation": "replace",
+          "old": "Left",
+          "new": "Medium"
+        },
+        {
+          "path": "/settings/7/options/2/value",
+          "operation": "replace",
+          "old": "left",
+          "new": "body-medium"
+        },
+        {
+          "path": "/settings/7/options/3",
+          "operation": "add",
+          "new": {
+            "value": "body-large",
+            "label": "Large"
+          }
+        },
+        {
+          "path": "/settings/7/options/4",
+          "operation": "add",
+          "new": {
+            "value": "body-x-large",
+            "label": "Extra large"
+          }
+        },
+        {
+          "path": "/settings/8/content",
+          "operation": "remove",
+          "old": "Button"
+        },
+        {
+          "path": "/settings/8/default",
+          "operation": "add",
+          "new": "inline"
+        },
+        {
+          "path": "/settings/8/id",
+          "operation": "add",
+          "new": "layout"
+        },
+        {
+          "path": "/settings/8/label",
+          "operation": "add",
+          "new": "Text alignment"
+        },
+        {
+          "path": "/settings/8/options",
+          "operation": "add",
+          "new": [
+            {
+              "value": "inline",
+              "label": "In-line"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "left",
+              "label": "Left"
+            }
+          ]
+        },
+        {
+          "path": "/settings/8/type",
+          "operation": "replace",
+          "old": "header",
+          "new": "select"
+        },
+        {
+          "path": "/settings/9/content",
+          "operation": "add",
+          "new": "Button"
+        },
+        {
+          "path": "/settings/9/default",
+          "operation": "remove",
+          "old": "Shop Now"
+        },
+        {
+          "path": "/settings/9/id",
+          "operation": "remove",
+          "old": "link_text"
+        },
+        {
+          "path": "/settings/9/label",
+          "operation": "remove",
+          "old": "Text"
+        },
+        {
+          "path": "/settings/9/type",
+          "operation": "replace",
+          "old": "text",
+          "new": "header"
+        },
+        {
+          "path": "/settings/10/default",
+          "operation": "add",
+          "new": "Shop Now"
+        },
+        {
+          "path": "/settings/10/id",
+          "operation": "replace",
+          "old": "link_url",
+          "new": "link_text"
+        },
+        {
+          "path": "/settings/10/label",
+          "operation": "replace",
+          "old": "Link",
+          "new": "Text"
+        },
+        {
+          "path": "/settings/10/type",
+          "operation": "replace",
+          "old": "url",
+          "new": "text"
+        },
+        {
+          "path": "/settings/11/default",
+          "operation": "remove",
+          "old": "btn--primary"
+        },
+        {
+          "path": "/settings/11/id",
+          "operation": "replace",
+          "old": "button_type",
+          "new": "link_url"
+        },
+        {
+          "path": "/settings/11/label",
+          "operation": "replace",
+          "old": "Color",
+          "new": "Link"
+        },
+        {
+          "path": "/settings/11/options",
+          "operation": "remove",
+          "old": [
+            {
+              "value": "btn--black",
+              "label": "Black"
+            },
+            {
+              "value": "btn--white",
+              "label": "White"
+            },
+            {
+              "value": "btn--primary",
+              "label": "Primary"
+            },
+            {
+              "value": "btn--secondary",
+              "label": "Secondary"
+            }
+          ]
+        },
+        {
+          "path": "/settings/11/type",
+          "operation": "replace",
+          "old": "select",
+          "new": "url"
+        },
+        {
+          "path": "/settings/12/default",
+          "operation": "replace",
+          "old": "",
+          "new": "btn--primary"
+        },
+        {
+          "path": "/settings/12/id",
+          "operation": "replace",
+          "old": "button_size",
+          "new": "button_type"
+        },
+        {
+          "path": "/settings/12/label",
+          "operation": "replace",
+          "old": "Size",
+          "new": "Color"
+        },
+        {
+          "path": "/settings/12/options/0/label",
+          "operation": "replace",
+          "old": "Small",
+          "new": "Black"
+        },
+        {
+          "path": "/settings/12/options/0/value",
+          "operation": "replace",
+          "old": "btn--small",
+          "new": "btn--black"
+        },
+        {
+          "path": "/settings/12/options/1/label",
+          "operation": "replace",
+          "old": "Medium",
+          "new": "White"
+        },
+        {
+          "path": "/settings/12/options/1/value",
+          "operation": "replace",
+          "old": "",
+          "new": "btn--white"
+        },
+        {
+          "path": "/settings/12/options/2/label",
+          "operation": "replace",
+          "old": "Large",
+          "new": "Primary"
+        },
+        {
+          "path": "/settings/12/options/2/value",
+          "operation": "replace",
+          "old": "btn--large",
+          "new": "btn--primary"
+        },
+        {
+          "path": "/settings/12/options/3",
+          "operation": "add",
+          "new": {
+            "value": "btn--secondary",
+            "label": "Secondary"
+          }
+        },
+        {
+          "path": "/settings/13/default",
+          "operation": "replace",
+          "old": "btn--solid",
+          "new": ""
+        },
+        {
+          "path": "/settings/13/id",
+          "operation": "replace",
+          "old": "button_style",
+          "new": "button_size"
+        },
+        {
+          "path": "/settings/13/label",
+          "operation": "replace",
+          "old": "Style",
+          "new": "Size"
+        },
+        {
+          "path": "/settings/13/options/0/label",
+          "operation": "replace",
+          "old": "Solid",
+          "new": "Small"
+        },
+        {
+          "path": "/settings/13/options/0/value",
+          "operation": "replace",
+          "old": "btn--solid",
+          "new": "btn--small"
+        },
+        {
+          "path": "/settings/13/options/1/label",
+          "operation": "replace",
+          "old": "Outline",
+          "new": "Medium"
+        },
+        {
+          "path": "/settings/13/options/1/value",
+          "operation": "replace",
+          "old": "btn--outline",
+          "new": ""
+        },
+        {
+          "path": "/settings/13/options/2/label",
+          "operation": "replace",
+          "old": "Text",
+          "new": "Large"
+        },
+        {
+          "path": "/settings/13/options/2/value",
+          "operation": "replace",
+          "old": "btn--text",
+          "new": "btn--large"
+        },
+        {
+          "path": "/settings/14/default",
+          "operation": "replace",
+          "old": false,
+          "new": "btn--solid"
+        },
+        {
+          "path": "/settings/14/id",
+          "operation": "replace",
+          "old": "show_arrow",
+          "new": "button_style"
+        },
+        {
+          "path": "/settings/14/label",
+          "operation": "replace",
+          "old": "Show arrow",
+          "new": "Style"
+        },
+        {
+          "path": "/settings/14/options",
+          "operation": "add",
+          "new": [
+            {
+              "label": "Solid",
+              "value": "btn--solid"
+            },
+            {
+              "label": "Outline",
+              "value": "btn--outline"
+            },
+            {
+              "label": "Text",
+              "value": "btn--text"
+            }
+          ]
+        },
+        {
+          "path": "/settings/14/type",
+          "operation": "replace",
+          "old": "checkbox",
+          "new": "select"
+        },
+        {
+          "path": "/settings/15/content",
+          "operation": "remove",
+          "old": "Desktop"
+        },
+        {
+          "path": "/settings/15/default",
+          "operation": "add",
+          "new": false
+        },
+        {
+          "path": "/settings/15/id",
+          "operation": "add",
+          "new": "show_arrow"
+        },
+        {
+          "path": "/settings/15/label",
+          "operation": "add",
+          "new": "Show arrow"
+        },
+        {
+          "path": "/settings/15/type",
+          "operation": "replace",
+          "old": "header",
+          "new": "checkbox"
+        },
+        {
+          "path": "/settings/16/content",
+          "operation": "add",
+          "new": "Desktop"
+        },
+        {
+          "path": "/settings/16/default",
+          "operation": "remove",
+          "old": "grid"
+        },
+        {
+          "path": "/settings/16/id",
+          "operation": "remove",
+          "old": "layout_desktop"
+        },
+        {
+          "path": "/settings/16/label",
+          "operation": "remove",
+          "old": "Product grid layout"
+        },
+        {
+          "path": "/settings/16/options",
+          "operation": "remove",
+          "old": [
+            {
+              "value": "grid",
+              "label": "Grid"
+            },
+            {
+              "value": "slider",
+              "label": "Slider"
+            }
+          ]
+        },
+        {
+          "path": "/settings/16/type",
+          "operation": "replace",
+          "old": "select",
+          "new": "header"
+        },
+        {
+          "path": "/settings/17/default",
+          "operation": "replace",
+          "old": 4,
+          "new": "grid"
+        },
+        {
+          "path": "/settings/17/id",
+          "operation": "replace",
+          "old": "grid",
+          "new": "layout_desktop"
+        },
+        {
+          "path": "/settings/17/label",
+          "operation": "replace",
+          "old": "Products per row",
+          "new": "Product grid layout"
+        },
+        {
+          "path": "/settings/17/max",
+          "operation": "remove",
+          "old": 6
+        },
+        {
+          "path": "/settings/17/min",
+          "operation": "remove",
+          "old": 2
+        },
+        {
+          "path": "/settings/17/options",
+          "operation": "add",
+          "new": [
+            {
+              "value": "grid",
+              "label": "Grid"
+            },
+            {
+              "value": "slider",
+              "label": "Slider"
+            }
+          ]
+        },
+        {
+          "path": "/settings/17/step",
+          "operation": "remove",
+          "old": 1
+        },
+        {
+          "path": "/settings/17/type",
+          "operation": "replace",
+          "old": "range",
+          "new": "select"
+        },
+        {
+          "path": "/settings/17/visible_if",
+          "operation": "remove",
+          "old": "{{ section.settings.layout_desktop == 'grid' }}"
+        },
+        {
+          "path": "/settings/18/default",
+          "operation": "replace",
+          "old": 3,
+          "new": 4
+        },
+        {
+          "path": "/settings/18/id",
+          "operation": "replace",
+          "old": "rows",
+          "new": "grid"
+        },
+        {
+          "path": "/settings/18/label",
+          "operation": "replace",
+          "old": "Number of rows",
+          "new": "Products per row"
+        },
+        {
+          "path": "/settings/18/max",
+          "operation": "replace",
+          "old": 8,
+          "new": 6
+        },
+        {
+          "path": "/settings/18/min",
+          "operation": "replace",
+          "old": 1,
+          "new": 2
+        },
+        {
+          "path": "/settings/19/default",
+          "operation": "replace",
+          "old": "wrapper",
+          "new": 3
+        },
+        {
+          "path": "/settings/19/id",
+          "operation": "replace",
+          "old": "width",
+          "new": "rows"
+        },
+        {
+          "path": "/settings/19/label",
+          "operation": "replace",
+          "old": "Width",
+          "new": "Number of rows"
+        },
+        {
+          "path": "/settings/19/max",
+          "operation": "add",
+          "new": 8
+        },
+        {
+          "path": "/settings/19/min",
+          "operation": "add",
+          "new": 1
+        },
+        {
+          "path": "/settings/19/options",
+          "operation": "remove",
+          "old": [
+            {
+              "value": "wrapper--full-padded",
+              "label": "Full width padded"
+            },
+            {
+              "value": "wrapper",
+              "label": "Normal"
+            }
+          ]
+        },
+        {
+          "path": "/settings/19/step",
+          "operation": "add",
+          "new": 1
+        },
+        {
+          "path": "/settings/19/type",
+          "operation": "replace",
+          "old": "select",
+          "new": "range"
+        },
+        {
+          "path": "/settings/20/content",
+          "operation": "remove",
+          "old": "Mobile"
+        },
+        {
+          "path": "/settings/20/default",
+          "operation": "add",
+          "new": "wrapper"
+        },
+        {
+          "path": "/settings/20/id",
+          "operation": "add",
+          "new": "width"
+        },
+        {
+          "path": "/settings/20/label",
+          "operation": "add",
+          "new": "Width"
+        },
+        {
+          "path": "/settings/20/options",
+          "operation": "add",
+          "new": [
+            {
+              "value": "wrapper--full-padded",
+              "label": "Full width padded"
+            },
+            {
+              "value": "wrapper",
+              "label": "Normal"
+            }
+          ]
+        },
+        {
+          "path": "/settings/20/type",
+          "operation": "replace",
+          "old": "header",
+          "new": "select"
+        },
+        {
+          "path": "/settings/20/visible_if",
+          "operation": "add",
+          "new": "{{ section.settings.layout_desktop == 'grid' }}"
+        },
+        {
+          "path": "/settings/21/content",
+          "operation": "add",
+          "new": "Mobile"
+        },
+        {
+          "path": "/settings/21/default",
+          "operation": "remove",
+          "old": "slider"
+        },
+        {
+          "path": "/settings/21/id",
+          "operation": "remove",
+          "old": "layout_mobile"
+        },
+        {
+          "path": "/settings/21/label",
+          "operation": "remove",
+          "old": "Product grid layout"
+        },
+        {
+          "path": "/settings/21/options",
+          "operation": "remove",
+          "old": [
+            {
+              "value": "1",
+              "label": "1 item per row"
+            },
+            {
+              "value": "2",
+              "label": "2 items per row"
+            },
+            {
+              "value": "slider",
+              "label": "Slider"
+            }
+          ]
+        },
+        {
+          "path": "/settings/21/type",
+          "operation": "replace",
+          "old": "select",
+          "new": "header"
+        },
+        {
+          "path": "/settings/22/content",
+          "operation": "remove",
+          "old": "Colors"
+        },
+        {
+          "path": "/settings/22/default",
+          "operation": "add",
+          "new": "slider"
+        },
+        {
+          "path": "/settings/22/id",
+          "operation": "add",
+          "new": "layout_mobile"
+        },
+        {
+          "path": "/settings/22/label",
+          "operation": "add",
+          "new": "Product grid layout"
+        },
+        {
+          "path": "/settings/22/options",
+          "operation": "add",
+          "new": [
+            {
+              "value": "1",
+              "label": "1 item per row"
+            },
+            {
+              "value": "2",
+              "label": "2 items per row"
+            },
+            {
+              "value": "slider",
+              "label": "Slider"
+            }
+          ]
+        },
+        {
+          "path": "/settings/22/type",
+          "operation": "replace",
+          "old": "header",
+          "new": "select"
+        },
+        {
+          "path": "/settings/23/content",
+          "operation": "add",
+          "new": "Colors"
+        },
+        {
+          "path": "/settings/23/default",
+          "operation": "remove",
+          "old": "scheme_1"
+        },
+        {
+          "path": "/settings/23/id",
+          "operation": "remove",
+          "old": "color_scheme"
+        },
+        {
+          "path": "/settings/23/label",
+          "operation": "remove",
+          "old": "Color scheme"
+        },
+        {
+          "path": "/settings/23/type",
+          "operation": "replace",
+          "old": "color_scheme",
+          "new": "header"
+        },
+        {
+          "path": "/settings/24/content",
+          "operation": "remove",
+          "old": "Padding"
+        },
+        {
+          "path": "/settings/24/default",
+          "operation": "add",
           "new": "scheme-1"
+        },
+        {
+          "path": "/settings/24/id",
+          "operation": "add",
+          "new": "color_scheme"
+        },
+        {
+          "path": "/settings/24/label",
+          "operation": "add",
+          "new": "Color scheme"
+        },
+        {
+          "path": "/settings/24/type",
+          "operation": "replace",
+          "old": "header",
+          "new": "color_scheme"
+        },
+        {
+          "path": "/settings/25/content",
+          "operation": "add",
+          "new": "Padding"
+        },
+        {
+          "path": "/settings/25/default",
+          "operation": "remove",
+          "old": 50
+        },
+        {
+          "path": "/settings/25/id",
+          "operation": "remove",
+          "old": "padding_top"
+        },
+        {
+          "path": "/settings/25/label",
+          "operation": "remove",
+          "old": "Top"
+        },
+        {
+          "path": "/settings/25/max",
+          "operation": "remove",
+          "old": 100
+        },
+        {
+          "path": "/settings/25/min",
+          "operation": "remove",
+          "old": 0
+        },
+        {
+          "path": "/settings/25/step",
+          "operation": "remove",
+          "old": 1
+        },
+        {
+          "path": "/settings/25/type",
+          "operation": "replace",
+          "old": "range",
+          "new": "header"
+        },
+        {
+          "path": "/settings/25/unit",
+          "operation": "remove",
+          "old": "px"
+        },
+        {
+          "path": "/settings/26/id",
+          "operation": "replace",
+          "old": "padding_bottom",
+          "new": "padding_top"
+        },
+        {
+          "path": "/settings/26/label",
+          "operation": "replace",
+          "old": "Bottom",
+          "new": "Top"
+        },
+        {
+          "path": "/settings/27/content",
+          "operation": "remove",
+          "old": "Advanced"
+        },
+        {
+          "path": "/settings/27/default",
+          "operation": "add",
+          "new": 50
+        },
+        {
+          "path": "/settings/27/id",
+          "operation": "add",
+          "new": "padding_bottom"
+        },
+        {
+          "path": "/settings/27/label",
+          "operation": "add",
+          "new": "Bottom"
+        },
+        {
+          "path": "/settings/27/max",
+          "operation": "add",
+          "new": 100
+        },
+        {
+          "path": "/settings/27/min",
+          "operation": "add",
+          "new": 0
+        },
+        {
+          "path": "/settings/27/step",
+          "operation": "add",
+          "new": 1
+        },
+        {
+          "path": "/settings/27/type",
+          "operation": "replace",
+          "old": "header",
+          "new": "range"
+        },
+        {
+          "path": "/settings/27/unit",
+          "operation": "add",
+          "new": "px"
+        },
+        {
+          "path": "/settings/28/content",
+          "operation": "add",
+          "new": "Advanced"
+        },
+        {
+          "path": "/settings/28/default",
+          "operation": "remove",
+          "old": "automatic"
+        },
+        {
+          "path": "/settings/28/id",
+          "operation": "remove",
+          "old": "heading_tag"
+        },
+        {
+          "path": "/settings/28/label",
+          "operation": "remove",
+          "old": "Heading SEO tag"
+        },
+        {
+          "path": "/settings/28/options",
+          "operation": "remove",
+          "old": [
+            {
+              "value": "automatic",
+              "label": "Automatic"
+            },
+            {
+              "value": "h1",
+              "label": "H1"
+            },
+            {
+              "value": "h2",
+              "label": "H2"
+            },
+            {
+              "value": "h3",
+              "label": "H3"
+            },
+            {
+              "value": "h4",
+              "label": "H4"
+            },
+            {
+              "value": "h5",
+              "label": "H5"
+            },
+            {
+              "value": "h6",
+              "label": "H6"
+            }
+          ]
+        },
+        {
+          "path": "/settings/28/type",
+          "operation": "replace",
+          "old": "select",
+          "new": "header"
+        },
+        {
+          "path": "/settings/29",
+          "operation": "add",
+          "new": {
+            "type": "select",
+            "id": "heading_tag",
+            "label": "Heading SEO tag",
+            "default": "automatic",
+            "options": [
+              {
+                "value": "automatic",
+                "label": "Automatic"
+              },
+              {
+                "value": "h1",
+                "label": "H1"
+              },
+              {
+                "value": "h2",
+                "label": "H2"
+              },
+              {
+                "value": "h3",
+                "label": "H3"
+              },
+              {
+                "value": "h4",
+                "label": "H4"
+              },
+              {
+                "value": "h5",
+                "label": "H5"
+              },
+              {
+                "value": "h6",
+                "label": "H6"
+              }
+            ]
+          }
         }
-      ]
+      ],
+      "diff": "--- original/sections/section-collection.liquid\n+++ edited/sections/section-collection.liquid\n@@ -18,6 +18,20 @@\n   assign layout = section.settings.layout\n \n   assign featured_collection = collections[section.settings.featured_collection]\n+  assign render_collection = true\n+  if section.settings.use_ta_vie_catalog\n+    assign featured_collection = section.settings.featured_collection\n+    if section.settings.featured_collection == blank\n+      assign featured_collection = collections.all\n+    elsif featured_collection.url == blank\n+      assign featured_collection = collections[section.settings.featured_collection]\n+    endif\n+\n+    assign render_collection = false\n+    if featured_collection.url != blank and featured_collection.products_count > 0 and featured_collection.products.size > 0\n+      assign render_collection = true\n+    endif\n+  endif\n   assign limit_products = 20\n   assign limit_onboarding = 8\n \n@@ -59,6 +73,7 @@\n   endif\n -%}\n \n+{%- if render_collection -%}\n {%- style -%}\n   #Collection--{{ section.id }} {\n      --PT: {{ section.settings.padding_top }}px;\n@@ -196,6 +211,7 @@\n {%- if show_recently_viewed_indicator -%}\n   <script src=\"{{ 'grid-item.js' | asset_url }}\" defer></script>\n {%- endif -%}\n+{%- endif -%}\n \n {% schema %}\n {\n@@ -209,6 +225,12 @@\n       \"type\": \"collection\",\n       \"id\": \"featured_collection\",\n       \"label\": \"Collection\"\n+    },\n+    {\n+      \"type\": \"checkbox\",\n+      \"id\": \"use_ta_vie_catalog\",\n+      \"label\": \"未選択時に全商品を使用、商品がなければ非表示\",\n+      \"default\": false\n     },\n     {\n       \"type\": \"header\",\n@@ -410,7 +432,7 @@\n     {\n       \"type\": \"color_scheme\",\n       \"id\": \"color_scheme\",\n-      \"default\": \"scheme_1\",\n+      \"default\": \"scheme-1\",\n       \"label\": \"Color scheme\"\n     },\n     {\n"
     },
     {
       "path": "sections/section-collections-list-hover.liquid",
@@ -1682,9 +3881,13 @@
       ]
     },
     {
+      "path": "snippets/blog-posts.liquid",
+      "diff": "--- original/snippets/blog-posts.liquid\n+++ edited/snippets/blog-posts.liquid\n@@ -4,6 +4,8 @@\n   Accepts:\n   - blog_articles: {Array} blog articles\n   - is_blog_page: {Boolean} product (required)\n+  - blog: {Object} blog used for article tag links (optional)\n+  - real_articles: {Boolean} use the passed articles without demo or section blog overrides (optional)\n \n   Usage:\n   {% render 'blog-posts', blog_articles: blog.articles, is_blog_page: true %}\n@@ -27,12 +29,15 @@\n   unless section.settings.title_tag == 'automatic'\n     assign title_tag = section.settings.title_tag\n   endunless\n-\n-  if is_blog_page\n+  if real_articles == true and title_tag == blank\n+    assign title_tag = 'h2'\n+  endif\n+\n+  if is_blog_page or real_articles == true\n     assign onboarding = false\n   endif\n \n-  if section.settings.blog_name != blank and blogs[section.settings.blog_name].articles.size > 0\n+  if real_articles != true and section.settings.blog_name != blank and blogs[section.settings.blog_name].articles.size > 0\n     assign onboarding = false\n     assign blog_articles = blogs[section.settings.blog_name].articles\n   endif\n"
+    },
+    {
       "path": "snippets/ta-vie-home-typography.liquid",
       "operation": "add",
-      "content": "{%- comment -%}\n  Editorial text in TA VIE's existing home sections only. Native section sizes,\n  buttons, product cards, navigation and animation settings stay in control.\n{%- endcomment -%}\n{%- liquid\n  assign ta_vie_heading_style = settings.ta_vie_home_heading_style | default: 'serif'\n  assign ta_vie_heading_spacing = settings.ta_vie_home_heading_spacing | default: 5 | divided_by: 100.0\n  assign ta_vie_body_line_height = settings.ta_vie_home_body_line_height | default: 1.9\n  assign ta_vie_subheading_size = settings.ta_vie_home_subheading_size | default: 12\n  assign ta_vie_body_family = settings.type_base_font.family | default: 'DM Sans'\n  assign ta_vie_section_ids = 'section_slideshow_nested_YfkG44,section_text_with_products_yW3LJx,columns-1,double,custom-content-1,announcement-3,section_dynamic_content_TkrMUq,columns-2,section_hero_scrolling_mmThBz' | split: ','\n-%}\n\n{%- capture ta_vie_sections -%}\n  {%- for ta_vie_section_id in ta_vie_section_ids -%}\n    {%- unless forloop.first -%},{%- endunless -%}\n    [data-section-id=\"{{ ta_vie_section_id }}\"],[data-section-id$=\"__{{ ta_vie_section_id }}\"]\n  {%- endfor -%}\n{%- endcapture -%}\n{%- capture ta_vie_scope -%}body.template-index #MainContent :is({{ ta_vie_sections }}){%- endcapture -%}\n\n{%- style -%}\n  {{ ta_vie_scope }} :is(\n    .hero__title,\n    .column__heading,\n    .text-products__heading,\n    .grid__heading,\n    .announcement__slide .font-heading,\n    .announcement__content\n  ):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    {%- unless ta_vie_heading_style == 'theme' %}\n      {%- if ta_vie_heading_style == 'sans' %}\n        font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n      {%- else %}\n        font-family: Georgia, \"Times New Roman\", \"Yu Mincho\", YuMincho, \"Hiragino Mincho ProN\", \"Noto Serif CJK JP\", serif;\n      {%- endif %}\n      font-weight: 400;\n      font-style: normal;\n      text-transform: none;\n    {%- endunless %}\n    letter-spacing: {{ ta_vie_heading_spacing }}em;\n    line-height: 1.55;\n    text-wrap: balance;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n    font-weight: 400;\n    font-style: normal;\n    line-height: {{ ta_vie_body_line_height }};\n    text-wrap: pretty;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) > p {\n    line-height: inherit;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__subheading, .subheading):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n    font-size: {{ ta_vie_subheading_size }}px;\n    font-weight: 400;\n    font-style: normal;\n    letter-spacing: 0.12em;\n    line-height: 1.6;\n    text-transform: none;\n  }\n{%- endstyle -%}\n"
+      "content": "{%- comment -%}\n  Editorial text in TA VIE's existing home sections only. Native section sizes,\n  buttons, product cards, navigation and animation settings stay in control.\n{%- endcomment -%}\n{%- liquid\n  assign ta_vie_heading_style = settings.ta_vie_home_heading_style | default: 'serif'\n  assign ta_vie_heading_spacing = settings.ta_vie_home_heading_spacing | default: 5 | divided_by: 100.0\n  assign ta_vie_body_line_height = settings.ta_vie_home_body_line_height | default: 1.9\n  assign ta_vie_subheading_size = settings.ta_vie_home_subheading_size | default: 12\n  assign ta_vie_body_family = settings.type_base_font.family | default: 'DM Sans'\n  assign ta_vie_section_ids = 'section_slideshow_nested_YfkG44,section_text_with_products_yW3LJx,columns-1,double,custom-content-1,announcement-3,section_dynamic_content_TkrMUq,columns-2,section_hero_scrolling_mmThBz,ta_vie_products,ta_vie_reading' | split: ','\n-%}\n\n{%- capture ta_vie_sections -%}\n  {%- for ta_vie_section_id in ta_vie_section_ids -%}\n    {%- unless forloop.first -%},{%- endunless -%}\n    [data-section-id=\"{{ ta_vie_section_id }}\"],[data-section-id$=\"__{{ ta_vie_section_id }}\"]\n  {%- endfor -%}\n{%- endcapture -%}\n{%- capture ta_vie_scope -%}body.template-index #MainContent :is({{ ta_vie_sections }}){%- endcapture -%}\n\n{%- style -%}\n  {{ ta_vie_scope }} :is(\n    .hero__title,\n    .column__heading,\n    .text-products__heading,\n    .grid__heading,\n    .page__heading,\n    .article__title,\n    .announcement__slide .font-heading,\n    .announcement__content\n  ):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    {%- unless ta_vie_heading_style == 'theme' %}\n      {%- if ta_vie_heading_style == 'sans' %}\n        font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n      {%- else %}\n        font-family: Georgia, \"Times New Roman\", \"Yu Mincho\", YuMincho, \"Hiragino Mincho ProN\", \"Noto Serif CJK JP\", serif;\n      {%- endif %}\n      font-weight: 400;\n      font-style: normal;\n      text-transform: none;\n    {%- endunless %}\n    letter-spacing: {{ ta_vie_heading_spacing }}em;\n    line-height: 1.55;\n    text-wrap: balance;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text, .article__excerpt):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n    font-weight: 400;\n    font-style: normal;\n    line-height: {{ ta_vie_body_line_height }};\n    text-wrap: pretty;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__rte, .hero__description, .column__text, .article__excerpt):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) > p {\n    line-height: inherit;\n  }\n\n  {{ ta_vie_scope }} :is(.hero__subheading, .subheading):not(.product-item, .product-item *, product-info, product-info *, .hero__products *, .hero__collections *) {\n    font-family: {{ ta_vie_body_family | json }}, \"Hiragino Kaku Gothic ProN\", \"Yu Gothic\", Meiryo, \"Noto Sans CJK JP\", sans-serif;\n    font-size: {{ ta_vie_subheading_size }}px;\n    font-weight: 400;\n    font-style: normal;\n    letter-spacing: 0.12em;\n    line-height: 1.6;\n    text-transform: none;\n  }\n{%- endstyle -%}\n"
     },
     {
       "path": "snippets/ta-vie-menu-destinations.liquid",
@@ -1700,6 +3903,124 @@
       "path": "templates/index.json",
       "changes": [
         {
+          "path": "/order/1",
+          "operation": "replace",
+          "old": "section_text_with_products_yW3LJx",
+          "new": "ta_vie_products"
+        },
+        {
+          "path": "/order/2",
+          "operation": "replace",
+          "old": "columns-1",
+          "new": "section_text_with_products_yW3LJx"
+        },
+        {
+          "path": "/order/3",
+          "operation": "replace",
+          "old": "double",
+          "new": "columns-1"
+        },
+        {
+          "path": "/order/4",
+          "operation": "replace",
+          "old": "announcement-2",
+          "new": "double"
+        },
+        {
+          "path": "/order/5",
+          "operation": "replace",
+          "old": "section-tab-collections",
+          "new": "ta_vie_reading"
+        },
+        {
+          "path": "/order/6",
+          "operation": "replace",
+          "old": "section_video_w6YfAE",
+          "new": "announcement-2"
+        },
+        {
+          "path": "/order/7",
+          "operation": "replace",
+          "old": "press-logos",
+          "new": "section-tab-collections"
+        },
+        {
+          "path": "/order/8",
+          "operation": "replace",
+          "old": "custom-content-1",
+          "new": "section_video_w6YfAE"
+        },
+        {
+          "path": "/order/9",
+          "operation": "replace",
+          "old": "collections-list-hover",
+          "new": "press-logos"
+        },
+        {
+          "path": "/order/10",
+          "operation": "replace",
+          "old": "announcement-3",
+          "new": "custom-content-1"
+        },
+        {
+          "path": "/order/11",
+          "operation": "replace",
+          "old": "look",
+          "new": "collections-list-hover"
+        },
+        {
+          "path": "/order/12",
+          "operation": "replace",
+          "old": "section_dynamic_content_TkrMUq",
+          "new": "announcement-3"
+        },
+        {
+          "path": "/order/13",
+          "operation": "replace",
+          "old": "section_custom_content_H4RTrx",
+          "new": "look"
+        },
+        {
+          "path": "/order/14",
+          "operation": "replace",
+          "old": "section-product",
+          "new": "section_dynamic_content_TkrMUq"
+        },
+        {
+          "path": "/order/15",
+          "operation": "replace",
+          "old": "rich-text-3",
+          "new": "section_custom_content_H4RTrx"
+        },
+        {
+          "path": "/order/16",
+          "operation": "replace",
+          "old": "columns-2",
+          "new": "section-product"
+        },
+        {
+          "path": "/order/17",
+          "operation": "replace",
+          "old": "text-row",
+          "new": "rich-text-3"
+        },
+        {
+          "path": "/order/18",
+          "operation": "replace",
+          "old": "section_hero_scrolling_mmThBz",
+          "new": "columns-2"
+        },
+        {
+          "path": "/order/19",
+          "operation": "add",
+          "new": "text-row"
+        },
+        {
+          "path": "/order/20",
+          "operation": "add",
+          "new": "section_hero_scrolling_mmThBz"
+        },
+        {
           "path": "/sections/announcement-2/disabled",
           "operation": "add",
           "new": true
@@ -1709,6 +4030,11 @@
           "operation": "replace",
           "old": "Express yourself in your own way",
           "new": "家で過ごす時間を、自分のために。"
+        },
+        {
+          "path": "/sections/announcement-3/disabled",
+          "operation": "add",
+          "new": true
         },
         {
           "path": "/sections/collections-list-hover/disabled",
@@ -1770,6 +4096,16 @@
           "new": "朝の支度に。"
         },
         {
+          "path": "/sections/columns-1/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
+          "path": "/sections/columns-2/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
           "path": "/sections/custom-content-1/blocks/image-1/settings/link_text",
           "operation": "replace",
           "old": "Shop now",
@@ -1806,6 +4142,11 @@
           "new": "毎日の暮らしを、大切に。"
         },
         {
+          "path": "/sections/custom-content-1/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
           "path": "/sections/double/blocks/buttons_VP8YTU/disabled",
           "operation": "add",
           "new": true
@@ -1829,6 +4170,11 @@
           "new": "家にいる自分を、大切に。"
         },
         {
+          "path": "/sections/double/blocks/image_ycnEVH/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
           "path": "/sections/double/blocks/subheading/settings/subheading",
           "operation": "replace",
           "old": "Trends & Tradition",
@@ -1844,7 +4190,31 @@
           "path": "/sections/double/settings/color_scheme",
           "operation": "replace",
           "old": "scheme-1",
-          "new": "scheme-tavie-white"
+          "new": "scheme-tavie-soft"
+        },
+        {
+          "path": "/sections/double/settings/padding_bottom",
+          "operation": "replace",
+          "old": 82,
+          "new": 64
+        },
+        {
+          "path": "/sections/double/settings/padding_top",
+          "operation": "replace",
+          "old": 42,
+          "new": 64
+        },
+        {
+          "path": "/sections/double/settings/text_alignment",
+          "operation": "replace",
+          "old": "text-center",
+          "new": "text-left"
+        },
+        {
+          "path": "/sections/double/settings/width",
+          "operation": "replace",
+          "old": "wrapper--full-padded",
+          "new": "wrapper"
         },
         {
           "path": "/sections/look/disabled",
@@ -1954,6 +4324,11 @@
           "new": "家での時間を、大切に。"
         },
         {
+          "path": "/sections/section_dynamic_content_TkrMUq/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
           "path": "/sections/section_dynamic_content_TkrMUq/settings/color_scheme",
           "operation": "replace",
           "old": "scheme-11",
@@ -2025,6 +4400,11 @@
           "new": "家で過ごす時間を、自分のために。TA VIEは、日々の暮らしを大切にするルームウェアを提案します。"
         },
         {
+          "path": "/sections/section_hero_scrolling_mmThBz/disabled",
+          "operation": "add",
+          "new": true
+        },
+        {
           "path": "/sections/section_hero_scrolling_mmThBz/settings/mobile_text_font_size_px",
           "operation": "replace",
           "old": 16,
@@ -2043,9 +4423,15 @@
           "new": false
         },
         {
-          "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_Y3ntcg/blocks/button_Mf6QGG/disabled",
+          "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_Y3ntcg/blocks/button_Mf6QGG/settings/link",
           "operation": "add",
-          "new": true
+          "new": "/collections/all"
+        },
+        {
+          "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_Y3ntcg/blocks/button_Mf6QGG/settings/style",
+          "operation": "replace",
+          "old": "btn--solid",
+          "new": "btn--outline"
         },
         {
           "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_Y3ntcg/blocks/button_Mf6QGG/settings/text",
@@ -2072,21 +4458,33 @@
           "new": "外へ出る日の装いと同じように、家で過ごす自分にも目を向ける。"
         },
         {
-          "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_hkYEiy/blocks/group_buttons_DzAjwR/disabled",
-          "operation": "add",
-          "new": true
-        },
-        {
           "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_hkYEiy/blocks/group_buttons_DzAjwR/settings/button_secondary_text",
           "operation": "replace",
           "old": "Shop sale",
           "new": ""
         },
         {
+          "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_hkYEiy/blocks/group_buttons_DzAjwR/settings/button_style",
+          "operation": "replace",
+          "old": "btn--solid",
+          "new": "btn--outline"
+        },
+        {
           "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_hkYEiy/blocks/group_buttons_DzAjwR/settings/button_text",
           "operation": "replace",
           "old": "Shop all products",
           "new": "ルームウェアを見る"
+        },
+        {
+          "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_hkYEiy/blocks/group_buttons_DzAjwR/settings/button_type",
+          "operation": "replace",
+          "old": "btn--black",
+          "new": "btn--white"
+        },
+        {
+          "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_hkYEiy/blocks/group_buttons_DzAjwR/settings/button_url",
+          "operation": "add",
+          "new": "/collections/all"
         },
         {
           "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_hkYEiy/blocks/heading_JxYXBt/settings/heading_tag",
@@ -2104,7 +4502,24 @@
           "path": "/sections/section_slideshow_nested_YfkG44/blocks/slide_image_hkYEiy/blocks/text_L4brP6/settings/text",
           "operation": "replace",
           "old": "Beautiful pieces to pass down for generations",
-          "new": "家で過ごす時間を、自分のために。TA VIEは、日々の暮らしを大切にするルームウェアを提案します。"
+          "new": "家で過ごす時間を、自分のために。"
+        },
+        {
+          "path": "/sections/section_slideshow_nested_YfkG44/settings/height",
+          "operation": "replace",
+          "old": "seven-fifty-height-hero",
+          "new": "sixty-fifty-height-hero"
+        },
+        {
+          "path": "/sections/section_slideshow_nested_YfkG44/settings/mobile_height",
+          "operation": "replace",
+          "old": "screen-height-full--mobile",
+          "new": "four-fifty-height-hero--mobile"
+        },
+        {
+          "path": "/sections/section_text_with_products_yW3LJx/disabled",
+          "operation": "add",
+          "new": true
         },
         {
           "path": "/sections/section_text_with_products_yW3LJx/settings/heading",
@@ -2134,6 +4549,69 @@
           "path": "/sections/section_video_w6YfAE/disabled",
           "operation": "add",
           "new": true
+        },
+        {
+          "path": "/sections/ta_vie_products",
+          "operation": "add",
+          "new": {
+            "type": "section-collection",
+            "name": "TA VIE｜ルームウェア",
+            "settings": {
+              "featured_collection": "",
+              "use_ta_vie_catalog": true,
+              "heading": "日常に寄り添うルームウェア。",
+              "heading_font_size": "heading-medium",
+              "description": "",
+              "text_font_size": "body-medium",
+              "layout": "inline",
+              "link_text": "すべてのルームウェアを見る",
+              "link_url": "",
+              "button_type": "btn--primary",
+              "button_size": "",
+              "button_style": "btn--text",
+              "show_arrow": false,
+              "layout_desktop": "grid",
+              "grid": 2,
+              "rows": 2,
+              "width": "wrapper",
+              "layout_mobile": "1",
+              "color_scheme": "scheme-tavie-white",
+              "padding_top": 64,
+              "padding_bottom": 64,
+              "heading_tag": "h2"
+            }
+          }
+        },
+        {
+          "path": "/sections/ta_vie_reading",
+          "operation": "add",
+          "new": {
+            "type": "section-blog",
+            "name": "TA VIE｜暮らしの読みもの",
+            "settings": {
+              "blog_name": "",
+              "use_ta_vie_blog": true,
+              "aspect_ratio": 1,
+              "title": "家での時間を整える、ものと過ごし方。",
+              "description": "<p>衣服から、空間を彩るものまで。家で過ごす毎日を大切にする視点から、気になる品々と暮らしのヒントを紹介します。</p>",
+              "link_text": "読みものを見る",
+              "heading_font_size": "heading-medium",
+              "title_font_size": "heading-small",
+              "show_tags": false,
+              "show_author": false,
+              "show_date": false,
+              "show_button": false,
+              "show_comments": false,
+              "width": "wrapper",
+              "grid": 3,
+              "rows": 1,
+              "color_scheme": "scheme-tavie-white",
+              "padding_top": 64,
+              "padding_bottom": 40,
+              "heading_tag": "h2",
+              "title_tag": "h3"
+            }
+          }
         },
         {
           "path": "/sections/text-row/disabled",
@@ -2174,6 +4652,28 @@
     "existing_menu_duplicate_check": "URL and typed page/blog ID across nested links and multiple mobile menus",
     "native_assets_unchanged": true,
     "shopify_resource_selection": "Required unless verified existing fallback resolves; live selection unverified"
+  },
+  "homepage_structure": {
+    "original_section_ids_retained": 19,
+    "original_section_relative_order_retained": true,
+    "original_block_trees_retained": true,
+    "new_native_sections": [
+      "ta_vie_products:section-collection",
+      "ta_vie_reading:section-blog"
+    ],
+    "active_order": [
+      "section_slideshow_nested_YfkG44",
+      "ta_vie_products",
+      "double",
+      "ta_vie_reading"
+    ],
+    "disabled_original_sections": 17,
+    "products": "Native picker or actual collections.all when unselected; hide without products; grid 2x2 desktop and 1 column mobile",
+    "reading": "Existing global blog picker or article-bearing news fallback; hide without published articles; 3 cards",
+    "hero_height": "650px desktop / 450px mobile",
+    "hero_native_animation": "Original slide, arrows and 4-second autoplay retained",
+    "purchase_and_asset_code_unchanged": true,
+    "actual_demo_browsing": "Blocked by environment proxy CONNECT 403; structural changes based on supplied Broadcast source and user request"
   },
   "shopify_settings_file_saved_commit": "3f7e253d4fd7971f97307427dbf77106c6ca7e71",
   "shopify_editor_warning_cleared": "unverified"
