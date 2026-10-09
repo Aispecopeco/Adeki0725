@@ -315,9 +315,10 @@
     "ta_vie_home_body_line_height": 1.9,
     "ta_vie_home_subheading_size": 12,
     "ta_vie_navigation_links": true,
-    "ta_vie_home_links": false,
-    "ta_vie_blog_label": "読みもの",
-    "ta_vie_faq_label": "よくあるご質問"
+    "ta_vie_home_links": true,
+    "ta_vie_blog_label": "ブログ",
+    "ta_vie_faq_label": "よくあるご質問",
+    "ta_vie_japanese_font_style": "sans"
   },
   "presets": {
     "Broadcast": {

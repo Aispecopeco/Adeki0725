@@ -1,0 +1,27 @@
+{%- comment -%}
+  Site-wide TA VIE typography using the existing body font and Japanese
+  system fonts. Sizes, layout and the original font-picker values stay native.
+{%- endcomment -%}
+{%- liquid
+  assign ta_vie_font_style = settings.ta_vie_japanese_font_style | default: 'sans'
+  assign ta_vie_latin_family = settings.type_base_font.family | default: 'DM Sans'
+-%}
+{%- if ta_vie_font_style == 'sans' or ta_vie_font_style == 'serif' -%}
+  {%- capture ta_vie_body_stack -%}{{ ta_vie_latin_family | json }}, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, "Noto Sans CJK JP", Meiryo, sans-serif{%- endcapture -%}
+  {%- style -%}
+    :root {
+      --FONT-STACK-BODY: {{ ta_vie_body_stack }};
+      --FONT-STACK-NAV: {{ ta_vie_body_stack }};
+      --FONT-STACK-SUBHEADING: {{ ta_vie_body_stack }};
+      --BTN-FONT-STACK: {{ ta_vie_body_stack }};
+      {%- if ta_vie_font_style == 'serif' %}
+      --FONT-STACK-HEADING: Georgia, "Times New Roman", "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif CJK JP", serif;
+      {%- else %}
+      --FONT-STACK-HEADING: {{ ta_vie_body_stack }};
+      {%- endif %}
+      --FONT-WEIGHT-HEADING: 400;
+      --FONT-STYLE-HEADING: normal;
+      --FONT-UPPERCASE-HEADING: none;
+    }
+  {%- endstyle -%}
+{%- endif -%}

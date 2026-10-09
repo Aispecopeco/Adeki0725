@@ -1,6 +1,6 @@
 {%- doc -%}
-  Existing blog and FAQ destinations shared by desktop, mobile, home and footer.
-  @param {string} location - desktop, mobile, home or footer.
+  Existing blog and FAQ destinations shared by desktop, mobile, toolbar, home and footer.
+  @param {string} location - desktop, mobile, toolbar, home or footer.
   @param {link[]} [menu_links] - Existing links used to avoid duplicate destinations.
   @param {block[]} [menu_blocks] - Existing mobile menu blocks.
 {%- enddoc -%}
@@ -10,7 +10,7 @@
   assign show_links = navigation_enabled
   if location == 'home'
     assign show_links = home_enabled
-  elsif location == 'footer'
+  elsif location == 'footer' or location == 'toolbar'
     assign show_links = true
   endif
 
@@ -51,6 +51,7 @@
   endcapture
 
   assign destinations = 'blog,faq' | split: ','
+  assign has_missing_destination = false
 -%}
 {%- capture links_markup -%}
   {%- if show_links -%}
@@ -58,58 +59,76 @@
       {%- liquid
         if destination == 'blog'
           assign resource = reading_blog
-          assign link_label = settings.ta_vie_blog_label | default: '読みもの'
+          assign link_label = settings.ta_vie_blog_label | default: 'ブログ'
           assign resource_type = 'blog_link'
+          assign explicit_url = settings.ta_vie_blog_url
         else
           assign resource = faq_page
           assign link_label = settings.ta_vie_faq_label | default: 'よくあるご質問'
           assign resource_type = 'page_link'
+          assign explicit_url = settings.ta_vie_faq_url
         endif
 
+        assign destination_url = resource.url
+        assign destination_id = resource.id
+        if explicit_url != blank
+          assign destination_url = explicit_url
+          assign destination_id = blank
+        endif
         assign already_linked = false
         capture url_token
-          echo '|' | append: resource.url | append: '|'
+          echo '|' | append: destination_url | append: '|'
         endcapture
         capture id_token
-          echo '|' | append: resource_type | append: ':' | append: resource.id | append: '|'
+          echo '|' | append: resource_type | append: ':' | append: destination_id | append: '|'
         endcapture
         if location != 'home'
           if existing_destinations contains url_token
             assign already_linked = true
-          elsif resource.id != blank and existing_destinations contains id_token
+          elsif destination_id != blank and existing_destinations contains id_token
             assign already_linked = true
           endif
         endif
       -%}
-      {%- if resource.url != blank and already_linked == false -%}
+      {%- if destination_url != blank and already_linked == false -%}
         {%- case location -%}
           {%- when 'desktop' -%}
             <div class="menu__item child">
-              <a href="{{ resource.url | escape }}" data-top-link class="navlink navlink--toplevel"{% if request.path == resource.url %} aria-current="page"{% endif %}>
+              <a href="{{ destination_url | escape }}" data-top-link class="navlink navlink--toplevel"{% if request.path == destination_url %} aria-current="page"{% endif %}>
                 <span class="navtext">{{ link_label | escape }}</span>
               </a>
             </div>
           {%- when 'mobile' -%}
             <div class="sliderule__wrapper">
               <div class="sliderow" data-animates="0" data-animation="drawer-items-fade" data-animation-duration="500" data-animation-delay="{{ forloop.index | times: 50 | plus: 250 }}">
-                <a class="sliderow__title" href="{{ resource.url | escape }}"{% if request.path == resource.url %} aria-current="page"{% endif %}><span>{{ link_label | escape }}</span></a>
+                <a class="sliderow__title" href="{{ destination_url | escape }}"{% if request.path == destination_url %} aria-current="page"{% endif %}><span>{{ link_label | escape }}</span></a>
               </div>
             </div>
           {%- when 'footer' -%}
-            <li><a href="{{ resource.url | escape }}"{% if request.path == resource.url %} aria-current="page"{% endif %}>{{ link_label | escape }}</a></li>
+            <li><a href="{{ destination_url | escape }}"{% if request.path == destination_url %} aria-current="page"{% endif %}>{{ link_label | escape }}</a></li>
+          {%- when 'toolbar' -%}
+            <a href="{{ destination_url | escape }}" class="navlink navlink--toplevel"{% if request.path == destination_url %} aria-current="page"{% endif %}><span class="navtext">{{ link_label | escape }}</span></a>
           {%- when 'home' -%}
             <div class="hero__button">
-              <a href="{{ resource.url | escape }}" class="btn btn--small btn--outline btn--primary"><span>{{ link_label | escape }}</span></a>
+              <a href="{{ destination_url | escape }}" class="btn btn--small btn--outline btn--primary"><span>{{ link_label | escape }}</span></a>
             </div>
         {%- endcase -%}
+      {%- elsif destination_url == blank and location == 'home' and request.design_mode -%}
+        {%- assign has_missing_destination = true -%}
+        <div class="hero__button">
+          <span class="btn btn--small btn--outline btn--primary" aria-disabled="true">{{ link_label | escape }}（リンク先未設定）</span>
+        </div>
       {%- endif -%}
     {%- endfor -%}
   {%- endif -%}
 {%- endcapture -%}
 {%- if links_markup != blank -%}
   {%- if location == 'home' -%}
-    <nav class="wrapper--narrow section-padding text-center color-scheme-tavie-white" style="--PT: 24px; --PB: 24px;" aria-label="読みものとご案内">
+    <nav class="wrapper--narrow section-padding text-center color-scheme-tavie-white" style="--PT: 24px; --PB: 24px;" aria-label="ブログとご案内">
       <div class="hero__button-group">{{ links_markup }}</div>
+      {%- if has_missing_destination -%}
+        <p>テーマ設定「TA VIE｜ページへのリンク」で、ブログとFAQのリンク先を選択してください。URLを入力して設定することもできます。</p>
+      {%- endif -%}
     </nav>
   {%- elsif location == 'footer' -%}
     <ul class="footer__quicklinks unstyled">{{ links_markup }}</ul>
