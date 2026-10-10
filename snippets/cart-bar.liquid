@@ -38,30 +38,13 @@
 
 <script src="{{ 'cart-bar.js' | asset_url }}" defer="defer"></script>
 
-<cart-bar id="CartBar-{{ section.id }}" class="cart-bar"{% if section.settings.ta_vie_product_experience %} data-ta-vie-purchase-bar{% endif %}>
+<cart-bar id="CartBar-{{ section.id }}" class="cart-bar">
   <div
     class="cart-bar__form__wrapper form__wrapper{% if button_add and current_variant.available != true %} variant--soldout{% endif %}{% if settings.show_newsletter %} show-product-notification{% endif %}{% unless any_variant_available %} all-variants--soldout{% endunless %}"
     data-form-wrapper
   >
     <div class="cart-bar__info">
-      <h4 class="cart-bar__product__title">{{ product.title | strip_html | escape }}</h4>
-
-      {%- if section.settings.ta_vie_product_experience -%}
-        <ta-vie-purchase-state class="ta-vie-purchase__selection body-small" data-ta-vie-selection aria-live="polite" aria-atomic="true">
-          {%- unless product.has_only_default_variant -%}
-            <span data-ta-vie-selected-variant>{{ current_variant.title | escape }}</span>
-          {%- endunless -%}
-          <span data-ta-vie-availability>
-            {%- if current_variant == blank -%}
-              {{ 'products.product.unavailable' | t }}
-            {%- elsif current_variant.available -%}
-              {{ 'products.product.in_stock' | t }}
-            {%- else -%}
-              {{ 'products.product.sold_out' | t }}
-            {%- endif -%}
-          </span>
-        </ta-vie-purchase-state>
-      {%- endif -%}
+      <h4 class="cart-bar__product__title">{{ product.title | strip_html }}</h4>
 
       <div class="body-small cart-bar__product__price product__price">
         <span

@@ -1,0 +1,27 @@
+{
+  "errors": 4,
+  "warnings": 341,
+  "error_details": [
+    {
+      "path": "sections/gift-card.liquid",
+      "check": "ImgWidthAndHeight",
+      "message": "Missing width and height attributes on img tag"
+    },
+    {
+      "path": "snippets/image.liquid",
+      "check": "ImgWidthAndHeight",
+      "message": "Missing width and height attributes on img tag"
+    },
+    {
+      "path": "snippets/image-hero.liquid",
+      "check": "ImgWidthAndHeight",
+      "message": "Missing width and height attributes on img tag"
+    },
+    {
+      "path": "templates/gift_card.liquid",
+      "check": "ImgWidthAndHeight",
+      "message": "Missing width and height attributes on img tag"
+    }
+  ],
+  "scope": "429 files under the eight Shopify theme directories only; historical delivery archives excluded."
+}

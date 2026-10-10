@@ -1650,60 +1650,24 @@
     ]
   },
   {
-    "name": "TA VIE｜日本語の文字",
-    "settings": [
-      {
-        "type": "select",
-        "id": "ta_vie_japanese_font_style",
-        "label": "サイト全体の書体",
-        "info": "見出し・本文・メニュー・フッターの日本語書体を揃えます。ゴシックの見出しは細めの400。文字サイズは各セクション、ホーム専用の補正は下の設定で調整できます。",
-        "options": [
-          {
-            "value": "sans",
-            "label": "細めのゴシック"
-          },
-          {
-            "value": "serif",
-            "label": "明朝"
-          },
-          {
-            "value": "theme",
-            "label": "Broadcastの設定"
-          }
-        ],
-        "default": "sans"
-      }
-    ]
-  },
-  {
     "name": "TA VIE｜ホームの文字",
     "settings": [
       {
         "type": "select",
         "id": "ta_vie_home_heading_style",
         "label": "見出しの書体",
-        "info": "Broadcastの設定では、テーマ本来の書体・行間・字間を使います。以下の調整は明朝・ゴシックを選択したときだけ適用します。システム書体は端末によって異なります。",
+        "info": "ホームのブランド文章だけに適用します。システム書体は端末によって表示が異なります。",
         "options": [
-          {
-            "value": "serif",
-            "label": "明朝・セリフ"
-          },
-          {
-            "value": "sans",
-            "label": "ゴシック・サンセリフ"
-          },
-          {
-            "value": "theme",
-            "label": "Broadcastの設定を使う"
-          }
+          { "value": "serif", "label": "明朝・セリフ" },
+          { "value": "sans", "label": "ゴシック・サンセリフ" },
+          { "value": "theme", "label": "Broadcastの設定を使う" }
         ],
-        "default": "theme"
+        "default": "serif"
       },
       {
         "type": "range",
         "id": "ta_vie_home_heading_spacing",
         "label": "見出しの字間",
-        "info": "明朝・ゴシックを選択したときだけ適用します。",
         "min": 0,
         "max": 12,
         "step": 1,
@@ -1714,7 +1678,6 @@
         "type": "range",
         "id": "ta_vie_home_body_line_height",
         "label": "本文の行間",
-        "info": "明朝・ゴシックを選択したときだけ適用します。",
         "min": 1.5,
         "max": 2.2,
         "step": 0.1,
@@ -1724,65 +1687,11 @@
         "type": "range",
         "id": "ta_vie_home_subheading_size",
         "label": "小見出しの文字サイズ",
-        "info": "明朝・ゴシックを選択したときだけ適用します。",
         "min": 10,
         "max": 16,
         "step": 1,
         "unit": "px",
         "default": 12
-      }
-    ]
-  },
-  {
-    "name": "TA VIE｜ページへのリンク",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "ta_vie_navigation_links",
-        "label": "メニューにブログ・FAQを表示",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "ta_vie_home_links",
-        "label": "ホームにブログ・FAQのボタンを表示",
-        "default": true
-      },
-      {
-        "type": "blog",
-        "id": "ta_vie_blog",
-        "label": "ブログのリンク先",
-        "info": "既存のブログを選択します。未選択時は既存のnewsブログを使います。リンクは記事0件でも表示します。ホームの記事欄のブログは、そのセクションでも選択できます。"
-      },
-      {
-        "type": "url",
-        "id": "ta_vie_blog_url",
-        "label": "ブログのリンク先URL（任意）",
-        "info": "入力したURLをブログのリンク先として優先します。上のブログ選択だけで設定できる場合は空欄にしてください。記事欄のブログ選択には影響しません。"
-      },
-      {
-        "type": "page",
-        "id": "ta_vie_faq_page",
-        "label": "FAQページ",
-        "info": "既存のFAQページを選択します。未選択時はfaqページ、またはfaqテンプレートを使うページを探します。"
-      },
-      {
-        "type": "url",
-        "id": "ta_vie_faq_url",
-        "label": "FAQのリンク先URL（任意）",
-        "info": "入力したURLをFAQのリンク先として優先します。上のページ選択だけで設定できる場合は空欄にしてください。"
-      },
-      {
-        "type": "text",
-        "id": "ta_vie_blog_label",
-        "label": "ブログへのリンク名",
-        "default": "ブログ"
-      },
-      {
-        "type": "text",
-        "id": "ta_vie_faq_label",
-        "label": "FAQへのリンク名",
-        "default": "よくあるご質問"
       }
     ]
   }

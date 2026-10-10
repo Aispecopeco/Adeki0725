@@ -1,25 +1,14 @@
-# TA VIE｜商品を主役にしたBroadcastテーマ
+# TA VIE｜添付された元テーマへ復元
 
-今回添付されたBroadcast 8.1.1を基準に戻し、一着ずつ写真を大きく見せるホームと、商品説明・素材・細部・暮らしを読み進める商品詳細へ整えました。元の購入・画像・カート機能を使い、配色の保存修正、ブログ・FAQ・SNS・言語への導線を引き継いでいます。
+2026年10月10日の復元依頼に合わせ、最新添付の `theme_export__eeai0r-vh-myshopify-com-adeki0725-ta-vie-shopify-20261005__05OCT2026-1026am.zip` に戻しています。Broadcast 8.1.1の添付428ファイルはすべて元ファイルと同一です。追加した商品LP、商品特集、購入部分の独自デザイン、日本語書体の上書き、追加ナビゲーションは取り除きました。ホーム・商品・FAQ・ヘッダー・フッターは添付テーマの構成です。
 
-確認用ブランチは [ta-vie-editorial-lp-20261010](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-editorial-lp-20261010) です。Shopify連携ブランチ [ta-vie-shopify-20261005](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-shopify-20261005) にも同じテーマコードを反映しています。Shopify側の同期結果・表示・公開状態は未確認です。
+添付ZIPに含まれていなかった `config/settings_data.json` だけは既存の保存済み設定を維持しています。元の `settings_schema.json` と互換性があり、現在設定と全プリセットの13個の配色IDが一致することを確認しています。元の保存済み設定が未提供のため、当時の全配色・書体の完全一致は確認できません。
 
-- [今回のテーマ ZIP](delivery/TA-VIE-Broadcast-editorial-LP-20261010.zip)
-- [デザイン・改修内容・確認範囲](delivery/editorial-lp/README.md)
-- [商品・写真・文章を編集する手順](delivery/editorial-lp/editing-guide.md)
-- [添付テーマへ戻した範囲](delivery/editorial-lp/baseline-restoration.md)
-- [追加で必要な写真・商品情報](delivery/editorial-lp/required-content.md)
-- [PC・スマートフォンの確認画像](delivery/editorial-lp/previews)
-- [検証結果](delivery/editorial-lp/verification)
+Shopify連携ブランチは [ta-vie-shopify-20261005](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-shopify-20261005) です。GitHub上のテーマコードを復元しています。Shopify管理画面の同期状態・実画面・公開状態は直接確認できていません。GitHub連携中のテーマのプレビューを再読み込みして確認してください。
 
-GitHub連携テーマでは、Shopify側の接続ブランチが `ta-vie-shopify-20261005` であることを確認して、そのテーマのプレビューを開いてください。GitHub連携はリポジトリ直下のテーマコードを同期します。詳しい確認手順は [GitHubからShopifyへの反映](delivery/editorial-lp/github-sync.md) を参照してください。
+変更前の状態は [ta-vie-before-original-restore-20261010](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-before-original-restore-20261010) に残しています。リポジトリの履歴は上書きしていません。
 
-ZIPで別の確認用テーマを追加する場合は、GitHubファイル画面で **Download raw file** を選び、Shopifyのテーマライブラリへ未公開テーマとして追加してください。「Code → Download ZIP」はリポジトリ全体であり、Shopify用テーマZIPとは異なります。
+- [復元したテーマZIP](delivery/TA-VIE-Broadcast-original-restored-20261010.zip)
+- [復元範囲と検証結果](delivery/original-restore-20261010/README.md)
 
-ホームは最大4着を独立した紹介として表示します。各ブロックの商品を選ぶほか、初期設定では未選択の枠を実際の公開コレクションから補います。写真・価格・商品説明は実際の商品データを使います。正式な商品と掲載順を管理画面で確認してください。商品がない場合は、仮の服や仮文言を出さずブランドの文章を表示します。
-
-商品別の素材・細部・サイズなどは[専用コンテンツの登録手順](delivery/product-content-model.md)で追加できます。商品説明は、この登録前でも商品ごとに表示します。未確認の素材、産地、機能、レビュー、配送・返品の約束は追加していません。プレビューの検証用データは実商品の写真や価格を示しません。
-
-写真の白いシャツの参考3D試作は、[GLB](delivery/3d/ta-vie-white-shirt-prototype.glb)、[一式ZIP](delivery/TA-VIE-white-shirt-3D.zip)、[Shopifyへの追加手順](delivery/3d/Shopifyへの追加手順.md)を保持しています。背面と実寸が未確認の試作で、今回のホームへ実物写真として使用していません。
-
-以前の改修資料とZIPは delivery/ に残しています。今回のテーマZIPと delivery/editorial-lp/ の説明を優先してください。
+`delivery/editorial-lp/` など以前の改修資料・ZIP・プレビューは履歴の確認用です。現在の連携テーマへは採用していません。3D試作ファイルなどの納品資料、Shopify側の商品・ブログ・FAQの管理データは変更していません。

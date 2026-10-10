@@ -188,8 +188,7 @@
         "color_scheme": "scheme-5",
         "padding_top": 0,
         "padding_bottom": 0
-      },
-      "disabled": true
+      }
     },
     "section_text_with_products_yW3LJx": {
       "type": "section-text-with-products",
@@ -242,8 +241,7 @@
         "color_scheme": "",
         "padding_top": 60,
         "padding_bottom": 40
-      },
-      "disabled": true
+      }
     },
     "columns-1": {
       "type": "section-columns",
@@ -325,8 +323,7 @@
         "padding_top": 0,
         "padding_bottom": 62,
         "heading_tag": "automatic"
-      },
-      "disabled": true
+      }
     },
     "double": {
       "type": "section-double",
@@ -394,8 +391,7 @@
         "padding_top": 42,
         "padding_bottom": 82,
         "show_placeholder": true
-      },
-      "disabled": true
+      }
     },
     "announcement-2": {
       "type": "section-announcement",
@@ -719,8 +715,7 @@
         "color_scheme": "scheme-6",
         "padding_top": 0,
         "padding_bottom": 0
-      },
-      "disabled": true
+      }
     },
     "collections-list-hover": {
       "type": "section-collections-list-hover",
@@ -810,8 +805,7 @@
         "color_scheme": "scheme-2",
         "padding_top": 20,
         "padding_bottom": 20
-      },
-      "disabled": true
+      }
     },
     "look": {
       "type": "section-look",
@@ -1120,8 +1114,7 @@
         "width": "wrapper--full-padded",
         "padding_top": 80,
         "padding_bottom": 80
-      },
-      "disabled": true
+      }
     },
     "section_custom_content_H4RTrx": {
       "type": "section-custom-content",
@@ -1323,8 +1316,7 @@
         "padding_top": 15,
         "padding_bottom": 30,
         "heading_tag": "automatic"
-      },
-      "disabled": true
+      }
     },
     "text-row": {
       "type": "section-text-row",
@@ -1471,84 +1463,10 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "show_placeholder": true
-      },
-      "disabled": true
-    },
-    "ta_vie_editorial": {
-      "type": "section-ta-vie-editorial",
-      "blocks": {
-        "piece_01": {
-          "type": "product_chapter",
-          "settings": {
-            "product": "",
-            "title": "",
-            "lead": "",
-            "body": "",
-            "media_fit": "contain",
-            "link_label": "この一着を詳しく見る",
-            "secondary_label": "もう一枚の写真"
-          }
-        },
-        "piece_02": {
-          "type": "product_chapter",
-          "settings": {
-            "product": "",
-            "title": "",
-            "lead": "",
-            "body": "",
-            "media_fit": "contain",
-            "link_label": "この一着を詳しく見る",
-            "secondary_label": "もう一枚の写真"
-          }
-        },
-        "piece_03": {
-          "type": "product_chapter",
-          "settings": {
-            "product": "",
-            "title": "",
-            "lead": "",
-            "body": "",
-            "media_fit": "contain",
-            "link_label": "この一着を詳しく見る",
-            "secondary_label": "もう一枚の写真"
-          }
-        },
-        "piece_04": {
-          "type": "product_chapter",
-          "settings": {
-            "product": "",
-            "title": "",
-            "lead": "",
-            "body": "",
-            "media_fit": "contain",
-            "link_label": "この一着を詳しく見る",
-            "secondary_label": "もう一枚の写真"
-          }
-        }
-      },
-      "block_order": [
-        "piece_01",
-        "piece_02",
-        "piece_03",
-        "piece_04"
-      ],
-      "settings": {
-        "heading": "家で過ごす私にも、ふさわしい一着を。",
-        "introduction": "<p>気を抜ける時間にも、自分を大切にする装いを。長くそばに置きたい一着を、TA VIEで。</p>",
-        "french_quote": "Le T-shirt usé que je porte souvent et le sweat-shirt auquel je suis attachée depuis longtemps me mettent à l’aise, mais en tant que partenaire à mes côtés pour longtemps, je ne peux pas dire qu’ils soient dignes de moi.",
-        "show_french_quote": true,
-        "hero_media_fit": "contain",
-        "show_navigation": true,
-        "color_scheme": "scheme-tavie-white",
-        "padding_top": 40,
-        "padding_bottom": 64,
-        "source_collection": "all",
-        "use_collection_products": true
       }
     }
   },
   "order": [
-    "ta_vie_editorial",
     "section_slideshow_nested_YfkG44",
     "section_text_with_products_yW3LJx",
     "columns-1",

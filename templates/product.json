@@ -29,7 +29,7 @@
           "type": "title",
           "settings": {
             "subheading_option": "none",
-            "heading_font_size": "heading-medium",
+            "heading_font_size": "heading-small",
             "padding_bottom": 8
           }
         },
@@ -52,7 +52,7 @@
         "variants": {
           "type": "variants",
           "settings": {
-            "info_page": "",
+            "info_page": "ring-size-guide",
             "size_chart_style": "question",
             "option_font_size": "body-medium",
             "value_font_size": "body-x-small",
@@ -75,17 +75,16 @@
             "color": "",
             "text_align": "text-center",
             "padding_bottom": 8
-          },
-          "disabled": true
+          }
         },
         "accordion_i6tbbM": {
           "type": "accordion",
           "settings": {
-            "style": "collapsible",
+            "style": "drawer",
             "show_description": true,
             "show_read_more": false,
-            "default_open": true,
-            "heading": "この一着について",
+            "default_open": false,
+            "heading": "Description",
             "heading_font_size": "body-medium",
             "text": "",
             "text_font_size": "body-medium",
@@ -112,8 +111,7 @@
             "icon_size": 20,
             "icon_color": "",
             "padding_bottom": 24
-          },
-          "disabled": true
+          }
         },
         "inventory_countdown_9EACqM": {
           "type": "inventory_countdown",
@@ -160,8 +158,7 @@
             "text_font_size": "body-small",
             "width": "full",
             "padding_bottom": 8
-          },
-          "disabled": true
+          }
         },
         "icon_1": {
           "type": "icon",
@@ -173,8 +170,7 @@
             "text_font_size": "body-small",
             "width": "full",
             "padding_bottom": 8
-          },
-          "disabled": true
+          }
         },
         "icon_bH3jWT": {
           "type": "icon",
@@ -186,8 +182,7 @@
             "text_font_size": "body-small",
             "width": "full",
             "padding_bottom": 8
-          },
-          "disabled": true
+          }
         },
         "icon_c6KeCK": {
           "type": "icon",
@@ -199,8 +194,7 @@
             "text_font_size": "body-small",
             "width": "full",
             "padding_bottom": 16
-          },
-          "disabled": true
+          }
         },
         "divider_RHQKMP": {
           "type": "divider",
@@ -240,28 +234,20 @@
             "bg_color": "#fcfbf9",
             "color": "",
             "padding_bottom": 16
-          },
-          "disabled": true
-        },
-        "ta_vie_intro": {
-          "type": "ta_vie_intro",
-          "settings": {
-            "padding_bottom": 16
           }
         }
       },
       "block_order": [
         "badges_EKgDG3",
         "title",
-        "ta_vie_intro",
         "price",
         "siblings_RdbAxK",
         "variants",
-        "inventory_countdown_9EACqM",
-        "buttons",
         "countdown_8L6JjP",
         "accordion_i6tbbM",
         "accordion_LUmAgG",
+        "inventory_countdown_9EACqM",
+        "buttons",
         "pickup",
         "icon_2",
         "icon_1",
@@ -283,8 +269,7 @@
         "mobile_image_style": "slider",
         "color_scheme": "scheme-1",
         "padding_top": 40,
-        "padding_bottom": 80,
-        "ta_vie_product_experience": true
+        "padding_bottom": 80
       }
     },
     "section_announcement_enc4K7": {
@@ -343,8 +328,7 @@
         "color_scheme": "scheme-2",
         "padding_top": 20,
         "padding_bottom": 20
-      },
-      "disabled": true
+      }
     },
     "faq": {
       "type": "section-accordion",
@@ -400,8 +384,7 @@
         "icon_color": "",
         "padding_top": 80,
         "padding_bottom": 0
-      },
-      "disabled": true
+      }
     },
     "shipping": {
       "type": "section-accordion",
@@ -463,8 +446,7 @@
         "icon_color": "",
         "padding_top": 0,
         "padding_bottom": 0
-      },
-      "disabled": true
+      }
     },
     "about": {
       "type": "section-accordion",
@@ -514,8 +496,7 @@
         "icon_color": "",
         "padding_top": 0,
         "padding_bottom": 80
-      },
-      "disabled": true
+      }
     },
     "section_hero_Cz9YYe": {
       "type": "section-hero",
@@ -556,8 +537,7 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "show_placeholder": true
-      },
-      "disabled": true
+      }
     },
     "custom": {
       "type": "section-custom-content",
@@ -617,8 +597,7 @@
         "color_scheme": "scheme-10",
         "padding_top": 40,
         "padding_bottom": 0
-      },
-      "disabled": true
+      }
     },
     "related": {
       "type": "related",
@@ -653,99 +632,11 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
-    },
-    "ta_vie_feature": {
-      "type": "section-product-feature",
-      "blocks": {
-        "description": {
-          "type": "description",
-          "settings": {
-            "heading": "この一着について"
-          }
-        },
-        "reason": {
-          "type": "reason",
-          "settings": {
-            "heading": "この一着を作った理由"
-          }
-        },
-        "material": {
-          "type": "material",
-          "settings": {
-            "heading": "素材を知る"
-          }
-        },
-        "details": {
-          "type": "details",
-          "settings": {
-            "heading": "細部を知る"
-          }
-        },
-        "scenes": {
-          "type": "scenes",
-          "settings": {
-            "heading": "家で過ごす姿を想像する"
-          }
-        },
-        "fit": {
-          "type": "fit",
-          "settings": {
-            "heading": "サイズと着用感",
-            "table_label": "商品実寸"
-          }
-        },
-        "care": {
-          "type": "care",
-          "settings": {
-            "heading": "長く着るために",
-            "summary": "お手入れ方法"
-          }
-        },
-        "making": {
-          "type": "making",
-          "settings": {
-            "heading": "仕立てと製造背景"
-          }
-        },
-        "purchase": {
-          "type": "purchase",
-          "settings": {
-            "heading": "この一着を選ぶ",
-            "button_label": "色・サイズと購入情報を確認"
-          }
-        }
-      },
-      "block_order": [
-        "description",
-        "reason",
-        "material",
-        "details",
-        "scenes",
-        "fit",
-        "care",
-        "making",
-        "purchase"
-      ],
-      "settings": {
-        "heading": "一着の魅力を、ひとつずつ。",
-        "show_chapter_nav": true,
-        "width": "normal",
-        "image_fit": "contain",
-        "image_ratio": "4/5",
-        "mobile_image_ratio": "4/5",
-        "sticky_media": true,
-        "motion": true,
-        "color_scheme": "scheme-1",
-        "padding_top": 80,
-        "padding_bottom": 80,
-        "native_description": true
-      }
     }
   },
   "order": [
     "section_divider_WfYLrb",
     "main",
-    "ta_vie_feature",
     "section_announcement_enc4K7",
     "faq",
     "shipping",
