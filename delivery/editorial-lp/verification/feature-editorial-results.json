@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "scope": "Actual new feature CSS/JS with explicit local component fixture; not live Shopify or real product data.",
+  "checks": [
+    "Matching product description deduplicated only while native description chapter exists",
+    "Other product and preexisting hidden attribute preserved",
+    "Sticky contents links follow current chapter with one aria-current",
+    "Desktop vertical and mobile horizontal keyboard tabs",
+    "Mobile no page overflow and 48 px targets",
+    "Selected mobile tab is brought into touch strip view",
+    "Reduced motion disables transitions",
+    "Editor disconnect restores native description; reconnect re-enhances"
+  ],
+  "errors": []
+}

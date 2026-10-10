@@ -1,0 +1,75 @@
+{
+  "status": "passed",
+  "sourceHashes": {
+    "assets/ta-vie-editorial.css": "452ae3fb3df85b4c13060d471e388068e074a46f5f7529703d3d8595b6b7dff1",
+    "assets/ta-vie-editorial.js": "f6a521edad53ec8ef5ea40b35b81ff1188674285640f22190a336191827493a3",
+    "assets/ta-vie-product-feature.css": "083a19279a0379168416fc6c6702bc3b02f752fa8c97e218c17ab624bb39b6d3",
+    "assets/ta-vie-product-feature.js": "009a0edd3668fdedf1e2463c9442b99f71a096d215011dcf1898785a3b5a892b",
+    "sections/section-ta-vie-editorial.liquid": "c87e8753aa42d7b12a3b940cf4e1e0a9a15a7614d878eacddba91eb5345dcdfd",
+    "sections/section-product-feature.liquid": "e7e10e74b289754d9fa216c56a55368a5f45dc1bfc9ba499920010c13f13853c"
+  },
+  "assetHashes": {
+    "assets/theme.css": "ceb601dbfd3d219ed4d3b02c885a4bb3719b0b690544c69315e5ebbcd618c946",
+    "assets/header-dropdown.css": "f2f68203f669ea04c0577afc89a3a1d6a7d71e959954ff223324695617ea5938",
+    "assets/search.css": "0509cffdfbb60b33a7f66f3b21ae5b981e731ad0504ba127ea74d50300d6206d",
+    "assets/predictive-search.css": "ad36bdc924d744fe13723f8ee84ee62e2b6c2dd0d90da63ef2be242236fa0f1e",
+    "assets/header-search-popdown.css": "c3ae1bee017f6219da8fbac5719f724050401df14a8d495a7110d731aed50498",
+    "assets/vendor.js": "f09ff9be18eecbe92d5efaf13e82ab9fdaff652238fd6b8d39b5442b3589ad35",
+    "assets/free-shipping.css": "3532b22b8fa1172673a911562ef32ea4fc3739d95c3675646673cdb93d85d503",
+    "assets/ta-vie-editorial.css": "452ae3fb3df85b4c13060d471e388068e074a46f5f7529703d3d8595b6b7dff1",
+    "assets/social-icons.css": "bc77220756e680a399fdd5caa3b90b187f3b6fa1032416bb1990fb30ecba54d7",
+    "assets/newsletter.css": "401015f5218882fede22143a2c2101e20ea3d3ac97f89504684ce8ddb1fccdab",
+    "assets/supporting-menu.css": "22bb01debb63452b68363cad7de619110e416b23ab50669d8f1d17609dcb191b",
+    "assets/theme.js": "e16fe7a7509c898a7688b701bdd2a70db9bb9d6f00a0ff03b8c0a15871ee860f",
+    "assets/rellax.js": "d7fc8402069c442e78d4276221562d7a46bd6f789ad4b9477509ecd0afce164e",
+    "assets/parallax-hero.js": "3cb71c821b052f06b58c9c050ab2ce8e551e0988ae138515328dd9c7b24a55cd",
+    "assets/recently-viewed.js": "e513b150a6ad29ef5e2a17ec1832019245fb6d8310d55abf3ae3358c1b966e1d",
+    "assets/ta-vie-editorial.js": "f6a521edad53ec8ef5ea40b35b81ff1188674285640f22190a336191827493a3",
+    "assets/newsletter.js": "d73956d788d6b9c648b84d239a62e6332f4e24424a38a83735c3cd92e117dfa3",
+    "assets/footer.css": "0558865d652b873bd35cff6804cfb2016018c7a541b84bc46300192f0397d4ed",
+    "assets/product.css": "3615d67b6f5e8541a64436a22cdfe858c920080eddbb106d7128e10eafad83e9",
+    "assets/ta-vie-product-purchase.css": "e03ea1b4bf7d07c0c50e85d64bc0e851e5f13c5a8720c0c4e9fda1c9b1a5f3a5",
+    "assets/ta-vie-product-feature.css": "083a19279a0379168416fc6c6702bc3b02f752fa8c97e218c17ab624bb39b6d3",
+    "assets/related.css": "851035511caf3e5d0ebdb99eb75ef13b8a2d807bc79d712d39b40017f8b0f858",
+    "assets/tabs.css": "3bfaac8ce4ec6fc36224f568fba4c4b37375b2add74822e9cf8b10944e057686",
+    "assets/ta-vie-product-purchase.js": "891bbfe544f027c627fc002b8ade98c87712c18149b0dd9dba3660db546f25f9",
+    "assets/load-photoswipe.js": "89dd70e28355f4bebcfb6fcf5ed99ea73fc6888696ec3a7a8abfaf5864ec2c69",
+    "assets/zoom.js": "a3b6a6dd61fc41a1c18ea580639da8857a8096423b09ed4559faf16f28acb56e",
+    "assets/product-notification.js": "de5ff79836fa9b34a1f787c6900269fb838cdd4a8dad27a5a3ace3ab8909bb70",
+    "assets/cart-bar.js": "b66b063fe954dbbe7ea5680c3044d903abe175546b1d851cf5bd2efb96bfb271",
+    "assets/product-info.js": "0527d93f6ea2456369c56a22ef247b0c89030589e8849fa6788d8a0769037cb8",
+    "assets/product-sticky.js": "8381bd32f45979be73dd236c82ac1c5731c771d6bf536ec4a35a78edcfec6ad9",
+    "assets/ta-vie-product-feature.js": "009a0edd3668fdedf1e2463c9442b99f71a096d215011dcf1898785a3b5a892b",
+    "assets/related-products.js": "46205dde66cf75d49d599bacc8483c6f97dec6bfab088dcd0ee9b734f55ee516",
+    "assets/icon-zoom-in.svg": "08c9c9297878a3efe4d7ff45db68037f73bb791fe798c520a7c4c6a2f6fe6f27"
+  },
+  "fixtureHashes": {
+    "home-real.html": "c1cd35e4534b95f8ca8e88c5fa86211173231fd897f557a1170bf713ecba12de",
+    "home-with-hero.html": "f484f74bc47885214810fb0b6ad089f038128ea73534525a66ea60f4bacccd17",
+    "product-complete.html": "e900c525fba38b79d298b5b90e796f1fcd3a0e49f945607c4eaf86195514a596"
+  },
+  "captures": [
+    {
+      "kind": "home",
+      "width": 1440,
+      "settlementMs": 700
+    },
+    {
+      "kind": "home",
+      "width": 390,
+      "settlementMs": 700
+    },
+    {
+      "kind": "product",
+      "width": 1280,
+      "settlementMs": 700
+    },
+    {
+      "kind": "product",
+      "width": 390,
+      "settlementMs": 700
+    }
+  ],
+  "sourceChangedSinceCapture": [],
+  "scope": "Still screenshot capture only after native entrance transitions settle. Behavioral checks are in separate passed reports; all photos/products are labelled local fixtures."
+}

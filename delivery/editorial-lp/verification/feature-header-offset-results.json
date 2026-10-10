@@ -1,0 +1,19 @@
+{
+  "status": "pass",
+  "scope": "Actual new feature CSS/JS with explicit local component fixture; not live Shopify or real product data.",
+  "checks": [
+    "Matching product description deduplicated only while native description chapter exists",
+    "Other product and preexisting hidden attribute preserved",
+    "Sticky contents links follow current chapter with one aria-current",
+    "Visible fixed header reserves its actual 96 px",
+    "Fully hidden header or normal scrolling header leaves no floating offset",
+    "Partially visible header reserves only its remaining height",
+    "Chapter scroll margin includes actual visible header offset",
+    "Desktop vertical and mobile horizontal keyboard tabs",
+    "Mobile no page overflow and 48 px targets",
+    "Selected mobile tab is brought into touch strip view",
+    "Reduced motion disables transitions",
+    "Editor disconnect restores native description; reconnect re-enhances"
+  ],
+  "errors": []
+}

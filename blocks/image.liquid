@@ -5,7 +5,6 @@
   assign image_sizes = '|||sizes|||'
 -%}
 
-{%- if section.settings.ta_vie_hide_unconfigured == false or section.settings.ta_vie_hide_unconfigured == blank or image != blank or request.design_mode -%}
 <div
   class="block__image block-padding"
   data-aos="hero"
@@ -22,7 +21,6 @@
   {%- endif -%}
   {%- if link != blank -%}</a>{%- endif -%}
 </div>
-{%- endif -%}
 
 {% schema %}
 {

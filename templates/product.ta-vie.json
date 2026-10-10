@@ -161,6 +161,12 @@
     "ta_vie_feature": {
       "type": "section-product-feature",
       "blocks": {
+        "description": {
+          "type": "description",
+          "settings": {
+            "heading": "この一着について"
+          }
+        },
         "reason": {
           "type": "reason",
           "settings": {
@@ -214,6 +220,7 @@
         }
       },
       "block_order": [
+        "description",
         "reason",
         "material",
         "details",
@@ -224,7 +231,7 @@
         "purchase"
       ],
       "settings": {
-        "heading": "この一着を、深く知る。",
+        "heading": "一着の魅力を、ひとつずつ。",
         "show_chapter_nav": true,
         "width": "normal",
         "image_fit": "contain",
@@ -234,7 +241,8 @@
         "motion": true,
         "color_scheme": "scheme-1",
         "padding_top": 80,
-        "padding_bottom": 80
+        "padding_bottom": 80,
+        "native_description": true
       }
     },
     "related": {

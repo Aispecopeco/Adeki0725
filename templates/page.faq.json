@@ -1,1 +1,214 @@
-{"sections":{"section_divider_qreVjd":{"type":"section-divider","settings":{"show_line":true,"width":"wrapper--full","color_scheme":"scheme-1","padding_top":0,"padding_bottom":0}},"main":{"type":"main-page","disabled":true,"settings":{"subheading":"","show_title":true,"heading_font_size":"heading-large","show_content":true,"text_font_size":"body-medium","align_text":"text-center","width":"wrapper","color_scheme":"","padding_top":50,"padding_bottom":50,"heading_tag":"automatic"}},"section_rich_text_aVEJTD":{"type":"section-rich-text","blocks":{"subheading_HKVhLx":{"type":"subheading","settings":{"subheading":"Have a question?","padding_bottom":16}},"heading_DdkVf4":{"type":"heading","settings":{"title":"Frequently Asked Questions","heading_font_size":"heading-medium","padding_bottom":16,"heading_tag":"automatic"}},"text_pGLmcp":{"type":"text","settings":{"text":"<p>Please see below for answers to common questions from customers<\/p>","text_font_size":"body-medium","padding_bottom":16}}},"block_order":["subheading_HKVhLx","heading_DdkVf4","text_pGLmcp"],"settings":{"align_text":"text-center","width":"wrapper","color_scheme":"","padding_top":100,"padding_bottom":0}},"section_sidebar_gnPRqW":{"type":"section-sidebar","blocks":{"header_6kLTE6":{"type":"header","settings":{"title":"Shipping & Returns"}},"accordion_cppfNt":{"type":"accordion","settings":{"title":"How much is shipping?","content":"<p>We offer free shipping on all US orders, and a flat rate of $10 for all international orders.<\/p>"}},"accordion_UTQadQ":{"type":"accordion","settings":{"title":"What is your return policy?","content":"<p>We accept returns within 30 days of the purchase date.<\/p>"}},"header_JimaJb":{"type":"header","settings":{"title":"Discount"}},"accordion_ycbeT7":{"type":"accordion","settings":{"title":"Can I use more than one discount code?","content":"<p>Only one discount code can be used per order and cannot be combined with other promotions.<\/p>"}},"header_N6djU3":{"type":"header","settings":{"title":"Contact"}},"text_AN9m4g":{"type":"text","settings":{"text":"<p>Still have questions? We're happy to help! Please email us at hi@email.com and we will get back to you within 24 hours.<\/p>"}}},"block_order":["header_6kLTE6","accordion_cppfNt","accordion_UTQadQ","header_JimaJb","accordion_ycbeT7","header_N6djU3","text_AN9m4g"],"settings":{"heading_font_size":"heading-x-small","width":"wrapper--full-padded","color_scheme":"","padding_top":100,"padding_bottom":100}},"icons":{"type":"section-text-row","blocks":{"icon-0":{"type":"icon","settings":{"icon_name":"icon-shield","icon_size":20,"icon_color":"","title":"Secure transactions","heading_font_size":"heading-x-small","text":"<p>Transactions are handled with bank-grade security.<\/p>","text_font_size":"body-small","heading_tag":"automatic"}},"icon-1":{"type":"icon","settings":{"icon_name":"icon-smile","icon_size":20,"icon_color":"","title":"Simple checkout","heading_font_size":"heading-x-small","text":"<p>Our secure checkout is quick and easy to use.<\/p>","text_font_size":"body-small","heading_tag":"automatic"}},"icon-2":{"type":"icon","settings":{"icon_name":"icon-chat","icon_size":20,"icon_color":"","title":"Get in touch","heading_font_size":"heading-x-small","text":"<p>Have questions? Get in touch with us at any time.<\/p>","text_font_size":"body-small","heading_tag":"automatic"}}},"block_order":["icon-0","icon-1","icon-2"],"settings":{"title":"","heading_font_size":"heading-x-small","align_heading":"text-center","align_text":"text-center","icon_alignment":"icon--top","width":"wrapper--full-padded","align_columns":"flex-align-center","layout":"grid","grid":3,"layout_mobile":"1","color_scheme":"scheme-3","padding_top":50,"padding_bottom":50,"heading_tag":"automatic"}}},"order":["section_divider_qreVjd","main","section_rich_text_aVEJTD","section_sidebar_gnPRqW","icons"]}
+{
+  "sections": {
+    "section_divider_qreVjd": {
+      "type": "section-divider",
+      "settings": {
+        "show_line": true,
+        "width": "wrapper--full",
+        "color_scheme": "scheme-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "disabled": true
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": false,
+      "settings": {
+        "subheading": "",
+        "show_title": true,
+        "heading_font_size": "heading-large",
+        "show_content": true,
+        "text_font_size": "body-medium",
+        "align_text": "text-left",
+        "width": "wrapper--narrow",
+        "color_scheme": "scheme-tavie-white",
+        "padding_top": 64,
+        "padding_bottom": 80,
+        "heading_tag": "automatic"
+      }
+    },
+    "section_rich_text_aVEJTD": {
+      "type": "section-rich-text",
+      "blocks": {
+        "subheading_HKVhLx": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Have a question?",
+            "padding_bottom": 16
+          }
+        },
+        "heading_DdkVf4": {
+          "type": "heading",
+          "settings": {
+            "title": "Frequently Asked Questions",
+            "heading_font_size": "heading-medium",
+            "padding_bottom": 16,
+            "heading_tag": "automatic"
+          }
+        },
+        "text_pGLmcp": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Please see below for answers to common questions from customers</p>",
+            "text_font_size": "body-medium",
+            "padding_bottom": 16
+          }
+        }
+      },
+      "block_order": [
+        "subheading_HKVhLx",
+        "heading_DdkVf4",
+        "text_pGLmcp"
+      ],
+      "settings": {
+        "align_text": "text-center",
+        "width": "wrapper",
+        "color_scheme": "",
+        "padding_top": 100,
+        "padding_bottom": 0
+      },
+      "disabled": true
+    },
+    "section_sidebar_gnPRqW": {
+      "type": "section-sidebar",
+      "blocks": {
+        "header_6kLTE6": {
+          "type": "header",
+          "settings": {
+            "title": "Shipping & Returns"
+          }
+        },
+        "accordion_cppfNt": {
+          "type": "accordion",
+          "settings": {
+            "title": "How much is shipping?",
+            "content": "<p>We offer free shipping on all US orders, and a flat rate of $10 for all international orders.</p>"
+          }
+        },
+        "accordion_UTQadQ": {
+          "type": "accordion",
+          "settings": {
+            "title": "What is your return policy?",
+            "content": "<p>We accept returns within 30 days of the purchase date.</p>"
+          }
+        },
+        "header_JimaJb": {
+          "type": "header",
+          "settings": {
+            "title": "Discount"
+          }
+        },
+        "accordion_ycbeT7": {
+          "type": "accordion",
+          "settings": {
+            "title": "Can I use more than one discount code?",
+            "content": "<p>Only one discount code can be used per order and cannot be combined with other promotions.</p>"
+          }
+        },
+        "header_N6djU3": {
+          "type": "header",
+          "settings": {
+            "title": "Contact"
+          }
+        },
+        "text_AN9m4g": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Still have questions? We're happy to help! Please email us at hi@email.com and we will get back to you within 24 hours.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "header_6kLTE6",
+        "accordion_cppfNt",
+        "accordion_UTQadQ",
+        "header_JimaJb",
+        "accordion_ycbeT7",
+        "header_N6djU3",
+        "text_AN9m4g"
+      ],
+      "settings": {
+        "heading_font_size": "heading-x-small",
+        "width": "wrapper--full-padded",
+        "color_scheme": "",
+        "padding_top": 100,
+        "padding_bottom": 100
+      },
+      "disabled": true
+    },
+    "icons": {
+      "type": "section-text-row",
+      "blocks": {
+        "icon-0": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-shield",
+            "icon_size": 20,
+            "icon_color": "",
+            "title": "Secure transactions",
+            "heading_font_size": "heading-x-small",
+            "text": "<p>Transactions are handled with bank-grade security.</p>",
+            "text_font_size": "body-small",
+            "heading_tag": "automatic"
+          }
+        },
+        "icon-1": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-smile",
+            "icon_size": 20,
+            "icon_color": "",
+            "title": "Simple checkout",
+            "heading_font_size": "heading-x-small",
+            "text": "<p>Our secure checkout is quick and easy to use.</p>",
+            "text_font_size": "body-small",
+            "heading_tag": "automatic"
+          }
+        },
+        "icon-2": {
+          "type": "icon",
+          "settings": {
+            "icon_name": "icon-chat",
+            "icon_size": 20,
+            "icon_color": "",
+            "title": "Get in touch",
+            "heading_font_size": "heading-x-small",
+            "text": "<p>Have questions? Get in touch with us at any time.</p>",
+            "text_font_size": "body-small",
+            "heading_tag": "automatic"
+          }
+        }
+      },
+      "block_order": [
+        "icon-0",
+        "icon-1",
+        "icon-2"
+      ],
+      "settings": {
+        "title": "",
+        "heading_font_size": "heading-x-small",
+        "align_heading": "text-center",
+        "align_text": "text-center",
+        "icon_alignment": "icon--top",
+        "width": "wrapper--full-padded",
+        "align_columns": "flex-align-center",
+        "layout": "grid",
+        "grid": 3,
+        "layout_mobile": "1",
+        "color_scheme": "scheme-3",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "heading_tag": "automatic"
+      },
+      "disabled": true
+    }
+  },
+  "order": [
+    "section_divider_qreVjd",
+    "main",
+    "section_rich_text_aVEJTD",
+    "section_sidebar_gnPRqW",
+    "icons"
+  ]
+}

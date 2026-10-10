@@ -43,8 +43,11 @@
           echo '" aria-controls="'
           echo item_base_id | append: '--panel'
           echo '">'
+          echo '<span class="ta-vie-feature__tab-number" aria-hidden="true">'
+          echo feature_item_count | prepend: '0'
+          echo '</span><span class="ta-vie-feature__tab-label">'
           echo item_label | escape
-          echo '</button>'
+          echo '</span><span class="ta-vie-feature__tab-arrow" aria-hidden="true">↗</span></button>'
         endcapture
         assign feature_tab_buttons = feature_tab_buttons | append: item_tab_button
       -%}
@@ -63,7 +66,7 @@
   {%- endfor -%}
 {%- endcapture -%}
 {%- if feature_item_count > 0 -%}
-  <div class="ta-vie-feature__tabs" data-feature-tabs>
+  <div class="ta-vie-feature__tabs ta-vie-feature__tabs--{{ item_type }}" data-feature-tabs>
     {%- if feature_item_count > 1 -%}
       <div class="ta-vie-feature__tab-list" data-feature-tab-list aria-label="{{ group_label | escape }}">{{ feature_tab_buttons }}</div>
     {%- endif -%}

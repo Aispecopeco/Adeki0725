@@ -457,7 +457,7 @@
                     {%- render 'product-description', product: product, block: block, block_style: block_style -%}
 
                   {%- when 'accordion' -%}
-                    {%- render 'product-description', product: product, block: block, block_style: block_style -%}
+                    {%- render 'product-description', product: product, block: block, block_style: block_style, ta_vie_experience: section.settings.ta_vie_product_experience -%}
 
                   {%- when 'inventory_countdown' -%}
                     {%- render 'product-inventory', product: product, block: block, block_style: block_style -%}

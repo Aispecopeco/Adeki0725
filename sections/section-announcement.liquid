@@ -1,39 +1,9 @@
 {%- render 'announcement' -%}
-{%- if section.settings.ta_vie_reduce_motion -%}
-  {%- style -%}
-    @media (prefers-reduced-motion: reduce) {
-      #Announcement--{{ section.id }} [data-ticker-text] {
-        animation: none !important;
-        transform: none !important;
-        transition: none !important;
-      }
-      #Announcement--{{ section.id }} [data-clone],
-      #Announcement--{{ section.id }} .ticker__comparitor { display: none !important; }
-      #Announcement--{{ section.id }} [data-ticker-scale] { display: block; width: 100%; }
-      #Announcement--{{ section.id }} .announcement__text {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-        white-space: normal;
-      }
-      #Announcement--{{ section.id }} .announcement__slide { width: auto; max-width: 100%; white-space: normal; }
-      #Announcement--{{ section.id }} .announcement__text > div { transform: none !important; transition: none !important; }
-    }
-  {%- endstyle -%}
-{%- endif -%}
 
 {% schema %}
 {
   "name": "Scrolling text",
   "settings": [
-    {
-      "type": "checkbox",
-      "id": "ta_vie_reduce_motion",
-      "label": "動きを減らす設定では文章を静止表示",
-      "default": false,
-      "info": "端末で動きを減らす設定が有効な場合、このセクションの文字を流さず、折り返してすべて表示します。通常はBroadcast標準の演出を使います。"
-    },
     {
       "type": "header",
       "content": "Slider"

@@ -1,0 +1,185 @@
+.ta-vie-editorial {
+  --editorial-line: color-mix(in srgb, var(--text, #292826) 22%, transparent);
+  --editorial-muted: color-mix(in srgb, var(--text, #292826) 70%, var(--COLOR-BG, #f7f6f2));
+  --editorial-serif: "Yu Mincho", YuMincho, "Hiragino Mincho ProN", "Noto Serif CJK JP", Georgia, serif;
+  --editorial-sans: "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+  color: var(--text, #292826);
+  background: var(--bg, #f7f6f2);
+  padding: var(--editorial-padding-top, 24px) 0 var(--editorial-padding-bottom, 40px);
+  font-family: var(--editorial-sans);
+  font-size: 15px;
+  line-height: 1.9;
+  overflow: clip;
+}
+.ta-vie-editorial * { box-sizing: border-box; }
+.ta-vie-editorial h1,
+.ta-vie-editorial h2,
+.ta-vie-editorial p,
+.ta-vie-editorial figure,
+.ta-vie-editorial blockquote { margin: 0; }
+.ta-vie-editorial :is(a, button, summary):focus-visible { outline: 2px solid currentColor; outline-offset: 6px; }
+.ta-vie-editorial__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.83fr) minmax(0, 1.17fr);
+  align-items: center;
+  gap: clamp(32px, 4vw, 72px);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 4vw, 72px);
+  max-width: 1800px;
+}
+.ta-vie-editorial__opening { padding: 60px 0; }
+.ta-vie-editorial__eyebrow { font-size: 10px; letter-spacing: 0.12em; }
+.ta-vie-editorial__eyebrow span { margin: 0 10px; color: var(--editorial-muted); }
+.ta-vie-editorial__heading,
+.ta-vie-editorial__title {
+  font-family: var(--editorial-serif);
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+.ta-vie-editorial__heading { margin-top: 32px !important; max-width: 12em; font-size: clamp(32px, 3.4vw, 56px); line-height: 1.55; }
+.ta-vie-editorial__introduction { max-width: 31em; margin-top: 30px; font-size: 13px; line-height: 2.1; color: var(--editorial-muted); }
+.ta-vie-editorial__introduction p + p { margin-top: 1em; }
+.ta-vie-editorial__opening-links { margin-top: 34px; }
+.ta-vie-editorial__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  min-height: 48px;
+  padding: 8px 0;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+.ta-vie-editorial__link span { font-size: 20px; transition: transform 220ms ease; }
+@media (hover: hover) { .ta-vie-editorial__link:hover span { transform: translate(3px, -3px); } }
+.ta-vie-editorial__manifesto { max-width: 31em; margin-top: 34px; }
+.ta-vie-editorial__manifesto summary { display: flex; justify-content: space-between; align-items: center; min-height: 44px; gap: 16px; color: var(--editorial-muted); font-size: 11px; cursor: pointer; list-style: none; }
+.ta-vie-editorial__manifesto summary::-webkit-details-marker { display: none; }
+.ta-vie-editorial__manifesto summary span { font-size: 16px; }
+.ta-vie-editorial__manifesto[open] summary span { transform: rotate(45deg); }
+.ta-vie-editorial__manifesto blockquote { padding: 16px 0 0; font-family: Georgia, serif; font-size: 14px; line-height: 1.8; font-style: italic; color: var(--editorial-muted); }
+.ta-vie-editorial__hero-media { min-width: 0; }
+.ta-vie-editorial__hero-media picture,
+.ta-vie-editorial__product-media picture { display: block; width: 100%; height: 100%; }
+.ta-vie-editorial__hero-media > picture,
+.ta-vie-editorial__hero-media > video { aspect-ratio: 4 / 5; max-height: 800px; }
+.ta-vie-editorial__image,
+.ta-vie-editorial__video { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; background: color-mix(in srgb, var(--text, #292826) 3%, var(--COLOR-BG, #f7f6f2)); }
+.ta-vie-editorial__media--cover :is(.ta-vie-editorial__image, .ta-vie-editorial__video) { object-fit: cover; }
+.ta-vie-editorial__hero-media figcaption { display: flex; justify-content: space-between; gap: 20px; padding-top: 14px; font-size: 10px; letter-spacing: 0.06em; }
+.ta-vie-editorial__hero--type { display: block; min-height: 580px; padding-top: 48px; padding-bottom: 48px; }
+.ta-vie-editorial__hero--type .ta-vie-editorial__opening { max-width: 760px; padding: 32px 0; }
+.ta-vie-editorial__hero--type .ta-vie-editorial__heading { max-width: 14em; font-size: clamp(36px, 5.3vw, 76px); }
+.ta-vie-editorial__hero--type .ta-vie-editorial__introduction { max-width: 36em; }
+.ta-vie-editorial__navigation {
+  position: sticky;
+  top: var(--editorial-sticky-offset, 0px);
+  z-index: 6;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 70px;
+  padding: 0 clamp(24px, 4vw, 72px);
+  min-height: 70px;
+  border-top: 1px solid var(--editorial-line);
+  border-bottom: 1px solid var(--editorial-line);
+  background: var(--bg, #f7f6f2);
+}
+.ta-vie-editorial__navigation-label { flex: 0 0 auto; font-family: var(--editorial-serif); font-size: 14px; }
+.ta-vie-editorial__navigation ol { display: flex; flex: 1; justify-content: flex-end; gap: 28px; margin: 0; padding: 0; list-style: none; }
+.ta-vie-editorial__navigation li { min-width: 0; }
+.ta-vie-editorial__navigation a { display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 8px 0; color: var(--editorial-muted); font-size: 11px; text-decoration: none; border-bottom: 1px solid transparent; }
+.ta-vie-editorial__navigation a span { font-family: Georgia, serif; font-size: 13px; }
+.ta-vie-editorial__navigation a[aria-current="location"] { color: inherit; border-bottom-color: currentColor; }
+.ta-vie-editorial__progress { position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; pointer-events: none; }
+.ta-vie-editorial__progress > span { display: block; width: 100%; height: 100%; background: currentColor; transform: scaleX(0); transform-origin: left; }
+.ta-vie-editorial__chapters { max-width: 1800px; margin: 0 auto; }
+.ta-vie-editorial__chapter {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  align-items: center;
+  gap: clamp(40px, 7vw, 120px);
+  padding: 90px clamp(24px, 4vw, 72px);
+  scroll-margin-top: calc(var(--editorial-sticky-offset, 0px) + 90px);
+}
+.ta-vie-editorial__chapter + .ta-vie-editorial__chapter { border-top: 1px solid var(--editorial-line); }
+.ta-vie-editorial__chapter--reverse { grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr); }
+.ta-vie-editorial__chapter--reverse .ta-vie-editorial__gallery { order: 2; }
+.ta-vie-editorial__chapter--type { display: block; }
+.ta-vie-editorial__chapter--type .ta-vie-editorial__chapter-copy { max-width: 740px; }
+.ta-vie-editorial__gallery { min-width: 0; }
+.ta-vie-editorial__product-media { aspect-ratio: 4 / 5; max-height: 850px; }
+.ta-vie-editorial [hidden] { display: none !important; }
+.ta-vie-editorial__views { display: flex; justify-content: space-between; gap: 12px; padding-top: 16px; }
+.ta-vie-editorial__views button { flex: 1 1 0; padding: 8px 12px; min-height: 44px; background: transparent; border: 1px solid var(--editorial-line); border-radius: 0; color: var(--editorial-muted); font: inherit; font-size: 11px; letter-spacing: 0.04em; cursor: pointer; }
+.ta-vie-editorial__views button[aria-pressed="true"] { border-color: currentColor; color: inherit; }
+.ta-vie-editorial__chapter-copy { padding: 24px 0; }
+.ta-vie-editorial__chapter-number { display: flex; align-items: center; gap: 16px; font-size: 10px; letter-spacing: 0.14em; color: var(--editorial-muted); }
+.ta-vie-editorial__chapter-number > span:first-child { font-family: Georgia, serif; font-size: 30px; line-height: 1; letter-spacing: 0; color: var(--text, #292826); }
+.ta-vie-editorial__title { margin-top: 28px !important; font-size: clamp(28px, 3.1vw, 48px); line-height: 1.5; }
+.ta-vie-editorial__lead { margin-top: 24px !important; max-width: 32em; font-size: clamp(15px, 1.2vw, 18px); line-height: 2.1; white-space: normal; text-wrap: pretty; }
+.ta-vie-editorial__body { margin-top: 22px; max-width: 35em; font-size: 13px; line-height: 2.1; color: var(--editorial-muted); }
+.ta-vie-editorial__body p + p { margin-top: 1em; }
+.ta-vie-editorial__purchase-summary { margin-top: 38px; padding-top: 22px; border-top: 1px solid var(--editorial-line); }
+.ta-vie-editorial .ta-vie-editorial__price { margin-bottom: 12px; font-family: var(--editorial-sans); font-size: 13px; }
+.ta-vie-editorial__availability { margin-bottom: 12px !important; font-size: 12px; }
+.ta-vie-editorial__closing { display: flex; justify-content: space-between; align-items: flex-end; gap: 32px; margin: 30px auto 0; padding: 50px clamp(24px, 4vw, 72px) 40px; max-width: 1800px; border-top: 1px solid var(--editorial-line); }
+.ta-vie-editorial__closing p { font-family: var(--editorial-serif); font-size: clamp(25px, 2.7vw, 38px); line-height: 1.65; letter-spacing: 0.04em; }
+.ta-vie-editorial__editor-note { margin: 24px clamp(24px, 4vw, 72px); padding: 20px; border: 1px dashed var(--editorial-line); font-size: 13px; }
+.ta-vie-editorial[data-editorial-enhanced] [data-editorial-reveal] { opacity: 0; transform: translateY(14px); transition: opacity 650ms ease, transform 650ms ease; }
+.ta-vie-editorial[data-editorial-enhanced] [data-editorial-reveal].is-visible { opacity: 1; transform: none; }
+@media (min-width: 990px) { .ta-vie-editorial__chapter-copy { position: sticky; top: calc(var(--editorial-sticky-offset, 0px) + 115px); align-self: start; margin-top: 8%; } }
+@media (max-width: 989px) {
+  .ta-vie-editorial__hero { gap: 32px; padding: 0 24px; }
+  .ta-vie-editorial__heading { font-size: 32px; }
+  .ta-vie-editorial__opening { padding: 30px 0; }
+  .ta-vie-editorial__navigation { padding: 0 24px; gap: 16px; }
+  .ta-vie-editorial__navigation-label { display: none; }
+  .ta-vie-editorial__navigation ol { justify-content: space-between; gap: 20px; overflow-x: auto; scrollbar-width: thin; }
+  .ta-vie-editorial__navigation a { white-space: nowrap; }
+  .ta-vie-editorial__chapter { padding: 60px 24px; gap: 36px; }
+}
+@media (max-width: 749px) {
+  .ta-vie-editorial__hero { display: flex; flex-direction: column; align-items: stretch; gap: 32px; padding: 0 16px; }
+  .ta-vie-editorial__opening { padding: 24px 8px 0; }
+  .ta-vie-editorial__eyebrow { font-size: 9px; }
+  .ta-vie-editorial__heading { margin-top: 24px !important; max-width: 13em; font-size: clamp(29px, 7.2vw, 38px); line-height: 1.55; }
+  .ta-vie-editorial__introduction { margin-top: 22px; font-size: 12px; }
+  .ta-vie-editorial__opening-links { margin-top: 22px; }
+  .ta-vie-editorial__manifesto { margin-top: 20px; }
+  .ta-vie-editorial__hero-media > picture,
+  .ta-vie-editorial__hero-media > video { max-height: none; aspect-ratio: 4 / 5; }
+  .ta-vie-editorial__hero-media { order: -1; }
+  .ta-vie-editorial__hero-media figcaption { font-size: 9px; }
+  .ta-vie-editorial__hero--type { min-height: 480px; padding-top: 8px; padding-bottom: 30px; }
+  .ta-vie-editorial__hero--type .ta-vie-editorial__heading { font-size: clamp(34px, 8.5vw, 44px); }
+  .ta-vie-editorial__navigation { min-height: 62px; padding: 0 24px; margin-top: 40px; }
+  .ta-vie-editorial__navigation ol { gap: 24px; justify-content: flex-start; }
+  .ta-vie-editorial__navigation a { min-height: 60px; font-size: 10px; }
+  .ta-vie-editorial__chapter,
+  .ta-vie-editorial__chapter--reverse { display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: 40px 16px 48px; scroll-margin-top: calc(var(--editorial-sticky-offset, 0px) + 72px); }
+  .ta-vie-editorial__chapter--reverse .ta-vie-editorial__gallery { order: initial; }
+  .ta-vie-editorial__chapter-copy { padding: 30px 8px 0; }
+  .ta-vie-editorial__chapter-number { font-size: 9px; }
+  .ta-vie-editorial__chapter-number > span:first-child { font-size: 26px; }
+  .ta-vie-editorial__title { margin-top: 22px !important; font-size: clamp(27px, 7.2vw, 36px); }
+  .ta-vie-editorial__lead { margin-top: 20px !important; font-size: 14px; line-height: 2; }
+  .ta-vie-editorial__body { font-size: 12px; }
+  .ta-vie-editorial__purchase-summary { margin-top: 28px; }
+  .ta-vie-editorial__closing { display: block; padding: 36px 24px 24px; margin-top: 0; }
+  .ta-vie-editorial__closing .ta-vie-editorial__link { margin-top: 24px; }
+  .ta-vie-editorial__editor-note { margin: 20px 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ta-vie-editorial[data-editorial-enhanced] [data-editorial-reveal] { opacity: 1; transform: none; transition: none; }
+  .ta-vie-editorial__link span { transition: none; }
+}

@@ -1,23 +1,6 @@
+<!-- /sections/section-blog.liquid -->
 {%- liquid
-  assign blog = section.settings.blog_name
-  assign use_ta_vie_blog = section.settings.use_ta_vie_blog | default: false, allow_false: true
-  if blog != blank
-    if blog.url == blank
-      assign blog = blogs[section.settings.blog_name]
-    endif
-  elsif use_ta_vie_blog and settings.ta_vie_blog != blank
-    assign blog = settings.ta_vie_blog
-    if blog.url == blank
-      assign blog = blogs[settings.ta_vie_blog]
-    endif
-  else
-    assign blog = blogs.news
-  endif
-  assign render_blog = false
-  if blog.url != blank and blog.articles_count > 0 and blog.articles.size > 0
-    assign render_blog = true
-  endif
-
+  assign blog = blogs[section.settings.blog_name]
   assign blog_title = section.settings.title
   assign color_scheme = 'color-' | append: section.settings.color_scheme
   assign heading_tag = 'h2'
@@ -32,8 +15,6 @@
   endunless
 -%}
 
-{%- if render_blog -%}
-<!-- /sections/section-blog.liquid -->
 {%- style -%}
   #Blog--{{ section.id }} {
     --PT: {{ section.settings.padding_top }}px;
@@ -59,36 +40,8 @@
     >
   {% endif %}
 
-  {%- if section.settings.description != blank -%}
-    <div class="hero__rte text-center">{{ section.settings.description }}</div>
-  {%- endif -%}
-
-  {%- render 'blog-posts', blog_articles: blog.articles, blog: blog, is_blog_page: false, real_articles: true -%}
-
-  {%- if section.settings.link_text != blank and blog.url != blank -%}
-    <div class="hero__button-group">
-      <div class="hero__button">
-        <a class="btn btn--small btn--outline btn--primary" href="{{ blog.url | escape }}"><span>{{ section.settings.link_text | escape }}</span></a>
-      </div>
-    </div>
-  {%- endif -%}
+  {%- render 'blog-posts', blog_articles: blog.articles, is_blog_page: false -%}
 </section>
-{%- elsif request.design_mode -%}
-<section
-  id="Blog--{{ section.id }}"
-  class="{{ section.settings.width }} blog-section section-padding {{ color_scheme }}"
-  style="--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;"
-  data-section-id="{{ section.id }}"
-  data-section-type="blog"
->
-  {%- if blog_title != blank -%}
-    <{{ heading_tag }} class="page__heading {{ section.settings.heading_font_size }} text-center">{{ blog_title | escape }}</{{ heading_tag }}>
-  {%- endif -%}
-  <div class="hero__rte text-center">
-    <p>{% if blog.url != blank and blog.articles_count == 0 %}選択したブログには公開記事がありません。{% else %}このセクションの『ブログ』を選択すると、公開記事を表示します。{% endif %}</p>
-  </div>
-</section>
-{%- endif -%}
 
 {% schema %}
 {
@@ -102,13 +55,6 @@
       "type": "blog",
       "id": "blog_name",
       "label": "Blog"
-    },
-    {
-      "type": "checkbox",
-      "id": "use_ta_vie_blog",
-      "label": "未選択時に共通ブログ設定を使う",
-      "info": "このセクションのブログを優先します。未選択時にテーマの共通設定を使います。どちらも未選択なら既存のnewsブログを使い、公開記事がなければ表示しません。",
-      "default": false
     },
     {
       "type": "range",
@@ -130,16 +76,6 @@
       "id": "title",
       "label": "Heading",
       "default": "Blog posts"
-    },
-    {
-      "type": "richtext",
-      "id": "description",
-      "label": "Description"
-    },
-    {
-      "type": "text",
-      "id": "link_text",
-      "label": "Blog link label"
     },
     {
       "type": "select",

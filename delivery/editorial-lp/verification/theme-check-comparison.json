@@ -1,0 +1,9 @@
+{
+  "exit_code": 1,
+  "errors": 4,
+  "warnings": 341,
+  "new_offenses": [],
+  "removed_offenses": [],
+  "baseline_report": "product-experience-20261010/theme-check.json",
+  "limitations": "Shopify CLI static checks only. Inherited Broadcast image-width warnings/errors are recorded separately from new editorial changes."
+}

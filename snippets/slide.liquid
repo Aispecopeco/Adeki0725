@@ -56,16 +56,6 @@
   endcapture
 -%}
 
-{%- liquid
-  assign ta_vie_hide_slide = false
-  if section.settings.ta_vie_hide_unconfigured and request.design_mode == false
-    if image_desktop == blank and image_mobile == blank and video == blank
-      assign ta_vie_hide_slide = true
-    endif
-  endif
--%}
-{%- unless ta_vie_hide_slide -%}
-
 {%- capture slide_style -%}
   {% if show_header_backdrop %}
     --header-overlay-color: var(--overlay-bg);
@@ -133,4 +123,3 @@
     </div>
   {%- endif -%}
 </div>
-{%- endunless -%}

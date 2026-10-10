@@ -6,27 +6,23 @@
   {{ block.shopify_attributes }}
   style="--block-padding-bottom: {{ block.settings.padding_bottom }}px;"
 >
-  {%- if request.page_type != 'index' or block.settings.button_text != blank and block.settings.button_url != blank -%}
-    {%- render 'button',
+  {%- render 'button',
     text: block.settings.button_text,
     link: block.settings.button_url,
     type: block.settings.button_type,
     size: block.settings.button_size,
     style: block.settings.button_style,
     show_arrow: block.settings.show_arrow
-    -%}
-  {%- endif -%}
+  -%}
 
-  {%- if request.page_type != 'index' or block.settings.button_secondary_text != blank and block.settings.button_secondary_url != blank -%}
-    {%- render 'button',
+  {%- render 'button',
     text: block.settings.button_secondary_text,
     link: block.settings.button_secondary_url,
     type: block.settings.button_secondary_type,
     size: block.settings.button_secondary_size,
     style: block.settings.button_secondary_style,
     show_arrow: block.settings.show_secondary_arrow
-    -%}
-  {%- endif -%}
+  -%}
 </div>
 
 {% schema %}

@@ -1,8 +1,6 @@
 {%- capture content_blocks -%}
   {% content_for 'blocks' %}
 {%- endcapture -%}
-{%- assign ta_vie_grid_content = content_blocks | strip -%}
-{%- if section.settings.ta_vie_hide_unconfigured == false or section.settings.ta_vie_hide_unconfigured == blank or ta_vie_grid_content != blank or request.design_mode -%}
 
 {%- liquid
   assign target_device_enabled = block.settings.target_device_enabled
@@ -87,7 +85,6 @@
 >
   {{ content_blocks | replace: '|||sizes|||', grid_item_sizes }}
 </div>
-{%- endif -%}
 
 {% schema %}
 {

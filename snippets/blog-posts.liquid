@@ -4,8 +4,6 @@
   Accepts:
   - blog_articles: {Array} blog articles
   - is_blog_page: {Boolean} product (required)
-  - blog: {Object} blog used for article tag links (optional)
-  - real_articles: {Boolean} use the passed articles without demo or section blog overrides (optional)
 
   Usage:
   {% render 'blog-posts', blog_articles: blog.articles, is_blog_page: true %}
@@ -29,15 +27,12 @@
   unless section.settings.title_tag == 'automatic'
     assign title_tag = section.settings.title_tag
   endunless
-  if real_articles == true and title_tag == blank
-    assign title_tag = 'h2'
-  endif
 
-  if is_blog_page or real_articles == true
+  if is_blog_page
     assign onboarding = false
   endif
 
-  if real_articles != true and section.settings.blog_name != blank and blogs[section.settings.blog_name].articles.size > 0
+  if section.settings.blog_name != blank and blogs[section.settings.blog_name].articles.size > 0
     assign onboarding = false
     assign blog_articles = blogs[section.settings.blog_name].articles
   endif

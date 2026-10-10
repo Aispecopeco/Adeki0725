@@ -1,15 +1,4 @@
-{%- render 'ta-vie-home-reduced-motion' -%}
 <!-- /sections/section-hero.liquid -->
-{%- liquid
-  assign ta_vie_has_media = false
-  if section.settings.video != blank or section.settings.image != blank or section.settings.mobile_image != blank
-    assign ta_vie_has_media = true
-  endif
--%}
-{%- if section.settings.ta_vie_hide_unconfigured and ta_vie_has_media == false -%}
-  {%- render 'ta-vie-home-editor-note', message: 'Videoから実物の短い動画、またはImage / Mobile imageから写真を選んでください。未設定時は公開画面に表示しません。動画の代替写真とスマートフォン用写真も設定できます。' -%}
-{%- endif -%}
-{%- if section.settings.ta_vie_hide_unconfigured == false or section.settings.ta_vie_hide_unconfigured == blank or ta_vie_has_media or request.design_mode -%}
 {%- capture style -%}
   --PT: {{ section.settings.padding_top }}px;
   --PB: {{ section.settings.padding_bottom }}px;
@@ -35,24 +24,12 @@
     {%- render 'video' -%}
   </div>
 </div>
-{%- endif -%}
 
 {% schema %}
 {
   "name": "Video",
   "class": "section-overlay-header",
   "settings": [
-    {
-      "type": "header",
-      "content": "TA VIE｜公開時の表示"
-    },
-    {
-      "type": "checkbox",
-      "id": "ta_vie_hide_unconfigured",
-      "label": "未設定の写真・商品を公開しない",
-      "default": false,
-      "info": "このセクションだけに適用します。写真や商品を選ぶとBroadcast標準の表示・動きが使われます。設定案内はテーマエディタだけに表示します。"
-    },
     {
       "type": "header",
       "content": "Content"

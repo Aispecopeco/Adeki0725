@@ -1,9 +1,20 @@
-/* Small, opt-in additions to the original Broadcast purchase layout. */
+/* Opt-in typography and proportion; Broadcast still owns selection and cart. */
 [data-ta-vie-experience="true"] .product__title {
-  line-height: 1.45;
-  letter-spacing: .035em;
+  margin-block: 0;
+  font-size: clamp(28px, 2.8vw, 42px);
+  line-height: 1.55;
+  letter-spacing: .025em;
+  text-transform: none;
+  text-wrap: balance;
   overflow-wrap: anywhere;
 }
+[data-ta-vie-experience="true"] .product__title__wrapper { padding-right: 0; }
+[data-ta-vie-experience="true"] .product__price__wrap { margin-block: 6px 12px; }
+[data-ta-vie-experience="true"] .product__selectors { padding-block: 12px; }
+[data-ta-vie-experience="true"] .radio__legend { margin-bottom: 12px; line-height: 1.6; }
+[data-ta-vie-experience="true"] .product__submit__add { min-height: 54px; letter-spacing: .04em; }
+[data-ta-vie-experience="true"] .product__block--accordion summary { min-height: 52px; }
+[data-ta-vie-experience="true"] :is(.radio__button, .swatch__button) label { min-width: 44px; }
 .ta-vie-purchase__intro {
   max-width: 34em;
   font-size: clamp(1rem, .94rem + .2vw, 1.125rem);
@@ -21,9 +32,8 @@
   font-size: .875rem;
   line-height: 1.8;
 }
-[data-ta-vie-experience="true"] .product__selectors label,
-[data-ta-vie-experience="true"] .product__submit__add { min-height: 44px; }
-[data-ta-vie-experience="true"] .product__block--accordion .rte { line-height: 1.85; }
+[data-ta-vie-experience="true"] .product__selectors label { min-height: 44px; }
+[data-ta-vie-experience="true"] .product__block--accordion .rte { line-height: 1.95; }
 [data-ta-vie-experience="true"][data-product-media-count="0"] .product__images { display: none; }
 [data-ta-vie-experience="true"][data-product-media-count="0"] .product__page { grid-template-columns: minmax(0, 1fr); }
 [data-ta-vie-experience="true"][data-product-media-count="0"] .product__content {
@@ -58,7 +68,17 @@
   line-height: 1.5;
 }
 [data-ta-vie-purchase-bar] .cart-bar__form { margin-left: 24px; }
+@media (min-width: 990px) {
+  [data-ta-vie-experience="true"]:not([data-product-media-count="0"]) .product__wrapper:not(.product__wrapper--small):not(.product__wrapper--stretch) .product__page {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  }
+  [data-ta-vie-experience="true"] .product__content { padding-left: clamp(32px, 4.5vw, 64px); }
+  [data-ta-vie-experience="true"] .product__wrapper__inner { max-width: 1440px; }
+  [data-ta-vie-experience="true"] .product__images { --gap: 20px; }
+}
 @media (max-width: 749px) {
+  [data-ta-vie-experience="true"] .product__content { padding-top: 24px; }
+  [data-ta-vie-experience="true"] .product__title { font-size: clamp(25px, 7vw, 32px); }
   [data-ta-vie-purchase-bar] .cart-bar__info {
     text-align: left;
     padding: 0;

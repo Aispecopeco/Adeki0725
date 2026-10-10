@@ -7,7 +7,10 @@
       this.cleanup = [];
       this.groups = [];
       this.motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      this.desktop = window.matchMedia('(min-width: 990px)');
       this.querySelectorAll('[data-feature-tabs]').forEach((group) => this.setupTabs(group));
+      this.setupNativeDescription();
+      this.setupChapterNavigation();
       this.setupMediaFallbacks();
       this.onClick = (event) => this.returnToPurchase(event);
       this.addEventListener('click', this.onClick);
@@ -19,12 +22,110 @@
     disconnectedCallback() {
       this.removeEventListener('click', this.onClick);
       this.motion?.removeEventListener('change', this.onMotionChange);
+      if (this.navigationFrame) cancelAnimationFrame(this.navigationFrame);
+      this.navigationFrame = null;
       this.observer?.disconnect();
       this.observer = null;
       this.querySelectorAll('video').forEach((video) => video.pause());
       this.cleanup?.slice().reverse().forEach((restore) => restore());
       this.cleanup = null;
       this.groups = [];
+    }
+
+    setupNativeDescription() {
+      if (!this.querySelector('[data-feature-kind="description"]')) return;
+      const main = this.closest('main') || document;
+      const product = [...main.querySelectorAll('product-info[id^="MainProduct--"]')]
+        .find((candidate) => candidate.dataset.productId === this.dataset.productId);
+      product?.querySelectorAll('[data-ta-vie-native-description]').forEach((block) => {
+        this.saveAttributes(block, ['hidden']);
+        block.hidden = true;
+      });
+    }
+
+    setupChapterNavigation() {
+      const nav = this.querySelector('[data-feature-nav]');
+      const links = nav ? [...nav.querySelectorAll('[data-feature-chapter-link]')] : [];
+      const chapters = links.map((link) => {
+        const id = link.getAttribute('href')?.slice(1);
+        return id ? document.getElementById(id) : null;
+      });
+      const navigationValid = nav && !chapters.some((chapter) => !chapter || !this.contains(chapter));
+      if (navigationValid) links.forEach((link) => this.saveAttributes(link, ['aria-current']));
+      const originalOffset = this.style.getPropertyValue('--feature-sticky-offset');
+      const originalPriority = this.style.getPropertyPriority('--feature-sticky-offset');
+      let observedHeader;
+      let observedWrapper;
+      const headerObserver = new MutationObserver(() => queue());
+      const headerResizeObserver = 'ResizeObserver' in window ? new ResizeObserver(() => queue()) : null;
+      const update = () => {
+        this.navigationFrame = null;
+        if (!this.isConnected) return;
+        const header = [...document.querySelectorAll('[data-header-height]')]
+          .find((candidate) => !candidate.closest('.js__header__clone'));
+        const wrapper = header?.closest('[data-header-wrapper]');
+        if (observedHeader !== header || observedWrapper !== wrapper) {
+          headerObserver.disconnect();
+          headerResizeObserver?.disconnect();
+          if (header) {
+            headerObserver.observe(header, {attributes: true, attributeFilter: ['class', 'style']});
+            headerResizeObserver?.observe(header);
+          }
+          if (wrapper && wrapper !== header) headerObserver.observe(wrapper, {attributes: true, attributeFilter: ['class', 'style']});
+          observedHeader = header;
+          observedWrapper = wrapper;
+        }
+        let offset = 0;
+        if (header) {
+          const style = getComputedStyle(header);
+          const wrapperStyle = wrapper ? getComputedStyle(wrapper) : null;
+          const fixed = ['fixed', 'sticky'].includes(style.position)
+            || ['fixed', 'sticky'].includes(wrapperStyle?.position)
+            || wrapper?.classList.contains('js__header__stuck');
+          if (fixed && style.visibility !== 'hidden' && wrapperStyle?.visibility !== 'hidden') {
+            const rect = header.getBoundingClientRect();
+            offset = Math.max(0, Math.min(rect.bottom, rect.height));
+          }
+        }
+        this.style.setProperty('--feature-sticky-offset', `${offset}px`);
+        if (!navigationValid) return;
+        const boundary = Math.max(0, nav.getBoundingClientRect().bottom) + 48;
+        let active = chapters.findIndex((chapter) => !chapter.hidden);
+        chapters.forEach((chapter, index) => {
+          if (!chapter.hidden && chapter.getBoundingClientRect().top <= boundary) active = index;
+        });
+        links.forEach((link, index) => {
+          if (index === active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+        const link = links[active];
+        if (!link || this.currentChapterLink === link) return;
+        this.currentChapterLink = link;
+        const left = link.getBoundingClientRect().left - nav.getBoundingClientRect().left + nav.scrollLeft;
+        const right = left + link.offsetWidth;
+        if (left < nav.scrollLeft || right > nav.scrollLeft + nav.clientWidth) {
+          nav.scrollTo({left: Math.max(0, left - 16), behavior: this.motion.matches ? 'instant' : 'smooth'});
+        }
+      };
+      const queue = () => {
+        if (!this.navigationFrame) this.navigationFrame = requestAnimationFrame(update);
+      };
+      window.addEventListener('scroll', queue, {passive: true});
+      window.addEventListener('resize', queue, {passive: true});
+      document.addEventListener('theme:resize', queue);
+      document.addEventListener('shopify:section:load', queue);
+      this.cleanup.push(() => {
+        window.removeEventListener('scroll', queue);
+        window.removeEventListener('resize', queue);
+        document.removeEventListener('theme:resize', queue);
+        document.removeEventListener('shopify:section:load', queue);
+        headerObserver.disconnect();
+        headerResizeObserver?.disconnect();
+        if (originalOffset) this.style.setProperty('--feature-sticky-offset', originalOffset, originalPriority);
+        else this.style.removeProperty('--feature-sticky-offset');
+        this.currentChapterLink = null;
+      });
+      queue();
     }
 
     saveAttributes(element, names) {
@@ -46,7 +147,10 @@
       this.saveAttributes(group, ['data-feature-enhanced']);
       this.saveAttributes(tabList, ['role', 'aria-orientation']);
       tabList.setAttribute('role', 'tablist');
-      tabList.setAttribute('aria-orientation', 'horizontal');
+      const updateOrientation = () => tabList.setAttribute('aria-orientation', this.desktop.matches ? 'vertical' : 'horizontal');
+      updateOrientation();
+      this.desktop.addEventListener('change', updateOrientation);
+      this.cleanup.push(() => this.desktop.removeEventListener('change', updateOrientation));
       tabs.forEach((tab, index) => {
         this.saveAttributes(tab, ['role', 'aria-selected', 'tabindex']);
         this.saveAttributes(panels[index], ['role', 'aria-labelledby', 'tabindex', 'hidden']);
@@ -64,6 +168,13 @@
           if (!active) panels[candidate].querySelectorAll('video').forEach((video) => video.pause());
         });
         if (focus) tabs[index].focus({preventScroll: true});
+        if (!this.desktop.matches) {
+          const left = tabs[index].getBoundingClientRect().left - tabList.getBoundingClientRect().left + tabList.scrollLeft;
+          const right = left + tabs[index].offsetWidth;
+          if (left < tabList.scrollLeft || right > tabList.scrollLeft + tabList.clientWidth) {
+            tabList.scrollTo({left: Math.max(0, left - 12), behavior: this.motion.matches ? 'instant' : 'smooth'});
+          }
+        }
       };
       const onClick = (event) => {
         const tab = event.target.closest('[data-feature-tab]');

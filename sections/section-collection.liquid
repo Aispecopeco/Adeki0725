@@ -18,20 +18,6 @@
   assign layout = section.settings.layout
 
   assign featured_collection = collections[section.settings.featured_collection]
-  assign render_collection = true
-  if section.settings.use_ta_vie_catalog
-    assign featured_collection = section.settings.featured_collection
-    if section.settings.featured_collection == blank
-      assign featured_collection = collections.all
-    elsif featured_collection.url == blank
-      assign featured_collection = collections[section.settings.featured_collection]
-    endif
-
-    assign render_collection = false
-    if featured_collection.url != blank and featured_collection.products_count > 0 and featured_collection.products.size > 0
-      assign render_collection = true
-    endif
-  endif
   assign limit_products = 20
   assign limit_onboarding = 8
 
@@ -73,7 +59,6 @@
   endif
 -%}
 
-{%- if render_collection -%}
 {%- style -%}
   #Collection--{{ section.id }} {
      --PT: {{ section.settings.padding_top }}px;
@@ -211,30 +196,6 @@
 {%- if show_recently_viewed_indicator -%}
   <script src="{{ 'grid-item.js' | asset_url }}" defer></script>
 {%- endif -%}
-{%- elsif section.settings.use_ta_vie_catalog and request.design_mode -%}
-  {%- liquid
-    assign heading_tag = 'h2'
-    unless section.settings.heading_tag == 'automatic' or section.settings.heading_tag == blank
-      assign heading_tag = section.settings.heading_tag
-    endunless
-  -%}
-  <section
-    id="Collection--{{ section.id }}"
-    class="index-products section-padding {{ color_scheme }}"
-    style="--PT: {{ section.settings.padding_top }}px; --PB: {{ section.settings.padding_bottom }}px;"
-    data-section-id="{{ section.id }}"
-    data-section-type="product-grid"
-  >
-    <div class="{{ section.settings.width }} text-center">
-      {%- if heading != blank -%}
-        <{{ heading_tag }} class="grid__heading {{ section.settings.heading_font_size }}">{{ heading | escape }}</{{ heading_tag }}>
-      {%- endif -%}
-      <div class="grid__description {{ section.settings.text_font_size }}">
-        <p>表示するコレクションを選択してください。公開中の商品がある場合に表示します。</p>
-      </div>
-    </div>
-  </section>
-{%- endif -%}
 
 {% schema %}
 {
@@ -248,12 +209,6 @@
       "type": "collection",
       "id": "featured_collection",
       "label": "Collection"
-    },
-    {
-      "type": "checkbox",
-      "id": "use_ta_vie_catalog",
-      "label": "未選択時に全商品を使用、商品がなければ非表示",
-      "default": false
     },
     {
       "type": "header",

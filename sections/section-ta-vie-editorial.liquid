@@ -1,0 +1,329 @@
+{%- comment -%}
+  TA VIE's product-led landing page. A chapter is owned by one selected product;
+  product facts are never supplied by the shared section or another product.
+{%- endcomment -%}
+{%- liquid
+  assign first_product = nil
+  assign first_chapter = nil
+  assign first_is_automatic = false
+  assign chapter_count = 0
+  assign source_collection = section.settings.source_collection | default: collections.all
+  assign selected_product_ids = '|'
+  for block in section.blocks
+    if block.settings.product != blank
+      assign selected_product_ids = selected_product_ids | append: block.settings.product.id | append: '|'
+    endif
+  endfor
+  assign shown_product_ids = '|'
+  for block in section.blocks
+    assign resolved_product = block.settings.product
+    assign is_automatic = false
+    if resolved_product == blank and section.settings.use_collection_products
+      for candidate in source_collection.products
+        assign candidate_key = candidate.id | prepend: '|' | append: '|'
+        unless selected_product_ids contains candidate_key or shown_product_ids contains candidate_key
+          assign resolved_product = candidate
+          assign is_automatic = true
+          break
+        endunless
+      endfor
+    endif
+    if resolved_product != blank
+      assign shown_product_ids = shown_product_ids | append: resolved_product.id | append: '|'
+      assign chapter_count = chapter_count | plus: 1
+      if first_product == blank
+        assign first_product = resolved_product
+        assign first_chapter = block
+        assign first_is_automatic = is_automatic
+      endif
+    endif
+  endfor
+  assign hero_image = section.settings.hero_image
+  if hero_image == blank and first_product != blank
+    assign hero_image = first_product.featured_image
+    unless first_is_automatic
+      assign hero_image = first_chapter.settings.image | default: hero_image
+    endunless
+  endif
+  assign hero_mobile_image = section.settings.hero_mobile_image
+  assign hero_video = section.settings.hero_video
+  assign has_hero_media = false
+  if hero_image != blank or hero_video != blank
+    assign has_hero_media = true
+  endif
+  assign hero_alt = hero_image.alt | default: first_product.title | default: section.settings.heading
+  assign heading = section.settings.heading | default: '家で過ごす私にも、ふさわしい一着を。'
+-%}
+
+{{ 'ta-vie-editorial.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'ta-vie-editorial.js' | asset_url }}" defer></script>
+
+<section
+  id="TaVieEditorial-{{ section.id }}"
+  class="ta-vie-editorial color-{{ section.settings.color_scheme }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="ta-vie-editorial"
+  data-editorial-root
+  style="--editorial-padding-top: {{ section.settings.padding_top }}px; --editorial-padding-bottom: {{ section.settings.padding_bottom }}px;"
+  aria-labelledby="TaVieEditorialHeading-{{ section.id }}"
+>
+  <div class="ta-vie-editorial__hero{% unless has_hero_media %} ta-vie-editorial__hero--type{% endunless %}">
+    <div class="ta-vie-editorial__opening" data-editorial-reveal>
+      <p class="ta-vie-editorial__eyebrow">TA VIE <span aria-hidden="true">／</span> 家で過ごす時間のために</p>
+      <h1 id="TaVieEditorialHeading-{{ section.id }}" class="ta-vie-editorial__heading">{{ heading | escape }}</h1>
+      {%- if section.settings.introduction != blank -%}
+        <div class="ta-vie-editorial__introduction rte">{{ section.settings.introduction }}</div>
+      {%- endif -%}
+      <div class="ta-vie-editorial__opening-links">
+        {%- if first_chapter != blank -%}
+          <a class="ta-vie-editorial__link" href="#TaVieChapter-{{ section.id }}-{{ first_chapter.id }}" data-editorial-jump>一着を知る <span aria-hidden="true">↘</span></a>
+        {%- else -%}
+          <a class="ta-vie-editorial__link" href="{{ routes.all_products_collection_url }}">商品を見る <span aria-hidden="true">↗</span></a>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.show_french_quote and section.settings.french_quote != blank -%}
+        <details class="ta-vie-editorial__manifesto">
+          <summary>TA VIEの想い <span aria-hidden="true">＋</span></summary>
+          <blockquote lang="fr">{{ section.settings.french_quote | escape }}</blockquote>
+        </details>
+      {%- endif -%}
+    </div>
+
+    {%- if has_hero_media -%}
+      <figure class="ta-vie-editorial__hero-media ta-vie-editorial__media--{{ section.settings.hero_media_fit }}">
+        {%- if hero_video != blank -%}
+          {%- if hero_image != blank -%}
+            {%- assign hero_poster = hero_image | image_url: width: 1800 -%}
+            {{ hero_video | video_tag: controls: true, autoplay: false, loop: false, playsinline: true, preload: 'none', image_size: '1800x', poster: hero_poster, class: 'ta-vie-editorial__video' }}
+          {%- else -%}
+            {{ hero_video | video_tag: controls: true, autoplay: false, loop: false, playsinline: true, preload: 'none', image_size: '1800x', class: 'ta-vie-editorial__video' }}
+          {%- endif -%}
+        {%- else -%}
+          <picture>
+            {%- if hero_mobile_image != blank -%}
+              <source media="(max-width: 749px)" srcset="{{ hero_mobile_image | image_url: width: 540 }} 540w, {{ hero_mobile_image | image_url: width: 750 }} 750w, {{ hero_mobile_image | image_url: width: 1100 }} 1100w" sizes="calc(100vw - 32px)" width="{{ hero_mobile_image.width }}" height="{{ hero_mobile_image.height }}">
+            {%- endif -%}
+            {{ hero_image | image_url: width: 2200 | image_tag: widths: '540, 750, 1100, 1500, 1800, 2200', sizes: '(min-width: 990px) 57vw, calc(100vw - 32px)', loading: 'eager', fetchpriority: 'high', alt: hero_alt, class: 'ta-vie-editorial__image' }}
+          </picture>
+        {%- endif -%}
+        {%- if first_product != blank -%}
+          <figcaption><span>{{ first_product.title | escape }}</span><span>01 <span aria-hidden="true">／</span> {{ chapter_count | prepend: '0' }}</span></figcaption>
+        {%- endif -%}
+      </figure>
+    {%- endif -%}
+  </div>
+
+  {%- if chapter_count > 0 -%}
+    {%- if section.settings.show_navigation -%}
+      <nav class="ta-vie-editorial__navigation" aria-label="紹介する商品" data-editorial-nav>
+        <span class="ta-vie-editorial__navigation-label">一着ずつ、ゆっくり。</span>
+        <ol>
+          {%- assign chapter_number = 0 -%}
+          {%- assign shown_product_ids = '|' -%}
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign nav_product = block.settings.product
+              assign nav_title = block.settings.title
+              if nav_product == blank and section.settings.use_collection_products
+                assign nav_title = nil
+                for candidate in source_collection.products
+                  assign candidate_key = candidate.id | prepend: '|' | append: '|'
+                  unless selected_product_ids contains candidate_key or shown_product_ids contains candidate_key
+                    assign nav_product = candidate
+                    break
+                  endunless
+                endfor
+              endif
+            -%}
+            {%- if nav_product != blank -%}
+              {%- assign chapter_number = chapter_number | plus: 1 -%}
+              {%- assign shown_product_ids = shown_product_ids | append: nav_product.id | append: '|' -%}
+              <li><a href="#TaVieChapter-{{ section.id }}-{{ block.id }}" data-editorial-jump><span>{{ chapter_number | prepend: '0' }}</span>{{ nav_title | default: nav_product.title | escape }}</a></li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ol>
+        <span class="ta-vie-editorial__progress" aria-hidden="true"><span data-editorial-progress></span></span>
+      </nav>
+    {%- endif -%}
+
+    <div class="ta-vie-editorial__chapters">
+      {%- assign chapter_number = 0 -%}
+      {%- assign shown_product_ids = '|' -%}
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign chapter_product = block.settings.product
+          assign is_automatic = false
+          if chapter_product == blank and section.settings.use_collection_products
+            for candidate in source_collection.products
+              assign candidate_key = candidate.id | prepend: '|' | append: '|'
+              unless selected_product_ids contains candidate_key or shown_product_ids contains candidate_key
+                assign chapter_product = candidate
+                assign is_automatic = true
+                break
+              endunless
+            endfor
+          endif
+        -%}
+        {%- if chapter_product != blank -%}
+          {%- liquid
+            assign shown_product_ids = shown_product_ids | append: chapter_product.id | append: '|'
+            assign chapter_number = chapter_number | plus: 1
+            assign chapter_parity = chapter_number | modulo: 2
+            assign chapter_image = chapter_product.featured_image
+            assign chapter_mobile_image = nil
+            assign chapter_video = nil
+            assign chapter_secondary = nil
+            assign chapter_lead = nil
+            assign chapter_body = nil
+            assign chapter_title = chapter_product.title
+            assign chapter_link_label = 'この一着を詳しく見る'
+            assign chapter_secondary_label = '別の写真を見る'
+            unless is_automatic
+              assign chapter_image = block.settings.image | default: chapter_image
+              assign chapter_mobile_image = block.settings.mobile_image
+              assign chapter_video = block.settings.video
+              assign chapter_secondary = block.settings.secondary_image
+              assign chapter_lead = block.settings.lead
+              assign chapter_body = block.settings.body
+              assign chapter_title = block.settings.title | default: chapter_title
+              assign chapter_link_label = block.settings.link_label | default: chapter_link_label
+              assign chapter_secondary_label = block.settings.secondary_label | default: chapter_secondary_label
+            endunless
+            if chapter_secondary == blank
+              for media in chapter_product.media
+                if media.media_type == 'image' and media.preview_image.id != chapter_image.id
+                  assign chapter_secondary = media.preview_image
+                  break
+                endif
+              endfor
+            endif
+            assign chapter_feature = chapter_product.metafields.ta_vie.feature.value
+            assign chapter_owner = chapter_feature.owner_product.value
+            if chapter_lead == blank and chapter_owner.id == chapter_product.id
+              assign chapter_lead = chapter_feature.lead.value
+            endif
+            if chapter_lead == blank and chapter_body == blank
+              assign chapter_lead = chapter_product.description | strip_html | strip | truncate: 180
+            endif
+            assign chapter_variant = chapter_product.selected_or_first_available_variant
+            assign chapter_url = chapter_product.url
+            if chapter_variant != blank
+              assign chapter_url = chapter_url | append: '?variant=' | append: chapter_variant.id
+            endif
+            assign chapter_has_media = false
+            if chapter_image != blank or chapter_video != blank
+              assign chapter_has_media = true
+            endif
+            assign chapter_alt = chapter_image.alt | default: chapter_product.title
+            assign secondary_alt = chapter_secondary.alt | default: chapter_product.title
+          -%}
+          <article
+            id="TaVieChapter-{{ section.id }}-{{ block.id }}"
+            class="ta-vie-editorial__chapter{% if chapter_parity == 0 %} ta-vie-editorial__chapter--reverse{% endif %}{% unless chapter_has_media %} ta-vie-editorial__chapter--type{% endunless %}"
+            aria-labelledby="TaVieChapterTitle-{{ section.id }}-{{ block.id }}"
+            tabindex="-1"
+            data-editorial-chapter
+            {{ block.shopify_attributes }}
+          >
+            {%- if chapter_has_media -%}
+              <div class="ta-vie-editorial__gallery ta-vie-editorial__media--{{ block.settings.media_fit }}" data-editorial-gallery data-editorial-reveal>
+                <figure id="TaVieMedia-{{ section.id }}-{{ block.id }}-primary" class="ta-vie-editorial__product-media" data-editorial-panel="primary">
+                  {%- if chapter_video != blank -%}
+                    {%- if chapter_image != blank -%}
+                      {%- assign chapter_poster = chapter_image | image_url: width: 1800 -%}
+                      {{ chapter_video | video_tag: controls: true, autoplay: false, loop: false, playsinline: true, preload: 'none', image_size: '1800x', poster: chapter_poster, class: 'ta-vie-editorial__video' }}
+                    {%- else -%}
+                      {{ chapter_video | video_tag: controls: true, autoplay: false, loop: false, playsinline: true, preload: 'none', image_size: '1800x', class: 'ta-vie-editorial__video' }}
+                    {%- endif -%}
+                  {%- else -%}
+                    <picture>
+                      {%- if chapter_mobile_image != blank -%}
+                        <source media="(max-width: 749px)" srcset="{{ chapter_mobile_image | image_url: width: 540 }} 540w, {{ chapter_mobile_image | image_url: width: 750 }} 750w, {{ chapter_mobile_image | image_url: width: 1100 }} 1100w" sizes="calc(100vw - 32px)" width="{{ chapter_mobile_image.width }}" height="{{ chapter_mobile_image.height }}">
+                      {%- endif -%}
+                      {{ chapter_image | image_url: width: 2200 | image_tag: widths: '360, 540, 750, 1100, 1500, 1800, 2200', sizes: '(min-width: 990px) 55vw, calc(100vw - 32px)', loading: 'lazy', alt: chapter_alt, class: 'ta-vie-editorial__image' }}
+                    </picture>
+                  {%- endif -%}
+                </figure>
+                {%- if chapter_secondary != blank and chapter_secondary.id != chapter_image.id -%}
+                  <figure id="TaVieMedia-{{ section.id }}-{{ block.id }}-secondary" class="ta-vie-editorial__product-media" data-editorial-panel="secondary" hidden>
+                    {{ chapter_secondary | image_url: width: 2200 | image_tag: widths: '360, 540, 750, 1100, 1500, 1800, 2200', sizes: '(min-width: 990px) 55vw, calc(100vw - 32px)', loading: 'lazy', alt: secondary_alt, class: 'ta-vie-editorial__image' }}
+                  </figure>
+                  <div class="ta-vie-editorial__views" role="group" aria-label="{{ chapter_product.title | escape }}の写真を切り替える" data-editorial-controls hidden>
+                    <button type="button" aria-controls="TaVieMedia-{{ section.id }}-{{ block.id }}-primary" aria-pressed="true" data-editorial-view="primary">{% if chapter_video != blank %}動きを見る{% else %}全体を見る{% endif %}</button>
+                    <button type="button" aria-controls="TaVieMedia-{{ section.id }}-{{ block.id }}-secondary" aria-pressed="false" data-editorial-view="secondary">{{ chapter_secondary_label | escape }}</button>
+                  </div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+
+            <div class="ta-vie-editorial__chapter-copy" data-editorial-reveal>
+              <p class="ta-vie-editorial__chapter-number"><span>{{ chapter_number | prepend: '0' }}</span> <span aria-hidden="true">／</span> <span>TA VIE</span></p>
+              <h2 id="TaVieChapterTitle-{{ section.id }}-{{ block.id }}" class="ta-vie-editorial__title">{{ chapter_title | escape }}</h2>
+              {%- if chapter_lead != blank -%}<p class="ta-vie-editorial__lead">{{ chapter_lead | escape | newline_to_br }}</p>{%- endif -%}
+              {%- if chapter_body != blank -%}<div class="ta-vie-editorial__body rte">{{ chapter_body }}</div>{%- endif -%}
+              <div class="ta-vie-editorial__purchase-summary">
+                {%- render 'price', product: chapter_product, use_variant: true, show_badges: false, price_class: 'ta-vie-editorial__price' -%}
+                {%- unless chapter_product.available -%}<p class="ta-vie-editorial__availability">現在売り切れです</p>{%- endunless -%}
+                <a class="ta-vie-editorial__link" href="{{ chapter_url }}">{{ chapter_link_label | escape }} <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+        {%- elsif request.design_mode -%}
+          <div class="ta-vie-editorial__editor-note" {{ block.shopify_attributes }}>この章で紹介する商品を選択してください。写真・説明は選んだ商品から表示されます。未設定の章は公開画面に表示されません。</div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    <div class="ta-vie-editorial__closing" data-editorial-reveal>
+      <p>家で過ごす時間を、<br>自分らしく、美しく。</p>
+      <a class="ta-vie-editorial__link" href="{{ routes.all_products_collection_url }}">すべての商品を見る <span aria-hidden="true">↗</span></a>
+    </div>
+  {%- elsif request.design_mode -%}
+    <div class="ta-vie-editorial__editor-note">「一着の紹介」ブロックで商品を選ぶと、大きな写真と説明、価格、商品詳細へのリンクが表示されます。最大4着をそれぞれ独立して編集できます。</div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "TA VIE｜一着ずつ紹介",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "header", "content": "最初に伝えるブランドの言葉" },
+    { "type": "text", "id": "heading", "label": "ページの見出し", "default": "家で過ごす私にも、ふさわしい一着を。", "info": "ホームの主見出しです。このセクションは1ページに1つ設置してください。" },
+    { "type": "richtext", "id": "introduction", "label": "ブランドの導入文", "default": "<p>着慣れたTシャツも、長く愛したスウェットも、ほっとする。<br>でも、これからを共にする一着には、今の自分にふさわしいものを選びたい。</p>" },
+    { "type": "checkbox", "id": "show_french_quote", "label": "フランス語の原文を開閉して読めるようにする", "default": true },
+    { "type": "textarea", "id": "french_quote", "label": "ブランドの原文（フランス語）", "default": "Le T-shirt usé que je porte souvent et le sweat-shirt auquel je suis attachée depuis longtemps me mettent à l’aise, mais en tant que partenaire à mes côtés pour longtemps, je ne peux pas dire qu’ils soient dignes de moi." },
+    { "type": "header", "content": "最初に大きく見せる写真・動画" },
+    { "type": "image_picker", "id": "hero_image", "label": "最初の写真", "info": "未設定なら、先頭で選んだ商品の写真を使用します。実際の商品写真を設定してください。" },
+    { "type": "image_picker", "id": "hero_mobile_image", "label": "スマートフォン専用の最初の写真", "info": "未設定ならPCと同じ写真を使用します。" },
+    { "type": "video", "id": "hero_video", "label": "最初の実写動画", "info": "設定すると写真より優先して表示します。自動再生せず、再生操作を表示します。" },
+    { "type": "select", "id": "hero_media_fit", "label": "最初の写真・動画の見せ方", "options": [{ "value": "contain", "label": "全体を見せる（切り取らない）" }, { "value": "cover", "label": "枠いっぱいに見せる（周囲を切り取る）" }], "default": "contain" },
+    { "type": "checkbox", "id": "show_navigation", "label": "商品の章へ移動するリンクを表示", "default": true },
+    { "type": "header", "content": "商品を選ぶ前も、実際の商品を表示" },
+    { "type": "checkbox", "id": "use_collection_products", "label": "商品未選択の枠はコレクションから表示", "default": true, "info": "商品を直接選んだ章を優先し、残りの枠にはコレクションの順で別の商品を表示します。自動表示の章では、個別の写真や文章の上書きを使いません。" },
+    { "type": "collection", "id": "source_collection", "label": "自動表示する商品のコレクション", "info": "未選択なら、すべての商品から表示します。コレクションの並び順が紹介の順になります。" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "配色", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "label": "上の余白", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 24 },
+    { "type": "range", "id": "padding_bottom", "label": "下の余白", "min": 0, "max": 100, "step": 4, "unit": "px", "default": 40 }
+  ],
+  "blocks": [
+    {
+      "type": "product_chapter",
+      "name": "一着の紹介",
+      "settings": [
+        { "type": "product", "id": "product", "label": "この章で紹介する商品", "info": "この商品だけの写真・価格・特集コピー・詳細リンクを表示します。未選択なら、自動表示の設定に従います。写真や文章を個別に上書きする場合は、必ず商品を選んでください。" },
+        { "type": "text", "id": "title", "label": "紹介の見出し", "info": "未設定なら実際の商品名を表示します。" },
+        { "type": "textarea", "id": "lead", "label": "この一着の短い紹介", "info": "未設定なら、この商品のTA VIE特集の短いコピー、または商品説明を使用します。確認できる特徴を書いてください。" },
+        { "type": "richtext", "id": "body", "label": "この一着の詳しい紹介", "info": "必要なときだけ表示します。素材の混率や製法など未確認の事実は書かないでください。" },
+        { "type": "image_picker", "id": "image", "label": "大きく見せる商品写真", "info": "未設定なら商品のメイン写真を表示します。" },
+        { "type": "image_picker", "id": "mobile_image", "label": "スマートフォン専用の商品写真", "info": "未設定ならPCと同じ写真を表示します。" },
+        { "type": "video", "id": "video", "label": "動きが伝わる実写動画", "info": "設定すると最初の写真より優先して表示します。" },
+        { "type": "image_picker", "id": "secondary_image", "label": "切り替えて見るもう1枚の写真", "info": "未設定なら、この商品の次の実写写真を使用します。素材や仕立ての接写、背面・着用写真などを設定してください。" },
+        { "type": "text", "id": "secondary_label", "label": "もう1枚の写真へ切り替えるボタン", "default": "別の写真を見る", "info": "「生地を近くで見る」など写真の内容に合わせて変更できます。" },
+        { "type": "select", "id": "media_fit", "label": "商品写真・動画の見せ方", "options": [{ "value": "contain", "label": "全体を見せる（切り取らない）" }, { "value": "cover", "label": "枠いっぱいに見せる（周囲を切り取る）" }], "default": "contain" },
+        { "type": "text", "id": "link_label", "label": "商品詳細へ進むボタン", "default": "この一着を詳しく見る" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "TA VIE｜一着ずつ紹介", "blocks": [{ "type": "product_chapter" }, { "type": "product_chapter" }, { "type": "product_chapter" }, { "type": "product_chapter" }] }]
+}
+{% endschema %}

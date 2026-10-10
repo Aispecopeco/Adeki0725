@@ -1,23 +1,23 @@
-# TA VIE｜Broadcast 8.1.1 商品体験の改修
+# TA VIE｜商品を主役にしたBroadcastテーマ
 
-写真の白いシャツを参考にした服単体の3D試作は、[Shopifyへの追加手順](delivery/3d/Shopifyへの追加手順.md)にまとめています。[GLBファイル](delivery/3d/ta-vie-white-shirt-prototype.glb)を商品メディアへ追加してください。[3D一式 ZIP](delivery/TA-VIE-white-shirt-3D.zip)には回転プレビュー、USDZ、編集用Blenderデータも含みます。写真1枚からの参考モデルで、背面と実寸は未確認です。3Dの作業ブランチは `ta-vie-shirt-3d-20261010` です。
+今回添付されたBroadcast 8.1.1を基準に戻し、一着ずつ写真を大きく見せるホームと、商品説明・素材・細部・暮らしを読み進める商品詳細へ整えました。元の購入・画像・カート機能を使い、配色の保存修正、ブログ・FAQ・SNS・言語への導線を引き継いでいます。
 
-元のBroadcastの写真構成・スクロール演出を使えるホームへ戻し、4着それぞれの詳しい紹介につながる枠を用意しました。商品詳細は元のギャラリー・色／サイズ選択・価格・在庫・カートを使い、その下へ「理由・素材・細部・暮らし・サイズ・お手入れ」の商品別特集を追加しています。
+確認用ブランチは [ta-vie-editorial-lp-20261010](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-editorial-lp-20261010) です。Shopify連携済みブランチと本番テーマは更新していません。
 
-作業用ブランチは [ta-vie-product-experience-20261010](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-product-experience-20261010)。Shopify連携済みのブランチと本番テーマは更新していません。未公開テーマへ取り込んでレビューする版です。
+- [今回のテーマ ZIP](delivery/TA-VIE-Broadcast-editorial-LP-20261010.zip)
+- [デザイン・改修内容・確認範囲](delivery/editorial-lp/README.md)
+- [商品・写真・文章を編集する手順](delivery/editorial-lp/editing-guide.md)
+- [添付テーマへ戻した範囲](delivery/editorial-lp/baseline-restoration.md)
+- [追加で必要な写真・商品情報](delivery/editorial-lp/required-content.md)
+- [PC・スマートフォンの確認画像](delivery/editorial-lp/previews)
+- [検証結果](delivery/editorial-lp/verification)
 
-- [修正テーマ ZIP](delivery/TA-VIE-Broadcast-8.1.1-edited.zip)
-- [デザイン・変更ファイル・プレビュー・確認範囲](delivery/product-experience.md)
-- [商品ごとの文章・写真・動画・サイズの編集手順](delivery/product-content-model.md)
-- [ホームの編集手順](delivery/home-structure.md)
-- [追加で必要な写真・商品情報](delivery/required-shots.md)
-- [ブログ・FAQ・SNS・言語の設定](delivery/navigation.md)
-- [静的チェックとブラウザ検証](delivery/validation.md)
-- [参考サイトの確認範囲](delivery/reference-audit-20261010.md)
-- [元テーマとの差分](delivery/changes.json)
+ZIPのGitHubファイル画面で **Download raw file** を選び、Shopifyのテーマライブラリへ未公開テーマとして追加してください。「Code → Download ZIP」はリポジトリ全体であり、Shopify用テーマZIPとは異なります。
 
-ZIPをShopifyへ取り込む場合は、上のZIPのGitHubファイル画面で **Download raw file** を選んでください。「Code → Download ZIP」はリポジトリ全体です。説明書、プレビュー、検証用データはテーマZIPへ含めていません。
+ホームは最大4着を独立した紹介として表示します。各ブロックの商品を選ぶほか、初期設定では未選択の枠を実際の公開コレクションから補います。写真・価格・商品説明は実際の商品データを使います。正式な商品と掲載順を管理画面で確認してください。商品がない場合は、仮の服や仮文言を出さずブランドの文章を表示します。
 
-正式商品・写真・原稿は未設定です。ストアのパスワード保護で実商品を取得できなかったため、商品別の型定義と素材の登録手順まで用意しています。未設定の写真や商品特集は公開画面に空枠・仮文言を出しません。プレビューのテスト用画像・価格・寸法は実商品を示しません。
+商品別の素材・細部・サイズなどは[専用コンテンツの登録手順](delivery/product-content-model.md)で追加できます。商品説明は、この登録前でも商品ごとに表示します。未確認の素材、産地、機能、レビュー、配送・返品の約束は追加していません。プレビューの検証用データは実商品の写真や価格を示しません。
 
-最初に代表商品の特集を登録し、同じ未公開テーマでPC／スマホ・購入・在庫・エディタを確認してから公開してください。商品の事実は商品別コンテンツ、章の順番と見た目は共通テンプレートで管理します。
+写真の白いシャツの参考3D試作は、[GLB](delivery/3d/ta-vie-white-shirt-prototype.glb)、[一式ZIP](delivery/TA-VIE-white-shirt-3D.zip)、[Shopifyへの追加手順](delivery/3d/Shopifyへの追加手順.md)を保持しています。背面と実寸が未確認の試作で、今回のホームへ実物写真として使用していません。
+
+以前の改修資料とZIPは delivery/ に残しています。今回のテーマZIPと delivery/editorial-lp/ の説明を優先してください。
