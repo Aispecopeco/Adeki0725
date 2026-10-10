@@ -14,6 +14,6 @@
 
 配色の13個のIDは現在設定と全プリセットで一致させています。添付ZIPにない `config/settings_data.json` は復元時の設定を基に保持しています。元の127アセットと標準の購入・カートJavaScriptは維持し、追加機能は独立したファイルへ実装しています。
 
-以前のShopify連携先は [ta-vie-shopify-20261005](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-shopify-20261005) です。管理画面の接続先・同期状態・公開状態は認証がないため未確認です。今回の変更は作業用ブランチと取り込み用ZIPでレビューできます。Shopifyでは「オンラインストア → テーマ → テーマを追加 → ZIPファイルをアップロード」でテーマライブラリーへ取り込み、公開前にカスタマイズとプレビューを確認してください。操作プレビューのZIPはこの取り込みには使用しません。
+2026年10月10日、ユーザーの反映指示に基づき、検証済みのテーマをShopify連携先 [ta-vie-shopify-20261005](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-shopify-20261005) へ反映しました。復元時点は `ta-vie-before-luxury-sync-20261010` ブランチにも保存しています。Shopify管理画面の実際の接続先・同期完了・公開状態は認証がないため未確認です。[同期の確認手順](delivery/luxury-experience/shopify-sync.md)に従い、連携テーマのプレビューを更新してください。別テーマとして取り込む場合は「オンラインストア → テーマ → テーマを追加 → ZIPファイルをアップロード」でテーマZIPを使用します。操作プレビューのZIPはこの取り込みには使用しません。
 
 `delivery/editorial-lp/`、`delivery/original-restore-20261010/`、以前のZIP・3D試作は過去の納品資料として残しています。今回の実物写真には使用していません。復元時点のコードはコミット `60cc2d4` から確認できます。
