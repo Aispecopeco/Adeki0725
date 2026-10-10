@@ -1,0 +1,214 @@
+{
+  "file": "ta-vie-white-shirt-prototype.usdz",
+  "bytes": 8988171,
+  "sha256": "1d651777ba76dfd8e866c619dfc6f9ad343dd479a247dafd2e721d0f0158bc6d",
+  "passed": true,
+  "issues": [],
+  "entries": [
+    {
+      "name": "model.usda",
+      "bytes": 15827,
+      "data_offset": 64,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_2.usda",
+      "bytes": 764502,
+      "data_offset": 16000,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_3.usda",
+      "bytes": 764565,
+      "data_offset": 780608,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_4.usda",
+      "bytes": 1516000,
+      "data_offset": 1545280,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_5.usda",
+      "bytes": 279958,
+      "data_offset": 3061376,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_6.usda",
+      "bytes": 282321,
+      "data_offset": 3341440,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_7.usda",
+      "bytes": 538808,
+      "data_offset": 3623872,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_8.usda",
+      "bytes": 256176,
+      "data_offset": 4162752,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_9.usda",
+      "bytes": 144167,
+      "data_offset": 4419008,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_10.usda",
+      "bytes": 144167,
+      "data_offset": 4563264,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_11.usda",
+      "bytes": 542879,
+      "data_offset": 4707520,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_12.usda",
+      "bytes": 257580,
+      "data_offset": 5250496,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_13.usda",
+      "bytes": 145293,
+      "data_offset": 5508160,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_14.usda",
+      "bytes": 145294,
+      "data_offset": 5653568,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_15.usda",
+      "bytes": 272551,
+      "data_offset": 5798976,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_16.usda",
+      "bytes": 221782,
+      "data_offset": 6071616,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_17.usda",
+      "bytes": 89554,
+      "data_offset": 6293504,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_18.usda",
+      "bytes": 68082,
+      "data_offset": 6383168,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_19.usda",
+      "bytes": 275023,
+      "data_offset": 6451328,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_20.usda",
+      "bytes": 223475,
+      "data_offset": 6726464,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_21.usda",
+      "bytes": 90141,
+      "data_offset": 6950016,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_22.usda",
+      "bytes": 63048,
+      "data_offset": 7040256,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_23.usda",
+      "bytes": 71522,
+      "data_offset": 7103424,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_24.usda",
+      "bytes": 102192,
+      "data_offset": 7175040,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_25.usda",
+      "bytes": 101525,
+      "data_offset": 7277312,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_26.usda",
+      "bytes": 200258,
+      "data_offset": 7378944,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_27.usda",
+      "bytes": 111362,
+      "data_offset": 7579264,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_28.usda",
+      "bytes": 202474,
+      "data_offset": 7690688,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_29.usda",
+      "bytes": 112101,
+      "data_offset": 7893248,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_30.usda",
+      "bytes": 340855,
+      "data_offset": 8005440,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_31.usda",
+      "bytes": 182576,
+      "data_offset": 8346368,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_32.usda",
+      "bytes": 183660,
+      "data_offset": 8529024,
+      "alignment": 0
+    },
+    {
+      "name": "geometries/Geometry_33.usda",
+      "bytes": 185118,
+      "data_offset": 8712768,
+      "alignment": 0
+    },
+    {
+      "name": "textures/Texture_5_false.png",
+      "bytes": 86473,
+      "data_offset": 8897984,
+      "alignment": 0
+    }
+  ],
+  "scope": "ZIP envelope, CRC, relative paths, no encryption/compression, 64-byte alignment only; not USD semantics or Apple rendering."
+}

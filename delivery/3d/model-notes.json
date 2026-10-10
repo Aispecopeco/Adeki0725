@@ -1,0 +1,20 @@
+{
+  "status": "single-photo illustrative prototype",
+  "garment": "white oversized open-collar shirt",
+  "geometry": "clothing only; no person, accessories or photo texture",
+  "verified_reference_features": [
+    "oversized long body",
+    "dropped shoulders",
+    "deep open collar",
+    "wide rolled cuffs",
+    "two large patch pockets",
+    "rounded hem"
+  ],
+  "unknown": [
+    "back construction",
+    "true dimensions and AR scale",
+    "fabric composition",
+    "button count and concealed closure"
+  ],
+  "public_product_use": "Review against actual garment before uploading/publishing as product representation"
+}

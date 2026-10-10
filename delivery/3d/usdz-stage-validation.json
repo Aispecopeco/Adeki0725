@@ -1,0 +1,380 @@
+{
+  "file": "ta-vie-white-shirt-prototype.usdz",
+  "sha256": "1d651777ba76dfd8e866c619dfc6f9ad343dd479a247dafd2e721d0f0158bc6d",
+  "openusd_version": "0.26.8",
+  "stage_opened": true,
+  "passed": true,
+  "issues": [],
+  "meters_per_unit": 1.0,
+  "up_axis": "Y",
+  "mesh_count": 32,
+  "triangle_equivalents": 115940,
+  "material_count": 3,
+  "materials": [
+    "/Materials/Material_3",
+    "/Materials/Material_2",
+    "/Materials/Material_4"
+  ],
+  "texture_count": 1,
+  "textures": [
+    {
+      "shader": "/Materials/Material_3/Texture_5_normal",
+      "asset": "textures/Texture_5_false.png",
+      "resolved": "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[textures/Texture_5_false.png]",
+      "bytes": 86473,
+      "png_dimensions": [
+        512,
+        512
+      ]
+    },
+    {
+      "shader": "/Materials/Material_4/Texture_5_normal",
+      "asset": "textures/Texture_5_false.png",
+      "resolved": "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[textures/Texture_5_false.png]",
+      "bytes": 86473,
+      "png_dimensions": [
+        512,
+        512
+      ]
+    }
+  ],
+  "bounds": {
+    "min": [
+      -0.59357088804245,
+      0.013241480104625225,
+      -0.18490590155124664
+    ],
+    "max": [
+      0.59357088804245,
+      0.8999897241592407,
+      0.19038459658622742
+    ]
+  },
+  "meshes": [
+    {
+      "path": "/Root/Scenes/Scene/Right_front_draped_panel/Geometry",
+      "points": 5473,
+      "faces": 10188,
+      "triangle_equivalents": 10188,
+      "normals": 5473,
+      "material": "/Materials/Material_3",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Left_front_draped_panel/Geometry",
+      "points": 5438,
+      "faces": 10172,
+      "triangle_equivalents": 10172,
+      "normals": 5438,
+      "material": "/Materials/Material_3",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Unverified_plain_back_panel/Geometry",
+      "points": 10646,
+      "faces": 20180,
+      "triangle_equivalents": 20180,
+      "normals": 10646,
+      "material": "/Materials/Material_3",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Right_dropped_shoulder/Geometry",
+      "points": 2080,
+      "faces": 3428,
+      "triangle_equivalents": 3428,
+      "normals": 2080,
+      "material": "/Materials/Material_3",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Left_dropped_shoulder/Geometry",
+      "points": 2078,
+      "faces": 3428,
+      "triangle_equivalents": 3428,
+      "normals": 2078,
+      "material": "/Materials/Material_3",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Right_loose_sleeve/Geometry",
+      "points": 3920,
+      "faces": 6980,
+      "triangle_equivalents": 6980,
+      "normals": 3920,
+      "material": "/Materials/Material_3",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Right_wide_folded_cuff/Geometry",
+      "points": 1920,
+      "faces": 2916,
+      "triangle_equivalents": 2916,
+      "normals": 1920,
+      "material": "/Materials/Material_3",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Right_cuff_edge/Geometry",
+      "points": 1161,
+      "faces": 2048,
+      "triangle_equivalents": 2048,
+      "normals": 1161,
+      "material": "/Materials/Material_2",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Right_cuff_edge001/Geometry",
+      "points": 1161,
+      "faces": 2048,
+      "triangle_equivalents": 2048,
+      "normals": 1161,
+      "material": "/Materials/Material_2",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Left_loose_sleeve/Geometry",
+      "points": 3922,
+      "faces": 6980,
+      "triangle_equivalents": 6980,
+      "normals": 3922,
+      "material": "/Materials/Material_3",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Left_wide_folded_cuff/Geometry",
+      "points": 1920,
+      "faces": 2916,
+      "triangle_equivalents": 2916,
+      "normals": 1920,
+      "material": "/Materials/Material_3",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Left_cuff_edge/Geometry",
+      "points": 1161,
+      "faces": 2048,
+      "triangle_equivalents": 2048,
+      "normals": 1161,
+      "material": "/Materials/Material_2",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Left_cuff_edge001/Geometry",
+      "points": 1161,
+      "faces": 2048,
+      "triangle_equivalents": 2048,
+      "normals": 1161,
+      "material": "/Materials/Material_2",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Right_large_patch_pocket/Geometry",
+      "points": 2012,
+      "faces": 3520,
+      "triangle_equivalents": 3520,
+      "normals": 2012,
+      "material": "/Materials/Material_4",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Right_pocket_side_stitching/Geometry",
+      "points": 1784,
+      "faces": 3088,
+      "triangle_equivalents": 3088,
+      "normals": 1784,
+      "material": "/Materials/Material_2",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Right_pocket_opening/Geometry",
+      "points": 729,
+      "faces": 1280,
+      "triangle_equivalents": 1280,
+      "normals": 729,
+      "material": "/Materials/Material_2",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Right_folded_pocket_lip/Geometry",
+      "points": 554,
+      "faces": 632,
+      "triangle_equivalents": 632,
+      "normals": 554,
+      "material": "/Materials/Material_3",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Left_large_patch_pocket/Geometry",
+      "points": 2016,
+      "faces": 3524,
+      "triangle_equivalents": 3524,
+      "normals": 2016,
+      "material": "/Materials/Material_4",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Left_pocket_side_stitching/Geometry",
+      "points": 1778,
+      "faces": 3088,
+      "triangle_equivalents": 3088,
+      "normals": 1778,
+      "material": "/Materials/Material_2",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Left_pocket_opening/Geometry",
+      "points": 729,
+      "faces": 1280,
+      "triangle_equivalents": 1280,
+      "normals": 729,
+      "material": "/Materials/Material_2",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Left_folded_pocket_lip/Geometry",
+      "points": 506,
+      "faces": 608,
+      "triangle_equivalents": 608,
+      "normals": 506,
+      "material": "/Materials/Material_3",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Front_opening_placket/Geometry",
+      "points": 558,
+      "faces": 828,
+      "triangle_equivalents": 828,
+      "normals": 558,
+      "material": "/Materials/Material_3",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Placket_edge/Geometry",
+      "points": 819,
+      "faces": 1440,
+      "triangle_equivalents": 1440,
+      "normals": 819,
+      "material": "/Materials/Material_2",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Placket_edge001/Geometry",
+      "points": 819,
+      "faces": 1440,
+      "triangle_equivalents": 1440,
+      "normals": 819,
+      "material": "/Materials/Material_2",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Right_open_folded_lapel/Geometry",
+      "points": 1539,
+      "faces": 2416,
+      "triangle_equivalents": 2416,
+      "normals": 1539,
+      "material": "/Materials/Material_3",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Right_lapel_free_edge/Geometry",
+      "points": 909,
+      "faces": 1600,
+      "triangle_equivalents": 1600,
+      "normals": 909,
+      "material": "/Materials/Material_2",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Left_open_folded_lapel/Geometry",
+      "points": 1533,
+      "faces": 2412,
+      "triangle_equivalents": 2412,
+      "normals": 1533,
+      "material": "/Materials/Material_3",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Left_lapel_free_edge/Geometry",
+      "points": 909,
+      "faces": 1600,
+      "triangle_equivalents": 1600,
+      "normals": 909,
+      "material": "/Materials/Material_2",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Folded_collar_around_unverified_back_neckline/Geometry",
+      "points": 2539,
+      "faces": 4124,
+      "triangle_equivalents": 4124,
+      "normals": 2539,
+      "material": "/Materials/Material_3",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Collar_outer_stitch/Geometry",
+      "points": 1449,
+      "faces": 2560,
+      "triangle_equivalents": 2560,
+      "normals": 1449,
+      "material": "/Materials/Material_2",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Front_hem_stitch/Geometry",
+      "points": 1449,
+      "faces": 2560,
+      "triangle_equivalents": 2560,
+      "normals": 1449,
+      "material": "/Materials/Material_2",
+      "topology_valid": true
+    },
+    {
+      "path": "/Root/Scenes/Scene/Back_hem_stitch/Geometry",
+      "points": 1449,
+      "faces": 2560,
+      "triangle_equivalents": 2560,
+      "normals": 1449,
+      "material": "/Materials/Material_2",
+      "topology_valid": true
+    }
+  ],
+  "used_layers": [
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_2.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_9.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_12.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_10.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_18.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_14.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_16.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_21.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_24.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_22.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_27.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_4.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_3.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_7.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_13.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_15.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_19.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_25.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_28.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_6.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_5.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_8.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_11.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_17.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_20.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_23.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_26.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_33.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_32.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_31.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_30.usda]",
+    "/workspace/outputs/ta-vie-shirt-3d/ta-vie-white-shirt-prototype.usdz[geometries/Geometry_29.usda]"
+  ],
+  "scope": "OpenUSD parsing, composition, referenced geometry, finite points/normals/bounds, mesh topology, material bindings/surface shaders and packaged textures. Apple Quick Look and Shopify upload not tested.",
+  "texture_binding_count": 2
+}

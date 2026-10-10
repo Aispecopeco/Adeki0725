@@ -1,5 +1,7 @@
 # TA VIE｜Broadcast 8.1.1 商品体験の改修
 
+写真の白いシャツを参考にした服単体の3D試作は、[Shopifyへの追加手順](delivery/3d/Shopifyへの追加手順.md)にまとめています。[GLBファイル](delivery/3d/ta-vie-white-shirt-prototype.glb)を商品メディアへ追加してください。[3D一式 ZIP](delivery/TA-VIE-white-shirt-3D.zip)には回転プレビュー、USDZ、編集用Blenderデータも含みます。写真1枚からの参考モデルで、背面と実寸は未確認です。3Dの作業ブランチは `ta-vie-shirt-3d-20261010` です。
+
 元のBroadcastの写真構成・スクロール演出を使えるホームへ戻し、4着それぞれの詳しい紹介につながる枠を用意しました。商品詳細は元のギャラリー・色／サイズ選択・価格・在庫・カートを使い、その下へ「理由・素材・細部・暮らし・サイズ・お手入れ」の商品別特集を追加しています。
 
 作業用ブランチは [ta-vie-product-experience-20261010](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-product-experience-20261010)。Shopify連携済みのブランチと本番テーマは更新していません。未公開テーマへ取り込んでレビューする版です。
