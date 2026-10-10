@@ -28,6 +28,9 @@
     assign show_country_flag = block.settings.show_country_flag
     assign show_toolbar_socials = block.settings.show_social_links
     assign show_toolbar_gift_card = block.settings.show_gift_card
+    assign show_ta_vie_links = block.settings.show_ta_vie_links | default: true, allow_false: true
+    assign show_mobile_toolbar = block.settings.show_mobile_toolbar | default: true, allow_false: true
+    assign show_language_label = false
     assign show_border = block.settings.show_border
     assign border_color = block.settings.border_color
     assign border_opacity = block.settings.border_opacity | times: 0.01
@@ -43,13 +46,28 @@
 
     if show_locale_selector and localization.available_languages.size > 1
       assign languages = true
+    elsif show_locale_selector and localization.language.endonym_name != blank
+      assign show_language_label = true
     endif
 
     if show_country_selector and localization.available_countries.size > 1
       assign countries = true
     endif
 
-    if languages or countries or show_toolbar_socials or show_toolbar_gift_card or show_toolbar_menu
+    if show_toolbar_socials
+      assign has_social_account = false
+      assign social_accounts = 'instagram,facebook,twitter,tiktok,pinterest,tumblr,youtube,vimeo,linkedin,snapchat,feed' | split: ','
+      for social_account in social_accounts
+        assign social_setting = social_account | append: '_link'
+        if settings[social_setting] != blank
+          assign has_social_account = true
+          break
+        endif
+      endfor
+      assign show_toolbar_socials = has_social_account
+    endif
+
+    if languages or countries or show_language_label or show_toolbar_socials or show_toolbar_gift_card
       assign show_utilities = true
     endif
 
@@ -73,7 +91,13 @@
       <a href="{{ link.url }}" class="navlink navlink--toplevel">{{ link.title }}</a>
     {%- endfor -%}
   {%- endif -%}
+  {%- if block and show_ta_vie_links -%}
+    {%- render 'ta-vie-page-links', location: 'toolbar', menu_links: menu_links -%}
+  {%- endif -%}
 {%- endcapture -%}
+{%- if toolbar_menu != blank -%}
+  {%- assign show_toolbar_menu = true -%}
+{%- endif -%}
 
 {%- capture gift_card_link -%}
   <div class="toolbar__utility">
@@ -91,6 +115,21 @@
 
     {%- if show_toolbar_gift_card -%}
       {{ gift_card_link }}
+    {%- endif -%}
+
+    {%- if show_language_label -%}
+      <div class="toolbar__utility toolbar__language-label" lang="{{ localization.language.iso_code | escape }}">
+        {%- if show_globe_icon -%}
+          <span class="popout__icon-globe">{%- render 'icon-globe' -%}</span>
+        {%- endif -%}
+        <span>
+          {%- if show_locale_code -%}
+            {{- localization.language.iso_code | upcase | escape -}}
+          {%- else -%}
+            {{- localization.language.endonym_name | capitalize | escape -}}
+          {%- endif -%}
+        </span>
+      </div>
     {%- endif -%}
 
     {%- if languages or countries -%}
@@ -112,8 +151,78 @@
 {%- if show_toolbar -%}
   {%- render 'stylesheet', name: 'header-toolbar.css' -%}
 
-  {%- if show_utilities or text != blank -%}
+  {%- if show_toolbar_menu or show_utilities or text != blank -%}
+    {%- style -%}
+      #Toolbar--{{ block.id }} .toolbar__language-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+    {%- endstyle -%}
+    {%- if show_mobile_toolbar -%}
+      {%- style -%}
+        @media only screen and (max-width: 749px) {
+          #Toolbar--{{ block.id }} .toolbar__inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4px 16px;
+            padding-block: 4px;
+          }
+          #Toolbar--{{ block.id }} ticker-bar.toolbar__text {
+            flex: 1 1 160px;
+            min-width: 0;
+            margin: 0;
+            padding: 0;
+            overflow: visible;
+          }
+          #Toolbar--{{ block.id }} .toolbar__text__frame,
+          #Toolbar--{{ block.id }} .toolbar__text__ticker {
+            display: block;
+            width: 100%;
+          }
+          #Toolbar--{{ block.id }} .announcement__text {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px 16px;
+            width: 100%;
+            white-space: normal;
+            animation: none;
+          }
+          #Toolbar--{{ block.id }} [data-clone],
+          #Toolbar--{{ block.id }} .ticker__comparitor {
+            display: none;
+          }
+          #Toolbar--{{ block.id }} .toolbar__menu {
+            flex-wrap: wrap;
+            gap: 4px 16px;
+            margin: 0;
+          }
+          #Toolbar--{{ block.id }} .toolbar__menu .navlink--toplevel {
+            flex-basis: auto;
+            padding: 5px 0;
+            white-space: normal;
+            overflow-wrap: anywhere;
+          }
+          #Toolbar--{{ block.id }} .toolbar__utilities {
+            display: flex;
+            flex: 0 1 auto;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4px 16px;
+            margin: 0;
+            min-width: 0;
+          }
+          #Toolbar--{{ block.id }} .toolbar__utility .socials {
+            flex-wrap: wrap;
+          }
+        }
+      {%- endstyle -%}
+    {%- endif -%}
     <div
+      id="Toolbar--{{ block.id }}"
       class="toolbar{% if show_border %} has-border{% endif %} section-padding{% if text == blank %} toolbar--no-text{% endif %} {{ color_scheme }}"
       {% if style != blank %}
         style="{{ style }}"
@@ -122,7 +231,7 @@
       {{ block.shopify_attributes }}
     >
       <div class="wrapper--full-padded">
-        <div class="toolbar__inner{% if text == blank %} desktop{% endif %}">
+        <div class="toolbar__inner{% if text == blank and show_mobile_toolbar == false %} desktop{% endif %}">
           {%- if show_toolbar_menu or text != blank -%}
             <ticker-bar class="toolbar__text">
               <div class="toolbar__text__frame">
@@ -133,7 +242,7 @@
                     {%- endif -%}
 
                     {%- if show_toolbar_menu -%}
-                      <div class="toolbar__menu desktop">
+                      <div class="toolbar__menu{% unless show_mobile_toolbar %} desktop{% endunless %}">
                         {{ toolbar_menu }}
                       </div>
                     {%- endif -%}
@@ -144,7 +253,7 @@
           {%- endif -%}
 
           {%- if show_utilities -%}
-            <div class="toolbar__utilities desktop">
+            <div class="toolbar__utilities{% unless show_mobile_toolbar %} desktop{% endunless %}">
               {{ utilities }}
             </div>
           {%- endif -%}

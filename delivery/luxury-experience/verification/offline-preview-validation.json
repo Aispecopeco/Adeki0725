@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "cases": 2,
+  "results": [
+    {
+      "width": 1280,
+      "photoSwitch": true,
+      "detailDialog": true,
+      "dynamicCurrentProductSizeLink": true,
+      "fourProductLinks": true,
+      "nativeVariantPrice": true,
+      "nativeLocalCart": true,
+      "subsequentHttpRequests": [],
+      "blockedRequests": [],
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "photoSwitch": true,
+      "detailDialog": true,
+      "dynamicCurrentProductSizeLink": true,
+      "fourProductLinks": true,
+      "nativeVariantPrice": true,
+      "nativeLocalCart": true,
+      "subsequentHttpRequests": [],
+      "blockedRequests": [],
+      "pageErrors": []
+    }
+  ],
+  "scope": "Self-contained HTML served once over permitted local HTTP; every subsequent network request blocked. Actual theme CSS/JS and fixture-generated HTML run in srcdoc pages.",
+  "fileProtocol": {
+    "directCheck": "blocked",
+    "reason": "Managed Chromium returns net::ERR_BLOCKED_BY_ADMINISTRATOR for file://; browser policy was not changed or bypassed."
+  },
+  "limitations": [
+    "Cart adapter intentionally shows only the last-added product and quantity within the current preview page. No order, payment, inventory update or merchant data connection.",
+    "Direct file:// execution cannot be confirmed in this managed browser; the artifact contains all assets and data and no HTTP dependencies."
+  ]
+}

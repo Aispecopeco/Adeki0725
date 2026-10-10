@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "cases": 10,
+  "results": [
+    {
+      "case": "four-native-products",
+      "ids": [
+        1001,
+        1002,
+        1003,
+        1004
+      ]
+    },
+    {
+      "case": "explicit-priority-auto-dedup-copy-isolation",
+      "ids": [
+        1003,
+        1001,
+        1004,
+        1002
+      ]
+    },
+    {
+      "case": "independent-product",
+      "productId": 1001
+    },
+    {
+      "case": "independent-product",
+      "productId": 1002
+    },
+    {
+      "case": "independent-product",
+      "productId": 1003
+    },
+    {
+      "case": "independent-product",
+      "productId": 1004
+    },
+    {
+      "case": "invalid-view-content-uses-real-native-images"
+    },
+    {
+      "case": "empty-content-hides-chapters-retains-purchase"
+    },
+    {
+      "case": "editor-block-order"
+    },
+    {
+      "case": "editor-disable-block"
+    }
+  ],
+  "limitations": [
+    "Actual Liquid with explicit Shopify resource Drop substitutes; merchant editor server and live product metadata are unavailable."
+  ]
+}

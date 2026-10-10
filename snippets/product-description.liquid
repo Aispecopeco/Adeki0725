@@ -16,7 +16,7 @@
   {%- endif -%}
 {%- else -%}
   {%- if block.type == 'description' -%}
-    <div class="product__block product__description rte block-padding" {{ block.shopify_attributes }} {{ block_style }}>
+    <div class="product__block product__description rte block-padding" {{ block.shopify_attributes }} {{ block_style }}{% if ta_vie_luxury %} data-ta-vie-native-description{% endif %}>
       {%- if product.description != blank and product.description != '<!---->' -%}
         <div class="product__description__content rte">
           {%- render 'toggle-ellipsis', content: product.description, show_read_more: block.settings.show_read_more -%}
@@ -28,6 +28,7 @@
     <div
       class="product__block{% if block.type == 'tab_richtext' %} product__block--tabs{% elsif block.type == 'accordion' %} product__block--accordion{% if block.settings.padding_bottom == 0 %} product__block--accordion-clear{% endif %}{% endif %} tabs-wrapper block-padding"
       {{ block_style }}
+      {% if ta_vie_luxury and block.type == 'accordion' and block.settings.show_description %}data-ta-vie-native-description{% endif %}
     >
       {%- render 'product-tabs', product: product, block: block -%}
     </div>

@@ -13,12 +13,13 @@
             "text_alignment": "text-left",
             "cart_custom_message_color": "",
             "pin_to_bottom": false
-          }
+          },
+          "disabled": true
         },
         "title": {
           "type": "title",
           "settings": {
-            "title": "Cart",
+            "title": "カート",
             "text_font_size": "body-medium"
           }
         },
@@ -29,7 +30,8 @@
             "text_font_size": "body-x-small",
             "color_scheme": "",
             "pin_to_bottom": false
-          }
+          },
+          "disabled": true
         },
         "products": {
           "type": "products",
@@ -78,7 +80,7 @@
         "checkout-buttons"
       ],
       "settings": {
-        "color_scheme": ""
+        "color_scheme": "scheme-tavie-white"
       }
     }
   },

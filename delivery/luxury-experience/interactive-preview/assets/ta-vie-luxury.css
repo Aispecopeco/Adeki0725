@@ -1,0 +1,128 @@
+/* TA VIE: a shared rhythm for photographs, Japanese text and native controls. */
+body[data-ta-vie-luxury-site] {
+  --ta-vie-paper: #f7f5f0;
+  --ta-vie-ink: #292824;
+  --ta-vie-muted: #68645d;
+  --ta-vie-line: #d8d3c9;
+  --ta-vie-soft: #e9e4dc;
+  --ta-vie-duration: 280ms;
+  --ta-vie-ease: cubic-bezier(.2, .65, .3, 1);
+  --ta-vie-heading-font: Georgia, "Noto Serif CJK JP", "Yu Mincho", YuMincho, "Hiragino Mincho ProN", serif;
+  --ta-vie-body-font: -apple-system, BlinkMacSystemFont, "Noto Sans CJK JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  --ta-vie-font-heading: var(--ta-vie-heading-font);
+  --ta-vie-font-body: var(--ta-vie-body-font);
+  --ta-vie-body-size: 16px;
+  --ta-vie-space-xs: 8px;
+  --ta-vie-space-sm: 16px;
+  --ta-vie-space-md: 24px;
+  --ta-vie-space-lg: 40px;
+  --ta-vie-space-xl: 64px;
+  --font-stack-body: var(--ta-vie-body-font);
+  --font-stack-heading: var(--ta-vie-heading-font);
+  --FONT-STACK-BODY: var(--ta-vie-body-font);
+  --FONT-WEIGHT-BODY: 400;
+  --FONT-STACK-HEADING: var(--ta-vie-heading-font);
+  --FONT-WEIGHT-HEADING: 400;
+  --FONT-STYLE-HEADING: normal;
+  --FONT-STACK-NAV: var(--ta-vie-body-font);
+  --FONT-WEIGHT-NAV: 400;
+  --FONT-STACK-SUBHEADING: var(--ta-vie-body-font);
+  --FONT-WEIGHT-SUBHEADING: 400;
+  --BTN-FONT-STACK: var(--ta-vie-body-font);
+  --BTN-FONT-WEIGHT: 400;
+  background: var(--ta-vie-paper);
+  font-family: var(--ta-vie-body-font);
+  font-size: var(--ta-vie-body-size);
+  font-weight: 400;
+  line-height: 1.85;
+  -webkit-font-smoothing: antialiased;
+}
+body[data-ta-vie-luxury-site] :is(h1,h2,h3,.font-heading) {
+  font-family: var(--ta-vie-heading-font);
+  font-weight: 400;
+  letter-spacing: .025em;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+body[data-ta-vie-luxury-site] :is(button,input,select,textarea,.navlink,.product__price,.price,.cart-bar) {
+  font-family: var(--ta-vie-body-font);
+}
+body[data-ta-vie-luxury-site] :is(.rte,.hero__rte,.footer__block__text) {
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+body[data-ta-vie-luxury-site] :is(.navlink,.footer__quicklinks a,.footer__block a) {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .035em;
+}
+body[data-ta-vie-luxury-site] .navlink {
+  transition: color var(--ta-vie-duration) var(--ta-vie-ease), opacity var(--ta-vie-duration) var(--ta-vie-ease);
+}
+body[data-ta-vie-luxury-site] .btn {
+  min-height: 48px;
+  border-radius: 2px;
+  font-family: var(--ta-vie-body-font);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .04em;
+  text-transform: none;
+  box-shadow: none;
+  transition: background-color var(--ta-vie-duration) var(--ta-vie-ease), color var(--ta-vie-duration) var(--ta-vie-ease), border-color var(--ta-vie-duration) var(--ta-vie-ease);
+}
+body[data-ta-vie-luxury-site] :is(input:not([type=hidden]),select,textarea) {
+  min-height: 48px;
+  font-size: 16px;
+  border-radius: 2px;
+}
+body[data-ta-vie-luxury-site] :is(a,button,input,select,textarea,summary):focus-visible {
+  outline: 2px solid var(--ta-vie-ink);
+  outline-offset: 4px;
+}
+body[data-ta-vie-luxury-site] .header__logo {
+  max-width: 180px;
+}
+body[data-ta-vie-luxury-site] .toolbar .navlink {
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+}
+body[data-ta-vie-luxury-site] .toolbar__utilities {
+  gap: 16px;
+}
+body[data-ta-vie-luxury-site] .footer__block__title {
+  font-family: var(--ta-vie-body-font);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.8;
+  text-transform: none;
+}
+body[data-ta-vie-luxury-site] .footer__block :is(p,a) {
+  font-size: 14px;
+}
+body[data-ta-vie-luxury-site] .footer__quicklinks a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+@media (hover:hover) and (pointer:fine) {
+  body[data-ta-vie-luxury-site] .navlink:hover { opacity: .7; }
+  body[data-ta-vie-luxury-site] :is(.footer__quicklinks a,.rte a):hover {
+    text-decoration-thickness: 1px;
+    text-underline-offset: .3em;
+  }
+}
+@media (max-width:749px) {
+  body[data-ta-vie-luxury-site] { line-height: 1.8; }
+  body[data-ta-vie-luxury-site] .header__logo { max-width: 140px; }
+  body[data-ta-vie-luxury-site] .toolbar .navlink { min-height: 44px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  body[data-ta-vie-luxury-site] { --ta-vie-duration: 0ms !important; }
+  body[data-ta-vie-luxury-site] :is(a,button,img,video,dialog,[data-aos]) {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

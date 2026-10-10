@@ -1,0 +1,96 @@
+.ta-vie-explorer {
+  display: block;
+  min-width: 0;
+  color: var(--ta-vie-ink, #292824);
+  font-family: var(--ta-vie-font-body, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif);
+  font-size: 14px;
+  line-height: 1.85;
+  --tv-duration: var(--ta-vie-duration, 280ms);
+  --tv-ease: var(--ta-vie-ease, cubic-bezier(.2, .65, .3, 1));
+}
+.ta-vie-explorer *, .ta-vie-explorer *::before, .ta-vie-explorer *::after { box-sizing: border-box; }
+.ta-vie-explorer button, .ta-vie-explorer a { -webkit-tap-highlight-color: transparent; }
+.ta-vie-explorer button { font: inherit; color: inherit; cursor: pointer; }
+.ta-vie-explorer button:focus-visible, .ta-vie-explorer a:focus-visible, .ta-vie-explorer summary:focus-visible, .ta-vie-explorer__panel:focus-visible { outline: 2px solid var(--ta-vie-ink, #292824); outline-offset: 4px; }
+.ta-vie-explorer [hidden] { display: none !important; }
+.ta-vie-explorer__controls { display: flex; align-items: end; gap: 12px; margin: 0 0 16px; min-height: 48px; }
+.ta-vie-explorer__tabs { position: relative; display: flex; flex: 1; min-width: 0; gap: 20px; overflow-x: auto; scrollbar-width: thin; scrollbar-color: var(--ta-vie-line, #d8d3c9) transparent; }
+.ta-vie-explorer__tab { display: block; flex-shrink: 0; min-height: 48px; max-width: 100%; padding: 10px 0 12px; border: 0; border-bottom: 1px solid transparent; background: none; color: var(--ta-vie-muted, #68645d); font-size: 12px; line-height: 1.5; letter-spacing: .06em; transition: color var(--tv-duration) var(--tv-ease), border-color var(--tv-duration) var(--tv-ease); }
+.ta-vie-explorer__tab[aria-selected="true"] { border-bottom-color: var(--ta-vie-ink, #292824); color: var(--ta-vie-ink, #292824); }
+.ta-vie-explorer__arrows { display: flex; gap: 2px; flex-shrink: 0; }
+.ta-vie-explorer__arrow { display: grid; place-items: center; width: 48px; height: 48px; padding: 0; border: 1px solid transparent; background: transparent; transition: background-color var(--tv-duration) var(--tv-ease), border-color var(--tv-duration) var(--tv-ease); }
+.ta-vie-explorer__panels { display: grid; gap: 0; }
+.ta-vie-explorer__panel { min-width: 0; margin: 0; grid-area: 1 / 1; visibility: hidden; opacity: 0; pointer-events: none; transition: opacity var(--tv-duration) var(--tv-ease); }
+.ta-vie-explorer__panel.is-active { visibility: visible; opacity: 1; pointer-events: auto; }
+.ta-vie-explorer.is-enhanced .ta-vie-explorer__panel.is-leaving { visibility: visible; opacity: 0; pointer-events: none; }
+.ta-vie-explorer__stage { position: relative; width: 100%; aspect-ratio: var(--ta-vie-explorer-ratio, 4 / 5); background: var(--ta-vie-soft, #e9e4dc); overflow: hidden; isolation: isolate; }
+.ta-vie-explorer.is-enhanced .ta-vie-explorer__stage { touch-action: pan-y pinch-zoom; }
+.ta-vie-explorer__picture, .ta-vie-explorer__video, .ta-vie-explorer__video-fallback { display: block; width: 100%; height: 100%; }
+.ta-vie-explorer__image, .ta-vie-explorer__video-element { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
+.ta-vie-explorer__image { background: transparent; user-select: none; }
+.ta-vie-explorer__video { position: relative; }
+.ta-vie-explorer__video-fallback { position: absolute; inset: 0; display: grid; place-items: center; }
+.ta-vie-explorer__video-fallback p, .ta-vie-explorer__media-error { margin: 0; padding: 24px; text-align: center; color: var(--ta-vie-muted, #68645d); }
+.ta-vie-explorer__media-error { position: absolute; inset: 0; display: grid; place-items: center; }
+.ta-vie-explorer__play { position: absolute; top: 48%; left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 20px; border: 1px solid rgba(41, 40, 36, .3); background: rgba(247, 245, 240, .94); white-space: nowrap; font-size: 12px; letter-spacing: .04em; transition: background-color var(--tv-duration) var(--tv-ease); }
+.ta-vie-explorer__hotspot { position: absolute; z-index: 2; width: 48px; height: 48px; transform: translate(-50%, -50%); display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; background: transparent; }
+.ta-vie-explorer__hotspot::before { position: absolute; inset: 6px; content: ""; border: 1px solid rgba(41, 40, 36, .62); border-radius: 50%; background: rgba(247, 245, 240, .93); box-shadow: 0 0 0 4px rgba(247, 245, 240, .28); transition: transform var(--tv-duration) var(--tv-ease), background-color var(--tv-duration) var(--tv-ease); }
+.ta-vie-explorer__hotspot span { position: relative; font-size: 22px; line-height: 1; }
+.ta-vie-explorer__caption { padding: 22px 0 0; }
+.ta-vie-explorer__caption:empty { display: none; }
+.ta-vie-explorer__heading { margin: 0 0 12px; font-family: var(--ta-vie-font-heading, "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif); font-size: clamp(17px, 1.5vw, 21px); font-weight: 400; line-height: 1.75; letter-spacing: .04em; }
+.ta-vie-explorer__body { max-width: 48em; font-size: 14px; line-height: 1.9; }
+.ta-vie-explorer__body p { margin: 0 0 12px; }
+.ta-vie-explorer__body p:last-child { margin-bottom: 0; }
+.ta-vie-explorer__detail { display: inline-flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 48px; margin-top: 8px; padding: 7px 0; border-bottom: 1px solid var(--ta-vie-line, #d8d3c9); color: var(--ta-vie-ink, #292824); text-decoration: none; font-size: 12px; letter-spacing: .05em; transition: border-color var(--tv-duration) var(--tv-ease), color var(--tv-duration) var(--tv-ease); }
+.ta-vie-explorer__detail svg { flex-shrink: 0; }
+.ta-vie-explorer__detail-fallback { display: none; margin-top: 20px; padding-top: 14px; border-top: 1px solid var(--ta-vie-line, #d8d3c9); }
+.ta-vie-explorer__detail-fallback summary { min-height: 48px; cursor: pointer; }
+.ta-vie-explorer.is-enhanced .ta-vie-explorer__detail-fallback { display: none; }
+.ta-vie-explorer__detail-image { display: block; width: 100%; height: auto; max-height: 68dvh; object-fit: contain; background: var(--ta-vie-soft, #e9e4dc); }
+.ta-vie-explorer__detail-heading { margin: 26px 0 14px; font-family: var(--ta-vie-font-heading, "Noto Serif JP", "Yu Mincho", serif); font-weight: 400; font-size: clamp(20px, 2vw, 27px); line-height: 1.65; letter-spacing: .04em; }
+.ta-vie-explorer__detail-body { font-size: 14px; line-height: 1.9; }
+.ta-vie-explorer__detail-body p { margin: 0 0 14px; }
+.ta-vie-explorer__footer { display: flex; justify-content: space-between; gap: 20px; align-items: center; padding-top: 16px; color: var(--ta-vie-muted, #68645d); font-size: 10px; line-height: 1.5; letter-spacing: .08em; }
+.ta-vie-explorer__count { font-variant-numeric: tabular-nums; }
+.ta-vie-explorer__sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.ta-vie-explorer__dialog { position: fixed; inset: 0; width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(41, 40, 36, .25); overflow: hidden; color: var(--ta-vie-ink, #292824); z-index: 6100; }
+.ta-vie-explorer__dialog::backdrop { background: transparent; }
+.ta-vie-explorer__dialog[open] { display: flex; justify-content: flex-end; animation: tv-explorer-dialog-in var(--tv-duration) var(--tv-ease) both; }
+.ta-vie-explorer__dialog:not([open]) { display: none; }
+.ta-vie-explorer__dialog-frame { width: min(680px, 54vw); height: 100%; overflow-y: auto; overscroll-behavior: contain; background: var(--ta-vie-paper, #f7f5f0); padding: 22px 34px 40px; animation: tv-explorer-panel-in var(--tv-duration) var(--tv-ease) both; }
+.ta-vie-explorer__dialog-header { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 24px; border-bottom: 1px solid var(--ta-vie-line, #d8d3c9); padding-bottom: 12px; background: var(--ta-vie-paper, #f7f5f0); }
+.ta-vie-explorer__dialog-header p { margin: 0; font-size: 13px; line-height: 1.6; }
+.ta-vie-explorer__close { display: grid; place-items: center; flex-shrink: 0; width: 48px; height: 48px; border: 0; padding: 0; background: transparent; }
+.ta-vie-explorer__dialog-content img { max-width: 100%; }
+.ta-vie-explorer__dialog-content .ta-vie-explorer__detail-image { cursor: zoom-in; }
+.ta-vie-explorer__dialog-content .ta-vie-explorer__detail-image.is-zoomed { width: auto; max-width: none; max-height: none; height: auto; cursor: zoom-out; }
+.ta-vie-explorer__dialog-content { overflow-x: auto; }
+.ta-vie-explorer__zoom-hint { margin: 16px 0 0; color: var(--ta-vie-muted, #68645d); font-size: 12px; }
+.ta-vie-explorer__zoom-toggle { display: inline-flex; align-items: center; min-height: 48px; margin-top: 12px; padding: 6px 0; border: 0; border-bottom: 1px solid var(--ta-vie-line, #d8d3c9); background: transparent; font-size: 12px; }
+@media (hover: hover) {
+  .ta-vie-explorer__tab:hover { color: var(--ta-vie-ink, #292824); border-bottom-color: var(--ta-vie-line, #d8d3c9); }
+  .ta-vie-explorer__tab[aria-selected="true"]:hover { border-bottom-color: var(--ta-vie-ink, #292824); }
+  .ta-vie-explorer__arrow:hover, .ta-vie-explorer__close:hover { background: var(--ta-vie-soft, #e9e4dc); }
+  .ta-vie-explorer__detail:hover { border-bottom-color: var(--ta-vie-ink, #292824); }
+  .ta-vie-explorer__hotspot:hover::before { transform: scale(1.08); background: var(--ta-vie-paper, #f7f5f0); }
+  .ta-vie-explorer__play:hover { background: var(--ta-vie-paper, #f7f5f0); }
+}
+@media (max-width: 749px) {
+  .ta-vie-explorer__controls { gap: 8px; margin-bottom: 12px; }
+  .ta-vie-explorer__tabs { gap: 18px; }
+  .ta-vie-explorer__tab { font-size: 11px; }
+  .ta-vie-explorer__arrow { width: 48px; }
+  .ta-vie-explorer__caption { padding-top: 18px; }
+  .ta-vie-explorer__body { font-size: 13px; line-height: 1.9; }
+  .ta-vie-explorer__dialog[open] { align-items: end; }
+  .ta-vie-explorer__dialog-frame { width: 100%; height: auto; max-height: 92dvh; padding: 14px 22px max(28px, env(safe-area-inset-bottom)); animation-name: tv-explorer-sheet-in; }
+  .ta-vie-explorer__dialog-header { margin-bottom: 20px; padding-bottom: 8px; }
+  .ta-vie-explorer__detail-image { max-height: 60dvh; }
+}
+@keyframes tv-explorer-dialog-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes tv-explorer-panel-in { from { transform: translateX(30px); } to { transform: translateX(0); } }
+@keyframes tv-explorer-sheet-in { from { transform: translateY(24px); } to { transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .ta-vie-explorer *, .ta-vie-explorer *::before, .ta-vie-explorer *::after { transition-duration: 0ms !important; animation: none !important; scroll-behavior: auto !important; }
+}

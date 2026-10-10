@@ -611,6 +611,7 @@
   }
 {% endstyle %}
 
+{%- unless settings.ta_vie_luxury_enable -%}
 {%- unless settings.type_base_font.system? -%}
   <link rel="preload" as="font" href="{{ settings.type_base_font | font_url }}" type="font/woff2" crossorigin>
 {%- endunless -%}
@@ -625,6 +626,7 @@
 {%- endunless -%}
 {%- unless settings.type_subheading_font.system? -%}
   <link rel="preload" as="font" href="{{ settings.type_subheading_font | font_url }}" type="font/woff2" crossorigin>
+{%- endunless -%}
 {%- endunless -%}
 
 {{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}

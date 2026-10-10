@@ -1,0 +1,235 @@
+{
+  "document_kind": "Review-only Shopify Admin GraphQL operations and definition variables. No Admin mutation has been executed.",
+  "updated_date_jst": "2026-10-10",
+  "status": "Not applied to the store. Compare existing definitions and resolve actual reference IDs before applying.",
+  "new_definition_count": 1,
+  "new_product_metafield_count": 1,
+  "creation_order": [
+    "ta_vie_product_view",
+    "product metafield ta_vie.views"
+  ],
+  "reference_gid_replacements": {
+    "REPLACE_WITH_GID_TA_VIE_PRODUCT_VIEW": "The actual id returned for ta_vie_product_view, such as gid://shopify/MetaobjectDefinition/.... No store IDs are included."
+  },
+  "read_only_review_query": "query ReviewTaVieViewDefinitions { metaobjectDefinitions(first: 100) { nodes { id type name access { storefront } capabilities { publishable { enabled } } fieldDefinitions { key name required type { name } validations { name value } } } pageInfo { hasNextPage endCursor } } metafieldDefinitions(first: 100, ownerType: PRODUCT) { nodes { id namespace key name type { name } access { storefront } validations { name value } } pageInfo { hasNextPage endCursor } } }",
+  "metaobject_definition_mutation": "mutation CreateTaVieViewDefinition($definition: MetaobjectDefinitionCreateInput!) { metaobjectDefinitionCreate(definition: $definition) { metaobjectDefinition { id type name } userErrors { field message code } } }",
+  "metaobject_definition_variables": {
+    "definition": {
+      "name": "TA VIE｜商品の写真と細部",
+      "type": "ta_vie_product_view",
+      "description": "一商品だけの写真切替項目。実物写真・短い説明・細部の接写とポイントを設定します。所有商品を必ず指定してください。",
+      "displayNameKey": "label",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      },
+      "capabilities": {
+        "publishable": {
+          "enabled": true
+        }
+      },
+      "fieldDefinitions": [
+        {
+          "key": "owner_product",
+          "name": "この内容の商品",
+          "type": "product_reference",
+          "description": "この写真と説明を掲載する正式商品。現在の商品IDと一致した内容だけを表示します。別の商品とは共有しません。",
+          "required": true
+        },
+        {
+          "key": "label",
+          "name": "選択ボタンの名前",
+          "type": "single_line_text_field",
+          "description": "着用・背面・生地など、実際に用意した写真に合う短い名前。",
+          "required": true
+        },
+        {
+          "key": "image",
+          "name": "大きく見せる写真",
+          "type": "file_reference",
+          "description": "この商品の実物の写真。スマートフォン専用写真は任意です。",
+          "validations": [
+            {
+              "name": "file_type_options",
+              "value": "[\"Image\"]"
+            }
+          ]
+        },
+        {
+          "key": "mobile_image",
+          "name": "スマートフォン専用の写真",
+          "type": "file_reference",
+          "description": "この商品の実物の写真。スマートフォン専用写真は任意です。",
+          "validations": [
+            {
+              "name": "file_type_options",
+              "value": "[\"Image\"]"
+            }
+          ]
+        },
+        {
+          "key": "video",
+          "name": "短い実写動画",
+          "type": "file_reference",
+          "description": "この商品の実物の動画。購入者が再生します。",
+          "validations": [
+            {
+              "name": "file_type_options",
+              "value": "[\"Video\"]"
+            }
+          ]
+        },
+        {
+          "key": "heading",
+          "name": "写真の見出し",
+          "type": "single_line_text_field",
+          "description": "この写真に対応する見出し。任意。"
+        },
+        {
+          "key": "body",
+          "name": "写真の説明",
+          "type": "rich_text_field",
+          "description": "確認済みの商品情報に基づく短い説明。未確認の素材・機能・原産国は加えません。"
+        },
+        {
+          "key": "detail_image",
+          "name": "細部の接写",
+          "type": "file_reference",
+          "description": "この項目で詳しく見せる部位の実物の接写。未設定の場合は細部の入口を省略し、共通写真の拡大を利用します。",
+          "validations": [
+            {
+              "name": "file_type_options",
+              "value": "[\"Image\"]"
+            }
+          ]
+        },
+        {
+          "key": "detail_heading",
+          "name": "細部の見出し",
+          "type": "single_line_text_field",
+          "description": "拡大パネルへ表示する部位名など。任意。"
+        },
+        {
+          "key": "detail_body",
+          "name": "細部の説明",
+          "type": "rich_text_field",
+          "description": "接写で確認できる細部と、確認済みの仕立てについての説明。任意。"
+        },
+        {
+          "key": "show_hotspot",
+          "name": "写真内のポイントを表示",
+          "type": "boolean",
+          "description": "共通写真に細部の入口を表示。接写があり、共通写真を表示し、動画ではない場合だけ表示します。"
+        },
+        {
+          "key": "hotspot_x",
+          "name": "ポイントの横位置",
+          "type": "number_decimal",
+          "description": "共通の大きい写真の位置。0〜100%。左上が0、右下が100。スマホ専用写真が異なるときはスマホ上のポイントを隠します。",
+          "validations": [
+            {
+              "name": "min",
+              "value": "0"
+            },
+            {
+              "name": "max",
+              "value": "100"
+            }
+          ]
+        },
+        {
+          "key": "hotspot_y",
+          "name": "ポイントの縦位置",
+          "type": "number_decimal",
+          "description": "共通の大きい写真の位置。0〜100%。左上が0、右下が100。スマホ専用写真が異なるときはスマホ上のポイントを隠します。",
+          "validations": [
+            {
+              "name": "min",
+              "value": "0"
+            },
+            {
+              "name": "max",
+              "value": "100"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "product_metafield_definition_mutation": "mutation CreateTaVieViewsMetafield($definition: MetafieldDefinitionInput!) { metafieldDefinitionCreate(definition: $definition) { createdDefinition { id namespace key } userErrors { field message code } } }",
+  "product_metafield_definition_variables": {
+    "definition": {
+      "name": "TA VIE｜写真の切り替え",
+      "namespace": "ta_vie",
+      "key": "views",
+      "description": "この商品の写真と細部の項目を最大8件、表示順に選択。各項目の所有商品もこの商品と一致させてください。",
+      "ownerType": "PRODUCT",
+      "type": "list.metaobject_reference",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      },
+      "validations": [
+        {
+          "name": "metaobject_definition_id",
+          "value": "REPLACE_WITH_GID_TA_VIE_PRODUCT_VIEW"
+        },
+        {
+          "name": "list.max",
+          "value": "8"
+        }
+      ]
+    }
+  },
+  "runtime_guards": [
+    "Read from product.metafields.ta_vie.views.value; never use unowned or globally shared view content.",
+    "A configured view is eligible only when owner_product.value.id equals the displayed product.id, label is nonblank, and image.value exists or video.value.media_type equals video.",
+    "Render at most 8 eligible owned views. If no eligible owned view remains, use at most 6 native images belonging to this same product.",
+    "Native-image fallback has no invented description. Use a valid short alt value no longer than 48 characters unless equal to product.title; otherwise use numbered photo labels.",
+    "Show the detail entry only with a real detail_image; otherwise a native/common image can be opened for enlargement.",
+    "A photo hotspot requires show_hotspot.value true, detail_image, a common main image and no selected video. Clamp x and y to 0..100.",
+    "When mobile_image differs from the common image, suppress the common-image hotspot on that mobile image. Keep the detail button available.",
+    "Do not render empty public media containers or unavailable-view placeholder copy.",
+    "Use native controlled, user-started video with preload none; error fallback uses a real poster or matching image."
+  ],
+  "optional_existing_content": {
+    "product_metafield": "ta_vie.feature",
+    "guide": "../product-content-model.md",
+    "review_definitions": "../ta-vie-metaobject-definitions.json",
+    "types": [
+      "ta_vie_product_feature",
+      "ta_vie_product_detail",
+      "ta_vie_product_scene",
+      "ta_vie_product_size"
+    ],
+    "note": "These existing optional story types are not recreated by this file. Reuse definitions after checking compatibility and owner_product guards.",
+    "legacy_details": {
+      "field": "ta_vie.feature.details",
+      "type": "ta_vie_product_detail",
+      "status": "Preserved, but not rendered by the new luxury product world. Copy confirmed detail images and descriptions into each product-owned ta_vie_product_view when reusing them."
+    },
+    "active_story_fields": [
+      "reason_heading",
+      "reason_body",
+      "reason_image",
+      "reason_mobile_image",
+      "material_heading",
+      "material_body",
+      "material_image",
+      "material_mobile_image",
+      "material_video",
+      "scenes",
+      "fit_body",
+      "size_rows",
+      "care_body",
+      "making_body"
+    ]
+  },
+  "review_notes": [
+    "Send only the selected operation and its variables to Shopify Admin GraphQL, not this whole review artifact.",
+    "Do not delete or recreate an existing definition or assigned values automatically. Follow pageInfo pagination when reviewing existing definitions.",
+    "Replace the placeholder with the real metaobject definition ID before creating the product metafield. No real product assignments, entry values, images, credentials or definition IDs are embedded.",
+    "Check the supported Admin API version, required access scopes, field validations and every returned userErrors result before considering an operation successful.",
+    "PUBLIC_READ allows storefront reading; it does not publish the theme or a product. Publishable entries must separately have ACTIVE status.",
+    "The required owner_product and label fields do not require all photo/detail fields. The theme additionally checks that usable media exists.",
+    "This file deliberately defines only the new view type and product views list. Optional existing story types are documented separately."
+  ]
+}

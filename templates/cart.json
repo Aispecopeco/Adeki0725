@@ -5,13 +5,15 @@
       "blocks": {
         "cart-message": {
           "type": "cart-message",
-          "settings": {}
+          "settings": {},
+          "disabled": true
         },
         "free-shipping": {
           "type": "free-shipping",
           "settings": {
             "message": "You are ||amount|| away from free shipping."
-          }
+          },
+          "disabled": true
         },
         "order-note": {
           "type": "order-note",
@@ -39,7 +41,9 @@
         "checkout-buttons",
         "upsell-products"
       ],
-      "settings": {}
+      "settings": {
+        "color_scheme": "scheme-tavie-white"
+      }
     }
   },
   "order": [

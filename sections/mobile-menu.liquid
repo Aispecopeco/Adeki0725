@@ -387,6 +387,16 @@
         <div class="drawer__content" data-drawer-content>
           <div class="drawer__content__scroll" data-scroll-lock-scrollable>
             {{ dynamic_blocks }}
+            {%- capture page_links -%}
+              {%- render 'ta-vie-page-links', location: 'mobile', menu_blocks: section.blocks -%}
+            {%- endcapture -%}
+            {%- if page_links != blank -%}
+              <div class="mobile-menu__block mobile-menu__block--menu block-padding" data-mobile-menu-block style="--block-padding-bottom: 14px;">
+                <nav class="drawer__menu" data-sliderule-pane="0" aria-label="読みものとご案内">
+                  <div class="drawer__main-menu body-x-large" data-links>{{ page_links }}</div>
+                </nav>
+              </div>
+            {%- endif -%}
           </div>
         </div>
       </div>

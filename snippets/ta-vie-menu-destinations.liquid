@@ -1,0 +1,13 @@
+{%- doc -%}
+  Collect menu destinations, including nested links, to avoid duplicate navigation.
+  @param {link[]} [links] - Existing menu links.
+{%- enddoc -%}
+{%- for menu_link in links -%}
+  |{{- menu_link.url -}}|
+  {%- if menu_link.type == 'page_link' or menu_link.type == 'blog_link' -%}
+    |{{- menu_link.type -}}:{{- menu_link.object.id -}}|
+  {%- endif -%}
+  {%- if menu_link.links.size > 0 -%}
+    {%- render 'ta-vie-menu-destinations', links: menu_link.links -%}
+  {%- endif -%}
+{%- endfor -%}

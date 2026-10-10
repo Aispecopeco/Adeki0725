@@ -1,0 +1,147 @@
+{
+  "status": "passed",
+  "createdAt": "2026-10-10T14:06:55.308Z",
+  "coldJavaScript": {
+    "delayMs": 1800,
+    "measurements": [
+      {
+        "width": 1440,
+        "before": {
+          "height": 1155.703125,
+          "titleY": 368.96875,
+          "enhanced": false
+        },
+        "after": {
+          "height": 1155.703125,
+          "titleY": 368.96875,
+          "enhanced": true,
+          "shifts": [
+            {
+              "value": 0.000011682098765432098,
+              "sources": [
+                "toolbar__utilities",
+                "::before"
+              ]
+            },
+            {
+              "value": 0.008497222222222222,
+              "sources": [
+                "main-content"
+              ]
+            }
+          ]
+        },
+        "heightDelta": 0,
+        "titleDelta": 0,
+        "observedLayoutShiftSum": 0.008508904320987654,
+        "explorerEnhancementLayoutShift": 0
+      },
+      {
+        "width": 390,
+        "before": {
+          "height": 714.953125,
+          "titleY": 1110.296875,
+          "enhanced": false
+        },
+        "after": {
+          "height": 714.953125,
+          "titleY": 1110.296875,
+          "enhanced": true,
+          "shifts": [
+            {
+              "value": 0.00006893894497497292,
+              "sources": [
+                "toolbar__utilities"
+              ]
+            },
+            {
+              "value": 0.017779531007838998,
+              "sources": [
+                "main-content"
+              ]
+            }
+          ]
+        },
+        "heightDelta": 0,
+        "titleDelta": 0,
+        "observedLayoutShiftSum": 0.017848469952813972,
+        "explorerEnhancementLayoutShift": 0
+      }
+    ],
+    "scope": "Artificial 1.8-second delay of explorer JavaScript with native Broadcast assets; gallery geometry and first heading do not move when enhanced. Total shifts include pre-existing header/initial page settlement and are local fixtures, not field measurements."
+  },
+  "assets": [
+    {
+      "file": "assets/ta-vie-luxury-explorer.css",
+      "bytes": 10757,
+      "gzipBytes": 2486,
+      "sha256": "c2e7b914e8962a341f57fd662b27378c40459e29ead666d079588ae262468b65"
+    },
+    {
+      "file": "assets/ta-vie-luxury-explorer.js",
+      "bytes": 20399,
+      "gzipBytes": 5135,
+      "sha256": "000bca5cc8eab0ca3a3246e999c375474ae7bd5931eec2f9f0914572b754c3c6"
+    },
+    {
+      "file": "assets/ta-vie-luxury-home.css",
+      "bytes": 13561,
+      "gzipBytes": 2815,
+      "sha256": "2b75933c9ec50574e95477f10bf41574c7af7672be978280817d50b9c56138a5"
+    },
+    {
+      "file": "assets/ta-vie-luxury-home.js",
+      "bytes": 8449,
+      "gzipBytes": 2239,
+      "sha256": "dfa943f21505f0934adfa4f766902a0442431413b9d907d5ad06b7e01d087916"
+    },
+    {
+      "file": "assets/ta-vie-luxury-purchase.css",
+      "bytes": 7839,
+      "gzipBytes": 1763,
+      "sha256": "03c5e7e9ae16df515f9d96b2686e94aa5672a0411133488390434a82865e6853"
+    },
+    {
+      "file": "assets/ta-vie-luxury.css",
+      "bytes": 4448,
+      "gzipBytes": 1316,
+      "sha256": "c5b122ccbaa99b330ea97acec329504afe9620f0902578f80505d7be17be3bb7"
+    },
+    {
+      "file": "assets/ta-vie-product-world.css",
+      "bytes": 10186,
+      "gzipBytes": 2523,
+      "sha256": "aafcdd0bf545a26496209a94cb39c23bee6d978d02e062a00c4194dd2788e481"
+    },
+    {
+      "file": "assets/ta-vie-product-world.js",
+      "bytes": 11175,
+      "gzipBytes": 3068,
+      "sha256": "6b7cd093d324b371bb17b84e1308ab6df485c94655e1574183ff936070b0bcee"
+    }
+  ],
+  "addedJavaScript": {
+    "files": 3,
+    "bytes": 40023,
+    "gzipBytes": 10442
+  },
+  "addedCss": {
+    "files": 5,
+    "bytes": 46791,
+    "gzipBytes": 10903
+  },
+  "originalAssetsUnchanged": 127,
+  "imagePolicy": {
+    "firstImageLoading": "eager",
+    "firstImageFetchPriority": "high",
+    "otherImagesLoading": "lazy",
+    "responsiveSizesAndSrcset": true,
+    "intrinsicWidthAndHeight": true,
+    "objectFit": "contain",
+    "note": "Neutral SVG fixtures verify markup and geometry; Shopify CDN bandwidth, actual photographic LCP and cropping are unverified."
+  },
+  "limitations": [
+    "No authenticated merchant product media or live performance profile available.",
+    "Short video playback and real-device iOS gesture testing remain unverified because no actual video or physical device is available."
+  ]
+}

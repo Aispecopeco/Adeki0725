@@ -1658,9 +1658,18 @@
         "label": "見出しの書体",
         "info": "ホームのブランド文章だけに適用します。システム書体は端末によって表示が異なります。",
         "options": [
-          { "value": "serif", "label": "明朝・セリフ" },
-          { "value": "sans", "label": "ゴシック・サンセリフ" },
-          { "value": "theme", "label": "Broadcastの設定を使う" }
+          {
+            "value": "serif",
+            "label": "明朝・セリフ"
+          },
+          {
+            "value": "sans",
+            "label": "ゴシック・サンセリフ"
+          },
+          {
+            "value": "theme",
+            "label": "Broadcastの設定を使う"
+          }
         ],
         "default": "serif"
       },
@@ -1692,6 +1701,106 @@
         "step": 1,
         "unit": "px",
         "default": 12
+      }
+    ]
+  },
+  {
+    "name": "TA VIE｜上質な装い",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "ta_vie_luxury_enable",
+        "label": "TA VIEの配色・文字組みを使う",
+        "default": true
+      },
+      {
+        "type": "select",
+        "id": "ta_vie_heading_style",
+        "label": "見出しの書体",
+        "options": [
+          {
+            "value": "serif",
+            "label": "細めの明朝体"
+          },
+          {
+            "value": "sans",
+            "label": "読みやすいゴシック体"
+          }
+        ],
+        "default": "serif"
+      },
+      {
+        "type": "range",
+        "id": "ta_vie_body_size",
+        "label": "日本語本文の文字サイズ",
+        "min": 14,
+        "max": 18,
+        "step": 1,
+        "unit": "px",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "ta_vie_motion_duration",
+        "label": "写真とパネルの切り替え時間",
+        "min": 200,
+        "max": 400,
+        "step": 20,
+        "unit": "ms",
+        "default": 280
+      }
+    ]
+  },
+  {
+    "name": "TA VIE｜ページへのリンク",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "ta_vie_navigation_links",
+        "label": "メニューにブログ・FAQを表示",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "ta_vie_home_links",
+        "label": "ホームにブログ・FAQのボタンを表示",
+        "default": true
+      },
+      {
+        "type": "blog",
+        "id": "ta_vie_blog",
+        "label": "ブログのリンク先",
+        "info": "既存のブログを選択します。未選択時は既存のnewsブログを使います。リンクは記事0件でも表示します。ホームの記事欄のブログは、そのセクションでも選択できます。"
+      },
+      {
+        "type": "url",
+        "id": "ta_vie_blog_url",
+        "label": "ブログのリンク先URL（任意）",
+        "info": "入力したURLをブログのリンク先として優先します。上のブログ選択だけで設定できる場合は空欄にしてください。記事欄のブログ選択には影響しません。"
+      },
+      {
+        "type": "page",
+        "id": "ta_vie_faq_page",
+        "label": "FAQページ",
+        "info": "既存のFAQページを選択します。未選択時はfaqページ、またはfaqテンプレートを使うページを探します。"
+      },
+      {
+        "type": "url",
+        "id": "ta_vie_faq_url",
+        "label": "FAQのリンク先URL（任意）",
+        "info": "入力したURLをFAQのリンク先として優先します。上のページ選択だけで設定できる場合は空欄にしてください。"
+      },
+      {
+        "type": "text",
+        "id": "ta_vie_blog_label",
+        "label": "ブログへのリンク名",
+        "default": "ブログ"
+      },
+      {
+        "type": "text",
+        "id": "ta_vie_faq_label",
+        "label": "FAQへのリンク名",
+        "default": "よくあるご質問"
       }
     ]
   }

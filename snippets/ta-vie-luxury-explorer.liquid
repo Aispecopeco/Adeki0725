@@ -1,0 +1,194 @@
+{%- comment -%}
+  An independently owned product photo experience.
+  Inputs: product, explorer_id (unique per rendered instance), eager, context.
+  Assets are loaded once by the containing section or layout.
+  ta_vie.views is a list of ta_vie_product_view metaobjects. A view must name
+  this exact owner_product, have a label, and contain a real image or video.
+{%- endcomment -%}
+{%- liquid
+  assign explorer_key = explorer_id | default: product.id | append: '-' | append: product.id | handleize
+  assign owned_views = product.metafields.ta_vie.views.value
+  assign eligible_count = 0
+  for owned_view in owned_views
+    assign owned_video = owned_view.video.value
+    assign has_owned_image = false
+    if owned_view.image.value and owned_view.image.value != blank
+      assign has_owned_image = true
+    endif
+    if owned_view.owner_product.value.id == product.id and owned_view.label.value and owned_view.label.value != blank
+      if has_owned_image or owned_video.media_type == 'video'
+        assign eligible_count = eligible_count | plus: 1
+        if eligible_count == 8
+          break
+        endif
+      endif
+    endif
+  endfor
+  assign using_owned_views = false
+  assign view_source = product.images
+  assign total_views = product.images.size | at_most: 6
+  if eligible_count > 0
+    assign using_owned_views = true
+    assign view_source = owned_views
+    assign total_views = eligible_count
+  endif
+  assign view_index = 0
+  assign explorer_tabs = ''
+  assign explorer_panels = ''
+-%}
+{%- if total_views > 0 and product.id != blank -%}
+  {%- for view in view_source -%}
+    {%- liquid
+      assign view_image = ''
+      assign mobile_image = ''
+      assign view_video = ''
+      assign detail_image = ''
+      assign view_heading = ''
+      assign view_body = ''
+      assign detail_heading = ''
+      assign detail_body = ''
+      assign show_hotspot = false
+      assign eligible = true
+      assign mobile_different = false
+      if using_owned_views
+        assign eligible = false
+        assign has_owned_image = false
+        if view.image.value and view.image.value != blank
+          assign has_owned_image = true
+        endif
+        if view.owner_product.value.id == product.id and view.label.value and view.label.value != blank
+          if has_owned_image or view.video.value.media_type == 'video'
+            assign eligible = true
+          endif
+        endif
+        assign view_image = view.image.value | default: ''
+        assign mobile_image = view.mobile_image.value | default: ''
+        if view.video.value.media_type == 'video'
+          assign view_video = view.video.value
+        endif
+        assign view_label = view.label.value
+        assign view_heading = view.heading.value | default: ''
+        assign view_body = view.body | default: ''
+        assign detail_image = view.detail_image.value | default: ''
+        assign detail_heading = view.detail_heading.value | default: ''
+        assign detail_body = view.detail_body | default: ''
+        if detail_image != blank and view_image != blank and view_video == blank and view.show_hotspot.value == true
+          assign show_hotspot = true
+        endif
+        if mobile_image != blank and mobile_image.id != view_image.id
+          assign mobile_different = true
+        endif
+      else
+        assign view_image = view
+        assign image_alt_length = view.alt | size
+        assign view_label = ''
+        if view.alt != blank and view.alt != product.title and image_alt_length <= 48
+          assign view_label = view.alt
+        endif
+      endif
+      if eligible == false
+        continue
+      endif
+      if view_index >= total_views
+        break
+      endif
+      assign view_index = view_index | plus: 1
+      assign view_number = view_index | prepend: '0' | slice: -2, 2
+      if view_label == blank
+        assign view_label = '写真 ' | append: view_number
+      endif
+      assign panel_key = explorer_key | append: '-view-' | append: view_index
+      assign load_mode = 'lazy'
+      assign image_priority = 'auto'
+      if eager and view_index == 1
+        assign load_mode = 'eager'
+        assign image_priority = 'high'
+      endif
+      assign photo_alt = view_image.alt | default: product.title
+      assign detail_alt = detail_image.alt | default: product.title
+      assign fallback_image = view_image | default: view_video.preview_image
+      assign zoom_image = detail_image | default: view_image
+    -%}
+    {%- capture view_tab -%}
+      <button type="button" class="ta-vie-explorer__tab" id="{{ panel_key }}-tab" role="tab" aria-controls="{{ panel_key }}" aria-selected="{% if view_index == 1 %}true{% else %}false{% endif %}" tabindex="{% if view_index == 1 %}0{% else %}-1{% endif %}" data-tv-explorer-tab data-view-index="{{ view_index | minus: 1 }}">{{ view_label | escape }}</button>
+    {%- endcapture -%}
+    {%- assign explorer_tabs = explorer_tabs | append: view_tab -%}
+    {%- capture view_panel -%}
+      <section class="ta-vie-explorer__panel{% if view_index == 1 %} is-active{% endif %}" id="{{ panel_key }}" role="tabpanel" aria-labelledby="{{ panel_key }}-tab" tabindex="0" data-tv-explorer-panel data-view-label="{{ view_label | escape }}" data-view-index="{{ view_index | minus: 1 }}">
+        <div class="ta-vie-explorer__stage" data-tv-explorer-stage>
+          {%- if view_video != blank -%}
+            <div class="ta-vie-explorer__video" data-tv-explorer-video>
+              {{ view_video | video_tag: image_size: '1400x', controls: true, autoplay: false, loop: false, muted: false, playsinline: true, preload: 'none', class: 'ta-vie-explorer__video-element' }}
+              <button type="button" class="ta-vie-explorer__play" data-tv-explorer-play hidden aria-label="{{ view_label | escape }}の動画を再生"><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="m7 4 9 6-9 6Z" fill="currentColor"/></svg><span>動画を再生</span></button>
+            </div>
+            <div class="ta-vie-explorer__video-fallback" data-tv-explorer-video-fallback hidden>
+              {%- if fallback_image != blank -%}
+                {{ fallback_image | image_url: width: 1400 | image_tag: widths: '360, 540, 750, 1000, 1400', sizes: '(min-width: 990px) 50vw, 100vw', loading: 'lazy', class: 'ta-vie-explorer__image', alt: photo_alt }}
+              {%- else -%}
+                <p>動画を読み込めませんでした。</p>
+              {%- endif -%}
+            </div>
+          {%- else -%}
+            <picture class="ta-vie-explorer__picture">
+              {%- if mobile_image != blank -%}
+                <source media="(max-width: 749px)" srcset="{{ mobile_image | image_url: width: 360 }} 360w, {{ mobile_image | image_url: width: 540 }} 540w, {{ mobile_image | image_url: width: 750 }} 750w, {{ mobile_image | image_url: width: 1000 }} 1000w" sizes="100vw" width="{{ mobile_image.width }}" height="{{ mobile_image.height }}">
+              {%- endif -%}
+              {{ view_image | image_url: width: 1400 | image_tag: widths: '360, 540, 750, 1000, 1400', sizes: '(min-width: 990px) 50vw, 100vw', loading: load_mode, fetchpriority: image_priority, class: 'ta-vie-explorer__image', alt: photo_alt }}
+            </picture>
+            <p class="ta-vie-explorer__media-error" data-tv-explorer-image-error hidden>写真を読み込めませんでした。</p>
+          {%- endif -%}
+          {%- if show_hotspot -%}
+            <button type="button" class="ta-vie-explorer__hotspot" data-tv-explorer-hotspot data-hotspot-x="{{ view.hotspot_x.value | default: 50 | at_least: 0 | at_most: 100 }}" data-hotspot-y="{{ view.hotspot_y.value | default: 50 | at_least: 0 | at_most: 100 }}" data-mobile-different="{{ mobile_different }}" aria-label="{{ detail_heading | default: view_label | escape }}の細部を見る" hidden><span aria-hidden="true">＋</span></button>
+          {%- endif -%}
+        </div>
+        <div class="ta-vie-explorer__caption">
+          {%- if view_heading != blank -%}<h3 class="ta-vie-explorer__heading">{{ view_heading | escape }}</h3>{%- endif -%}
+          {%- if using_owned_views and view_body.value != blank -%}<div class="ta-vie-explorer__body">{{ view_body | metafield_tag }}</div>{%- endif -%}
+          {%- if zoom_image != blank -%}
+            <a class="ta-vie-explorer__detail" href="{{ zoom_image | image_url: width: 2400 }}" target="_blank" rel="noopener" data-tv-explorer-detail data-detail-mode="{% if detail_image != blank %}detail{% else %}zoom{% endif %}" data-detail-alt="{{ zoom_image.alt | default: product.title | escape }}" data-detail-width="{{ zoom_image.width }}" data-detail-height="{{ zoom_image.height }}"{% if detail_image == blank and mobile_image != blank %} data-mobile-zoom-url="{{ mobile_image | image_url: width: 2400 }}" data-mobile-zoom-alt="{{ mobile_image.alt | default: product.title | escape }}" data-mobile-zoom-width="{{ mobile_image.width }}" data-mobile-zoom-height="{{ mobile_image.height }}"{% endif %} aria-haspopup="dialog"><span>{% if detail_image != blank %}細部を見る{% else %}写真を拡大{% endif %}</span><svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 8V4h4M12 4h4v4M16 12v4h-4M8 16H4v-4" fill="none" stroke="currentColor" stroke-width="1.25"/></svg></a>
+          {%- endif -%}
+        </div>
+        {%- if detail_image != blank -%}
+          <details class="ta-vie-explorer__detail-fallback" data-tv-explorer-detail-fallback>
+            <summary>細部の写真と説明</summary>
+            <div class="ta-vie-explorer__detail-content" data-tv-explorer-detail-source>
+              {{ detail_image | image_url: width: 2000 | image_tag: widths: '540, 750, 1000, 1400, 2000', sizes: '(min-width: 990px) 50vw, 100vw', loading: 'lazy', class: 'ta-vie-explorer__detail-image', alt: detail_alt }}
+              {%- if detail_heading != blank -%}<h3 class="ta-vie-explorer__detail-heading">{{ detail_heading | escape }}</h3>{%- endif -%}
+              {%- if detail_body.value != blank -%}<div class="ta-vie-explorer__detail-body">{{ detail_body | metafield_tag }}</div>{%- endif -%}
+            </div>
+          </details>
+        {%- endif -%}
+      </section>
+    {%- endcapture -%}
+    {%- assign explorer_panels = explorer_panels | append: view_panel -%}
+  {%- endfor -%}
+  <ta-vie-luxury-explorer class="ta-vie-explorer" id="{{ explorer_key }}" data-product-id="{{ product.id }}" data-context="{{ context | default: 'product' | escape }}" data-product-title="{{ product.title | escape }}">
+    <noscript>
+      <style>
+        #{{ explorer_key }} .ta-vie-explorer__controls,
+        #{{ explorer_key }} .ta-vie-explorer__footer { display: none; }
+        #{{ explorer_key }} .ta-vie-explorer__panels { display: block; }
+        #{{ explorer_key }} .ta-vie-explorer__panel { visibility: visible; opacity: 1; pointer-events: auto; margin-bottom: 32px; }
+        #{{ explorer_key }} .ta-vie-explorer__detail-fallback { display: block; }
+      </style>
+    </noscript>
+    <div class="ta-vie-explorer__controls">
+      <div class="ta-vie-explorer__tabs" role="tablist" aria-label="{{ product.title | escape }}の写真" data-tv-explorer-tabs>{{ explorer_tabs }}</div>
+      {%- if total_views > 1 -%}
+        <div class="ta-vie-explorer__arrows">
+          <button type="button" class="ta-vie-explorer__arrow" data-tv-explorer-prev aria-label="前の写真"><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="m12 4-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.25"/></svg></button>
+          <button type="button" class="ta-vie-explorer__arrow" data-tv-explorer-next aria-label="次の写真"><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="m8 4 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.25"/></svg></button>
+        </div>
+      {%- endif -%}
+    </div>
+    <div class="ta-vie-explorer__panels">{{ explorer_panels }}</div>
+    <div class="ta-vie-explorer__footer"><span class="ta-vie-explorer__count" aria-hidden="true"><span data-tv-explorer-count>01</span> / {{ total_views | prepend: '0' | slice: -2, 2 }}</span>{%- if total_views > 1 -%}<span class="ta-vie-explorer__hint">写真を選んで見る</span>{%- endif -%}</div>
+    <p class="ta-vie-explorer__sr-only" role="status" aria-live="polite" aria-atomic="true" data-tv-explorer-status></p>
+    <dialog class="ta-vie-explorer__dialog" aria-label="{{ product.title | escape }}の写真を詳しく見る" data-tv-explorer-dialog>
+      <div class="ta-vie-explorer__dialog-frame">
+        <div class="ta-vie-explorer__dialog-header"><p>{{ product.title | escape }}</p><button type="button" class="ta-vie-explorer__close" data-tv-explorer-close aria-label="写真を閉じる"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" fill="none" stroke="currentColor" stroke-width="1.25"/></svg></button></div>
+        <div class="ta-vie-explorer__dialog-content" data-tv-explorer-dialog-content></div>
+      </div>
+    </dialog>
+  </ta-vie-luxury-explorer>
+{%- endif -%}

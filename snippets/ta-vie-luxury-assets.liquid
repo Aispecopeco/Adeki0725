@@ -1,0 +1,30 @@
+{%- comment -%}Shared assets are included once in the layout, never once per piece.{%- endcomment -%}
+{%- if settings.ta_vie_luxury_enable -%}
+{{ 'ta-vie-luxury.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign ta_vie_palette = settings.color_schemes['scheme-tavie-white'].settings
+  assign ta_vie_soft_palette = settings.color_schemes['scheme-tavie-soft'].settings
+-%}
+{%- style -%}
+  body[data-ta-vie-luxury-site] {
+    --ta-vie-paper: {{ ta_vie_palette.section_bg | default: '#f7f5f0' }};
+    --ta-vie-ink: {{ ta_vie_palette.section_text | default: '#292824' }};
+    --ta-vie-line: {{ ta_vie_palette.lines_and_border | default: '#d8d3c9' }};
+    --ta-vie-soft: {{ ta_vie_soft_palette.section_bg | default: '#e9e4dc' }};
+    --ta-vie-body-size: {{ settings.ta_vie_body_size | default: 16 }}px;
+    --ta-vie-duration: {{ settings.ta_vie_motion_duration | default: 280 }}ms;
+    {%- if settings.ta_vie_heading_style == 'sans' %}
+      --ta-vie-heading-font: var(--ta-vie-body-font);
+    {%- endif %}
+  }
+{%- endstyle -%}
+{%- endif -%}
+{%- if request.page_type == 'index' or request.page_type == 'product' or request.design_mode -%}
+  {{ 'ta-vie-luxury-explorer.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'ta-vie-luxury-explorer.js' | asset_url }}" defer></script>
+{%- endif -%}
+{%- if request.page_type == 'product' or request.design_mode -%}
+  {{ 'ta-vie-luxury-purchase.css' | asset_url | stylesheet_tag }}
+  {{ 'ta-vie-product-world.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'ta-vie-product-world.js' | asset_url }}" defer></script>
+{%- endif -%}

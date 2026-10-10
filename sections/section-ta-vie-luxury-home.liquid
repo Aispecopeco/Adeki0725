@@ -1,0 +1,221 @@
+{%- liquid
+  assign source_collection = section.settings.source_collection
+  if source_collection.id == blank and source_collection != blank
+    assign source_collection = collections[source_collection]
+  endif
+  if source_collection == blank
+    assign source_collection = collections.all
+  endif
+  assign collection_url = source_collection.url | default: routes.all_products_collection_url
+  assign explicit_product_ids = '|'
+  for piece_block in section.blocks
+    assign explicit_product = piece_block.settings.product
+    if explicit_product.id == blank and explicit_product != blank
+      assign explicit_product = all_products[explicit_product]
+    endif
+    if explicit_product.id != blank
+      assign explicit_product_ids = explicit_product_ids | append: explicit_product.id | append: '|'
+    endif
+  endfor
+  assign displayed_product_ids = '|'
+  assign piece_count = 0
+  assign piece_content = ''
+  assign piece_navigation = ''
+-%}
+
+{%- for block in section.blocks limit: 4 -%}
+  {%- liquid
+    assign piece_product = block.settings.product
+    if piece_product.id == blank and piece_product != blank
+      assign piece_product = all_products[piece_product]
+    endif
+    assign is_explicit_product = false
+    if piece_product.id != blank
+      assign is_explicit_product = true
+    elsif section.settings.use_collection_products
+      for candidate in source_collection.products
+        assign candidate_key = '|' | append: candidate.id | append: '|'
+        unless explicit_product_ids contains candidate_key or displayed_product_ids contains candidate_key
+          assign piece_product = candidate
+          break
+        endunless
+      endfor
+    endif
+    assign product_key = '|' | append: piece_product.id | append: '|'
+  -%}
+
+  {%- if piece_product.id != blank -%}
+    {%- unless displayed_product_ids contains product_key -%}
+      {%- liquid
+        assign displayed_product_ids = displayed_product_ids | append: piece_product.id | append: '|'
+        assign piece_count = piece_count | plus: 1
+        assign piece_id = 'piece-' | append: piece_product.handle
+        assign explorer_id = 'TaVieHome-' | append: section.id | append: '-' | append: block.id
+        assign selected_variant = piece_product.selected_or_first_available_variant
+        assign piece_url = piece_product.url
+        if selected_variant.id != blank
+          assign piece_url = piece_url | append: '?variant=' | append: selected_variant.id
+        endif
+        assign piece_price = selected_variant.price | default: piece_product.price | money
+        assign purchase_url = piece_url | append: '#TaViePurchase-' | append: piece_product.id
+        if piece_count == 1
+          assign first_piece_title = piece_product.title
+          assign first_piece_price = piece_price
+          assign first_purchase_url = purchase_url
+        endif
+        assign feature = piece_product.metafields.ta_vie.feature.value
+        assign owned_feature = false
+        if feature.owner_product.value.id == piece_product.id
+          assign owned_feature = true
+        endif
+        assign piece_title = piece_product.title
+        assign piece_lead = ''
+        assign custom_body = blank
+        if is_explicit_product
+          assign piece_title = block.settings.title | default: piece_product.title
+          assign piece_lead = block.settings.lead
+          assign custom_body = block.settings.body
+        endif
+        if piece_lead == blank and owned_feature
+          assign piece_lead = feature.lead.value
+        endif
+        assign navigation_image = piece_product.featured_image | default: piece_product.images.first
+        if navigation_image == blank
+          for view in piece_product.metafields.ta_vie.views.value limit: 8
+            if view.owner_product.value.id == piece_product.id and view.label.value != blank
+              assign navigation_image = view.image.value | default: view.video.value.preview_image
+              if navigation_image != blank
+                break
+              endif
+            endif
+          endfor
+        endif
+        assign eager_media = false
+        if piece_count == 1
+          assign eager_media = true
+        endif
+      -%}
+      {%- capture explorer_markup -%}
+        {%- render 'ta-vie-luxury-explorer', product: piece_product, explorer_id: explorer_id, eager: eager_media, context: 'home' -%}
+      {%- endcapture -%}
+      {%- assign explorer_markup = explorer_markup | strip -%}
+      {%- capture piece_navigation -%}
+        {{- piece_navigation -}}
+        <a class="ta-vie-luxury-home__nav-link{% if piece_count == 1 %} is-current{% endif %}" href="#{{ piece_id }}" data-luxury-piece-link data-product-id="{{ piece_product.id }}" data-luxury-product-name="{{ piece_product.title | escape }}" data-luxury-product-price="{{ piece_price | escape }}" data-luxury-product-purchase-url="{{ purchase_url }}"{% if piece_count == 1 %} aria-current="true"{% endif %}>
+          {%- if navigation_image != blank -%}
+            {{ navigation_image | image_url: width: 160 | image_tag: widths: '80, 120, 160', sizes: '56px', loading: 'lazy', class: 'ta-vie-luxury-home__nav-image', alt: '' }}
+          {%- endif -%}
+          <span class="ta-vie-luxury-home__nav-label"><span class="ta-vie-luxury-home__nav-number">0{{ piece_count }}</span><span>{{ piece_product.title | escape }}</span></span>
+        </a>
+      {%- endcapture -%}
+      {%- capture piece_content -%}
+        {{- piece_content -}}
+        <article id="{{ piece_id }}" class="ta-vie-luxury-home__piece ta-vie-luxury-home__piece--{% if piece_count == 1 %}hero{% elsif piece_count == 2 or piece_count == 4 %}reverse{% else %}quiet{% endif %}{% if explorer_markup == blank %} ta-vie-luxury-home__piece--text{% endif %}" data-luxury-piece data-product-id="{{ piece_product.id }}" aria-labelledby="{{ explorer_id }}-Title" {{ block.shopify_attributes }}>
+          {%- if explorer_markup != blank -%}
+            <div class="ta-vie-luxury-home__media">{{ explorer_markup }}</div>
+          {%- endif -%}
+          <div class="ta-vie-luxury-home__content">
+            {%- if piece_count == 1 -%}
+              <div class="ta-vie-luxury-home__brand">
+                <p class="ta-vie-luxury-home__eyebrow">TA VIE</p>
+                {%- if section.settings.heading != blank -%}<h1 class="ta-vie-luxury-home__heading">{{ section.settings.heading | escape }}</h1>{%- endif -%}
+                {%- if section.settings.introduction != blank -%}<div class="ta-vie-luxury-home__introduction">{{ section.settings.introduction }}</div>{%- endif -%}
+              </div>
+            {%- endif -%}
+            <div class="ta-vie-luxury-home__product-summary">
+              <p class="ta-vie-luxury-home__index"><span>0{{ piece_count }}</span><span class="ta-vie-luxury-home__index-line" aria-hidden="true"></span><span>この一着を、知る。</span></p>
+              <h2 id="{{ explorer_id }}-Title" class="ta-vie-luxury-home__title"><a href="{{ piece_url }}">{{ piece_title | escape }}</a></h2>
+              {%- if piece_lead != blank -%}<p class="ta-vie-luxury-home__lead">{{ piece_lead | escape }}</p>{%- endif -%}
+              {%- if custom_body != blank -%}
+                <div class="ta-vie-luxury-home__story">{{ custom_body }}</div>
+              {%- elsif owned_feature and feature.reason_body.value != blank -%}
+                <div class="ta-vie-luxury-home__story">{{ feature.reason_body | metafield_tag }}</div>
+              {%- elsif piece_product.description != blank -%}
+                <p class="ta-vie-luxury-home__description">{{ piece_product.description | strip_html | strip | truncate: 180 }}</p>
+              {%- endif -%}
+              <div class="ta-vie-luxury-home__purchase">
+                <div class="ta-vie-luxury-home__price">
+                  <span>{{ piece_price }}</span>
+                  {%- unless piece_product.available -%}<span class="ta-vie-luxury-home__stock">{{ 'products.product.sold_out' | t }}</span>{%- endunless -%}
+                </div>
+                <a class="ta-vie-luxury-home__detail-link" href="{{ piece_url }}"><span>この一着を詳しく見る</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.2"/></svg></a>
+                {%- if piece_product.available -%}<a class="ta-vie-luxury-home__size-link" href="{{ purchase_url }}">色・サイズを選ぶ</a>{%- endif -%}
+              </div>
+              {%- if owned_feature and feature.material_body.value != blank -%}
+                <details class="ta-vie-luxury-home__material"><summary>{{ feature.material_heading.value | default: '素材について' | escape }}<span aria-hidden="true">＋</span></summary><div>{{ feature.material_body | metafield_tag }}</div></details>
+              {%- endif -%}
+            </div>
+          </div>
+        </article>
+      {%- endcapture -%}
+    {%- endunless -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- render 'stylesheet', name: 'ta-vie-luxury-home.css', blocking: true, async: false, inline: false -%}
+<script src="{{ 'ta-vie-luxury-home.js' | asset_url }}" defer="defer"></script>
+{%- style -%}
+  #TaVieLuxuryHome-{{ section.id }} {
+    --ta-vie-home-padding-top: {{ section.settings.padding_top }}px;
+    --ta-vie-home-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --ta-vie-explorer-ratio: {% if section.settings.media_ratio == 'landscape' %}5 / 4{% else %}4 / 5{% endif %};
+  }
+{%- endstyle -%}
+<ta-vie-luxury-home id="TaVieLuxuryHome-{{ section.id }}" class="ta-vie-luxury-home color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}" data-section-type="ta-vie-luxury-home">
+  {%- if piece_count > 0 -%}
+    {%- if section.settings.show_navigation -%}
+      <nav class="ta-vie-luxury-home__navigation" aria-label="一着ごとの特集" data-luxury-home-nav>
+        <div class="ta-vie-luxury-home__navigation-inner"><div class="ta-vie-luxury-home__navigation-pieces">{{ piece_navigation }}</div><a class="ta-vie-luxury-home__all-link" href="{{ collection_url }}">すべての一着<span aria-hidden="true">↗</span></a></div>
+        <div class="ta-vie-luxury-home__current-product" data-luxury-current-product aria-label="閲覧中の一着"><div class="ta-vie-luxury-home__current-summary"><span class="ta-vie-luxury-home__current-name" data-luxury-current-name>{{ first_piece_title | escape }}</span><span class="ta-vie-luxury-home__current-price" data-luxury-current-price>{{ first_piece_price }}</span></div><a class="ta-vie-luxury-home__current-link" href="{{ first_purchase_url }}" data-luxury-current-link>詳細・サイズ<span aria-hidden="true">↗</span></a></div>
+        <noscript><style>#TaVieLuxuryHome-{{ section.id }} .ta-vie-luxury-home__current-product { display: none; }</style></noscript>
+      </nav>
+    {%- endif -%}
+    <div class="ta-vie-luxury-home__pieces">{{ piece_content }}</div>
+  {%- else -%}
+    <div class="ta-vie-luxury-home__empty-brand">
+      <p class="ta-vie-luxury-home__eyebrow">TA VIE</p>
+      {%- if section.settings.heading != blank -%}<h1 class="ta-vie-luxury-home__heading">{{ section.settings.heading | escape }}</h1>{%- endif -%}
+      {%- if section.settings.introduction != blank -%}<div class="ta-vie-luxury-home__introduction">{{ section.settings.introduction }}</div>{%- endif -%}
+      <a class="ta-vie-luxury-home__detail-link" href="{{ collection_url }}">すべての一着を見る<span aria-hidden="true">↗</span></a>
+      {%- if request.design_mode -%}<p class="ta-vie-luxury-home__editor-note">「紹介する一着」で商品を選ぶか、商品が公開されているコレクションを選んでください。写真や説明は、その商品に登録された内容を表示します。</p>{%- endif -%}
+    </div>
+  {%- endif -%}
+  {%- if section.settings.show_french_quote and section.settings.french_quote != blank -%}
+    <div class="ta-vie-luxury-home__closing"><details class="ta-vie-luxury-home__manifesto"><summary>TA VIEの想い<span aria-hidden="true">＋</span></summary><blockquote lang="fr">{{ section.settings.french_quote | escape }}</blockquote></details><a class="ta-vie-luxury-home__all-link" href="{{ collection_url }}">すべての一着へ<span aria-hidden="true">↗</span></a></div>
+  {%- endif -%}
+</ta-vie-luxury-home>
+
+{% schema %}
+{
+  "name": "TA VIE｜一着を知る",
+  "tag": "section",
+  "class": "section-ta-vie-luxury-home",
+  "max_blocks": 4,
+  "enabled_on": {"templates": ["index"]},
+  "settings": [
+    {"type": "header", "content": "ブランドの入口"},
+    {"type": "text", "id": "heading", "label": "ブランドの見出し", "default": "家で過ごす私にも、ふさわしい一着を。"},
+    {"type": "richtext", "id": "introduction", "label": "ブランドの短い紹介", "default": "<p>気を抜ける時間にも、自分を大切にする装いを。長くそばに置きたい一着を、TA VIEで。</p>"},
+    {"type": "checkbox", "id": "show_french_quote", "label": "TA VIEの想いを表示", "default": true},
+    {"type": "textarea", "id": "french_quote", "label": "フランス語のブランドメッセージ", "info": "ページ末尾で開いて読める文章です。"},
+    {"type": "header", "content": "紹介する商品"},
+    {"type": "collection", "id": "source_collection", "label": "自動選択するコレクション", "info": "未選択の場合は公開中の全商品から選びます。各ブロックで指定した商品が優先されます。"},
+    {"type": "checkbox", "id": "use_collection_products", "label": "商品が未選択の枠を自動で設定", "default": true, "info": "選択済みの商品と重複しないよう、コレクションの順序で最大4着を紹介します。"},
+    {"type": "checkbox", "id": "show_navigation", "label": "写真付きの商品ナビを表示", "default": true},
+    {"type": "select", "id": "media_ratio", "label": "写真エリアの比率", "default": "portrait", "options": [{"value": "portrait", "label": "縦長（4：5）"}, {"value": "landscape", "label": "横長（5：4）"}], "info": "写真全体を見せます。実際の画像の周囲に余白が入る場合があります。"},
+    {"type": "header", "content": "配色と余白"},
+    {"type": "color_scheme", "id": "color_scheme", "label": "配色", "default": "scheme-tavie-white"},
+    {"type": "range", "id": "padding_top", "label": "上の余白", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 24},
+    {"type": "range", "id": "padding_bottom", "label": "下の余白", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64}
+  ],
+  "blocks": [{
+    "type": "piece", "name": "紹介する一着", "settings": [
+      {"type": "product", "id": "product", "label": "この枠の商品", "info": "未選択ならコレクションから自動で選びます。写真と価格は実際の商品データに連動します。"},
+      {"type": "text", "id": "title", "label": "特集用の見出し", "info": "商品を明示的に選んだ場合だけ使用します。空欄なら実際の商品名を表示します。"},
+      {"type": "text", "id": "lead", "label": "この一着の短いコピー", "info": "選択した商品の確認済みの魅力を入力。空欄なら、この商品専用の特集コピーを使用します。"},
+      {"type": "richtext", "id": "body", "label": "この一着の紹介文", "info": "選択した商品だけに使われます。空欄なら商品専用の特集本文、または商品説明を表示します。写真切替・細部は商品のTA VIE写真ビューで管理します。"}
+    ]
+  }],
+  "presets": [{"name": "TA VIE｜一着を知る", "blocks": [{"type": "piece"}, {"type": "piece"}, {"type": "piece"}, {"type": "piece"}]}]
+}
+{% endschema %}
