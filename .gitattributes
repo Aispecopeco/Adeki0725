@@ -1,3 +1,4 @@
 # Generated review artifacts retain Broadcast source whitespace.
 delivery/luxury-experience/interactive-preview/** linguist-generated=true -whitespace
 delivery/luxury-experience/interactive-preview.html linguist-generated=true -diff -whitespace
+delivery/home-composition-fix-20261010/interactive-preview.html linguist-generated=true -diff -whitespace

@@ -118,7 +118,7 @@
             {%- if piece_count == 1 -%}
               <div class="ta-vie-luxury-home__brand">
                 <p class="ta-vie-luxury-home__eyebrow">TA VIE</p>
-                {%- if section.settings.heading != blank -%}<h1 class="ta-vie-luxury-home__heading">{{ section.settings.heading | escape }}</h1>{%- endif -%}
+                {%- if section.settings.heading != blank -%}<{{ section.settings.heading_tag | default: 'h1' }} class="ta-vie-luxury-home__heading">{{ section.settings.heading | escape }}</{{ section.settings.heading_tag | default: 'h1' }}>{%- endif -%}
                 {%- if section.settings.introduction != blank -%}<div class="ta-vie-luxury-home__introduction">{{ section.settings.introduction }}</div>{%- endif -%}
               </div>
             {%- endif -%}
@@ -161,6 +161,7 @@
     --ta-vie-explorer-ratio: {% if section.settings.media_ratio == 'landscape' %}5 / 4{% else %}4 / 5{% endif %};
   }
 {%- endstyle -%}
+{%- if section.settings.anchor_id != blank -%}<div id="{{ section.settings.anchor_id | handleize }}" class="ta-vie-luxury-home__anchor" aria-hidden="true"></div>{%- endif -%}
 <ta-vie-luxury-home id="TaVieLuxuryHome-{{ section.id }}" class="ta-vie-luxury-home color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}" data-section-type="ta-vie-luxury-home">
   {%- if piece_count > 0 -%}
     {%- if section.settings.show_navigation -%}
@@ -174,7 +175,7 @@
   {%- else -%}
     <div class="ta-vie-luxury-home__empty-brand">
       <p class="ta-vie-luxury-home__eyebrow">TA VIE</p>
-      {%- if section.settings.heading != blank -%}<h1 class="ta-vie-luxury-home__heading">{{ section.settings.heading | escape }}</h1>{%- endif -%}
+      {%- if section.settings.heading != blank -%}<{{ section.settings.heading_tag | default: 'h1' }} class="ta-vie-luxury-home__heading">{{ section.settings.heading | escape }}</{{ section.settings.heading_tag | default: 'h1' }}>{%- endif -%}
       {%- if section.settings.introduction != blank -%}<div class="ta-vie-luxury-home__introduction">{{ section.settings.introduction }}</div>{%- endif -%}
       <a class="ta-vie-luxury-home__detail-link" href="{{ collection_url }}">すべての一着を見る<span aria-hidden="true">↗</span></a>
       {%- if request.design_mode -%}<p class="ta-vie-luxury-home__editor-note">「紹介する一着」で商品を選ぶか、商品が公開されているコレクションを選んでください。写真や説明は、その商品に登録された内容を表示します。</p>{%- endif -%}
@@ -195,6 +196,8 @@
   "settings": [
     {"type": "header", "content": "ブランドの入口"},
     {"type": "text", "id": "heading", "label": "ブランドの見出し", "default": "家で過ごす私にも、ふさわしい一着を。"},
+    {"type": "select", "id": "heading_tag", "label": "見出しの役割", "default": "h1", "options": [{"value": "h1", "label": "ページの主見出し（先頭で使用）"}, {"value": "h2", "label": "商品特集の見出し（ブランド紹介の後で使用）"}]},
+    {"type": "text", "id": "anchor_id", "label": "ページ内リンクの目印", "info": "半角英数字とハイフンで入力します。例：ta-vie-home-collection。ブランド入口のボタンから、この特集へ移動できます。ページ内で同じ目印を重複させないでください。"},
     {"type": "richtext", "id": "introduction", "label": "ブランドの短い紹介", "default": "<p>気を抜ける時間にも、自分を大切にする装いを。長くそばに置きたい一着を、TA VIEで。</p>"},
     {"type": "checkbox", "id": "show_french_quote", "label": "TA VIEの想いを表示", "default": true},
     {"type": "textarea", "id": "french_quote", "label": "フランス語のブランドメッセージ", "info": "ページ末尾で開いて読める文章です。"},

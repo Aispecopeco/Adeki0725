@@ -9,6 +9,18 @@
   assign show_arrows = section.settings.show_arrows
   assign slideshow_class = 'slideshow__slider'
   assign color_scheme = 'color-' | append: section.settings.color_scheme
+  assign slider_tag = 'slider-component'
+  assign ta_vie_home_composition = false
+  assign ta_vie_has_media = false
+  if request.page_type == 'index' and section.settings.ta_vie_home_composition
+    assign ta_vie_home_composition = true
+    for slide in section.blocks
+      if slide.settings.image != blank or slide.settings.mobile_image != blank or slide.settings.video != blank
+        assign ta_vie_has_media = true
+        break
+      endif
+    endfor
+  endif
 
   case section.settings.transition
     when 'slide'
@@ -29,6 +41,13 @@
   assign page_dots = false
   if settings.dots_style != 'hidden'
     assign page_dots = true
+  endif
+  if ta_vie_home_composition and section.blocks.size == 1
+    assign page_dots = false
+    assign show_arrows = false
+    if ta_vie_has_media == false
+      assign slider_tag = 'div'
+    endif
   endif
 
   capture content_blocks
@@ -60,15 +79,15 @@
 {%- render 'stylesheet', name: 'slideshow.css' -%}
 
 <div
-  class="index-hero slideshow {{ desktop_height }} {{ mobile_height }} section-padding {{ color_scheme }}"
+  class="index-hero slideshow {{ desktop_height }} {{ mobile_height }} section-padding {{ color_scheme }}{% if ta_vie_home_composition %} ta-vie-home-composition ta-vie-home-hero{% unless ta_vie_has_media %} ta-vie-home-hero--text-only{% endunless %}{% endif %}"
   data-section-id="{{ section.id }}"
   data-section-type="slideshow"
-  data-overlay-header
+  {% unless ta_vie_home_composition and ta_vie_has_media == false %}data-overlay-header{% endunless %}
   style="{{ style }}"
 >
   <div class="{{ section.settings.width }}">
     {%- if section.blocks.size > 0 -%}
-      <slider-component
+      <{{ slider_tag }}
         class="{{ slideshow_class }}"
         id="{{ section.id }}"
         data-slider="{{ section.id }}"
@@ -77,7 +96,7 @@
         data-dots="{{ settings.dots_style }}"
       >
         {{ content_blocks }}
-      </slider-component>
+      </{{ slider_tag }}>
     {%- endif -%}
 
     {%- if section.blocks.size == 0 -%}
@@ -95,6 +114,13 @@
   "class": "section-overlay-header",
   "blocks": [{"type": "_slide-image"}, {"type": "_slide-video"}, {"type": "@app"}],
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "ta_vie_home_composition",
+      "label": "TA VIEのホーム導入として表示",
+      "info": "ホームでのみ適用。写真が未設定のときは画像の仮枠を出さず、ブランドの文章を読みやすく表示します。写真設定後は通常のバナーになります。",
+      "default": false
+    },
     {
       "type": "select",
       "id": "transition",

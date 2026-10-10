@@ -7,7 +7,7 @@
 - 作業・検証：[ta-vie-luxury-experience-20261010](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-luxury-experience-20261010)
 - 反映前の保存先：[ta-vie-before-luxury-sync-20261010](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-before-luxury-sync-20261010)（`60cc2d4`）
 
-連携ブランチの更新前に、GitHub側に追加の変更がないことを確認しました。履歴を保持して作業ブランチの変更を取り込み、リポジトリ直下の445個のテーマファイルは検証済みのテーマZIPと一致します。
+連携ブランチの更新前に、GitHub側に追加の変更がないことを確認しました。履歴を保持して作業ブランチの変更を取り込みました。同日のホーム構成修正も同じ連携先へ反映しています。最新テーマファイルとZIPの一致確認、ホーム画像、編集手順は[ホーム修正版](../home-composition-fix-20261010/README.md)を参照してください。
 
 ## Shopifyで確認する場所
 

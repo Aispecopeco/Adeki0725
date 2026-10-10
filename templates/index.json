@@ -7,18 +7,18 @@
           "type": "_slide-image",
           "settings": {
             "link": "",
-            "flex_align_desktop": "align--bottom-left-desktop",
-            "flex_align_mobile": "align--middle-center-mobile",
+            "flex_align_desktop": "align--middle-left-desktop",
+            "flex_align_mobile": "align--middle-left-mobile",
             "show_text_background": false,
             "bg_color": "",
-            "color": "#ffffff",
-            "overlay_type": "text"
+            "color": "#292824",
+            "overlay_type": "disabled"
           },
           "blocks": {
             "heading_JxYXBt": {
               "type": "heading",
               "settings": {
-                "text": "あなたの毎日に、上質を。",
+                "text": "家で過ごす時間にも、自分らしい一着を。",
                 "heading_font_size": "heading-large",
                 "color": "",
                 "heading_tag": "h1",
@@ -29,8 +29,8 @@
             "text_L4brP6": {
               "type": "text",
               "settings": {
-                "text": "家で過ごす時間を、自分のために。TA VIEは、日々の暮らしを大切にするルームウェアを提案します。",
-                "text_font_size": "body-large",
+                "text": "気を抜ける時間にも、自分を大切にする装いを。TA VIEは、家で過ごす時間に目を向けるルームウェアブランドです。",
+                "text_font_size": "body-medium",
                 "padding_bottom": 8
               },
               "blocks": {}
@@ -39,26 +39,42 @@
               "type": "_group-buttons",
               "name": "Side by side buttons",
               "settings": {
-                "button_text": "ルームウェアを見る",
-                "button_type": "btn--black",
+                "button_text": "一着ずつ、詳しく見る",
+                "button_type": "btn--primary",
                 "button_size": "",
-                "button_style": "btn--solid",
-                "show_arrow": false,
+                "button_style": "btn--outline",
+                "show_arrow": true,
                 "button_secondary_text": "",
                 "button_secondary_type": "btn--white",
                 "button_secondary_size": "",
                 "button_secondary_style": "btn--solid",
                 "show_secondary_arrow": false,
-                "padding_bottom": 8
+                "padding_bottom": 8,
+                "button_url": "#ta-vie-home-collection"
               },
               "blocks": {},
               "disabled": true
+            },
+            "ta_vie_home_cta": {
+              "type": "button",
+              "settings": {
+                "text": "一着ずつ、詳しく見る",
+                "link": "#ta-vie-home-collection",
+                "type": "btn--primary",
+                "size": "",
+                "style": "btn--outline",
+                "show_arrow": true,
+                "full_width": false,
+                "padding_bottom": 8
+              },
+              "blocks": {}
             }
           },
           "block_order": [
             "heading_JxYXBt",
             "text_L4brP6",
-            "group_buttons_DzAjwR"
+            "group_buttons_DzAjwR",
+            "ta_vie_home_cta"
           ]
         },
         "slide_video_4tGPP7": {
@@ -168,7 +184,8 @@
             "heading_CwM98X",
             "text_DGTHFT",
             "button_Mf6QGG"
-          ]
+          ],
+          "disabled": true
         }
       },
       "block_order": [
@@ -178,18 +195,19 @@
       ],
       "name": "Slideshow (Nested)",
       "settings": {
-        "transition": "slide",
-        "show_arrows": true,
-        "autoplay": true,
+        "transition": "fade",
+        "show_arrows": false,
+        "autoplay": false,
         "autoplay_speed": 4,
         "width": "wrapper--full",
-        "height": "seven-fifty-height-hero",
-        "mobile_height": "screen-height-full--mobile",
-        "color_scheme": "scheme-5",
+        "height": "four-fifty-height-hero",
+        "mobile_height": "four-fifty-height-hero--mobile",
+        "color_scheme": "scheme-tavie-white",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "ta_vie_home_composition": true
       },
-      "disabled": true
+      "disabled": false
     },
     "section_text_with_products_yW3LJx": {
       "type": "section-text-with-products",
@@ -312,7 +330,7 @@
         "image-2"
       ],
       "settings": {
-        "title": "",
+        "title": "家で過ごす、いくつもの時間。",
         "heading_font_size": "heading-medium",
         "align_heading": "text-left",
         "align_text": "text-left",
@@ -321,12 +339,13 @@
         "layout": "grid",
         "grid": 3,
         "layout_mobile": "1",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 62,
-        "heading_tag": "automatic"
+        "color_scheme": "scheme-tavie-white",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "heading_tag": "h2",
+        "ta_vie_home_composition": true
       },
-      "disabled": true
+      "disabled": false
     },
     "double": {
       "type": "section-double",
@@ -360,7 +379,8 @@
           "settings": {
             "image_width": 80,
             "padding_bottom": 16
-          }
+          },
+          "disabled": true
         },
         "buttons_VP8YTU": {
           "type": "buttons",
@@ -384,18 +404,19 @@
       ],
       "settings": {
         "image_width": "one-half",
-        "text_alignment": "text-center",
+        "text_alignment": "text-left",
         "layout": "",
         "width": "wrapper--full-padded",
         "height": "sixty-fifty-height-hero",
         "mobile_height": "four-fifty-height-hero--mobile",
         "reverse_blocks": true,
-        "color_scheme": "scheme-tavie-white",
-        "padding_top": 42,
-        "padding_bottom": 82,
-        "show_placeholder": true
+        "color_scheme": "scheme-tavie-soft",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "show_placeholder": false,
+        "ta_vie_home_composition": true
       },
-      "disabled": true
+      "disabled": false
     },
     "announcement-2": {
       "type": "section-announcement",
@@ -1521,8 +1542,8 @@
         "piece_04"
       ],
       "settings": {
-        "heading": "家で過ごす私にも、ふさわしい一着を。",
-        "introduction": "<p>気を抜ける時間にも、自分を大切にする装いを。長くそばに置きたい一着を、TA VIEで。</p>",
+        "heading": "一着ずつ、ゆっくり知る。",
+        "introduction": "<p>シルエット、素材の表情、細部。写真を切り替えながら、それぞれの一着をご覧ください。</p>",
         "french_quote": "Le T-shirt usé que je porte souvent et le sweat-shirt auquel je suis attachée depuis longtemps me mettent à l’aise, mais en tant que partenaire à mes côtés pour longtemps, je ne peux pas dire qu’ils soient dignes de moi.",
         "show_french_quote": true,
         "source_collection": "all",
@@ -1531,16 +1552,27 @@
         "color_scheme": "scheme-tavie-white",
         "padding_top": 32,
         "padding_bottom": 64,
-        "media_ratio": "portrait"
+        "media_ratio": "portrait",
+        "heading_tag": "h2",
+        "anchor_id": "ta-vie-home-collection"
+      }
+    },
+    "ta_vie_home_journal": {
+      "type": "section-ta-vie-home-journal",
+      "settings": {
+        "color_scheme": "scheme-tavie-soft",
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     }
   },
   "order": [
-    "ta_vie_luxury_home",
     "section_slideshow_nested_YfkG44",
-    "section_text_with_products_yW3LJx",
-    "columns-1",
     "double",
+    "ta_vie_luxury_home",
+    "columns-1",
+    "ta_vie_home_journal",
+    "section_text_with_products_yW3LJx",
     "announcement-2",
     "section-tab-collections",
     "section_video_w6YfAE",

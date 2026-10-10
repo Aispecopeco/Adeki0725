@@ -9,6 +9,10 @@
   assign default_image_label = 'general.accessibility.slide_image' | t
   assign alt = image_mobile.alt | default: image_desktop.alt | default: block.settings.title | default: default_image_label
   assign image_link = block.settings.link
+  assign media_tag = 'div'
+  if image_link != blank
+    assign media_tag = 'a'
+  endif
   assign show_text_background = block.settings.show_text_background
   assign overlay_type = block.settings.overlay_type
   assign bg_color = block.settings.bg_color
@@ -19,6 +23,12 @@
   assign video = block.settings.video
   assign opacity_overlay = false
   assign text_underlay = false
+  assign ta_vie_text_only = false
+  if request.page_type == 'index' and section.settings.ta_vie_home_composition
+    if image_desktop == blank and image_mobile == blank and video == blank
+      assign ta_vie_text_only = true
+    endif
+  endif
 
   case overlay_type
     when 'opacity'
@@ -51,8 +61,18 @@
     assign text = '--text:' | append: scheme_text_color | append: ';'
   endif
 
+  if ta_vie_text_only
+    assign opacity_overlay = false
+    assign text_underlay = false
+    assign hero_transparent = false
+    assign show_header_backdrop = false
+    assign text = '--text:' | append: scheme_text_color | append: ';'
+  endif
+
   capture slide_image
-    render 'image-hero', image_desktop: image_desktop, image_mobile: image_mobile, desktop_height: desktop_height, mobile_height: mobile_height, alt: alt, loading: 'lazy', fetchpriority: 'auto', aspect_ratio: video.aspect_ratio, aspect_ratio_mobile: video.aspect_ratio
+    unless ta_vie_text_only
+      render 'image-hero', image_desktop: image_desktop, image_mobile: image_mobile, desktop_height: desktop_height, mobile_height: mobile_height, alt: alt, loading: 'lazy', fetchpriority: 'auto', aspect_ratio: video.aspect_ratio, aspect_ratio_mobile: video.aspect_ratio
+    endunless
   endcapture
 -%}
 
@@ -68,21 +88,20 @@
 {%- endcapture -%}
 
 <div
-  class="slideshow__slide frame {{ section.settings.height }} {{ section.settings.mobile_height }}{% if forloop.first %} is-selected{% endif %}"
+  class="slideshow__slide frame {{ section.settings.height }} {{ section.settings.mobile_height }}{% if forloop.first %} is-selected{% endif %}{% if ta_vie_text_only %} ta-vie-home-hero__slide--text-only{% endif %}"
   data-slide="{{ block.id }}"
   data-slide-text-color="{{ text_color }}"
   style="{{ slide_style }}"
   {{ block.shopify_attributes }}
 >
-  {%- if image_link != blank -%}
-    <a
+  {%- unless ta_vie_text_only -%}
+    <{{ media_tag }}
       class="{{ hero_class }} frame__item"
+      {% if image_link != blank %}
       href="{{ image_link }}"
       aria-label="{{ block.settings.title | default: default_image_label | escape }}"
+      {% endif %}
     >
-  {%- else -%}
-    <div class="{{ hero_class }} frame__item">
-  {%- endif -%}
 
   {%- if video != null -%}
     <div
@@ -109,11 +128,8 @@
     <div class="image-overlay"></div>
   {%- endif -%}
 
-  {%- if image_link -%}
-    </a>
-  {%- else -%}
-    </div>
-  {%- endif -%}
+    </{{ media_tag }}>
+  {%- endunless -%}
 
   {%- if block.type != blank -%}
     <div class="hero__content__wrapper frame__item {{ block.settings.flex_align_desktop }} {{ block.settings.flex_align_mobile }}{% if show_header_backdrop %} backdrop--linear{% endif %}">

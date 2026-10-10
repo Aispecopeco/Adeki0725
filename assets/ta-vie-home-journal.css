@@ -1,0 +1,92 @@
+/* Server-rendered reading and assistance links; no interaction script required. */
+.ta-vie-home-journal {
+  --ta-vie-journal-paper: var(--COLOR-BG, #f7f5f0);
+  --ta-vie-journal-ink: var(--COLOR-TEXT, #292824);
+  --ta-vie-journal-muted: var(--COLOR-TEXT-LIGHT, #68645d);
+  --ta-vie-journal-line: var(--COLOR-BORDER, #d8d3c9);
+  padding: var(--ta-vie-journal-padding-top, 96px) clamp(20px, 4vw, 72px) var(--ta-vie-journal-padding-bottom, 96px);
+  color: var(--ta-vie-journal-ink);
+  background: var(--ta-vie-journal-paper);
+  font-family: var(--ta-vie-body-font, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif);
+  overflow-wrap: anywhere;
+}
+.ta-vie-home-journal *,
+.ta-vie-home-journal *::before,
+.ta-vie-home-journal *::after { box-sizing: border-box; }
+.ta-vie-home-journal__inner { max-width: 1456px; margin: 0 auto; }
+.ta-vie-home-journal__introduction { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .85fr); align-items: end; gap: clamp(32px, 8vw, 140px); }
+.ta-vie-home-journal__eyebrow,
+.ta-vie-home-journal__resource-eyebrow { margin: 0 0 16px; font-size: 11px; font-weight: 400; line-height: 1.7; letter-spacing: .17em; }
+.ta-vie-home-journal__heading,
+.ta-vie-home-journal__article-heading,
+.ta-vie-home-journal__resource-heading {
+  font-family: var(--ta-vie-heading-font, "Yu Mincho", "Hiragino Mincho ProN", Georgia, serif);
+  font-weight: 400;
+  letter-spacing: .025em;
+  text-transform: none;
+  text-wrap: balance;
+}
+.ta-vie-home-journal__heading { margin: 0; font-size: clamp(26px, 2.8vw, 42px); line-height: 1.7; }
+.ta-vie-home-journal__body,
+.ta-vie-home-journal__resource-body { color: var(--ta-vie-journal-muted); font-size: 15px; line-height: 2; letter-spacing: .025em; }
+.ta-vie-home-journal .rte p { margin: 0 0 12px; font-size: inherit; line-height: inherit; }
+.ta-vie-home-journal .rte p:last-child { margin-bottom: 0; }
+.ta-vie-home-journal a { color: inherit; }
+.ta-vie-home-journal a:focus-visible { outline: 2px solid var(--ta-vie-journal-ink); outline-offset: 5px; }
+.ta-vie-home-journal__journal { margin-top: clamp(32px, 4vw, 64px); }
+.ta-vie-home-journal__articles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3vw, 44px); }
+.ta-vie-home-journal__article { min-width: 0; }
+.ta-vie-home-journal__article-image { display: block; overflow: hidden; }
+.ta-vie-home-journal__article-image .image-wrapper { display: block; margin: 0; }
+.ta-vie-home-journal__article-image img { transition: transform var(--ta-vie-duration, 280ms) var(--ta-vie-ease, cubic-bezier(.2, .65, .3, 1)); }
+.ta-vie-home-journal__article-copy { padding-top: 22px; }
+.ta-vie-home-journal__date { display: block; margin-bottom: 12px; color: var(--ta-vie-journal-muted); font-size: 11px; line-height: 1.7; letter-spacing: .08em; font-variant-numeric: tabular-nums; }
+.ta-vie-home-journal__article-heading { margin: 0 0 14px; font-size: clamp(19px, 1.6vw, 24px); line-height: 1.7; }
+.ta-vie-home-journal__article-heading a { text-decoration: none; }
+.ta-vie-home-journal__excerpt { margin: 0 0 14px; font-size: 14px; line-height: 1.95; color: var(--ta-vie-journal-muted); }
+.ta-vie-home-journal__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 48px;
+  padding: 8px 0;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: .025em;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+.ta-vie-home-journal__link > [aria-hidden] { font-size: 19px; line-height: 1; transition: transform var(--ta-vie-duration, 280ms) var(--ta-vie-ease, cubic-bezier(.2, .65, .3, 1)); }
+.ta-vie-home-journal__journal-footer { display: flex; justify-content: flex-end; margin-top: 32px; }
+.ta-vie-home-journal__resources { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: clamp(28px, 4vw, 64px); margin-top: clamp(56px, 6vw, 96px); padding-top: clamp(36px, 4vw, 64px); border-top: 1px solid var(--ta-vie-journal-line); }
+.ta-vie-home-journal__resource { display: flex; align-items: flex-start; flex-direction: column; min-width: 0; }
+.ta-vie-home-journal__resource-eyebrow { font-size: 10px; }
+.ta-vie-home-journal__resource-heading { margin: 0 0 16px; font-size: clamp(20px, 1.7vw, 26px); line-height: 1.7; }
+.ta-vie-home-journal__resource-body { margin-bottom: 20px; font-size: 14px; max-width: 30em; }
+.ta-vie-home-journal__resource .ta-vie-home-journal__link { margin-top: auto; }
+.ta-vie-home-journal__editor-note { margin-top: 40px; padding: 20px; border: 1px dashed var(--ta-vie-journal-line); font-size: 12px; line-height: 1.85; }
+.ta-vie-home-journal__editor-note p { margin: 0 0 12px; font-size: inherit; line-height: inherit; }
+.ta-vie-home-journal__editor-note ul { margin: 0; padding-left: 20px; }
+@media (hover: hover) and (pointer: fine) {
+  .ta-vie-home-journal__article-image:hover img { transform: scale(1.025); }
+  .ta-vie-home-journal__article-heading a:hover { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .3em; }
+  .ta-vie-home-journal__link:hover > [aria-hidden] { transform: translateX(3px); }
+}
+@media (max-width: 989px) {
+  .ta-vie-home-journal__introduction { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .ta-vie-home-journal__body { max-width: 40em; }
+  .ta-vie-home-journal__articles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 749px) {
+  .ta-vie-home-journal { padding-top: min(var(--ta-vie-journal-padding-top, 96px), 64px); padding-bottom: min(var(--ta-vie-journal-padding-bottom, 96px), 64px); }
+  .ta-vie-home-journal__articles { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .ta-vie-home-journal__body { font-size: 15px; line-height: 1.9; }
+  .ta-vie-home-journal__journal-footer { justify-content: flex-start; }
+  .ta-vie-home-journal__resources { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .ta-vie-home-journal__resource + .ta-vie-home-journal__resource { padding-top: 32px; border-top: 1px solid var(--ta-vie-journal-line); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ta-vie-home-journal__article-image img,
+  .ta-vie-home-journal__link > [aria-hidden] { transition: none; transform: none !important; }
+}

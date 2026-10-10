@@ -45,6 +45,15 @@
 
   assign image_1 = section.settings.image_1
   assign image_2 = section.settings.image_2
+  assign ta_vie_home_composition = false
+  assign ta_vie_text_only = false
+  if request.page_type == 'index' and section.settings.ta_vie_home_composition
+    assign ta_vie_home_composition = true
+    assign show_placeholder = false
+    if image_1 == blank and image_2 == blank and enable_slider == false
+      assign ta_vie_text_only = true
+    endif
+  endif
   assign image_width = section.settings.image_width
   capture sizes
     if image_1 and image_2
@@ -135,7 +144,7 @@
     </div>
   {%- endif -%}
 
-  {%- if image_1 == blank and image_2 == blank -%}
+  {%- if image_1 == blank and image_2 == blank and ta_vie_home_composition == false -%}
     <div class="brick__block__image">
       {%- render 'image-hero' sizes: sizes, desktop_height: desktop_height, mobile_height: mobile_height -%}
     </div>
@@ -152,7 +161,7 @@
   id="BrickSection--{{ section.id }}"
   data-section-id="{{ section.id }}"
   data-section-type="double"
-  class="index-image-text section-padding {{ section.settings.text_alignment }} {{ color_scheme }}"
+  class="index-image-text section-padding {{ section.settings.text_alignment }} {{ color_scheme }}{% if ta_vie_home_composition %} ta-vie-home-composition ta-vie-home-story{% if ta_vie_text_only %} ta-vie-home-story--text-only{% endif %}{% endif %}"
   style="{{ style }}"
 >
   {%- if section.blocks.size > 0 -%}
@@ -261,6 +270,7 @@
             assign block_images_tag = 'slider-component'
           endif
         -%}
+        {%- unless ta_vie_text_only -%}
         <{{ block_images_tag }}
           class="brick__block {{ figure_width_class }} brick__block--images"
           {% if image_1 != blank and image_2 != blank %}
@@ -278,6 +288,7 @@
             </div>
           {%- endif -%}
         </{{ block_images_tag }}>
+        {%- endunless -%}
 
         <div
           class="brick__block brick__block--text{% if enable_slider %} brick__block--slider{% endif %}"
@@ -553,6 +564,7 @@
                     {%- endif -%}
 
                   {%- when 'image' -%}
+                    {%- unless ta_vie_home_composition and block.settings.image == blank -%}
                     {%- liquid
                       assign animation_order = animation_order | plus: 1
                       assign image_width_percent = block.settings.image_width
@@ -586,6 +598,7 @@
                     >
                       {%- render 'image', image: block.settings.image, sizes: sizes -%}
                     </div>
+                    {%- endunless -%}
 
                   {%- when 'video' -%}
                     {%- liquid

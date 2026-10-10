@@ -23,6 +23,9 @@
   {{ 'ta-vie-luxury-explorer.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'ta-vie-luxury-explorer.js' | asset_url }}" defer></script>
 {%- endif -%}
+{%- if request.page_type == 'index' or request.design_mode -%}
+  {{ 'ta-vie-home-composition.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
 {%- if request.page_type == 'product' or request.design_mode -%}
   {{ 'ta-vie-luxury-purchase.css' | asset_url | stylesheet_tag }}
   {{ 'ta-vie-product-world.css' | asset_url | stylesheet_tag }}

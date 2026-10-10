@@ -18,6 +18,10 @@
   assign color_scheme = 'color-' | append: section.settings.color_scheme
   assign blocks_size = section.blocks.size
   assign show_recently_viewed_indicator = settings.show_recently_viewed_indicator
+  assign ta_vie_home_composition = false
+  if request.page_type == 'index' and section.settings.ta_vie_home_composition
+    assign ta_vie_home_composition = true
+  endif
 
   assign layout = section.settings.layout
   assign layout_mobile = section.settings.layout_mobile
@@ -120,7 +124,7 @@
 
 <div
   id="{{ unique }}"
-  class="section-columns section-padding {{ color_scheme }}"
+  class="section-columns section-padding {{ color_scheme }}{% if ta_vie_home_composition %} ta-vie-home-composition ta-vie-home-lifestyle{% endif %}"
   data-section-id="{{ section.id }}"
   data-section-type="columns"
 >
@@ -269,6 +273,10 @@
                     assign is_image_overlay = true
                     assign column_inner_class = column_inner_class | append: ' frame'
                   endif
+                  if ta_vie_home_composition and image == blank
+                    assign is_image_overlay = false
+                    assign column_inner_class = 'column__inner column__inner--text-only'
+                  endif
                 -%}
                 <div class="grid-item"
                   {{ block_style }}
@@ -283,6 +291,7 @@
                     data-aos="hero"
                     data-aos-anchor="{{ animation_anchor }}"
                     data-aos-order="{{ animation_order }}">
+                    {%- unless ta_vie_home_composition and image == blank -%}
                     <div class="column__image{{ image_shape_class }}{% if is_image_overlay %} frame__item{% endif %}" data-column-image>
                       {%- liquid
                         capture column_image
@@ -316,6 +325,7 @@
                         {%- endif -%}
 
                     </div>
+                    {%- endunless -%}
 
                     <div class="column__content{% if is_image_overlay %} {{ block.settings.alignment }} frame__item{% endif %}">
                       {%- if is_image_overlay -%}

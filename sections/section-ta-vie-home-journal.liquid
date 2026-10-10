@@ -1,0 +1,198 @@
+{%- liquid
+  assign reading_blog = section.settings.blog | default: settings.ta_vie_blog
+  if reading_blog != blank and reading_blog.url == blank
+    assign reading_blog = blogs[reading_blog]
+  endif
+  if reading_blog.url == blank
+    assign reading_blog = blogs.news
+  endif
+  assign reading_blog_url = reading_blog.url
+  if section.settings.blog == blank and settings.ta_vie_blog_url != blank
+    assign reading_blog_url = settings.ta_vie_blog_url
+  endif
+
+  assign faq_page = section.settings.faq_page | default: settings.ta_vie_faq_page
+  if faq_page != blank and faq_page.url == blank
+    assign faq_page = pages[faq_page]
+  endif
+  if faq_page.url == blank
+    assign faq_page = pages.faq
+    if faq_page.url == blank
+      for candidate in pages limit: 50
+        if candidate.template_suffix == 'faq' and candidate.url != blank
+          assign faq_page = candidate
+          break
+        endif
+      endfor
+    endif
+  endif
+
+  assign faq_url = faq_page.url
+  if section.settings.faq_page == blank and settings.ta_vie_faq_url != blank
+    assign faq_url = settings.ta_vie_faq_url
+  endif
+
+  assign contact_page = section.settings.contact_page
+  if contact_page != blank and contact_page.url == blank
+    assign contact_page = pages[contact_page]
+  endif
+  if contact_page.url == blank
+    assign contact_page = pages.contact
+  endif
+
+  assign instagram_url = settings.instagram_link | strip
+  assign has_instagram = false
+  if section.settings.show_instagram and instagram_url != blank
+    assign has_instagram = true
+  endif
+  assign has_resources = false
+  if faq_url != blank or contact_page.url != blank or has_instagram
+    assign has_resources = true
+  endif
+-%}
+
+{%- render 'stylesheet', name: 'ta-vie-home-journal.css', blocking: true, async: false, inline: false -%}
+
+{%- style -%}
+  #TaVieHomeJournal-{{ section.id }} {
+    --ta-vie-journal-padding-top: {{ section.settings.padding_top }}px;
+    --ta-vie-journal-padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+{%- endstyle -%}
+
+<section
+  id="TaVieHomeJournal-{{ section.id }}"
+  class="ta-vie-home-journal color-{{ section.settings.color_scheme }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="ta-vie-home-journal"
+  {% if section.settings.heading != blank %}aria-labelledby="TaVieHomeJournalHeading-{{ section.id }}"{% else %}aria-label="TA VIEの読みものとご案内"{% endif %}
+>
+  <div class="ta-vie-home-journal__inner">
+    <div class="ta-vie-home-journal__introduction">
+      <div class="ta-vie-home-journal__heading-group">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="ta-vie-home-journal__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 id="TaVieHomeJournalHeading-{{ section.id }}" class="ta-vie-home-journal__heading">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.body != blank -%}
+        <div class="ta-vie-home-journal__body rte">{{ section.settings.body }}</div>
+      {%- endif -%}
+    </div>
+
+    {%- if reading_blog_url != blank -%}
+      <div class="ta-vie-home-journal__journal">
+        {%- if reading_blog.articles_count > 0 and reading_blog_url == reading_blog.url -%}
+          <div class="ta-vie-home-journal__articles">
+            {%- for article in reading_blog.articles limit: 3 -%}
+              {%- assign article_excerpt = article.excerpt_or_content | strip_html | strip | truncate: 100 -%}
+              <article class="ta-vie-home-journal__article">
+                {%- if article.image != blank -%}
+                  <a href="{{ article.url | escape }}" class="ta-vie-home-journal__article-image" aria-label="{{ article.title | escape }}">
+                    {%- render 'image', image: article.image, width: 1200, sizes: '(min-width: 990px) 30vw, (min-width: 750px) 45vw, 90vw', aspect_ratio: 1.25, loading: 'lazy', show_backfill: false -%}
+                  </a>
+                {%- endif -%}
+                <div class="ta-vie-home-journal__article-copy">
+                  {%- if section.settings.show_date -%}
+                    <time class="ta-vie-home-journal__date" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%Y.%m.%d' }}</time>
+                  {%- endif -%}
+                  <h3 class="ta-vie-home-journal__article-heading"><a href="{{ article.url | escape }}">{{ article.title | escape }}</a></h3>
+                  {%- if article_excerpt != blank -%}<p class="ta-vie-home-journal__excerpt">{{ article_excerpt | escape }}</p>{%- endif -%}
+                  <a href="{{ article.url | escape }}" class="ta-vie-home-journal__link" aria-label="{{ section.settings.article_link_label | escape }}：{{ article.title | escape }}"><span>{{ section.settings.article_link_label | escape }}</span><span aria-hidden="true">↗</span></a>
+                </div>
+              </article>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+        <div class="ta-vie-home-journal__journal-footer">
+          <a href="{{ reading_blog_url | escape }}" class="ta-vie-home-journal__link"><span>{{ section.settings.blog_link_label | escape }}</span><span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if has_resources -%}
+      <nav class="ta-vie-home-journal__resources" aria-label="ご購入前のご案内とTA VIEの発信">
+        {%- if faq_url != blank -%}
+          <div class="ta-vie-home-journal__resource">
+            <p class="ta-vie-home-journal__resource-eyebrow">{{ section.settings.faq_eyebrow | escape }}</p>
+            <h3 class="ta-vie-home-journal__resource-heading">{{ section.settings.faq_heading | escape }}</h3>
+            {%- if section.settings.faq_body != blank -%}<div class="ta-vie-home-journal__resource-body rte">{{ section.settings.faq_body }}</div>{%- endif -%}
+            <a href="{{ faq_url | escape }}" class="ta-vie-home-journal__link"><span>{{ section.settings.faq_link_label | escape }}</span><span aria-hidden="true">→</span></a>
+          </div>
+        {%- endif -%}
+        {%- if contact_page.url != blank -%}
+          <div class="ta-vie-home-journal__resource">
+            <p class="ta-vie-home-journal__resource-eyebrow">{{ section.settings.contact_eyebrow | escape }}</p>
+            <h3 class="ta-vie-home-journal__resource-heading">{{ section.settings.contact_heading | escape }}</h3>
+            {%- if section.settings.contact_body != blank -%}<div class="ta-vie-home-journal__resource-body rte">{{ section.settings.contact_body }}</div>{%- endif -%}
+            <a href="{{ contact_page.url | escape }}" class="ta-vie-home-journal__link"><span>{{ section.settings.contact_link_label | escape }}</span><span aria-hidden="true">→</span></a>
+          </div>
+        {%- endif -%}
+        {%- if has_instagram -%}
+          <div class="ta-vie-home-journal__resource">
+            <p class="ta-vie-home-journal__resource-eyebrow">{{ section.settings.instagram_eyebrow | escape }}</p>
+            <h3 class="ta-vie-home-journal__resource-heading">{{ section.settings.instagram_heading | escape }}</h3>
+            {%- if section.settings.instagram_body != blank -%}<div class="ta-vie-home-journal__resource-body rte">{{ section.settings.instagram_body }}</div>{%- endif -%}
+            <a href="{{ instagram_url | escape }}" class="ta-vie-home-journal__link" target="_blank" rel="noopener noreferrer"><span>{{ section.settings.instagram_link_label | escape }}</span><span aria-hidden="true">↗</span><span class="visually-hidden">（新しいタブで開きます）</span></a>
+          </div>
+        {%- endif -%}
+      </nav>
+    {%- endif -%}
+
+    {%- if request.design_mode -%}
+      {%- if reading_blog_url == blank or faq_url == blank or contact_page.url == blank -%}
+        <div class="ta-vie-home-journal__editor-note">
+          <p>この案内はテーマエディタ内だけに表示されます。ブログ・FAQ・お問い合わせは、実在するリンク先を選ぶとホームに表示されます。記事や写真がない枠は公開画面に表示しません。</p>
+          <ul>
+            {%- if reading_blog_url == blank -%}<li>ブログ：このセクションの「掲載するブログ」、またはテーマ設定「TA VIE｜ページへのリンク」で選択してください。</li>{%- endif -%}
+            {%- if faq_url == blank -%}<li>FAQ：Shopifyに公開済みのページを作成してから「よくあるご質問のページ」で選択してください。</li>{%- endif -%}
+            {%- if contact_page.url == blank -%}<li>お問い合わせ：Shopifyに公開済みのページを作成してから「お問い合わせのページ」で選択してください。</li>{%- endif -%}
+          </ul>
+        </div>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "TA VIE｜読みものとご案内",
+  "enabled_on": {"templates": ["index"]},
+  "settings": [
+    {"type": "header", "content": "ブランドと暮らしの入口"},
+    {"type": "text", "id": "eyebrow", "label": "小さな見出し", "default": "LIFE AT HOME"},
+    {"type": "text", "id": "heading", "label": "見出し", "default": "日々の心地よさを、考える。"},
+    {"type": "richtext", "id": "body", "label": "紹介文", "default": "<p>服を選ぶこと、家で過ごすこと。TA VIEは、一着を通じて、いつもの暮らしに目を向けます。</p>"},
+    {"type": "header", "content": "読みもの"},
+    {"type": "blog", "id": "blog", "label": "掲載するブログ", "info": "公開済みの記事を最大3件表示します。未選択の場合はテーマ設定のブログ、次にnewsを使います。"},
+    {"type": "text", "id": "blog_link_label", "label": "ブログへのリンク名", "default": "読みものをすべて見る"},
+    {"type": "text", "id": "article_link_label", "label": "記事へのリンク名", "default": "続きを読む"},
+    {"type": "checkbox", "id": "show_date", "label": "記事の公開日を表示", "default": true},
+    {"type": "header", "content": "よくあるご質問"},
+    {"type": "page", "id": "faq_page", "label": "よくあるご質問のページ", "info": "未選択の場合はテーマ設定のFAQ、次にfaqのページを使います。実在するページだけ表示します。"},
+    {"type": "text", "id": "faq_eyebrow", "label": "FAQの小さな見出し", "default": "BEFORE YOU CHOOSE"},
+    {"type": "text", "id": "faq_heading", "label": "FAQの見出し", "default": "気になることを、確かめて。"},
+    {"type": "richtext", "id": "faq_body", "label": "FAQの紹介文", "default": "<p>一着を選ぶ前に。よくあるご質問から、ご購入に必要なご案内をご確認いただけます。</p>"},
+    {"type": "text", "id": "faq_link_label", "label": "FAQへのリンク名", "default": "よくあるご質問"},
+    {"type": "header", "content": "お問い合わせ"},
+    {"type": "page", "id": "contact_page", "label": "お問い合わせのページ", "info": "未選択の場合はcontactのページを使います。ページがない場合、この入口は公開されません。"},
+    {"type": "text", "id": "contact_eyebrow", "label": "お問い合わせの小さな見出し", "default": "WE ARE HERE"},
+    {"type": "text", "id": "contact_heading", "label": "お問い合わせの見出し", "default": "迷ったときは、ご相談を。"},
+    {"type": "richtext", "id": "contact_body", "label": "お問い合わせの紹介文", "default": "<p>商品について、気になることや知りたいこと。お問い合わせページからお聞かせください。</p>"},
+    {"type": "text", "id": "contact_link_label", "label": "お問い合わせへのリンク名", "default": "お問い合わせ"},
+    {"type": "header", "content": "Instagram"},
+    {"type": "checkbox", "id": "show_instagram", "label": "Instagramの入口を表示", "default": true, "info": "リンク先は既存のテーマ設定「Social media」のInstagramを使います。未設定なら非表示です。"},
+    {"type": "text", "id": "instagram_eyebrow", "label": "Instagramの小さな見出し", "default": "STAY IN TOUCH"},
+    {"type": "text", "id": "instagram_heading", "label": "Instagramの見出し", "default": "TA VIEを、もう少し。"},
+    {"type": "richtext", "id": "instagram_body", "label": "Instagramの紹介文", "default": "<p>TA VIEの発信は、Instagramからもご覧いただけます。</p>"},
+    {"type": "text", "id": "instagram_link_label", "label": "Instagramへのリンク名", "default": "Instagramを見る"},
+    {"type": "header", "content": "配色と余白"},
+    {"type": "color_scheme", "id": "color_scheme", "label": "配色", "default": "scheme-tavie-white"},
+    {"type": "range", "id": "padding_top", "label": "上の余白", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 96},
+    {"type": "range", "id": "padding_bottom", "label": "下の余白", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 96}
+  ],
+  "presets": [{"name": "TA VIE｜読みものとご案内"}]
+}
+{% endschema %}

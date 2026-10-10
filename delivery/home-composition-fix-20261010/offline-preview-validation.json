@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "createdAt": "2026-10-10T14:51:34.940Z",
+  "cases": 2,
+  "artifact": "delivery/home-composition-fix-20261010/interactive-preview.html",
+  "bytes": 1126625,
+  "sha256": "465a022c9c30e835625271783cd502b53fd8ee95c39e32080ba4ea5bd46478e4",
+  "results": [
+    {
+      "width": 1440,
+      "visibleHomeChapters": 5,
+      "singleH1": true,
+      "heroAnchor": true,
+      "photoTabs": true,
+      "detailDialog": true,
+      "fourProductNavigation": true,
+      "destinationLimitDialogWithFocusReturn": true,
+      "subsequentHttpRequests": [],
+      "blockedRequests": [],
+      "pageErrors": []
+    },
+    {
+      "width": 390,
+      "visibleHomeChapters": 5,
+      "singleH1": true,
+      "heroAnchor": true,
+      "photoTabs": true,
+      "detailDialog": true,
+      "fourProductNavigation": true,
+      "destinationLimitDialogWithFocusReturn": true,
+      "subsequentHttpRequests": [],
+      "blockedRequests": [],
+      "pageErrors": []
+    }
+  ],
+  "scope": "Standalone corrected-home HTML served once over permitted local HTTP. All subsequent network access blocked; actual theme CSS/JavaScript runs with explicit neutral local product/article/photo fixtures.",
+  "fileProtocol": {
+    "directCheck": "not-repeated",
+    "reason": "Previous managed Chromium file:// check returned net::ERR_BLOCKED_BY_ADMINISTRATOR; browser policy has not been changed or bypassed. This artifact was tested by one HTTP document load with zero subsequent dependencies."
+  },
+  "limitations": [
+    "Preview covers home only. Product detail/blog/FAQ bodies, editor save, live merchant data, Shopify sync, cart and payment are not included. Destination links show a labelled limitations dialog.",
+    "The source theme includes no actual garment photos; native branding chapters show the actual no-image state, while product/article images are neutral labelled fixtures."
+  ]
+}

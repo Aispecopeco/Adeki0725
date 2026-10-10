@@ -1,12 +1,14 @@
 # TA VIE｜写真を操作して、一着を深く知る
 
-2026年10月10日の追加指示に合わせ、復元したBroadcast 8.1.1を基に、温かい白・チャコール・グレージュと日本語の文字組みを整えています。ホームは4着の大きな写真と個別の紹介、商品詳細は実商品説明・素材・生活場面・サイズ・お手入れの章を組み合わせます。写真切替、編集できる細部のポイント、接写パネル、写真付きの商品ナビを追加し、購入にはBroadcastの既存機能を使用します。
+2026年10月10日、商品特集だけになっていたホームの構成を修正しました。Broadcast標準のブランド入口・写真と文章・生活場面のセクションを復帰し、「ブランドの入口 → TA VIEの想い → 一着ごとの特集 → 家で過ごす場面 → 読みものとご案内」の5章で表示します。写真が未設定なら文章を自然に表示し、仮画像や大きな空欄を出しません。商品詳細の写真切替・接写・購入機能は維持しています。[今回の修正・編集・確認結果](delivery/home-composition-fix-20261010/README.md)を参照してください。
 
 今回の作業用ブランチは [ta-vie-luxury-experience-20261010](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-luxury-experience-20261010) です。[実装・プレビュー・検証の資料](delivery/luxury-experience/README.md)を今回の確認と運用に使用してください。
 
-- [Shopify取り込み用テーマZIP](delivery/TA-VIE-Broadcast-luxury-experience-20261010.zip)
-- [操作できる単体HTMLプレビュー](delivery/luxury-experience/interactive-preview.html)
-- [プレビュー一式のZIP](delivery/TA-VIE-luxury-interactive-preview-20261010.zip)
+- [最新のShopify取り込み用テーマZIP](delivery/TA-VIE-Broadcast-home-composition-fix-20261010.zip)
+- [修正後のホームを操作する（検証用データ）](delivery/home-composition-fix-20261010/interactive-preview.html)
+- [修正後のホーム：PC](delivery/home-composition-fix-20261010/previews/home-1440.png)
+- [修正後のホーム：スマートフォン](delivery/home-composition-fix-20261010/previews/home-390.png)
+- [商品操作の単体HTMLプレビュー（ホーム構成修正前の検証用）](delivery/luxury-experience/interactive-preview.html)
 - [商品別の編集手順](delivery/luxury-experience/editing-guide.md)
 - [4着の写真・商品情報の準備一覧](delivery/luxury-experience/required-content.md)
 

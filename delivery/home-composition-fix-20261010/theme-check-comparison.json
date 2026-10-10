@@ -1,0 +1,82 @@
+{
+  "inherited_complexity_metrics": {
+    "before": [
+      {
+        "path": "snippets/section-double.liquid",
+        "message": "Liquid complexity is 141, which exceeds the maximum of 120. The decision at line 771 pushed it over the limit. Consider simplifying conditional logic, or moving self-contained decision logic into snippets with the render tag."
+      },
+      {
+        "path": "snippets/product.liquid",
+        "message": "Liquid complexity is 169, which exceeds the maximum of 120. The decision at line 706 pushed it over the limit. Consider simplifying conditional logic, or moving self-contained decision logic into snippets with the render tag."
+      },
+      {
+        "path": "snippets/product-grid-item.liquid",
+        "message": "Liquid complexity is 188, which exceeds the maximum of 120. The decision at line 535 pushed it over the limit. Consider simplifying conditional logic, or moving self-contained decision logic into snippets with the render tag."
+      }
+    ],
+    "after": [
+      {
+        "path": "snippets/section-double.liquid",
+        "message": "Liquid complexity is 152, which exceeds the maximum of 120. The decision at line 747 pushed it over the limit. Consider simplifying conditional logic, or moving self-contained decision logic into snippets with the render tag."
+      },
+      {
+        "path": "snippets/product.liquid",
+        "message": "Liquid complexity is 175, which exceeds the maximum of 120. The decision at line 699 pushed it over the limit. Consider simplifying conditional logic, or moving self-contained decision logic into snippets with the render tag."
+      },
+      {
+        "path": "snippets/product-grid-item.liquid",
+        "message": "Liquid complexity is 188, which exceeds the maximum of 120. The decision at line 535 pushed it over the limit. Consider simplifying conditional logic, or moving self-contained decision logic into snippets with the render tag."
+      }
+    ]
+  },
+  "exit_code": 1,
+  "errors": 4,
+  "warnings": 337,
+  "new_offenses": [],
+  "removed_offenses": [
+    [
+      "snippets/slide.liquid",
+      "UnclosedHTMLElement",
+      "warning",
+      "Closing tag does not have a matching opening tag for condition `-image_link` in HtmlElement 'div'"
+    ],
+    [
+      "snippets/slide.liquid",
+      "UnclosedHTMLElement",
+      "warning",
+      "Closing tag does not have a matching opening tag for condition `image_link` in HtmlElement 'div'"
+    ],
+    [
+      "snippets/slide.liquid",
+      "UnclosedHTMLElement",
+      "warning",
+      "Opening tag does not have a matching closing tag for condition `-image_link != ` in HtmlElement 'div'"
+    ],
+    [
+      "snippets/slide.liquid",
+      "UnclosedHTMLElement",
+      "warning",
+      "Opening tag does not have a matching closing tag for condition `image_link != ` in HtmlElement 'div'"
+    ]
+  ],
+  "baseline_report": "original-restore-20261010/theme-check-final.json",
+  "limitations": "Shopify CLI static checks only. Inherited Broadcast image-width warnings/errors are recorded separately from new luxury changes.",
+  "changed_existing_warning": [
+    {
+      "path": "snippets/product.liquid",
+      "check": "LiquidComplexity",
+      "severity": "warning",
+      "before_metric": 169,
+      "after_metric": 175,
+      "reason": "The existing warning remains; added main-product scope guards and purchase anchors increase its metric by 6."
+    },
+    {
+      "path": "snippets/section-double.liquid",
+      "check": "LiquidComplexity",
+      "severity": "warning",
+      "before_metric": 141,
+      "after_metric": 152,
+      "reason": "Home-only guards remove missing media columns and image blocks, increasing the existing metric by 11."
+    }
+  ]
+}

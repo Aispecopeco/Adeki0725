@@ -1,3 +1,4 @@
+.ta-vie-luxury-home__anchor { scroll-margin-top: 100px; }
 ta-vie-luxury-home {
   display: block;
   --ta-vie-paper: var(--COLOR-BG, #f7f5f0);
