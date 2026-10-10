@@ -1,0 +1,450 @@
+{
+  "document_kind": "Review-only Shopify Admin GraphQL definition variables; no Admin request has been executed.",
+  "updated_date_jst": "2026-10-10",
+  "status": "Not applied to the store. Resolve reference GIDs and review existing definitions before any mutation.",
+  "content_entry_status_required": "ACTIVE when publishable capability is enabled; enable storefront access for every definition.",
+  "creation_order": [
+    "ta_vie_product_detail",
+    "ta_vie_product_scene",
+    "ta_vie_product_size",
+    "ta_vie_product_feature",
+    "product metafield ta_vie.feature"
+  ],
+  "reference_gid_replacements": {
+    "REPLACE_WITH_GID_TA_VIE_PRODUCT_DETAIL": "id returned for ta_vie_product_detail, e.g. gid://shopify/MetaobjectDefinition/...; do not use a fabricated ID.",
+    "REPLACE_WITH_GID_TA_VIE_PRODUCT_SCENE": "id returned for ta_vie_product_scene.",
+    "REPLACE_WITH_GID_TA_VIE_PRODUCT_SIZE": "id returned for ta_vie_product_size.",
+    "REPLACE_WITH_GID_TA_VIE_PRODUCT_FEATURE": "id returned for ta_vie_product_feature."
+  },
+  "read_only_review_query": "query ReviewTaVieDefinitions { metaobjectDefinitions(first: 100) { nodes { id type name access { storefront } capabilities { publishable { enabled } } fieldDefinitions { key name required type { name } validations { name value } } } pageInfo { hasNextPage endCursor } } metafieldDefinitions(first: 100, ownerType: PRODUCT) { nodes { id namespace key name type { name } access { storefront } validations { name value } } pageInfo { hasNextPage endCursor } } }",
+  "metaobject_definition_mutation": "mutation CreateTaVieDefinition($definition: MetaobjectDefinitionCreateInput!) { metaobjectDefinitionCreate(definition: $definition) { metaobjectDefinition { id type name } userErrors { field message code } } }",
+  "metaobject_definition_variables": [
+    {
+      "definition": {
+        "name": "TA VIE｜商品の細部",
+        "type": "ta_vie_product_detail",
+        "description": "TA VIEの商品別コンテンツ。別の商品と共有せず、所有商品を必ず指定してください。",
+        "access": {
+          "storefront": "PUBLIC_READ"
+        },
+        "capabilities": {
+          "publishable": {
+            "enabled": true
+          }
+        },
+        "displayNameKey": "label",
+        "fieldDefinitions": [
+          {
+            "key": "owner_product",
+            "name": "この内容の商品",
+            "type": "product_reference",
+            "description": "必ず、この内容を掲載する商品を選択してください。現在の商品と一致しない内容は公開画面へ表示しません。",
+            "required": true
+          },
+          {
+            "key": "label",
+            "name": "選択ボタンの名前",
+            "type": "single_line_text_field",
+            "description": "確認済みの情報を入力してください。",
+            "required": true
+          },
+          {
+            "key": "heading",
+            "name": "見出し",
+            "type": "single_line_text_field",
+            "description": "確認済みの情報を入力してください。"
+          },
+          {
+            "key": "body",
+            "name": "説明",
+            "type": "rich_text_field",
+            "description": "商品の事実とブランドの表現を確認して入力。空欄は公開画面で省略します。"
+          },
+          {
+            "key": "image",
+            "name": "写真",
+            "type": "file_reference",
+            "description": "この商品の正式な写真。未設定なら省略します。",
+            "validations": [
+              {
+                "name": "file_type_options",
+                "value": "[\"Image\"]"
+              }
+            ]
+          },
+          {
+            "key": "mobile_image",
+            "name": "スマートフォンの写真",
+            "type": "file_reference",
+            "description": "この商品の正式な写真。未設定なら省略します。",
+            "validations": [
+              {
+                "name": "file_type_options",
+                "value": "[\"Image\"]"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "definition": {
+        "name": "TA VIE｜着て過ごす場面",
+        "type": "ta_vie_product_scene",
+        "description": "TA VIEの商品別コンテンツ。別の商品と共有せず、所有商品を必ず指定してください。",
+        "access": {
+          "storefront": "PUBLIC_READ"
+        },
+        "capabilities": {
+          "publishable": {
+            "enabled": true
+          }
+        },
+        "displayNameKey": "label",
+        "fieldDefinitions": [
+          {
+            "key": "owner_product",
+            "name": "この内容の商品",
+            "type": "product_reference",
+            "description": "必ず、この内容を掲載する商品を選択してください。現在の商品と一致しない内容は公開画面へ表示しません。",
+            "required": true
+          },
+          {
+            "key": "label",
+            "name": "選択ボタンの名前",
+            "type": "single_line_text_field",
+            "description": "確認済みの情報を入力してください。",
+            "required": true
+          },
+          {
+            "key": "heading",
+            "name": "見出し",
+            "type": "single_line_text_field",
+            "description": "確認済みの情報を入力してください。"
+          },
+          {
+            "key": "body",
+            "name": "説明",
+            "type": "rich_text_field",
+            "description": "商品の事実とブランドの表現を確認して入力。空欄は公開画面で省略します。"
+          },
+          {
+            "key": "image",
+            "name": "写真",
+            "type": "file_reference",
+            "description": "この商品の正式な写真。未設定なら省略します。",
+            "validations": [
+              {
+                "name": "file_type_options",
+                "value": "[\"Image\"]"
+              }
+            ]
+          },
+          {
+            "key": "mobile_image",
+            "name": "スマートフォンの写真",
+            "type": "file_reference",
+            "description": "この商品の正式な写真。未設定なら省略します。",
+            "validations": [
+              {
+                "name": "file_type_options",
+                "value": "[\"Image\"]"
+              }
+            ]
+          },
+          {
+            "key": "video",
+            "name": "実写動画",
+            "type": "file_reference",
+            "description": "この商品の短い実写動画。未設定なら静止画を使用します。",
+            "validations": [
+              {
+                "name": "file_type_options",
+                "value": "[\"Video\"]"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "definition": {
+        "name": "TA VIE｜商品の寸法",
+        "type": "ta_vie_product_size",
+        "description": "TA VIEの商品別コンテンツ。別の商品と共有せず、所有商品を必ず指定してください。",
+        "access": {
+          "storefront": "PUBLIC_READ"
+        },
+        "capabilities": {
+          "publishable": {
+            "enabled": true
+          }
+        },
+        "displayNameKey": "label",
+        "fieldDefinitions": [
+          {
+            "key": "owner_product",
+            "name": "この内容の商品",
+            "type": "product_reference",
+            "description": "必ず、この内容を掲載する商品を選択してください。現在の商品と一致しない内容は公開画面へ表示しません。",
+            "required": true
+          },
+          {
+            "key": "label",
+            "name": "サイズ名",
+            "type": "single_line_text_field",
+            "description": "確認済みの情報を入力してください。",
+            "required": true
+          },
+          {
+            "key": "length",
+            "name": "着丈",
+            "type": "single_line_text_field",
+            "description": "確定した値と単位を入力。例の値で埋めず、未確認なら空欄にします。"
+          },
+          {
+            "key": "chest",
+            "name": "身幅",
+            "type": "single_line_text_field",
+            "description": "確定した値と単位を入力。測定方法は着用感の本文へ記載してください。"
+          },
+          {
+            "key": "sleeve",
+            "name": "袖丈",
+            "type": "single_line_text_field",
+            "description": "確定した値と単位を入力。未確認・対象外は空欄。"
+          },
+          {
+            "key": "waist",
+            "name": "ウエスト",
+            "type": "single_line_text_field",
+            "description": "確定した値と単位を入力。平置き幅・周囲長の区別を本文へ記載してください。"
+          },
+          {
+            "key": "inseam",
+            "name": "股下",
+            "type": "single_line_text_field",
+            "description": "確定した値と単位を入力。未確認・対象外は空欄。"
+          }
+        ]
+      }
+    },
+    {
+      "definition": {
+        "name": "TA VIE｜商品特集",
+        "type": "ta_vie_product_feature",
+        "description": "TA VIEの商品別コンテンツ。別の商品と共有せず、所有商品を必ず指定してください。",
+        "access": {
+          "storefront": "PUBLIC_READ"
+        },
+        "capabilities": {
+          "publishable": {
+            "enabled": true
+          }
+        },
+        "displayNameKey": "lead",
+        "fieldDefinitions": [
+          {
+            "key": "owner_product",
+            "name": "この内容の商品",
+            "type": "product_reference",
+            "description": "必ず、この内容を掲載する商品を選択してください。現在の商品と一致しない内容は公開画面へ表示しません。",
+            "required": true
+          },
+          {
+            "key": "lead",
+            "name": "一着の短いコピー",
+            "type": "single_line_text_field",
+            "description": "確認済みの情報を入力してください。"
+          },
+          {
+            "key": "reason_heading",
+            "name": "作った理由の見出し",
+            "type": "single_line_text_field",
+            "description": "確認済みの情報を入力してください。"
+          },
+          {
+            "key": "reason_body",
+            "name": "作った理由の本文",
+            "type": "rich_text_field",
+            "description": "商品の事実とブランドの表現を確認して入力。空欄は公開画面で省略します。"
+          },
+          {
+            "key": "reason_image",
+            "name": "作った理由の写真",
+            "type": "file_reference",
+            "description": "この商品の正式な写真。未設定なら省略します。",
+            "validations": [
+              {
+                "name": "file_type_options",
+                "value": "[\"Image\"]"
+              }
+            ]
+          },
+          {
+            "key": "reason_mobile_image",
+            "name": "作った理由のスマートフォン写真",
+            "type": "file_reference",
+            "description": "この商品の正式な写真。未設定なら省略します。",
+            "validations": [
+              {
+                "name": "file_type_options",
+                "value": "[\"Image\"]"
+              }
+            ]
+          },
+          {
+            "key": "material_heading",
+            "name": "素材の見出し",
+            "type": "single_line_text_field",
+            "description": "確認済みの情報を入力してください。"
+          },
+          {
+            "key": "material_body",
+            "name": "素材の説明",
+            "type": "rich_text_field",
+            "description": "商品の事実とブランドの表現を確認して入力。空欄は公開画面で省略します。"
+          },
+          {
+            "key": "material_image",
+            "name": "生地の接写",
+            "type": "file_reference",
+            "description": "この商品の正式な写真。未設定なら省略します。",
+            "validations": [
+              {
+                "name": "file_type_options",
+                "value": "[\"Image\"]"
+              }
+            ]
+          },
+          {
+            "key": "material_mobile_image",
+            "name": "生地のスマートフォン写真",
+            "type": "file_reference",
+            "description": "この商品の正式な写真。未設定なら省略します。",
+            "validations": [
+              {
+                "name": "file_type_options",
+                "value": "[\"Image\"]"
+              }
+            ]
+          },
+          {
+            "key": "material_video",
+            "name": "生地・着用の実写動画",
+            "type": "file_reference",
+            "description": "この商品の短い実写動画。未設定なら静止画を使用します。",
+            "validations": [
+              {
+                "name": "file_type_options",
+                "value": "[\"Video\"]"
+              }
+            ]
+          },
+          {
+            "key": "details",
+            "name": "紹介する細部",
+            "type": "list.metaobject_reference",
+            "description": "同じ商品を所有する ta_vie_product_detail のみを選択し、表示順に並べてください。表示上限は6件です。",
+            "validations": [
+              {
+                "name": "metaobject_definition_id",
+                "value": "REPLACE_WITH_GID_TA_VIE_PRODUCT_DETAIL"
+              },
+              {
+                "name": "list.max",
+                "value": "6"
+              }
+            ]
+          },
+          {
+            "key": "scenes",
+            "name": "着て過ごす場面",
+            "type": "list.metaobject_reference",
+            "description": "同じ商品を所有する ta_vie_product_scene のみを選択し、表示順に並べてください。表示上限は3件です。",
+            "validations": [
+              {
+                "name": "metaobject_definition_id",
+                "value": "REPLACE_WITH_GID_TA_VIE_PRODUCT_SCENE"
+              },
+              {
+                "name": "list.max",
+                "value": "3"
+              }
+            ]
+          },
+          {
+            "key": "fit_body",
+            "name": "サイズ・着用感の説明",
+            "type": "rich_text_field",
+            "description": "商品の事実とブランドの表現を確認して入力。空欄は公開画面で省略します。"
+          },
+          {
+            "key": "size_rows",
+            "name": "寸法表の行",
+            "type": "list.metaobject_reference",
+            "description": "同じ商品を所有する ta_vie_product_size のみを選択し、表示順に並べてください。表示上限は12件です。",
+            "validations": [
+              {
+                "name": "metaobject_definition_id",
+                "value": "REPLACE_WITH_GID_TA_VIE_PRODUCT_SIZE"
+              },
+              {
+                "name": "list.max",
+                "value": "12"
+              }
+            ]
+          },
+          {
+            "key": "care_body",
+            "name": "お手入れ",
+            "type": "rich_text_field",
+            "description": "商品の事実とブランドの表現を確認して入力。空欄は公開画面で省略します。"
+          },
+          {
+            "key": "making_body",
+            "name": "製造・背景",
+            "type": "rich_text_field",
+            "description": "商品の事実とブランドの表現を確認して入力。空欄は公開画面で省略します。"
+          }
+        ]
+      }
+    }
+  ],
+  "product_metafield_definition_mutation": "mutation CreateTaVieProductMetafield($definition: MetafieldDefinitionInput!) { metafieldDefinitionCreate(definition: $definition) { createdDefinition { id namespace key } userErrors { field message code } } }",
+  "product_metafield_definition_variables": {
+    "definition": {
+      "name": "TA VIE｜商品特集",
+      "namespace": "ta_vie",
+      "key": "feature",
+      "description": "この商品だけの TA VIE 商品特集を選択。特集と子項目の所有商品も同じ商品に設定してください。",
+      "ownerType": "PRODUCT",
+      "type": "metaobject_reference",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      },
+      "validations": [
+        {
+          "name": "metaobject_definition_id",
+          "value": "REPLACE_WITH_GID_TA_VIE_PRODUCT_FEATURE"
+        }
+      ]
+    }
+  },
+  "runtime_guards": [
+    "product.metafields.ta_vie.feature.value.owner_product.value.id must equal current product.id.",
+    "Every detail, scene and size row must have owner_product.value.id equal to current product.id.",
+    "Mismatches and empty public content are omitted; editor guidance is separate from public copy.",
+    "Liquid caps details at 6, scenes at 3, size_rows at 12 independently of Admin validation.",
+    "Do not assign the same feature or child entry to another product by changing its owner; create a separate entry."
+  ],
+  "review_notes": [
+    "This JSON includes metadata and multiple operations; send only the selected operation string and its resolved variables to the Admin API.",
+    "If any type or ta_vie.feature already exists, compare it first. Do not delete or recreate existing definitions or values automatically.",
+    "The read query pageInfo must be followed for pagination; first 100 is not proof of no matching existing definition.",
+    "Confirm the supported Admin API version, permissions, file type and list validations with the store administrator. API userErrors must be checked; no live schema/application success is claimed.",
+    "No product assignments, entries, pictures, content or Admin credentials are embedded in this review artifact.",
+    "Create child definitions before the root; replace all REPLACE_WITH_GID tokens before submitting root or product metafield mutations.",
+    "Storefront access PUBLIC_READ is not equivalent to publishing the theme or publishing products. Publishable entries must separately be Active."
+  ]
+}

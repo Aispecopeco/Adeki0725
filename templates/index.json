@@ -187,18 +187,22 @@
       ],
       "name": "Slideshow (Nested)",
       "settings": {
-        "transition": "slide",
+        "transition": "fade",
         "show_arrows": true,
-        "autoplay": true,
+        "autoplay": false,
         "autoplay_speed": 4,
         "width": "wrapper--full",
         "height": "seven-fifty-height-hero",
         "mobile_height": "screen-height-full--mobile",
         "color_scheme": "scheme-5",
         "padding_top": 0,
-        "padding_bottom": 0
+        "padding_bottom": 0,
+        "ta_vie_hide_unconfigured": true,
+        "ta_vie_empty_heading": "家で過ごす時間を、自分のために。",
+        "ta_vie_empty_text": "<p>TA VIEは、家で過ごす毎日を大切にするためのルームウェアを提案します。</p>",
+        "ta_vie_empty_color_scheme": "scheme-tavie-white"
       },
-      "disabled": true
+      "disabled": false
     },
     "section_text_with_products_yW3LJx": {
       "type": "section-text-with-products",
@@ -240,8 +244,8 @@
         "collection_xfkJFf"
       ],
       "settings": {
-        "subheading": "TA VIE",
-        "heading": "家で過ごす時間を、 自分のために。",
+        "subheading": "TA VIE — La vie chez soi",
+        "heading": "家で過ごす自分にも、目を向ける。",
         "image_border_radius": 0,
         "width": "wrapper--full-padded",
         "text_font_size_px_desktop": 32,
@@ -249,10 +253,11 @@
         "text_font_size_px_mobile": 26,
         "text_align_mobile": "text-left--mobile",
         "color_scheme": "scheme-tavie-white",
-        "padding_top": 60,
-        "padding_bottom": 40
+        "padding_top": 72,
+        "padding_bottom": 52,
+        "ta_vie_hide_unconfigured": true
       },
-      "disabled": true
+      "disabled": false
     },
     "columns-1": {
       "type": "section-columns",
@@ -262,9 +267,9 @@
           "settings": {
             "image_width": 100,
             "image_shape": "normal",
-            "title": "朝の支度に。",
+            "title": "朝の支度",
             "heading_font_size": "heading-small",
-            "text": "<p>外へ出る日の装いと同じように、家で過ごす自分にも目を向ける。</p>",
+            "text": "<p>新しい一日が始まる、家での時間。</p>",
             "text_font_size": "body-medium",
             "button_text": "",
             "button_type": "btn--primary",
@@ -273,7 +278,7 @@
             "show_arrow": true,
             "image_aspect_ratio": 1.1,
             "mobile_image_aspect_ratio": 1.2,
-            "heading_tag": "automatic"
+            "heading_tag": "h3"
           }
         },
         "image-1": {
@@ -281,9 +286,9 @@
           "settings": {
             "image_width": 100,
             "image_shape": "normal",
-            "title": "読書をする午後に。",
+            "title": "読書をする午後",
             "heading_font_size": "heading-small",
-            "text": "<p>家で過ごす時間を、自分のために。</p>",
+            "text": "<p>自分のペースで過ごす、午後のひととき。</p>",
             "text_font_size": "body-medium",
             "button_text": "",
             "button_type": "btn--primary",
@@ -292,7 +297,7 @@
             "show_arrow": true,
             "image_aspect_ratio": 1.1,
             "mobile_image_aspect_ratio": 1.2,
-            "heading_tag": "automatic"
+            "heading_tag": "h3"
           }
         },
         "image-2": {
@@ -300,9 +305,9 @@
           "settings": {
             "image_width": 100,
             "image_shape": "normal",
-            "title": "一日を終える夜に。",
+            "title": "一日を終える夜",
             "heading_font_size": "heading-small",
-            "text": "<p>くつろぐ時間も、日々の暮らしも、大切に。</p>",
+            "text": "<p>家に戻り、自分に目を向ける時間。</p>",
             "text_font_size": "body-medium",
             "button_text": "",
             "button_type": "btn--primary",
@@ -311,7 +316,7 @@
             "show_arrow": true,
             "image_aspect_ratio": 1.1,
             "mobile_image_aspect_ratio": 1.2,
-            "heading_tag": "automatic"
+            "heading_tag": "h3"
           }
         }
       },
@@ -321,7 +326,7 @@
         "image-2"
       ],
       "settings": {
-        "title": "",
+        "title": "暮らしのなかで、一着を。",
         "heading_font_size": "heading-medium",
         "align_heading": "text-left",
         "align_text": "text-left",
@@ -331,11 +336,12 @@
         "grid": 3,
         "layout_mobile": "slider",
         "color_scheme": "scheme-tavie-white",
-        "padding_top": 0,
-        "padding_bottom": 62,
-        "heading_tag": "automatic"
+        "padding_top": 32,
+        "padding_bottom": 72,
+        "heading_tag": "h2",
+        "ta_vie_hide_unconfigured": true
       },
-      "disabled": true
+      "disabled": false
     },
     "double": {
       "type": "section-double",
@@ -401,11 +407,12 @@
         "mobile_height": "four-fifty-height-hero--mobile",
         "reverse_blocks": true,
         "color_scheme": "scheme-tavie-soft",
-        "padding_top": 42,
-        "padding_bottom": 62,
-        "show_placeholder": true
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "show_placeholder": false,
+        "ta_vie_hide_unconfigured": true
       },
-      "disabled": true
+      "disabled": false
     },
     "announcement-2": {
       "type": "section-announcement",
@@ -423,7 +430,7 @@
         "heading_ptQ3kt": {
           "type": "heading",
           "settings": {
-            "heading": "Timeless pieces to treasure forever",
+            "heading": "La vie chez soi",
             "heading_font_size": "heading-x-small"
           }
         },
@@ -440,7 +447,7 @@
         "heading_hDqiLH": {
           "type": "heading",
           "settings": {
-            "heading": "Ethical sourcing and manufacturing",
+            "heading": "家で過ごす時間を、自分のために。",
             "heading_font_size": "heading-x-small"
           }
         },
@@ -457,7 +464,7 @@
         "heading_cNcf9c": {
           "type": "heading",
           "settings": {
-            "heading": "Sustainable heirlooms",
+            "heading": "TA VIE",
             "heading_font_size": "heading-x-small"
           }
         }
@@ -473,16 +480,17 @@
       "settings": {
         "slider_speed": 7,
         "text_alignment": "center",
-        "marquee_speed": 100,
+        "marquee_speed": 50,
         "direction": "ticker-rtl",
         "message_spacing": 10,
         "show_border": false,
         "layout": "marquee",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-tavie-soft",
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "ta_vie_reduce_motion": true
       },
-      "disabled": true
+      "disabled": false
     },
     "section-tab-collections": {
       "type": "section-tab-collections",
@@ -571,13 +579,13 @@
       "name": "Video",
       "settings": {
         "show_video_popup": false,
-        "video_popup_social": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "title": "Behind the Brilliance",
+        "video_popup_social": "",
+        "title": "家で過ごす、一着の姿。",
         "heading_font_size": "heading-large",
-        "text": "<p>Watch how our jewelry comes to life, from ethical sourcing to enduring design.</p>",
+        "text": "<p>服のシルエットや、生地の動きを。日々の時間のなかで、一着を見つめる。</p>",
         "text_font_size": "body-medium",
         "flex_align": "align--middle-center",
-        "link_text": "learn more",
+        "link_text": "",
         "button_type": "btn--white",
         "button_size": "",
         "button_style": "btn--outline",
@@ -585,15 +593,16 @@
         "desktop_height": "screen-height-three-quarters",
         "mobile_height": "screen-height-three-quarters--mobile",
         "width": "wrapper--full",
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-tavie-soft",
         "show_text_background": false,
         "color": "",
         "overlay_type": "disabled",
         "padding_top": 0,
         "padding_bottom": 0,
-        "heading_tag": "automatic"
+        "heading_tag": "h2",
+        "ta_vie_hide_unconfigured": true
       },
-      "disabled": true
+      "disabled": false
     },
     "press-logos": {
       "type": "section-press-logos",
@@ -819,7 +828,8 @@
         "layout": "marquee",
         "color_scheme": "scheme-tavie-white",
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "ta_vie_reduce_motion": true
       },
       "disabled": true
     },
@@ -998,10 +1008,10 @@
             "heading_MPnNeD": {
               "type": "heading",
               "settings": {
-                "text": "家での時間を、大切に。",
+                "text": "家にいる自分を、大切に。",
                 "heading_font_size": "heading-medium",
-                "color": "",
-                "heading_tag": "automatic",
+                "color": "#282726",
+                "heading_tag": "h2",
                 "padding_bottom": 8
               },
               "blocks": {}
@@ -1010,12 +1020,12 @@
               "type": "_group-buttons",
               "name": "Side by side buttons",
               "settings": {
-                "button_text": "ルームウェアを見る",
+                "button_text": "",
                 "button_type": "btn--secondary",
                 "button_size": "",
                 "button_style": "btn--solid",
                 "show_arrow": false,
-                "button_secondary_text": "読みものを見る",
+                "button_secondary_text": "",
                 "button_secondary_type": "btn--black",
                 "button_secondary_size": "",
                 "button_secondary_style": "btn--solid",
@@ -1048,10 +1058,10 @@
             "heading_WP7ecN": {
               "type": "heading",
               "settings": {
-                "text": "家での時間を、大切に。",
+                "text": "家にいる自分を、大切に。",
                 "heading_font_size": "heading-medium",
-                "color": "",
-                "heading_tag": "automatic",
+                "color": "#282726",
+                "heading_tag": "h2",
                 "padding_bottom": 8
               },
               "blocks": {}
@@ -1060,12 +1070,12 @@
               "type": "_group-buttons",
               "name": "Side by side buttons",
               "settings": {
-                "button_text": "ルームウェアを見る",
+                "button_text": "",
                 "button_type": "btn--secondary",
                 "button_size": "",
                 "button_style": "btn--solid",
                 "show_arrow": false,
-                "button_secondary_text": "読みものを見る",
+                "button_secondary_text": "",
                 "button_secondary_type": "btn--white",
                 "button_secondary_size": "",
                 "button_secondary_style": "btn--solid",
@@ -1100,7 +1110,7 @@
               "type": "rich-text",
               "name": "Rich text",
               "settings": {
-                "text": "<p>朝の支度、読書をする午後、一日を終えてくつろぐ夜。家にいる自分を、大切に。</p>",
+                "text": "<p>朝の支度、読書をする午後、一日を終えてくつろぐ夜。家で過ごす自分にも目を向け、その時間を大切にする。</p>",
                 "text_font_size": "body-x-large",
                 "color": "",
                 "padding_bottom": 0
@@ -1128,10 +1138,11 @@
         "gap_desktop": 16,
         "gap_mobile": 10,
         "width": "wrapper--full-padded",
-        "padding_top": 80,
-        "padding_bottom": 80
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "ta_vie_hide_unconfigured": true
       },
-      "disabled": true
+      "disabled": false
     },
     "section_custom_content_H4RTrx": {
       "type": "section-custom-content",
@@ -1185,15 +1196,17 @@
     },
     "section-product": {
       "type": "section-product",
-      "disabled": true,
+      "disabled": false,
       "settings": {
         "show_product_card": true,
         "layout": "is-reversed",
-        "limit": 5,
+        "limit": 3,
         "scrolling_styles": "vertical",
         "horizontal_scroll": false,
-        "color_scheme": "scheme-3"
-      }
+        "color_scheme": "scheme-tavie-white",
+        "ta_vie_hide_unconfigured": true
+      },
+      "name": "一着の特集 04｜Featured product"
     },
     "rich-text-3": {
       "type": "section-rich-text",
@@ -1578,15 +1591,58 @@
       "block_order": [
         "product_story_1",
         "product_story_2"
-      ]
+      ],
+      "disabled": true
+    },
+    "ta_vie_featured_01": {
+      "type": "section-product",
+      "disabled": false,
+      "settings": {
+        "show_product_card": true,
+        "layout": "",
+        "limit": 3,
+        "scrolling_styles": "vertical",
+        "horizontal_scroll": false,
+        "color_scheme": "scheme-tavie-white",
+        "ta_vie_hide_unconfigured": true
+      },
+      "name": "一着の特集 01｜Featured product"
+    },
+    "ta_vie_featured_02": {
+      "type": "section-product",
+      "disabled": false,
+      "settings": {
+        "show_product_card": true,
+        "layout": "is-reversed",
+        "limit": 3,
+        "scrolling_styles": "vertical",
+        "horizontal_scroll": false,
+        "color_scheme": "scheme-tavie-soft",
+        "ta_vie_hide_unconfigured": true
+      },
+      "name": "一着の特集 02｜Featured product"
+    },
+    "ta_vie_featured_03": {
+      "type": "section-product",
+      "disabled": false,
+      "settings": {
+        "show_product_card": true,
+        "layout": "",
+        "limit": 3,
+        "scrolling_styles": "vertical",
+        "horizontal_scroll": false,
+        "color_scheme": "scheme-tavie-white",
+        "ta_vie_hide_unconfigured": true
+      },
+      "name": "一着の特集 03｜Featured product"
     }
   },
   "order": [
-    "ta_vie_product_stories",
     "section_slideshow_nested_YfkG44",
-    "ta_vie_products",
     "section_text_with_products_yW3LJx",
+    "ta_vie_featured_01",
     "columns-1",
+    "ta_vie_featured_02",
     "double",
     "announcement-2",
     "section-tab-collections",
@@ -1595,7 +1651,7 @@
     "custom-content-1",
     "collections-list-hover",
     "announcement-3",
-    "ta_vie_reading",
+    "ta_vie_featured_03",
     "look",
     "section_dynamic_content_TkrMUq",
     "section_custom_content_H4RTrx",
@@ -1603,6 +1659,9 @@
     "rich-text-3",
     "columns-2",
     "text-row",
-    "section_hero_scrolling_mmThBz"
+    "section_hero_scrolling_mmThBz",
+    "ta_vie_reading",
+    "ta_vie_product_stories",
+    "ta_vie_products"
   ]
 }

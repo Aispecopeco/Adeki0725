@@ -1,12 +1,38 @@
+{%- render 'ta-vie-home-reduced-motion' -%}
 <!-- /sections/section-columns.liquid -->
 
-{%- render 'multicolumn', type: 'images' -%}
+{%- liquid
+  assign ta_vie_has_image = false
+  for image_block in section.blocks
+    if image_block.settings.image != blank
+      assign ta_vie_has_image = true
+      break
+    endif
+  endfor
+-%}
+{%- if section.settings.ta_vie_hide_unconfigured and ta_vie_has_image == false -%}
+  {%- render 'ta-vie-home-editor-note', message: '朝・午後・夜の実写写真を、各ImageブロックのImageから選んでください。写真未設定の項目は公開画面に表示しません。文章と写真の順序はブロックを並べ替えて編集できます。' -%}
+{%- endif -%}
+{%- if section.settings.ta_vie_hide_unconfigured == false or section.settings.ta_vie_hide_unconfigured == blank or ta_vie_has_image or request.design_mode -%}
+  {%- render 'multicolumn', type: 'images' -%}
+{%- endif -%}
 
 {% schema %}
 {
   "name": "Text columns with images",
   "class": "index-section",
   "settings": [
+    {
+      "type": "header",
+      "content": "TA VIE｜公開時の表示"
+    },
+    {
+      "type": "checkbox",
+      "id": "ta_vie_hide_unconfigured",
+      "label": "未設定の写真・商品を公開しない",
+      "default": false,
+      "info": "このセクションだけに適用します。写真や商品を選ぶとBroadcast標準の表示・動きが使われます。設定案内はテーマエディタだけに表示します。"
+    },
     {
       "type": "header",
       "content": "Typography"

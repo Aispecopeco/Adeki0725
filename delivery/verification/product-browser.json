@@ -1,0 +1,1432 @@
+{
+  "status": "passed",
+  "createdAt": "2026-10-10T08:42:46.045Z",
+  "sourceHashes": {
+    "templates/product.json": "397e8cd6f5e480fab4058dc1b87fcf742a370e9d854536c8f8c3eaa99d8fbdf8",
+    "templates/product.ta-vie.json": "013c3f2619380e48d9fa8dc44f31ad776068baaf74f57bec2a038c31cfbe92b8",
+    "templates/index.json": "85ebcdbd59dfaa7d0961a404fb9ac09a27967133069459d4569e634cbc076d52",
+    "config/settings_data.json": "5a8772924a25a9281b57bedc41499db87da78ddec3692b724fcb40baf7c0395a",
+    "config/settings_schema.json": "339d3acf1e577354e55eebdb33bff029bc498cc02a842640c91d8a9bcc477192",
+    "sections/group-header.json": "2785ea9e8d0bc88937dc934e5a0e200bb7206b908b173ed284a222de1d7ea95e",
+    "sections/group-footer.json": "7e7c0edf48d90a75ffb8f28f17fb33393a40e9333ab9597a1765b7417341718f",
+    "sections/group-pre-footer.json": "a4ec11c8186063041f19c17242e95963427c0b15c75ef70706f9f422cb80bd42",
+    "assets/ta-vie-product-stories.css": "d59bb61da9d14e42027104fb69d49332a62aefcee37980cfec5c19a9fea6d9d8",
+    "snippets/account-menu.liquid": "1b7fcebdb5195855a83cb3ed6cf7211451264c57d6451958500d369cf326f55a",
+    "snippets/animated-icon.liquid": "5fb8ced33f3edda77b80719774dc9c002a5ed93a374aeab6550bd2fb1d16726e",
+    "snippets/announcement.liquid": "ff29da23b4bacc1097d385e7e0950fb4438cc031652b35c035de33971a519d15",
+    "snippets/blog-posts.liquid": "d33a82f3d592b89d4212a72a0392297dfcaaebd60aaf4d2d6d2bae7cacdb4266",
+    "snippets/breadcrumbs.liquid": "1001834f267737a5fce52babcbd4dfbd21a93cc981a6740d11dcd60744d19a65",
+    "snippets/brick-image.liquid": "6890124f0118a9bb2bf755cddbece5b9c575416c12cc17721e569245d52ee4eb",
+    "snippets/brick-newsletter.liquid": "572c13205ea98ab4182cdf72762039e866df11afc88b56a10012646ba237c6d9",
+    "snippets/brick-products.liquid": "c0ae4ccc78597b9841236ea7499d959567745588732f3be518177d0104ffabaa",
+    "snippets/brick-review.liquid": "d921229e091fc50581bb9f10dc3d69679ffe23f5752294859493245882a21b8e",
+    "snippets/brick-text.liquid": "36fee637d317c35211296f624471cbd5f460657b041a864837378b9cf134b241",
+    "snippets/button.liquid": "ae166924c89d5a8f11539cf28cafed12aee7844d394d8c5e7ddd1b8901a39812",
+    "snippets/cart-bar.liquid": "a9b64b36e1a6ffd3ea2dfde4ad2e19205de0a6d363a2906ac8c1dca0e0c3d2f1",
+    "snippets/cart-block-discount.liquid": "9972c7cfd36fcdb6a84f569f3a0c926d0a2a0d3282bb6b4bafaa15fd9401c7ff",
+    "snippets/cart-block-gift-note.liquid": "da25aee9715c0744475a86244838ae5f8e97ab5553f875370673f94adfb72195",
+    "snippets/cart-block-order-note.liquid": "7a717fe98e9f7418c65c98ef854efd23b109caf8ad94e021a86fc5f12f098aaa",
+    "snippets/cart-block-shipping-calculator.liquid": "4e2aef57a36112e86b06e6ee9f59934bf47852af5cdb69590a6c42d38c2c3e9b",
+    "snippets/cart-block-upsell.liquid": "4f20270a1966b312e91e7e0cedb916cbe3ffaf58151023c148755c7bdd9cb911",
+    "snippets/cart-line-items.liquid": "91b51d3068fde00aaa4d82fe197610381ddc82032cdd3374cc9c4a59c177da97",
+    "snippets/cart-price.liquid": "ee82c59fa805ecfc6a3f86c6c21c8a6ab0d46d50f8d848180ef297b57b66dcdc",
+    "snippets/collection-block.liquid": "ad764f1b44c5a84b5ba4d7e86bb3ba1d2799fa916a30b45e16cd1b25e45424d9",
+    "snippets/collection-featured-image.liquid": "a8fdd582cf8af66129cae2f9650f6f96c88bf813585ab6e6afdb2f13c219fdb6",
+    "snippets/collection-filters-sidebar.liquid": "88fb969e278737595926947a06d05b951befc9a696c969a731d14d4f5f116a75",
+    "snippets/collection-grid-item.liquid": "eebe23a279fa248826031586eaf5a2abae92522bd2095fdd9f89dd44c67f44ee",
+    "snippets/collection-sorting.liquid": "12fc6a08974c70cdefb10e0ac91e9f65c3dc5ddb516ed98a69a5f6c7d1b87070",
+    "snippets/compare-images.liquid": "87b7494f68da84611fe1a8edf37196eabc91889b19e13d18f33ddcc9776c1995",
+    "snippets/countdown-timer.liquid": "7658f4f4c814ca259bfe65d22a5fb74ae223d12a33711859281767037aa7e49f",
+    "snippets/divider.liquid": "4fa64bb5ae18bf3a10131c2e81399eb893ec025da51e19f2165174390f5b42c5",
+    "snippets/filters.liquid": "38cf5af3de7dd8fa9b12d83e51a549dca61e0d1ce7427fa88c2a1f1cfbb2c8eb",
+    "snippets/free-shipping.liquid": "38c307a23a701ff43e7f8e958dfc1ac72d8f0a8e836470171ff00c992cb8d6d2",
+    "snippets/gift-card-recipient-form.liquid": "b32559ca893c92e69053628f8e548eb0da0e87241185803c086012eab7704c55",
+    "snippets/head.liquid": "a1034c744cd85f53afd25985da111f850336f29e69c44279a98406aaacc2a4e8",
+    "snippets/header-block.liquid": "f17d9d070c91e44befda2ebda3b1c6da8f685c919bd2f07cf7a5455ec2dcbb96",
+    "snippets/header-icon.liquid": "a526a44c2c00404167555c26843845d261a171cb6dedd9493b7c354b2e94f121",
+    "snippets/header-search-popdown.liquid": "ac9f3c8727a7ec4d04b7415340b5d74a9cb7be06ca16f6f68039b76b45fdb97d",
+    "snippets/header-toolbar.liquid": "a0637aa6ea472490bc7fc88551f731be1655b8d8769092b7dd7ea30a273144fa",
+    "snippets/hero.liquid": "120e11e63cb24e95fb9124d98d4b83bc12ccb9af57dbe74a0b9659d6a4ddc8ec",
+    "snippets/icon-add-bag.liquid": "bafb29733bec115f0925de917cbdaa5815cba51fc76005d2b849a30ed8c02277",
+    "snippets/icon-add-cart.liquid": "d87abf998fe1ca3b628cdc416f1bd21c39c0ffcf190e5e9c55e749e4bd7d51fa",
+    "snippets/icon-arrow-separate-vertical.liquid": "aba3fb3808b33c40593c2662070ae396abdbdc56401457aa9a79a45edc210ff1",
+    "snippets/icon-arrow-separate.liquid": "4ec2750a396e3c891347c54e15a1ee6057da1442a711266cc8b396d9e69c4438",
+    "snippets/icon-award.liquid": "cc7da4d0eb903d7fb425f5147983a87a9a5521b91c9f287f74dfd8b6f9bcd3bd",
+    "snippets/icon-bag.liquid": "225e31fc540218a775b06c0e3fe652330bcc00113dd816442e4d69caeb609ab3",
+    "snippets/icon-box.liquid": "16e9101f93fc6c86565d286086ebc53cd5f73752fac0debeb7b977495d69cbb9",
+    "snippets/icon-cancel.liquid": "955149b52d5abf2a931de824b1a63db967d949657d1dbfb2f9f6586acdef4c3d",
+    "snippets/icon-cart.liquid": "19ae0dc2180fdcea0000d47cc50101b8a6530c6febf7336ca6dc650a83b2cec8",
+    "snippets/icon-chat.liquid": "ee9875a88500d6acb5117b399782a8b145ee14e92223a12320311ab5a28ffbb5",
+    "snippets/icon-check-circle.liquid": "4f23373415429e51512d4bdac686ff2cba0849b65371ab31423f8aa1336cc5bd",
+    "snippets/icon-check.liquid": "0f4970d848e129a2057286960f30d0444406191e2c11081f29952ad22fd4fb26",
+    "snippets/icon-cloud.liquid": "5bb1e1db64533c75246838ce2e367e686fb37a74d1fcd38de49b0badb19c844d",
+    "snippets/icon-currency.liquid": "df6aab49e741efd8f203a571ac7de7fe9588483b9afe1bc7f946083d1bda5b42",
+    "snippets/icon-diameter.liquid": "73cef8b5fdacd2a791cd76e52a4303c7c8c9066827ad486804a6216e03ac1382",
+    "snippets/icon-discount.liquid": "fbbcfc518b8a0537cc0810c0fa3668f75ee609e946d22754e7a9fc5033184d88",
+    "snippets/icon-donation.liquid": "c6c7527b9f0391db8e6e0164f244e82cbb498eea4a985a43d2452db9109963f3",
+    "snippets/icon-droplet.liquid": "cc07d3e9975f86cdcca01e099850e4f63c4df0c66de917de4f2ca0bc8c01022e",
+    "snippets/icon-email.liquid": "ba1d29ee7ada586950b448a132dd2381d20ef668c74c4c6829c9d684a72d23e3",
+    "snippets/icon-facebook.liquid": "2ac06a2bd72a8f9228568052422988187a0cdf3d30b8cc98a0fb30019eeb8423",
+    "snippets/icon-fast-shipment.liquid": "0ba4c6cb5b06ff9514d351ad2c52aea4d033b176e92e9881db05bbed98b99434",
+    "snippets/icon-filter.liquid": "4cd77871c8cbfdadf045cb72dee4bb9908cc38775c209bda2980c537162c7440",
+    "snippets/icon-flare.liquid": "adcf6f3e4f2e1a07f7c48af3114f6d4824c2b17c2fd676db4e4384e102d3f9f9",
+    "snippets/icon-flower.liquid": "0d7aa5b9e22a5ca1500dcb9f047a07f93d6d157dd712bc87d1a0b05b3d371bcc",
+    "snippets/icon-gift.liquid": "0ec972857a99d3d6b05633a36c2bd9d4ddb8a230fda59633d2c40138e73b7225",
+    "snippets/icon-globe.liquid": "04967a914a09c3e9576f59d25580b46fc6896b7772c85d99cac233d2874c752e",
+    "snippets/icon-green-shipment.liquid": "b515a7bb4dd7653ed6b2f85e34054fa75d0c3551e3f6ee945cd7026dd72faff9",
+    "snippets/icon-heart.liquid": "0d0e8e4d8e137e63bc264fbd87773d9e7d33fcee10103d0126ba5335f7b5fa25",
+    "snippets/icon-in-stock.liquid": "a12b420f747980f8c486e9fa9c4a72ed97df7af12bac55d3a2d991cd1cffc0c5",
+    "snippets/icon-info-empty.liquid": "f130d9469c40751c32adae296b981713ff33f02c03c4f37e775ce5b74d6bd403",
+    "snippets/icon-instagram.liquid": "fb73325e1e19130d1277a4c10ed26cdbac00589c0b5b605ed9a2f319915d552b",
+    "snippets/icon-leaf.liquid": "d32d4e35c7769543f112d3e9f6b41af90388979bf2bed4e70f9c664fd5c0fa86",
+    "snippets/icon-lightning.liquid": "23512bfa92e27b3887df18c9f51488140b558d497e86e33941947ce5cd4238e1",
+    "snippets/icon-linkedin.liquid": "51d0ce5a4c483b924be3036bb9ebbf4b1bb04ee6e65cae01fc4163de48435be8",
+    "snippets/icon-location.liquid": "3bc757518badbc1a6d39aa59d2d8e0e2dc0d249fafdb96cdb0ad0f1f2fe29ebe",
+    "snippets/icon-lock.liquid": "539c9adbfa69f6d4af20d335d3bb4bff2255e1f4981eaa21a062e9277de5d0d3",
+    "snippets/icon-low-inventory.liquid": "80cd9cc3a14a80f25cdf593c4c686adc30e49bdaf174df3ce9fcc020d913ba42",
+    "snippets/icon-mail.liquid": "ba33a8138ee2d99841530b0f1749f624e456e348431d04afdf055a9ff1877722",
+    "snippets/icon-media-model.liquid": "b5a90cda1e01e17a31c8ae4eeb4c5778502bf5cd84da09b0ea0681ca52422448",
+    "snippets/icon-media-video.liquid": "731f2c3477562d7b43bd6875da8338597afdae8f5ac260f1583c0eb0b6b7d209",
+    "snippets/icon-menu.liquid": "a4e25b066642fe0ef5db308c19c76142af9bd4e8991102b53ee3d7b4a2c92c62",
+    "snippets/icon-minus.liquid": "2565f87592927968c1beb8e74720ac5584851223b91edb0e224e22495fb9a880",
+    "snippets/icon-nav-arrow-down.liquid": "561612d58a7c2cd111800719ce70b402428d869129f7f764da42eb29913fdb59",
+    "snippets/icon-nav-arrow-left.liquid": "0f8bbf0458fabcdafe744d5bd6624c0622b21ea3a293fb76bd946efcf0353a09",
+    "snippets/icon-nav-arrow-right.liquid": "b07d8f5ccae828f9f98a0ed31430cd74e408293f4075c5839fdc7bf58aa34a16",
+    "snippets/icon-nav-arrow-up.liquid": "6362800450bb3dd1ed37bbe6fdd56c2e2d9707696aea818463ed277b31ccfcf1",
+    "snippets/icon-notes.liquid": "eb562d4fd6d0a6cfae0c63b488aa00e71d9a52577f36618219bbf9d39b2126ea",
+    "snippets/icon-out-of-stock.liquid": "2b5c8b221d90e9b2ef66c13c2154cbc5f16e282483e401120fca9d18a1495e5e",
+    "snippets/icon-pants.liquid": "fbb094962058b6a17d39b26e1826b24570299e5f73a89cf845dac37571214244",
+    "snippets/icon-pause.liquid": "42ac4907faa284d372e5d820974e72819b7c9ac0bd66075acb2b5c1ee0425a50",
+    "snippets/icon-peace.liquid": "77b33541266a613c1647a2b9f7d109a09b5c5a05118e88498b3cd410a4830802",
+    "snippets/icon-phone.liquid": "d9898ac155ca75900513a207cec96c964e443e0c9eb517b94d7db7ae6a2a700e",
+    "snippets/icon-pin.liquid": "45e0d82db1510cf8c80a8bf4991db107083e0025fc6e8dae4e76cf2e5b01b09d",
+    "snippets/icon-pinterest.liquid": "a82b83b7f6a176599a14dd653bbb004c5052bc8ff7a7b603d12a2dfd96877803",
+    "snippets/icon-planet.liquid": "c0ef8246177b23c3efd2ae0247daceae4792bcc66bcf7086e07231c477e2e964",
+    "snippets/icon-play.liquid": "597c93ab5c6ae335380f1a0e02eb64ad576217bd512e5692e458348c12c5650c",
+    "snippets/icon-plus.liquid": "f99e7cd61512666206eaf72e23e6b09188279eff4797108666cb8c84aeb4f7da",
+    "snippets/icon-profile-circled.liquid": "33a0d07735d74bad2ff931a8d3621ee965effd5bd8d06a61dda327e41e75be06",
+    "snippets/icon-question.liquid": "0358686d291c1616db249a12aa854f0e8b549084eaa4202d5db359754c62b54e",
+    "snippets/icon-recycle.liquid": "c49befaa9a3060ef6d87954cb53f05fc404a693cfb0cd3050ac0a84c4bd8d5e5",
+    "snippets/icon-rss.liquid": "38b21298f1a3fa8a91b8fa93cc580bf5068f4575250dd6348ad27fd2cbb753ad",
+    "snippets/icon-ruler.liquid": "b4e439d976ed03ba3885c177caa99b671fe55ab857994dc83eded3397a3348a4",
+    "snippets/icon-search.liquid": "bc7bd350f2eebd6c11fe4baccf828f5a2130681b2e4a59388166a95b084fc102",
+    "snippets/icon-share.liquid": "2478ee617297b40cc2d4f57d31ffa2a41987cb6e8d8942acb4beb5a29f221815",
+    "snippets/icon-shield.liquid": "306fa4f9ffdc4d8247c16d8cf78ec720ae0cb8d32c34d1b14b72d6ee8bffe651",
+    "snippets/icon-smile.liquid": "f3ef77c3d333ee1345fb9a23a0597cebaf073f2d629d51469a98547c36e94d62",
+    "snippets/icon-snapchat.liquid": "7accf6f2269ccdb4e7803414f5aa09950ce2227292647addda4d8b9e4a439e63",
+    "snippets/icon-star-full.liquid": "e36d07ae52cc6fa1697614a8c4193402cebab2d2381eb5f2078793f84b9b7759",
+    "snippets/icon-star.liquid": "f8970876be83ab833c92e0d8666a4652d2e85a7aacb142129a1d9114403a011c",
+    "snippets/icon-tags.liquid": "c665e74faf843b7d7a91e03444f0383536f0ef9bbff10a9afbf80a6d139d4ef4",
+    "snippets/icon-tiktok.liquid": "d3728fdb6935e5b5e7dd4ed23cbd45f40c49692d59bb9413b7d7c85d99b5c95b",
+    "snippets/icon-tree.liquid": "ad3e97ce0baf47e682b2020b0136ea44c46b59b0b9d2455f736f974f6c6d53a7",
+    "snippets/icon-trophy.liquid": "c6a12e7272bfdc96f9df44ffcaf0b8753012edb8b8d5fb4f83d1703642742bfc",
+    "snippets/icon-truck.liquid": "ae2635a7e30e6faccfb3989e65fe661d67e2a024a9b167896dd53d8c1e503d20",
+    "snippets/icon-tumblr.liquid": "960c0615d35890be5570aae518c42ec783eb48d09aad5203733ddb9ea8466e9e",
+    "snippets/icon-vegan.liquid": "6e91dcdad443d39e9cb71479002c8d8f0ad986c970441638ee09bdf67341a7bb",
+    "snippets/icon-vimeo.liquid": "0bafa1089d3d85991c7a1f9de70e27c12030b30fd240ef044407a9c9f01e3e52",
+    "snippets/icon-wash.liquid": "b3e03ad385599ec88815da57fbb0ceabae62388aab6b51c77dd6de2335bfaf8c",
+    "snippets/icon-washing-machine.liquid": "c4fe93f7f0d285acc23cc786b7551d2a842c0a7399405e7322f5f5186825ae88",
+    "snippets/icon-x.liquid": "663b1c2a98129ba05be9b254276b73909ced3c58861b98ad2ef7b247aa15d8fd",
+    "snippets/icon-youtube.liquid": "4e3f3652d572140eab052ab3d07d36c9266adac0e0af890557b847272c5aa3d0",
+    "snippets/icon.liquid": "f5b846ae6c87fc4729606ceac2ae1c7ad50ce3e68ed8f30e1f5f4f84fd992eb2",
+    "snippets/image-hero.liquid": "f931fa0002ac64e6a73f392b534a1ed420dab379b8c2551ed16f04437d70df23",
+    "snippets/image-srcset.liquid": "b6331964081b43a57431657484968cc49e459e261f19c2b7e0ef49f555a5ecc4",
+    "snippets/image.liquid": "a2f7487a59f310f772fa4cc230ce98eb8d7b4b69d33fc9678dc896eaf9b7a965",
+    "snippets/loading.liquid": "648805a689972d5fe016b9f7c0c356854793886ffc5191925f52a0e25274f888",
+    "snippets/localization.liquid": "e6f747070115be146dead82ccaf537e43d56535b1f7dbc6f22491f47c47100db",
+    "snippets/media.liquid": "c70d3ef90ab26f79927a11736e3e9f0d16abc277c483edd3fb1a453ce14ae7ca",
+    "snippets/multicolumn.liquid": "8bcb7888f4139ce595fe427903a4b04a74a70b5a5052efacabcc6fee906c4c58",
+    "snippets/nav-item-mobile.liquid": "0ea7424bf5a80c7ad5e5c5fbd7d81fbb66af14f5fd936dc8971eb0fb57415de5",
+    "snippets/nav-item.liquid": "d2943a73c79c217b635e322cfb961f8627c8925cc0cd4740681ae85ce4c6a0a9",
+    "snippets/newsletter-form.liquid": "70fc471154587bcbff63b83a6e0e44364b918dd79ed0d0f0d808fb29f04f84d7",
+    "snippets/no-blocks.liquid": "17fddde6589ddafb9dc072d713fc3ef6bb05f4a2161bd3dff26c09e05ffca2e9",
+    "snippets/notification-form.liquid": "a4a9e30440f07384e17a19ede8a8365a1aafc59949a3268535e69b519218736f",
+    "snippets/onboarding-product-grid-item.liquid": "dbcfc865bc1f434e32ebc5ae7592779f27dacf4f25fad63e021479441a6a4104",
+    "snippets/pagination.liquid": "96abe24aa930b0c477789e32738bd8e4e11f408c79fcca4825eee16f193a1fdb",
+    "snippets/photoswipe-video-html.liquid": "a94bd580239cad6c78b9c0668344cfc7120b3dad8e99f89977263e8cbf7e9c62",
+    "snippets/price.liquid": "b6daa010e59e070c044e446f77ab4f8b857b7cedb845c2486a25453f4482a7ca",
+    "snippets/product-badge.liquid": "41a3c9778ce9b4eba43656de98725284e65a8077fb2e4fdc278b96a192c9a90b",
+    "snippets/product-block-text.liquid": "f00b902bd63a39a80feef683cd81d4058666fe3b17ce762f654a6b74d65b999c",
+    "snippets/product-buttons.liquid": "da87d43b20d0d46317d413e897296fdf7760f03a6a0c5034dd5699c04d4b5fe2",
+    "snippets/product-column-item.liquid": "26c2402ddc469b3f89b1d9f7334bab861c35d63fcfe93ddf745969b97a074ea6",
+    "snippets/product-description.liquid": "1868cc065cfef3da71793855cfb449f71b1deb94d4208bbaa604ca925138ca3c",
+    "snippets/product-grid-item.liquid": "28fe095fb553628e0c5b78b71d6697f4b46d42dc67ba34d991b27404645296f0",
+    "snippets/product-grid-price.liquid": "b60b38f0eacc272dfb2cd4d8ff113d89bd72bed97cad908ff596e3c04fd828e1",
+    "snippets/product-inventory.liquid": "26d05d3e79b561b254bbee8e8ce395a2d0cbe1bd626181d655c268b9b7aae487",
+    "snippets/product-popup.liquid": "b6c61c2a066fd3af53f655225c65e2e155e3f4407724a8d2cde686ddea6e3d48",
+    "snippets/product-price.liquid": "bc3a1c3057f6c2cd3ff55df710e0b110da6986c34630d3220cf8cd77d8bb2bb5",
+    "snippets/product-properties.liquid": "f7c1e810c427bcfa0462d39ee20f702f04f4f47a2ff7545d6d012ca0a53c551e",
+    "snippets/product-quick-add-modal-template.liquid": "eb6143d5262cce8437162cd7b4717f9f0e536545718b1f47d7d2b4abb846d656",
+    "snippets/product-siblings.liquid": "ddecbc828b5901a454b969bc2083459956db8b7d47cde8bba5e81521321a89c8",
+    "snippets/product-tabs.liquid": "dbf2652ac92f9c25003bfedd5d51f2f481d20a86570f6cdc537d768f4058877a",
+    "snippets/product-title.liquid": "3549eddc398a68797bbf569d21dc34220ea08c18564ab46325304926bc27c6f6",
+    "snippets/product-variant-options.liquid": "d7b99694c71eddafd68829358dbebbeb08c6da67b1b8ff40850b68db5cef5800",
+    "snippets/product-variant-picker.liquid": "83ac53d87f47332ef7d7eb09bdc2389e9cc462c7002ce43bd82c8327a9a8bfc7",
+    "snippets/product.liquid": "22573f51cb57c93b767f491c1a2ebf271a69856fbedf9b070775faac4bceb7e1",
+    "snippets/products-recently-viewed.liquid": "59f7f0978c28ec7aac3f811e2d6a9e5820d76da5ec475d5809c59ce0c4e9c6a6",
+    "snippets/products-recommendation.liquid": "ce2931caba869359a70cc8db751412019973e410f0c802ed964725f61e596107",
+    "snippets/quick-add-product.liquid": "3ff91417d5d1eea38022be89ced72f6f091b6bd5755ed429c63c59559bfa1fbf",
+    "snippets/search-form.liquid": "0ae4a4e0743b36762be787eae9c254ac2ba283e5706112eeca771c09f077179b",
+    "snippets/search-product-item.liquid": "b8476b32e9e4c81d4b6d58149719050326033d3aa15e37af2fe5ac63f6c36f6e",
+    "snippets/search-results-item.liquid": "be616affb04e4cff0f5c774287ebb29247754da6eab0d45d3bb09de4e20d26f9",
+    "snippets/section-double.liquid": "76b07fd241d66c4c3870106bb7834923d3e25a798715f0b2b1386034d91c999f",
+    "snippets/share-button.liquid": "cef1209621ceedf32adeb6c55d304c1c9eb58d8c264967ab3899c2d9673298d2",
+    "snippets/slide.liquid": "a21bb253919b37574ef97edfd87a36552db91349dd0f4303c7f19b801e9efb0d",
+    "snippets/social-icon.liquid": "a7e6795ca6fb9da81c1282796aa64872f1c434804ac2ffd4ad54363ac3825ba0",
+    "snippets/social-icons.liquid": "0fb083b30f27182e72ae62781e2f841d8d50939e0fae0de4881164214cf7e81d",
+    "snippets/social-meta.liquid": "9cf28491aa869cbd785e88eba6b82768cabed6af59ce0bbafebb2adcc3e3eaac",
+    "snippets/stylesheet.liquid": "27189341003a0db729100284548a699088852f3c1650cab57ee639714082d2f9",
+    "snippets/superscript.liquid": "9aa5cb709c102d7cba921126b02b74ebe69144c6cfae5778e9219354a72c46fe",
+    "snippets/swatch-color-list.liquid": "e822a9870ef67aa60dcde315e5bff261e97e7f5f9aa92fc4a4b013c8604266d9",
+    "snippets/swatch-input.liquid": "1e25536f9a7c882ccd92a03f872bacd538673bc115ea7cb80b440385bd5f96f7",
+    "snippets/ta-vie-feature-media.liquid": "7b91c56868aab293379dee36edb5c1d384f645a2c68236ca07e87bee7b28e9ca",
+    "snippets/ta-vie-feature-size.liquid": "91b3982cff115d996f6bfe62fe45f6896b3fb9dca03b82bb24f0d69f7332097a",
+    "snippets/ta-vie-feature-tabs.liquid": "306055370fd04c05e4d6e24978b72729a49301ffbd093953a60dd12a1c03d7f5",
+    "snippets/ta-vie-home-editor-note.liquid": "93f83f5c48517ed4743f6e0689320dd57514ed28c316c6804dfeb682a31c2c49",
+    "snippets/ta-vie-home-reduced-motion.liquid": "9025b176624d1aa1cc4e1b84caa26d2960cba654b1bbcba65bb449a07e8ccdcf",
+    "snippets/ta-vie-home-typography.liquid": "9c79c23e85f02b636b8e425595ec2862ea6979279015efc398eedb7c521f786b",
+    "snippets/ta-vie-menu-destinations.liquid": "7256732200f8ec6e6e1eb96ef95f1298d55e3d4cab82797ce251e9cef6a57610",
+    "snippets/ta-vie-page-links.liquid": "8abd28fc0d3be9c70086f82cd47b2d747af932395144bb0085a4c8f7294c25cf",
+    "snippets/ta-vie-product-intro.liquid": "2e718fa9c8462f449d244eef073ad14d9c1ecf84dd4b43be57fde0982925a442",
+    "snippets/ta-vie-product-purchase-anchor.liquid": "79992e721d3437b9312174ec0f36deed303e2936a873a8b0f9f4ed274feee995",
+    "snippets/ta-vie-product-purchase-assets.liquid": "f4eb24972f76a9fac34ed4660d0fdedaa8b080b23acf079a4964c768801189d7",
+    "snippets/ta-vie-product-text-block.liquid": "044628c28cd4e2dc5657f08da571dccc977cc4a86cb89de72c10c4b4ab8b4e70",
+    "snippets/ta-vie-product-url-state.liquid": "e657239da1bf05d5d5806f1252440276e891624e6221ad381d33939dcdbb5480",
+    "snippets/ta-vie-site-typography.liquid": "ce9b75c3653aae33edf93b480adc6d8428d2cded1382b7ae895781922ec40fbf",
+    "snippets/toggle-ellipsis.liquid": "6e1e09006d313729575a390ee92de536489329cd37c4a1b0bd74225b63f2f392",
+    "snippets/upsell-product.liquid": "9d5acd0391438cc3243d07f2dcbc66cbacf7d282e43e1e514bd9f7ecad44bcf5",
+    "snippets/video.liquid": "583ff872669aa0a54124d36fa8536de76002d0720de1729e04f70fe782deb27f",
+    "snippets/zoom-pswp.liquid": "9c11bad770faffe4f1a775fc2df030f09ffcda0a458ce84ae81acc0c2bacbf8c",
+    "sections/group-overlay.json": "ed82779ef35dba4f127211e7896d7aa71e53b2de82b7a92dfbdedb66e2d922ba",
+    "locales/ja.json": "aed1aed51db583f8266753174fb5a03db317ca8d96ffe6f5d17be3fc28199ded",
+    "assets/swatches.css": "9cdd95646bfad75584e979350f9aa580c172935982c71f4d9698ac456bf79887",
+    "sections/section-divider.liquid": "ce5e3785a36fce206256b2b594276b754237970439dadfa877fa3538c43656bd",
+    "sections/product.liquid": "297765b528e8aa6a66803a88f6998109a76efed6d879e7e76605ad5f7469e79c",
+    "assets/breadcrumbs.css": "eaf0853a66b9249982141dd13ad2f48eb7734308fa3a35a234c59dbf8e0c5ee2",
+    "assets/tabs.css": "3bfaac8ce4ec6fc36224f568fba4c4b37375b2add74822e9cf8b10944e057686",
+    "assets/cart-bar.css": "ff9e3cb34c2aefd1c954f4ec4e3d2bf7e7603b2d4b4d23f39c020d52853dc298",
+    "sections/section-product-feature.liquid": "903e900246d06a36337bf6f66d1e881ae106bc8e6739f6fb7a60e9b1c82fdf50",
+    "sections/related.liquid": "e43b722277f8342371d4198d2c1d9815f3477ed119adc81a8e7d845db9e363c6",
+    "sections/header.liquid": "48ec72358516c67ffbb2f41a1365a4c3606e3fe58a498a8a31dc5403427ebbc7",
+    "assets/social-icons.css": "bc77220756e680a399fdd5caa3b90b187f3b6fa1032416bb1990fb30ecba54d7",
+    "assets/header-toolbar.css": "f830c2eef9cca95e36c711370397519c9b4fc9fa0996e4b55f237a3a60dc3744",
+    "sections/mobile-menu.liquid": "f69b8cea191edff5add9cdc73f27812ea52a025b734a502fa0ab3d7bab86cda6",
+    "sections/footer.liquid": "17e767719970c87d758dfbe4eeb25a77dbbbca75adfd30d8b7d56be34a90ca21",
+    "sections/section-anchor-logo.liquid": "05fc8156bdbf7b5a04962d05f44847d611bfc8fa42346a9e4d44e99b4ddc92f7",
+    "sections/section-supporting-menu.liquid": "f55abe486898eac4418ac7ddd14cc14830af76dbf69de1dc4c5f0d6603b8beec",
+    "sections/cart-drawer.liquid": "011b5f8d3a00312a1defc8a8415f9ba63f7a739a095e5b4d3634d9b6899c53d2",
+    "assets/design-mode.css": "2eb78d9ba776a9bfa5bdb6f34df4aebc4c3af108dc83020b6867c9cfce6d46fa",
+    "sections/api-cart-items.liquid": "61a1f83d3a899229b1b7965a462b510e6b5888d3147bbd4608b6ca4e2b9488c3"
+  },
+  "assetHashes": {
+    "assets/theme.css": "ceb601dbfd3d219ed4d3b02c885a4bb3719b0b690544c69315e5ebbcd618c946",
+    "assets/header-dropdown.css": "f2f68203f669ea04c0577afc89a3a1d6a7d71e959954ff223324695617ea5938",
+    "assets/vendor.js": "f09ff9be18eecbe92d5efaf13e82ab9fdaff652238fd6b8d39b5442b3589ad35",
+    "assets/search.css": "0509cffdfbb60b33a7f66f3b21ae5b981e731ad0504ba127ea74d50300d6206d",
+    "assets/predictive-search.css": "ad36bdc924d744fe13723f8ee84ee62e2b6c2dd0d90da63ef2be242236fa0f1e",
+    "assets/header-search-popdown.css": "c3ae1bee017f6219da8fbac5719f724050401df14a8d495a7110d731aed50498",
+    "assets/free-shipping.css": "3532b22b8fa1172673a911562ef32ea4fc3739d95c3675646673cdb93d85d503",
+    "assets/product.css": "3615d67b6f5e8541a64436a22cdfe858c920080eddbb106d7128e10eafad83e9",
+    "assets/ta-vie-product-purchase.css": "c8b5f977fecd403178787faacabc39247902b97c28cb4c253efbda4fbf7a2f2f",
+    "assets/ta-vie-product-feature.css": "b77d4956814bde88c4a3aef5494613f75af8b530db9a6a4d836139ba01b3bcd3",
+    "assets/related.css": "851035511caf3e5d0ebdb99eb75ef13b8a2d807bc79d712d39b40017f8b0f858",
+    "assets/tabs.css": "3bfaac8ce4ec6fc36224f568fba4c4b37375b2add74822e9cf8b10944e057686",
+    "assets/social-icons.css": "bc77220756e680a399fdd5caa3b90b187f3b6fa1032416bb1990fb30ecba54d7",
+    "assets/newsletter.css": "401015f5218882fede22143a2c2101e20ea3d3ac97f89504684ce8ddb1fccdab",
+    "assets/supporting-menu.css": "22bb01debb63452b68363cad7de619110e416b23ab50669d8f1d17609dcb191b",
+    "assets/theme.js": "e16fe7a7509c898a7688b701bdd2a70db9bb9d6f00a0ff03b8c0a15871ee860f",
+    "assets/rellax.js": "d7fc8402069c442e78d4276221562d7a46bd6f789ad4b9477509ecd0afce164e",
+    "assets/parallax-hero.js": "3cb71c821b052f06b58c9c050ab2ce8e551e0988ae138515328dd9c7b24a55cd",
+    "assets/recently-viewed.js": "e513b150a6ad29ef5e2a17ec1832019245fb6d8310d55abf3ae3358c1b966e1d",
+    "assets/ta-vie-product-purchase.js": "891bbfe544f027c627fc002b8ade98c87712c18149b0dd9dba3660db546f25f9",
+    "assets/load-photoswipe.js": "89dd70e28355f4bebcfb6fcf5ed99ea73fc6888696ec3a7a8abfaf5864ec2c69",
+    "assets/zoom.js": "a3b6a6dd61fc41a1c18ea580639da8857a8096423b09ed4559faf16f28acb56e",
+    "assets/product-notification.js": "de5ff79836fa9b34a1f787c6900269fb838cdd4a8dad27a5a3ace3ab8909bb70",
+    "assets/cart-bar.js": "b66b063fe954dbbe7ea5680c3044d903abe175546b1d851cf5bd2efb96bfb271",
+    "assets/product-info.js": "0527d93f6ea2456369c56a22ef247b0c89030589e8849fa6788d8a0769037cb8",
+    "assets/product-sticky.js": "8381bd32f45979be73dd236c82ac1c5731c771d6bf536ec4a35a78edcfec6ad9",
+    "assets/ta-vie-product-feature.js": "d8f9113c84a57798f46b20d6f225111844e59f6e02f60b25a8b52ccda3adfb9b",
+    "assets/related-products.js": "46205dde66cf75d49d599bacc8483c6f97dec6bfab088dcd0ee9b734f55ee516",
+    "assets/newsletter.js": "d73956d788d6b9c648b84d239a62e6332f4e24424a38a83735c3cd92e117dfa3",
+    "assets/footer.css": "0558865d652b873bd35cff6804cfb2016018c7a541b84bc46300192f0397d4ed",
+    "assets/icon-zoom-in.svg": "08c9c9297878a3efe4d7ff45db68037f73bb791fe798c520a7c4c6a2f6fe6f27",
+    "assets/header-toolbar.css": "f830c2eef9cca95e36c711370397519c9b4fc9fa0996e4b55f237a3a60dc3744",
+    "assets/breadcrumbs.css": "eaf0853a66b9249982141dd13ad2f48eb7734308fa3a35a234c59dbf8e0c5ee2",
+    "assets/cart-bar.css": "ff9e3cb34c2aefd1c954f4ec4e3d2bf7e7603b2d4b4d23f39c020d52853dc298",
+    "assets/theme-editor.js": "e5374907c0933b424d0f3a1ec3a3f4cc70c0741eaf487ceb81aa0bf2bfeb5e54"
+  },
+  "sourceChangedSinceRender": [],
+  "assetsChangedSinceBrowser": [],
+  "ssrResults": [
+    {
+      "mode": "complete",
+      "source": "current theme source",
+      "bytes": 166906
+    },
+    {
+      "mode": "empty",
+      "source": "current theme source",
+      "bytes": 150424
+    },
+    {
+      "mode": "wrong-owner",
+      "source": "current theme source",
+      "bytes": 150424
+    },
+    {
+      "mode": "editor-empty",
+      "source": "current theme source",
+      "bytes": 136687
+    },
+    {
+      "mode": "all-soldout",
+      "source": "current theme source",
+      "bytes": 167022
+    },
+    {
+      "mode": "independent-1001",
+      "ownedProductId": 1001,
+      "featureBytes": 16202,
+      "otherProductsAbsent": true
+    },
+    {
+      "mode": "independent-1002",
+      "ownedProductId": 1002,
+      "featureBytes": 16202,
+      "otherProductsAbsent": true
+    },
+    {
+      "mode": "independent-1003",
+      "ownedProductId": 1003,
+      "featureBytes": 16202,
+      "otherProductsAbsent": true
+    },
+    {
+      "mode": "independent-1004",
+      "ownedProductId": 1004,
+      "featureBytes": 16202,
+      "otherProductsAbsent": true
+    },
+    {
+      "mode": "heading-only",
+      "publicFeatureAbsent": true
+    },
+    {
+      "mode": "text-only",
+      "mediaAndUnusedChaptersAbsent": true
+    },
+    {
+      "mode": "reordered",
+      "changedChapterOrder": true
+    },
+    {
+      "mode": "disable-block",
+      "disabledChapterAbsent": true
+    }
+  ],
+  "results": [
+    {
+      "width": 320,
+      "status": "passed",
+      "initial": {
+        "overflow": false,
+        "h1": 1,
+        "variant": "100101",
+        "price": "通常価格\n        ¥22,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA白 / S在庫あり\n        \n        ¥22,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "chapters": 8,
+        "tabs": 6,
+        "enhanced": 2,
+        "body": "\n    TA VIEこの一着を、深く知る。この一着について — 商品1001のテスト素材を近くで見る細部を知る家で過ごす姿を想像するサイズと着用感長く着るために仕立てと製造背景この一着を選ぶ\n          01この一着について — 商品1001のテスト\n          \n          \n    \n  \n                  商品1001専用の理由。これは実物の特徴を主張しない、文字組みを確認するための検証用文章です。\n                \n        \n          02素材を近くで見る\n          \n          \n    \n  \n                  検証用の素材説明。実物の混率・機能・原産国・肌触りはここでは確定していません。\n                \n        \n          03細部を知る\n          \n          細部1細部2細部3\n        \n    \n  \n            細部1の写真と文章商品1001専用の細部1。写真と説明の切替を確かめるための内容です。\n        \n      \n        \n    \n  \n            細部2の写真と文章商品1001専用の細部2。写真と説明の切替を確かめるための内容です。\n        \n      \n        \n    \n  \n            細部3の写真と文章商品1001専用の細部3。写真と説明の切替を確かめるための内容です。\n        \n      \n  \n        \n          04家で過ごす姿を想像する\n          \n          朝の支度読書の時間一日を終える夜\n        \n    \n  \n            生活場面1 — 検証商品1001専用の生活場面1。写真の位置と本文の読みやすさを確認します。\n        \n      \n        \n    \n  \n            生活場面2 — 検証商品1001専用の生活場面2。写真の位置と本文の読みやすさを確認します。\n        \n      \n        \n    \n  \n            生活場面3 — 検証商品1001専用の生活場面3。写真の位置と本文の読みやすさを確認します。\n        \n      \n  \n        \n          05サイズと着用感\n          \n          商品1001専用のサイズ説明。モデル情報・フィットは実測後に商品ごとに入力します。\n    \n      商品実寸\n      \n        \n          サイズ着丈身幅袖丈ウエスト股下\n      \n      \n                TEST S65106587268\n                TEST M68112607871\n    \n  \n        \n          06長く着るために\n          \n          \n              お手入れ方法\n              商品1001専用のお手入れテスト。実際の洗濯表示から確認した内容を登録します。\n            \n        \n          07仕立てと製造背景\n          \n          製造背景の説明欄。実商品の製造国・工程を主張する記載はありません。\n        \n          この一着を選ぶ\n          \n          \n            LOCAL FIXTURE — 商品レイアウトA\n            色・サイズと購入情報を確認\n          \n        \n    \n  ",
+        "selectedIds": [
+          "8101",
+          "8201"
+        ],
+        "formID": "product-form-template--100000__main",
+        "stock": "在庫わずか"
+      },
+      "afterBlack": {
+        "variant": "100104",
+        "installment": "100104",
+        "price": "通常価格\n        ¥25,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA黒 / S在庫あり\n        \n        ¥25,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "media": "40012",
+        "selectedIds": [
+          "8102",
+          "8201"
+        ],
+        "stock": "在庫わずか",
+        "buttonDisabled": false,
+        "url": "http://127.0.0.1:46193/products/local-fixture-1001?variant=100104"
+      },
+      "soldout": {
+        "variant": "100106",
+        "price": "通常価格\n        ¥26,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA黒 / L売り切れ\n        \n        ¥26,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "stock": "在庫なし",
+        "buttonDisabled": true,
+        "buttonText": "売り切れ ¥26,000.00"
+      },
+      "unavailable": {
+        "variant": "",
+        "buttonDisabled": true,
+        "buttonText": "選択できません ¥26,000.00",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA白 / L選択できません\n        \n        ¥26,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "barPriceVisible": false,
+        "barSelected": "白 / L",
+        "mainPriceVisible": false,
+        "mainPrice": "通常価格\n        ¥26,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり"
+      },
+      "formBeforeAdd": {
+        "variant": "100105",
+        "quantity": "2",
+        "buttonDisabled": false
+      },
+      "cart": {
+        "open": true,
+        "items": "LOCAL FIXTURE — 商品A\n            \n\n            \n                    色:\n\n                    黒\n                  \n                    サイズ:\n\n                    M\n                  \n          \n\n          ¥25,500\n              \n                \n\n                \n\n                \n              \n\n              削除\n            \n          \n        \n\n        \n          ¥51,000",
+        "count": "2",
+        "formId": "product-form-template--100000__main"
+      },
+      "returnState": {
+        "focusOption": "8102",
+        "variant": "100105",
+        "scroll": 5471
+      },
+      "mobileMedia": [
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-reason-mobile-750x1000.svg?width=360",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 reason"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-material-mobile-750x1000.svg?width=360",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 material"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-detail-1-1200x1200.svg?width=2200",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 detail-1"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-detail-2-1200x1200.svg?width=2200",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 detail-2"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-detail-3-1200x1200.svg?width=2200",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 detail-3"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-scene-mobile-1-750x1000.svg?width=360",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 scene-1"
+        },
+        {
+          "src": "",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 scene-2"
+        },
+        {
+          "src": "",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 scene-3"
+        }
+      ],
+      "reduced": {
+        "matches": true,
+        "zoomTargets": 0,
+        "mediaTransforms": [
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "overflow": false
+      },
+      "headMetadataUnchanged": true,
+      "backendEvents": [
+        {
+          "kind": "cart-add",
+          "id": 100105,
+          "quantity": 2,
+          "bodyType": "multipart/form-data; boundary=----WebKitFormBoundaryfBe95Rw8293RIR0e"
+        }
+      ],
+      "nativeRequests": [
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8201"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8203"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8101,8203"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8203"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8202"
+        },
+        {
+          "method": "POST",
+          "path": "/cart/add",
+          "query": ""
+        },
+        {
+          "method": "GET",
+          "path": "/cart",
+          "query": "?section_id=api-cart-items"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?variant=100105&section_id=template--100000__main"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=api-live-cart-info&variant=100105"
+        }
+      ],
+      "errors": [],
+      "logs": []
+    },
+    {
+      "width": 390,
+      "status": "passed",
+      "initial": {
+        "overflow": false,
+        "h1": 1,
+        "variant": "100101",
+        "price": "通常価格\n        ¥22,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA白 / S在庫あり\n        \n        ¥22,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "chapters": 8,
+        "tabs": 6,
+        "enhanced": 2,
+        "body": "\n    TA VIEこの一着を、深く知る。この一着について — 商品1001のテスト素材を近くで見る細部を知る家で過ごす姿を想像するサイズと着用感長く着るために仕立てと製造背景この一着を選ぶ\n          01この一着について — 商品1001のテスト\n          \n          \n    \n  \n                  商品1001専用の理由。これは実物の特徴を主張しない、文字組みを確認するための検証用文章です。\n                \n        \n          02素材を近くで見る\n          \n          \n    \n  \n                  検証用の素材説明。実物の混率・機能・原産国・肌触りはここでは確定していません。\n                \n        \n          03細部を知る\n          \n          細部1細部2細部3\n        \n    \n  \n            細部1の写真と文章商品1001専用の細部1。写真と説明の切替を確かめるための内容です。\n        \n      \n        \n    \n  \n            細部2の写真と文章商品1001専用の細部2。写真と説明の切替を確かめるための内容です。\n        \n      \n        \n    \n  \n            細部3の写真と文章商品1001専用の細部3。写真と説明の切替を確かめるための内容です。\n        \n      \n  \n        \n          04家で過ごす姿を想像する\n          \n          朝の支度読書の時間一日を終える夜\n        \n    \n  \n            生活場面1 — 検証商品1001専用の生活場面1。写真の位置と本文の読みやすさを確認します。\n        \n      \n        \n    \n  \n            生活場面2 — 検証商品1001専用の生活場面2。写真の位置と本文の読みやすさを確認します。\n        \n      \n        \n    \n  \n            生活場面3 — 検証商品1001専用の生活場面3。写真の位置と本文の読みやすさを確認します。\n        \n      \n  \n        \n          05サイズと着用感\n          \n          商品1001専用のサイズ説明。モデル情報・フィットは実測後に商品ごとに入力します。\n    \n      商品実寸\n      \n        \n          サイズ着丈身幅袖丈ウエスト股下\n      \n      \n                TEST S65106587268\n                TEST M68112607871\n    \n  \n        \n          06長く着るために\n          \n          \n              お手入れ方法\n              商品1001専用のお手入れテスト。実際の洗濯表示から確認した内容を登録します。\n            \n        \n          07仕立てと製造背景\n          \n          製造背景の説明欄。実商品の製造国・工程を主張する記載はありません。\n        \n          この一着を選ぶ\n          \n          \n            LOCAL FIXTURE — 商品レイアウトA\n            色・サイズと購入情報を確認\n          \n        \n    \n  ",
+        "selectedIds": [
+          "8101",
+          "8201"
+        ],
+        "formID": "product-form-template--100000__main",
+        "stock": "在庫わずか"
+      },
+      "afterBlack": {
+        "variant": "100104",
+        "installment": "100104",
+        "price": "通常価格\n        ¥25,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA黒 / S在庫あり\n        \n        ¥25,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "media": "40012",
+        "selectedIds": [
+          "8102",
+          "8201"
+        ],
+        "stock": "在庫わずか",
+        "buttonDisabled": false,
+        "url": "http://127.0.0.1:46193/products/local-fixture-1001?variant=100104"
+      },
+      "soldout": {
+        "variant": "100106",
+        "price": "通常価格\n        ¥26,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA黒 / L売り切れ\n        \n        ¥26,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "stock": "在庫なし",
+        "buttonDisabled": true,
+        "buttonText": "売り切れ ¥26,000.00"
+      },
+      "unavailable": {
+        "variant": "",
+        "buttonDisabled": true,
+        "buttonText": "選択できません ¥26,000.00",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA白 / L選択できません\n        \n        ¥26,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "barPriceVisible": false,
+        "barSelected": "白 / L",
+        "mainPriceVisible": false,
+        "mainPrice": "通常価格\n        ¥26,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり"
+      },
+      "formBeforeAdd": {
+        "variant": "100105",
+        "quantity": "2",
+        "buttonDisabled": false
+      },
+      "cart": {
+        "open": true,
+        "items": "LOCAL FIXTURE — 商品A\n            \n\n            \n                    色:\n\n                    黒\n                  \n                    サイズ:\n\n                    M\n                  \n          \n\n          ¥25,500\n              \n                \n\n                \n\n                \n              \n\n              削除\n            \n          \n        \n\n        \n          ¥51,000",
+        "count": "2",
+        "formId": "product-form-template--100000__main"
+      },
+      "returnState": {
+        "focusOption": "8102",
+        "variant": "100105",
+        "scroll": 5627
+      },
+      "mobileMedia": [
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-reason-mobile-750x1000.svg?width=360",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 reason"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-material-mobile-750x1000.svg?width=360",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 material"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-detail-1-1200x1200.svg?width=2200",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 detail-1"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-detail-2-1200x1200.svg?width=2200",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 detail-2"
+        },
+        {
+          "src": "",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 detail-3"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-scene-mobile-1-750x1000.svg?width=360",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 scene-1"
+        },
+        {
+          "src": "",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 scene-2"
+        },
+        {
+          "src": "",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 scene-3"
+        }
+      ],
+      "reduced": {
+        "matches": true,
+        "zoomTargets": 0,
+        "mediaTransforms": [
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "overflow": false
+      },
+      "headMetadataUnchanged": true,
+      "backendEvents": [
+        {
+          "kind": "cart-add",
+          "id": 100105,
+          "quantity": 2,
+          "bodyType": "multipart/form-data; boundary=----WebKitFormBoundaryNiWsxy0XGpITuZLE"
+        }
+      ],
+      "nativeRequests": [
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8201"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8203"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8101,8203"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8203"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8202"
+        },
+        {
+          "method": "POST",
+          "path": "/cart/add",
+          "query": ""
+        },
+        {
+          "method": "GET",
+          "path": "/cart",
+          "query": "?section_id=api-cart-items"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?variant=100105&section_id=template--100000__main"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=api-live-cart-info&variant=100105"
+        }
+      ],
+      "errors": [],
+      "logs": []
+    },
+    {
+      "width": 990,
+      "status": "passed",
+      "initial": {
+        "overflow": false,
+        "h1": 1,
+        "variant": "100101",
+        "price": "通常価格\n        ¥22,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA白 / S在庫あり\n        \n        ¥22,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "chapters": 8,
+        "tabs": 6,
+        "enhanced": 2,
+        "body": "\n    TA VIEこの一着を、深く知る。この一着について — 商品1001のテスト素材を近くで見る細部を知る家で過ごす姿を想像するサイズと着用感長く着るために仕立てと製造背景この一着を選ぶ\n          01この一着について — 商品1001のテスト\n          \n          \n    \n  \n                  商品1001専用の理由。これは実物の特徴を主張しない、文字組みを確認するための検証用文章です。\n                \n        \n          02素材を近くで見る\n          \n          \n    \n  \n                  検証用の素材説明。実物の混率・機能・原産国・肌触りはここでは確定していません。\n                \n        \n          03細部を知る\n          \n          細部1細部2細部3\n        \n    \n  \n            細部1の写真と文章商品1001専用の細部1。写真と説明の切替を確かめるための内容です。\n        \n      \n        \n    \n  \n            細部2の写真と文章商品1001専用の細部2。写真と説明の切替を確かめるための内容です。\n        \n      \n        \n    \n  \n            細部3の写真と文章商品1001専用の細部3。写真と説明の切替を確かめるための内容です。\n        \n      \n  \n        \n          04家で過ごす姿を想像する\n          \n          朝の支度読書の時間一日を終える夜\n        \n    \n  \n            生活場面1 — 検証商品1001専用の生活場面1。写真の位置と本文の読みやすさを確認します。\n        \n      \n        \n    \n  \n            生活場面2 — 検証商品1001専用の生活場面2。写真の位置と本文の読みやすさを確認します。\n        \n      \n        \n    \n  \n            生活場面3 — 検証商品1001専用の生活場面3。写真の位置と本文の読みやすさを確認します。\n        \n      \n  \n        \n          05サイズと着用感\n          \n          商品1001専用のサイズ説明。モデル情報・フィットは実測後に商品ごとに入力します。\n    \n      商品実寸\n      \n        \n          サイズ着丈身幅袖丈ウエスト股下\n      \n      \n                TEST S65106587268\n                TEST M68112607871\n    \n  \n        \n          06長く着るために\n          \n          \n              お手入れ方法\n              商品1001専用のお手入れテスト。実際の洗濯表示から確認した内容を登録します。\n            \n        \n          07仕立てと製造背景\n          \n          製造背景の説明欄。実商品の製造国・工程を主張する記載はありません。\n        \n          この一着を選ぶ\n          \n          \n            LOCAL FIXTURE — 商品レイアウトA\n            色・サイズと購入情報を確認\n          \n        \n    \n  ",
+        "selectedIds": [
+          "8101",
+          "8201"
+        ],
+        "formID": "product-form-template--100000__main",
+        "stock": "在庫わずか"
+      },
+      "afterBlack": {
+        "variant": "100104",
+        "installment": "100104",
+        "price": "通常価格\n        ¥25,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA黒 / S在庫あり\n        \n        ¥25,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "media": "40012",
+        "selectedIds": [
+          "8102",
+          "8201"
+        ],
+        "stock": "在庫わずか",
+        "buttonDisabled": false,
+        "url": "http://127.0.0.1:46193/products/local-fixture-1001?variant=100104"
+      },
+      "soldout": {
+        "variant": "100106",
+        "price": "通常価格\n        ¥26,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA黒 / L売り切れ\n        \n        ¥26,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "stock": "在庫なし",
+        "buttonDisabled": true,
+        "buttonText": "売り切れ ¥26,000.00"
+      },
+      "unavailable": {
+        "variant": "",
+        "buttonDisabled": true,
+        "buttonText": "選択できません ¥26,000.00",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA白 / L選択できません\n        \n        ¥26,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "barPriceVisible": false,
+        "barSelected": "白 / L",
+        "mainPriceVisible": false,
+        "mainPrice": "通常価格\n        ¥26,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり"
+      },
+      "formBeforeAdd": {
+        "variant": "100105",
+        "quantity": "2",
+        "buttonDisabled": false
+      },
+      "cart": {
+        "open": true,
+        "items": "LOCAL FIXTURE — 商品A\n            \n\n            \n                    色:\n\n                    黒\n                  \n                    サイズ:\n\n                    M\n                  \n          \n\n          ¥25,500\n              \n                \n\n                \n\n                \n              \n\n              削除\n            \n          \n        \n\n        \n          ¥51,000",
+        "count": "2",
+        "formId": "product-form-template--100000__main"
+      },
+      "returnState": {
+        "focusOption": "8102",
+        "variant": "100105",
+        "scroll": 5936
+      },
+      "mobileMedia": [
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-reason-1200x1500.svg?width=2200",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 reason"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-material-1200x1000.svg?width=2200",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 material"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-detail-1-1200x1200.svg?width=2200",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 detail-1"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-detail-2-1200x1200.svg?width=2200",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 detail-2"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-detail-3-1200x1200.svg?width=2200",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 detail-3"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-scene-1-1800x1125.svg?width=2200",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 scene-1"
+        },
+        {
+          "src": "",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 scene-2"
+        },
+        {
+          "src": "",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 scene-3"
+        }
+      ],
+      "reduced": {
+        "matches": true,
+        "zoomTargets": 0,
+        "mediaTransforms": [
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "overflow": false
+      },
+      "headMetadataUnchanged": true,
+      "backendEvents": [
+        {
+          "kind": "cart-add",
+          "id": 100105,
+          "quantity": 2,
+          "bodyType": "multipart/form-data; boundary=----WebKitFormBoundaryOLFGOy22MOZ8HOAz"
+        }
+      ],
+      "nativeRequests": [
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8201"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8203"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8101,8203"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8203"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8202"
+        },
+        {
+          "method": "POST",
+          "path": "/cart/add",
+          "query": ""
+        },
+        {
+          "method": "GET",
+          "path": "/cart",
+          "query": "?section_id=api-cart-items"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?variant=100105&section_id=template--100000__main"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=api-live-cart-info&variant=100105"
+        }
+      ],
+      "errors": [],
+      "logs": []
+    },
+    {
+      "width": 1440,
+      "status": "passed",
+      "initial": {
+        "overflow": false,
+        "h1": 1,
+        "variant": "100101",
+        "price": "通常価格\n        ¥22,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA白 / S在庫あり\n        \n        ¥22,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "chapters": 8,
+        "tabs": 6,
+        "enhanced": 2,
+        "body": "\n    TA VIEこの一着を、深く知る。この一着について — 商品1001のテスト素材を近くで見る細部を知る家で過ごす姿を想像するサイズと着用感長く着るために仕立てと製造背景この一着を選ぶ\n          01この一着について — 商品1001のテスト\n          \n          \n    \n  \n                  商品1001専用の理由。これは実物の特徴を主張しない、文字組みを確認するための検証用文章です。\n                \n        \n          02素材を近くで見る\n          \n          \n    \n  \n                  検証用の素材説明。実物の混率・機能・原産国・肌触りはここでは確定していません。\n                \n        \n          03細部を知る\n          \n          細部1細部2細部3\n        \n    \n  \n            細部1の写真と文章商品1001専用の細部1。写真と説明の切替を確かめるための内容です。\n        \n      \n        \n    \n  \n            細部2の写真と文章商品1001専用の細部2。写真と説明の切替を確かめるための内容です。\n        \n      \n        \n    \n  \n            細部3の写真と文章商品1001専用の細部3。写真と説明の切替を確かめるための内容です。\n        \n      \n  \n        \n          04家で過ごす姿を想像する\n          \n          朝の支度読書の時間一日を終える夜\n        \n    \n  \n            生活場面1 — 検証商品1001専用の生活場面1。写真の位置と本文の読みやすさを確認します。\n        \n      \n        \n    \n  \n            生活場面2 — 検証商品1001専用の生活場面2。写真の位置と本文の読みやすさを確認します。\n        \n      \n        \n    \n  \n            生活場面3 — 検証商品1001専用の生活場面3。写真の位置と本文の読みやすさを確認します。\n        \n      \n  \n        \n          05サイズと着用感\n          \n          商品1001専用のサイズ説明。モデル情報・フィットは実測後に商品ごとに入力します。\n    \n      商品実寸\n      \n        \n          サイズ着丈身幅袖丈ウエスト股下\n      \n      \n                TEST S65106587268\n                TEST M68112607871\n    \n  \n        \n          06長く着るために\n          \n          \n              お手入れ方法\n              商品1001専用のお手入れテスト。実際の洗濯表示から確認した内容を登録します。\n            \n        \n          07仕立てと製造背景\n          \n          製造背景の説明欄。実商品の製造国・工程を主張する記載はありません。\n        \n          この一着を選ぶ\n          \n          \n            LOCAL FIXTURE — 商品レイアウトA\n            色・サイズと購入情報を確認\n          \n        \n    \n  ",
+        "selectedIds": [
+          "8101",
+          "8201"
+        ],
+        "formID": "product-form-template--100000__main",
+        "stock": "在庫わずか"
+      },
+      "afterBlack": {
+        "variant": "100104",
+        "installment": "100104",
+        "price": "通常価格\n        ¥25,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA黒 / S在庫あり\n        \n        ¥25,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "media": "40012",
+        "selectedIds": [
+          "8102",
+          "8201"
+        ],
+        "stock": "在庫わずか",
+        "buttonDisabled": false,
+        "url": "http://127.0.0.1:46193/products/local-fixture-1001?variant=100104"
+      },
+      "soldout": {
+        "variant": "100106",
+        "price": "通常価格\n        ¥26,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA黒 / L売り切れ\n        \n        ¥26,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "stock": "在庫なし",
+        "buttonDisabled": true,
+        "buttonText": "売り切れ ¥26,000.00"
+      },
+      "unavailable": {
+        "variant": "",
+        "buttonDisabled": true,
+        "buttonText": "選択できません ¥26,000.00",
+        "bar": "LOCAL FIXTURE — 商品レイアウトA白 / L選択できません\n        \n        ¥26,000\n\n        \n      \n    \n\n    \n      \n        \n          色・サイズを選ぶ\n\n          \n            \n              \n              \n            \n          \n\n           \n            売り切れ - 再入荷を知らせる",
+        "barPriceVisible": false,
+        "barSelected": "白 / L",
+        "mainPriceVisible": false,
+        "mainPrice": "通常価格\n        ¥26,000\n      \n\n      \n\n      \n        単価\n        \n          \n          /\n           あたり"
+      },
+      "formBeforeAdd": {
+        "variant": "100105",
+        "quantity": "2",
+        "buttonDisabled": false
+      },
+      "cart": {
+        "open": true,
+        "items": "LOCAL FIXTURE — 商品A\n            \n\n            \n                    色:\n\n                    黒\n                  \n                    サイズ:\n\n                    M\n                  \n          \n\n          ¥25,500\n              \n                \n\n                \n\n                \n              \n\n              削除\n            \n          \n        \n\n        \n          ¥51,000",
+        "count": "2",
+        "formId": "product-form-template--100000__main"
+      },
+      "returnState": {
+        "focusOption": "8102",
+        "variant": "100105",
+        "scroll": 7876
+      },
+      "mobileMedia": [
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-reason-1200x1500.svg?width=2200",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 reason"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-material-1200x1000.svg?width=2200",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 material"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-detail-1-1200x1200.svg?width=2200",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 detail-1"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-detail-2-1200x1200.svg?width=2200",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 detail-2"
+        },
+        {
+          "src": "",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 detail-3"
+        },
+        {
+          "src": "http://127.0.0.1:46193/fixture/photo-scene-1-1800x1125.svg?width=2200",
+          "visible": true,
+          "loading": "lazy",
+          "alt": "検証用の写真 scene-1"
+        },
+        {
+          "src": "",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 scene-2"
+        },
+        {
+          "src": "",
+          "visible": false,
+          "loading": "lazy",
+          "alt": "検証用の写真 scene-3"
+        }
+      ],
+      "reduced": {
+        "matches": true,
+        "zoomTargets": 0,
+        "mediaTransforms": [
+          "none",
+          "none",
+          "none",
+          "none"
+        ],
+        "overflow": false
+      },
+      "headMetadataUnchanged": true,
+      "backendEvents": [
+        {
+          "kind": "cart-add",
+          "id": 100105,
+          "quantity": 2,
+          "bodyType": "multipart/form-data; boundary=----WebKitFormBoundaryVqylDVDbcu8MG9Oa"
+        }
+      ],
+      "nativeRequests": [
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8201"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8203"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8101,8203"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8203"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=template--100000__main&option_values=8102,8202"
+        },
+        {
+          "method": "POST",
+          "path": "/cart/add",
+          "query": ""
+        },
+        {
+          "method": "GET",
+          "path": "/cart",
+          "query": "?section_id=api-cart-items"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?variant=100105&section_id=template--100000__main"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1001",
+          "query": "?section_id=api-live-cart-info&variant=100105"
+        }
+      ],
+      "errors": [],
+      "logs": []
+    }
+  ],
+  "supplemental": [
+    {
+      "mode": "empty",
+      "width": 390,
+      "state": {
+        "featureCount": 0,
+        "overflow": false,
+        "editor": 0,
+        "barDisabled": false,
+        "buttons": [
+          {
+            "disabled": false,
+            "text": "色・サイズを選ぶ"
+          },
+          {
+            "disabled": false,
+            "text": "売り切れ - 再入荷を知らせる"
+          }
+        ],
+        "addDisabled": false
+      },
+      "errors": []
+    },
+    {
+      "mode": "wrong-owner",
+      "width": 1280,
+      "state": {
+        "featureCount": 0,
+        "overflow": false,
+        "editor": 0,
+        "barDisabled": false,
+        "buttons": [
+          {
+            "disabled": false,
+            "text": "色・サイズを選ぶ"
+          },
+          {
+            "disabled": false,
+            "text": "売り切れ - 再入荷を知らせる"
+          }
+        ],
+        "addDisabled": false
+      },
+      "errors": []
+    },
+    {
+      "mode": "editor-empty",
+      "width": 390,
+      "state": {
+        "featureCount": 0,
+        "overflow": false,
+        "editor": 1,
+        "barDisabled": false,
+        "buttons": [
+          {
+            "disabled": false,
+            "text": "色・サイズを選ぶ"
+          },
+          {
+            "disabled": false,
+            "text": "売り切れ - 再入荷を知らせる"
+          }
+        ],
+        "addDisabled": false
+      },
+      "errors": []
+    },
+    {
+      "mode": "all-soldout",
+      "width": 390,
+      "state": {
+        "featureCount": 1,
+        "overflow": false,
+        "editor": 0,
+        "buttons": [
+          {
+            "disabled": true,
+            "text": "売り切れ"
+          },
+          {
+            "disabled": false,
+            "text": "売り切れ - 再入荷を知らせる"
+          }
+        ],
+        "addDisabled": true
+      },
+      "errors": []
+    },
+    {
+      "mode": "javascript-disabled",
+      "width": 390,
+      "state": {
+        "overflow": false,
+        "panels": [
+          {
+            "hidden": false,
+            "display": "block"
+          },
+          {
+            "hidden": false,
+            "display": "block"
+          },
+          {
+            "hidden": false,
+            "display": "block"
+          },
+          {
+            "hidden": false,
+            "display": "block"
+          },
+          {
+            "hidden": false,
+            "display": "block"
+          },
+          {
+            "hidden": false,
+            "display": "block"
+          }
+        ],
+        "images": [
+          {
+            "width": 350
+          },
+          {
+            "width": 350
+          },
+          {
+            "width": 350
+          },
+          {
+            "width": 350
+          },
+          {
+            "width": 350
+          },
+          {
+            "width": 350
+          },
+          {
+            "width": 350
+          },
+          {
+            "width": 350
+          }
+        ],
+        "text": "\n    TA VIEこの一着を、深く知る。この一着について — 商品1001のテスト素材を近くで見る細部を知る家で過ごす姿を想像するサイズと着用感長く着るために仕立てと製造背景この一着を選ぶ\n          01この一着について — 商品1001のテスト\n          \n          \n    \n  \n                  商品1001専用の理由。これは実物の特徴を主張しない、文字組みを確認するための検証用文章です。\n                \n        \n          02素材を近くで見る\n          \n          \n    \n  \n                  検証用の素材説明。実物の混率・機能・原産国・肌触りはここでは確定していません。\n                \n        \n          03細部を知る\n          \n          細部1細部2細部3\n        \n    \n  \n            細部1の写真と文章商品1001専用の細部1。写真と説明の切替を確かめるための内容です。\n        \n      \n        \n    \n  \n            細部2の写真と文章商品1001専用の細部2。写真と説明の切替を確かめるための内容です。\n        \n      \n        \n    \n  \n            細部3の写真と文章商品1001専用の細部3。写真と説明の切替を確かめるための内容です。\n        \n      \n  \n        \n          04家で過ごす姿を想像する\n          \n          朝の支度読書の時間一日を終える夜\n        \n    \n  \n            生活場面1 — 検証商品1001専用の生活場面1。写真の位置と本文の読みやすさを確認します。\n        \n      \n        \n    \n  \n            生活場面2 — 検証商品1001専用の生活場面2。写真の位置と本文の読みやすさを確認します。\n        \n      \n        \n    \n  \n            生活場面3 — 検証商品1001専用の生活場面3。写真の位置と本文の読みやすさを確認します。\n        \n      \n  \n        \n          05サイズと着用感\n          \n          商品1001専用のサイズ説明。モデル情報・フィットは実測後に商品ごとに入力します。\n    \n      商品実寸\n      \n        \n          サイズ着丈身幅袖丈ウエスト股下\n      \n      \n                TEST S65106587268\n                TEST M68112607871\n    \n  \n        \n          06長く着るために\n          \n          \n              お手入れ方法\n              商品1001専用のお手入れテスト。実際の洗濯表示から確認した内容を登録します。\n            \n        \n          07仕立てと製造背景\n          \n          製造背景の説明欄。実商品の製造国・工程を主張する記載はありません。\n        \n          この一着を選ぶ\n          \n          \n            LOCAL FIXTURE — 商品レイアウトA\n            色・サイズと購入情報を確認\n          \n        \n    \n  ",
+        "headingStyle": "25px"
+      }
+    },
+    {
+      "mode": "single-default-sticky-purchase",
+      "width": 390,
+      "nativeFormSubmission": [
+        {
+          "kind": "cart-add",
+          "id": 100101,
+          "quantity": 1,
+          "bodyType": "multipart/form-data; boundary=----WebKitFormBoundaryDZHxdsTqTYrcXpcn"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "mode": "native-cart-api-error",
+      "width": 1280,
+      "errorVisible": true,
+      "buttonRestored": true,
+      "nativeFormSubmission": [
+        {
+          "kind": "cart-add",
+          "id": 100101,
+          "quantity": 1,
+          "bodyType": "multipart/form-data; boundary=----WebKitFormBoundaryt3ue4434A8ZWcq7x"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "mode": "native-editor-section-disconnect-reconnect",
+      "width": 390,
+      "variantSelectionAfterReconnect": "100104",
+      "enhancedGroups": 2,
+      "pageErrors": [],
+      "limitation": "DOM editor lifecycle events run; Shopify editor backend not available"
+    },
+    {
+      "mode": "no-media-purchase",
+      "width": 390,
+      "productId": 1005,
+      "state": {
+        "mediaCount": "0",
+        "galleryVisible": false,
+        "contentWidth": 358,
+        "layoutDisplay": "block",
+        "columnCount": 1,
+        "addDisabled": false,
+        "overflow": false
+      },
+      "nativeFormSubmission": [
+        {
+          "kind": "cart-add",
+          "id": 100504,
+          "quantity": 1,
+          "bodyType": "multipart/form-data; boundary=----WebKitFormBoundaryxfIBiLrWxAAWGccy"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "mode": "no-media-purchase",
+      "width": 1440,
+      "productId": 1006,
+      "state": {
+        "mediaCount": "0",
+        "galleryVisible": false,
+        "contentWidth": 704,
+        "layoutDisplay": "grid",
+        "columnCount": 1,
+        "addDisabled": false,
+        "overflow": false
+      },
+      "nativeFormSubmission": [
+        {
+          "kind": "cart-add",
+          "id": 100604,
+          "quantity": 1,
+          "bodyType": "multipart/form-data; boundary=----WebKitFormBoundaryIAkLpst7jcJUaqad"
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "mode": "combined-listing-whole-main-swap",
+      "width": 1280,
+      "state": {
+        "productId": "1002",
+        "feature": "\n    TA VIEこの一着を、深く知る。この一着について — 商品1002のテスト素材を近くで見る細部を知る家で過ごす姿を想像するサイズと着用感長く着るために仕立てと製造背景この一着を選ぶ\n          01この一着について — 商品1002のテスト\n          \n          \n    \n  \n                  商品1002専用の理由。これは実物の特徴を主張しない、文字組みを確認するための検証用文章です。\n                \n        \n          02素材を近くで見る\n          \n          \n    \n  \n                  検証用の素材説明。実物の混率・機能・原産国・肌触りはここでは確定していません。\n                \n        \n          03細部を知る\n          \n          細部1細部2細部3\n        \n    \n  \n            細部1の写真と文章商品1002専用の細部1。写真と説明の切替を確かめるための内容です。\n        \n      \n        \n    \n  \n            細部2の写真と文章商品1002専用の細部2。写真と説明の切替を確かめるための内容です。\n        \n      \n        \n    \n  \n            細部3の写真と文章商品1002専用の細部3。写真と説明の切替を確かめるための内容です。\n        \n      \n  \n        \n          04家で過ごす姿を想像する\n          \n          朝の支度読書の時間一日を終える夜\n        \n    \n  \n            生活場面1 — 検証商品1002専用の生活場面1。写真の位置と本文の読みやすさを確認します。\n        \n      \n        \n    \n  \n            生活場面2 — 検証商品1002専用の生活場面2。写真の位置と本文の読みやすさを確認します。\n        \n      \n        \n    \n  \n            生活場面3 — 検証商品1002専用の生活場面3。写真の位置と本文の読みやすさを確認します。\n        \n      \n  \n        \n          05サイズと着用感\n          \n          商品1002専用のサイズ説明。モデル情報・フィットは実測後に商品ごとに入力します。\n    \n      商品実寸\n      \n        \n          サイズ着丈身幅袖丈ウエスト股下\n      \n      \n                TEST S65106587268\n                TEST M68112607871\n    \n  \n        \n          06長く着るために\n          \n          \n              お手入れ方法\n              商品1002専用のお手入れテスト。実際の洗濯表示から確認した内容を登録します。\n            \n        \n          07仕立てと製造背景\n          \n          製造背景の説明欄。実商品の製造国・工程を主張する記載はありません。\n        \n          この一着を選ぶ\n          \n          \n            LOCAL FIXTURE — 商品レイアウトB\n            色・サイズと購入情報を確認\n          \n        \n    \n  ",
+        "lead": "\n    商品1002専用の検証用リード。\n  ",
+        "formVariant": "100204",
+        "pageTitle": "LOCAL FIXTURE — 商品レイアウトB – TA VIE",
+        "url": "http://127.0.0.1:46193/products/local-fixture-1002?variant=100204",
+        "featureCount": 1,
+        "enhancedGroups": 2,
+        "overflow": false
+      },
+      "metadata": [
+        {
+          "key": "canonical",
+          "value": "https://local-fixture.invalid/products/local-fixture-1002"
+        },
+        {
+          "key": "description",
+          "value": "商品1002専用のSEO検証用説明。実商品ではありません。"
+        },
+        {
+          "key": "og:site_name",
+          "value": "TA VIE"
+        },
+        {
+          "key": "og:url",
+          "value": "https://local-fixture.invalid/products/local-fixture-1002"
+        },
+        {
+          "key": "og:title",
+          "value": "LOCAL FIXTURE — 商品レイアウトB"
+        },
+        {
+          "key": "og:type",
+          "value": "product"
+        },
+        {
+          "key": "og:description",
+          "value": "商品1002専用のSEO検証用説明。実商品ではありません。"
+        },
+        {
+          "key": "og:image",
+          "value": "http://local-fixture.invalid/fixture/photo-native-white-1002-1200x1500.svg"
+        },
+        {
+          "key": "og:image:secure_url",
+          "value": "https://local-fixture.invalid/fixture/photo-native-white-1002-1200x1500.svg"
+        },
+        {
+          "key": "og:image:width",
+          "value": "1200"
+        },
+        {
+          "key": "og:image:height",
+          "value": "1500"
+        },
+        {
+          "key": "og:price:amount",
+          "value": "2500000"
+        },
+        {
+          "key": "og:price:currency",
+          "value": "JPY"
+        },
+        {
+          "key": "twitter:card",
+          "value": "summary_large_image"
+        },
+        {
+          "key": "twitter:title",
+          "value": "LOCAL FIXTURE — 商品レイアウトB"
+        },
+        {
+          "key": "twitter:description",
+          "value": "商品1002専用のSEO検証用説明。実商品ではありません。"
+        }
+      ],
+      "metadataDuplicateCount": 0,
+      "notificationFormPreserved": true,
+      "variantSelectionAfterSwap": "100205",
+      "nativeFormSubmission": [
+        {
+          "kind": "cart-add",
+          "id": 100205,
+          "quantity": 1,
+          "bodyType": "multipart/form-data; boundary=----WebKitFormBoundaryGi6f2P2x45j3026Y"
+        }
+      ],
+      "nativeRequests": [
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1002",
+          "query": "?option_values=8102,8201"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1002",
+          "query": "?section_id=api-live-cart-info&variant=100204"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1002",
+          "query": "?section_id=template--100000__main&option_values=8102,8202"
+        },
+        {
+          "method": "GET",
+          "path": "/products/local-fixture-1002",
+          "query": "?variant=100205&section_id=template--100000__main"
+        }
+      ],
+      "pageErrors": [],
+      "limitation": "Native whole-main transition executed against local product A/B HTML; live Shopify Combined Listings not connected"
+    }
+  ],
+  "limitations": [
+    "Local product/media/price/inventory/size/description fixtures only; merchant content unavailable. Shopify filters and backend API responses emulated; real theme.js/product-info.js/product-sticky.js/cart-bar.js run."
+  ]
+}

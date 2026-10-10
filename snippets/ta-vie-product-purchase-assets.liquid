@@ -1,0 +1,4 @@
+{%- if section.settings.ta_vie_product_experience and featured_product == false -%}
+  {{ 'ta-vie-product-purchase.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'ta-vie-product-purchase.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}

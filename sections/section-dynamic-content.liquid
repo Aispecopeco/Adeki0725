@@ -1,3 +1,4 @@
+{%- render 'ta-vie-home-reduced-motion' -%}
 <!-- /sections/section-dynamic-content.liquid -->
 
 {%- liquid
@@ -9,7 +10,16 @@
   capture content_blocks
     content_for 'blocks'
   endcapture
+  assign ta_vie_has_media = false
+  if content_blocks contains '<img' or content_blocks contains '<video'
+    assign ta_vie_has_media = true
+  endif
 -%}
+
+{%- if section.settings.ta_vie_hide_unconfigured and ta_vie_has_media == false -%}
+  {%- render 'ta-vie-home-editor-note', message: 'この写真コラージュではGrid item内のImage / Videoから実写素材を選んでください。PCとスマートフォンで別々の配置を編集できます。写真・動画未設定時は公開画面に表示しません。' -%}
+{%- endif -%}
+{%- if section.settings.ta_vie_hide_unconfigured == false or section.settings.ta_vie_hide_unconfigured == blank or ta_vie_has_media or request.design_mode -%}
 
 <script src="{{ 'dynamic-grid.js' | asset_url }}" defer="defer"></script>
 
@@ -46,12 +56,24 @@
     {%- endif -%}
   </div>
 </section>
+{%- endif -%}
 
 {% schema %}
 {
   "name": "Dynamic content",
   "blocks": [{"type": "_grid-item"}, {"type": "@app"}],
   "settings": [
+    {
+      "type": "header",
+      "content": "TA VIE｜公開時の表示"
+    },
+    {
+      "type": "checkbox",
+      "id": "ta_vie_hide_unconfigured",
+      "label": "未設定の写真・商品を公開しない",
+      "default": false,
+      "info": "このセクションだけに適用します。写真や商品を選ぶとBroadcast標準の表示・動きが使われます。設定案内はテーマエディタだけに表示します。"
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",

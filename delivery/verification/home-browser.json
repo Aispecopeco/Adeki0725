@@ -1,0 +1,133 @@
+{
+  "checks": [
+    {
+      "width": 320,
+      "scenario": "real",
+      "overflow": false,
+      "bodyWidth": 320,
+      "featuredProducts": 4,
+      "links": [
+        "/products/fixture-roomwear-1",
+        "/products/fixture-roomwear-2",
+        "/products/fixture-roomwear-3",
+        "/products/fixture-roomwear-4"
+      ],
+      "doubleHeight": 782.015625,
+      "featuredContentPosition": "relative",
+      "slider": true,
+      "imageCount": 32,
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scenario": "empty-public",
+      "overflow": false,
+      "bodyWidth": 320,
+      "featuredProducts": 0,
+      "links": [],
+      "doubleHeight": 332.015625,
+      "featuredContentPosition": null,
+      "imageCount": 0,
+      "errors": []
+    },
+    {
+      "width": 320,
+      "scenario": "empty-editor",
+      "overflow": false,
+      "bodyWidth": 320,
+      "featuredProducts": 0,
+      "links": [],
+      "doubleHeight": 332.015625,
+      "featuredContentPosition": null,
+      "slider": true,
+      "imageCount": 3,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "scenario": "real",
+      "overflow": false,
+      "bodyWidth": 390,
+      "featuredProducts": 4,
+      "links": [
+        "/products/fixture-roomwear-1",
+        "/products/fixture-roomwear-2",
+        "/products/fixture-roomwear-3",
+        "/products/fixture-roomwear-4"
+      ],
+      "doubleHeight": 782.015625,
+      "featuredContentPosition": "relative",
+      "slider": true,
+      "imageCount": 32,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "scenario": "empty-public",
+      "overflow": false,
+      "bodyWidth": 390,
+      "featuredProducts": 0,
+      "links": [],
+      "doubleHeight": 332.015625,
+      "featuredContentPosition": null,
+      "imageCount": 0,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "scenario": "empty-editor",
+      "overflow": false,
+      "bodyWidth": 390,
+      "featuredProducts": 0,
+      "links": [],
+      "doubleHeight": 332.015625,
+      "featuredContentPosition": null,
+      "slider": true,
+      "imageCount": 3,
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "scenario": "real",
+      "overflow": false,
+      "bodyWidth": 1280,
+      "featuredProducts": 4,
+      "links": [
+        "/products/fixture-roomwear-1",
+        "/products/fixture-roomwear-2",
+        "/products/fixture-roomwear-3",
+        "/products/fixture-roomwear-4"
+      ],
+      "doubleHeight": 778,
+      "featuredContentPosition": "sticky",
+      "slider": true,
+      "imageCount": 32,
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "scenario": "empty-public",
+      "overflow": false,
+      "bodyWidth": 1280,
+      "featuredProducts": 0,
+      "links": [],
+      "doubleHeight": 417.1875,
+      "featuredContentPosition": null,
+      "imageCount": 0,
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "scenario": "empty-editor",
+      "overflow": false,
+      "bodyWidth": 1280,
+      "featuredProducts": 0,
+      "links": [],
+      "doubleHeight": 417.1875,
+      "featuredContentPosition": null,
+      "slider": true,
+      "imageCount": 3,
+      "errors": []
+    }
+  ]
+}

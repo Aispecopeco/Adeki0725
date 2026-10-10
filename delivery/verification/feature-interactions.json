@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "scope": "Local fixture of actual CSS/JS; not a merchant storefront, product-data, checkout, or shipping verification.",
+  "checks": [
+    "SSR/progressive enhancement",
+    "accessible keyboard tabs and group isolation",
+    "invalid group fallback",
+    "disconnect cleanup and section reconnect",
+    "dynamic reduced motion",
+    "native selected variant focus without change",
+    "sold-out native title focus and temporary tabindex cleanup",
+    "390px mobile overflow and 44px targets",
+    "actual picture crop ratio",
+    "failed image text fallback and video poster fallback without empty chapters"
+  ],
+  "errors": []
+}

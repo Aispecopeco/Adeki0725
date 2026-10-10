@@ -17,6 +17,16 @@
   assign description = section.settings.description
   assign color_scheme = 'color-' | append: section.settings.color_scheme
   assign blocks_size = section.blocks.size
+  assign ta_vie_filter_images = false
+  if section.settings.ta_vie_hide_unconfigured and type == 'images' and request.design_mode == false
+    assign ta_vie_filter_images = true
+    assign blocks_size = 0
+    for image_block in section.blocks
+      if image_block.settings.image != blank
+        assign blocks_size = blocks_size | plus: 1
+      endif
+    endfor
+  endif
   assign show_recently_viewed_indicator = settings.show_recently_viewed_indicator
 
   assign layout = section.settings.layout
@@ -51,6 +61,9 @@
     endif
   else
     assign columns_desktop = grid_columns | plus: 0
+    if ta_vie_filter_images
+      assign columns_desktop = columns_desktop | at_most: blocks_size | at_least: 1
+    endif
     assign columns_medium = 3
     assign columns_small = 2
 
@@ -174,6 +187,9 @@
           {% endif %}
         >
           {%- for block in section.blocks -%}
+            {%- if ta_vie_filter_images and block.settings.image == blank -%}
+              {%- continue -%}
+            {%- endif -%}
             {%- liquid
               assign animation_order = animation_order | plus: 1
               assign column_width = block.settings.column_width | default: column_width

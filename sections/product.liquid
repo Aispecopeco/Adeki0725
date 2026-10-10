@@ -8,6 +8,13 @@
   "class": "section-overlay-header",
   "settings": [
     {
+      "type": "checkbox",
+      "id": "ta_vie_product_experience",
+      "label": "TA VIEの商品紹介を有効にする",
+      "info": "商品別の短いコピーと、選択中の色・サイズ・在庫を示す購入バーを使います。購入処理はBroadcastのままです。",
+      "default": false
+    },
+    {
       "type": "header",
       "content": "Layout"
     },
@@ -143,6 +150,27 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "ta_vie_intro",
+      "name": "TA VIE｜この一着のコピー",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "商品メタフィールド ta_vie.feature が参照する特集の「短いコピー」を表示します。「対象商品」がこの商品と一致する内容のみ表示します。未設定時は公開画面に表示しません。"
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 50,
+          "step": 2,
+          "unit": "px",
+          "label": "下の余白",
+          "default": 16
+        }
+      ]
     },
     {
       "type": "title",

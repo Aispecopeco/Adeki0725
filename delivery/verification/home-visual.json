@@ -1,0 +1,272 @@
+{
+  "checks": [
+    {
+      "width": 390,
+      "scenario": "real",
+      "reducedMotion": "no-preference",
+      "overflow": false,
+      "bodyWidth": 390,
+      "featuredProducts": 4,
+      "links": [
+        "/products/fixture-roomwear-1",
+        "/products/fixture-roomwear-2",
+        "/products/fixture-roomwear-3",
+        "/products/fixture-roomwear-4"
+      ],
+      "doubleHeight": 782.015625,
+      "featuredContentPosition": "relative",
+      "slider": true,
+      "imageCount": 32,
+      "ticker": [
+        {
+          "animation": "ticker-rtl",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 551.125
+        },
+        {
+          "animation": "none",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 551.125
+        }
+      ],
+      "parallax": [
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, 0)",
+        "matrix(1, 0, 0, 1, 0, -708)",
+        "matrix(1, 0, 0, 1, 0, -707)",
+        "none",
+        "matrix(1, 0, 0, 1, 0, -556)",
+        "none",
+        "none"
+      ],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "scenario": "empty-public",
+      "reducedMotion": "no-preference",
+      "overflow": false,
+      "bodyWidth": 390,
+      "featuredProducts": 0,
+      "links": [],
+      "doubleHeight": 332.015625,
+      "featuredContentPosition": null,
+      "imageCount": 0,
+      "ticker": [
+        {
+          "animation": "ticker-rtl",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 551.125
+        },
+        {
+          "animation": "none",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 551.125
+        }
+      ],
+      "parallax": [],
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "scenario": "real",
+      "reducedMotion": "no-preference",
+      "overflow": false,
+      "bodyWidth": 1280,
+      "featuredProducts": 4,
+      "links": [
+        "/products/fixture-roomwear-1",
+        "/products/fixture-roomwear-2",
+        "/products/fixture-roomwear-3",
+        "/products/fixture-roomwear-4"
+      ],
+      "doubleHeight": 778,
+      "featuredContentPosition": "sticky",
+      "slider": true,
+      "imageCount": 32,
+      "ticker": [
+        {
+          "animation": "ticker-rtl",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 548.078125
+        },
+        {
+          "animation": "none",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 548.078125
+        }
+      ],
+      "parallax": [
+        "matrix(1, 0, 0, 1, 0, 5)",
+        "matrix(1, 0, 0, 1, 0, 5)",
+        "matrix(1, 0, 0, 1, 0, -591)",
+        "matrix(1, 0, 0, 1, 0, -692)",
+        "matrix(1, 0, 0, 1, 0, -663)",
+        "matrix(1, 0, 0, 1, 0, -636)",
+        "matrix(1, 0, 0, 1, 0, -630)",
+        "matrix(1, 0, 0, 1, 0, -618)"
+      ],
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "scenario": "empty-public",
+      "reducedMotion": "no-preference",
+      "overflow": false,
+      "bodyWidth": 1280,
+      "featuredProducts": 0,
+      "links": [],
+      "doubleHeight": 417.1875,
+      "featuredContentPosition": null,
+      "imageCount": 0,
+      "ticker": [
+        {
+          "animation": "ticker-rtl",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 548.078125
+        },
+        {
+          "animation": "none",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 548.078125
+        }
+      ],
+      "parallax": [],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "scenario": "real",
+      "reducedMotion": "reduce",
+      "overflow": false,
+      "bodyWidth": 390,
+      "featuredProducts": 4,
+      "links": [
+        "/products/fixture-roomwear-1",
+        "/products/fixture-roomwear-2",
+        "/products/fixture-roomwear-3",
+        "/products/fixture-roomwear-4"
+      ],
+      "doubleHeight": 782.015625,
+      "featuredContentPosition": "relative",
+      "slider": true,
+      "imageCount": 32,
+      "ticker": [
+        {
+          "animation": "none",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 390
+        },
+        {
+          "animation": "none",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 0
+        }
+      ],
+      "parallax": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "scenario": "empty-public",
+      "reducedMotion": "reduce",
+      "overflow": false,
+      "bodyWidth": 390,
+      "featuredProducts": 0,
+      "links": [],
+      "doubleHeight": 332.015625,
+      "featuredContentPosition": null,
+      "imageCount": 0,
+      "ticker": [
+        {
+          "animation": "none",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 390
+        },
+        {
+          "animation": "none",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 0
+        }
+      ],
+      "parallax": [],
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "scenario": "real",
+      "reducedMotion": "reduce",
+      "overflow": false,
+      "bodyWidth": 1280,
+      "featuredProducts": 4,
+      "links": [
+        "/products/fixture-roomwear-1",
+        "/products/fixture-roomwear-2",
+        "/products/fixture-roomwear-3",
+        "/products/fixture-roomwear-4"
+      ],
+      "doubleHeight": 778,
+      "featuredContentPosition": "sticky",
+      "slider": true,
+      "imageCount": 32,
+      "ticker": [
+        {
+          "animation": "none",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 1280
+        },
+        {
+          "animation": "none",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 0
+        }
+      ],
+      "parallax": [
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none",
+        "none"
+      ],
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "scenario": "empty-public",
+      "reducedMotion": "reduce",
+      "overflow": false,
+      "bodyWidth": 1280,
+      "featuredProducts": 0,
+      "links": [],
+      "doubleHeight": 417.1875,
+      "featuredContentPosition": null,
+      "imageCount": 0,
+      "ticker": [
+        {
+          "animation": "none",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 1280
+        },
+        {
+          "animation": "none",
+          "text": "•\n        \n          La vie chez soi\n        \n          •\n        \n          家で過ごす時間を、自分のために。\n        \n          •\n        \n          TA VIE",
+          "width": 0
+        }
+      ],
+      "parallax": [],
+      "errors": []
+    }
+  ]
+}

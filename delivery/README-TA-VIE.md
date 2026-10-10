@@ -1,3 +1,5 @@
+> **2026年10月10日更新：** 現在の納品版は商品詳細の特集とBroadcastホームの復元です。[商品体験の説明](product-experience.md)、[現在のホームの編集](home-structure.md)、[商品別内容の設定](product-content-model.md)を先に確認してください。作業ブランチは `ta-vie-product-experience-20261010` で、連携済みブランチは今回更新していません。以下は過去の配色・原稿・構成の記録です。
+
 # TA VIE｜Broadcast 修正テーマの引き継ぎ
 
 対象は提供されたBroadcast 8.1.1です。ホームを、一商品ずつ大きな写真・紹介文・着用風景・細部で伝える構成へ変更しました。冒頭は「家での時間を、あなたらしく。」、後半は実在するブログの公開記事です。[編集手順](home-structure.md)と[検証結果](validation.md)を参照してください。

@@ -6,6 +6,7 @@
   assign image_sizes = '|||sizes|||'
 -%}
 
+{%- if section.settings.ta_vie_hide_unconfigured == false or section.settings.ta_vie_hide_unconfigured == blank or video != blank or image != blank or request.design_mode -%}
 <div
   class="block__video block-padding"
   data-aos="hero"
@@ -55,6 +56,7 @@
     {%- endif -%}
   </div>
 </div>
+{%- endif -%}
 
 {% schema %}
 {

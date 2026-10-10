@@ -1,0 +1,21 @@
+{
+  "source": "locales/en.default.json",
+  "translation": "locales/ja.json",
+  "total_leaf_keys": 421,
+  "translated_or_localized": 415,
+  "preserved_technical_values": {
+    "layout.header.gift_card_url": "URL slug: must remain gift-card to preserve existing link",
+    "customer.order.details.sku": "Standard SKU abbreviation",
+    "products.product.sku": "Standard SKU abbreviation",
+    "products.product.volume_pricing.price_range": "Numeric minimum/maximum range",
+    "recipient.form.send_on": "Required ISO date input format",
+    "password.form.placeholder": "Example email address"
+  },
+  "equal_key_paths": true,
+  "equal_interpolation_placeholders": true,
+  "equal_html_tags_and_attributes": true,
+  "empty_values": 0,
+  "color_option_recognition": "Japanese 色 / カラー plus original Color / Colour",
+  "date_format": "%Y年%m月%d日; %Y年%m月%d日 %H:%M",
+  "failures": []
+}

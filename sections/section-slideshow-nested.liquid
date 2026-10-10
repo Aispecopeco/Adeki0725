@@ -1,3 +1,4 @@
+{%- render 'ta-vie-home-reduced-motion' -%}
 <!-- /sections/section-slideshow-nested.liquid -->
 
 {%- liquid
@@ -9,6 +10,13 @@
   assign show_arrows = section.settings.show_arrows
   assign slideshow_class = 'slideshow__slider'
   assign color_scheme = 'color-' | append: section.settings.color_scheme
+  assign ta_vie_has_media = false
+  for slide_block in section.blocks
+    if slide_block.settings.image != blank or slide_block.settings.mobile_image != blank or slide_block.settings.video != blank
+      assign ta_vie_has_media = true
+      break
+    endif
+  endfor
 
   case section.settings.transition
     when 'slide'
@@ -42,6 +50,23 @@
     assign content_blocks = content_blocks | replace_first: ' loading="lazy"', ' loading="eager"' | replace_first: ' fetchpriority="auto"', ' fetchpriority="high"'
   endif
 -%}
+
+{%- if section.settings.ta_vie_hide_unconfigured and ta_vie_has_media == false and request.design_mode == false -%}
+  <section class="section-padding color-{{ section.settings.ta_vie_empty_color_scheme | default: section.settings.color_scheme }}" style="--PT: 88px; --PB: 88px;" data-section-id="{{ section.id }}">
+    <div class="wrapper text-center">
+      {%- if section.settings.ta_vie_empty_heading != blank -%}
+        <h1 class="heading-large">{{ section.settings.ta_vie_empty_heading | escape }}</h1>
+      {%- endif -%}
+      {%- if section.settings.ta_vie_empty_text != blank -%}
+        <div class="rte body-large">{{ section.settings.ta_vie_empty_text }}</div>
+      {%- endif -%}
+      <a class="btn btn--primary btn--text" href="{{ routes.all_products_collection_url | escape }}"><span>ルームウェアを見る</span>{%- render 'icon-nav-arrow-right' -%}</a>
+    </div>
+  </section>
+{%- else -%}
+{%- if section.settings.ta_vie_hide_unconfigured and ta_vie_has_media == false -%}
+  {%- render 'ta-vie-home-editor-note', message: 'スライドの「Image / Mobile image」または動画を選ぶと、Broadcast標準のスライドショーを公開します。写真未設定時の公開画面はブランドの見出しと本文だけを表示します。' -%}
+{%- endif -%}
 
 {%- if request.visual_preview_mode -%}
   {%- style -%}
@@ -88,6 +113,7 @@
     {%- endif -%}
   </div>
 </div>
+{%- endif -%}
 
 {% schema %}
 {
@@ -95,6 +121,35 @@
   "class": "section-overlay-header",
   "blocks": [{"type": "_slide-image"}, {"type": "_slide-video"}, {"type": "@app"}],
   "settings": [
+    {
+      "type": "header",
+      "content": "TA VIE｜公開時の表示"
+    },
+    {
+      "type": "checkbox",
+      "id": "ta_vie_hide_unconfigured",
+      "label": "未設定の写真・商品を公開しない",
+      "default": false,
+      "info": "このセクションだけに適用します。写真や商品を選ぶとBroadcast標準の表示・動きが使われます。設定案内はテーマエディタだけに表示します。"
+    },
+    {
+      "type": "text",
+      "id": "ta_vie_empty_heading",
+      "label": "写真未設定時のブランド見出し",
+      "default": "家で過ごす時間を、自分のために。"
+    },
+    {
+      "type": "richtext",
+      "id": "ta_vie_empty_text",
+      "label": "写真未設定時のブランド本文",
+      "default": "<p>TA VIEは、家で過ごす毎日を大切にするためのルームウェアを提案します。</p>"
+    },
+    {
+      "type": "color_scheme",
+      "id": "ta_vie_empty_color_scheme",
+      "label": "写真未設定時の配色",
+      "default": "scheme-1"
+    },
     {
       "type": "select",
       "id": "transition",

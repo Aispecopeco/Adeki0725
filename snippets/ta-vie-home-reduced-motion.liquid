@@ -1,0 +1,18 @@
+{%- if section.settings.ta_vie_hide_unconfigured -%}
+  {%- style -%}
+    @media (prefers-reduced-motion: reduce) {
+      #shopify-section-{{ section.id }} [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+        animation: none !important;
+      }
+      #shopify-section-{{ section.id }} [data-parallax-img],
+      #shopify-section-{{ section.id }} .column__image img {
+        transform: none !important;
+        transition: none !important;
+      }
+      #shopify-section-{{ section.id }} .slideshow__slide { transition: none !important; }
+    }
+  {%- endstyle -%}
+{%- endif -%}

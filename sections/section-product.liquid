@@ -1,3 +1,4 @@
+{%- render 'ta-vie-home-reduced-motion' -%}
 <!-- /sections/section-product.liquid -->
 {%- liquid
   assign product = all_products[section.settings.product]
@@ -10,6 +11,14 @@
   assign product_images = product.media | where: 'media_type', 'image'
   assign product_images_count = product_images.size | at_most: limit
   assign offset = 1
+  assign ta_vie_has_product = false
+  if product.id != blank and product.url != blank
+    assign ta_vie_has_product = true
+  endif
+  assign ta_vie_text_only = false
+  if section.settings.ta_vie_hide_unconfigured and product.featured_image == blank
+    assign ta_vie_text_only = true
+  endif
   if product_images_count < 2
     assign offset = 0
   endif
@@ -27,6 +36,9 @@
   endcapture
 -%}
 
+{%- if section.settings.ta_vie_hide_unconfigured and ta_vie_has_product == false -%}
+  {%- render 'ta-vie-home-editor-note', message: 'この「一着の特集」で紹介する実際の商品を、Productから選んでください。商品写真と価格は選んだ商品に連動します。4枠は別々に選択・並べ替えできます。未選択の枠は公開画面に表示しません。' -%}
+{%- else -%}
 {%- render 'stylesheet', name: 'featured-product.css' -%}
 
 <script src="{{ 'featured-product.js' | asset_url }}" defer="defer"></script>
@@ -40,6 +52,24 @@
 {%- endif -%}
 
 {%- style -%}
+  {%- if section.settings.ta_vie_hide_unconfigured -%}
+    #Product--{{ unique }} .featured-product__card { gap: 24px; }
+    #Product--{{ unique }} .product-item__title { display: none; }
+    #Product--{{ unique }} .ta-vie-featured-intro { max-width: 36em; }
+    #Product--{{ unique }} .ta-vie-featured-intro h2 { margin-top: 0; }
+    #Product--{{ unique }} .ta-vie-featured-intro p { line-height: 1.8; }
+    @media screen and (min-width: 750px) {
+      #Product--{{ unique }} .featured-product__card { flex-basis: 72%; max-width: 42rem; }
+    }
+    @media screen and (max-width: 749px) {
+      #Product--{{ unique }} .featured-product__content { position: relative; top: auto; }
+      #Product--{{ unique }} .featured-product__body { min-height: 0; }
+    }
+  {%- endif -%}
+  {%- if ta_vie_text_only -%}
+    #Product--{{ unique }} .featured-product__body { min-height: auto; padding: 48px var(--outer); }
+    #Product--{{ unique }} .featured-product__content { position: static; flex-basis: 100%; min-height: auto; }
+  {%- endif -%}
   {%- if request.visual_preview_mode -%}
     .featured-product__body { min-height: initial; }
     .featured-product__content { margin: auto; }
@@ -73,7 +103,19 @@
 
     <div class="featured-product__content" data-featured-content>
       <div class="featured-product__card">
-        {%- if product != blank -%}
+        {%- if section.settings.ta_vie_hide_unconfigured and ta_vie_has_product -%}
+          <div class="ta-vie-featured-intro">
+            <h2 class="heading-medium">{{ product.title | strip_html | escape }}</h2>
+            {%- if product.description != blank -%}
+              <p class="body-medium">{{ product.description | strip_html | truncate: 180 | escape }}</p>
+            {%- endif -%}
+            {%- if ta_vie_text_only -%}
+              {%- render 'price', product: product, use_variant: false, show_badges: false, price_font_size: 'body-medium' -%}
+            {%- endif -%}
+            <a class="btn btn--primary btn--text" href="{{ product.url | escape }}"><span>この一着を詳しく見る</span>{%- render 'icon-nav-arrow-right' -%}</a>
+          </div>
+        {%- endif -%}
+        {%- if product != blank and ta_vie_text_only == false -%}
           {%- render 'product-grid-item',
             product: product,
             index: forloop.index,
@@ -81,7 +123,7 @@
             sizes: grid_item_sizes,
             disable_image_hover: true
           -%}
-        {%- else -%}
+        {%- elsif product == blank -%}
           {%- render 'onboarding-product-grid-item',
             show_product_card: section.settings.show_product_card,
             index: forloop.index
@@ -90,6 +132,7 @@
       </div>
     </div>
 
+    {%- unless ta_vie_text_only -%}
     <div
       class="featured-product__aside{% if featured_image != blank %} featured-product__aside--bg{% endif %}"
       {% if product_images_count > 1 %}
@@ -127,13 +170,26 @@
         </div>
       </div>
     </div>
+    {%- endunless -%}
   </div>
 </featured-product>
+{%- endif -%}
 
 {% schema %}
 {
   "name": "Featured product",
   "settings": [
+    {
+      "type": "header",
+      "content": "TA VIE｜公開時の表示"
+    },
+    {
+      "type": "checkbox",
+      "id": "ta_vie_hide_unconfigured",
+      "label": "未設定の写真・商品を公開しない",
+      "default": false,
+      "info": "このセクションだけに適用します。写真や商品を選ぶとBroadcast標準の表示・動きが使われます。設定案内はテーマエディタだけに表示します。"
+    },
     {
       "type": "header",
       "content": "Content"

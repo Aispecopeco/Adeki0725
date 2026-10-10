@@ -1,0 +1,14 @@
+{%- comment -%}Product-owned copy; a shared template never supplies product facts.{%- endcomment -%}
+{%- liquid
+  assign feature = product.metafields.ta_vie.feature.value
+  assign feature_owner = feature.owner_product.value
+-%}
+{%- if feature != blank and feature_owner.id == product.id and feature.lead.value != blank -%}
+  <div class="product__block ta-vie-purchase__intro block-padding" {{ block_style }} {{ block.shopify_attributes }}>
+    <p>{{ feature.lead.value | escape }}</p>
+  </div>
+{%- elsif request.design_mode -%}
+  <div class="product__block block-padding ta-vie-purchase__editor-note" {{ block_style }} {{ block.shopify_attributes }}>
+    <p>この商品の特集に「短いコピー」を設定すると表示されます。特集の「対象商品」も確認してください。</p>
+  </div>
+{%- endif -%}

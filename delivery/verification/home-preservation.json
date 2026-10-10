@@ -1,0 +1,19 @@
+{
+  "originalSections": 19,
+  "currentSections": 25,
+  "activeSections": 12,
+  "originalOrderPreserved": true,
+  "originalBlockTreesPreserved": true,
+  "originalSettingsKeysPreserved": true,
+  "originalAssetsUnchanged": 127,
+  "nativeFeaturedProductSlots": [
+    "section-product",
+    "ta_vie_featured_01",
+    "ta_vie_featured_02",
+    "ta_vie_featured_03"
+  ],
+  "allNativeFeaturedProductSlotsUnselected": true,
+  "unrelatedYoutubeCleared": true,
+  "indexSha256": "85ebcdbd59dfaa7d0961a404fb9ac09a27967133069459d4569e634cbc076d52",
+  "currentNativeAnimationsAssetsUnchanged": true
+}

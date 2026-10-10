@@ -1,0 +1,72 @@
+{%- comment -%}
+  item_type: details or scenes. All text is rendered before enhancement.
+  Each entry belongs to the current product; shared entries are rejected.
+{%- endcomment -%}
+{%- liquid
+  assign feature_item_count = 0
+  assign feature_tab_buttons = ''
+  assign feature_item_limit = 6
+  if item_type == 'scenes'
+    assign feature_item_limit = 3
+  endif
+-%}
+{%- capture feature_tab_panels -%}
+  {%- for item in items -%}
+    {%- liquid
+      assign item_owned = false
+      if product.id != blank and item.owner_product.value.id == product.id
+        assign item_owned = true
+      endif
+      assign item_label = item.label.value | default: item.heading.value
+      assign item_image = item.image.value
+      assign item_mobile_image = item.mobile_image.value
+      assign item_video = nil
+      if item_type == 'scenes' and item.video.value.media_type == 'video'
+        assign item_video = item.video.value
+      endif
+      assign item_has_content = false
+      if item.body.value != blank or item_image != blank or item_mobile_image != blank or item_video != blank
+        assign item_has_content = true
+      endif
+    -%}
+    {%- if item_owned and item_label != blank and item_has_content and feature_item_count < feature_item_limit -%}
+      {%- liquid
+        assign feature_item_count = feature_item_count | plus: 1
+        assign item_base_id = group_id | append: '--' | append: feature_item_count
+        assign item_has_media = false
+        if item_image != blank or item_mobile_image != blank or item_video != blank
+          assign item_has_media = true
+        endif
+        capture item_tab_button
+          echo '<button class="ta-vie-feature__tab" type="button" data-feature-tab id="'
+          echo item_base_id | append: '--tab'
+          echo '" aria-controls="'
+          echo item_base_id | append: '--panel'
+          echo '">'
+          echo item_label | escape
+          echo '</button>'
+        endcapture
+        assign feature_tab_buttons = feature_tab_buttons | append: item_tab_button
+      -%}
+      <div class="ta-vie-feature__panel" id="{{ item_base_id }}--panel" data-feature-panel>
+        <div class="ta-vie-feature__panel-content ta-vie-feature__split{% unless item_has_media %} ta-vie-feature__split--text-only{% endunless %}">
+          {%- render 'ta-vie-feature-media', image: item_image, mobile_image: item_mobile_image, video: item_video -%}
+          <div class="ta-vie-feature__copy">
+            <h3 class="ta-vie-feature__panel-heading">{{ item.heading.value | default: item_label | escape }}</h3>
+            {%- if item.body.value != blank -%}
+              <div class="ta-vie-feature__body rte">{{ item.body | metafield_tag }}</div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if feature_item_count > 0 -%}
+  <div class="ta-vie-feature__tabs" data-feature-tabs>
+    {%- if feature_item_count > 1 -%}
+      <div class="ta-vie-feature__tab-list" data-feature-tab-list aria-label="{{ group_label | escape }}">{{ feature_tab_buttons }}</div>
+    {%- endif -%}
+    {{ feature_tab_panels }}
+  </div>
+{%- endif -%}

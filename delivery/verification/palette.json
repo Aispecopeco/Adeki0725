@@ -1,0 +1,1845 @@
+{
+  "status": "passed",
+  "head_commit": "cd2314980deeaf72f8fd57ec08bff4febb99aff2",
+  "baseline_commit": "3f7e253d4fd7971f97307427dbf77106c6ca7e71",
+  "palettes": [
+    {
+      "revision": "working_tree",
+      "context": "current",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "working_tree",
+      "context": "presets.Broadcast",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "working_tree",
+      "context": "presets.Relay",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "working_tree",
+      "context": "presets.Airwave",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "working_tree",
+      "context": "presets.Motif",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "working_tree",
+      "context": "presets.Stellar",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "HEAD",
+      "context": "current",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "HEAD",
+      "context": "presets.Broadcast",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "HEAD",
+      "context": "presets.Relay",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "HEAD",
+      "context": "presets.Airwave",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "HEAD",
+      "context": "presets.Motif",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "HEAD",
+      "context": "presets.Stellar",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "3f7e253",
+      "context": "current",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "3f7e253",
+      "context": "presets.Broadcast",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "3f7e253",
+      "context": "presets.Relay",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "3f7e253",
+      "context": "presets.Airwave",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "3f7e253",
+      "context": "presets.Motif",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    },
+    {
+      "revision": "3f7e253",
+      "context": "presets.Stellar",
+      "scheme_count": 13,
+      "scheme_ids": [
+        "scheme-1",
+        "scheme-2",
+        "scheme-3",
+        "scheme-4",
+        "scheme-5",
+        "scheme-6",
+        "scheme-7",
+        "scheme-8",
+        "scheme-9",
+        "scheme-10",
+        "scheme-11",
+        "scheme-tavie-white",
+        "scheme-tavie-soft"
+      ],
+      "expected_id_set_matches": true
+    }
+  ],
+  "palette_comparisons": {
+    "3f7e253_to_HEAD": {
+      "compared_palette_fields": 1088,
+      "mismatch_count": 0,
+      "mismatches": []
+    },
+    "3f7e253_to_working_tree": {
+      "compared_palette_fields": 1088,
+      "mismatch_count": 0,
+      "mismatches": []
+    },
+    "HEAD_to_working_tree": {
+      "compared_palette_fields": 1088,
+      "mismatch_count": 0,
+      "mismatches": []
+    }
+  },
+  "reference_summary": {
+    "parsed_documents": 102,
+    "color_scheme_setting_ids": [
+      "color_scheme",
+      "ta_vie_empty_color_scheme"
+    ],
+    "total_references": 218,
+    "nonblank_references": 159,
+    "blank_references": 59,
+    "invalid_references": [],
+    "counts_by_kind": {
+      "schema_default": 75,
+      "stored_reference": 143
+    },
+    "nonblank_values": {
+      "scheme-1": 94,
+      "scheme-tavie-white": 11,
+      "scheme-tavie-soft": 8,
+      "scheme-9": 1,
+      "scheme-3": 19,
+      "scheme-6": 4,
+      "scheme-5": 1,
+      "scheme-10": 6,
+      "scheme-2": 10,
+      "scheme-7": 5
+    }
+  },
+  "references": [
+    {
+      "file": "config/settings_schema.json",
+      "path": "1.settings.1.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/announcement.liquid",
+      "path": "settings.11.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/article.liquid",
+      "path": "settings.12.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/blog.liquid",
+      "path": "settings.15.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/cart-drawer.liquid",
+      "path": "settings.0.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/cart-drawer.liquid",
+      "path": "blocks.2.settings.3.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/cart.liquid",
+      "path": "settings.2.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/cart.liquid",
+      "path": "blocks.1.settings.3.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/collection-image-with-title.liquid",
+      "path": "settings.5.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/collection.liquid",
+      "path": "settings.10.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/contact-form.liquid",
+      "path": "settings.7.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/featured-posts.liquid",
+      "path": "settings.18.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/footer.liquid",
+      "path": "settings.3.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/header.liquid",
+      "path": "blocks.1.settings.20.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/list-collections.liquid",
+      "path": "settings.10.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/main-page.liquid",
+      "path": "settings.9.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/mobile-menu.liquid",
+      "path": "settings.3.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/overlay-newsletter.liquid",
+      "path": "settings.1.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/overlay-text-promo.liquid",
+      "path": "settings.11.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/password.liquid",
+      "path": "settings.6.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/product.liquid",
+      "path": "settings.14.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/related.liquid",
+      "path": "settings.12.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/search.liquid",
+      "path": "settings.7.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-404.liquid",
+      "path": "settings.1.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-accordion-group.liquid",
+      "path": "settings.7.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-accordion.liquid",
+      "path": "settings.12.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-anchor-logo.liquid",
+      "path": "settings.4.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-announcement.liquid",
+      "path": "settings.14.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-before-after.liquid",
+      "path": "settings.7.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-blog.liquid",
+      "path": "settings.21.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-collection-links-spotlight.liquid",
+      "path": "settings.14.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-collection.liquid",
+      "path": "settings.24.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-collections-list-hover.liquid",
+      "path": "settings.7.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-collections-list.liquid",
+      "path": "settings.21.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-columns.liquid",
+      "path": "settings.16.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-countdown-timer.liquid",
+      "path": "settings.13.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-custom-code.liquid",
+      "path": "settings.4.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-custom-content.liquid",
+      "path": "settings.10.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-divider.liquid",
+      "path": "settings.4.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-double-slider.liquid",
+      "path": "settings.18.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-double.liquid",
+      "path": "settings.17.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-dynamic-content.liquid",
+      "path": "settings.2.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-featured-product.liquid",
+      "path": "settings.11.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-hero-product.liquid",
+      "path": "settings.19.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-hero-scrolling.liquid",
+      "path": "settings.21.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-hero-video.liquid",
+      "path": "settings.18.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-hero.liquid",
+      "path": "settings.15.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-highlights.liquid",
+      "path": "settings.13.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-look-gallery.liquid",
+      "path": "settings.16.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-look.liquid",
+      "path": "settings.20.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-map.liquid",
+      "path": "settings.25.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-multicolumn.liquid",
+      "path": "settings.12.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-newsletter.liquid",
+      "path": "settings.7.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-press-logos.liquid",
+      "path": "settings.5.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-product-feature.liquid",
+      "path": "settings.9.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-product-stories.liquid",
+      "path": "settings.4.default",
+      "value": "scheme-tavie-white",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-product.liquid",
+      "path": "settings.15.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-products-image.liquid",
+      "path": "settings.5.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-recent-products.liquid",
+      "path": "settings.13.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-reviews.liquid",
+      "path": "settings.7.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-rich-text-columns.liquid",
+      "path": "settings.15.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-rich-text.liquid",
+      "path": "settings.9.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-sidebar.liquid",
+      "path": "settings.5.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-slideshow-nested.liquid",
+      "path": "settings.4.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-slideshow-nested.liquid",
+      "path": "settings.17.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-slideshow.liquid",
+      "path": "settings.13.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-social-videos.liquid",
+      "path": "settings.15.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-supporting-menu.liquid",
+      "path": "settings.14.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-tab-collections.liquid",
+      "path": "settings.15.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-text-promo.liquid",
+      "path": "settings.6.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-text-row.liquid",
+      "path": "settings.15.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-text-with-products.liquid",
+      "path": "settings.15.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-timeline.liquid",
+      "path": "settings.23.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/section-video.liquid",
+      "path": "settings.30.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "sections/subcollections.liquid",
+      "path": "settings.5.default",
+      "value": "scheme-1",
+      "kind": "schema_default"
+    },
+    {
+      "file": "config/settings_data.json",
+      "path": "current.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "config/settings_data.json",
+      "path": "presets.Broadcast.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "config/settings_data.json",
+      "path": "presets.Airwave.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "config/settings_data.json",
+      "path": "presets.Stellar.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "sections/group-footer.json",
+      "path": "sections.footer.settings.color_scheme",
+      "value": "scheme-tavie-soft",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "sections/group-footer.json",
+      "path": "sections.section_anchor_logo_pELPhx.settings.color_scheme",
+      "value": "scheme-tavie-soft",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "sections/group-footer.json",
+      "path": "sections.supporting-menu.settings.color_scheme",
+      "value": "scheme-tavie-soft",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "sections/group-header.json",
+      "path": "sections.announcement.settings.color_scheme",
+      "value": "scheme-9",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "sections/group-header.json",
+      "path": "sections.header.blocks.toolbar.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "sections/group-header.json",
+      "path": "sections.mobile_menu_kMYLiQ.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "sections/group-overlay.json",
+      "path": "sections.cart-drawer.blocks.free-shipping.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "sections/group-overlay.json",
+      "path": "sections.cart-drawer.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/blog.json",
+      "path": "sections.featured.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/blog.json",
+      "path": "sections.main.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/collection.json",
+      "path": "sections.section_divider_dVzcmz.settings.color_scheme",
+      "value": "scheme-6",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/collection.json",
+      "path": "sections.hero.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/collection.json",
+      "path": "sections.section_highlights_6xx8H9.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/collection.json",
+      "path": "sections.subcollections.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/collection.json",
+      "path": "sections.main.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.section_slideshow_nested_YfkG44.settings.ta_vie_empty_color_scheme",
+      "value": "scheme-tavie-white",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.section_slideshow_nested_YfkG44.settings.color_scheme",
+      "value": "scheme-5",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.section_text_with_products_yW3LJx.settings.color_scheme",
+      "value": "scheme-tavie-white",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.columns-1.settings.color_scheme",
+      "value": "scheme-tavie-white",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.double.settings.color_scheme",
+      "value": "scheme-tavie-soft",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.announcement-2.settings.color_scheme",
+      "value": "scheme-tavie-soft",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.section-tab-collections.settings.color_scheme",
+      "value": "scheme-6",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.section_video_w6YfAE.settings.color_scheme",
+      "value": "scheme-tavie-soft",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.press-logos.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.custom-content-1.settings.color_scheme",
+      "value": "scheme-6",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.collections-list-hover.settings.color_scheme",
+      "value": "scheme-10",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.announcement-3.settings.color_scheme",
+      "value": "scheme-tavie-white",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.look.settings.color_scheme",
+      "value": "scheme-6",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.section_dynamic_content_TkrMUq.settings.color_scheme",
+      "value": "scheme-tavie-soft",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.section_custom_content_H4RTrx.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.section-product.settings.color_scheme",
+      "value": "scheme-tavie-white",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.rich-text-3.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.columns-2.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.text-row.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.section_hero_scrolling_mmThBz.settings.color_scheme",
+      "value": "scheme-2",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.ta_vie_products.settings.color_scheme",
+      "value": "scheme-tavie-white",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.ta_vie_reading.settings.color_scheme",
+      "value": "scheme-tavie-white",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.ta_vie_product_stories.settings.color_scheme",
+      "value": "scheme-tavie-white",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.ta_vie_featured_01.settings.color_scheme",
+      "value": "scheme-tavie-white",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.ta_vie_featured_02.settings.color_scheme",
+      "value": "scheme-tavie-soft",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/index.json",
+      "path": "sections.ta_vie_featured_03.settings.color_scheme",
+      "value": "scheme-tavie-white",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.contact.json",
+      "path": "sections.section_divider_C8rzBw.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.contact.json",
+      "path": "sections.main.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.contact.json",
+      "path": "sections.contact.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.contact.json",
+      "path": "sections.faq.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.faq.json",
+      "path": "sections.section_divider_qreVjd.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.faq.json",
+      "path": "sections.main.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.faq.json",
+      "path": "sections.section_rich_text_aVEJTD.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.faq.json",
+      "path": "sections.section_sidebar_gnPRqW.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.faq.json",
+      "path": "sections.icons.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.json",
+      "path": "sections.section_divider_6FCGKJ.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.json",
+      "path": "sections.main.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.lookbook.json",
+      "path": "sections.main.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.lookbook.json",
+      "path": "sections.double-first.settings.color_scheme",
+      "value": "scheme-7",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.lookbook.json",
+      "path": "sections.double-second.settings.color_scheme",
+      "value": "scheme-7",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.lookbook.json",
+      "path": "sections.collection-first.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.lookbook.json",
+      "path": "sections.look.settings.color_scheme",
+      "value": "scheme-7",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.lookbook.json",
+      "path": "sections.double-third.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.lookbook.json",
+      "path": "sections.collection-second.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.lookbook.json",
+      "path": "sections.double-fourth.settings.color_scheme",
+      "value": "scheme-7",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.lookbook.json",
+      "path": "sections.double-fifth.settings.color_scheme",
+      "value": "scheme-7",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.lookbook.json",
+      "path": "sections.collection-third.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.lookbook.json",
+      "path": "sections.custom-content.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.story.json",
+      "path": "sections.main.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.story.json",
+      "path": "sections.section_divider_TgxnbL.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.story.json",
+      "path": "sections.section_custom_content_exjfEN.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.story.json",
+      "path": "sections.section_double_wccGYK.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.story.json",
+      "path": "sections.section_columns_DGHftD.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.story.json",
+      "path": "sections.section_double_d7mTBk.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.story.json",
+      "path": "sections.section_announcement_VajKTE.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.story.json",
+      "path": "sections.section_collections_list_HfGktP.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.story.json",
+      "path": "sections.section_rich_text_KnQWMj.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.story.json",
+      "path": "sections.section_press_logos_7qYAfW.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_divider_6FCGKJ.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.main.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_rich_text_Cwmbw7.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_columns_tH9nFV.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_rich_text_FWMUGA.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_text_row_eg9Q7e.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_divider_7XWd6P.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_text_row_frJUkX.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_divider_g4pwAU.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_text_row_F6cpgG.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_divider_qAmBNW.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_text_row_HFNHbh.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_divider_8km6Ez.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_text_row_EpfhJ4.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_divider_X96x9e.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_text_row_rQtW7c.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_rich_text_VfWhmy.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/page.theme-features.json",
+      "path": "sections.section_columns_zVjD6T.settings.color_scheme",
+      "value": "scheme-3",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.earrings.json",
+      "path": "sections.section_divider_WfYLrb.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.earrings.json",
+      "path": "sections.main.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.earrings.json",
+      "path": "sections.section_announcement_enc4K7.settings.color_scheme",
+      "value": "scheme-2",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.earrings.json",
+      "path": "sections.faq.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.earrings.json",
+      "path": "sections.shipping.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.earrings.json",
+      "path": "sections.about.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.earrings.json",
+      "path": "sections.section_hero_Cz9YYe.settings.color_scheme",
+      "value": "scheme-2",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.earrings.json",
+      "path": "sections.custom.settings.color_scheme",
+      "value": "scheme-10",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.earrings.json",
+      "path": "sections.related.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.gift-card.json",
+      "path": "sections.section_divider_WfYLrb.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.gift-card.json",
+      "path": "sections.main.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.gift-card.json",
+      "path": "sections.faq.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.gift-card.json",
+      "path": "sections.shipping.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.gift-card.json",
+      "path": "sections.about.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.gift-card.json",
+      "path": "sections.section_hero_Cz9YYe.settings.color_scheme",
+      "value": "scheme-2",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.gift-card.json",
+      "path": "sections.custom.settings.color_scheme",
+      "value": "scheme-10",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.gift-card.json",
+      "path": "sections.related.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.holuna-necklaces.json",
+      "path": "sections.section_divider_WfYLrb.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.holuna-necklaces.json",
+      "path": "sections.main.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.holuna-necklaces.json",
+      "path": "sections.section_announcement_H3aKVE.settings.color_scheme",
+      "value": "scheme-2",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.holuna-necklaces.json",
+      "path": "sections.faq.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.holuna-necklaces.json",
+      "path": "sections.shipping.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.holuna-necklaces.json",
+      "path": "sections.about.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.holuna-necklaces.json",
+      "path": "sections.section_hero_Cz9YYe.settings.color_scheme",
+      "value": "scheme-2",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.holuna-necklaces.json",
+      "path": "sections.custom.settings.color_scheme",
+      "value": "scheme-10",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.holuna-necklaces.json",
+      "path": "sections.related.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.json",
+      "path": "sections.section_divider_WfYLrb.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.json",
+      "path": "sections.main.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.json",
+      "path": "sections.section_announcement_enc4K7.settings.color_scheme",
+      "value": "scheme-2",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.json",
+      "path": "sections.faq.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.json",
+      "path": "sections.shipping.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.json",
+      "path": "sections.about.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.json",
+      "path": "sections.section_hero_Cz9YYe.settings.color_scheme",
+      "value": "scheme-2",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.json",
+      "path": "sections.custom.settings.color_scheme",
+      "value": "scheme-10",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.json",
+      "path": "sections.related.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.json",
+      "path": "sections.ta_vie_feature.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.necklaces.json",
+      "path": "sections.section_divider_WfYLrb.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.necklaces.json",
+      "path": "sections.main.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.necklaces.json",
+      "path": "sections.section_announcement_H3aKVE.settings.color_scheme",
+      "value": "scheme-2",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.necklaces.json",
+      "path": "sections.faq.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.necklaces.json",
+      "path": "sections.shipping.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.necklaces.json",
+      "path": "sections.about.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.necklaces.json",
+      "path": "sections.section_hero_Cz9YYe.settings.color_scheme",
+      "value": "scheme-2",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.necklaces.json",
+      "path": "sections.custom.settings.color_scheme",
+      "value": "scheme-10",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.necklaces.json",
+      "path": "sections.related.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.ta-vie.json",
+      "path": "sections.main.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.ta-vie.json",
+      "path": "sections.ta_vie_feature.settings.color_scheme",
+      "value": "scheme-1",
+      "kind": "stored_reference"
+    },
+    {
+      "file": "templates/product.ta-vie.json",
+      "path": "sections.related.settings.color_scheme",
+      "value": "",
+      "kind": "stored_reference"
+    }
+  ],
+  "parse_errors": [],
+  "source_sha256": {
+    "config/settings_data.json": "5a8772924a25a9281b57bedc41499db87da78ddec3692b724fcb40baf7c0395a",
+    "config/settings_schema.json": "339d3acf1e577354e55eebdb33bff029bc498cc02a842640c91d8a9bcc477192",
+    "sections/announcement.liquid": "4bb16b80c098dda51fe484c1d6dc122147e5702752fe5e228be7896ac4b58c86",
+    "sections/apps.liquid": "005b74284fef55b83a6e12425b9476c8f9eb0a630290e58df7ec7a401d9a7d48",
+    "sections/article.liquid": "fcc166b7b2358c25db055af0e1f2edc7dd5007d1005ba4839045b06cd8d332f4",
+    "sections/blog.liquid": "82db891b03faa20b0bcb98b15190278f5d5e3b39a6203d460439bfa238778c86",
+    "sections/cart-drawer.liquid": "011b5f8d3a00312a1defc8a8415f9ba63f7a739a095e5b4d3634d9b6899c53d2",
+    "sections/cart.liquid": "dd3af2b888c221a34b742890e29b023819863717d5e2f11b28f3637b6a796086",
+    "sections/collection-image-with-title.liquid": "3a84c8d3a52a6cd724865b2f58f9e4090ed140596c5b24c5a4b3a12eb2fbb7e9",
+    "sections/collection.liquid": "802af713b06216ce80acec8abb62dce1de5aade5ffffcae0bdebcb9aeb855a51",
+    "sections/contact-form.liquid": "73228d1f8530bb32191294c31475e493e6f260cd03157183d77782ed08a6e07d",
+    "sections/featured-posts.liquid": "02443f64fe0f587547ab6ceb328c1546de49feb1b41ca8f9ffe8e241e988f457",
+    "sections/footer.liquid": "17e767719970c87d758dfbe4eeb25a77dbbbca75adfd30d8b7d56be34a90ca21",
+    "sections/gift-card.liquid": "129a09f97b14fcdf0e07ec70adc2878aed85301fd880492424f77322e5fc28e7",
+    "sections/group-footer.json": "7e7c0edf48d90a75ffb8f28f17fb33393a40e9333ab9597a1765b7417341718f",
+    "sections/group-header.json": "2785ea9e8d0bc88937dc934e5a0e200bb7206b908b173ed284a222de1d7ea95e",
+    "sections/group-overlay.json": "ed82779ef35dba4f127211e7896d7aa71e53b2de82b7a92dfbdedb66e2d922ba",
+    "sections/group-pre-footer.json": "a4ec11c8186063041f19c17242e95963427c0b15c75ef70706f9f422cb80bd42",
+    "sections/header.liquid": "48ec72358516c67ffbb2f41a1365a4c3606e3fe58a498a8a31dc5403427ebbc7",
+    "sections/list-collections.liquid": "4a9abc75697b146f9a605bb1f899d25ddc0480861e7c104beb6c483c73cccf0d",
+    "sections/main-page.liquid": "b17e5d5524a3330b4217d804d4199874c520584aed5cf0fe4edd80de1f027399",
+    "sections/mobile-menu.liquid": "f69b8cea191edff5add9cdc73f27812ea52a025b734a502fa0ab3d7bab86cda6",
+    "sections/overlay-newsletter.liquid": "306a4d6ca492a511d37facb44ae681c39075c94131af50b9504d5cc215b6b128",
+    "sections/overlay-text-promo.liquid": "713057c3422cf8b7f2cc470816219bf7daefa495fde60f50e492464379f93a8c",
+    "sections/password.liquid": "a2bdfcc14522a752984fae5e6b0bdb5d480ee1d6ed0bc5d0a5914994bfb7fa74",
+    "sections/product.liquid": "297765b528e8aa6a66803a88f6998109a76efed6d879e7e76605ad5f7469e79c",
+    "sections/related.liquid": "e43b722277f8342371d4198d2c1d9815f3477ed119adc81a8e7d845db9e363c6",
+    "sections/search.liquid": "2519ae2e2b30c67b8242d607e47b3aa37a237775f727f332d9f37ca7762a08e6",
+    "sections/section-404.liquid": "81bd6a6863bf669ad665a4dd4c1e72f48506c3651c371883f753bf498f369ac2",
+    "sections/section-accordion-group.liquid": "297a42d827f5cab90120ebd542667b424e9ef8b2b21c0585eab0dab95edd49e4",
+    "sections/section-accordion.liquid": "4a28fad125aa561ab2af1b085c9c676fc847d0117aef3d37b6c4626a1bf1d971",
+    "sections/section-anchor-logo.liquid": "05fc8156bdbf7b5a04962d05f44847d611bfc8fa42346a9e4d44e99b4ddc92f7",
+    "sections/section-announcement.liquid": "18a9834a07bac559ea50fb9f397e6577861efac712a8f5ad1b92cdd9d3b7b9b5",
+    "sections/section-before-after.liquid": "91ca7af20fc2b13d04a8d554f7a0583b400f39edc960fe37bc82c23f02a83d16",
+    "sections/section-blog.liquid": "77cdf77da0056705c134918f96900f57dc0229c3655491ef8c1d4cf91b8ca334",
+    "sections/section-collection-links-spotlight.liquid": "8356f1dfaf49ffe6ef6594adfd027b04eeff14389ad336ee93edf389969cf68f",
+    "sections/section-collection.liquid": "2f7e838f4c120bb6a86caf9ba29217d50b0a18d25d644e79fbee566128d0d9d4",
+    "sections/section-collections-list-hover.liquid": "6840e0459b0d4ed1d9dfc7c912782276b20b8777bbce89d388cbcd7a1843f178",
+    "sections/section-collections-list.liquid": "8e7dddf3cb3946e64cc4ffe9a86249e1d7cf7110dbddd3339fab23f68e961e0f",
+    "sections/section-columns.liquid": "83d0aae3e9c46ccc70d837bb4475cdc1dbec19f84aaf48867ff063f1032254ac",
+    "sections/section-countdown-timer.liquid": "c4ae8795781a7bae057ca738bbc9efdcc72289cea341a9d7048d701f4e462f15",
+    "sections/section-custom-code.liquid": "ed33d2c82dcd28c7a3dfaab66dbcba4e6dad8b6912297966260b00c477a988b0",
+    "sections/section-custom-content.liquid": "5d396a692f538f94520a44e994ab068bc727ce8278597175adcfa1eca6d510ba",
+    "sections/section-divider.liquid": "ce5e3785a36fce206256b2b594276b754237970439dadfa877fa3538c43656bd",
+    "sections/section-double-slider.liquid": "b896c7b2c074643bb3aa19f987a31d69089cb0620387539c880590600d1b19a0",
+    "sections/section-double.liquid": "b7cde24dd4e93ed92b29a519deea6dec28262a54e73c37739671893e3168fe83",
+    "sections/section-dynamic-content.liquid": "a7c9496710ff28a0266e32c45f4bbf78aa1fc40b22fcc929a97c1895b0178502",
+    "sections/section-featured-product.liquid": "16fc412322899d39b1533c92b570f9f037a1a959a0de41dd3847288a27b377cb",
+    "sections/section-hero-product.liquid": "b77de67a0a27747ebc674bb898174424956891c285a225d900aef9b0ee8a428c",
+    "sections/section-hero-scrolling.liquid": "3a5b95e08c8d16fd49b2b960c4d57ab15fc60d05c1789fb0cd1c48d779a2c50f",
+    "sections/section-hero-video.liquid": "9fc8d3e2a7037c6a06fba6daa590abc146b4b51aa25713ac6a24a41a40c66e93",
+    "sections/section-hero.liquid": "dd8263af0e639c398c3776a5d6d9d28593cda1997af40cbe1841eae71f275af9",
+    "sections/section-highlights.liquid": "84302cc2d4da51d246d78fee3cbfac15f43c4e06e5bade2665a25f593fc8e12a",
+    "sections/section-look-gallery.liquid": "64b128f066383c7c05d608155cbcf9ac4e1c5eb38e165ddc75cfc7f371543562",
+    "sections/section-look.liquid": "a49d68a535e95057e252bb3bc7970b4074f154f613e08556ada0d02a43a88210",
+    "sections/section-map.liquid": "2349ec8e698e63cc8c3a7c0ffa67865a99f11fca06d83995f4ecd232b376dba2",
+    "sections/section-multicolumn.liquid": "28435a9d7a3061747de8b1a35538b4c72d48070f84ec236bf639541d3f5edcd8",
+    "sections/section-newsletter.liquid": "f0f47ce421bd907e9169bafa7c55128ff2482dfe908fef0a076299fc6d7fa0fa",
+    "sections/section-press-logos.liquid": "0eee57bb450a8ad361eb9fde1ee028a8922d378ef33acdcb854afbd5e4f13bd0",
+    "sections/section-product-feature.liquid": "12dd3751deb909f149ab4bc1b1750f429f760acbb0ea577e9aee84037e5ace7f",
+    "sections/section-product-stories.liquid": "94fd51bad49687823451c4ae0f3e383a78b2930b05d03a3298e4132a71133ac0",
+    "sections/section-product.liquid": "1033336956fefd5dc73e690fc4facee57396adc4ba09fd32444a5bde10bdcd62",
+    "sections/section-products-image.liquid": "0dae44d0d09b8a1171787754bdba6e86f3a9a8950dd40acb2128b589ec36f9bf",
+    "sections/section-recent-products.liquid": "15ae788f40e75cbf395e990fe07d66898019046ac9ed838479dc8a0af1ca89da",
+    "sections/section-reviews.liquid": "d8a22ac56f10d1a447f570512f0b49932c989e13058d9f8a162224d067b8ea1e",
+    "sections/section-rich-text-columns.liquid": "6cdebff91541603f192b58bbae910423faa1aee7a0da88c169dc53d90d719daf",
+    "sections/section-rich-text.liquid": "72e3f45afe4335d957fdc69a9291da3e9e68b9381a032c9ddec70994495edf65",
+    "sections/section-sidebar.liquid": "b26e346044fec07b74284fa495c8721f03e3fc42bae435fd028482ba3b8ab0a8",
+    "sections/section-slideshow-nested.liquid": "2f6b24c19a35d36d7488531f0e589be466f090f77fbc5f53f8c32a199b16ba89",
+    "sections/section-slideshow.liquid": "60aa7c6193855b0989f05d06b4f29128786826929b7a122625a7f6709684737c",
+    "sections/section-social-videos.liquid": "2586ae404b8e8672f2615be1553d38708d58d9151a040990c4221c1c3bb1ce47",
+    "sections/section-supporting-menu.liquid": "f55abe486898eac4418ac7ddd14cc14830af76dbf69de1dc4c5f0d6603b8beec",
+    "sections/section-tab-collections.liquid": "1a670386bab2fb3116d540d4639aca6ded38e8d430fbf3da5d9ed77913a682b8",
+    "sections/section-text-promo.liquid": "0ff2750f2285bfa9fda881ae7103bcc8ffcf244fe4c4e0bbc5421b721215d4a1",
+    "sections/section-text-row.liquid": "1c627fff4d3eb4441d41a9cd65171e4c12cabd599e940edc2adaf6b7c1f1d433",
+    "sections/section-text-with-products.liquid": "1498f129c4142e40ea74ff16d3444cf430be5958b763cd5e3e91d265f5a66164",
+    "sections/section-timeline.liquid": "bd8def3bcfb39d0db074c205a317d6a41126d2f24d3837b8e83fafbd3a0cf31d",
+    "sections/section-video.liquid": "3f5f2300a0e398e24c04499904970a3ecb04529f9da87647c80b894f44171b2f",
+    "sections/subcollections.liquid": "de4a928a9a4c6f22d54cbe05269dfff8dce5c9eb00b446bc75fb8891844f7ee5",
+    "templates/404.json": "b7ff229cfc7c094a128537dd36719d9531ff09f6fd79bb9dbb1a16cd760e2116",
+    "templates/article.json": "290e838b5e61fd510ef3bef8bc9f331814b8c7eb0415cad8bdd6dd1a739219a1",
+    "templates/blog.json": "4517d9587ca1b1076cc736abff8e2090a0bb35a9f742c487d6bdfcd1614f74f0",
+    "templates/cart.json": "071f6ace6c741a2748319836d2bc98bc1cd9b10b0d6d177ccb83a5225952f876",
+    "templates/collection.json": "e614923dd10706acd0fec734ff4175ad0aba0a38ee45070a92a6d755db087d9a",
+    "templates/index.json": "85ebcdbd59dfaa7d0961a404fb9ac09a27967133069459d4569e634cbc076d52",
+    "templates/list-collections.json": "0c688b93ecbba8b1329ba5a0de42f15a251eafab0bd13a9764faa0ed6c7fd305",
+    "templates/page.about.json": "c305284f937804a2f7acd3dc599678c0955bb3f0ef0be4987e4c1c18435210b7",
+    "templates/page.contact.json": "2dd71bf1c89df9cca09452b3358603bec883422a53b789a8ed294a9c613a6b74",
+    "templates/page.faq.json": "61ac74efd6ef5ff3d0f6c5e96d315f40c4e6dd7cf9e504d32ebaafee6d4603fb",
+    "templates/page.json": "1aefe2ba23b9bfd3b083862e48d074c43b46d8994e0e897a0ac83e381359980c",
+    "templates/page.lookbook.json": "f89c3e49f30db0efea61c44114569ca01d53f2c181bad7ca413a2f07bac41fdf",
+    "templates/page.story.json": "f3de5feeddd4ec70621ccfdc2004e299a9cae4fa66bd4a6aa6e5c70542fa77b0",
+    "templates/page.team.json": "5855737697c82c43041c34da1b890b8d43647ad636d56fb6ad5c0c95638bf92c",
+    "templates/page.theme-features.json": "69448dd5dc23c6fab50a3b907b16cf7c5325c16bd8462e43a73a2188d78d7aee",
+    "templates/password.json": "ae171a7a65fb608ba91af4d98edbe1b8a07d536c6616f3a4a02cfda70e60458e",
+    "templates/product.earrings.json": "1b4b90e3908e5f7fc6a061173f7af77b894fc6e457afc0335b75d8a878a9dc74",
+    "templates/product.gift-card.json": "e31537a8f98b54a04993d9d65a4f86f452850a53df269422bd81d9577032d448",
+    "templates/product.holuna-necklaces.json": "a3652f7132320accc3d72b232941dbb1af09d178a6a8cd71cebe3a14726f1012",
+    "templates/product.json": "95e80354c2adbdc400ce98cb734ffdbf1e855283bbea282e9264cfbfa20ae658",
+    "templates/product.necklaces.json": "1f6229f58d08f1c19e26785925a1018546c6f111a87b8d82e64cf205bc9e4ae6",
+    "templates/product.ta-vie.json": "f8c8775f8c3094139ae3739a35054211e18db80d9e175627b2ba35cbcd157e81",
+    "templates/search.json": "cff3b71c229b30ca54a43f320bf84be3384a9e5fc9d7571f93879931444c6169"
+  },
+  "limits": "Static comparison of palette.settings values and configured color_scheme references, including schema defaults. No source writes, live Shopify rendering or runtime color output validation."
+}

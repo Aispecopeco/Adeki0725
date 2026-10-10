@@ -1,0 +1,703 @@
+{
+  "validator": "Official saved Shopify setting/theme_settings schemas with all relative refs registered; separate runtime value/range/order checks",
+  "officialSchemas": [
+    {
+      "url": "https://raw.githubusercontent.com/Shopify/theme-liquid-docs/main/schemas/theme/theme_settings.json",
+      "sha256": "ba0789f50be233b5fbe6953cc2bb6ab4fce864aaea7db921981630b70d126d7a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Shopify/theme-liquid-docs/main/schemas/theme/settings.json",
+      "sha256": "8cab3c335dfbca6500d6e4ec2dce86accdcd162560402329c862117b88fb4cfd"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Shopify/theme-liquid-docs/main/schemas/theme/setting.json",
+      "sha256": "1e138f77a17c99f38011b6a633d2b8a149e6cb50ea5fe9ed7eca7e24a2974d29"
+    }
+  ],
+  "wholeSettingsSchemaErrors": [],
+  "settingSchemaErrors": [],
+  "issues": [],
+  "observations": [
+    {
+      "kind": "blank_color_scheme",
+      "path": "templates/product.json/sections/section_divider_WfYLrb/settings/color_scheme",
+      "isDefault": false,
+      "note": "Empty picker value; no ID is present to resolve. Included explicitly in findings."
+    },
+    {
+      "kind": "blank_color_scheme",
+      "path": "templates/product.json/sections/faq/settings/color_scheme",
+      "isDefault": false,
+      "note": "Empty picker value; no ID is present to resolve. Included explicitly in findings."
+    },
+    {
+      "kind": "blank_color_scheme",
+      "path": "templates/product.json/sections/shipping/settings/color_scheme",
+      "isDefault": false,
+      "note": "Empty picker value; no ID is present to resolve. Included explicitly in findings."
+    },
+    {
+      "kind": "blank_color_scheme",
+      "path": "templates/product.json/sections/about/settings/color_scheme",
+      "isDefault": false,
+      "note": "Empty picker value; no ID is present to resolve. Included explicitly in findings."
+    },
+    {
+      "kind": "blank_color_scheme",
+      "path": "templates/product.json/sections/related/settings/color_scheme",
+      "isDefault": false,
+      "note": "Empty picker value; no ID is present to resolve. Included explicitly in findings."
+    },
+    {
+      "kind": "blank_color_scheme",
+      "path": "templates/product.ta-vie.json/sections/related/settings/color_scheme",
+      "isDefault": false,
+      "note": "Empty picker value; no ID is present to resolve. Included explicitly in findings."
+    },
+    {
+      "kind": "blank_color_scheme",
+      "path": "templates/index.json/sections/press-logos/settings/color_scheme",
+      "isDefault": false,
+      "note": "Empty picker value; no ID is present to resolve. Included explicitly in findings."
+    },
+    {
+      "kind": "blank_color_scheme",
+      "path": "templates/index.json/sections/rich-text-3/settings/color_scheme",
+      "isDefault": false,
+      "note": "Empty picker value; no ID is present to resolve. Included explicitly in findings."
+    }
+  ],
+  "unmappedGlobalData": [
+    {
+      "configuration": "current",
+      "key": "checkout_logo_position",
+      "value": "left",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "current",
+      "key": "checkout_logo_size",
+      "value": "large",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "current",
+      "key": "checkout_body_background_color",
+      "value": "#fff",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "current",
+      "key": "checkout_input_background_color_mode",
+      "value": "white",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "current",
+      "key": "checkout_sidebar_background_color",
+      "value": "#f9f9f9",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "current",
+      "key": "checkout_heading_font",
+      "value": "Open Sans",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "current",
+      "key": "checkout_body_font",
+      "value": "Open Sans",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "current",
+      "key": "checkout_accent_color",
+      "value": "#ab8c52",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "current",
+      "key": "checkout_button_color",
+      "value": "#ab8c52",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "current",
+      "key": "checkout_error_color",
+      "value": "#c85c42",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "current",
+      "key": "content_for_index",
+      "value": [],
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Broadcast",
+      "key": "checkout_logo_position",
+      "value": "left",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Broadcast",
+      "key": "checkout_logo_size",
+      "value": "large",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Broadcast",
+      "key": "checkout_body_background_color",
+      "value": "#fff",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Broadcast",
+      "key": "checkout_input_background_color_mode",
+      "value": "white",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Broadcast",
+      "key": "checkout_sidebar_background_color",
+      "value": "#f9f9f9",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Broadcast",
+      "key": "checkout_heading_font",
+      "value": "Open Sans",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Broadcast",
+      "key": "checkout_body_font",
+      "value": "Open Sans",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Broadcast",
+      "key": "checkout_accent_color",
+      "value": "#ab8c52",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Broadcast",
+      "key": "checkout_button_color",
+      "value": "#ab8c52",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Broadcast",
+      "key": "checkout_error_color",
+      "value": "#c85c42",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Broadcast",
+      "key": "content_for_index",
+      "value": [],
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Relay",
+      "key": "checkout_logo_position",
+      "value": "left",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Relay",
+      "key": "checkout_logo_size",
+      "value": "large",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Relay",
+      "key": "checkout_body_background_color",
+      "value": "#fff",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Relay",
+      "key": "checkout_input_background_color_mode",
+      "value": "white",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Relay",
+      "key": "checkout_sidebar_background_color",
+      "value": "#f9f9f9",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Relay",
+      "key": "checkout_heading_font",
+      "value": "Open Sans",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Relay",
+      "key": "checkout_body_font",
+      "value": "Open Sans",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Relay",
+      "key": "checkout_accent_color",
+      "value": "#ab8c52",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Relay",
+      "key": "checkout_button_color",
+      "value": "#ab8c52",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Relay",
+      "key": "checkout_error_color",
+      "value": "#c85c42",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Relay",
+      "key": "content_for_index",
+      "value": [],
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Airwave",
+      "key": "checkout_logo_position",
+      "value": "left",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Airwave",
+      "key": "checkout_logo_size",
+      "value": "large",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Airwave",
+      "key": "checkout_body_background_color",
+      "value": "#fff",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Airwave",
+      "key": "checkout_input_background_color_mode",
+      "value": "white",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Airwave",
+      "key": "checkout_sidebar_background_color",
+      "value": "#f9f9f9",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Airwave",
+      "key": "checkout_heading_font",
+      "value": "Open Sans",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Airwave",
+      "key": "checkout_body_font",
+      "value": "Open Sans",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Airwave",
+      "key": "checkout_accent_color",
+      "value": "#ab8c52",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Airwave",
+      "key": "checkout_button_color",
+      "value": "#ab8c52",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Airwave",
+      "key": "checkout_error_color",
+      "value": "#c85c42",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Airwave",
+      "key": "content_for_index",
+      "value": [],
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Motif",
+      "key": "checkout_logo_position",
+      "value": "left",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Motif",
+      "key": "checkout_logo_size",
+      "value": "medium",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Motif",
+      "key": "checkout_body_background_color",
+      "value": "#fff",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Motif",
+      "key": "checkout_input_background_color_mode",
+      "value": "white",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Motif",
+      "key": "checkout_sidebar_background_color",
+      "value": "#fafafa",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Motif",
+      "key": "checkout_heading_font",
+      "value": "Open Sans",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Motif",
+      "key": "checkout_body_font",
+      "value": "Open Sans",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Motif",
+      "key": "checkout_accent_color",
+      "value": "#c5aa76",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Motif",
+      "key": "checkout_button_color",
+      "value": "#c5aa76",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Motif",
+      "key": "checkout_error_color",
+      "value": "#c85c42",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Motif",
+      "key": "sections",
+      "value": {
+        "gift-card": {
+          "type": "gift-card",
+          "settings": {
+            "logo_max_limit": 300
+          }
+        }
+      },
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Motif",
+      "key": "content_for_index",
+      "value": [],
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Stellar",
+      "key": "checkout_logo_position",
+      "value": "left",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Stellar",
+      "key": "checkout_logo_size",
+      "value": "medium",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Stellar",
+      "key": "checkout_body_background_color",
+      "value": "#fff",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Stellar",
+      "key": "checkout_input_background_color_mode",
+      "value": "white",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Stellar",
+      "key": "checkout_sidebar_background_color",
+      "value": "#fafafa",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Stellar",
+      "key": "checkout_heading_font",
+      "value": "Open Sans",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Stellar",
+      "key": "checkout_body_font",
+      "value": "Open Sans",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Stellar",
+      "key": "checkout_accent_color",
+      "value": "#c5aa76",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Stellar",
+      "key": "checkout_button_color",
+      "value": "#c5aa76",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Stellar",
+      "key": "checkout_error_color",
+      "value": "#c85c42",
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    },
+    {
+      "configuration": "Stellar",
+      "key": "content_for_index",
+      "value": [],
+      "unchangedFromHEAD": true,
+      "note": "No control in settings_schema; platform/legacy data is recorded explicitly, not validated as a theme control."
+    }
+  ],
+  "counts": {
+    "setting_definitions": 1916,
+    "default_values": 1130,
+    "stored_values": 1829,
+    "nodes": 219,
+    "enabled_nodes": 117,
+    "disabled_nodes": 102
+  },
+  "sourceSha256": {
+    "config/settings_data.json": "5a8772924a25a9281b57bedc41499db87da78ddec3692b724fcb40baf7c0395a",
+    "config/settings_schema.json": "339d3acf1e577354e55eebdb33bff029bc498cc02a842640c91d8a9bcc477192",
+    "templates/product.json": "397e8cd6f5e480fab4058dc1b87fcf742a370e9d854536c8f8c3eaa99d8fbdf8",
+    "sections/section-divider.liquid": "ce5e3785a36fce206256b2b594276b754237970439dadfa877fa3538c43656bd",
+    "sections/product.liquid": "297765b528e8aa6a66803a88f6998109a76efed6d879e7e76605ad5f7469e79c",
+    "sections/section-announcement.liquid": "18a9834a07bac559ea50fb9f397e6577861efac712a8f5ad1b92cdd9d3b7b9b5",
+    "sections/section-accordion.liquid": "4a28fad125aa561ab2af1b085c9c676fc847d0117aef3d37b6c4626a1bf1d971",
+    "sections/section-hero.liquid": "dd8263af0e639c398c3776a5d6d9d28593cda1997af40cbe1841eae71f275af9",
+    "sections/section-custom-content.liquid": "5d396a692f538f94520a44e994ab068bc727ce8278597175adcfa1eca6d510ba",
+    "sections/related.liquid": "e43b722277f8342371d4198d2c1d9815f3477ed119adc81a8e7d845db9e363c6",
+    "sections/section-product-feature.liquid": "903e900246d06a36337bf6f66d1e881ae106bc8e6739f6fb7a60e9b1c82fdf50",
+    "templates/product.ta-vie.json": "013c3f2619380e48d9fa8dc44f31ad776068baaf74f57bec2a038c31cfbe92b8",
+    "templates/index.json": "85ebcdbd59dfaa7d0961a404fb9ac09a27967133069459d4569e634cbc076d52",
+    "sections/section-slideshow-nested.liquid": "2f6b24c19a35d36d7488531f0e589be466f090f77fbc5f53f8c32a199b16ba89",
+    "blocks/_slide-image.liquid": "ca3ddceb00479ba19c47c084825e31481d54d7a16a1a2e16c6760db2b857fef8",
+    "blocks/heading.liquid": "c9d3cda8152a0a8ee5d84c5663fa4fa3e41b85d5070a478e6f8200165bc7e754",
+    "blocks/text.liquid": "42bacfb31034f0ac72c30a79d672d62051b0ff631b9d89551bf3119409453799",
+    "blocks/_group-buttons.liquid": "8fe4132de4388e5997918614a08811e340caedba9209ce3b5fe4b2c375342326",
+    "blocks/_slide-video.liquid": "a9ff546ccf9e7df9aeb6ba1a340fde304b4eebd6957d9346f71258264dd180d2",
+    "blocks/button.liquid": "8979754667b56074d381325c4fd64a028baa870c7b92f4f6767a1a4c84d49949",
+    "sections/section-text-with-products.liquid": "1498f129c4142e40ea74ff16d3444cf430be5958b763cd5e3e91d265f5a66164",
+    "sections/section-columns.liquid": "83d0aae3e9c46ccc70d837bb4475cdc1dbec19f84aaf48867ff063f1032254ac",
+    "sections/section-double.liquid": "b7cde24dd4e93ed92b29a519deea6dec28262a54e73c37739671893e3168fe83",
+    "sections/section-tab-collections.liquid": "1a670386bab2fb3116d540d4639aca6ded38e8d430fbf3da5d9ed77913a682b8",
+    "sections/section-video.liquid": "3f5f2300a0e398e24c04499904970a3ecb04529f9da87647c80b894f44171b2f",
+    "sections/section-press-logos.liquid": "0eee57bb450a8ad361eb9fde1ee028a8922d378ef33acdcb854afbd5e4f13bd0",
+    "sections/section-collections-list-hover.liquid": "6840e0459b0d4ed1d9dfc7c912782276b20b8777bbce89d388cbcd7a1843f178",
+    "sections/section-look.liquid": "a49d68a535e95057e252bb3bc7970b4074f154f613e08556ada0d02a43a88210",
+    "sections/section-dynamic-content.liquid": "a7c9496710ff28a0266e32c45f4bbf78aa1fc40b22fcc929a97c1895b0178502",
+    "blocks/_grid-item.liquid": "2346614b5ddfd6b8ad4d9afedfd97c8ba520658996c2bf8077409109494de6d3",
+    "blocks/image.liquid": "fa768688e3dce9dbbfbf31b572df7dd50a139b7a059e025d9cd628856a4021c3",
+    "blocks/rich-text.liquid": "add45f46dc60f7758dd7cdfe36c5abdb19445f753a1decb32d6d89e93fcdc5fe",
+    "sections/section-product.liquid": "1033336956fefd5dc73e690fc4facee57396adc4ba09fd32444a5bde10bdcd62",
+    "sections/section-rich-text.liquid": "72e3f45afe4335d957fdc69a9291da3e9e68b9381a032c9ddec70994495edf65",
+    "sections/section-text-row.liquid": "1c627fff4d3eb4441d41a9cd65171e4c12cabd599e940edc2adaf6b7c1f1d433",
+    "sections/section-hero-scrolling.liquid": "3a5b95e08c8d16fd49b2b960c4d57ab15fc60d05c1789fb0cd1c48d779a2c50f",
+    "sections/section-collection.liquid": "2f7e838f4c120bb6a86caf9ba29217d50b0a18d25d644e79fbee566128d0d9d4",
+    "sections/section-blog.liquid": "77cdf77da0056705c134918f96900f57dc0229c3655491ef8c1d4cf91b8ca334",
+    "sections/section-product-stories.liquid": "94fd51bad49687823451c4ae0f3e383a78b2930b05d03a3298e4132a71133ac0",
+    "sections/group-header.json": "2785ea9e8d0bc88937dc934e5a0e200bb7206b908b173ed284a222de1d7ea95e",
+    "sections/announcement.liquid": "4bb16b80c098dda51fe484c1d6dc122147e5702752fe5e228be7896ac4b58c86",
+    "sections/header.liquid": "48ec72358516c67ffbb2f41a1365a4c3606e3fe58a498a8a31dc5403427ebbc7",
+    "sections/mobile-menu.liquid": "f69b8cea191edff5add9cdc73f27812ea52a025b734a502fa0ab3d7bab86cda6",
+    "sections/group-footer.json": "7e7c0edf48d90a75ffb8f28f17fb33393a40e9333ab9597a1765b7417341718f",
+    "sections/footer.liquid": "17e767719970c87d758dfbe4eeb25a77dbbbca75adfd30d8b7d56be34a90ca21",
+    "sections/section-anchor-logo.liquid": "05fc8156bdbf7b5a04962d05f44847d611bfc8fa42346a9e4d44e99b4ddc92f7",
+    "sections/section-supporting-menu.liquid": "f55abe486898eac4418ac7ddd14cc14830af76dbf69de1dc4c5f0d6603b8beec",
+    "sections/group-pre-footer.json": "a4ec11c8186063041f19c17242e95963427c0b15c75ef70706f9f422cb80bd42",
+    "sections/section-newsletter.liquid": "f0f47ce421bd907e9169bafa7c55128ff2482dfe908fef0a076299fc6d7fa0fa"
+  },
+  "footerCheckbox": {
+    "type": "checkbox",
+    "id": "use_ta_vie_links",
+    "label": "メニュー未選択時にブログ・FAQを表示",
+    "info": "テーマ設定「TA VIE｜ページへのリンク」の実在するリンクを使います。リンクがなければ空の列を表示しません。",
+    "default": false
+  },
+  "resourcesBlock": {
+    "type": "linklist",
+    "settings": {
+      "linklist": "",
+      "title": "ご案内",
+      "heading_font_size": "heading-x-small",
+      "column_width": 20,
+      "enable_accordion": false,
+      "use_ta_vie_links": true
+    }
+  },
+  "anchorControls": [
+    {
+      "type": "range",
+      "id": "logo_width",
+      "label": "ロゴの最大幅（PC）",
+      "min": 160,
+      "max": 1200,
+      "step": 20,
+      "unit": "px",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "mobile_logo_width",
+      "label": "ロゴの最大幅（スマホ）",
+      "min": 120,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "default": 280
+    }
+  ],
+  "anchorCurrent": {
+    "logo": "shopify://shop_images/TA_VIE.png",
+    "color_scheme": "scheme-tavie-soft",
+    "padding_top": 20,
+    "padding_bottom": 20,
+    "logo_width": 480,
+    "mobile_logo_width": 240
+  },
+  "authorizedBlogInfoDiff": {
+    "old": {
+      "type": "blog",
+      "id": "ta_vie_blog",
+      "label": "ブログのリンク先",
+      "info": "既存のブログを選択します。未選択時は既存のnewsブログを使います。リンクは記事0件でも表示します。ホームの記事欄のブログは、そのセクションでも選択できます。"
+    },
+    "new": {
+      "type": "blog",
+      "id": "ta_vie_blog",
+      "label": "ブログのリンク先",
+      "info": "既存のブログを選択します。未選択時は既存のnewsブログを使います。リンクは記事0件でも表示します。ホームの記事欄のブログは、そのセクションでも選択できます。"
+    },
+    "onlyInfoChanged": true
+  },
+  "limits": "Read-only schema and stored-value validation; disabled content is included. Empty resource selections are reported, and nonempty color IDs are resolved locally. Resource handles/Shopify image URLs are not resolved against a live store.",
+  "blankHomeColorSchemesBaseline": [
+    {
+      "reference": "HEAD",
+      "sectionId": "press-logos",
+      "disabled": true,
+      "colorScheme": "",
+      "unchangedColorScheme": true
+    },
+    {
+      "reference": "HEAD",
+      "sectionId": "rich-text-3",
+      "disabled": true,
+      "colorScheme": "",
+      "unchangedColorScheme": true
+    },
+    {
+      "reference": "3f7e253",
+      "sectionId": "press-logos",
+      "disabled": true,
+      "colorScheme": "",
+      "unchangedColorScheme": true
+    },
+    {
+      "reference": "3f7e253",
+      "sectionId": "rich-text-3",
+      "disabled": true,
+      "colorScheme": "",
+      "unchangedColorScheme": true
+    }
+  ],
+  "sourceUnchangedDuringValidation": true,
+  "pass": true
+}

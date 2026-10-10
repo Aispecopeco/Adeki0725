@@ -1,3 +1,4 @@
+{%- render 'ta-vie-home-reduced-motion' -%}
 <!-- /sections/section-double.liquid -->
 
 {%- assign ta_vie_section_key = section.id | split: '__' | last -%}
@@ -9,6 +10,17 @@
   {%- endstyle -%}
 {%- endif -%}
 
+{%- if section.settings.ta_vie_hide_unconfigured and section.settings.image_1 == blank and section.settings.image_2 == blank -%}
+  {%- style -%}
+    #BrickSection--{{ section.id }} .brick__section { height: auto; min-height: 0; }
+    #BrickSection--{{ section.id }} .brick__block--images { display: none; }
+    #BrickSection--{{ section.id }} .brick__block--text { flex-basis: 100%; min-height: 0; }
+    #BrickSection--{{ section.id }} .brick__block__text { width: 100%; }
+    #BrickSection--{{ section.id }} .hero__content { max-width: 48rem; margin: 0 auto; }
+  {%- endstyle -%}
+  {%- render 'ta-vie-home-editor-note', message: 'このブランド紹介のPrimary image / Secondary imageから実写写真を選ぶと、Broadcast標準の画像と文章のレイアウトになります。未設定時は文章のみを自然な高さで公開します。' -%}
+{%- endif -%}
+
 {%- render 'section-double' -%}
 
 {% schema %}
@@ -16,6 +28,17 @@
   "name": "Image with text",
   "class": "section-overlay-header",
   "settings": [
+    {
+      "type": "header",
+      "content": "TA VIE｜公開時の表示"
+    },
+    {
+      "type": "checkbox",
+      "id": "ta_vie_hide_unconfigured",
+      "label": "未設定の写真・商品を公開しない",
+      "default": false,
+      "info": "このセクションだけに適用します。写真や商品を選ぶとBroadcast標準の表示・動きが使われます。設定案内はテーマエディタだけに表示します。"
+    },
     {
       "type": "header",
       "content": "Content"

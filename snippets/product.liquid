@@ -124,15 +124,19 @@
 -%}
 
 {{ 'product.css' | asset_url | stylesheet_tag }}
+{%- render 'ta-vie-product-purchase-assets', section: section, featured_product: featured_product -%}
 
 <product-info
   id="MainProduct--{{ section.id }}"
   class="index-product section-padding {{ color_scheme }}"
+  data-ta-vie-experience="{{ section.settings.ta_vie_product_experience }}"
   data-section="{{ section.id }}"
   data-section-id="{{ section.id }}"
   data-product-handle="{{ product.handle }}"
   data-product-id="{{ product.id }}"
+  data-product-media-count="{{ product.media.size }}"
   data-enable-history-state="{{ enable_history_state }}"
+  {%- render 'ta-vie-product-url-state', section: section, featured_product: featured_product -%}
   data-url="{{ product.url }}"
   data-overlay-header
   data-sticky-enabled="{{ product_sticky_enable }}"
@@ -323,6 +327,7 @@
         </product-images>
 
         <div class="product__content">
+          {%- render 'ta-vie-product-purchase-anchor', section: section, featured_product: featured_product -%}
           <div
             class="form__wrapper{% unless show_buy_buttons %} form__wrapper--no-buttons{% endunless %}{% unless current_variant.available or onboarding_product %} variant--soldout{% endunless %}{% if settings.form_style == 'classic' %} form__wrapper--classic{% else %} form__wrapper--modern{% endif %}{% if settings.show_newsletter %} show-product-notification{% endif %}"
             data-form-wrapper
@@ -646,8 +651,8 @@
                       quick_add_product: false
                     -%}
 
-                  {%- when 'text' -%}
-                    {%- render 'product-block-text', block: block, block_style: block_style -%}
+                  {%- when 'text', 'ta_vie_intro' -%}
+                    {%- render 'ta-vie-product-text-block', product: product, block: block, block_style: block_style -%}
 
                   {%- when 'icon' -%}
                     {%- render 'icon', block: block, index: forloop.index0, is_product: true -%}
