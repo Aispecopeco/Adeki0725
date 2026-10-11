@@ -1,0 +1,45 @@
+{%- comment -%}
+  Convert epoch seconds to Japan Standard Time without relying on the store's
+  timezone. Gregorian civil date calculation also works without JavaScript.
+{%- endcomment -%}
+{%- liquid
+  assign timestamp = value | date: '%s' | plus: 0
+  assign japan_seconds = timestamp | plus: 32400
+  assign days = japan_seconds | divided_by: 86400
+  assign z = days | plus: 719468
+  assign era = z | divided_by: 146097
+  assign era_days = era | times: 146097
+  assign day_of_era = z | minus: era_days
+  assign leap4 = day_of_era | divided_by: 1460
+  assign leap100 = day_of_era | divided_by: 36524
+  assign leap400 = day_of_era | divided_by: 146096
+  assign year_of_era = day_of_era | minus: leap4 | plus: leap100 | minus: leap400 | divided_by: 365
+  assign years400 = era | times: 400
+  assign year = year_of_era | plus: years400
+  assign year_days = year_of_era | times: 365
+  assign year_leap4 = year_of_era | divided_by: 4
+  assign year_leap100 = year_of_era | divided_by: 100
+  assign year_days = year_days | plus: year_leap4 | minus: year_leap100
+  assign day_of_year = day_of_era | minus: year_days
+  assign month_index = day_of_year | times: 5 | plus: 2 | divided_by: 153
+  assign month_days = month_index | times: 153 | plus: 2 | divided_by: 5
+  assign day = day_of_year | minus: month_days | plus: 1
+  if month_index < 10
+    assign month = month_index | plus: 3
+  else
+    assign month = month_index | minus: 9
+  endif
+  if month <= 2
+    assign year = year | plus: 1
+  endif
+  assign seconds_today = japan_seconds | modulo: 86400
+  assign hour = seconds_today | divided_by: 3600
+  assign minute = seconds_today | modulo: 3600 | divided_by: 60
+  assign month_text = month | prepend: '0' | slice: -2, 2
+  assign day_text = day | prepend: '0' | slice: -2, 2
+  assign hour_text = hour | prepend: '0' | slice: -2, 2
+  assign minute_text = minute | prepend: '0' | slice: -2, 2
+-%}
+{%- if value != blank and timestamp > 0 -%}
+  <time datetime="{{ year }}-{{ month_text }}-{{ day_text }}T{{ hour_text }}:{{ minute_text }}:00+09:00">{{ year }}.{{ month_text }}.{{ day_text }}{% unless date_only %} {{ hour_text }}:{{ minute_text }}（日本時間）{% endunless %}</time>
+{%- endif -%}

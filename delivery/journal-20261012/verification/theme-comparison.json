@@ -1,0 +1,10 @@
+{
+  "baseline": "6249aea0055c14a687bd5728aa2bfa443cc46ad1",
+  "cli_exit_code": 1,
+  "errors": 4,
+  "warnings": 341,
+  "baseline_errors": 4,
+  "baseline_warnings": 341,
+  "new_offenses": [],
+  "removed_offenses": []
+}

@@ -1,0 +1,29 @@
+{%- assign timeline_context = 'home' -%}
+{%- if request.page_type == 'page' -%}{%- assign timeline_context = 'journal' -%}{%- endif -%}
+{%- capture timeline_markup -%}{%- render 'ta-vie-timeline', context: timeline_context, limit: section.settings.limit, heading: section.settings.heading, section_id: section.id -%}{%- endcapture -%}
+{%- assign timeline_markup = timeline_markup | strip -%}
+{%- if timeline_markup != blank -%}
+{%- style -%}
+  #TaVieTimelineSection-{{ section.id }} { --tvj-events-padding-top: {{ section.settings.padding_top }}px; --tvj-events-padding-bottom: {{ section.settings.padding_bottom }}px; }
+{%- endstyle -%}
+<div id="TaVieTimelineSection-{{ section.id }}" class="tvj-events-section color-{{ section.settings.color_scheme }}" data-section-id="{{ section.id }}">
+  {{- timeline_markup -}}
+</div>
+{%- endif -%}
+{% schema %}
+{
+  "name": "TA VIE｜お知らせタイムライン",
+  "tag": "section",
+  "class": "tvj-events-section-wrapper",
+  "enabled_on": {"templates": ["index", "page"]},
+  "settings": [
+    {"type": "text", "id": "heading", "label": "見出し", "default": "TA VIEからのお知らせ"},
+    {"type": "paragraph", "content": "お知らせの内容は、テーマ設定「TA VIE｜Journalと発信」で選ぶ専用ブログの記事と、その記事のメタフィールドで一元管理します。ホームでは最新の告知、ページでは過去のお知らせへのページ送りも表示します。"},
+    {"type": "range", "id": "limit", "label": "表示件数・1ページの件数", "min": 3, "max": 18, "step": 1, "default": 4},
+    {"type": "color_scheme", "id": "color_scheme", "label": "配色", "default": "scheme-tavie-white"},
+    {"type": "range", "id": "padding_top", "label": "上の余白", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64},
+    {"type": "range", "id": "padding_bottom", "label": "下の余白", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64}
+  ],
+  "presets": [{"name": "TA VIE｜お知らせタイムライン"}]
+}
+{% endschema %}

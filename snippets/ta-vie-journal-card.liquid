@@ -1,0 +1,57 @@
+{%- doc -%}
+  An article introduction that reads existing Shopify article data only.
+
+  @param {article} article - A published article Drop, or its blog/article handle
+  @param {boolean} [featured] - Use the larger editorial presentation
+  @param {boolean} [show_date] - Display the existing publication date
+  @param {boolean} [show_updated] - Display a separately labelled update date
+  @param {string} [link_label] - Label of the article reading link
+{%- enddoc -%}
+{%- liquid
+  assign journal_article = article
+  if journal_article != blank and journal_article.url == blank
+    assign journal_article = articles[journal_article]
+  endif
+  assign now_timestamp = 'now' | date: '%s' | plus: 0
+  assign publication_timestamp = journal_article.published_at | date: '%s' | plus: 0
+  assign update_timestamp = journal_article.updated_at | date: '%s' | plus: 0
+  assign article_blog_segments = journal_article.url | split: '/'
+  assign article_blog_length = article_blog_segments.size | minus: 1
+  assign article_blog_url = article_blog_segments | slice: 0, article_blog_length | join: '/'
+  assign reading_label = link_label | default: '記事を読む'
+  assign heading_tag = 'h3'
+  if featured
+    assign heading_tag = 'h2'
+  endif
+-%}
+{%- if journal_article.url != blank and journal_article.title != blank and journal_article.published_at != blank and publication_timestamp > 0 and publication_timestamp <= now_timestamp -%}
+  <article class="tvj-card{% if featured %} tvj-card--featured{% endif %}{% if journal_article.image == blank %} tvj-card--text{% endif %}" data-tvj-article="{{ journal_article.id }}">
+    {%- if journal_article.image != blank -%}
+      <a class="tvj-card__image" href="{{ journal_article.url | escape }}" aria-label="{{ journal_article.title | escape }}">
+        {%- if featured -%}
+          {{- journal_article.image | image_url: width: 1800 | image_tag: loading: 'eager', widths: '540, 720, 960, 1200, 1500, 1800', sizes: '(min-width: 990px) 58vw, 100vw', alt: journal_article.image.alt -}}
+        {%- else -%}
+          {{- journal_article.image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '360, 540, 720, 1000', sizes: '(min-width: 990px) 30vw, (min-width: 750px) 45vw, 100vw', alt: journal_article.image.alt -}}
+        {%- endif -%}
+      </a>
+    {%- endif -%}
+    <div class="tvj-card__copy">
+      <div class="tvj-card__metadata">
+        {%- if journal_article.tags.size > 0 -%}
+          {%- assign category = journal_article.tags | first -%}
+          <a class="tvj-card__category" href="{{ article_blog_url | escape }}/tagged/{{ category | handleize }}">{{ category | escape }}</a>
+        {%- endif -%}
+        {%- if show_date != false -%}
+          <span class="tvj-card__date">公開 <time datetime="{{ journal_article.published_at | date: '%Y-%m-%d' }}">{{ journal_article.published_at | date: '%Y.%m.%d' }}</time></span>
+        {%- endif -%}
+        {%- if show_updated and journal_article.updated_at != blank and update_timestamp > publication_timestamp and update_timestamp <= now_timestamp -%}
+          <span class="tvj-card__date">最終更新 <time datetime="{{ journal_article.updated_at | date: '%Y-%m-%d' }}">{{ journal_article.updated_at | date: '%Y.%m.%d' }}</time></span>
+        {%- endif -%}
+      </div>
+      <{{ heading_tag }} class="tvj-card__title"><a href="{{ journal_article.url | escape }}">{{ journal_article.title | escape }}</a></{{ heading_tag }}>
+      {%- assign introduction = journal_article.excerpt_or_content | strip_html | strip | truncate: 110 -%}
+      {%- if introduction != blank -%}<p class="tvj-card__excerpt">{{ introduction | escape }}</p>{%- endif -%}
+      <a class="tvj-link" href="{{ journal_article.url | escape }}" aria-label="{{ reading_label | escape }}：{{ journal_article.title | escape }}"><span>{{ reading_label | escape }}</span><span aria-hidden="true">↗</span></a>
+    </div>
+  </article>
+{%- endif -%}

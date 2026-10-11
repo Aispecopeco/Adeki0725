@@ -1,0 +1,96 @@
+{%- comment -%}
+  Additive notices, sourced from one dedicated Shopify blog. Publishing a notice
+  never changes the original article or its publication date. Home uses no
+  pagination; Journal uses Shopify's native pagination to retain past notices.
+  Arguments: context (home/journal), limit, heading, section_id.
+{%- endcomment -%}
+{%- liquid
+  assign updates_blog = settings.tvj_updates_blog
+  if updates_blog != blank and updates_blog.url == blank
+    assign updates_blog = blogs[updates_blog]
+  endif
+  assign reading_blog = settings.tvj_blog | default: settings.ta_vie_blog
+  if reading_blog != blank and reading_blog.url == blank
+    assign reading_blog = blogs[reading_blog]
+  endif
+  if reading_blog.url == blank
+    assign reading_blog = blogs.news
+  endif
+  assign same_blog = false
+  if updates_blog.url != blank and reading_blog.url != blank and updates_blog.handle == reading_blog.handle
+    assign same_blog = true
+  endif
+  assign timeline_limit = limit | default: 4 | plus: 0
+  if timeline_limit < 1
+    assign timeline_limit = 4
+  endif
+  assign timeline_heading = heading | default: 'TA VIEからのお知らせ'
+  assign timeline_id = 'TaVieTimeline-' | append: section_id | append: '-' | append: context
+-%}
+{%- capture timeline_markup -%}
+{%- if updates_blog.url != blank and same_blog == false -%}
+  {%- if context == 'journal' -%}
+    {%- paginate updates_blog.articles by timeline_limit -%}
+      {%- capture timeline_items -%}
+        {%- for notice in updates_blog.articles -%}
+          {%- render 'ta-vie-notice', notice: notice, context: context -%}
+        {%- endfor -%}
+      {%- endcapture -%}
+      {%- assign timeline_items = timeline_items | strip -%}
+      {%- if timeline_items != blank or paginate.pages > 1 -%}
+        <section class="tvj-timeline" id="{{ timeline_id | escape }}" aria-labelledby="{{ timeline_id | escape }}-heading">
+          <div class="tvj-timeline__header"><p class="tvj-timeline__eyebrow">NEWS &amp; NOTES</p><h2 id="{{ timeline_id | escape }}-heading">{{ timeline_heading | escape }}</h2><p class="tvj-timeline__caption">告知日順に、記事やブランドの新しい動きをお届けします。</p></div>
+          {%- if timeline_items != blank -%}<ol class="tvj-timeline__list">{{ timeline_items }}</ol>{%- endif -%}
+          {%- if paginate.pages > 1 -%}
+            <nav class="tvj-timeline__pagination" aria-label="お知らせのページ送り">
+              {%- if paginate.previous -%}<a href="{{ paginate.previous.url | escape }}#{{ timeline_id | escape }}" aria-label="前のお知らせページ">← 前へ</a>{%- endif -%}
+              {%- for part in paginate.parts -%}
+                {%- if part.is_link -%}<a href="{{ part.url | escape }}#{{ timeline_id | escape }}" aria-label="お知らせ {{ part.title | escape }}ページ">{{ part.title }}</a>
+                {%- elsif part.title == paginate.current_page -%}<span aria-current="page" aria-label="現在のページ {{ part.title | escape }}">{{ part.title }}</span>
+                {%- else -%}<span>{{ part.title }}</span>{%- endif -%}
+              {%- endfor -%}
+              {%- if paginate.next -%}<a href="{{ paginate.next.url | escape }}#{{ timeline_id | escape }}" aria-label="過去のお知らせページ">過去へ →</a>{%- endif -%}
+            </nav>
+          {%- endif -%}
+        </section>
+      {%- elsif request.design_mode -%}
+        <p class="tvj-timeline__editor-note">お知らせブログに公開済みの告知がありません。「TA VIE｜Journalと発信」の設定と、告知記事のメタフィールドを確認してください。</p>
+      {%- endif -%}
+    {%- endpaginate -%}
+  {%- else -%}
+    {%- capture timeline_items -%}
+      {%- assign visible_notices = 0 -%}
+      {%- for notice in updates_blog.articles limit: 50 -%}
+        {%- capture notice_markup -%}{%- render 'ta-vie-notice', notice: notice, context: context -%}{%- endcapture -%}
+        {%- assign notice_markup = notice_markup | strip -%}
+        {%- if notice_markup != blank -%}
+          {{- notice_markup -}}
+          {%- assign visible_notices = visible_notices | plus: 1 -%}
+          {%- if visible_notices >= timeline_limit -%}{%- break -%}{%- endif -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+    {%- assign timeline_items = timeline_items | strip -%}
+    {%- if timeline_items != blank -%}
+      <section class="tvj-timeline" id="{{ timeline_id | escape }}" aria-labelledby="{{ timeline_id | escape }}-heading">
+        <div class="tvj-timeline__header"><p class="tvj-timeline__eyebrow">NEWS &amp; NOTES</p><h2 id="{{ timeline_id | escape }}-heading">{{ timeline_heading | escape }}</h2></div>
+        <ol class="tvj-timeline__list">{{ timeline_items }}</ol>
+        {%- assign journal_page = settings.tvj_page -%}
+        {%- if journal_page != blank and journal_page.url == blank -%}{%- assign journal_page = pages[journal_page] -%}{%- endif -%}
+        {%- if journal_page.url == blank -%}{%- assign journal_page = pages.journal -%}{%- endif -%}
+        {%- if journal_page.url != blank -%}<a class="tvj-timeline__more" href="{{ journal_page.url | escape }}#TaVieJournalTimeline">すべてのお知らせを見る <span aria-hidden="true">→</span></a>{%- elsif updates_blog.url != blank -%}<a class="tvj-timeline__more" href="{{ updates_blog.url | escape }}">すべてのお知らせを見る <span aria-hidden="true">→</span></a>{%- endif -%}
+      </section>
+    {%- elsif request.design_mode -%}
+      <p class="tvj-timeline__editor-note">表示できるお知らせがありません。お知らせブログの公開済み記事に種別と対象記事、またはライブ情報を設定してください。</p>
+    {%- endif -%}
+  {%- endif -%}
+{%- elsif request.design_mode -%}
+  <p class="tvj-timeline__editor-note">テーマ設定「TA VIE｜Journalと発信」で、お知らせ専用ブログを選択するとタイムラインが表示されます。既存の読みものブログとは別のブログを使います。</p>
+{%- endif -%}
+{%- endcapture -%}
+{%- assign timeline_markup = timeline_markup | strip -%}
+{%- if timeline_markup != blank -%}
+  {{ 'ta-vie-events.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'ta-vie-events.js' | asset_url }}" defer="defer"></script>
+  {{- timeline_markup -}}
+{%- endif -%}

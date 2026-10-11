@@ -1,0 +1,16 @@
+{%- render 'ta-vie-social', context: 'home', section_id: section.id, heading: section.settings.heading, eyebrow: section.settings.eyebrow, color_scheme: section.settings.color_scheme, padding_top: section.settings.padding_top, padding_bottom: section.settings.padding_bottom -%}
+
+{% schema %}
+{
+  "name": "TA VIE｜Instagramとライブ",
+  "settings": [
+    {"type": "paragraph", "content": "アカウント・写真・予定はテーマ設定「TA VIE｜Journalと発信」で一元管理します。未設定のリンクや架空の予定は表示しません。"},
+    {"type": "text", "id": "eyebrow", "label": "小見出し", "default": "STAY IN TOUCH"},
+    {"type": "text", "id": "heading", "label": "見出し", "default": "TA VIEの日々を、もう少し。"},
+    {"type": "color_scheme", "id": "color_scheme", "label": "配色", "default": "scheme-tavie-white"},
+    {"type": "range", "id": "padding_top", "label": "上の余白", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64},
+    {"type": "range", "id": "padding_bottom", "label": "下の余白", "min": 0, "max": 160, "step": 4, "unit": "px", "default": 64}
+  ],
+  "presets": [{"name": "TA VIE｜Instagramとライブ"}]
+}
+{% endschema %}

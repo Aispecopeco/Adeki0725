@@ -1,0 +1,103 @@
+{
+  "status": "passed",
+  "cases": 12,
+  "method": "Screenshot positions verified against target bounding rectangles, visible images awaited, pixel variance checked and all 12 captures visually inspected using contact sheet. Instant scroll is a capture-only fixture override; runtime theme unchanged.",
+  "captures": {
+    "home-journal-1440.png": {
+      "bytes": 122613,
+      "sha256": "8dc3fe1fd6c4810e5f3a2752ef3862f08439be18bb5c5ccc5a7efa0b30d7f12e",
+      "width": 1440,
+      "height": 1000,
+      "max_channel_standard_deviation": 29.382,
+      "nonblank": true
+    },
+    "home-journal-390.png": {
+      "bytes": 48608,
+      "sha256": "7ed72b5cfd679e5cb05211dc22de9e24ff7e9ee6339e56801fd4253dc0017b4b",
+      "width": 390,
+      "height": 844,
+      "max_channel_standard_deviation": 33.066,
+      "nonblank": true
+    },
+    "instagram-live-1440.png": {
+      "bytes": 50421,
+      "sha256": "eed0442497706d1e7e7e6d302913e7a86629fef1b8f0bd5d545a55b3daac8b64",
+      "width": 1440,
+      "height": 1000,
+      "max_channel_standard_deviation": 19.858,
+      "nonblank": true
+    },
+    "instagram-live-390.png": {
+      "bytes": 29461,
+      "sha256": "c2d7f091c4a84b3a0d3666483c97f26d8d5b29323d93a84be150787b24e63343",
+      "width": 390,
+      "height": 844,
+      "max_channel_standard_deviation": 26.428,
+      "nonblank": true
+    },
+    "journal-1440.png": {
+      "bytes": 79371,
+      "sha256": "62ab1bee3eafaf16f7f176927a2ff3b7b360e5c5df2ccee1122ba66b9158f0aa",
+      "width": 1440,
+      "height": 1000,
+      "max_channel_standard_deviation": 24.075,
+      "nonblank": true
+    },
+    "journal-390.png": {
+      "bytes": 40941,
+      "sha256": "fd38f33f7c1fb0c777623eddfae85f981b6eeb3242f9f41ab57abd69fa6f5fb6",
+      "width": 390,
+      "height": 844,
+      "max_channel_standard_deviation": 29.084,
+      "nonblank": true
+    },
+    "live-schedule-1440.png": {
+      "bytes": 65211,
+      "sha256": "abf6f82dfb43abdd4cd500cd102bd4d80ddb11aefc9ef2b17fa1a4eed2e9db33",
+      "width": 1440,
+      "height": 1000,
+      "max_channel_standard_deviation": 23.509,
+      "nonblank": true
+    },
+    "live-schedule-390.png": {
+      "bytes": 34482,
+      "sha256": "0ee6bcb135d7e9d6cb9120a1ed0c80a8c07f71ac265bd7725a383668e05c7938",
+      "width": 390,
+      "height": 844,
+      "max_channel_standard_deviation": 26.526,
+      "nonblank": true
+    },
+    "original-article-1440.png": {
+      "bytes": 87399,
+      "sha256": "1e48a4ad7f4d5d44c18725014b3f8159f6bd344903cbb0beba054e49d61ab539",
+      "width": 1440,
+      "height": 1000,
+      "max_channel_standard_deviation": 32.254,
+      "nonblank": true
+    },
+    "original-article-390.png": {
+      "bytes": 51482,
+      "sha256": "b101645067699727a9337389fb0ab43d39a3ae5e3e507f57fd072e3f1ac88031",
+      "width": 390,
+      "height": 844,
+      "max_channel_standard_deviation": 45.949,
+      "nonblank": true
+    },
+    "timeline-1440.png": {
+      "bytes": 121007,
+      "sha256": "d5fc41d327ae37fd400522c11e4214d161178dbbae118353d3a001a1e57134ee",
+      "width": 1440,
+      "height": 1000,
+      "max_channel_standard_deviation": 23.021,
+      "nonblank": true
+    },
+    "timeline-390.png": {
+      "bytes": 59591,
+      "sha256": "8936d8c9303b36c578b06c5c13d0b3e18a590d7c6a77c09567f7ce7c6ea845e2",
+      "width": 390,
+      "height": 844,
+      "max_channel_standard_deviation": 33.692,
+      "nonblank": true
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{%- comment -%}
+  Render one published notice. Never sort by target.updated_at or synthesize an
+  update history. Article handles refer to the existing blog-handle/article-handle.
+{%- endcomment -%}
+{%- liquid
+  assign notice_valid = false
+  assign clock_now = 'now' | date: '%s' | plus: 0
+  assign notice_time = notice.published_at | date: '%s' | plus: 0
+  if notice.url != blank and notice.published_at != blank and notice_time <= clock_now
+    assign notice_valid = true
+  endif
+  assign fields = notice.metafields.ta_vie_notice
+  assign notice_kind = fields.kind.value | strip | downcase
+  assign target_handle = fields.target_article.value | strip
+  assign target = articles[target_handle]
+  assign target_valid = false
+  assign target_time = target.published_at | date: '%s' | plus: 0
+  if target.url != blank and target.published_at != blank and target_time <= clock_now
+    assign target_valid = true
+  endif
+  case notice_kind
+    when 'publication'
+      assign kind_label = '記事公開'
+      unless target_valid
+        assign notice_valid = false
+      endunless
+    when 'update'
+      assign kind_label = '記事更新'
+      unless target_valid
+        assign notice_valid = false
+      endunless
+    when 'live'
+      assign kind_label = 'Instagram Live'
+    when 'brand'
+      assign kind_label = 'ブランドからのお知らせ'
+    else
+      if target_handle == blank
+        assign notice_kind = 'brand'
+        assign kind_label = 'ブランドからのお知らせ'
+      else
+        assign notice_valid = false
+      endif
+  endcase
+  assign notice_title = notice.title
+  assign notice_image = notice.image
+  assign notice_url = notice.url
+  if target_valid
+    assign notice_title = target.title
+    assign notice_image = target.image
+    assign notice_url = target.url
+  endif
+  if fields.display_title.value != blank
+    assign notice_title = fields.display_title.value
+  endif
+  if fields.display_image.value != blank
+    assign notice_image = fields.display_image.value
+  endif
+  if fields.link.value != blank
+    assign notice_url = fields.link.value
+  endif
+  assign notice_summary = fields.summary.value | default: notice.excerpt | strip_html | strip | truncate: 180
+-%}
+{%- if notice_valid -%}
+  {%- if notice_kind == 'live' -%}
+    {%- render 'ta-vie-live', notice: notice, context: context, compact: true -%}
+  {%- else -%}
+    <li class="tvj-timeline__item" data-notice-kind="{{ notice_kind | escape }}">
+      <div class="tvj-timeline__date"><span>告知日</span>{%- render 'ta-vie-jst-time', value: notice.published_at, date_only: true -%}</div>
+      <div class="tvj-timeline__thumbnail">{%- if notice_image != blank -%}<a href="{{ notice_url | escape }}" tabindex="-1" aria-hidden="true">{{ notice_image | image_url: width: 240 | image_tag: widths: '120, 180, 240', sizes: '(min-width: 750px) 80px, 64px', loading: 'lazy', alt: '' }}</a>{%- endif -%}</div>
+      <div class="tvj-timeline__copy"><p class="tvj-timeline__kind">{{ kind_label }}</p><h3><a href="{{ notice_url | escape }}">{{ notice_title | escape }} <span aria-hidden="true">↗</span></a></h3>
+        {%- if notice_summary != blank -%}<p class="tvj-timeline__summary">{{ notice_summary | escape }}</p>{%- endif -%}
+        {%- if target_valid -%}<div class="tvj-timeline__article-dates"><span>記事公開日：{% render 'ta-vie-jst-time', value: target.published_at, date_only: true %}</span>{%- if notice_kind == 'update' and target.updated_at != blank and target.updated_at > target.published_at -%}<span>記事最終更新日：{% render 'ta-vie-jst-time', value: target.updated_at, date_only: true %}</span>{%- endif -%}</div>{%- endif -%}
+      </div>
+    </li>
+  {%- endif -%}
+{%- endif -%}

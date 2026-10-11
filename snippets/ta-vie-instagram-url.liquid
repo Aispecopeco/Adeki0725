@@ -1,0 +1,11 @@
+{%- liquid
+  assign candidate = value | default: '' | strip
+  assign normalized = candidate | downcase
+  assign protocol = normalized | split: '://' | first
+  assign host = normalized | split: '://' | last | split: '/' | first | split: '?' | first | split: '#' | first
+  if protocol == 'https' or protocol == 'http'
+    if host == 'instagram.com' or host == 'www.instagram.com' or host == 'm.instagram.com'
+      echo candidate
+    endif
+  endif
+-%}

@@ -1,0 +1,107 @@
+{%- comment -%}
+  A shared Instagram Live notice renderer. One published notice ArticleDrop is
+  the source for home, Journal and timeline. Only operator status 'live' with a
+  non-expired explicit live_until can produce a live badge. compact timeline
+  rows retain history regardless of the promotional visibility window.
+{%- endcomment -%}
+{%- liquid
+  assign live_valid = false
+  assign clock_now = 'now' | date: '%s' | plus: 0
+  assign fields = notice.metafields.ta_vie_notice
+  assign notice_time = notice.published_at | date: '%s' | plus: 0
+  assign live_kind = fields.kind.value | strip | downcase
+  assign updates_blog = settings.tvj_updates_blog
+  if updates_blog != blank and updates_blog.url == blank
+    assign updates_blog = blogs[updates_blog]
+  endif
+  assign reading_blog = settings.tvj_blog | default: settings.ta_vie_blog
+  if reading_blog != blank and reading_blog.url == blank
+    assign reading_blog = blogs[reading_blog]
+  endif
+  if reading_blog.url == blank
+    assign reading_blog = blogs.news
+  endif
+  assign same_blog = false
+  if updates_blog.url != blank and reading_blog.url != blank and updates_blog.handle == reading_blog.handle
+    assign same_blog = true
+  endif
+  assign notice_blog_path = '/blogs/' | append: updates_blog.handle | append: '/'
+  if live_kind == 'live' and notice.url != blank and notice.published_at != blank and notice_time <= clock_now and updates_blog.url != blank and same_blog == false and notice.url contains notice_blog_path
+    assign live_valid = true
+  endif
+  assign live_status = fields.status.value | default: 'planned' | strip | downcase
+  assign starts_time = fields.starts_at.value | date: '%s' | plus: 0
+  assign show_from = fields.show_from.value | date: '%s' | plus: 0
+  assign show_until = fields.show_until.value | date: '%s' | plus: 0
+  assign live_until = fields.live_until.value | date: '%s' | plus: 0
+  unless compact
+    if fields.show_from.value != blank and show_from > clock_now
+      assign live_valid = false
+    endif
+    if fields.show_until.value != blank and show_until <= clock_now
+      assign live_valid = false
+    endif
+  endunless
+  assign live_active = false
+  assign live_uncertain = false
+  assign planned_elapsed = false
+  case live_status
+    when 'live'
+      if fields.live_until.value != blank and live_until > clock_now
+        assign live_active = true
+        assign status_label = '配信中'
+      else
+        assign live_uncertain = true
+        assign status_label = '配信状況をご確認ください'
+      endif
+    when 'ended'
+      assign status_label = '終了'
+    when 'postponed'
+      assign status_label = '延期'
+    when 'cancelled'
+      assign status_label = '中止'
+    else
+      assign live_status = 'planned'
+      assign status_label = '開催予定'
+      if fields.starts_at.value != blank and starts_time <= clock_now
+        assign planned_elapsed = true
+      endif
+  endcase
+  assign live_title = fields.display_title.value | default: notice.title
+  assign live_image = fields.display_image.value | default: notice.image
+  assign live_summary = fields.summary.value | default: notice.excerpt | strip_html | strip
+  assign live_archive = fields.archive_url.value
+  assign live_product = fields.product.value
+  assign target_handle = fields.target_article.value | strip
+  assign live_article = articles[target_handle]
+  assign target_time = live_article.published_at | date: '%s' | plus: 0
+  assign related_valid = false
+  if live_article.url != blank and live_article.published_at != blank and target_time <= clock_now
+    assign related_valid = true
+  endif
+-%}
+{%- capture live_instagram -%}{%- render 'ta-vie-instagram-url', value: fields.instagram_url.value -%}{%- endcapture -%}
+{%- assign live_instagram = live_instagram | strip -%}
+{%- if live_instagram == blank -%}{%- capture live_instagram -%}{%- render 'ta-vie-instagram-url', value: settings.tvj_instagram_url -%}{%- endcapture -%}{%- assign live_instagram = live_instagram | strip -%}{%- endif -%}
+{%- if live_instagram == blank -%}{%- capture live_instagram -%}{%- render 'ta-vie-instagram-url', value: settings.instagram_link -%}{%- endcapture -%}{%- assign live_instagram = live_instagram | strip -%}{%- endif -%}
+{%- if live_valid -%}
+  {%- if compact -%}<li class="tvj-timeline__item tvj-timeline__item--live" data-notice-kind="live">{%- else -%}<article class="tvj-live-card">{%- endif -%}
+    <ta-vie-live-card class="tvj-live{% if compact %} tvj-live--compact{% elsif live_image == blank %} tvj-live--no-image{% endif %}" data-live-status="{{ live_status | escape }}" data-live-active="{{ live_active }}" data-compact="{{ compact | default: false }}"{% if fields.live_until.value != blank %} data-live-until="{{ live_until }}"{% endif %}{% if fields.starts_at.value != blank %} data-starts-at="{{ starts_time }}"{% endif %}{% unless compact %}{% if fields.show_until.value != blank %} data-show-until="{{ show_until }}"{% endif %}{% endunless %}>
+      {%- if compact -%}<div class="tvj-timeline__date"><span>告知日</span>{%- render 'ta-vie-jst-time', value: notice.published_at, date_only: true -%}</div>{%- endif -%}
+      {%- if live_image != blank -%}<div class="tvj-live__image">{{ live_image | image_url: width: 1200 | image_tag: widths: '240, 480, 750, 1200', sizes: '(min-width: 990px) 40vw, 90vw', loading: 'lazy', alt: live_image.alt }}</div>{%- elsif compact -%}<div class="tvj-live__image tvj-live__image--empty" aria-hidden="true"></div>{%- endif -%}
+      <div class="tvj-live__copy">
+        <p class="tvj-live__eyebrow">Instagram Live <span class="tvj-live__status{% if live_active %} is-live{% endif %}" data-live-label>{{ status_label }}</span></p>
+        {%- if compact -%}<h3><a href="{{ notice.url | escape }}">{{ live_title | escape }} <span aria-hidden="true">↗</span></a></h3>{%- else -%}<h3 class="tvj-live__title">{{ live_title | escape }}</h3>{%- endif -%}
+        {%- if fields.starts_at.value != blank -%}<p class="tvj-live__date">{% if live_status == 'ended' %}開催日時{% elsif live_status == 'postponed' or live_status == 'cancelled' %}当初の開催予定{% else %}開催予定{% endif %}：{% render 'ta-vie-jst-time', value: fields.starts_at.value, date_only: false %}</p>{%- endif -%}
+        {%- if live_summary != blank -%}<p class="tvj-live__summary">{{ live_summary | escape | newline_to_br }}</p>{%- endif -%}
+        <p class="tvj-live__status-note" data-live-status-note{% unless live_uncertain or planned_elapsed %} hidden{% endunless %}>{% if planned_elapsed %}予定時刻を過ぎています。最新の開催案内はInstagramでご確認ください。{% else %}配信状況はInstagramでご確認ください。{% endif %}</p>
+        <div class="tvj-live__links">
+          {%- if live_status == 'ended' and live_archive != blank -%}<a class="tvj-live__link" href="{{ live_archive | escape }}" target="_blank" rel="noopener noreferrer">アーカイブを見る <span aria-hidden="true">↗</span><span class="visually-hidden">（新しいタブで開きます）</span></a>
+          {%- elsif live_instagram != blank and live_status != 'ended' -%}<a class="tvj-live__link" href="{{ live_instagram | escape }}" target="_blank" rel="noopener noreferrer" data-live-instagram-link><span data-live-link-label>{% if live_active %}Instagramで視聴する{% elsif live_uncertain or planned_elapsed %}Instagramで配信状況を確認{% else %}Instagramで案内を見る{% endif %}</span> <span aria-hidden="true">↗</span><span class="visually-hidden">（新しいタブで開きます）</span></a>{%- endif -%}
+          {%- if live_product.url != blank -%}<a class="tvj-live__related" href="{{ live_product.url | escape }}">紹介する商品：{{ live_product.title | escape }} <span aria-hidden="true">→</span></a>{%- endif -%}
+          {%- if related_valid -%}<a class="tvj-live__related" href="{{ live_article.url | escape }}">関連記事：{{ live_article.title | escape }} <span aria-hidden="true">→</span></a>{%- endif -%}
+        </div>
+      </div>
+    </ta-vie-live-card>
+  {%- if compact -%}</li>{%- else -%}</article>{%- endif -%}
+{%- endif -%}

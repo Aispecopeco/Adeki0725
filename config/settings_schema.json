@@ -1658,9 +1658,18 @@
         "label": "見出しの書体",
         "info": "ホームのブランド文章だけに適用します。システム書体は端末によって表示が異なります。",
         "options": [
-          { "value": "serif", "label": "明朝・セリフ" },
-          { "value": "sans", "label": "ゴシック・サンセリフ" },
-          { "value": "theme", "label": "Broadcastの設定を使う" }
+          {
+            "value": "serif",
+            "label": "明朝・セリフ"
+          },
+          {
+            "value": "sans",
+            "label": "ゴシック・サンセリフ"
+          },
+          {
+            "value": "theme",
+            "label": "Broadcastの設定を使う"
+          }
         ],
         "default": "serif"
       },
@@ -1692,6 +1701,126 @@
         "step": 1,
         "unit": "px",
         "default": 12
+      }
+    ]
+  },
+  {
+    "name": "TA VIE｜Journalと発信",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "記事の本文と既存URLは変更しません。Journalの入口と、共通のInstagram／ライブ情報を設定します。お知らせは読みものとは別のブログを選んでください。"
+      },
+      {
+        "type": "header",
+        "content": "既存記事とJournalの入口"
+      },
+      {
+        "type": "blog",
+        "id": "tvj_blog",
+        "label": "読みものの既存ブログ",
+        "info": "未選択の場合は既存のTA VIE設定、次にnewsを参照します。元のブログを移動せず選択してください。"
+      },
+      {
+        "type": "page",
+        "id": "tvj_page",
+        "label": "Journal特集ページ",
+        "info": "テンプレートjournalを割り当てた公開ページを選択します。未作成なら既存ブログへの入口を表示します。"
+      },
+      {
+        "type": "article",
+        "id": "tvj_featured",
+        "label": "Journalのおすすめ記事",
+        "info": "未選択の場合は読みものブログの最新公開記事です。下書き・公開前の記事は表示しません。"
+      },
+      {
+        "type": "header",
+        "content": "お知らせとライブの共通データ"
+      },
+      {
+        "type": "blog",
+        "id": "tvj_updates_blog",
+        "label": "専用のお知らせブログ",
+        "info": "読みものとは別のブログを選びます。告知用の新しい記事だけを追加し、過去の告知も残します。"
+      },
+      {
+        "type": "article_list",
+        "id": "tvj_live_articles",
+        "label": "紹介するライブ告知",
+        "limit": 12,
+        "info": "専用お知らせブログの公開記事を選びます。予定・状態は選んだ記事のメタフィールドを編集。未選択時は最新50件から探します。"
+      },
+      {
+        "type": "text",
+        "id": "tvj_recurring_text",
+        "label": "定期開催の案内文",
+        "info": "確定した開催頻度だけ入力してください。各回の具体的な日時は告知記事側で管理します。"
+      },
+      {
+        "type": "header",
+        "content": "Instagramの共通情報"
+      },
+      {
+        "type": "text",
+        "id": "tvj_instagram_account",
+        "label": "アカウント名",
+        "info": "実際のアカウント名。空欄なら名前を表示しません。"
+      },
+      {
+        "type": "url",
+        "id": "tvj_instagram_url",
+        "label": "プロフィールURL",
+        "info": "https://www.instagram.com/実際のアカウント/ を入力。未設定なら既存Instagram設定を使います。"
+      },
+      {
+        "type": "richtext",
+        "id": "tvj_instagram_description",
+        "label": "紹介文",
+        "default": "<p>TA VIEの発信を、Instagramから。</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "tvj_instagram_image",
+        "label": "紹介用の写真"
+      },
+      {
+        "type": "text",
+        "id": "tvj_instagram_button_text",
+        "label": "フォローボタンの文言",
+        "default": "Instagramでフォローする"
+      },
+      {
+        "type": "image_picker",
+        "id": "tvj_instagram_post_1_image",
+        "label": "投稿1の紹介写真"
+      },
+      {
+        "type": "url",
+        "id": "tvj_instagram_post_1_url",
+        "label": "投稿1のURL",
+        "info": "実際のInstagram投稿URL。写真とURLがそろった投稿だけ表示します。"
+      },
+      {
+        "type": "image_picker",
+        "id": "tvj_instagram_post_2_image",
+        "label": "投稿2の紹介写真"
+      },
+      {
+        "type": "url",
+        "id": "tvj_instagram_post_2_url",
+        "label": "投稿2のURL",
+        "info": "実際のInstagram投稿URL。写真とURLがそろった投稿だけ表示します。"
+      },
+      {
+        "type": "image_picker",
+        "id": "tvj_instagram_post_3_image",
+        "label": "投稿3の紹介写真"
+      },
+      {
+        "type": "url",
+        "id": "tvj_instagram_post_3_url",
+        "label": "投稿3のURL",
+        "info": "実際のInstagram投稿URL。写真とURLがそろった投稿だけ表示します。"
       }
     ]
   }

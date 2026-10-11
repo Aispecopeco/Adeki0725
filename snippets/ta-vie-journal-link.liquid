@@ -1,0 +1,31 @@
+{%- doc -%}
+  Links to the configured, existing Journal page; otherwise to its existing blog.
+  Creating a page in Shopify is deliberately separate from editing theme files.
+
+  @param {string} [label] - Link label
+  @param {string} [link_class] - Optional classes on the link
+  @param {blog} [blog] - Optional already-resolved source blog
+  @param {string} [fallback_url] - Existing explicit blog URL, when applicable
+{%- enddoc -%}
+{%- liquid
+  assign journal_page = settings.tvj_page
+  if journal_page != blank and journal_page.url == blank
+    assign journal_page = pages[journal_page]
+  endif
+  if journal_page.url == blank
+    assign journal_page = pages.journal
+  endif
+  assign journal_blog = blog | default: settings.tvj_blog | default: settings.ta_vie_blog
+  if journal_blog != blank and journal_blog.url == blank
+    assign journal_blog = blogs[journal_blog]
+  endif
+  if journal_blog.url == blank
+    assign journal_blog = blogs.news
+  endif
+  assign journal_destination = journal_page.url | default: fallback_url | default: journal_blog.url
+  assign journal_label = label | default: 'Journalを読む'
+  assign journal_link_class = link_class | default: 'tvj-link'
+-%}
+{%- if journal_destination != blank -%}
+  <a class="{{ journal_link_class | escape }}" href="{{ journal_destination | escape }}"><span>{{ journal_label | escape }}</span><span aria-hidden="true">→</span></a>
+{%- endif -%}

@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "cases": [
+    "automatic published ordering and count",
+    "draft/future suppression",
+    "actual LP destination",
+    "no-image card",
+    "manual handles and cross-blog tag URLs",
+    "updated label separate from publication",
+    "featured exclusion without losing list slots",
+    "archive + tag native destinations",
+    "future-featured fallback",
+    "absent page native blog fallback",
+    "unconfigured public link omitted"
+  ],
+  "scope": "Actual owned Liquid source via LiquidJS; stylesheet/timeline/social integration and Shopify backend delegated to parent validation."
+}

@@ -1,0 +1,22 @@
+{%- capture journal_link -%}{%- render 'ta-vie-journal-link', label: section.settings.label, link_class: 'tvj-link' -%}{%- endcapture -%}
+{%- if journal_link != blank or request.design_mode -%}
+  {%- render 'stylesheet', name: 'ta-vie-journal.css', blocking: true, async: false, inline: false -%}
+  <nav class="tvj-navigation color-{{ section.settings.color_scheme }}" aria-label="Journalへの入口" data-section-id="{{ section.id }}">
+    <div class="tvj-navigation__inner">
+      {{- journal_link -}}
+      {%- if journal_link == blank and request.design_mode -%}<p class="tvj-editor-note">実在するJournalページかブログをテーマ設定で選択すると、ここにJournalのリンクが表示されます。</p>{%- endif -%}
+    </div>
+  </nav>
+{%- endif -%}
+{% schema %}
+{
+  "name": "TA VIE｜Journalへの入口",
+  "enabled_on": {"groups": ["footer"]},
+  "settings": [
+    {"type": "text", "id": "label", "label": "リンクの名前", "default": "Journalを読む"},
+    {"type": "paragraph", "content": "テーマ設定のJournalページへ移動します。ページが未作成の場合は既存ブログへ移動します。ブログ記事やメニューを変更しません。"},
+    {"type": "color_scheme", "id": "color_scheme", "label": "配色", "default": "scheme-tavie-soft"}
+  ],
+  "presets": [{"name": "TA VIE｜Journalへの入口"}]
+}
+{% endschema %}

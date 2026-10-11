@@ -1,0 +1,108 @@
+{%- liquid
+  assign profile_candidate = settings.tvj_instagram_url | default: settings.instagram_link
+  assign social_heading = heading | default: 'Instagram / Live'
+  assign updates_blog = settings.tvj_updates_blog
+  if updates_blog != blank and updates_blog.url == blank
+    assign updates_blog = blogs[updates_blog]
+  endif
+  assign journal_blog = settings.tvj_blog | default: settings.ta_vie_blog
+  if journal_blog != blank and journal_blog.url == blank
+    assign journal_blog = blogs[journal_blog]
+  endif
+  if journal_blog.url == blank
+    assign journal_blog = blogs.news
+  endif
+  assign live_selection = settings.tvj_live_articles
+  if live_selection == blank and updates_blog.url != blank and updates_blog.url != journal_blog.url
+    assign live_selection = updates_blog.articles
+  endif
+-%}
+{%- capture profile_url -%}{%- render 'ta-vie-instagram-url', value: profile_candidate -%}{%- endcapture -%}
+{%- assign profile_url = profile_url | strip -%}
+{%- capture live_order -%}
+  {%- assign clock_now = 'now' | date: '%s' | plus: 0 -%}
+  {%- for selected_live in live_selection limit: 50 -%}
+    {%- liquid
+      assign live_article = selected_live
+      if live_article.url == blank
+        assign live_article = articles[selected_live]
+      endif
+      assign live_fields = live_article.metafields.ta_vie_notice
+      assign starts_time = live_fields.starts_at.value | date: '%s' | plus: 0
+      assign expires_time = live_fields.live_until.value | date: '%s' | plus: 0
+      assign rank = 3
+      if live_fields.status.value == 'live' and expires_time > clock_now
+        assign rank = 0
+      elsif live_fields.status.value == 'planned' and starts_time > clock_now
+        assign rank = 1
+      elsif live_fields.status.value == 'postponed'
+        assign rank = 2
+      elsif live_fields.status.value == 'ended'
+        assign rank = 4
+        assign starts_time = 999999999999 | minus: starts_time
+      endif
+      assign time_key = starts_time | prepend: '000000000000' | slice: -12, 12
+      assign live_handle = live_article.url | split: '/blogs/' | last | split: '?' | first | split: '#' | first
+    -%}
+    {%- if live_article.url != blank -%}{{ rank }}~{{ time_key }}~{{ live_handle }},{%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign live_order = live_order | strip | split: ',' | sort -%}
+{%- capture live_content -%}
+  {%- if updates_blog.url != blank and updates_blog.url != journal_blog.url -%}
+    {%- for live_key in live_order limit: 50 -%}
+      {%- assign live_handle = live_key | split: '~' | last -%}
+      {%- assign live_article = articles[live_handle] -%}
+      {%- render 'ta-vie-live', notice: live_article, context: context, compact: false -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endcapture -%}
+{%- assign live_content = live_content | strip -%}
+{%- if profile_url != blank or live_content != blank -%}
+  {%- render 'stylesheet', name: 'ta-vie-social.css', blocking: true, async: false, inline: false -%}
+  {%- render 'stylesheet', name: 'ta-vie-events.css', blocking: true, async: false, inline: false -%}
+  <script src="{{ 'ta-vie-events.js' | asset_url }}" defer="defer"></script>
+  <section class="tvj-social{% if color_scheme != blank %} color-{{ color_scheme }}{% endif %}" aria-label="{{ social_heading | escape }}" style="--tvj-social-space-top:{{ padding_top | default: 64 }}px;--tvj-social-space-bottom:{{ padding_bottom | default: 64 }}px">
+    <div class="tvj-social__inner">
+      <div class="tvj-social__intro">
+        <div class="tvj-social__copy">
+          {%- if eyebrow != blank -%}<p class="tvj-social__eyebrow">{{ eyebrow | escape }}</p>{%- endif -%}
+          <h2 class="tvj-social__heading">{{ social_heading | escape }}</h2>
+          {%- if profile_url != blank -%}
+            {%- if settings.tvj_instagram_account != blank -%}<p class="tvj-social__account">{{ settings.tvj_instagram_account | escape }}</p>{%- endif -%}
+            {%- if settings.tvj_instagram_description != blank -%}<div class="tvj-social__description">{{ settings.tvj_instagram_description }}</div>{%- endif -%}
+            <a class="tvj-social__button" href="{{ profile_url | escape }}" target="_blank" rel="noopener noreferrer">{{ settings.tvj_instagram_button_text | default: 'Instagramでフォローする' | escape }}<span aria-hidden="true">↗</span><span class="tvj-social__sr-only">（新しいタブで開きます）</span></a>
+          {%- endif -%}
+          {%- if settings.tvj_recurring_text != blank -%}<p class="tvj-social__recurring">{{ settings.tvj_recurring_text | escape }}</p>{%- endif -%}
+        </div>
+        {%- if profile_url != blank and settings.tvj_instagram_image != blank -%}
+          <a class="tvj-social__image" href="{{ profile_url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="Instagramのプロフィールを見る（新しいタブで開きます）">
+            {%- render 'image', image: settings.tvj_instagram_image, width: 1200, sizes: '(min-width: 990px) 45vw, 90vw', aspect_ratio: 1.15, loading: 'lazy', show_backfill: false -%}
+          </a>
+        {%- endif -%}
+      </div>
+      {%- if profile_url != blank -%}
+        {%- capture social_posts -%}
+          {%- for number in (1..3) -%}
+            {%- assign image_key = number | prepend: 'tvj_instagram_post_' | append: '_image' -%}
+            {%- assign link_key = number | prepend: 'tvj_instagram_post_' | append: '_url' -%}
+            {%- assign post_image = settings[image_key] -%}
+            {%- capture post_url -%}{%- render 'ta-vie-instagram-url', value: settings[link_key] -%}{%- endcapture -%}
+            {%- assign post_url = post_url | strip -%}
+            {%- if post_image != blank and post_url != blank -%}
+              <a class="tvj-social__post" href="{{ post_url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="Instagramの投稿{{ number }}を見る（新しいタブで開きます）">
+                {%- render 'image', image: post_image, width: 800, sizes: '(min-width: 750px) 30vw, 70vw', aspect_ratio: 1, loading: 'lazy', show_backfill: false -%}
+                <span>投稿を見る <span aria-hidden="true">↗</span></span>
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endcapture -%}
+        {%- assign social_posts = social_posts | strip -%}
+        {%- if social_posts != blank -%}<div class="tvj-social__posts" aria-label="Instagramの写真と投稿">{{ social_posts }}</div>{%- endif -%}
+      {%- endif -%}
+      {%- if live_content != blank -%}<div class="tvj-social__lives" aria-label="Instagram Liveの予定とアーカイブ">{{ live_content }}</div>{%- endif -%}
+    </div>
+  </section>
+{%- elsif request.design_mode -%}
+  <div class="tvj-social" style="padding:32px" role="note">Instagramとライブは未設定です。テーマ設定「TA VIE｜Journalと発信」でプロフィールURL、または公開済みライブ告知を設定してください。</div>
+{%- endif -%}

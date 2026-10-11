@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "createdAt": "2026-10-11T16:42:20.299Z",
+  "artifact": {
+    "path": "delivery/journal-20261012/interactive-preview.html",
+    "bytes": 2667643,
+    "sha256": "ed6e357ac187d5f0c1ea84589084b12e18f4d9115bfb4a883212fd3ad66f06e1"
+  },
+  "cases": 2,
+  "results": [
+    {
+      "width": 1440,
+      "status": "passed",
+      "homeToJournal": true,
+      "articleAndInstagramScopeDialog": true,
+      "escapeAndFocusRestore": true,
+      "noHTTPAfterInitialArtifactLoad": true,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "status": "passed",
+      "homeToJournal": true,
+      "articleAndInstagramScopeDialog": true,
+      "escapeAndFocusRestore": true,
+      "noHTTPAfterInitialArtifactLoad": true,
+      "errors": []
+    }
+  ],
+  "limitations": [
+    "Artifact is verified through one local HTTP load then all networking is blocked. Direct file:// opening was not verified.",
+    "This single HTML contains explicitly labelled local records and neutral photo fixtures; no live Shopify article data or Admin save is included."
+  ]
+}

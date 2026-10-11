@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "journal": {
+      "type": "section-ta-vie-journal",
+      "settings": {}
+    }
+  },
+  "order": [
+    "journal"
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "apiVersion": "2026-07",
+  "ownerType": "ARTICLE",
+  "namespace": "ta_vie_notice",
+  "existingArticleWrites": false,
+  "definitions": [
+    {
+      "name": "告知の種別",
+      "namespace": "ta_vie_notice",
+      "key": "kind",
+      "description": "publication：記事公開、update：記事更新、brand：ブランド告知、live：Instagram Live。",
+      "type": "single_line_text_field",
+      "ownerType": "ARTICLE",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      },
+      "validations": [
+        {
+          "name": "choices",
+          "value": "[\"publication\", \"update\", \"brand\", \"live\"]"
+        }
+      ]
+    },
+    {
+      "name": "参照する既存記事のハンドル",
+      "namespace": "ta_vie_notice",
+      "key": "target_article",
+      "description": "例 news/article-handle。既存記事URLの /blogs/ より後ろを入力。本文・写真・公開日は複製せず参照します。",
+      "type": "single_line_text_field",
+      "ownerType": "ARTICLE",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      },
+      "validations": [
+        {
+          "name": "regex",
+          "value": "^[^\\s/]+/[^\\s/]+$"
+        }
+      ]
+    },
+    {
+      "name": "表示タイトルの上書き",
+      "namespace": "ta_vie_notice",
+      "key": "display_title",
+      "description": "空欄なら対象記事のタイトル（記事告知）または告知記事のタイトルを使います。",
+      "type": "single_line_text_field",
+      "ownerType": "ARTICLE",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "name": "表示写真の上書き",
+      "namespace": "ta_vie_notice",
+      "key": "display_image",
+      "description": "任意。空欄なら対象記事または告知記事の画像を使います。画像のみ。",
+      "type": "file_reference",
+      "ownerType": "ARTICLE",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      },
+      "validations": [
+        {
+          "name": "file_type_options",
+          "value": "[\"Image\"]"
+        }
+      ]
+    },
+    {
+      "name": "告知の短い説明・更新内容",
+      "namespace": "ta_vie_notice",
+      "key": "summary",
+      "description": "何を更新したか、またはライブの内容など、確認できることを短く入力します。",
+      "type": "multi_line_text_field",
+      "ownerType": "ARTICLE",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "name": "リンク先の上書き",
+      "namespace": "ta_vie_notice",
+      "key": "link",
+      "description": "任意。未入力なら対象記事または告知記事の既存URL。",
+      "type": "url",
+      "ownerType": "ARTICLE",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "name": "ライブの状態",
+      "namespace": "ta_vie_notice",
+      "key": "status",
+      "description": "planned：開催予定、live：実際に配信中、ended：終了、postponed：延期、cancelled：中止。",
+      "type": "single_line_text_field",
+      "ownerType": "ARTICLE",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      },
+      "validations": [
+        {
+          "name": "choices",
+          "value": "[\"planned\", \"live\", \"ended\", \"postponed\", \"cancelled\"]"
+        }
+      ]
+    },
+    {
+      "name": "ライブの開催予定日時",
+      "namespace": "ta_vie_notice",
+      "key": "starts_at",
+      "description": "日本時間の予定を入力。開始時刻だけで配信中にはなりません。",
+      "type": "date_time",
+      "ownerType": "ARTICLE",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "name": "ライブ案内を表示し始める日時",
+      "namespace": "ta_vie_notice",
+      "key": "show_from",
+      "description": "任意。ホーム・Journalのライブ紹介に適用。タイムラインの公開履歴は残ります。",
+      "type": "date_time",
+      "ownerType": "ARTICLE",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "name": "ライブ案内の表示終了日時",
+      "namespace": "ta_vie_notice",
+      "key": "show_until",
+      "description": "任意。ホーム・Journalのライブ紹介に適用。タイムラインの履歴は消しません。",
+      "type": "date_time",
+      "ownerType": "ARTICLE",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "name": "配信中表示の有効期限",
+      "namespace": "ta_vie_notice",
+      "key": "live_until",
+      "description": "liveを設定するときは必須。期限がない／過ぎた場合は配信状況の確認案内にします。",
+      "type": "date_time",
+      "ownerType": "ARTICLE",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "name": "ライブのInstagram案内・視聴URL",
+      "namespace": "ta_vie_notice",
+      "key": "instagram_url",
+      "description": "実際のInstagram URL。未入力ならテーマ設定のプロフィールURLを使います。",
+      "type": "url",
+      "ownerType": "ARTICLE",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "name": "公開済みアーカイブのURL",
+      "namespace": "ta_vie_notice",
+      "key": "archive_url",
+      "description": "実際に公開されたURLだけ入力。endedの場合だけアーカイブボタンを表示します。",
+      "type": "url",
+      "ownerType": "ARTICLE",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      }
+    },
+    {
+      "name": "紹介する商品",
+      "namespace": "ta_vie_notice",
+      "key": "product",
+      "description": "任意。ストア内の実商品を選択します。",
+      "type": "product_reference",
+      "ownerType": "ARTICLE",
+      "access": {
+        "storefront": "PUBLIC_READ"
+      }
+    }
+  ]
+}

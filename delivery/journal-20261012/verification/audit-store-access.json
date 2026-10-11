@@ -1,0 +1,50 @@
+[
+  {
+    "url": "https://eeai0r-vh.myshopify.com/",
+    "status": 200,
+    "final_url": "https://eeai0r-vh.myshopify.com/password",
+    "content_type": "text/html; charset=utf-8",
+    "body_prefix": "<!doctype html>\n<html class=\"js full-height\" lang=\"ja\">\n  <head><script data-source-attribution=\"shopify.event_observer.bootstrap\">\n(function(){let e=navigator,t=`prototype`,n=`sendBeacon`,r=e[n],i=fetch,a=XMLHttpRequest[t],{open:o,send:s}=a,c=`EventListener`,l=`add${c}`,u=`remove${c}`,d=EventTarget[t],f=d[l],p=d[u],m=e=>Error((e=document.currentScript)&&[e?.src,e?.id||e?.dataset?.sourceAttribution]),h=(e=[],t=0)=>(e.p=n=>e[t++%1e3]=n,[e,t=>(e.forEach(e.p=t),e.length=0)]),[g,_]=h(),[v,y]=h(),b,x=new WeakMap,S=e=>e&&g.p([e,b||[m()]]);d[l]=function(e,t,n){let r=this,i=t?.handleEvent||t,a=x.get(t),o=m();i?.call&&!a&&x.set(t,a=function(e){b=[o,e.type];try{i.call(t==i?this:t,e)}finally{b=null}}),v.p([e,o,a,r?.tagName||r+``,r?.id]),f.call(r,e,a||t,n)},d[u]=function(e,t,n){p.call(this,e,x.get(t)||t,n)},a.open=function(e,t){x.set(this,[t+``,e]),o.apply(this,arguments)},a.send=function(e){S(x.get(this)),s.call(this,e)},fetch=(e,t)=>(S([(e?.url||e)+``,t?.method]),i(e,t)),e[n]=(t,n)=>(S([t+``,``]",
+    "password_page": true
+  },
+  {
+    "url": "https://eeai0r-vh.myshopify.com/blogs/news",
+    "status": 200,
+    "final_url": "https://eeai0r-vh.myshopify.com/password",
+    "content_type": "text/html; charset=utf-8",
+    "body_prefix": "<!doctype html>\n<html class=\"js full-height\" lang=\"ja\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">\n    <meta name=\"theme-color\" content=\"\">\n    <link rel=\"canonical\" href=\"https://eeai0r-vh.myshopify.com/password\"><link rel=\"preconnect\" href=\"https://fonts.shopifycdn.com\" crossorigin><title>マイストア</title>\n\n    <meta name=\"description\" content=\"\">\n\n    \n\n<meta property=\"og:site_name\" content=\"マイストア\">\n<meta property=\"og:url\" content=\"https://eeai0r-vh.myshopify.com\">\n<meta property=\"og:title\" content=\"マイストア\">\n<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:description\" content=\"マイストア\"><meta name=\"twitter:card\" content=\"summary_large_image\">\n<meta name=\"twitter:title\" content=\"マイストア\">\n<meta name=\"twitter:description\" content=\"マイストア\">\n\n\n    <script>window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start')",
+    "password_page": true
+  },
+  {
+    "url": "https://eeai0r-vh.myshopify.com/blogs/news.atom",
+    "status": 401,
+    "final_url": "https://eeai0r-vh.myshopify.com/blogs/news.atom",
+    "content_type": "text/html; charset=utf-8",
+    "body_prefix": "",
+    "password_page": false
+  },
+  {
+    "url": "https://eeai0r-vh.myshopify.com/blogs/news/articles.json",
+    "status": 401,
+    "final_url": "https://eeai0r-vh.myshopify.com/blogs/news/articles.json",
+    "content_type": "application/json; charset=utf-8",
+    "body_prefix": "",
+    "password_page": false
+  },
+  {
+    "url": "https://eeai0r-vh.myshopify.com/blogs.json",
+    "status": 401,
+    "final_url": "https://eeai0r-vh.myshopify.com/blogs.json",
+    "content_type": "text/html; charset=utf-8",
+    "body_prefix": "",
+    "password_page": false
+  },
+  {
+    "url": "https://eeai0r-vh.myshopify.com/products.json?limit=4",
+    "status": 401,
+    "final_url": "https://eeai0r-vh.myshopify.com/products.json?limit=4",
+    "content_type": "text/html; charset=utf-8",
+    "body_prefix": "",
+    "password_page": false
+  }
+]

@@ -1573,11 +1573,11 @@
     "ta_vie_home_journal": {
       "type": "section-ta-vie-home-journal",
       "settings": {
-        "eyebrow": "LIFE AT HOME",
+        "eyebrow": "JOURNAL",
         "heading": "日々の心地よさを、考える。",
         "body": "<p>服を選ぶこと、家で過ごすこと。TA VIEは、一着を通じて、いつもの暮らしに目を向けます。</p>",
         "blog": "",
-        "blog_link_label": "読みものをすべて見る",
+        "blog_link_label": "Journalを読む",
         "article_link_label": "続きを読む",
         "show_date": true,
         "faq_page": "",
@@ -1595,6 +1595,28 @@
         "instagram_heading": "TA VIEを、もう少し。",
         "instagram_body": "<p>TA VIEの発信は、Instagramからもご覧いただけます。</p>",
         "instagram_link_label": "Instagramを見る",
+        "color_scheme": "scheme-tavie-soft",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "article_count": 3,
+        "article_mode": "automatic"
+      }
+    },
+    "ta_vie_home_timeline": {
+      "type": "section-ta-vie-timeline",
+      "settings": {
+        "limit": 4,
+        "heading": "TA VIEからのお知らせ",
+        "color_scheme": "scheme-tavie-white",
+        "padding_top": 64,
+        "padding_bottom": 64
+      }
+    },
+    "ta_vie_home_social": {
+      "type": "section-ta-vie-social",
+      "settings": {
+        "heading": "TA VIEの日々を、もう少し。",
+        "eyebrow": "STAY IN TOUCH",
         "color_scheme": "scheme-tavie-soft",
         "padding_top": 64,
         "padding_bottom": 64
@@ -1622,6 +1644,8 @@
     "columns-2",
     "text-row",
     "section_hero_scrolling_mmThBz",
-    "ta_vie_home_journal"
+    "ta_vie_home_journal",
+    "ta_vie_home_timeline",
+    "ta_vie_home_social"
   ]
 }
