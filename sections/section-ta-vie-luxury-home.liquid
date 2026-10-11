@@ -57,7 +57,7 @@
           assign piece_url = piece_url | append: '?variant=' | append: selected_variant.id
         endif
         assign piece_price = selected_variant.price | default: piece_product.price | money
-        assign purchase_url = piece_url | append: '#TaViePurchase-' | append: piece_product.id
+        assign purchase_url = piece_url
         if piece_count == 1
           assign first_piece_title = piece_product.title
           assign first_piece_price = piece_price
@@ -152,8 +152,7 @@
   {%- endif -%}
 {%- endfor -%}
 
-{%- render 'stylesheet', name: 'ta-vie-luxury-home.css', blocking: true, async: false, inline: false -%}
-<script src="{{ 'ta-vie-luxury-home.js' | asset_url }}" defer="defer"></script>
+{%- render 'ta-vie-luxury-assets', context: 'home' -%}
 {%- style -%}
   #TaVieLuxuryHome-{{ section.id }} {
     --ta-vie-home-padding-top: {{ section.settings.padding_top }}px;
@@ -196,7 +195,7 @@
   "settings": [
     {"type": "header", "content": "ブランドの入口"},
     {"type": "text", "id": "heading", "label": "ブランドの見出し", "default": "家で過ごす私にも、ふさわしい一着を。"},
-    {"type": "select", "id": "heading_tag", "label": "見出しの役割", "default": "h1", "options": [{"value": "h1", "label": "ページの主見出し（先頭で使用）"}, {"value": "h2", "label": "商品特集の見出し（ブランド紹介の後で使用）"}]},
+    {"type": "select", "id": "heading_tag", "label": "見出しの役割", "default": "h2", "options": [{"value": "h1", "label": "ページの主見出し（先頭で使用）"}, {"value": "h2", "label": "商品特集の見出し（ブランド紹介の後で使用）"}]},
     {"type": "text", "id": "anchor_id", "label": "ページ内リンクの目印", "info": "半角英数字とハイフンで入力します。例：ta-vie-home-collection。ブランド入口のボタンから、この特集へ移動できます。ページ内で同じ目印を重複させないでください。"},
     {"type": "richtext", "id": "introduction", "label": "ブランドの短い紹介", "default": "<p>気を抜ける時間にも、自分を大切にする装いを。長くそばに置きたい一着を、TA VIEで。</p>"},
     {"type": "checkbox", "id": "show_french_quote", "label": "TA VIEの想いを表示", "default": true},
@@ -207,7 +206,7 @@
     {"type": "checkbox", "id": "show_navigation", "label": "写真付きの商品ナビを表示", "default": true},
     {"type": "select", "id": "media_ratio", "label": "写真エリアの比率", "default": "portrait", "options": [{"value": "portrait", "label": "縦長（4：5）"}, {"value": "landscape", "label": "横長（5：4）"}], "info": "写真全体を見せます。実際の画像の周囲に余白が入る場合があります。"},
     {"type": "header", "content": "配色と余白"},
-    {"type": "color_scheme", "id": "color_scheme", "label": "配色", "default": "scheme-tavie-white"},
+    {"type": "color_scheme", "id": "color_scheme", "label": "配色", "default": "scheme-1"},
     {"type": "range", "id": "padding_top", "label": "上の余白", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 24},
     {"type": "range", "id": "padding_bottom", "label": "下の余白", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 64}
   ],

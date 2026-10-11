@@ -7,18 +7,18 @@
           "type": "_slide-image",
           "settings": {
             "link": "",
-            "flex_align_desktop": "align--middle-left-desktop",
-            "flex_align_mobile": "align--middle-left-mobile",
+            "flex_align_desktop": "align--bottom-left-desktop",
+            "flex_align_mobile": "align--middle-center-mobile",
             "show_text_background": false,
             "bg_color": "",
-            "color": "#292824",
-            "overlay_type": "disabled"
+            "color": "#ffffff",
+            "overlay_type": "text"
           },
           "blocks": {
             "heading_JxYXBt": {
               "type": "heading",
               "settings": {
-                "text": "家で過ごす時間にも、自分らしい一着を。",
+                "text": "あなたの毎日に、上質を。",
                 "heading_font_size": "heading-large",
                 "color": "",
                 "heading_tag": "h1",
@@ -29,8 +29,8 @@
             "text_L4brP6": {
               "type": "text",
               "settings": {
-                "text": "気を抜ける時間にも、自分を大切にする装いを。TA VIEは、家で過ごす時間に目を向けるルームウェアブランドです。",
-                "text_font_size": "body-medium",
+                "text": "家で過ごす時間を、自分のために。TA VIEは、日々の暮らしを大切にするルームウェアを提案します。",
+                "text_font_size": "body-large",
                 "padding_bottom": 8
               },
               "blocks": {}
@@ -39,42 +39,26 @@
               "type": "_group-buttons",
               "name": "Side by side buttons",
               "settings": {
-                "button_text": "一着ずつ、詳しく見る",
-                "button_type": "btn--primary",
+                "button_text": "ルームウェアを見る",
+                "button_type": "btn--black",
                 "button_size": "",
-                "button_style": "btn--outline",
-                "show_arrow": true,
+                "button_style": "btn--solid",
+                "show_arrow": false,
                 "button_secondary_text": "",
                 "button_secondary_type": "btn--white",
                 "button_secondary_size": "",
                 "button_secondary_style": "btn--solid",
                 "show_secondary_arrow": false,
-                "padding_bottom": 8,
-                "button_url": "#ta-vie-home-collection"
+                "padding_bottom": 8
               },
               "blocks": {},
               "disabled": true
-            },
-            "ta_vie_home_cta": {
-              "type": "button",
-              "settings": {
-                "text": "一着ずつ、詳しく見る",
-                "link": "#ta-vie-home-collection",
-                "type": "btn--primary",
-                "size": "",
-                "style": "btn--outline",
-                "show_arrow": true,
-                "full_width": false,
-                "padding_bottom": 8
-              },
-              "blocks": {}
             }
           },
           "block_order": [
             "heading_JxYXBt",
             "text_L4brP6",
-            "group_buttons_DzAjwR",
-            "ta_vie_home_cta"
+            "group_buttons_DzAjwR"
           ]
         },
         "slide_video_4tGPP7": {
@@ -184,8 +168,7 @@
             "heading_CwM98X",
             "text_DGTHFT",
             "button_Mf6QGG"
-          ],
-          "disabled": true
+          ]
         }
       },
       "block_order": [
@@ -195,19 +178,17 @@
       ],
       "name": "Slideshow (Nested)",
       "settings": {
-        "transition": "fade",
-        "show_arrows": false,
-        "autoplay": false,
+        "transition": "slide",
+        "show_arrows": true,
+        "autoplay": true,
         "autoplay_speed": 4,
         "width": "wrapper--full",
-        "height": "four-fifty-height-hero",
-        "mobile_height": "four-fifty-height-hero--mobile",
-        "color_scheme": "scheme-tavie-white",
+        "height": "seven-fifty-height-hero",
+        "mobile_height": "screen-height-full--mobile",
+        "color_scheme": "scheme-5",
         "padding_top": 0,
-        "padding_bottom": 0,
-        "ta_vie_home_composition": true
-      },
-      "disabled": false
+        "padding_bottom": 0
+      }
     },
     "section_text_with_products_yW3LJx": {
       "type": "section-text-with-products",
@@ -260,8 +241,7 @@
         "color_scheme": "",
         "padding_top": 60,
         "padding_bottom": 40
-      },
-      "disabled": true
+      }
     },
     "columns-1": {
       "type": "section-columns",
@@ -330,7 +310,7 @@
         "image-2"
       ],
       "settings": {
-        "title": "家で過ごす、いくつもの時間。",
+        "title": "",
         "heading_font_size": "heading-medium",
         "align_heading": "text-left",
         "align_text": "text-left",
@@ -339,13 +319,11 @@
         "layout": "grid",
         "grid": 3,
         "layout_mobile": "1",
-        "color_scheme": "scheme-tavie-white",
-        "padding_top": 64,
-        "padding_bottom": 64,
-        "heading_tag": "h2",
-        "ta_vie_home_composition": true
-      },
-      "disabled": false
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 62,
+        "heading_tag": "automatic"
+      }
     },
     "double": {
       "type": "section-double",
@@ -379,8 +357,7 @@
           "settings": {
             "image_width": 80,
             "padding_bottom": 16
-          },
-          "disabled": true
+          }
         },
         "buttons_VP8YTU": {
           "type": "buttons",
@@ -404,19 +381,17 @@
       ],
       "settings": {
         "image_width": "one-half",
-        "text_alignment": "text-left",
+        "text_alignment": "text-center",
         "layout": "",
         "width": "wrapper--full-padded",
         "height": "sixty-fifty-height-hero",
         "mobile_height": "four-fifty-height-hero--mobile",
         "reverse_blocks": true,
-        "color_scheme": "scheme-tavie-soft",
-        "padding_top": 80,
-        "padding_bottom": 80,
-        "show_placeholder": false,
-        "ta_vie_home_composition": true
-      },
-      "disabled": false
+        "color_scheme": "scheme-tavie-white",
+        "padding_top": 42,
+        "padding_bottom": 82,
+        "show_placeholder": true
+      }
     },
     "announcement-2": {
       "type": "section-announcement",
@@ -740,8 +715,7 @@
         "color_scheme": "scheme-6",
         "padding_top": 0,
         "padding_bottom": 0
-      },
-      "disabled": true
+      }
     },
     "collections-list-hover": {
       "type": "section-collections-list-hover",
@@ -831,8 +805,7 @@
         "color_scheme": "scheme-2",
         "padding_top": 20,
         "padding_bottom": 20
-      },
-      "disabled": true
+      }
     },
     "look": {
       "type": "section-look",
@@ -1141,8 +1114,7 @@
         "width": "wrapper--full-padded",
         "padding_top": 80,
         "padding_bottom": 80
-      },
-      "disabled": true
+      }
     },
     "section_custom_content_H4RTrx": {
       "type": "section-custom-content",
@@ -1344,8 +1316,7 @@
         "padding_top": 15,
         "padding_bottom": 30,
         "heading_tag": "automatic"
-      },
-      "disabled": true
+      }
     },
     "text-row": {
       "type": "section-text-row",
@@ -1492,8 +1463,7 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "show_placeholder": true
-      },
-      "disabled": true
+      }
     },
     "ta_vie_luxury_home": {
       "type": "section-ta-vie-luxury-home",
@@ -1568,11 +1538,10 @@
   },
   "order": [
     "section_slideshow_nested_YfkG44",
+    "section_text_with_products_yW3LJx",
+    "columns-1",
     "double",
     "ta_vie_luxury_home",
-    "columns-1",
-    "ta_vie_home_journal",
-    "section_text_with_products_yW3LJx",
     "announcement-2",
     "section-tab-collections",
     "section_video_w6YfAE",
@@ -1587,6 +1556,7 @@
     "rich-text-3",
     "columns-2",
     "text-row",
-    "section_hero_scrolling_mmThBz"
+    "section_hero_scrolling_mmThBz",
+    "ta_vie_home_journal"
   ]
 }

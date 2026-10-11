@@ -5,6 +5,13 @@
     assign feature_owned = true
   endif
   assign world_id = 'ProductWorld-' | append: section.id
+  assign purchase_section_key = section.settings.purchase_section_key | default: 'main' | strip
+  assign purchase_section_id = purchase_section_key
+  if section.id contains '__'
+    assign template_prefix = section.id | split: '__' | first
+    assign purchase_section_id = template_prefix | append: '__' | append: purchase_section_key
+  endif
+  assign purchase_anchor = '#MainProduct--' | append: purchase_section_id
   assign chapter_count = 0
   assign chapter_navigation = ''
   assign product_images = product.media | where: 'media_type', 'image'
@@ -128,7 +135,7 @@
           {%- when 'purchase' -%}
             <div class="tv-world__return">
               {%- if product.featured_image != blank -%}<figure class="tv-world__return-image">{{ product.featured_image | image_url: width: 700 | image_tag: widths: '300, 500, 700', sizes: '(min-width: 750px) 280px, 32vw', loading: 'lazy', alt: product.featured_image.alt }}</figure>{%- endif -%}
-              <div><p class="tv-world__eyebrow">TA VIE</p><p class="tv-world__return-title">{{ product.title | escape }}</p><a class="tv-world__purchase-link" href="#TaViePurchase-{{ product.id }}" data-tv-world-purchase>{{ block.settings.button_label | default: '色・サイズを選ぶ' | escape }}<span aria-hidden="true">↗</span></a></div>
+              <div><p class="tv-world__eyebrow">TA VIE</p><p class="tv-world__return-title">{{ product.title | escape }}</p><a class="tv-world__purchase-link" href="{{ purchase_anchor | escape }}" data-tv-world-purchase>{{ block.settings.button_label | default: '色・サイズを選ぶ' | escape }}<span aria-hidden="true">↗</span></a></div>
             </div>
         {%- endcase -%}
       {%- endcapture -%}
@@ -149,6 +156,7 @@
 {%- endcapture -%}
 
 {%- if product.id != blank -%}
+  {%- render 'ta-vie-luxury-assets', context: 'product' -%}
   <ta-vie-product-world id="{{ world_id }}" class="tv-world color-{{ section.settings.color_scheme }}" data-product-id="{{ product.id }}" data-section-id="{{ section.id }}" style="--tv-world-pt:{{ section.settings.padding_top }}px;--tv-world-pb:{{ section.settings.padding_bottom }}px;">
     <div class="tv-world__inner">
       {%- if chapter_count > 0 -%}
@@ -218,7 +226,8 @@
   "settings": [
     {"type":"paragraph","content":"写真切替は商品メタフィールド「TA VIE｜写真の切り替え」（ta_vie.views）、文章・生活場面・寸法は「TA VIE｜商品特集」（ta_vie.feature）で、この商品専用の内容を編集します。ここでは共通の構成を整えます。"},
     {"type":"text","id":"heading","label":"特集の見出し","default":"一着の魅力を、ゆっくりと。"},
-    {"type":"checkbox","id":"show_description","label":"商品管理画面の説明を表示","info":"実際の商品説明を表示します。空欄なら章を表示しません。","default":true},
+    {"type":"checkbox","id":"show_description","label":"特集にも商品説明を表示","info":"元の購入欄の商品説明はそのまま表示されます。ここを有効にすると、特集にも同じ説明を表示します。空欄なら章を表示しません。","default":false},
+    {"type":"text","id":"purchase_section_key","label":"元の購入セクションの識別名","default":"main","info":"通常は main のままで使います。商品テンプレートの購入セクションの識別名を変更した場合だけ、その識別名を入力してください。動きを無効にした場合の購入欄へのリンクに使います。"},
     {"type":"checkbox","id":"show_chapter_nav","label":"特集の目次を表示","default":true},
     {"type":"header","content":"他の一着への案内"},
     {"type":"checkbox","id":"show_product_nav","label":"写真付きの商品ナビを表示","default":true},

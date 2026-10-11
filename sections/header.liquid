@@ -469,8 +469,6 @@
       {%- render 'nav-item', link: link, index: forloop.index, highlight_item: highlight_item -%}
     {%- endfor -%}
 
-    {%- render 'ta-vie-page-links', location: 'desktop', menu_links: linklists[main_menu_linklist].links -%}
-
     <div class="hover__bar"></div>
 
     <div class="hover__bg"></div>
@@ -1044,19 +1042,6 @@
           "id": "menu",
           "label": "Menu",
           "info": "These menus won't show dropdown items."
-        },
-        {
-          "type": "checkbox",
-          "id": "show_ta_vie_links",
-          "label": "上部にブログ・FAQを表示",
-          "info": "テーマ設定の「TA VIE｜ページへのリンク」で選択したブログとFAQを表示します。設定したメニューに同じリンクがあれば重複させません。",
-          "default": true
-        },
-        {
-          "type": "checkbox",
-          "id": "show_mobile_toolbar",
-          "label": "スマホでも上部リンクを表示",
-          "default": true
         },
         {
           "type": "checkbox",

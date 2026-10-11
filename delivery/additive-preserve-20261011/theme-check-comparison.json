@@ -1,0 +1,40 @@
+{
+  "inherited_complexity_metrics": {
+    "before": [
+      {
+        "path": "snippets/section-double.liquid",
+        "message": "Liquid complexity is 141, which exceeds the maximum of 120. The decision at line 771 pushed it over the limit. Consider simplifying conditional logic, or moving self-contained decision logic into snippets with the render tag."
+      },
+      {
+        "path": "snippets/product.liquid",
+        "message": "Liquid complexity is 169, which exceeds the maximum of 120. The decision at line 706 pushed it over the limit. Consider simplifying conditional logic, or moving self-contained decision logic into snippets with the render tag."
+      },
+      {
+        "path": "snippets/product-grid-item.liquid",
+        "message": "Liquid complexity is 188, which exceeds the maximum of 120. The decision at line 535 pushed it over the limit. Consider simplifying conditional logic, or moving self-contained decision logic into snippets with the render tag."
+      }
+    ],
+    "after": [
+      {
+        "path": "snippets/section-double.liquid",
+        "message": "Liquid complexity is 141, which exceeds the maximum of 120. The decision at line 771 pushed it over the limit. Consider simplifying conditional logic, or moving self-contained decision logic into snippets with the render tag."
+      },
+      {
+        "path": "snippets/product.liquid",
+        "message": "Liquid complexity is 169, which exceeds the maximum of 120. The decision at line 706 pushed it over the limit. Consider simplifying conditional logic, or moving self-contained decision logic into snippets with the render tag."
+      },
+      {
+        "path": "snippets/product-grid-item.liquid",
+        "message": "Liquid complexity is 188, which exceeds the maximum of 120. The decision at line 535 pushed it over the limit. Consider simplifying conditional logic, or moving self-contained decision logic into snippets with the render tag."
+      }
+    ]
+  },
+  "exit_code": 1,
+  "errors": 4,
+  "warnings": 341,
+  "new_offenses": [],
+  "removed_offenses": [],
+  "baseline_report": "original-restore-20261010/theme-check-final.json",
+  "limitations": "Static Shopify CLI checks compared with the original restore report. All preexisting native product/cart code and settings are restored byte-for-byte. Actual Shopify admin/live sync is unverified.",
+  "changed_existing_warning": []
+}

@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "cases": 2,
+  "createdAt": "2026-10-11T09:39:25.509Z",
+  "htmlSha256": "734a528cf2d08b05657cbded5e1c5579209bc949a82aa5c5590a1e4452b97c35",
+  "htmlBytes": 1625983,
+  "results": [
+    {
+      "case": "single-html-with-all-subsequent-network-blocked",
+      "width": 1440,
+      "photoTabs": true,
+      "detailDialog": true,
+      "fourProductNavigation": true,
+      "destinationScopeDialog": true,
+      "blockedRequests": [],
+      "javascriptErrors": []
+    },
+    {
+      "case": "single-html-with-all-subsequent-network-blocked",
+      "width": 390,
+      "photoTabs": true,
+      "detailDialog": true,
+      "fourProductNavigation": true,
+      "destinationScopeDialog": true,
+      "blockedRequests": [],
+      "javascriptErrors": []
+    }
+  ],
+  "limitations": [
+    "Home-only standalone preview. All product/photo/article information is labelled local fixture. Product detail/blog/FAQ contents, inventory, orders, cart operations and Shopify sync are excluded and their links open a scope explanation.",
+    "Served the one HTML once over localhost HTTP, then blocked all subsequent network requests. Direct file:// execution was not verified in managed Chromium."
+  ]
+}

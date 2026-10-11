@@ -1,0 +1,10 @@
+/* Shared tokens are confined to the additional editorial sections. */
+.ta-vie-luxury-home,
+.tv-world {
+  --ta-vie-duration: 280ms;
+  --ta-vie-ease: cubic-bezier(.2, .65, .3, 1);
+  --ta-vie-body-font: var(--FONT-STACK-BODY, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif);
+  --ta-vie-heading-font: var(--FONT-STACK-HEADING, "Yu Mincho", "Hiragino Mincho ProN", serif);
+  --ta-vie-font-body: var(--ta-vie-body-font);
+  --ta-vie-font-heading: var(--ta-vie-heading-font);
+}

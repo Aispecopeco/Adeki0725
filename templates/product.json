@@ -30,7 +30,7 @@
           "settings": {
             "subheading_option": "none",
             "heading_font_size": "heading-small",
-            "padding_bottom": 16
+            "padding_bottom": 8
           }
         },
         "price": {
@@ -38,7 +38,7 @@
           "settings": {
             "text_font_size": "body-medium",
             "show_shipping_policy": true,
-            "padding_bottom": 24
+            "padding_bottom": 8
           }
         },
         "siblings_RdbAxK": {
@@ -52,11 +52,11 @@
         "variants": {
           "type": "variants",
           "settings": {
-            "info_page": "",
-            "size_chart_style": "text",
+            "info_page": "ring-size-guide",
+            "size_chart_style": "question",
             "option_font_size": "body-medium",
-            "value_font_size": "body-medium",
-            "padding_bottom": 24
+            "value_font_size": "body-x-small",
+            "padding_bottom": 16
           }
         },
         "countdown_8L6JjP": {
@@ -75,17 +75,16 @@
             "color": "",
             "text_align": "text-center",
             "padding_bottom": 8
-          },
-          "disabled": true
+          }
         },
         "accordion_i6tbbM": {
           "type": "accordion",
           "settings": {
-            "style": "collapsible",
+            "style": "drawer",
             "show_description": true,
             "show_read_more": false,
             "default_open": false,
-            "heading": "この一着について",
+            "heading": "Description",
             "heading_font_size": "body-medium",
             "text": "",
             "text_font_size": "body-medium",
@@ -93,7 +92,7 @@
             "icon_name": "icon-award",
             "icon_size": 20,
             "icon_color": "",
-            "padding_bottom": 16
+            "padding_bottom": 8
           }
         },
         "accordion_LUmAgG": {
@@ -112,13 +111,12 @@
             "icon_size": 20,
             "icon_color": "",
             "padding_bottom": 24
-          },
-          "disabled": true
+          }
         },
         "inventory_countdown_9EACqM": {
           "type": "inventory_countdown",
           "settings": {
-            "show_notice": "low-inventory",
+            "show_notice": "always",
             "max_inventory": 10,
             "show_inventory_counter": false,
             "icon_size": 20,
@@ -160,8 +158,7 @@
             "text_font_size": "body-small",
             "width": "full",
             "padding_bottom": 8
-          },
-          "disabled": true
+          }
         },
         "icon_1": {
           "type": "icon",
@@ -173,8 +170,7 @@
             "text_font_size": "body-small",
             "width": "full",
             "padding_bottom": 8
-          },
-          "disabled": true
+          }
         },
         "icon_bH3jWT": {
           "type": "icon",
@@ -186,8 +182,7 @@
             "text_font_size": "body-small",
             "width": "full",
             "padding_bottom": 8
-          },
-          "disabled": true
+          }
         },
         "icon_c6KeCK": {
           "type": "icon",
@@ -199,8 +194,7 @@
             "text_font_size": "body-small",
             "width": "full",
             "padding_bottom": 16
-          },
-          "disabled": true
+          }
         },
         "divider_RHQKMP": {
           "type": "divider",
@@ -240,8 +234,7 @@
             "bg_color": "#fcfbf9",
             "color": "",
             "padding_bottom": 16
-          },
-          "disabled": true
+          }
         }
       },
       "block_order": [
@@ -274,10 +267,9 @@
         "image_layout": "stacked",
         "image_size": "normal",
         "mobile_image_style": "slider",
-        "color_scheme": "scheme-tavie-white",
-        "padding_top": 32,
-        "padding_bottom": 72,
-        "ta_vie_luxury": true
+        "color_scheme": "scheme-1",
+        "padding_top": 40,
+        "padding_bottom": 80
       }
     },
     "section_announcement_enc4K7": {
@@ -336,8 +328,7 @@
         "color_scheme": "scheme-2",
         "padding_top": 20,
         "padding_bottom": 20
-      },
-      "disabled": true
+      }
     },
     "faq": {
       "type": "section-accordion",
@@ -393,8 +384,7 @@
         "icon_color": "",
         "padding_top": 80,
         "padding_bottom": 0
-      },
-      "disabled": true
+      }
     },
     "shipping": {
       "type": "section-accordion",
@@ -456,8 +446,7 @@
         "icon_color": "",
         "padding_top": 0,
         "padding_bottom": 0
-      },
-      "disabled": true
+      }
     },
     "about": {
       "type": "section-accordion",
@@ -507,8 +496,7 @@
         "icon_color": "",
         "padding_top": 0,
         "padding_bottom": 80
-      },
-      "disabled": true
+      }
     },
     "section_hero_Cz9YYe": {
       "type": "section-hero",
@@ -549,8 +537,7 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "show_placeholder": true
-      },
-      "disabled": true
+      }
     },
     "custom": {
       "type": "section-custom-content",
@@ -610,8 +597,7 @@
         "color_scheme": "scheme-10",
         "padding_top": 40,
         "padding_bottom": 0
-      },
-      "disabled": true
+      }
     },
     "related": {
       "type": "related",
@@ -645,8 +631,7 @@
         "color_scheme": "",
         "padding_top": 60,
         "padding_bottom": 60
-      },
-      "disabled": true
+      }
     },
     "ta_vie_world": {
       "type": "section-ta-vie-product-world",
@@ -721,7 +706,7 @@
       ],
       "settings": {
         "heading": "一着の魅力を、ゆっくりと。",
-        "show_description": true,
+        "show_description": false,
         "show_chapter_nav": true,
         "show_product_nav": true,
         "navigation_heading": "次に気になる一着へ。",

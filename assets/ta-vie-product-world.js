@@ -9,14 +9,6 @@
         this.links = Array.from(this.querySelectorAll('[data-tv-world-chapter-link]'));
         this.chapters = this.links.map((link) => document.getElementById(link.hash.slice(1)));
         this.nav = this.querySelector('[data-tv-world-nav]');
-        if (this.querySelector('[data-tv-world-kind="description"]')) {
-          const productInfo = this.productInfo;
-          productInfo?.querySelectorAll('[data-ta-vie-native-description]').forEach((description) => {
-            const previous = description.hidden;
-            description.hidden = true;
-            this.restorations.push(() => { description.hidden = previous; });
-          });
-        }
         const queue = () => {
           if (!this.frame) this.frame = requestAnimationFrame(() => this.updateNavigation());
         };
@@ -94,9 +86,8 @@
             offset = Math.max(0, Math.min(rect.bottom, rect.height));
           }
         }
+        this.purchaseOffset = offset;
         this.style.setProperty('--tv-world-offset', `${offset}px`);
-        const purchase = this.productInfo?.querySelector('[data-ta-vie-purchase-anchor]');
-        purchase?.style.setProperty('scroll-margin-top', `${offset + 24}px`);
         if (!this.nav || this.chapters.some((chapter) => !chapter || !this.contains(chapter))) return;
         const boundary = Math.max(0, this.nav.getBoundingClientRect().bottom) + 36;
         let active = 0;
@@ -117,11 +108,17 @@
       returnToPurchase(event) {
         const link = event.target.closest('[data-tv-world-purchase]');
         if (!link) return;
-        const purchase = this.productInfo?.querySelector('[data-ta-vie-purchase-anchor]');
+        const purchase = this.productInfo?.querySelector('[data-form-wrapper]') || this.productInfo;
         if (!purchase) return;
         event.preventDefault();
-        purchase.scrollIntoView({block: 'start', behavior: this.motion.matches ? 'instant' : 'smooth'});
-        purchase.focus({preventScroll: true});
+        this.updateNavigation();
+        const top = Math.max(0, window.scrollY + purchase.getBoundingClientRect().top - this.purchaseOffset - 24);
+        window.scrollTo({top, behavior: this.motion.matches ? 'instant' : 'smooth'});
+        // Use an existing native control. Do not add attributes or styles to
+        // Broadcast's product form, description, variant state, or cart.
+        const control = Array.from(purchase.querySelectorAll('variant-selects input:not([type="hidden"]):not([disabled]), variant-selects select:not([disabled]), variant-selects button:not([disabled]), [data-add-to-cart]:not([disabled])'))
+          .find((item) => item.getClientRects().length);
+        control?.focus({preventScroll: true});
       }
 
       disconnectedCallback() {
@@ -135,66 +132,9 @@
         this.querySelectorAll('video').forEach((video) => video.pause());
         this.links?.forEach((link) => link.removeAttribute('aria-current'));
         this.style.removeProperty('--tv-world-offset');
-        this.productInfo?.querySelector('[data-ta-vie-purchase-anchor]')?.style.removeProperty('scroll-margin-top');
         this.active = null;
       }
     });
   }
 
-  // Broadcast replaces CartBar with each selected variant. The unavailable
-  // combination path only changes the native hidden variant input.
-  if (!customElements.get('ta-vie-luxury-purchase-state')) {
-    customElements.define('ta-vie-luxury-purchase-state', class extends HTMLElement {
-      connectedCallback() {
-        this.productInfo = this.closest('product-info');
-        this.onVariantInput = (event) => {
-          if (!event.target.matches('input[name="id"]') || event.target.form?.id !== `product-form-${this.productInfo?.dataset.section}`) return;
-          queueMicrotask(() => { if (this.isConnected) this.updateUnavailable(); });
-        };
-        this.productInfo?.addEventListener('change', this.onVariantInput);
-        this.updateUnavailable();
-      }
-
-      updateUnavailable() {
-        if (!this.productInfo) return;
-        const section = CSS.escape(this.productInfo.dataset.section);
-        const input = this.productInfo.querySelector(`#product-form-${section} input[name="id"]`);
-        if (!input) return;
-        const mainPrice = this.productInfo.querySelector(`#Price-${section}`);
-        if (mainPrice) mainPrice.hidden = !input.value;
-        const buttonPrice = this.productInfo.querySelector('[data-add-to-cart] [data-product-price]');
-        if (buttonPrice) buttonPrice.hidden = !input.value;
-        if (input.value) return;
-        const selected = this.querySelector('[data-ta-vie-selected-variant]');
-        if (selected) selected.textContent = Array.from(this.productInfo.querySelectorAll('variant-selects [data-selected-value]')).map((item) => item.textContent.trim()).filter(Boolean).join(' / ');
-        const status = this.querySelector('[data-ta-vie-availability]');
-        if (status) status.textContent = window.theme?.strings?.unavailable || '選択できません';
-        const price = this.closest('cart-bar')?.querySelector('.cart-bar__product__price');
-        if (price) price.hidden = true;
-      }
-
-      disconnectedCallback() { this.productInfo?.removeEventListener('change', this.onVariantInput); }
-    });
-    // Keep notification forms valid when native combined listings serialize
-    // fetched product HTML. Refresh metadata only for a full product-page swap.
-    const prepared = new WeakSet();
-    const prepareSwap = (productInfo) => {
-      if (productInfo?.dataset.taVieLuxury !== 'true' || prepared.has(productInfo) || typeof productInfo.addPreProcessCallback !== 'function') return;
-      prepared.add(productInfo);
-      productInfo.addPreProcessCallback((html) => {
-        const fetchedHead = html.ownerDocument.head;
-        if (html.matches('main') && fetchedHead?.querySelector('link[rel="canonical"]')) {
-          const metadata = 'link[rel="canonical"],meta[name="description"],meta[property^="og:"],meta[name^="twitter:"]';
-          document.head.querySelectorAll(metadata).forEach((item) => item.remove());
-          fetchedHead.querySelectorAll(metadata).forEach((item) => document.head.append(item.cloneNode(true)));
-        }
-        html.querySelectorAll('popup-component.product-soldout-notification').forEach((popup) => {
-          const form = popup.closest('form[data-product-form]');
-          if (form) form.after(popup);
-        });
-      });
-    };
-    document.addEventListener('theme:product-info:loaded', (event) => prepareSwap(event.target));
-    customElements.whenDefined('product-info').then(() => document.querySelectorAll('product-info').forEach(prepareSwap));
-  }
 })();

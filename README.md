@@ -1,21 +1,19 @@
-# TA VIE｜写真を操作して、一着を深く知る
+# TA VIE｜元のBroadcastを保ち、商品特集を追加する
 
-2026年10月10日、商品特集だけになっていたホームの構成を修正しました。Broadcast標準のブランド入口・写真と文章・生活場面のセクションを復帰し、「ブランドの入口 → TA VIEの想い → 一着ごとの特集 → 家で過ごす場面 → 読みものとご案内」の5章で表示します。写真が未設定なら文章を自然に表示し、仮画像や大きな空欄を出しません。商品詳細の写真切替・接写・購入機能は維持しています。[今回の修正・編集・確認結果](delivery/home-composition-fix-20261010/README.md)を参照してください。
+2026年10月11日の指示に合わせ、元テーマを復元したコミット `60cc2d4` を基準に戻しました。元の配色・書体・ヘッダー・フッター・メニュー・購入・カートは、そのコードと設定のままです。ホームの19セクションと商品の9セクションも、内容・表示状態・並び順を保持しています。
 
-今回の作業用ブランチは [ta-vie-luxury-experience-20261010](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-luxury-experience-20261010) です。[実装・プレビュー・検証の資料](delivery/luxury-experience/README.md)を今回の確認と運用に使用してください。
+既存429テーマファイルのうち427ファイルが元コードと完全一致します。残る `templates/index.json` と `templates/product.json` は、元のセクションを変更せず、追加セクションを登録するだけの変更です。[元コードとの一致確認](delivery/additive-preserve-20261011/source-preservation.json)を保存しています。
 
-- [最新のShopify取り込み用テーマZIP](delivery/TA-VIE-Broadcast-home-composition-fix-20261010.zip)
-- [修正後のホームを操作する（検証用データ）](delivery/home-composition-fix-20261010/interactive-preview.html)
-- [修正後のホーム：PC](delivery/home-composition-fix-20261010/previews/home-1440.png)
-- [修正後のホーム：スマートフォン](delivery/home-composition-fix-20261010/previews/home-390.png)
-- [商品操作の単体HTMLプレビュー（ホーム構成修正前の検証用）](delivery/luxury-experience/interactive-preview.html)
-- [商品別の編集手順](delivery/luxury-experience/editing-guide.md)
-- [4着の写真・商品情報の準備一覧](delivery/luxury-experience/required-content.md)
+追加部分は「TA VIE｜一着を知る」「TA VIE 一着の特集」「TA VIE｜読みものとご案内」です。写真切替・接写・商品ごとの文章・商品回遊はこの中で動作します。追加セクションが自分のCSS・JavaScriptを読み込み、元のレイアウトや書体を全体から上書きしません。不要ならテーマエディタで追加セクションだけを非表示にできます。
 
-ストアはパスワード画面で、商品取得URLはHTTP 401でした。添付テーマには服の実物写真・商品データが含まれないため、正式な4着への割り当てと実物写真の登録はShopify管理画面で行います。操作プレビューは明示した検証用写真枠・商品名・価格を使用し、注文を作成しません。テーマの公開画面は実際のShopify商品を読み取り、未設定の写真や説明に仮文言を出しません。
+- [今回の説明・編集・検証](delivery/additive-preserve-20261011/README.md)
+- [最新のShopifyテーマZIP](delivery/TA-VIE-Broadcast-additive-preserve-20261011.zip)
+- [最新版のホーム操作プレビュー（検証用データ）](delivery/additive-preserve-20261011/interactive-preview.html)
+- [商品別の写真・説明の編集手順](delivery/luxury-experience/editing-guide.md)
+- [必要な実物写真・商品情報](delivery/luxury-experience/required-content.md)
 
-配色の13個のIDは現在設定と全プリセットで一致させています。添付ZIPにない `config/settings_data.json` は復元時の設定を基に保持しています。元の127アセットと標準の購入・カートJavaScriptは維持し、追加機能は独立したファイルへ実装しています。
+作業用ブランチは [ta-vie-additive-preserve-20261011](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-additive-preserve-20261011)、Shopify連携先は [ta-vie-shopify-20261005](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-shopify-20261005) です。履歴を残して連携先へ反映しています。Shopify管理画面の認証がないため、実際の同期完了・現在の公開テーマ・実商品の表示は直接確認できていません。
 
-2026年10月10日、ユーザーの反映指示に基づき、検証済みのテーマをShopify連携先 [ta-vie-shopify-20261005](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-shopify-20261005) へ反映しました。復元時点は `ta-vie-before-luxury-sync-20261010` ブランチにも保存しています。Shopify管理画面の実際の接続先・同期完了・公開状態は認証がないため未確認です。[同期の確認手順](delivery/luxury-experience/shopify-sync.md)に従い、連携テーマのプレビューを更新してください。別テーマとして取り込む場合は「オンラインストア → テーマ → テーマを追加 → ZIPファイルをアップロード」でテーマZIPを使用します。操作プレビューのZIPはこの取り込みには使用しません。
+商品・写真・ブログ記事・FAQページなどの管理データはテーマコードだけでは作成されません。既存の商品・記事を読み込み、追加機能で未設定の写真や説明には仮文言を出しません。元のセクションでの表示は元のBroadcastのままです。ローカルの画像・商品・価格は明示した検証用データで、実物の代わりに使用していません。
 
-`delivery/editorial-lp/`、`delivery/original-restore-20261010/`、以前のZIP・3D試作は過去の納品資料として残しています。今回の実物写真には使用していません。復元時点のコードはコミット `60cc2d4` から確認できます。
+`delivery/luxury-experience/`、`delivery/home-composition-fix-20261010/`、以前のプレビュー・ZIP・3D試作は、過去の作業記録として残しています。今回のホーム・全体の見た目は、これらの旧プレビューとは異なります。

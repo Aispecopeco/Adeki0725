@@ -1,26 +1,7 @@
 <!-- /sections/footer.liquid -->
 
 {%- liquid
-  assign blocks_size = 0
-  assign visible_block_ids = ''
-  capture ta_vie_footer_links
-    render 'ta-vie-page-links', location: 'footer'
-  endcapture
-  for footer_block in section.blocks
-    assign show_footer_block = true
-    if footer_block.type == 'linklist'
-      assign footer_menu = linklists[footer_block.settings.linklist]
-      if footer_menu.links.size == 0 or footer_menu == blank
-        unless footer_block.settings.use_ta_vie_links and ta_vie_footer_links != blank
-          assign show_footer_block = false
-        endunless
-      endif
-    endif
-    if show_footer_block
-      assign blocks_size = blocks_size | plus: 1
-      assign visible_block_ids = visible_block_ids | append: '|' | append: footer_block.id | append: '|'
-    endif
-  endfor
+  assign blocks_size = section.blocks.size
   assign logo = section.settings.logo
   assign inline_blocks = ''
   assign inline_blocks_placeholder = '####inline-blocks@@@@'
@@ -84,16 +65,10 @@
       </div>
     {%- endif -%}
 
-    {%- if blocks_size > 0 -%}
+    {%- if section.blocks.size > 0 -%}
       <collapsible-elements>
         <div class="footer__blocks">
           {%- for block in section.blocks -%}
-            {%- liquid
-              assign block_id_token = '|' | append: block.id | append: '|'
-              unless visible_block_ids contains block_id_token
-                continue
-              endunless
-            -%}
             {%- capture blocks_code -%}
               {{ blocks_code }}
 
@@ -104,11 +79,8 @@
                 assign show_social_links = block.settings.show_social_links
                 assign enable_accordion = block.settings.enable_accordion
                 assign column_width = block.settings.column_width
-                if blocks_size != section.blocks.size
-                  assign column_width = 100.0 | divided_by: blocks_size
-                endif
-                assign blocks_width = blocks_width | plus: column_width
-                if column_width == 33
+                assign blocks_width = blocks_width | plus: block.settings.column_width
+                if block.settings.column_width == 33
                   assign one_third_block_count = one_third_block_count | plus: 1
                 endif
 
@@ -143,17 +115,13 @@
                       {%- render 'icon-nav-arrow-down' -%}
                     </summary>
 
-                    {%- if linklist.links.size > 0 -%}
+                    {%- if linklist != blank -%}
                       <div data-collapsible-body>
                         <ul class="footer__quicklinks unstyled{% if enable_accordion %} accordion__content{% endif %}" data-collapsible-content>
                           {%- for link in linklist.links -%}
                             <li><a href="{{ link.url }}">{{ link.title }}</a></li>
                           {%- endfor -%}
                         </ul>
-                      </div>
-                    {%- elsif block.settings.use_ta_vie_links and ta_vie_footer_links != blank -%}
-                      <div data-collapsible-body>
-                        <div{% if enable_accordion %} class="accordion__content"{% endif %} data-collapsible-content>{{ ta_vie_footer_links }}</div>
                       </div>
                     {%- endif -%}
                   </details>
@@ -371,13 +339,6 @@
           "label": "Link list",
           "default": "footer",
           "info": "This menu won't show dropdown items."
-        },
-        {
-          "type": "checkbox",
-          "id": "use_ta_vie_links",
-          "label": "メニュー未選択時にブログ・FAQを表示",
-          "info": "テーマ設定「TA VIE｜ページへのリンク」の実在するリンクを使います。リンクがなければ空の列を表示しません。",
-          "default": false
         },
         {
           "type": "text",
