@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "section_slideshow_nested_YfkG44": {
@@ -38,21 +47,23 @@
             "group_buttons_DzAjwR": {
               "type": "_group-buttons",
               "name": "Side by side buttons",
+              "disabled": true,
               "settings": {
                 "button_text": "ルームウェアを見る",
+                "button_url": "",
                 "button_type": "btn--black",
                 "button_size": "",
                 "button_style": "btn--solid",
                 "show_arrow": false,
                 "button_secondary_text": "",
+                "button_secondary_url": "",
                 "button_secondary_type": "btn--white",
                 "button_secondary_size": "",
                 "button_secondary_style": "btn--solid",
                 "show_secondary_arrow": false,
                 "padding_bottom": 8
               },
-              "blocks": {},
-              "disabled": true
+              "blocks": {}
             }
           },
           "block_order": [
@@ -100,6 +111,7 @@
               "type": "button",
               "settings": {
                 "text": "Shop the Gemstone Collection",
+                "link": "",
                 "type": "btn--white",
                 "size": "",
                 "style": "btn--solid",
@@ -151,8 +163,10 @@
             },
             "button_Mf6QGG": {
               "type": "button",
+              "disabled": true,
               "settings": {
                 "text": "ルームウェアを見る",
+                "link": "",
                 "type": "btn--white",
                 "size": "",
                 "style": "btn--solid",
@@ -160,8 +174,7 @@
                 "full_width": false,
                 "padding_bottom": 8
               },
-              "blocks": {},
-              "disabled": true
+              "blocks": {}
             }
           },
           "block_order": [
@@ -196,6 +209,7 @@
         "collection_mhjGma": {
           "type": "collection",
           "settings": {
+            "collection": "",
             "image_position": 1,
             "aspect_ratio": 0.6,
             "width": 120,
@@ -206,6 +220,7 @@
         "collection_YrjMQw": {
           "type": "collection",
           "settings": {
+            "collection": "",
             "image_position": 2,
             "aspect_ratio": 0.6,
             "width": 120,
@@ -216,6 +231,7 @@
         "collection_xfkJFf": {
           "type": "collection",
           "settings": {
+            "collection": "",
             "image_position": 7,
             "aspect_ratio": 0.5,
             "width": 120,
@@ -256,6 +272,7 @@
             "text": "<p>外へ出る日の装いと同じように、家で過ごす自分にも目を向ける。</p>",
             "text_font_size": "body-medium",
             "button_text": "",
+            "button_url": "",
             "button_type": "btn--primary",
             "button_size": "",
             "button_style": "btn--text",
@@ -275,6 +292,7 @@
             "text": "<p>家で過ごす時間を、自分のために。</p>",
             "text_font_size": "body-medium",
             "button_text": "",
+            "button_url": "",
             "button_type": "btn--primary",
             "button_size": "",
             "button_style": "btn--text",
@@ -294,6 +312,7 @@
             "text": "<p>くつろぐ時間も、日々の暮らしも、大切に。</p>",
             "text_font_size": "body-medium",
             "button_text": "",
+            "button_url": "",
             "button_type": "btn--primary",
             "button_size": "",
             "button_style": "btn--text",
@@ -361,15 +380,16 @@
         },
         "buttons_VP8YTU": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
             "button_text": "ルームウェアを見る",
+            "button_url": "",
             "button_type": "btn--primary",
             "button_size": "",
             "button_style": "btn--text",
             "show_arrow": false,
             "padding_bottom": 16
-          },
-          "disabled": true
+          }
         }
       },
       "block_order": [
@@ -391,6 +411,68 @@
         "padding_top": 42,
         "padding_bottom": 82,
         "show_placeholder": true
+      }
+    },
+    "ta_vie_luxury_home": {
+      "type": "section-ta-vie-luxury-home",
+      "blocks": {
+        "piece_01": {
+          "type": "piece",
+          "settings": {
+            "product": "testtesttest",
+            "title": "特集用の見出し",
+            "lead": "この一着の短いコピー",
+            "body": ""
+          }
+        },
+        "piece_02": {
+          "type": "piece",
+          "settings": {
+            "product": "testtesttest",
+            "title": "特集用の見出し",
+            "lead": "この一着の短いコピ",
+            "body": ""
+          }
+        },
+        "piece_03": {
+          "type": "piece",
+          "settings": {
+            "product": "",
+            "title": "",
+            "lead": "",
+            "body": ""
+          }
+        },
+        "piece_04": {
+          "type": "piece",
+          "settings": {
+            "product": "",
+            "title": "",
+            "lead": "",
+            "body": ""
+          }
+        }
+      },
+      "block_order": [
+        "piece_01",
+        "piece_02",
+        "piece_03",
+        "piece_04"
+      ],
+      "settings": {
+        "heading": "一着ずつ、ゆっくり知る。",
+        "heading_tag": "h2",
+        "anchor_id": "ta-vie-home-collection",
+        "introduction": "<p>シルエット、素材の表情、細部。写真を切り替えながら、それぞれの一着をご覧ください。</p>",
+        "show_french_quote": true,
+        "french_quote": "Le T-shirt usé que je porte souvent et le sweat-shirt auquel je suis attachée depuis longtemps me mettent à l’aise, mais en tant que partenaire à mes côtés pour longtemps, je ne peux pas dire qu’ils soient dignes de moi.",
+        "source_collection": "all",
+        "use_collection_products": true,
+        "show_navigation": true,
+        "media_ratio": "portrait",
+        "color_scheme": "scheme-tavie-white",
+        "padding_top": 32,
+        "padding_bottom": 64
       }
     },
     "announcement-2": {
@@ -456,6 +538,7 @@
         "text-6",
         "heading_cNcf9c"
       ],
+      "disabled": true,
       "settings": {
         "slider_speed": 7,
         "text_alignment": "center",
@@ -467,8 +550,7 @@
         "color_scheme": "scheme-2",
         "padding_top": 20,
         "padding_bottom": 20
-      },
-      "disabled": true
+      }
     },
     "section-tab-collections": {
       "type": "section-tab-collections",
@@ -502,6 +584,7 @@
             "description": "<p>14k solid gold essentials, sterling silver statement pieces and more.</p>",
             "color": "#ffffff",
             "link_text": "Shop all",
+            "link": "",
             "button_type": "btn--primary",
             "button_size": "",
             "button_style": "btn--solid",
@@ -533,6 +616,7 @@
         "collection-1",
         "collection-3"
       ],
+      "disabled": true,
       "settings": {
         "show_product_count": false,
         "title": "日常に寄り添うルームウェア。",
@@ -549,11 +633,11 @@
         "padding_top": 62,
         "padding_bottom": 62,
         "heading_tag": "automatic"
-      },
-      "disabled": true
+      }
     },
     "section_video_w6YfAE": {
       "type": "section-video",
+      "disabled": true,
       "name": "Video",
       "settings": {
         "show_video_popup": false,
@@ -564,6 +648,7 @@
         "text_font_size": "body-medium",
         "flex_align": "align--middle-center",
         "link_text": "learn more",
+        "link": "",
         "button_type": "btn--white",
         "button_size": "",
         "button_style": "btn--outline",
@@ -578,8 +663,7 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "heading_tag": "automatic"
-      },
-      "disabled": true
+      }
     },
     "press-logos": {
       "type": "section-press-logos",
@@ -647,6 +731,7 @@
         "logo_item_text_9ggVFW",
         "logo_item_text_YqRFrG"
       ],
+      "disabled": true,
       "settings": {
         "enable_heading_slider": true,
         "logo_opacity": 60,
@@ -654,8 +739,7 @@
         "color_scheme": "",
         "padding_top": 100,
         "padding_bottom": 100
-      },
-      "disabled": true
+      }
     },
     "custom-content-1": {
       "type": "section-custom-content",
@@ -673,6 +757,7 @@
             "color": "#ffffff",
             "overlay_type": "disabled",
             "link_text": "",
+            "link": "",
             "button_type": "btn--primary",
             "button_size": "",
             "button_style": "btn--solid",
@@ -693,6 +778,7 @@
             "color": "#ffffff",
             "overlay_type": "disabled",
             "link_text": "",
+            "link": "",
             "button_type": "btn--primary",
             "button_size": "",
             "button_style": "btn--solid",
@@ -723,30 +809,35 @@
         "collection-2": {
           "type": "collection",
           "settings": {
+            "collection": "",
             "title": ""
           }
         },
         "collection-4": {
           "type": "collection",
           "settings": {
+            "collection": "",
             "title": ""
           }
         },
         "collection-1": {
           "type": "collection",
           "settings": {
+            "collection": "",
             "title": ""
           }
         },
         "collection-3": {
           "type": "collection",
           "settings": {
+            "collection": "",
             "title": ""
           }
         },
         "collection-5": {
           "type": "collection",
           "settings": {
+            "collection": "",
             "title": ""
           }
         }
@@ -758,6 +849,7 @@
         "collection-3",
         "collection-5"
       ],
+      "disabled": true,
       "settings": {
         "heading_font_size": "heading-x-large",
         "height": "sixty-fifty-height-hero",
@@ -766,8 +858,7 @@
         "overlay_type": "disabled",
         "padding_top": 100,
         "padding_bottom": 0
-      },
-      "disabled": true
+      }
     },
     "announcement-3": {
       "type": "section-announcement",
@@ -813,6 +904,7 @@
         "product-1": {
           "type": "product",
           "settings": {
+            "product": "",
             "show_product_card": false,
             "position_x": 38,
             "position_y": 55
@@ -821,6 +913,7 @@
         "product-3": {
           "type": "product",
           "settings": {
+            "product": "",
             "show_product_card": false,
             "position_x": 55,
             "position_y": 29
@@ -831,6 +924,7 @@
         "product-1",
         "product-3"
       ],
+      "disabled": true,
       "settings": {
         "layout": "",
         "title": "Shop the look",
@@ -851,8 +945,7 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "heading_tag": "automatic"
-      },
-      "disabled": true
+      }
     },
     "section_dynamic_content_TkrMUq": {
       "type": "section-dynamic-content",
@@ -874,6 +967,7 @@
             "image_MRRKBm": {
               "type": "image",
               "settings": {
+                "link": "",
                 "image_width": 100,
                 "padding_bottom": 0
               },
@@ -901,6 +995,7 @@
             "image_ae8HLw": {
               "type": "image",
               "settings": {
+                "link": "",
                 "image_width": 100,
                 "padding_bottom": 0
               },
@@ -928,6 +1023,7 @@
             "image_KMQ4ng": {
               "type": "image",
               "settings": {
+                "link": "",
                 "image_width": 100,
                 "padding_bottom": 0
               },
@@ -955,6 +1051,7 @@
             "image_j7RmKW": {
               "type": "image",
               "settings": {
+                "link": "",
                 "image_width": 100,
                 "padding_bottom": 0
               },
@@ -993,21 +1090,23 @@
             "group_buttons_tkPxkc": {
               "type": "_group-buttons",
               "name": "Side by side buttons",
+              "disabled": true,
               "settings": {
                 "button_text": "ルームウェアを見る",
+                "button_url": "",
                 "button_type": "btn--secondary",
                 "button_size": "",
                 "button_style": "btn--solid",
                 "show_arrow": false,
                 "button_secondary_text": "読みものを見る",
+                "button_secondary_url": "",
                 "button_secondary_type": "btn--black",
                 "button_secondary_size": "",
                 "button_secondary_style": "btn--solid",
                 "show_secondary_arrow": false,
                 "padding_bottom": 8
               },
-              "blocks": {},
-              "disabled": true
+              "blocks": {}
             }
           },
           "block_order": [
@@ -1043,21 +1142,23 @@
             "group_buttons_xY77Ni": {
               "type": "_group-buttons",
               "name": "Side by side buttons",
+              "disabled": true,
               "settings": {
                 "button_text": "ルームウェアを見る",
+                "button_url": "",
                 "button_type": "btn--secondary",
                 "button_size": "",
                 "button_style": "btn--solid",
                 "show_arrow": false,
                 "button_secondary_text": "読みものを見る",
+                "button_secondary_url": "",
                 "button_secondary_type": "btn--white",
                 "button_secondary_size": "",
                 "button_secondary_style": "btn--solid",
                 "show_secondary_arrow": false,
                 "padding_bottom": 8
               },
-              "blocks": {},
-              "disabled": true
+              "blocks": {}
             }
           },
           "block_order": [
@@ -1122,6 +1223,7 @@
         "collection_FgXynd": {
           "type": "collection",
           "settings": {
+            "collection": "",
             "title": "Sculpted in Stone",
             "bg_color": "",
             "color": ""
@@ -1140,6 +1242,7 @@
             "color": "#ffffff",
             "overlay_type": "disabled",
             "link_text": "Shop the collection",
+            "link": "",
             "button_type": "btn--white",
             "button_size": "",
             "button_style": "btn--outline",
@@ -1152,6 +1255,7 @@
         "collection_FgXynd",
         "image_fa7cMC"
       ],
+      "disabled": true,
       "name": "Custom content",
       "settings": {
         "borders": false,
@@ -1163,13 +1267,13 @@
         "color_scheme": "scheme-1",
         "padding_top": 0,
         "padding_bottom": 0
-      },
-      "disabled": true
+      }
     },
     "section-product": {
       "type": "section-product",
       "disabled": true,
       "settings": {
+        "product": "",
         "show_product_card": true,
         "layout": "is-reversed",
         "limit": 5,
@@ -1202,6 +1306,7 @@
         "subheading",
         "heading"
       ],
+      "disabled": true,
       "settings": {
         "align_text": "text-left",
         "width": "wrapper--full-padded",
@@ -1209,8 +1314,7 @@
         "overlay_type": "disabled",
         "padding_top": 82,
         "padding_bottom": 0
-      },
-      "disabled": true
+      }
     },
     "columns-2": {
       "type": "section-columns",
@@ -1366,6 +1470,7 @@
         "icon-2",
         "icon-3"
       ],
+      "disabled": true,
       "settings": {
         "title": "",
         "heading_font_size": "heading-small",
@@ -1381,8 +1486,7 @@
         "padding_top": 30,
         "padding_bottom": 50,
         "heading_tag": "automatic"
-      },
-      "disabled": true
+      }
     },
     "section_hero_scrolling_mmThBz": {
       "type": "section-hero-scrolling",
@@ -1425,14 +1529,15 @@
         },
         "button_ncmWfQ": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "link_text": "ルームウェアを見る",
+            "link": "",
             "button_type": "btn--white",
             "button_size": "",
             "button_style": "btn--solid",
             "show_arrow": false
-          },
-          "disabled": true
+          }
         }
       },
       "block_order": [
@@ -1465,71 +1570,31 @@
         "show_placeholder": true
       }
     },
-    "ta_vie_luxury_home": {
-      "type": "section-ta-vie-luxury-home",
-      "blocks": {
-        "piece_01": {
-          "type": "piece",
-          "settings": {
-            "product": "",
-            "title": "",
-            "lead": "",
-            "body": ""
-          }
-        },
-        "piece_02": {
-          "type": "piece",
-          "settings": {
-            "product": "",
-            "title": "",
-            "lead": "",
-            "body": ""
-          }
-        },
-        "piece_03": {
-          "type": "piece",
-          "settings": {
-            "product": "",
-            "title": "",
-            "lead": "",
-            "body": ""
-          }
-        },
-        "piece_04": {
-          "type": "piece",
-          "settings": {
-            "product": "",
-            "title": "",
-            "lead": "",
-            "body": ""
-          }
-        }
-      },
-      "block_order": [
-        "piece_01",
-        "piece_02",
-        "piece_03",
-        "piece_04"
-      ],
-      "settings": {
-        "heading": "一着ずつ、ゆっくり知る。",
-        "introduction": "<p>シルエット、素材の表情、細部。写真を切り替えながら、それぞれの一着をご覧ください。</p>",
-        "french_quote": "Le T-shirt usé que je porte souvent et le sweat-shirt auquel je suis attachée depuis longtemps me mettent à l’aise, mais en tant que partenaire à mes côtés pour longtemps, je ne peux pas dire qu’ils soient dignes de moi.",
-        "show_french_quote": true,
-        "source_collection": "all",
-        "use_collection_products": true,
-        "show_navigation": true,
-        "color_scheme": "scheme-tavie-white",
-        "padding_top": 32,
-        "padding_bottom": 64,
-        "media_ratio": "portrait",
-        "heading_tag": "h2",
-        "anchor_id": "ta-vie-home-collection"
-      }
-    },
     "ta_vie_home_journal": {
       "type": "section-ta-vie-home-journal",
       "settings": {
+        "eyebrow": "LIFE AT HOME",
+        "heading": "日々の心地よさを、考える。",
+        "body": "<p>服を選ぶこと、家で過ごすこと。TA VIEは、一着を通じて、いつもの暮らしに目を向けます。</p>",
+        "blog": "",
+        "blog_link_label": "読みものをすべて見る",
+        "article_link_label": "続きを読む",
+        "show_date": true,
+        "faq_page": "",
+        "faq_eyebrow": "BEFORE YOU CHOOSE",
+        "faq_heading": "気になることを、確かめて。",
+        "faq_body": "<p>一着を選ぶ前に。よくあるご質問から、ご購入に必要なご案内をご確認いただけます。</p>",
+        "faq_link_label": "よくあるご質問",
+        "contact_page": "",
+        "contact_eyebrow": "WE ARE HERE",
+        "contact_heading": "迷ったときは、ご相談を。",
+        "contact_body": "<p>商品について、気になることや知りたいこと。お問い合わせページからお聞かせください。</p>",
+        "contact_link_label": "お問い合わせ",
+        "show_instagram": true,
+        "instagram_eyebrow": "STAY IN TOUCH",
+        "instagram_heading": "TA VIEを、もう少し。",
+        "instagram_body": "<p>TA VIEの発信は、Instagramからもご覧いただけます。</p>",
+        "instagram_link_label": "Instagramを見る",
         "color_scheme": "scheme-tavie-soft",
         "padding_top": 64,
         "padding_bottom": 64
