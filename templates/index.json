@@ -401,6 +401,7 @@
         "buttons_VP8YTU"
       ],
       "settings": {
+        "image_1": "shopify://shop_images/tavie-7.png",
         "image_width": "one-half",
         "text_alignment": "text-center",
         "layout": "",
@@ -686,6 +687,7 @@
         "image-1": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/black-and-white-image-of-woman-admiring-rubber-ducks.jpg",
             "title": "あなたのための時間。",
             "heading_font_size": "heading-medium",
             "text": "<p>衣服から、家で過ごす時間へ。自分と暮らしに目を向ける。</p>",
