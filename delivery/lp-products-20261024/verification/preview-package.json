@@ -1,0 +1,58 @@
+{
+  "path": "delivery/lp-products-20261024/interactive-preview.html",
+  "bytes": 21619403,
+  "sha256": "3f258c2ac9c27fa0559b730fbd0cc22bd3956b1a49ddf324ddeef9dbbe2d4437",
+  "baseline": "165c38538def2821347dc564483ce68171ac2d02",
+  "publishedFixtureProducts": [
+    "商品A",
+    "商品B",
+    "商品C",
+    "商品D"
+  ],
+  "merchantImages": [
+    {
+      "setting": "shopify://shop_images/tavie-home.png",
+      "file": "merchant-tavie-home.png",
+      "local": "/fixture/merchant-home-real.png",
+      "width": 1672,
+      "height": 941,
+      "url": "https://eeai0r-vh.myshopify.com/cdn/shop/files/tavie-home.png",
+      "sha256": "26faa22b0316a3723dec2f642e1136b3f2a6d4cf573f219e92e057a531487128"
+    },
+    {
+      "setting": "shopify://shop_images/tavie-7.png",
+      "file": "merchant-tavie-7.png",
+      "local": "/fixture/merchant-tavie-7.png",
+      "width": 1086,
+      "height": 1448,
+      "url": "https://eeai0r-vh.myshopify.com/cdn/shop/files/tavie-7.png",
+      "sha256": "76d3c22912051c57b4d4361f52fa36c28c540531bd3b4f52beedbede9dc0561b"
+    },
+    {
+      "setting": "shopify://shop_images/black-and-white-image-of-woman-admiring-rubber-ducks.jpg",
+      "file": "merchant-rubber-ducks.jpg",
+      "local": "/fixture/merchant-rubber-ducks.jpg",
+      "width": 4096,
+      "height": 2706,
+      "url": "https://eeai0r-vh.myshopify.com/cdn/shop/files/black-and-white-image-of-woman-admiring-rubber-ducks.jpg",
+      "sha256": "8d6722048bbe3372ca2bc3b4fefc7b31099648e2f037da3254a8eca8bb1081b4"
+    }
+  ],
+  "documents": [
+    "reference",
+    "published",
+    "journal",
+    "journal2",
+    "journal3",
+    "journal4",
+    "journal5",
+    "journal6",
+    "journal7"
+  ],
+  "sharedAssets": 40,
+  "referenceAssets": 5,
+  "existingMerchantHero": {
+    "url": "https://eeai0r-vh.myshopify.com/cdn/shop/files/tavie-home.png",
+    "sha256": "26faa22b0316a3723dec2f642e1136b3f2a6d4cf573f219e92e057a531487128"
+  }
+}

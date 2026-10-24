@@ -1,0 +1,11 @@
+{
+  "baseline_commit": "165c38538def2821347dc564483ce68171ac2d02",
+  "baseline_exit": 1,
+  "current_exit": 1,
+  "baseline_errors": 4,
+  "baseline_warnings": 341,
+  "errors": 4,
+  "warnings": 341,
+  "new_offenses": [],
+  "removed_offenses": []
+}

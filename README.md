@@ -1,19 +1,20 @@
-# TA VIE｜添付Broadcastへ戻し、Journal・Instagramを引き継ぐ
+# TA VIE｜元のBroadcastで商品を見せるホームLP
 
-2026年10月24日。添付された10月5日版Broadcast 8.1.1へ戻し、日本語の文言を維持して、ブログ・Journal・Instagram／ライブ機能を移植しました。ロゴの大きさ、余白、ホームの見出し、動きの強さ、空のフッターメニューを整えています。
+2026年10月24日。元テーマで非表示・未選択になっていた商品表示を直しました。元のFeatured product／Featured collectionを使い、3商品の写真と、Shopifyの実際の商品情報をホームLPから見られるようにしています。
 
-- [今回の説明・PC／スマホ画像・編集箇所](delivery/restore-journal-20261024/README.md)
-- [最新のShopifyテーマZIP](delivery/TA-VIE-Broadcast-restored-journal-20261024.zip)
-- [ホーム・Journal操作プレビュー（検証用データ）](delivery/restore-journal-20261024/interactive-preview.html)
-- [日本語・元コード・配色の保持確認](delivery/restore-journal-20261024/verification/source-preservation.json)
-- [Journal・お知らせ・Instagram／ライブの設定手順](delivery/journal-20261012/setup-guide.md)
+- [今回の商品表示・編集・確認](delivery/lp-products-20261024/README.md)
+- [最新のホーム商品表示テーマZIP](delivery/TA-VIE-Broadcast-home-products-20261024.zip)
+- [商品が見える操作プレビュー](delivery/lp-products-20261024/interactive-preview.html)
+- [商品表示と既存コードの保持確認](delivery/lp-products-20261024/verification/source-preservation.json)
+- [作成した7枚の画像素材](delivery/product-images-20261024/README.md)
+- [Journal・Instagram／ライブの設定手順](delivery/journal-20261012/setup-guide.md)
 
-ホームは元の19セクションの順番・表示状態を残し、その後へJournal・お知らせ・Instagramの3セクションを配置しています。商品ページも元のBroadcastに戻しました。記事本文・写真・URL・公開日を変更するAPI操作は行っていません。
+冒頭の「ルームウェアを見る」から商品欄へ移動できます。3商品の写真は実際のテーマassetsに入り、上下の写真を開いて確認できます。公開商品があれば元のカードが商品名・価格／売り切れ・商品ページへつながります。写真の順番を任意のSKUへ自動で割り当てたり、架空の価格を表示したりしません。
 
-添付ZIPに欠けていた `config/settings_data.json` は既存の連携テーマから回収しました。現在の設定と5プリセットで13個の配色IDがそろっており、JournalやSNSの共通設定も引き継いでいます。
+管理画面で保存済みのホーム画像 `tavie-home.png`、既存の日本語、元の商品詳細・バリエーション・カート、配色設定、ブログ・Journal・Instagram／ライブは保持しています。元の22セクションを残し、商品欄の追加後は23セクションです。
 
-作業ブランチは [ta-vie-restore-journal-20261024](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-restore-journal-20261024)、Shopify連携先は [ta-vie-shopify-20261005](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-shopify-20261005) です。ストアはパスワード保護され、管理画面の認証がないため、同期完了と実データでの表示は直接確認できません。
+作業ブランチは [ta-vie-home-products-20261024](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-home-products-20261024)、Shopify連携先は [ta-vie-shopify-20261005](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-shopify-20261005) です。ストアの管理画面認証がないため、同期完了・現在の公開テーマ・実商品での購入は直接確認できません。
 
-プレビューの写真枠・記事・アカウント・告知は明示した検証用データです。添付ZIPにはホームの実物写真の選択がありません。実際の写真や、未設定のJournalページ・SNS情報などはShopify管理画面で設定してください。既存の設定値は引き継いでいます。
+商品A〜Dは、Shopifyの販売チャネル「オンラインストア」で公開されていれば自動表示します。商品を選ばなくても公開商品を自動参照します。先頭の主役商品と掲載コレクションは、元テーマの設定から変更できます。
 
-10月12日以前のテーマZIP、商品特集、プレビュー、3D試作は過去の作業記録として残しています。今回の状態は上記の最新ZIP・プレビューをご覧ください。
+プレビューの「商品A〜D」はご指定の呼称です。価格・在庫・商品URL・商品カードの画像・記事は明示したローカル検証データで、実ストアの登録内容は未取得です。3商品の写真は提供写真をもとにした生成画像、ホームの既存写真は管理画面で選択されている画像を使っています。旧テーマZIP・旧プレビュー・3D試作は過去の記録として残しています。

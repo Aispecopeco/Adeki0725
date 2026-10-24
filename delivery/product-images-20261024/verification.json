@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "cases": 2,
+  "createdAt": "2026-10-24T14:36:51.954Z",
+  "previewSha256": "707b7c8bfa0a5da0fcb0753c08da2c81678ba54200239d87c5654189a7cac33d",
+  "results": [
+    {
+      "width": 1440,
+      "images": 7,
+      "productImages": 5,
+      "homeImages": 2,
+      "noHorizontalOverflow": true,
+      "backgroundSwitch": true,
+      "pngDownload": true,
+      "noNetworkAfterInitialHtml": true,
+      "errors": [],
+      "blocked": []
+    },
+    {
+      "width": 390,
+      "images": 7,
+      "productImages": 5,
+      "homeImages": 2,
+      "noHorizontalOverflow": true,
+      "backgroundSwitch": true,
+      "pngDownload": true,
+      "noNetworkAfterInitialHtml": true,
+      "errors": [],
+      "blocked": []
+    }
+  ],
+  "limitations": [
+    "Generated review images; does not establish actual garment dimensions, construction, material composition or exact color.",
+    "Figma import and actual Shopify media upload were not executed. Direct file protocol rendering was not tested in managed Chromium."
+  ]
+}

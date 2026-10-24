@@ -1,0 +1,53 @@
+{%- comment -%}
+  Garment photographs supplied for TA VIE, shown independently of catalog order.
+  A photograph is never assigned to an unrelated SKU or given an invented price.
+{%- endcomment -%}
+{%- render 'stylesheet', name: 'ta-vie-product-references.css', blocking: true, async: false, inline: false -%}
+<div class="tavie-product-references" aria-label="TA VIEの3商品の写真">
+  {%- if section.settings.heading != blank -%}<h2 class="tavie-product-references__heading">{{ section.settings.heading | escape }}</h2>{%- endif -%}
+  {%- for number in (1..3) -%}
+    {%- liquid
+      case number
+        when 1
+          assign reference_title = '白のトップスとパンツ'
+          assign top_asset = 'ta-vie-reference-01-top.png'
+          assign pants_asset = 'ta-vie-reference-01-pants.png'
+          assign top_width = 1312
+          assign top_height = 1199
+        when 2
+          assign reference_title = 'アイボリーのトップスとパンツ'
+          assign top_asset = 'ta-vie-reference-02-top.png'
+          assign pants_asset = 'ta-vie-reference-02-pants.png'
+          assign top_width = 1087
+          assign top_height = 1446
+        else
+          assign reference_title = '白のロングシャツ'
+          assign top_asset = 'ta-vie-reference-03-top.png'
+          assign pants_asset = ''
+          assign top_width = 1024
+          assign top_height = 1536
+      endcase
+    -%}
+    <article class="tavie-product-reference" data-tavie-reference="{{ number }}">
+      <a class="tavie-product-reference__photo" href="{{ top_asset | asset_url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ reference_title | escape }}の写真を大きく見る（新しいタブ）">
+        <img src="{{ top_asset | asset_url }}" width="{{ top_width }}" height="{{ top_height }}" loading="lazy" decoding="async" alt="{{ reference_title | escape }}のトップス">
+      </a>
+      <div class="tavie-product-reference__copy">
+        <p class="tavie-product-reference__number">0{{ number }}</p>
+        <h3>{{ reference_title | escape }}</h3>
+        {%- if pants_asset != blank -%}
+          <details class="tavie-product-reference__details">
+            <summary>トップスとパンツを見る <span aria-hidden="true">＋</span></summary>
+            <div class="tavie-product-reference__parts">
+              <a href="{{ top_asset | asset_url }}" target="_blank" rel="noopener noreferrer">トップスの写真を見る <span aria-hidden="true">↗</span></a>
+              <a class="tavie-product-reference__pants" href="{{ pants_asset | asset_url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ reference_title | escape }}のパンツの写真を大きく見る（新しいタブ）"><img src="{{ pants_asset | asset_url }}" width="1024" height="1536" loading="lazy" decoding="async" alt="{{ reference_title | escape }}のパンツ"></a>
+              <a href="{{ pants_asset | asset_url }}" target="_blank" rel="noopener noreferrer">パンツの写真を見る <span aria-hidden="true">↗</span></a>
+            </div>
+          </details>
+        {%- else -%}
+          <a class="tavie-product-reference__image-link" href="{{ top_asset | asset_url }}" target="_blank" rel="noopener noreferrer">シャツの写真を見る <span aria-hidden="true">↗</span></a>
+        {%- endif -%}
+      </div>
+    </article>
+  {%- endfor -%}
+</div>

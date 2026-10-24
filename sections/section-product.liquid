@@ -1,12 +1,39 @@
 <!-- /sections/section-product.liquid -->
 {%- liquid
-  assign product = all_products[section.settings.product]
+  assign product = section.settings.product
+  if product != blank and product.url == blank
+    assign product = all_products[product]
+  endif
+  assign clock_now = 'now' | date: '%s' | plus: 0
+  if product == blank and section.settings.auto_first_published
+    for candidate in collections.all.products
+      assign candidate_publication = candidate.published_at | date: '%s' | plus: 0
+      if candidate.url != blank and candidate.published_at != blank and candidate_publication > 0 and candidate_publication <= clock_now
+        unless candidate.gift_card?
+          assign product = candidate
+          break
+        endunless
+      endif
+    endfor
+  endif
+  assign product_publication = product.published_at | date: '%s' | plus: 0
+  assign show_featured_product = false
+  if product.url != blank and product.published_at != blank and product_publication > 0 and product_publication <= clock_now
+    assign show_featured_product = true
+  endif
+  if request.design_mode or request.visual_preview_mode
+    assign show_featured_product = true
+  endif
   assign unique = section.id
   assign show_recently_viewed_indicator = settings.show_recently_viewed_indicator
   assign color_scheme = 'color-' | append: section.settings.color_scheme
   assign limit = section.settings.limit
   assign featured_image = section.settings.image
   assign featured_image_mobile = section.settings.image_mobile
+  assign product_card_modifier = ''
+  if product.featured_media == blank and product.featured_image == blank
+    assign product_card_modifier = 'tavie-product-no-media'
+  endif
   assign product_images = product.media | where: 'media_type', 'image'
   assign product_images_count = product_images.size | at_most: limit
   assign offset = 1
@@ -17,6 +44,11 @@
   if product == blank
     assign product_images_count = limit
   endif
+  unless request.design_mode or request.visual_preview_mode
+    if product_images_count < 1 and featured_image == blank and featured_image_mobile == blank
+      assign show_featured_product = false
+    endif
+  endunless
 
   capture grid_item_sizes
     echo '(min-width: 750px) 25vw, calc(100vw - 32px)'
@@ -27,6 +59,7 @@
   endcapture
 -%}
 
+{%- if show_featured_product -%}
 {%- render 'stylesheet', name: 'featured-product.css' -%}
 
 <script src="{{ 'featured-product.js' | asset_url }}" defer="defer"></script>
@@ -79,7 +112,8 @@
             index: forloop.index,
             show_product_card: section.settings.show_product_card,
             sizes: grid_item_sizes,
-            disable_image_hover: true
+            disable_image_hover: true,
+            modifier_class: product_card_modifier
           -%}
         {%- else -%}
           {%- render 'onboarding-product-grid-item',
@@ -129,6 +163,7 @@
     </div>
   </div>
 </featured-product>
+{%- endif -%}
 
 {% schema %}
 {
@@ -142,6 +177,13 @@
       "type": "product",
       "id": "product",
       "label": "Product"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_first_published",
+      "label": "未選択なら最初の公開商品を表示",
+      "default": false,
+      "info": "選択した商品を優先します。未選択の場合は公開済みの通常商品を表示し、売り切れの商品も対象にします。"
     },
     {
       "type": "checkbox",

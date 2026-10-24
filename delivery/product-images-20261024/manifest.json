@@ -1,0 +1,86 @@
+{
+  "brand": "TA VIE",
+  "date": "2026-10-24",
+  "status": "provided-photo-based-generated-review-images",
+  "product_images": 5,
+  "home_images": 2,
+  "source_photos": [
+    "S__8446028.jpg",
+    "S__8446029.jpg",
+    "S__8446030.jpg"
+  ],
+  "figma_document_created": false,
+  "shopify_media_uploads": 0,
+  "files": [
+    {
+      "id": "01-white-cape-top",
+      "file": "images/01-white-cape-top.png",
+      "width": 1312,
+      "height": 1199,
+      "mode": "RGBA",
+      "has_transparency": true,
+      "bytes": 1485885,
+      "sha256": "3195b32a4d8997243b40333b0590f64a07e8967b55813bfceeac23966377b5e3"
+    },
+    {
+      "id": "02-white-relaxed-pants",
+      "file": "images/02-white-relaxed-pants.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "has_transparency": true,
+      "bytes": 1591331,
+      "sha256": "a81e791b89b961c39200abbcc526ffa8bd6a53396782da7d350056fb79f03809"
+    },
+    {
+      "id": "03-ivory-hooded-knit-top",
+      "file": "images/03-ivory-hooded-knit-top.png",
+      "width": 1087,
+      "height": 1446,
+      "mode": "RGBA",
+      "has_transparency": true,
+      "bytes": 1908146,
+      "sha256": "6d07e046112ae9a3b36056b2f0738947b88541bdf3a2ce152fe5e68e423ffec0"
+    },
+    {
+      "id": "04-ivory-knit-pants",
+      "file": "images/04-ivory-knit-pants.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "has_transparency": true,
+      "bytes": 1698649,
+      "sha256": "ff8d58314bb3204ab9ae26921069fd4c112fc1acf0a4f934e5979b8e41a86aa8"
+    },
+    {
+      "id": "05-white-long-shirt",
+      "file": "images/05-white-long-shirt.png",
+      "width": 1024,
+      "height": 1536,
+      "mode": "RGBA",
+      "has_transparency": true,
+      "bytes": 1618104,
+      "sha256": "7b09c20e533804ac45bab3a1599c15fba272acdd93a551eca71827c00b8c1bcf"
+    },
+    {
+      "id": "06-home-hero-desktop",
+      "file": "images/06-home-hero-desktop.png",
+      "width": 1672,
+      "height": 941,
+      "mode": "RGB",
+      "has_transparency": false,
+      "bytes": 1901209,
+      "sha256": "ecb15dd31e916457c247cd2d720f1dfa2544442587c0d05f311b1e0592550bda"
+    },
+    {
+      "id": "07-home-hero-mobile",
+      "file": "images/07-home-hero-mobile.png",
+      "width": 1086,
+      "height": 1448,
+      "mode": "RGB",
+      "has_transparency": false,
+      "bytes": 2114181,
+      "sha256": "a50e309a7fcf3a5bd252eb5926effd1288bc8867e6583d543b58ac120f2a5e6b"
+    }
+  ]
+}

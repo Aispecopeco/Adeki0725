@@ -48,10 +48,10 @@
             "group_buttons_DzAjwR": {
               "type": "_group-buttons",
               "name": "Side by side buttons",
-              "disabled": true,
+              "disabled": false,
               "settings": {
                 "button_text": "ルームウェアを見る",
-                "button_url": "",
+                "button_url": "#ta-vie-products",
                 "button_type": "btn--black",
                 "button_size": "",
                 "button_style": "btn--solid",
@@ -164,10 +164,10 @@
             },
             "button_Mf6QGG": {
               "type": "button",
-              "disabled": true,
+              "disabled": false,
               "settings": {
                 "text": "ルームウェアを見る",
-                "link": "",
+                "link": "#ta-vie-products",
                 "type": "btn--white",
                 "size": "",
                 "style": "btn--solid",
@@ -1212,7 +1212,7 @@
     },
     "section-product": {
       "type": "section-product",
-      "disabled": true,
+      "disabled": false,
       "settings": {
         "product": "",
         "show_product_card": true,
@@ -1220,7 +1220,8 @@
         "limit": 5,
         "scrolling_styles": "vertical",
         "horizontal_scroll": false,
-        "color_scheme": "scheme-3"
+        "color_scheme": "scheme-3",
+        "auto_first_published": true
       }
     },
     "rich-text-3": {
@@ -1564,10 +1565,35 @@
         "padding_top": 64,
         "padding_bottom": 64
       }
+    },
+    "ta_vie_native_products": {
+      "type": "section-collection",
+      "settings": {
+        "featured_collection": "all",
+        "use_all_products_when_empty": true,
+        "show_tavie_reference_images": true,
+        "anchor_id": "ta-vie-products",
+        "heading": "日常に寄り添うルームウェア。",
+        "heading_font_size": "heading-medium",
+        "description": "",
+        "link_text": "商品一覧を見る",
+        "layout": "inline",
+        "layout_desktop": "grid",
+        "grid": 2,
+        "rows": 2,
+        "width": "wrapper--full-padded",
+        "layout_mobile": "1",
+        "color_scheme": "scheme-tavie-white",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "heading_tag": "h2"
+      }
     }
   },
   "order": [
     "section_slideshow_nested_YfkG44",
+    "section-product",
+    "ta_vie_native_products",
     "section_text_with_products_yW3LJx",
     "columns-1",
     "double",
@@ -1581,7 +1607,6 @@
     "look",
     "section_dynamic_content_TkrMUq",
     "section_custom_content_H4RTrx",
-    "section-product",
     "rich-text-3",
     "columns-2",
     "text-row",

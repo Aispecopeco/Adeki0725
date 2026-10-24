@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "baseline": "165c38538def2821347dc564483ce68171ac2d02",
+  "cases": 2,
+  "createdAt": "2026-10-24T15:42:05.665Z",
+  "artifact": {
+    "path": "delivery/lp-products-20261024/interactive-preview.html",
+    "bytes": 21619403,
+    "sha256": "3f258c2ac9c27fa0559b730fbd0cc22bd3956b1a49ddf324ddeef9dbbe2d4437"
+  },
+  "results": [
+    {
+      "width": 1440,
+      "status": "passed",
+      "referenceGarments": 3,
+      "images": 5,
+      "merchantEditorImages": 3,
+      "pantsDetailsKeyboard": true,
+      "photoEnlargementEscapeFocus": true,
+      "publishedNativeCatalog": 4,
+      "productNames": [
+        "商品A",
+        "商品B",
+        "商品C",
+        "商品D"
+      ],
+      "realUrlScopeDialog": true,
+      "journalAndHistoryRetained": true,
+      "noHTTPAfterInitialLoad": true,
+      "errors": [],
+      "blocked": []
+    },
+    {
+      "width": 390,
+      "status": "passed",
+      "referenceGarments": 3,
+      "images": 5,
+      "merchantEditorImages": 3,
+      "pantsDetailsKeyboard": true,
+      "photoEnlargementEscapeFocus": true,
+      "publishedNativeCatalog": 4,
+      "productNames": [
+        "商品A",
+        "商品B",
+        "商品C",
+        "商品D"
+      ],
+      "realUrlScopeDialog": true,
+      "journalAndHistoryRetained": true,
+      "noHTTPAfterInitialLoad": true,
+      "errors": [],
+      "blocked": []
+    }
+  ],
+  "limitations": [
+    "Single HTML uses current source, user-provided product names 商品A〜D, and explicitly labelled local prices/media/URLs/article/stock fixtures; reference PNG assets and existing merchant hero bytes are embedded.",
+    "Native actual Shopify backend/cart, article resources, Admin saving and theme sync were not executed. Direct file:// protocol was not tested in managed Chromium."
+  ]
+}
