@@ -65,6 +65,11 @@
   {%- endif -%}
 
   {%- for block in section.blocks -%}
+    {%- unless request.design_mode -%}
+      {%- if block.type == 'product' and block.settings.product.url == blank -%}
+        {%- continue -%}
+      {%- endif -%}
+    {%- endunless -%}
     {%- liquid
       assign bg_color = block.settings.bg_color
       assign text_color = block.settings.color

@@ -632,99 +632,11 @@
         "padding_top": 60,
         "padding_bottom": 60
       }
-    },
-    "ta_vie_world": {
-      "type": "section-ta-vie-product-world",
-      "blocks": {
-        "explorer": {
-          "type": "explorer",
-          "settings": {
-            "heading": "写真から、この一着を知る。"
-          }
-        },
-        "description": {
-          "type": "description",
-          "settings": {
-            "heading": "この一着について"
-          }
-        },
-        "reason": {
-          "type": "reason",
-          "settings": {
-            "heading": "この一着を作った理由"
-          }
-        },
-        "material": {
-          "type": "material",
-          "settings": {
-            "heading": "肌に触れる、その素材。"
-          }
-        },
-        "scenes": {
-          "type": "scenes",
-          "settings": {
-            "heading": "この一着と過ごす時間。"
-          }
-        },
-        "fit": {
-          "type": "fit",
-          "settings": {
-            "heading": "サイズと着用感",
-            "table_label": "商品実寸"
-          }
-        },
-        "care": {
-          "type": "care",
-          "settings": {
-            "heading": "長くそばに置くために。"
-          }
-        },
-        "making": {
-          "type": "making",
-          "settings": {
-            "heading": "仕立てと製造背景"
-          }
-        },
-        "purchase": {
-          "type": "purchase",
-          "settings": {
-            "heading": "この一着を選ぶ",
-            "button_label": "色・サイズを選ぶ"
-          }
-        }
-      },
-      "block_order": [
-        "explorer",
-        "description",
-        "reason",
-        "material",
-        "scenes",
-        "fit",
-        "care",
-        "making",
-        "purchase"
-      ],
-      "settings": {
-        "heading": "一着の魅力を、ゆっくりと。",
-        "show_description": false,
-        "show_chapter_nav": true,
-        "show_product_nav": true,
-        "navigation_heading": "次に気になる一着へ。",
-        "collection": "all",
-        "product_1": "",
-        "product_2": "",
-        "product_3": "",
-        "product_4": "",
-        "color_scheme": "scheme-tavie-white",
-        "padding_top": 80,
-        "padding_bottom": 80
-      }
     }
   },
   "order": [
     "section_divider_WfYLrb",
     "main",
-    "ta_vie_world",
     "section_announcement_enc4K7",
     "faq",
     "shipping",

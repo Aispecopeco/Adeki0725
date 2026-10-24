@@ -1,0 +1,22 @@
+{
+  "actual_admin_access": false,
+  "read_only_probes": [
+    {
+      "url": "https://eeai0r-vh.myshopify.com/",
+      "status": 200,
+      "final_url": "https://eeai0r-vh.myshopify.com/password",
+      "password_page": true
+    },
+    {
+      "url": "https://eeai0r-vh.myshopify.com/blogs/news",
+      "status": 200,
+      "final_url": "https://eeai0r-vh.myshopify.com/password",
+      "password_page": true
+    },
+    {
+      "url": "https://eeai0r-vh.myshopify.com/products.json",
+      "status": 401
+    }
+  ],
+  "article_api_writes": 0
+}

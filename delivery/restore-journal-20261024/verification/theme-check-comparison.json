@@ -1,0 +1,11 @@
+{
+  "baseline": "uploaded ZIP (428 files; settings_data omitted in original upload)",
+  "baseline_exit": 1,
+  "current_exit": 1,
+  "baseline_errors": 4,
+  "baseline_warnings": 341,
+  "errors": 4,
+  "warnings": 341,
+  "new_offenses": [],
+  "removed_offenses": []
+}

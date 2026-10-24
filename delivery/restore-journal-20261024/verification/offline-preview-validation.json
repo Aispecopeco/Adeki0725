@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "cases": 2,
+  "createdAt": "2026-10-24T13:20:50.701Z",
+  "artifact": {
+    "path": "delivery/restore-journal-20261024/interactive-preview.html",
+    "bytes": 2288378,
+    "sha256": "4734f0e6cafe2e154d8d726b81e994647bfac5b98678a4ea8d73dddb37fa1bb9"
+  },
+  "results": [
+    {
+      "width": 1440,
+      "status": "passed",
+      "homeAndJournal": true,
+      "olderNoticesPage7": true,
+      "articleScopeDialogEscapeFocus": true,
+      "noHTTPAfterInitialLoad": true,
+      "errors": [],
+      "blocked": []
+    },
+    {
+      "width": 390,
+      "status": "passed",
+      "homeAndJournal": true,
+      "olderNoticesPage7": true,
+      "articleScopeDialogEscapeFocus": true,
+      "noHTTPAfterInitialLoad": true,
+      "errors": [],
+      "blocked": []
+    }
+  ],
+  "limitations": [
+    "Local fixture data only; existing article/Instagram/external/form links explain the preview scope. No store records created.",
+    "Verified after a single localhost HTTP load with all further network requests blocked. Direct file:// execution not verified."
+  ]
+}

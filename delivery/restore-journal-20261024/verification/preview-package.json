@@ -1,0 +1,17 @@
+{
+  "path": "delivery/restore-journal-20261024/interactive-preview.html",
+  "bytes": 2288378,
+  "sha256": "4734f0e6cafe2e154d8d726b81e994647bfac5b98678a4ea8d73dddb37fa1bb9",
+  "documents": [
+    "home",
+    "journal",
+    "journal2",
+    "journal3",
+    "journal4",
+    "journal5",
+    "journal6",
+    "journal7"
+  ],
+  "sharedAssets": 36,
+  "fixtureImages": 10
+}

@@ -2,6 +2,16 @@
 
 {%- liquid
   assign blocks_size = section.blocks.size
+  unless request.design_mode
+    for footer_block in section.blocks
+      if footer_block.type == 'linklist'
+        assign footer_menu = linklists[footer_block.settings.linklist]
+        if footer_menu.links == blank
+          assign blocks_size = blocks_size | minus: 1
+        endif
+      endif
+    endfor
+  endunless
   assign logo = section.settings.logo
   assign inline_blocks = ''
   assign inline_blocks_placeholder = '####inline-blocks@@@@'
@@ -65,10 +75,20 @@
       </div>
     {%- endif -%}
 
-    {%- if section.blocks.size > 0 -%}
+    {%- if blocks_size > 0 -%}
       <collapsible-elements>
         <div class="footer__blocks">
           {%- for block in section.blocks -%}
+            {%- liquid
+              if block.type == 'linklist'
+                assign footer_menu = linklists[block.settings.linklist]
+                if footer_menu.links == blank
+                  unless request.design_mode
+                    continue
+                  endunless
+                endif
+              endif
+            -%}
             {%- capture blocks_code -%}
               {{ blocks_code }}
 

@@ -1,0 +1,103 @@
+{
+  "status": "passed",
+  "cases": 9,
+  "results": [
+    {
+      "case": "empty-native-menu-blocks-omitted-publicly",
+      "count": 2,
+      "originalNewsletterAndSocial": true
+    },
+    {
+      "case": "selected-menu-with-zero-links-omitted"
+    },
+    {
+      "case": "populated-menu-preserved-and-empty-sibling-omitted",
+      "menuLinks": [
+        "/pages/faq",
+        "/pages/contact"
+      ]
+    },
+    {
+      "case": "editor-empty-menus-remain-identical-and-selectable"
+    },
+    {
+      "case": "all-populated-footer-html-identical-to-original"
+    },
+    {
+      "case": "native-footer-browser-width",
+      "viewport": 1440,
+      "mode": "empty",
+      "overflow": false,
+      "menus": 0,
+      "newsletter": true,
+      "social": true,
+      "form": true,
+      "links": [],
+      "errors": []
+    },
+    {
+      "case": "native-footer-browser-width",
+      "viewport": 1440,
+      "mode": "populated",
+      "overflow": false,
+      "menus": 1,
+      "newsletter": true,
+      "social": true,
+      "form": true,
+      "links": [
+        {
+          "text": "よくあるご質問",
+          "href": "/pages/faq",
+          "visible": true
+        },
+        {
+          "text": "お問い合わせ",
+          "href": "/pages/contact",
+          "visible": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "case": "native-footer-browser-width",
+      "viewport": 390,
+      "mode": "empty",
+      "overflow": false,
+      "menus": 0,
+      "newsletter": true,
+      "social": true,
+      "form": true,
+      "links": [],
+      "errors": []
+    },
+    {
+      "case": "native-footer-browser-width",
+      "viewport": 390,
+      "mode": "populated",
+      "overflow": false,
+      "menus": 1,
+      "newsletter": true,
+      "social": true,
+      "form": true,
+      "links": [
+        {
+          "text": "よくあるご質問",
+          "href": "/pages/faq",
+          "visible": true
+        },
+        {
+          "text": "お問い合わせ",
+          "href": "/pages/contact",
+          "visible": true
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "source_sha256": "6c5fdb41527d842a6d430c39d4f7a8142b4060ba1a46617212bb3b36631a0a0e",
+  "source_file": "sections/footer.liquid",
+  "schemaUnchanged": true,
+  "limitations": [
+    "Native footer/head/theme assets rendered with explicit local Shopify Drop/filter adapters. Menu links and Instagram data are fixtures; actual Shopify menus and editor persistence remain unverified."
+  ]
+}
