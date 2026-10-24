@@ -1,0 +1,66 @@
+{%- liquid
+  assign kind = kind | default: 'main'
+  assign photo_image = block.settings.image_main | default: product.featured_image | default: block.settings.product.featured_image
+  assign caption = block.settings.main_caption
+  assign photo_label = block.settings.main_label | default: 'トップス'
+  assign cropped = false
+  assign asset = ''
+  case block.settings.reference
+    when 'white'
+      assign asset = 'ta-vie-reference-01-top.png'
+      assign photo_width = 1312
+      assign photo_height = 1199
+    when 'ivory'
+      assign asset = 'ta-vie-reference-02-top.png'
+      assign photo_width = 1087
+      assign photo_height = 1446
+    when 'shirt'
+      assign asset = 'ta-vie-reference-03-top.png'
+      assign photo_width = 1024
+      assign photo_height = 1536
+  endcase
+  if kind == 'secondary'
+    assign photo_image = block.settings.image_secondary
+    assign photo_width = 1024
+    assign photo_height = 1536
+    assign caption = block.settings.secondary_caption
+    assign photo_label = block.settings.secondary_label | default: 'パンツ'
+    if block.settings.reference == 'white'
+      assign asset = 'ta-vie-reference-01-pants.png'
+    elsif block.settings.reference == 'ivory'
+      assign asset = 'ta-vie-reference-02-pants.png'
+    else
+      assign asset = ''
+    endif
+  elsif kind == 'detail'
+    assign caption = block.settings.detail_caption
+    assign photo_label = block.settings.detail_label | default: '細部'
+    if block.settings.image_detail != blank
+      assign photo_image = block.settings.image_detail
+    else
+      assign cropped = true
+    endif
+  endif
+  assign photo_src = ''
+  if photo_image != blank
+    assign photo_src = photo_image | image_url: width: 1800
+    assign photo_width = photo_image.width
+    assign photo_height = photo_image.height
+  elsif asset != blank
+    assign photo_src = asset | asset_url
+  endif
+  assign photo_alt = block.settings.title | append: '：' | append: photo_label
+-%}
+{%- if photo_src != blank -%}
+  {%- if thumbnail -%}
+    <img src="{{ photo_src }}" alt="" width="{{ photo_width }}" height="{{ photo_height }}" loading="lazy" decoding="async">
+  {%- else -%}
+    <figure id="Photo-{{ section_id }}-{{ block.id }}-{{ index }}" class="tvs__photo{% if cropped %} tvs__photo--crop{% endif %}" data-photo role="group" aria-label="{{ photo_label | escape }}">
+      <a class="tvs__image-link" href="{{ photo_src }}" target="_blank" rel="noopener" data-zoom aria-label="{{ photo_alt | escape }}を拡大する">
+        <img src="{{ photo_src }}" alt="{{ photo_alt | escape }}" width="{{ photo_width }}" height="{{ photo_height }}" loading="lazy" decoding="async">
+        <span class="tvs__zoom-label" aria-hidden="true">＋ 写真を拡大</span>
+      </a>
+      <figcaption data-caption>{{ caption | escape }}{% if cropped %}<small>同じ写真の一部を拡大しています。</small>{% endif %}</figcaption>
+    </figure>
+  {%- endif -%}
+{%- endif -%}

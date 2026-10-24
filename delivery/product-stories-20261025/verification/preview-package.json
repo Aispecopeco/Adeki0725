@@ -1,0 +1,58 @@
+{
+  "path": "delivery/product-stories-20261025/interactive-preview.html",
+  "bytes": 21663283,
+  "sha256": "6b0ba0a8ec3972bad33be536f346efc1f5b39ce68f13e7df60331a33d886f078",
+  "baseline": "d25ee0e6f8d7008a375c4b0d489655aa525b04c2",
+  "publishedFixtureProducts": [
+    "商品A",
+    "商品B",
+    "商品C",
+    "商品D"
+  ],
+  "merchantImages": [
+    {
+      "setting": "shopify://shop_images/tavie-home.png",
+      "file": "merchant-tavie-home.png",
+      "local": "/fixture/merchant-home-real.png",
+      "width": 1672,
+      "height": 941,
+      "url": "https://eeai0r-vh.myshopify.com/cdn/shop/files/tavie-home.png",
+      "sha256": "26faa22b0316a3723dec2f642e1136b3f2a6d4cf573f219e92e057a531487128"
+    },
+    {
+      "setting": "shopify://shop_images/tavie-7.png",
+      "file": "merchant-tavie-7.png",
+      "local": "/fixture/merchant-tavie-7.png",
+      "width": 1086,
+      "height": 1448,
+      "url": "https://eeai0r-vh.myshopify.com/cdn/shop/files/tavie-7.png",
+      "sha256": "76d3c22912051c57b4d4361f52fa36c28c540531bd3b4f52beedbede9dc0561b"
+    },
+    {
+      "setting": "shopify://shop_images/black-and-white-image-of-woman-admiring-rubber-ducks.jpg",
+      "file": "merchant-rubber-ducks.jpg",
+      "local": "/fixture/merchant-rubber-ducks.jpg",
+      "width": 4096,
+      "height": 2706,
+      "url": "https://eeai0r-vh.myshopify.com/cdn/shop/files/black-and-white-image-of-woman-admiring-rubber-ducks.jpg",
+      "sha256": "8d6722048bbe3372ca2bc3b4fefc7b31099648e2f037da3254a8eca8bb1081b4"
+    }
+  ],
+  "documents": [
+    "reference",
+    "published",
+    "journal",
+    "journal2",
+    "journal3",
+    "journal4",
+    "journal5",
+    "journal6",
+    "journal7"
+  ],
+  "sharedAssets": 41,
+  "referenceAssets": 5,
+  "existingMerchantHero": {
+    "url": "https://eeai0r-vh.myshopify.com/cdn/shop/files/tavie-home.png",
+    "sha256": "26faa22b0316a3723dec2f642e1136b3f2a6d4cf573f219e92e057a531487128"
+  }
+}

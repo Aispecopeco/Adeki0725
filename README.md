@@ -1,20 +1,17 @@
-# TA VIE｜元のBroadcastで商品を見せるホームLP
+# TA VIE｜Broadcastの商品一覧と、一着ずつの特集
 
-2026年10月24日。元テーマで非表示・未選択になっていた商品表示を直しました。元のFeatured product／Featured collectionを使い、3商品の写真と、Shopifyの実際の商品情報をホームLPから見られるようにしています。
+「商品一覧を見る」は元のBroadcastのコードへ戻し、標準のスライダーを使用します。「日常に寄り添うルームウェア。」は独立した写真付きの商品ナビに改修しました。一着を選び、トップス・パンツ・細部の写真と短い説明を切り替えられます。
 
-- [今回の商品表示・編集・確認](delivery/lp-products-20261024/README.md)
-- [最新のホーム商品表示テーマZIP](delivery/TA-VIE-Broadcast-home-products-20261024.zip)
-- [商品が見える操作プレビュー](delivery/lp-products-20261024/interactive-preview.html)
-- [商品表示と既存コードの保持確認](delivery/lp-products-20261024/verification/source-preservation.json)
-- [作成した7枚の画像素材](delivery/product-images-20261024/README.md)
+- [操作プレビュー](delivery/product-stories-20261025/interactive-preview.html)
+- [最新テーマZIP](delivery/TA-VIE-Broadcast-product-stories-20261025.zip)
+- [変更内容と編集手順](delivery/product-stories-20261025/README.md)
 - [Journal・Instagram／ライブの設定手順](delivery/journal-20261012/setup-guide.md)
+- [作成済みの画像素材](delivery/product-images-20261024/README.md)
 
-冒頭の「ルームウェアを見る」から商品欄へ移動できます。3商品の写真は実際のテーマassetsに入り、上下の写真を開いて確認できます。公開商品があれば元のカードが商品名・価格／売り切れ・商品ページへつながります。写真の順番を任意のSKUへ自動で割り当てたり、架空の価格を表示したりしません。
+元の商品一覧は公開済みの商品A〜Dの名称・写真・価格・在庫・詳細URLを参照します。特集の3組の写真と実際のSKUとの対応は推測せず、テーマエディターの商品選択から指定できます。素材の混率や製造方法など、未確認の説明は追加していません。
 
-管理画面で保存済みのホーム画像 `tavie-home.png`、既存の日本語、元の商品詳細・バリエーション・カート、配色設定、ブログ・Journal・Instagram／ライブは保持しています。元の22セクションを残し、商品欄の追加後は23セクションです。
+元の商品詳細・バリエーション・カート、日本語の既存原稿、管理画面で選択されたホーム写真、ブログ・Journal・Instagram／ライブと配色設定は保持しています。
 
-作業ブランチは [ta-vie-home-products-20261024](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-home-products-20261024)、Shopify連携先は [ta-vie-shopify-20261005](https://github.com/Aispecopeco/Adeki0725/tree/ta-vie-shopify-20261005) です。ストアの管理画面認証がないため、同期完了・現在の公開テーマ・実商品での購入は直接確認できません。
+作業ブランチは `ta-vie-product-stories-20261025`、Shopify連携先は `ta-vie-shopify-20261005` です。Gitの送信とShopify側の同期・公開は別に確認する必要があります。この環境にはShopify管理画面の認証がなく、実ストアの商品データや購入処理、同期完了は直接確認できません。
 
-商品A〜Dは、Shopifyの販売チャネル「オンラインストア」で公開されていれば自動表示します。商品を選ばなくても公開商品を自動参照します。先頭の主役商品と掲載コレクションは、元テーマの設定から変更できます。
-
-プレビューの「商品A〜D」はご指定の呼称です。価格・在庫・商品URL・商品カードの画像・記事は明示したローカル検証データで、実ストアの登録内容は未取得です。3商品の写真は提供写真をもとにした生成画像、ホームの既存写真は管理画面で選択されている画像を使っています。旧テーマZIP・旧プレビュー・3D試作は過去の記録として残しています。
+プレビューの商品A〜Dはご指定の呼称で、価格・在庫・商品URL・商品カード画像・記事はローカル検証データです。特集には提供写真をもとに作成した3組5枚の画像を使用し、ホームの既存写真は保存済みの実画像を使用しています。以前のZIP・プレビューは当時のコードの記録として残しています。

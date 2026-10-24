@@ -4,37 +4,20 @@
   assign layout_desktop = section.settings.layout_desktop
   assign layout_mobile = section.settings.layout_mobile
   assign heading = section.settings.heading
-  if section.settings.show_tavie_reference_images
-    assign heading = ''
-  endif
   assign description = section.settings.description
   assign link_text = section.settings.link_text
   assign show_recently_viewed_indicator = settings.show_recently_viewed_indicator
   assign color_scheme = 'color-' | append: section.settings.color_scheme
-  assign grid_columns = section.settings.grid
-  assign grid_rows = section.settings.rows
-  assign layout = section.settings.layout
-
-  assign featured_collection = section.settings.featured_collection
-  if featured_collection != blank and featured_collection.url == blank
-    assign featured_collection = collections[featured_collection]
-  endif
-  if featured_collection == blank and section.settings.use_all_products_when_empty
-    assign featured_collection = collections.all
-  endif
-  assign show_reference_images = section.settings.show_tavie_reference_images
-  if show_reference_images
-    unless featured_collection.products_count > 0
-      if section.settings.link_url == blank
-        assign link_text = ''
-      endif
-    endunless
-  endif
   assign has_content = false
   if heading != blank or description != blank or link_text != blank
     assign has_content = true
   endif
-  assign collection_anchor = section.settings.anchor_id | handleize
+
+  assign grid_columns = section.settings.grid
+  assign grid_rows = section.settings.rows
+  assign layout = section.settings.layout
+
+  assign featured_collection = collections[section.settings.featured_collection]
   assign limit_products = 20
   assign limit_onboarding = 8
 
@@ -92,18 +75,12 @@
    }
 {%- endstyle -%}
 
-{%- if collection_anchor != blank -%}
-  <span id="{{ collection_anchor | escape }}" aria-hidden="true"></span>
-{%- endif -%}
 <section
   id="Collection--{{ section.id }}"
   class="index-products section-padding {{ color_scheme }}"
   data-section-id="{{ section.id }}"
   data-section-type="product-grid"
 >
-  {%- if show_reference_images -%}
-    {%- render 'ta-vie-product-reference-cards' -%}
-  {%- endif -%}
   <div class="grid-container{% if layout == 'left' %} grid-container--inline{% endif %}{% if layout_desktop == 'grid' %} {{ section.settings.width }}{% endif %}">
     {%- if has_content -%}
       <div class="grid__heading-holder{% if layout == 'inline' %} grid__heading-holder--inline{% elsif layout == 'left' %} grid__heading-holder--sticky{% elsif layout == 'center' %} text-center{% endif %}{% unless layout_desktop == 'grid' %} wrapper--full-padded{% endunless %}">
@@ -166,7 +143,6 @@
       </div>
     {%- endif -%}
 
-    {%- if featured_collection.products_count > 0 or show_reference_images != true -%}
     <div class="grid__items-holder">
       <div class="grid-outer">
         {%- capture product_items -%}
@@ -181,12 +157,7 @@
                     assign animation_delay = forloop.index0 | modulo: grid_int | times: 1
                   endif
 
-                  assign product_card_modifier = ''
-                  if product.featured_media == blank and product.featured_image == blank
-                    assign product_card_modifier = 'tavie-product-no-media'
-                  endif
-
-                  render 'product-grid-item', product: product, animation_delay: animation_delay, index: forloop.index, modifier_class: product_card_modifier
+                  render 'product-grid-item', product: product, animation_delay: animation_delay, index: forloop.index
                 endfor
               -%}
 
@@ -215,7 +186,6 @@
         {%- endif -%}
       </div>
     </div>
-    {%- endif -%}
   </div>
 </section>
 
@@ -239,26 +209,6 @@
       "type": "collection",
       "id": "featured_collection",
       "label": "Collection"
-    },
-    {
-      "type": "checkbox",
-      "id": "use_all_products_when_empty",
-      "label": "未選択ならすべての公開商品を表示",
-      "default": false,
-      "info": "選択したコレクションを優先します。未選択の場合だけ、オンラインストアの全商品を参照します。"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_tavie_reference_images",
-      "label": "TA VIEの3商品の写真を表示",
-      "default": false,
-      "info": "用意した3商品の画像を独立して表示します。登録済み商品の画像や価格には結び付けず、実際の公開商品はその下に表示します。"
-    },
-    {
-      "type": "text",
-      "id": "anchor_id",
-      "label": "この欄へのリンク用ID",
-      "info": "例：ta-vie-products。ボタンのリンク先に #ta-vie-products を指定すると、この欄へ移動します。"
     },
     {
       "type": "header",

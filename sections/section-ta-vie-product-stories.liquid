@@ -1,0 +1,141 @@
+{%- liquid
+  assign story_count = 0
+  for block in section.blocks
+    if block.settings.image_main != blank or block.settings.product.featured_image != blank or block.settings.reference == 'white' or block.settings.reference == 'ivory' or block.settings.reference == 'shirt'
+      assign story_count = story_count | plus: 1
+    endif
+  endfor
+-%}
+{%- if story_count > 0 or request.design_mode -%}
+  {%- render 'stylesheet', name: 'ta-vie-product-stories.css', blocking: true, async: false, inline: false -%}
+  <script src="{{ 'ta-vie-product-stories.js' | asset_url }}" defer="defer"></script>
+  <section id="{{ section.settings.anchor_id | default: section.id | handleize }}" class="tvs-section color-{{ section.settings.color_scheme }}" style="--tvs-space: {{ section.settings.spacing }}px" aria-labelledby="StoriesHeading-{{ section.id }}">
+    <ta-vie-product-stories class="tvs" data-section-id="{{ section.id }}" style="--tvs-count: {{ story_count | at_least: 1 }}">
+      <header class="tvs__header">
+        <p class="tvs__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+        <h2 id="StoriesHeading-{{ section.id }}">{{ section.settings.heading | escape | replace: 'ルームウェア', '<wbr><span class="tvs__keep">ルームウェア</span>' }}</h2>
+        <p class="tvs__intro">{{ section.settings.intro | escape }}</p>
+      </header>
+      <nav class="tvs__chapters" aria-label="紹介する一着を選ぶ">
+        {%- assign story_index = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- if block.settings.image_main != blank or block.settings.product.featured_image != blank or block.settings.reference == 'white' or block.settings.reference == 'ivory' or block.settings.reference == 'shirt' -%}
+            <a id="StoryTab-{{ section.id }}-{{ block.id }}" class="tvs__chapter" href="#Story-{{ section.id }}-{{ block.id }}" data-chapter="{{ story_index }}">
+              <span class="tvs__thumb">{%- render 'ta-vie-story-photo', block: block, kind: 'main', thumbnail: true -%}</span>
+              <span><small>0{{ story_index | plus: 1 }}</small>{{ block.settings.nav_title | default: block.settings.title | escape }}</span>
+              <span class="tvs__chapter-arrow" aria-hidden="true">↗</span>
+            </a>
+            {%- assign story_index = story_index | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </nav>
+      <div class="tvs__panels">
+        {%- assign story_index = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- if block.settings.image_main != blank or block.settings.product.featured_image != blank or block.settings.reference == 'white' or block.settings.reference == 'ivory' or block.settings.reference == 'shirt' -%}
+            {%- liquid
+              assign has_secondary = false
+              if block.settings.image_secondary != blank or block.settings.reference == 'white' or block.settings.reference == 'ivory'
+                assign has_secondary = true
+              endif
+              assign photo_count = 2
+              if has_secondary
+                assign photo_count = 3
+              endif
+              assign story_product = block.settings.product
+              if story_product != blank and story_product.url == blank
+                assign story_product = all_products[story_product]
+              endif
+            -%}
+            <article id="Story-{{ section.id }}-{{ block.id }}" class="tvs__panel" data-story-panel data-block-id="{{ block.id }}" aria-labelledby="StoryTitle-{{ section.id }}-{{ block.id }}" {{ block.shopify_attributes }}>
+              <div class="tvs__media">
+                {%- assign detail_index = photo_count | minus: 1 -%}
+                <div class="tvs__photo-tools">
+                  <nav class="tvs__photo-tabs" aria-label="写真の種類を選ぶ">
+                    <a href="#Photo-{{ section.id }}-{{ block.id }}-0" data-photo-tab="0">{{ block.settings.main_label | default: 'トップス' | escape }}</a>
+                    {%- if has_secondary -%}<a href="#Photo-{{ section.id }}-{{ block.id }}-1" data-photo-tab="1">{{ block.settings.secondary_label | default: 'パンツ' | escape }}</a>{%- endif -%}
+                    <a href="#Photo-{{ section.id }}-{{ block.id }}-{{ detail_index }}" data-photo-tab="{{ detail_index }}">{{ block.settings.detail_label | default: '細部' | escape }}</a>
+                  </nav>
+                  <div class="tvs__arrows" data-enhanced-control hidden>
+                    <button type="button" data-photo-prev aria-label="前の写真">←</button>
+                    <span data-photo-count>01 / 0{{ photo_count }}</span>
+                    <button type="button" data-photo-next aria-label="次の写真">→</button>
+                  </div>
+                </div>
+                <div class="tvs__gallery" data-gallery tabindex="0" aria-label="{{ block.settings.title | escape }}の写真。左右にスワイプして切り替え">
+                  {%- render 'ta-vie-story-photo', block: block, product: story_product, kind: 'main', section_id: section.id, index: 0 -%}
+                  {%- if has_secondary -%}{%- render 'ta-vie-story-photo', block: block, kind: 'secondary', section_id: section.id, index: 1 -%}{%- endif -%}
+                  {%- render 'ta-vie-story-photo', block: block, product: story_product, kind: 'detail', section_id: section.id, index: detail_index -%}
+                </div>
+              </div>
+              <div class="tvs__copy">
+                <p class="tvs__eyebrow">TA VIE <span aria-hidden="true">/</span> 0{{ story_index | plus: 1 }}</p>
+                <h3 id="StoryTitle-{{ section.id }}-{{ block.id }}">{{ block.settings.title | escape | newline_to_br }}</h3>
+                <p class="tvs__summary">{{ block.settings.summary | escape }}</p>
+                {%- if block.settings.detail_heading != blank -%}
+                  <div class="tvs__note"><h4>{{ block.settings.detail_heading | escape }}</h4><p>{{ block.settings.detail_text | escape }}</p></div>
+                {%- endif -%}
+                {%- if story_product.url != blank and story_product.published_at != blank -%}
+                  <a class="tvs__link" href="{{ story_product.url }}">商品詳細を見る <span aria-hidden="true">↗</span></a>
+                {%- else -%}
+                  <a class="tvs__link" href="{{ section.settings.collection_link | default: routes.all_products_collection_url }}">商品一覧へ <span aria-hidden="true">↓</span></a>
+                {%- endif -%}
+                <p class="tvs__hint">写真を選んで、かたちや細部を確かめる。</p>
+              </div>
+            </article>
+            {%- assign story_index = story_index | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+      <footer class="tvs__footer" data-enhanced-control hidden>
+        <span data-chapter-count>01 / 0{{ story_count }}</span>
+        <div class="tvs__arrows"><button type="button" data-chapter-prev aria-label="前の一着">←</button><span>一着ずつ、見つける</span><button type="button" data-chapter-next aria-label="次の一着">→</button></div>
+      </footer>
+      <p class="tvs__sr" role="status" aria-live="polite" aria-atomic="true" data-story-status></p>
+      <dialog class="tvs__dialog" data-story-dialog aria-labelledby="StoryZoomTitle-{{ section.id }}">
+        <h2 id="StoryZoomTitle-{{ section.id }}" class="tvs__sr">写真を大きく見る</h2>
+        <button class="tvs__close" type="button" data-dialog-close autofocus aria-label="写真を閉じる">閉じる <span aria-hidden="true">×</span></button>
+        <img data-dialog-image alt="" width="1200" height="1600">
+        <div class="tvs__dialog-bottom"><p data-dialog-caption></p><div class="tvs__arrows"><button type="button" data-dialog-prev aria-label="前の拡大写真">←</button><span data-dialog-count></span><button type="button" data-dialog-next aria-label="次の拡大写真">→</button></div></div>
+      </dialog>
+    </ta-vie-product-stories>
+  </section>
+{%- endif -%}
+{% schema %}
+{
+  "name": "TA VIE｜一着ずつの特集",
+  "tag": "div",
+  "settings": [
+    {"type":"text","id":"eyebrow","label":"小見出し","default":"TA VIE / ROOMWEAR"},
+    {"type":"text","id":"heading","label":"見出し","default":"日常に寄り添うルームウェア。"},
+    {"type":"textarea","id":"intro","label":"紹介文","default":"家で過ごす時間にも、自分らしい一着を。かたちや細部を見比べながら、日常に迎えたい装いを見つけてください。"},
+    {"type":"text","id":"anchor_id","label":"リンク先のID","default":"ta-vie-products"},
+    {"type":"url","id":"collection_link","label":"商品未選択時の一覧リンク","info":"特集で商品を選択するまでは、この一覧へのリンクを表示します。"},
+    {"type":"color_scheme","id":"color_scheme","label":"配色","default":"scheme-1"},
+    {"type":"range","id":"spacing","label":"上下の余白","min":32,"max":100,"step":4,"unit":"px","default":64}
+  ],
+  "blocks": [{
+    "type":"story","name":"一着の特集","settings":[
+      {"type":"text","id":"nav_title","label":"写真ナビの短い商品名"},
+      {"type":"textarea","id":"title","label":"商品の紹介見出し","info":"改行した位置で表示も改行します。商品名の途中で言葉が分かれないよう調整できます。"},
+      {"type":"textarea","id":"summary","label":"この一着の短い説明"},
+      {"type":"text","id":"detail_heading","label":"着目する特徴の見出し"},
+      {"type":"textarea","id":"detail_text","label":"特徴の説明"},
+      {"type":"product","id":"product","label":"対応するShopify商品","info":"写真の実商品を確認して選択してください。選択後はその商品の詳細へリンクします。商品A〜Dとの対応は自動で推測しません。"},
+      {"type":"select","id":"reference","label":"用意した写真セット","default":"none","options":[{"value":"none","label":"写真を個別に登録"},{"value":"white","label":"白のギャザートップスとパンツ"},{"value":"ivory","label":"アイボリーのフードトップスとパンツ"},{"value":"shirt","label":"白のロングシャツ"}]},
+      {"type":"image_picker","id":"image_main","label":"メイン写真（写真セットより優先）"},
+      {"type":"text","id":"main_label","label":"メイン写真のボタン名","default":"トップス"},
+      {"type":"textarea","id":"main_caption","label":"メイン写真の説明"},
+      {"type":"image_picker","id":"image_secondary","label":"2枚目の写真（パンツなど）"},
+      {"type":"text","id":"secondary_label","label":"2枚目のボタン名","default":"パンツ"},
+      {"type":"textarea","id":"secondary_caption","label":"2枚目の写真の説明"},
+      {"type":"image_picker","id":"image_detail","label":"細部の写真","info":"未設定の場合はメイン写真の一部を拡大して表示します。"},
+      {"type":"text","id":"detail_label","label":"細部のボタン名","default":"細部"},
+      {"type":"textarea","id":"detail_caption","label":"細部の説明"}
+    ]
+  }],
+  "max_blocks": 4,
+  "presets": [{"name":"TA VIE｜一着ずつの特集"}],
+  "disabled_on": {"groups":["header","aside","footer"]}
+}
+{% endschema %}

@@ -1,0 +1,15 @@
+{
+  "baseline_commit": "d25ee0e6f8d7008a375c4b0d489655aa525b04c2",
+  "baseline_exit": 1,
+  "current_exit": 1,
+  "errors": 4,
+  "warnings": 341,
+  "baseline_errors": 4,
+  "baseline_warnings": 341,
+  "new_offenses": [],
+  "removed_offenses": [],
+  "createdAt": "2026-10-24T16:16:07.692Z",
+  "checked_theme_files": 458,
+  "checked_theme_hashes_current": true,
+  "checked_theme_fingerprint": "3ea7f1596d8889aea35e033fd0554373e268db953de614c4ece7603830988a2d"
+}

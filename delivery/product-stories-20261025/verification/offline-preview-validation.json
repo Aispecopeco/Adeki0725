@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "baseline": "d25ee0e6f8d7008a375c4b0d489655aa525b04c2",
+  "cases": 2,
+  "createdAt": "2026-10-24T16:16:16.178Z",
+  "artifact": {
+    "path": "delivery/product-stories-20261025/interactive-preview.html",
+    "bytes": 21663283,
+    "sha256": "6b0ba0a8ec3972bad33be536f346efc1f5b39ce68f13e7df60331a33d886f078"
+  },
+  "results": [
+    {
+      "width": 1440,
+      "status": "passed",
+      "chapters": 3,
+      "chapterPhotoTabs": true,
+      "lightboxNextEscapeFocus": true,
+      "merchantImages": 3,
+      "nativeProducts": 4,
+      "productNames": [
+        "商品A",
+        "商品B",
+        "商品C",
+        "商品D"
+      ],
+      "nativeLinkScope": true,
+      "emptyCatalogStoriesRetained": true,
+      "journalHistoryRetained": true,
+      "noHTTPAfterInitialLoad": true,
+      "errors": [],
+      "blocked": []
+    },
+    {
+      "width": 390,
+      "status": "passed",
+      "chapters": 3,
+      "chapterPhotoTabs": true,
+      "lightboxNextEscapeFocus": true,
+      "merchantImages": 3,
+      "nativeProducts": 4,
+      "productNames": [
+        "商品A",
+        "商品B",
+        "商品C",
+        "商品D"
+      ],
+      "nativeLinkScope": true,
+      "emptyCatalogStoriesRetained": true,
+      "journalHistoryRetained": true,
+      "noHTTPAfterInitialLoad": true,
+      "errors": [],
+      "blocked": []
+    }
+  ],
+  "limitations": [
+    "Single HTML embeds actual current theme code and saved garment/merchant pictures. Prices,stock,product URLs,card photos and articles are explicitly labelled local fixtures. 商品A〜D are user-provided names.",
+    "Actual store Admin saving, theme synchronization, product/cart backend and checkout were not executed. Direct file:// protocol was not tested in managed Chromium."
+  ]
+}

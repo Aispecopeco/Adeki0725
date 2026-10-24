@@ -1570,29 +1570,98 @@
       "type": "section-collection",
       "settings": {
         "featured_collection": "all",
-        "use_all_products_when_empty": true,
-        "show_tavie_reference_images": true,
-        "anchor_id": "ta-vie-products",
-        "heading": "日常に寄り添うルームウェア。",
+        "heading": "商品一覧",
         "heading_font_size": "heading-medium",
         "description": "",
         "link_text": "商品一覧を見る",
         "layout": "inline",
-        "layout_desktop": "grid",
+        "layout_desktop": "slider",
         "grid": 2,
         "rows": 2,
         "width": "wrapper--full-padded",
-        "layout_mobile": "1",
+        "layout_mobile": "slider",
         "color_scheme": "scheme-tavie-white",
         "padding_top": 64,
         "padding_bottom": 64,
-        "heading_tag": "h2"
+        "heading_tag": "h2",
+        "link_url": "/collections/all"
       }
+    },
+    "ta_vie_product_stories": {
+      "type": "section-ta-vie-product-stories",
+      "settings": {
+        "eyebrow": "TA VIE / ROOMWEAR",
+        "heading": "日常に寄り添うルームウェア。",
+        "intro": "家で過ごす時間にも、自分らしい一着を。かたちや細部を見比べながら、日常に迎えたい装いを見つけてください。",
+        "anchor_id": "ta-vie-products",
+        "collection_link": "#Collection--ta_vie_native_products",
+        "color_scheme": "scheme-tavie-white",
+        "spacing": 64
+      },
+      "blocks": {
+        "white": {
+          "type": "story",
+          "settings": {
+            "reference": "white",
+            "nav_title": "白のギャザー",
+            "title": "白のギャザー\nトップスとパンツ",
+            "summary": "襟ぐりのギャザーから広がる、重なりのあるシルエット。白のパンツと合わせて、家で過ごす日にも、自分らしい装いを。",
+            "detail_heading": "重なりがつくる、白の表情。",
+            "detail_text": "広い襟ぐりと、ケープのように重なる裾。かたちの違いを、写真を切り替えながらご覧ください。",
+            "main_label": "トップス",
+            "main_caption": "ギャザーと、生地が重なる裾のライン。",
+            "secondary_label": "パンツ",
+            "secondary_caption": "白でつながる、上下のシルエット。",
+            "detail_label": "細部",
+            "detail_caption": "襟ぐりのギャザーと、重なりの表情。"
+          }
+        },
+        "ivory": {
+          "type": "story",
+          "settings": {
+            "reference": "ivory",
+            "nav_title": "アイボリー",
+            "title": "アイボリーのフード\nトップスとパンツ",
+            "summary": "フードと濃色のボタンが、穏やかなアイボリーのアクセントに。同じ色のワイドパンツとつなぐ、気負わない日の装いです。",
+            "detail_heading": "色をつなぎ、輪郭を楽しむ。",
+            "detail_text": "フードから続く首まわりと、まっすぐなパンツのライン。上下それぞれのかたちにも目を向けて。",
+            "main_label": "トップス",
+            "main_caption": "顔まわりに立体感を添えるフードと、濃色のボタン。",
+            "secondary_label": "パンツ",
+            "secondary_caption": "アイボリーで揃える、ゆとりのある輪郭。",
+            "detail_label": "細部",
+            "detail_caption": "首まわりとボタンの、さりげないコントラスト。"
+          }
+        },
+        "shirt": {
+          "type": "story",
+          "settings": {
+            "reference": "shirt",
+            "nav_title": "ロングシャツ",
+            "title": "白のロングシャツ",
+            "summary": "開いた襟と大きなポケット、長めのシルエット。折り返した袖口まで、白一色の中にある表情を楽しんで。",
+            "detail_heading": "白の中に、かたちを見つける。",
+            "detail_text": "左右のポケットと、ゆったりとした袖の輪郭。全体と細部を行き来して、この一着らしさを確かめてください。",
+            "main_label": "全体",
+            "main_caption": "長めの丈と、左右に配した大きなポケット。",
+            "secondary_label": "パンツ",
+            "secondary_caption": "",
+            "detail_label": "細部",
+            "detail_caption": "開いた襟と、大きなポケットの表情。"
+          }
+        }
+      },
+      "block_order": [
+        "white",
+        "ivory",
+        "shirt"
+      ]
     }
   },
   "order": [
     "section_slideshow_nested_YfkG44",
     "section-product",
+    "ta_vie_product_stories",
     "ta_vie_native_products",
     "section_text_with_products_yW3LJx",
     "columns-1",
